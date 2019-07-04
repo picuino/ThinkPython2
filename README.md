@@ -1,3 +1,6 @@
+**ThinkPython2e en español**
+Traducción por Jorge Espinoza.
+
 ThinkPython
 ===========
 
