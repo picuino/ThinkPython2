@@ -779,7 +779,7 @@ Un {\bf programa} es una secuencia de instrucciones que especifica cómo
 realizar una computación.  La computación puede ser algo matemático,
 tal como resolver un sistema de ecuaciones o encontrar las raíces de un
 polinomio, pero también puede ser una computación simbólica, tal como
-buscar y reemplazar texto en un documento o algo gráfico, como procesar
+buscar y reemplazar texto en un documento, o algo gráfico, como procesar
 una imagen o reproducir un video.
 \index{programa}
 
@@ -809,14 +809,14 @@ Lo creas o no, eso es prácticamente todo lo que hay.  Cada
 programa que has usado, no importa cuán complicado, está compuesto de
 instrucciones que se parecen mucho a estas.  Así que puedes pensar en
 la programación como el proceso de romper una tarea grande y compleja en
-subtareas cada vez más pequeñas hasta que las subtareas son lo suficientemente
-simples para ser realizadas con una de estas instrucciones básicas.
+subtareas cada vez más pequeñas hasta que cada subtarea sea lo suficientemente
+simple para hacerla con una de estas instrucciones básicas.
 
 
 \section{Ejecutar Python}
 
-Uno de los desafíos de comenzar con Python es que puede que tengas
-que instalar Python y software relacionado en tu computador.
+Uno de los desafíos de comenzar con Python es que quizás debas
+instalar Python y software relacionado en tu computador.
 Si estás familiarizado con tu sistema operativo, y especialmente
 si te sientes cómodo con la interfaz de línea de comandos, no tendrás
 problemas instalando Python.  Pero para principiantes, puede ser
@@ -832,8 +832,8 @@ sugerencias para instalar Python en tu computador.
 
 Hay una serie de páginas web que puedes usar para ejecutar Python.  Si ya
 tienes una favorita, ve y úsala.  De otra manera, recomiendo
-PythonAnywhere.  I provide detailed instructions for getting started
-at \url{http://tinyurl.com/thinkpython2e}.
+PythonAnywhere.  En \url{http://tinyurl.com/thinkpython2e}
+proporciono instrucciones detalladas para comenzar.
 \index{PythonAnywhere}
 
 Hay dos versiones de Python, llamadas Python 2 y Python 3.
@@ -846,7 +846,7 @@ sobre Python 2.
 
 El {\bf intérprete} de Python es un programa que lee y ejecuta
 código de Python.  Dependiendo de tu entorno, puedes iniciar el intérprete
-haciendo clic en un ícono, o escribiendo {\tt python} en una
+haciendo clic en un ícono o escribiendo {\tt python} en una
 línea de comando.
 Cuando se inicia, deberías ver una salida como esta:
 \index{intérprete}
@@ -860,8 +860,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 %
 Las primeras tres líneas contienen información acerca del intérprete
 y el sistema operativo en el cual se está ejecutando, así que puede ser
-diferente para ti.  Pero deberías verificar que el número de versión, el cual
-es {\tt 3.4.0} en este ejemplo, comience con 3, el cual indica que estás
+diferente para ti.  Sin emgargo, deberías verificar que el número de versión, que
+en este ejemplo es {\tt 3.4.0}, comience con 3, el cual indica que estás
 ejecutando Python 3.  Si comienza con 2, estás ejecutando
 (lo adivinaste) Python 2.
 
@@ -877,7 +877,7 @@ muestra el resultado:
 \end{verbatim}
 %
 Ahora estás listo para comenzar.
-A partir de aquí, supongo que sabes cómo iniciar el intérprete de Python
+A partir de aquí, doy por sentado que sabes cómo iniciar el intérprete de Python
 y ejecutar código.
 
 
@@ -895,7 +895,7 @@ las palabras ``¡Hola, Mundo!''.  En Python, se ve así:
 %
 Este es un ejemplo de una {\bf sentencia print}, aunque
 en realidad no imprime nada en papel.  Ésta muestra un resultado en la
-pantalla.  En este caso, el resultado es las palabras
+pantalla.  En este caso, el resultado es la frase
 
 \begin{verbatim}
 ¡Hola, Mundo!
@@ -980,7 +980,7 @@ operadores bit a bit en este libro, pero puedes leer sobre
 \section{Valores y tipos}
 \index{valor}
 \index{tipo}
-\index{cadena}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% \index{string} ¿también?
+\index{cadena}\index{string}
 
 Un {\bf valor} es una de las cosas básicas con las que funciona un programa,
 como una letra o un número.  Algunos valores que hemos visto hasta ahora son
@@ -1034,7 +1034,7 @@ cadenas.
 %
 Son cadenas.
 
-Cuando escribes un entero grande, puedes estar tentado a usar comas
+Cuando escribes un entero grande, podrías estar tentado a usar comas
 entre grupos de dígitos, como en {\tt 1,000,000}.  Este no es un
 {\em entero} legal en Python, pero es legal:
 
@@ -1046,7 +1046,7 @@ entre grupos de dígitos, como en {\tt 1,000,000}.  Este no es un
 ¡Eso no es lo que esperábamos en absoluto!  Python interpreta {\tt
   1,000,000} como una secuencia de enteros separados por comas.  Aprenderemos
 más sobre este tipo de secuencia más adelante.
-\index{sequence}
+\index{secuencia}
 
 %This is the first example we have seen of a semantic error: the code
 %runs without producing an error message, but it doesn't do the
@@ -1111,8 +1111,8 @@ tiene pero estructura inválida presenta.
 Cuando lees una oración en español o una sentencia en un lenguaje
 formal, tienes que descifrar la estructura
 (aunque en un lenguaje natural lo haces de manera subconsciente).  Este
-proceso se llama {\bf análisis sintáctico} (en inglés, ``parsing'').
-\index{análisis sintáctico}\index{parsing}
+proceso se llama {\bf análisis sintáctico} (en inglés, {\em parsing}).
+\index{análisis sintáctico}\index{parse}
 
 Aunque los lenguajes formales y naturales tienen muchas características en
 commún---tokens, estructura y sintaxis---existen algunas
@@ -1135,7 +1135,7 @@ redundancia.  Como consecuencia, a menudo son verbosas.  Los lenguajes formales
 son menos redundantes y más concisos.
 
 \item[literalidad:] Los lenguajes naturales están llenos de modismo y metáfora.
-Si yo digo, ``Cayó el centavo'', probablemente no hay ningún centavo ni
+Si yo digo ``Cayó el centavo'', probablemente no hay ningún centavo ni
 nada cayendo (este modismo significa que alguien entendió algo
 después de un periodo de confusión).  Los lenguajes formales
 expresan exactamente lo que dicen.
@@ -1165,9 +1165,9 @@ tokens y su estructura.
 \end{description}
 
 Los lenguajes formales son más densos
-que los lenguajes naturales, así que lleva más tiempo leerlos.  Además, la
+que los lenguajes naturales, así que requiere más tiempo leerlos.  Además, la
 estructura es importante, por lo que no siempre es mejor leer
-de arriba a abajo, de izquierda a derecha.  En su lugar, aprender a analizar
+de arriba a abajo y de izquierda a derecha.  En su lugar, aprender a analizar
 sintácticamente el programa en tu cabeza, identificar los tokens e interpretar
 la estructura.  Finalmente, los detalles importan.  Pequeños errores en
 la ortografía y puntuación, que puedes cometer
@@ -1178,13 +1178,13 @@ formal.
 \section{Depuración}
 \index{depuración}
 
-Los programadores cometen errores.  Por razones caprichosas, los errores de
-programación se llaman {\bf bugs} y el proceso de localizarlos se llama
-{\bf depuración} (en inglés, ``debugging'').
-\index{depuración}
-\index{bug}
+Los programadores cometen errores.  Por razones caprichosas, los {\ bf errores
+de programación} se llaman {\em bugs} y el proceso de localizarlos se llama
+{\bf depuración} (en inglés, {\em debugging}).
+\index{depuración}\index{debugging}
+\index{bug}\index{error de programación}
 
-La programación, y especialmente la depuración, a veces sacan emociones
+La programación, y especialmente la depuración, a veces saca emociones
 fuertes.  Si estás luchando con un error de programación difícil, podrías
 sentir ira, desánimo o vergüenza.
 
@@ -1207,7 +1207,7 @@ para comprender el panorama general.
 Tu trabajo es ser un buen jefe: encontrar maneras de aprovechar las
 fortalezas y mitigar las debilidades.  Y encontrar maneras
 de usar tus emociones para abordar el problema,
-sin dejar que tus reacciones interfieran con tu capacidad
+sin dejar que tus reacciones interfieran en tu capacidad
 de trabajar eficazmente.
 
 Aprender a depurar puede ser frustrante, pero es una habilidad valiosa
@@ -1237,9 +1237,9 @@ para que sea fácil de ejecutar por un computador; también llamado ``lenguaje d
 de un tipo de computador.
 \index{portabilidad}
 
-\item[interpreter:]  A program that reads another program and executes
-it
-\index{interpret}
+\item[intérprete:]  un programa que lee otro programa y lo
+ejecuta
+\index{intérprete}
 
 \item[prompt:] caracteres mostrador por el intérprete para indicar
 que está listo para recibir la entrada del usuario.
@@ -1266,12 +1266,12 @@ son los enteros (tipo {\tt int}), los números de coma flotante (tipo {\tt
 float}), y cadenas (tipo {\tt str}).
 \index{tipo}
 
-\item[integer:] A type that represents whole numbers.
-\index{integer}
+\item[entero:] un tipo que representa números enteros.
+\index{entero}
 
-\item[floating-point:] un tipo que representa números con partes
+\item[coma flotante:] un tipo que representa números con partes
 fraccionarias.
-\index{floating-point}
+\index{coma flotante}
 
 \item[cadena:] un tipo que representa secuencias de caracteres.
 \index{cadena}
@@ -1292,14 +1292,14 @@ un programa, análogo a una palabra en un lenguaje natural.
 \item[sintaxis:] las reglas que rigen la estructura de un programa.
 \index{sintaxis}
 
-\item[parse:] To examine a program and analyze the syntactic structure.
-\index{parse}
+\item[análisis sintáctico ({\em parse}):] examinar un programa y analizar la
+estructura sintáctica.\index{parse}\index{análisis sintáctico}
 
-\item[bug:] An error in a program.
-\index{bug}
+\item[error de programación ({\em bug}):] un error en un programa.
+\index{bug}\index{error de programación}
 
-\item[depuración:] el proceso de encontrar y corregir errores de programación.
-\index{depuración}
+\item[depuración ({\em debugging}):] el proceso de encontrar y corregir
+errores de programación.\index{depuración}\index{debugging}
 
 \end{description}
 
@@ -1315,7 +1315,7 @@ Cada vez que experimentes con una nueva característica, deberías intentar
 cometer errores.  Por ejemplo, en el programa ``¡Hola, mundo!'',
 ¿qué ocurre si omites una de las comillas?  ¿Y
 si omites ambas?  ¿Qué ocurre si escribes {\tt print} de manera incorrecta?
-\index{error message}
+\index{mensaje de error}
 
 Este tipo de experimento te ayuda a recordar lo que leíste; también
 te ayuda cuando estás programando porque logras saber lo que significan los
