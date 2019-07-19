@@ -846,7 +846,8 @@ sobre Python 2.
 
 El {\bf intérprete} de Python es un programa que lee y ejecuta
 código de Python.  Dependiendo de tu entorno, puedes iniciar el intérprete
-haciendo clic en un ícono, o escribiendo {\tt python} en una línea de comando.
+haciendo clic en un ícono, o escribiendo {\tt python} en una
+línea de comando.
 Cuando se inicia, deberías ver una salida como esta:
 \index{intérprete}
 
@@ -1009,8 +1010,8 @@ una categoría; un tipo es una categoría de valores.
 \index{class}
 
 Evidentemente, los enteros pertenecen al tipo {\tt int},
-las cadenas pertenecen a {\tt str} y los números de
-coma flotante pertenecen a {\tt float}.
+las cadenas pertenecen al tipo {\tt str} y los números de
+coma flotante pertenecen al tipo {\tt float}.
 \index{tipo}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \index{string type}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \index{type!str}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1103,15 +1104,15 @@ y $/$ son tokens legales, no puedes tener uno justo después del otro.
 Del mismo modo, en una fórmula químca el subíndice viene después del nombre
 del elemento, no antes.
 
-Esta es un@ oración en e$paño\ bien estructurada
+Esta es un@ oración en e\$paño\ bien estructurada
 con t*kens inválidos.  Esta oración todos los tokens válidos
 tiene pero estructura inválida presenta.
 
 Cuando lees una oración en español o una sentencia en un lenguaje
 formal, tienes que descifrar la estructura
 (aunque en un lenguaje natural lo haces de manera subconsciente).  Este
-proceso se llama {\bf parsing}.
-\index{parse}
+proceso se llama {\bf análisis sintáctico} (en inglés, ``parsing'').
+\index{análisis sintáctico}\index{parsing}
 
 Aunque los lenguajes formales y naturales tienen muchas características en
 commún---tokens, estructura y sintaxis---existen algunas
@@ -1122,22 +1123,22 @@ diferencias:
 
 \begin{description}
 
-\item[ambigüedad:] Natural languages are full of ambiguity, which
-people deal with by using contextual clues and other information.
-Formal languages are designed to be nearly or completely unambiguous,
-which means that any statement has exactly one meaning,
-regardless of context.
+\item[ambigüedad:] Los lenguajes naturales están llenos de ambigüedad, con la cual
+las personas lidian mediante el uso de pistas contextuales y otra información.
+Los lenguajes formales están diseñados para ser casi o completamente inequívocos,
+lo cual significa que cualquier sentencia tiene exactamente un significado,
+sin importar el contexto.
 
-\item[redundancia:] In order to make up for ambiguity and reduce
-misunderstandings, natural languages employ lots of
-redundancy.  As a result, they are often verbose.  Formal languages
-are less redundant and more concise.
+\item[redundancia:] Para compensar la ambigüedad y reducir
+los malentendidos, los lenguajes naturales emplean mucha
+redundancia.  Como consecuencia, a menudo son verbosas.  Los lenguajes formales
+son menos redundantes y más concisos.
 
-\item[literalidad:] Natural languages are full of idiom and metaphor.
-If I say, ``The penny dropped'', there is probably no penny and
-nothing dropping (this idiom means that someone understood something
-after a period of confusion).  Formal languages
-mean exactly what they say.
+\item[literalidad:] Los lenguajes naturales están llenos de modismo y metáfora.
+Si yo digo, ``Cayó el centavo'', probablemente no hay ningún centavo ni
+nada cayendo (este modismo significa que alguien entendió algo
+después de un periodo de confusión).  Los lenguajes formales
+expresan exactamente lo que dicen.
 
 \end{description}
 
@@ -1148,18 +1149,18 @@ más aún: \index{poesía} \index{prosa}
 
 \begin{description}
 
-\item[Poesía:] Words are used for their sounds as well as for
-their meaning, and the whole poem together creates an effect or
-emotional response.  Ambiguity is not only common but often
-deliberate.
+\item[Poesía:] Las palabras se usan por su sonido tanto como por
+su significado y todo el poema junto crea un efecto o
+respuesta emocional.  La ambigüedad no solo es común sino a menudo
+deliberada.
 
-\item[Prosa:] The literal meaning of words is more important,
-and the structure contributes more meaning.  Prose is more amenable to
-analysis than poetry but still often ambiguous.
+\item[Prosa:] El significado literal de las palabras es más importante
+y la estructura aporta más significado.  La prosa es más susceptible de
+análisis que la poesía pero todavía a menudo ambigua.
 
-\item[Programas:] The meaning of a computer program is unambiguous
-and literal, and can be understood entirely by analysis of the
-tokens and structure.
+\item[Programas:] El significado de un programa de computador es inequívoco
+y literal, y puede entenderse enteramente analizando los
+tokens y su estructura.
 
 \end{description}
 
@@ -1219,77 +1220,77 @@ con mis sugerencias para la depuración.  ¡Espero que ayuden!
 
 \begin{description}
 
-\item[problem solving:]  The process of formulating a problem, finding
-a solution, and expressing it.
-\index{problem solving}
+\item[resolución de problema:]  el proceso de formular un problema, encontrar
+una solución y expresarla.
+\index{resolución de problemas}
 
-\item[high-level language:]  A programming language like Python that
-is designed to be easy for humans to read and write.
-\index{high-level language}
+\item[lenguaje de alto nivel:]  un lenguaje de programación como Python que
+está diseñado para que los humanos puedan leer y escribir fácilmente.
+\index{lenguaje de alto nivel}
 
-\item[low-level language:]  A programming language that is designed
-to be easy for a computer to run; also called ``machine language'' or
-``assembly language''.
-\index{low-level language}
+\item[lenguaje de bajo nivel:]  un lenguaje de programación que está diseñado
+para que sea fácil de ejecutar por un computador; también llamado ``lenguaje de máquina'' o
+``lenguaje ensamblador''.
+\index{lenguaje de bajo nivel}
 
-\item[portability:]  A property of a program that can run on more
-than one kind of computer.
-\index{portability}
+\item[portabilidad:]  una propiedad de un programa que puede ejecutarse en más
+de un tipo de computador.
+\index{portabilidad}
 
 \item[interpreter:]  A program that reads another program and executes
 it
 \index{interpret}
 
-\item[prompt:] Characters displayed by the interpreter to indicate
-that it is ready to take input from the user.
+\item[prompt:] caracteres mostrador por el intérprete para indicar
+que está listo para recibir la entrada del usuario.
 \index{prompt}
 
-\item[program:] A set of instructions that specifies a computation.
-\index{program}
+\item[programa:] un conjunto de instrucciones que especifica una computación.
+\index{programa}
 
-\item[print statement:]  An instruction that causes the Python
-interpreter to display a value on the screen.
-\index{print statement}
-\index{statement!print}
+\item[sentencia print:]  una instrucción que hace que el intérprete de Python
+muestre un valor en la pantalla.
+\index{sentencia print}
+\index{sentencia!print}
 
-\item[operator:]  A special symbol that represents a simple computation like
-addition, multiplication, or string concatenation.
-\index{operator}
+\item[operador:]  un símbolo especial que representa una computación simple
+como suma, multiplicación o concatenación de cadenas.
+\index{operador}
 
-\item[value:]  One of the basic units of data, like a number or string,
-that a program manipulates.
-\index{value}
+\item[valor:]  una de las unidades básicas de datos, como un número o una cadena,
+que manipula un programa.
+\index{valor}
 
-\item[type:] A category of values.  The types we have seen so far
-are integers (type {\tt int}), floating-point numbers (type {\tt
-float}), and strings (type {\tt str}).
-\index{type}
+\item[tipo:] una categoría de valores.  Los tipos que hemos visto hasta ahora
+son los enteros (tipo {\tt int}), los números de coma flotante (tipo {\tt
+float}), y cadenas (tipo {\tt str}).
+\index{tipo}
 
 \item[integer:] A type that represents whole numbers.
 \index{integer}
 
-\item[floating-point:] A type that represents numbers with fractional
-parts.
+\item[floating-point:] un tipo que representa números con partes
+fraccionarias.
 \index{floating-point}
 
-\item[string:] A type that represents sequences of characters.
-\index{string}
+\item[cadena:] un tipo que representa secuencias de caracteres.
+\index{cadena}
 
-\item[natural language:]  Any one of the languages that people speak that
-evolved naturally.
-\index{natural language}
+\item[lenguaje natural:]  cualquiera de los lenguajes que hablan las personas y
+que evolucionaron de manera natural.
+\index{lenguaje natural}
 
-\item[formal language:]  Any one of the languages that people have designed
-for specific purposes, such as representing mathematical ideas or
-computer programs; all programming languages are formal languages.
-\index{formal language}
+\item[lenguaje formal:]  cualquiera de los lenguajes que las personas han diseñado
+para propósitos específicos, tales como representar ideas matemáticas o
+programas de computador; todos los lenguajes de programación son lenguajes formales.
+\index{lenguaje formal}
 
-\item[token:]  One of the basic elements of the syntactic structure of
-a program, analogous to a word in a natural language.
+\item[token:]  uno de los elementos básicos de la estructura sintáctica de
+un programa, análogo a una palabra en un lenguaje natural.
 \index{token}
 
-\item[syntax:] The rules that govern the structure of a program.
-\index{syntax}
+\item[sintaxis:] las reglas que rigen la estructura de un programa.
+\index{sintaxis}
 
 \item[parse:] To examine a program and analyze the syntactic structure.
 \index{parse}
@@ -1297,8 +1298,8 @@ a program, analogous to a word in a natural language.
 \item[bug:] An error in a program.
 \index{bug}
 
-\item[debugging:] The process of finding and correcting bugs.
-\index{debugging}
+\item[depuración:] el proceso de encontrar y corregir errores de programación.
+\index{depuración}
 
 \end{description}
 
@@ -1316,10 +1317,10 @@ cometer errores.  Por ejemplo, en el programa ``¡Hola, mundo!'',
 si omites ambas?  ¿Qué ocurre si escribes {\tt print} de manera incorrecta?
 \index{error message}
 
-This kind of experiment helps you remember what you read; it also
-helps when you are programming, because you get to know what the error
-messages mean.  It is better to make mistakes now and on purpose than
-later and accidentally.
+Este tipo de experimento te ayuda a recordar lo que leíste; también
+te ayuda cuando estás programando porque logras saber lo que significan los
+mensajes de error.  Es mejor cometer errores ahora y a propósito que
+después y de manera accidental.
 
 \begin{enumerate}
 
@@ -1362,29 +1363,6 @@ Inicia el intérprete de Python y úsalo como una calculadora.
 
 \index{calculadora}
 \index{ritmo de carrera}
-
-\end{enumerate}
-
-\end{exercise}
-
-
-\begin{exercise}
-
-Start the Python interpreter and use it as a calculator.
-
-\begin{enumerate}
-
-\item How many seconds are there in 42 minutes 42 seconds?
-
-\item How many miles are there in 10 kilometers?  Hint: there are 1.61
-  kilometers in a mile.
-
-\item If you run a 10 kilometer race in 42 minutes 42 seconds, what is
-  your average pace (time per mile in minutes and seconds)?  What is
-  your average speed in miles per hour?
-
-\index{calculator}
-\index{running pace}
 
 \end{enumerate}
 
