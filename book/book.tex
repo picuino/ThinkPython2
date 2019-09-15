@@ -819,7 +819,7 @@ Uno de los desafíos de comenzar con Python es que quizás debas
 instalar Python y software relacionado en tu computador.
 Si estás familiarizado con tu sistema operativo, y especialmente
 si te sientes cómodo con la interfaz de línea de comandos, no tendrás
-problemas instalando Python.  Pero para principiantes, puede ser
+problemas instalando Python.  Sin embargo, para principiantes puede ser
 doloroso aprender sobre administración del sistema y programación al
 mismo tiempo.
 \index{ejecutar Python}
@@ -1106,7 +1106,7 @@ del elemento, no antes.
 
 Esta es un@ oración en e\$paño\ bien estructurada
 con t*kens inválidos.  Esta oración todos los tokens válidos
-tiene pero estructura inválida presenta.
+tiene, pero estructura inválida presenta.
 
 Cuando lees una oración en español o una sentencia en un lenguaje
 formal, tienes que descifrar la estructura
@@ -1371,40 +1371,40 @@ Inicia el intérprete de Python y úsalo como una calculadora.
 
 
 
-\chapter{Variables, expressions and statements}
+\chapter{Variables, expresiones y sentencias}
 
-One of the most powerful features of a programming language is the
-ability to manipulate {\bf variables}.  A variable is a name that
-refers to a value.
+Una de las características más poderosas de un lenguaje de programaciónes la
+posibilidad de manipular {\bf variables}.  Una variable es un nombre que 
+hace referencia a un valor.
 \index{variable}
 
 
-\section{Assignment statements}
+\section{Sentencias de asignación}
 \label{variables}
-\index{assignment statement}
-\index{statement!assignment}
+\index{sentencia de asignación}
+\index{asignación!sentencia de}
 
-An {\bf assignment statement} creates a new variable and gives
-it a value:
+Una {\bf sentencia de asignación} crea una nueva variable y le da
+un valor:
 
 \begin{verbatim}
->>> message = 'And now for something completely different'
+>>> mensaje = 'Y ahora algo completamente diferente'
 >>> n = 17
 >>> pi = 3.1415926535897932
 \end{verbatim}
 %
-This example makes three assignments.  The first assigns a string
-to a new variable named {\tt message};
-the second gives the integer {\tt 17} to {\tt n}; the third
-assigns the (approximate) value of $\pi$ to {\tt pi}.
-\index{state diagram}
-\index{diagram!state}
+Este ejemplo hace tres asignaciones.  La primera asigna una cadena
+a una nueva variable llamada {\tt mensaje};
+la segunda pone al entero {\tt 17} en {\tt n}; la tercera
+asigna el valor (aproximado) de $\pi$ a {\tt pi}.
+\index{diagrama de estado}
+\index{estado!diagrama de}
 
-A common way to represent variables on paper is to write the name with
-an arrow pointing to its value.  This kind of figure is
-called a {\bf state diagram} because it shows what state each of the
-variables is in (think of it as the variable's state of mind).
-Figure~\ref{fig.state2} shows the result of the previous example.
+Una forma común de representar variables en papel es escribir el nombre con
+una flecha apuntando a su valor.  Este tipo de figura se
+llama un {\bf diagrama de estado} porque muestra en qué estado está cada una
+de las variables (piénsalo como el estado mental de la variable).
+La Figura~\ref{fig.state2} muestra el resultado del ejemplo anterior.
 
 \begin{figure}
 \centerline
@@ -1415,23 +1415,23 @@ Figure~\ref{fig.state2} shows the result of the previous example.
 
 
 
-\section{Variable names}
+\section{Nombres de variable}
 \index{variable}
 
-Programmers generally choose names for their variables that
-are meaningful---they document what the variable is used for.
+Los programadores generalmente escogen nombres para sus variables que
+sean significativos---documentan para qué se usa laa variable.
 
-Variable names can be as long as you like.  They can contain
-both letters and numbers, but they can't begin with a number.
-It is legal to use uppercase letters, but it is conventional
-to use only lower case for variables names.
+Los nombres de variable pueden ser tan largos como quieras.  Pueden contener
+tanto letras como números, pero no pueden comenzar con un número.
+Es legal usar letras mayúsculas, pero es convencional
+usar sólo minúsculas para los nombres de variables.
 
-The underscore character, \verb"_", can appear in a name.
-It is often used in names with multiple words, such as
-\verb"your_name" or \verb"airspeed_of_unladen_swallow".
-\index{underscore character}
+El guión bajo, \verb"_", puede aparecer en un nombre.
+A menudo se usa en nombres con varias palabras, tales como
+\verb"tu_nombre" o \verb"velocidad_media_de_una_golondrina_sin_carga".
+\index{guión bajo}
 
-If you give a variable an illegal name, you get a syntax error:
+Si le das un nombre ilegal a una variable, obtendrás un error de sintaxis:
 
 \begin{verbatim}
 >>> 76trombones = 'big parade'
@@ -1442,16 +1442,16 @@ SyntaxError: invalid syntax
 SyntaxError: invalid syntax
 \end{verbatim}
 %
-{\tt 76trombones} is illegal because it begins with a number.
-{\tt more@} is illegal because it contains an illegal character, {\tt
-@}.  But what's wrong with {\tt class}?
+{\tt 76trombones} es ilegal porque comienza con un número.
+{\tt more@} es ilegal porque contiene un carácter ilegal, {\tt
+@}.  Sin embargo, ¿qué tiene de malo {\tt class}?
 
-It turns out that {\tt class} is one of Python's {\bf keywords}.  The
-interpreter uses keywords to recognize the structure of the program,
-and they cannot be used as variable names.
+Resulta que {\tt class} es una de las {\bf palabras clave} de Python.  El
+intérprete usa las palabras clave para reconocer la estructura del programa
+y no se pueden usar como nombres de variable.
 \index{keyword}
 
-Python 3 has these keywords:
+Python 3 tiene estas palabras clave:
 
 \begin{verbatim}
 False      class      finally    is         return
@@ -1463,16 +1463,16 @@ assert     else       import     pass
 break      except     in         raise
 \end{verbatim}
 %
-You don't have to memorize this list.  In most development environments,
-keywords are displayed in a different color; if you try to use one
-as a variable name, you'll know.
+No tienes que memorizar esta lista.  En la mayoría de los entornos de desarrollo,
+las palabras clave se muestran con un color diferente; si intentas usar una
+como un nombre de variable, lo sabrás.
 
 
-\section{Expressions and statements}
+\section{Expresiones y sentencias}
 
-An {\bf expression} is a combination of values, variables, and operators.
-A value all by itself is considered an expression, and so is
-a variable, so the following are all legal expressions:
+Una {\bf expresión} es una combinación de valores, variables y operadores.
+Un valor por si mismo es considerado una expresión, y por consigiuente es
+una variable, así que las siguientes son todas expresiones legales:
 \index{expression}
 
 \begin{verbatim}
@@ -1484,87 +1484,87 @@ a variable, so the following are all legal expressions:
 42
 \end{verbatim}
 %
-When you type an expression at the prompt, the interpreter
-{\bf evaluates} it, which means that it finds the value of
-the expression.
-In this example, {\tt n} has the value 17 and
-{\tt n + 25} has the value 42.
-\index{evaluate}
+Cuando escribes una expresión en el prompt, el intérprete
+lo {\bf evalúa}, lo cual significa que encuentra el valor de
+la expresión.
+En este ejemplo, {\tt n} tiene el valor 17 y
+{\tt n + 25} tiene el valor 42.
+\index{evaluar}
 
-A {\bf statement} is a unit of code that has an effect, like
-creating a variable or displaying a value.
-\index{statement}
+Una {\bf sentencia} es una unidad de código que tiene un efecto, como
+crear una variable o mostrar un valor.
+\index{sentencia}
 
 \begin{verbatim}
 >>> n = 17
 >>> print(n)
 \end{verbatim}
 %
-The first line is an assignment statement that gives a value to
-{\tt n}.  The second line is a print statement that displays the
-value of {\tt n}.
+La primera línea es una sentencia de asignación que le da un valor a
+{\tt n}.  La segunda línea es una sentencia print que muestra el
+valor de {\tt n}.
 
-When you type a statement, the interpreter {\bf executes} it,
-which means that it does whatever the statement says.  In general,
-statements don't have values.
-\index{execute}
+Cuando escribes una sentencia, el intérprete la {\bf ejecuta},
+lo cual significa que hace lo que dice la sentencia.  En general,
+las sentencias no tienen valores.
+\index{ejecutar}
 
 
-\section{Script mode}
+\section{Modo Script}
 
-So far we have run Python in {\bf interactive mode}, which
-means that you interact directly with the interpreter.
-Interactive mode is a good way to get started,
-but if you are working with more than a few lines of code, it can be
-clumsy.
-\index{interactive mode}
+Hasta ahora hemos ejecutado Python en {\bf modo interactivo}, lo cual
+significa que interactúas directamente con el intérprete.
+El modo interactivo es una buena manera de comenzar,
+pero si estás trabajando con más que unas pocas líneas de código, puede ser
+algo torpe.
+\index{modo interactivo}
 
-The alternative is to save code in a file called a {\bf script} and
-then run the interpreter in {\bf script mode} to execute the script.  By
-convention, Python scripts have names that end with {\tt .py}.
+La alternativa es guardar código en un archivo llamado un {\bf script} y
+entonces usar el intérprete en {\bf modo script} para ejecutar el script.  Por
+convención, los scripts de Python tienen nombres que terminan con {\tt .py}.
 \index{script}
-\index{script mode}
+\index{modo script}
 
-If you know how to create and run a script on your computer, you
-are ready to go.  Otherwise I recommend using PythonAnywhere again.
-I have posted instructions for running in script mode at
+Si sabes cómo crear y ejecutar un script en tu computador, estás
+listo para seguir.  De lo contrario, recomiendo de nuevo usar PythonAnywhere.
+He publicado instrucciones para usarlo en modo script en
 \url{http://tinyurl.com/thinkpython2e}.
 
-Because Python provides both modes,
-you can test bits of code in interactive mode before you put them
-in a script.  But there are differences between interactive mode
-and script mode that can be confusing.
-\index{interactive mode}
-\index{script mode}
+Debido a que Python proporciona ambos modos,
+puedes probar pedazos de código en modo interactivo antes de ponerlos
+en un script.  Sin embargo, hay diferencias entre el modo interactivo
+y el modo script que pueden confundir.
+\index{modo interactivo}
+\index{modo script}
 
-For example, if you are using Python as a calculator, you might type
+Por ejemplo, si usas Python como una calculadora, puedes escribir
 
 \begin{verbatim}
->>> miles = 26.2
->>> miles * 1.61
+>>> millas = 26.2
+>>> millas * 1.61
 42.182
 \end{verbatim}
 
-The first line assigns a value to {\tt miles}, but it has no visible
-effect.  The second line is an expression, so the
-interpreter evaluates it and displays the result.  It turns out that a
-marathon is about 42 kilometers.
+La primera línea asigna un valor a {\tt millas}, pero no tiene un efecto
+visible.  La segunda línea es una expresión, por lo cual el
+intérprete la evalúa y muestra el resultado.  Resulta que una
+maratón es de unos 42 kilómetros.
 
-But if you type the same code into a script and run it, you get no
-output at all.
-In script mode an expression, all by itself, has no
-visible effect.  Python evaluates the expression, but it doesn't
-display the result.
-To display the result, you need a {\tt print} statement like this:
+Sin embargo, si escribes el mismo código dentro de un script y lo ejecutas, no obtienes
+ninguna salida.
+En modo script una expresión, por sí misma, no tiene
+efecto visible.  Python evalúa la expresión, pero no
+muestra el resultado.
+Para mostrar el resultado, necesitas una sentencia {\tt print} como esta:
 
 \begin{verbatim}
-miles = 26.2
-print(miles * 1.61)
+millas = 26.2
+print(millas * 1.61)
 \end{verbatim}
 
-This behavior can be confusing at first.
-To check your understanding, type the following statements in the
-Python interpreter and see what they do:
+Este comportamiento puede confundir al principio.
+Para comprobar tu comprensión, escribe las siguientes sentencias en el
+intérprete de Python y mira lo que hacen:
 
 \begin{verbatim}
 5
@@ -1572,10 +1572,9 @@ x = 5
 x + 1
 \end{verbatim}
 
-Now put the same statements in a script and run it.  What
-is the output?  Modify the script by transforming each
-expression into a print statement and then run it again.
-
+Ahora pon las mismas sentencias en un script y ejecútalo.  ¿Cuál
+es la salida?  Modifica el script transformando cada
+expresión en una sentencia print y luego ejecútalo de nuevo.
 
 \section{Order of operations}
 \index{order of operations}
@@ -1655,51 +1654,51 @@ that string concatenation does not?
 \index{commutativity}
 
 
-\section{Comments}
-\index{comment}
+\section{Comentarios}
+\index{comentario}
 
-As programs get bigger and more complicated, they get more difficult
-to read.  Formal languages are dense, and it is often difficult to
-look at a piece of code and figure out what it is doing, or why.
+A medida que los programas se hacen más grandes y complicados, se vuelven más difíciles
+de leer.  Los lenguajes formales son densos y a menudo es difícil
+mirar un pedazo de código y descifrar lo que hace, o por qué.
 
-For this reason, it is a good idea to add notes to your programs to explain
-in natural language what the program is doing.  These notes are called
-{\bf comments}, and they start with the \verb"#" symbol:
-
-\begin{verbatim}
-# compute the percentage of the hour that has elapsed
-percentage = (minute * 100) / 60
-\end{verbatim}
-%
-In this case, the comment appears on a line by itself.  You can also put
-comments at the end of a line:
+Por esta razón, es una buena idea añadir notas a tus programas para explicar
+en lenguaje natural lo que el programa hace.  Estas notas se llaman
+{\bf comentarios}, y comienzan con el símbolo \verb"#":
 
 \begin{verbatim}
-percentage = (minute * 100) / 60     # percentage of an hour
+# calcula el porcentaje de la hora que ha transcurrido
+porcentaje = (minuto * 100) / 60
 \end{verbatim}
 %
-Everything from the {\tt \#} to the end of the line is ignored---it
-has no effect on the execution of the program.
-
-Comments are most useful when they document non-obvious features of
-the code.  It is reasonable to assume that the reader can figure out
-{\em what} the code does; it is more useful to explain {\em why}.
-
-This comment is redundant with the code and useless:
+En este caso, el comentario aparece en una línea por sí sola.  Puedes también poner
+comentarios al final de una línea:
 
 \begin{verbatim}
-v = 5     # assign 5 to v
+porcentaje = (minuto * 100) / 60     # porcentaje de una hora
 \end{verbatim}
 %
-This comment contains useful information that is not in the code:
+Todo desde el {\tt \#} hasta el final de la línea es ignorado---no
+tiene efecto en la ejecución del programa.
+
+Los comentarios son más útiles cuando documentan características no obvias del
+código.  Es razonable asumir que el lector puede descifrar
+{\em qué} hace el código; es más útil explicar {\em por qué}.
+
+Este comentario es redundante con el código e inútil:
 
 \begin{verbatim}
-v = 5     # velocity in meters/second.
+v = 5     # asigna 5 a v
 \end{verbatim}
 %
-Good variable names can reduce the need for comments, but
-long names can make complex expressions hard to read, so there is
-a tradeoff.
+Este comentario contiene información útil que no está en el código:
+
+\begin{verbatim}
+v = 5     # velocidad en metros/segundos.
+\end{verbatim}
+%
+Los buenos nombres de variable pueden reducir la necesidad de comentarios, pero
+los nombres largos pueden hacer que las expresiones complejas sean difíciles de leer,
+así que hay una compensación.
 
 
 \section{Debugging}
