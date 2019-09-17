@@ -1615,22 +1615,22 @@ operators.  If I can't tell by looking at the expression, I use
 parentheses to make it obvious.
 
 
-\section{String operations}
+\section{Operaciones con cadenas}
 \index{string!operation}
 \index{operator!string}
 
-In general, you can't perform mathematical operations on strings, even
-if the strings look like numbers, so the following are illegal:
+En general, no puedes realizar operaciones matemáticas con cadenas, incluso
+si las cadenas parecen números, por lo que las siguientes son ilegales:
 
 \begin{verbatim}
 'chinese'-'food'    'eggs'/'easy'    'third'*'a charm'
 \end{verbatim}
 %
-But there are two exceptions, {\tt +} and {\tt *}.
+Pero hay dos excepciones, {\tt +} y {\tt *}.
 
-The {\tt +} operator performs {\bf string concatenation}, which means
-it joins the strings by linking them end-to-end.  For example:
-\index{concatenation}
+El operados {\tt +} realiza una {\bf concatenación}, lo cual significa que
+une las cadenas enlazándolas de extremo a extremo.  Por ejemplo:
+\index{concatenación}
 
 \begin{verbatim}
 >>> first = 'throat'
@@ -1639,18 +1639,18 @@ it joins the strings by linking them end-to-end.  For example:
 throatwarbler
 \end{verbatim}
 %
-The {\tt *} operator also works on strings; it performs repetition.
-For example, \verb"'Spam'*3" is \verb"'SpamSpamSpam'".  If one of the
-values is a string, the other has to be an integer.
+El operador {\tt *} también funciona en cadenas; hace repetición.
+Por ejemplo, \verb"'Spam'*3" es \verb"'SpamSpamSpam'".  Si uno de los
+valores es una cadena, el otro tiene que ser un entero.
 
-This use of {\tt +} and {\tt *} makes sense by
-analogy with addition and multiplication.  Just as {\tt 4*3} is
-equivalent to {\tt 4+4+4}, we expect \verb"'Spam'*3" to be the same as
-\verb"'Spam'+'Spam'+'Spam'", and it is.  On the other hand, there is a
-significant way in which string concatenation and repetition are
-different from integer addition and multiplication.
-Can you think of a property that addition has
-that string concatenation does not?
+Este uso de {\tt +} y {\tt *} tiene sentido por
+analogía con la suma y la multiplicación.  Tal como {\tt 4*3} es
+equivalente a {\tt 4+4+4}, esperamos que \verb"'Spam'*3" sea lo mismo que
+\verb"'Spam'+'Spam'+'Spam'", y lo es.  Por otro lado, hay una
+manera significativa en la que la concatenación y la repetición son
+diferentes de la suma y multiplicación de enteros.
+¿Puedes pensar en una propiedad que tiene la suma
+que la concatenación no?
 \index{commutativity}
 
 
@@ -1701,52 +1701,52 @@ los nombres largos pueden hacer que las expresiones complejas sean difíciles de
 así que hay una compensación.
 
 
-\section{Debugging}
-\index{debugging}
+\section{Depuración}
+\index{depuración}
 \index{bug}
 
-Three kinds of errors can occur in a program: syntax errors, runtime
-errors, and semantic errors.  It is useful
-to distinguish between them in order to track them down more quickly.
+Tres tipos de errores pueden ocurrir en un programa: errores de sintaxis, errores
+de tiempo de ejecución y errores semánticos.  Es útil
+distinguir entre ellos para rastrearlos más rápidamente.
 
 \begin{description}
 
-\item[Syntax error:] ``Syntax'' refers to the structure of a program
-  and the rules about that structure.  For example, parentheses have
-  to come in matching pairs, so {\tt (1 + 2)} is legal, but {\tt 8)}
-  is a {\bf syntax error}.  \index{syntax error} \index{error!syntax}
-  \index{error message}
-\index{syntax}
+\item[Error de sintaxis:] La ``Sintaxis'' se refiere a la estructura de un programa
+  y las reglas sobre esa estructura.  Por ejemplo, los paréntesis tienen
+  que venir en pares que coincidan, por lo que {\tt (1 + 2)} es legal, pero {\tt 8)}
+  es un {\bf error de sintaxis}.  \index{error de sintaxis} \index{sintaxis!error de}
+  \index{mensaje de error}
+\index{sintaxis}
 
-If there is a syntax error
-anywhere in your program, Python displays an error message and quits,
-and you will not be able to run the program.  During the first few
-weeks of your programming career, you might spend a lot of
-time tracking down syntax errors.  As you gain experience, you will
-make fewer errors and find them faster.
-
-
-\item[Runtime error:] The second type of error is a runtime error, so
-  called because the error does not appear until after the program has
-  started running.  These errors are also called {\bf exceptions}
-  because they usually indicate that something exceptional (and bad)
-  has happened.  \index{runtime error} \index{error!runtime}
-  \index{exception} \index{safe language} \index{language!safe}
-
-Runtime errors are rare in the simple programs you will see in the
-first few chapters, so it might be a while before you encounter one.
+Si hay un error de sintaxis
+en cualquier lugar de tu programa, Python muestra un mensaje de error y se detiene,
+y no podrás ejecutar el programa.  Durante las primeras
+semanas de tu carrera de programación, podrías pasar mucho
+tiempo rastreando errores de sintaxis.  A medida que ganes experiencia,
+cometerás menos errores y los encontrarás más rápido.
 
 
-\item[Semantic error:] The third type of error is ``semantic'', which
-  means related to meaning.  If there is a semantic error in your
-  program, it will run without generating error messages, but it will
-  not do the right thing.  It will do something else.  Specifically,
-  it will do what you told it to do.  \index{semantic error}
-  \index{error!semantic} \index{error message}
+\item[Error de tiempo de ejecución:] El segundo tipo de error es un error de tiempo de ejecución,
+  llamado así porque el error no aparece hasta después que el programa ha
+  comenzado a ejecutarse.  Estos errores también se llaman {\bf excepciones}
+  porque usualmente indican que algo excepcional (y malo)
+  ha ocurrido.  \index{error de tiempo de ejecución} \index{tiempo de ejecución!error de}
+  \index{excepción} \index{lenguaje seguro} \index{seguro!lenguaje}
 
-Identifying semantic errors can be tricky because it requires you to work
-backward by looking at the output of the program and trying to figure
-out what it is doing.
+Los errores de tiempo de ejecución son poco comunes en programas simples que verás en los
+primeros capítulos, así que puede pasar un tiempo antes que encuentres uno.
+
+
+\item[Error semántico:] El tercer tipo de error es ``semántico'', lo cual
+  significa que se relaciona con el significado.  Si hay un error semántico en tu
+  programa, se ejecutará sin generar mensajes de error, pero
+  no hará lo correcto.  Hará otra cosa.  Específicamente,
+  hará lo que le dijiste que hiciera.  \index{error semántico}
+  \index{semántico!error} \index{mensaje de error}
+
+Identificar errores semánticos puede ser complicado porque requiere que trabajes
+hacia atrás mirando la salida del programa e intentando averiguar
+lo que hace.
 
 \end{description}
 
@@ -1827,7 +1827,7 @@ other than what the programmer intended.
 \end{description}
 
 
-\section{Exercises}
+\section{Ejercicios}
 
 \begin{exercise}
 
