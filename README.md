@@ -2,6 +2,8 @@
 
 Traducción por Jorge Espinoza.
 
+`13% |######............................................| 1chapter/wk`
+
 Fecha límite para terminar: 2020-04-05
 
 ## **Avance**
