@@ -5,6 +5,8 @@
 % http://creativecommons.org/licenses/by-nc/3.0/
 %
 
+% Traducción al español por Jorge Espinoza.
+
 %\documentclass[10pt,b5paper]{book}
 \documentclass[10pt]{book}
 \usepackage[width=5.5in,height=8.5in,hmarginratio=3:2,vmarginratio=1:1]{geometry}
@@ -31,9 +33,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[bookmarks]{hyperref}
 
-\title{Think Python}
+\title{Piensa en Python}
 \author{Allen B. Downey}
-\newcommand{\thetitle}{Think Python: Cómo pensar como un informático}
+\newcommand{\thetitle}{Piensa en Python: Pensando como un informático}
 \newcommand{\theversion}{2da Edición, Versión 2.4.0}
 \newcommand{\thedate}{}
 
@@ -98,8 +100,8 @@
 \vspace*{2.0in}
 
 \begin{spacing}{3}
-{\huge Think Python}\\
-{\Large Cómo pensar como un informático}
+{\huge Piensa en Python}\\
+{\Large Pensando como un informático}
 \end{spacing}
 
 \vspace{0.25in}
@@ -129,8 +131,8 @@
 \vspace*{2.0in}
 
 \begin{spacing}{3}
-{\huge Think Python}\\
-{\Large Cómo pensar como un informático}
+{\huge Piensa en Python}\\
+{\Large Pensando como un informático}
 \end{spacing}
 
 \vspace{0.25in}
@@ -176,8 +178,8 @@ Needham MA 02492
 \end{flushleft}
 
 Se concede permiso para copiar, distribuir y/o modificar este documento
-bajo los términos de la Licencia Creative Commons Attribution-NonCommercial
-3.0 Unported, la cual está disponible en \url{http://creativecommons.org/licenses/by-nc/3.0/}.
+bajo los términos de la Creative Commons Attribution-NonCommercial
+3.0 Unported License, la cual está disponible en \url{http://creativecommons.org/licenses/by-nc/3.0/}.
 
 La forma original de este libro es en código fuente de \LaTeX\ .  Compilar esta
 fuente de \LaTeX\ tiene el efecto de generar una representación de un libro de texto
@@ -186,6 +188,10 @@ e imprimir.
 
 La fuente de \LaTeX\ para este libro está disponible en
 \url{http://www.thinkpython2.com}
+
+Título original: {\emph Think Python: How to Think Like a Computer Scientist}
+
+Traducción de Jorge Espinoza.
 
 \vspace{0.2in}
 
@@ -2227,39 +2233,39 @@ y mueve la definición de \verb"print_lyrics" a después de la definición de
 \verb"repeat_lyrics".  ¿Qué ocurre cuando ejecutas este programa?
 
 
-\section{Flow of execution}
-\index{flow of execution}
+\section{Flujo de ejecución}
+\index{flujo de ejecución}
 
-To ensure that a function is defined before its first use,
-you have to know the order statements run in, which is
-called the {\bf flow of execution}.
+Para asegurar que una función está definida antes de su primer uso,
+tienes que conocer el orden en que se ejecutan las sentencias, el cual se
+llama {\bf flujo de ejecución}.
 
-Execution always begins at the first statement of the program.
-Statements are run one at a time, in order from top to bottom.
+La ejecución siempre comienza con la primera sentencia del programa.
+Las sentencias se ejecutan una a la vez, en orden de arriba a abajo.
 
-Function definitions do not alter the flow of execution of the
-program, but remember that statements inside the function don't
-run until the function is called.
+Las definiciones de función no alteran el flujo de ejecución del
+programa, pero recuerda que las sentencias dentro de la función no
+se ejecutan hasta que la función es llamada.
 
-A function call is like a detour in the flow of execution. Instead of
-going to the next statement, the flow jumps to the body of
-the function, runs the statements there, and then comes back
-to pick up where it left off.
+Una llamada a función es como un desvío en el flujo de ejecución. En lugar de ir
+a la siguiente sentencia, el flujo salta al cuerpo de
+la función, ejecuta las sentencias que están allí y luego regresa
+para retomar donde lo había dejado.
 
-That sounds simple enough, until you remember that one function can
-call another.  While in the middle of one function, the program might
-have to run the statements in another function.  Then, while
-running that new function, the program might have to run yet
-another function!
+Eso suena bastante simple, hasta que recuerdas que una función puede
+llamar a otra.  Mientras está en el medio de una función, el programa podría
+tener que ejecutar las sentencias en otra función.  Luego, mientras
+se ejecuta esa nueva función, ¡el programa podría tener que ejecutar
+otra función más!
 
-Fortunately, Python is good at keeping track of where it is, so each
-time a function completes, the program picks up where it left off in
-the function that called it.  When it gets to the end of the program,
-it terminates.
+Afortunadamente, Python es bueno haciendo seguimiento de dónde está, así que cada
+vez que se completa una función, el programa retoma donde lo había dejado en
+la función que la llamó.  Cuando llega al final del programa,
+termina.
 
-In summary, when you read a program, you
-don't always want to read from top to bottom.  Sometimes it makes
-more sense if you follow the flow of execution.
+En resumen, cuando lees un programa,
+no siempre quieres leer de arriba a abajo.  A veces tiene
+más sentido si sigues el flujo de ejecución.
 
 
 \section{Parameters and arguments}
