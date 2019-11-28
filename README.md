@@ -1,6 +1,7 @@
 # **ThinkPython2e en español**
 
 Traducción por Jorge Espinoza.
+
 Fecha límite para terminar: 2020-04-05
 
 ## **Avance**
@@ -10,7 +11,7 @@ Fecha límite para terminar: 2020-04-05
 | 0  | Preface                                   | 99%           | 2020-04-05   |
 | 1  | The way of the program                    | **100%**      |              |
 | 2  | Variables, expressions and statements     | **100%**      |              |
-| 3  | Functions                                 | 0%            | 2019-12-01   |
+| 3  | Functions                                 | 37%           | 2019-12-01   |
 | 4  | Case study: interface design              | 0%            | 2019-12-08   |
 | 5  | Conditionals and recursion                | 0%            | 2019-12-15   |
 | 6  | Fruitful functions                        | 0%            | 2020-12-22   |
