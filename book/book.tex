@@ -76,7 +76,7 @@
 \else
 % skip the following for plastex
 
-\newtheorem{exercise}{Exercise}[chapter]
+\newtheorem{exercise}{Ejercicio}[chapter]
 
 % LATEXONLY
 
@@ -811,7 +811,7 @@ Lo creas o no, eso es prácticamente todo lo que hay.  Cada
 programa que has usado, no importa cuán complicado, está compuesto de
 instrucciones que se parecen mucho a estas.  Así que puedes pensar en
 la programación como el proceso de romper una tarea grande y compleja en
-subtareas cada vez más pequeñas hasta que cada subtarea sea lo suficientemente
+subtareas cada vez más pequeñas, hasta que cada subtarea sea lo suficientemente
 simple para hacerla con una de estas instrucciones básicas.
 
 
@@ -885,14 +885,14 @@ y ejecutar código.
 
 \section{El primer programa}
 \label{hello}
-\index{Hola, Mundo}
+\index{Hello, World}
 
 Tradicionalmente, el primer programa que escribes en un nuevo lenguaje
-de programación se llama ``¡Hola, Mundo!'' porque todo lo que hace es mostrar
-las palabras ``¡Hola, Mundo!''.  En Python, se ve así:
+de programación se llama ``Hello, World!'' porque todo lo que hace es mostrar
+las palabras ``Hello, World!''.  En Python, se ve así:
 
 \begin{verbatim}
->>> print('¡Hola, Mundo!')
+>>> print('Hello, World!')
 \end{verbatim}
 %
 Este es un ejemplo de una {\bf sentencia print}, aunque
@@ -900,7 +900,7 @@ en realidad no imprime nada en papel.  Ésta muestra un resultado en la
 pantalla.  En este caso, el resultado es la frase
 
 \begin{verbatim}
-¡Hola, Mundo!
+Hello, World!
 \end{verbatim}
 %
 Las comillas en el programa marcan el principio y el final
@@ -929,7 +929,7 @@ comenzar.
 \index{aritmético!operador}
 \index{operador aritmético}
 
-Después de ``Hola, Mundo'', el siguiente paso es la aritmética.  Python
+Después de ``Hello, World'', el siguiente paso es la aritmética.  Python
 proporciona {\bf operadores}, los cuales son símbolos especiales que
 representan computaciones como la suma y la multiplicación.
 
@@ -986,11 +986,11 @@ operadores bit a bit en este libro, pero puedes leer sobre
 
 Un {\bf valor} es una de las cosas básicas con las que funciona un programa,
 como una letra o un número.  Algunos valores que hemos visto hasta ahora son
-{\tt 2}, {\tt 42.0} y \verb"'¡Hola, Mundo!'".
+{\tt 2}, {\tt 42.0} y \verb"'Hello, World!'".
 
 Estos valores pertenecen a diferentes {\bf tipos}: {\tt 2} es un {\bf entero}
-(en inglés, {\em integer}), {\tt 42.0} es un{\bf número de coma flotante} (en
-inglés, {\em floating-point number}), y \verb"'¡Hola, Mundo!'" es una {\bf
+(en inglés, {\em integer}), {\tt 42.0} es un {\bf número de coma flotante} (en
+inglés, {\em floating-point number}), y \verb"'Hello, World!'" es una {\bf
 cadena} (en inglés, {\em string}), llamada así porque las letras que contiene están unidas.
 \index{entero}
 \index{coma flotante}
@@ -1003,7 +1003,7 @@ puede decir:
 <class 'int'>
 >>> type(42.0)
 <class 'float'>
->>> type('¡Hola, Mundo!')
+>>> type('Hello, World!')
 <class 'str'>
 \end{verbatim}
 %
@@ -1085,7 +1085,7 @@ diseñados para expresar computaciones.}
 \end{quote}
 
 Los lenguajes formales tienden a tener reglas de {\bf sintaxis} que
-gobiernen la estructura de las sentencias.
+gobiernan la estructura de las sentencias.
 Por ejemplo, en matemáticas la sentencia
 $3 + 3 = 6$ tiene sintaxis correcta, pero
 $3 + = 3 \$ 6$ no la tiene.  En química
@@ -1107,7 +1107,7 @@ y $/$ son tokens legales, no puedes tener uno justo después del otro.
 Del mismo modo, en una fórmula químca el subíndice viene después del nombre
 del elemento, no antes.
 
-Esta es un@ oración en e\$paño\ bien estructurada
+Esta es un@ oración en e\$paño$/$ bien estructurada
 con t*kens inválidos.  Esta oración todos los tokens válidos
 tiene, pero estructura inválida presenta.
 
@@ -1118,7 +1118,7 @@ proceso se llama {\bf análisis sintáctico} (en inglés, {\em parsing}).
 \index{análisis sintáctico}\index{parse}
 
 Aunque los lenguajes formales y naturales tienen muchas características en
-commún---tokens, estructura y sintaxis---existen algunas
+común---tokens, estructura y sintaxis---existen algunas
 diferencias:
 \index{ambigüedad}
 \index{redundancia}
@@ -1134,7 +1134,7 @@ sin importar el contexto.
 
 \item[redundancia:] Para compensar la ambigüedad y reducir
 los malentendidos, los lenguajes naturales emplean mucha
-redundancia.  Como consecuencia, a menudo son verbosas.  Los lenguajes formales
+redundancia.  Como consecuencia, a menudo son verbosos.  Los lenguajes formales
 son menos redundantes y más concisos.
 
 \item[literalidad:] Los lenguajes naturales están llenos de modismo y metáfora.
@@ -1168,9 +1168,9 @@ tokens y su estructura.
 \end{description}
 
 Los lenguajes formales son más densos
-que los lenguajes naturales, así que requiere más tiempo leerlos.  Además, la
+que los lenguajes naturales, así que leerlos requiere más tiempo.  Además, la
 estructura es importante, por lo que no siempre es mejor leer
-de arriba a abajo y de izquierda a derecha.  En su lugar, aprender a analizar
+de arriba a abajo y de izquierda a derecha.  En su lugar, hay que aprender a analizar
 sintácticamente el programa en tu cabeza, identificar los tokens e interpretar
 la estructura.  Finalmente, los detalles importan.  Pequeños errores en
 la ortografía y puntuación, que puedes cometer
@@ -1187,7 +1187,7 @@ de programación} se llaman {\em bugs} y el proceso de localizarlos se llama
 \index{depuración}\index{debugging}
 \index{bug}\index{error de programación}
 
-La programación, y especialmente la depuración, a veces saca emociones
+La programación, y especialmente la depuración, a veces provoca emociones
 fuertes.  Si estás luchando con un error de programación difícil, podrías
 sentir ira, desánimo o vergüenza.
 
@@ -1219,7 +1219,7 @@ de cada capítulo hay una sección, como esta,
 con mis sugerencias para la depuración.  ¡Espero que ayuden!
 
 
-\section{Glossary}
+\section{Glosario}
 
 \begin{description}
 
@@ -1241,10 +1241,10 @@ de un tipo de computador.
 \index{portabilidad}
 
 \item[intérprete:]  un programa que lee otro programa y lo
-ejecuta
+ejecuta.
 \index{intérprete}
 
-\item[prompt:] caracteres mostrador por el intérprete para indicar
+\item[prompt:] caracteres mostrados por el intérprete que indican
 que está listo para recibir la entrada del usuario.
 \index{prompt}
 
@@ -1391,13 +1391,13 @@ Una {\bf sentencia de asignación} crea una nueva variable y le da
 un valor:
 
 \begin{verbatim}
->>> mensaje = 'Y ahora algo completamente diferente'
+>>> message = 'And now for something completely different'
 >>> n = 17
 >>> pi = 3.1415926535897932
 \end{verbatim}
 %
 Este ejemplo hace tres asignaciones.  La primera asigna una cadena
-a una nueva variable llamada {\tt mensaje};
+a una nueva variable llamada {\tt message};
 la segunda pone al entero {\tt 17} en {\tt n}; la tercera
 asigna el valor (aproximado) de $\pi$ a {\tt pi}.
 \index{diagrama de estado}
@@ -1412,7 +1412,7 @@ La Figura~\ref{fig.state2} muestra el resultado del ejemplo anterior.
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/state2.pdf}}
-\caption{State diagram.}
+\caption{Diagrama de estado.}
 \label{fig.state2}
 \end{figure}
 
@@ -1422,7 +1422,7 @@ La Figura~\ref{fig.state2} muestra el resultado del ejemplo anterior.
 \index{variable}
 
 Los programadores generalmente escogen nombres para sus variables que
-sean significativos---documentan para qué se usa laa variable.
+sean significativos---documentan para qué se usa la variable.
 
 Los nombres de variable pueden ser tan largos como quieras.  Pueden contener
 tanto letras como números, pero no pueden comenzar con un número.
@@ -1431,7 +1431,7 @@ usar sólo minúsculas para los nombres de variables.
 
 El guión bajo, \verb"_", puede aparecer en un nombre.
 A menudo se usa en nombres con varias palabras, tales como
-\verb"tu_nombre" o \verb"velocidad_media_de_una_golondrina_sin_carga".
+\verb"your_name" o \verb"airspeed_of_unladen_swallow".
 \index{guión bajo}
 
 Si le das un nombre ilegal a una variable, obtendrás un error de sintaxis:
@@ -1474,7 +1474,7 @@ como un nombre de variable, lo sabrás.
 \section{Expresiones y sentencias}
 
 Una {\bf expresión} es una combinación de valores, variables y operadores.
-Un valor por si mismo es considerado una expresión, y por consigiuente es
+Un valor por sí mismo es considerado una expresión, y por consigiuente es
 una variable, así que las siguientes son todas expresiones legales:
 \index{expression}
 
@@ -1543,12 +1543,12 @@ y el modo script que pueden confundir.
 Por ejemplo, si usas Python como una calculadora, puedes escribir
 
 \begin{verbatim}
->>> millas = 26.2
->>> millas * 1.61
+>>> miles = 26.2
+>>> miles * 1.61
 42.182
 \end{verbatim}
 
-La primera línea asigna un valor a {\tt millas}, pero no tiene un efecto
+La primera línea asigna un valor a {\tt miles}, pero no tiene un efecto
 visible.  La segunda línea es una expresión, por lo cual el
 intérprete la evalúa y muestra el resultado.  Resulta que una
 maratón es de unos 42 kilómetros.
@@ -1561,8 +1561,8 @@ muestra el resultado.
 Para mostrar el resultado, necesitas una sentencia {\tt print} como esta:
 
 \begin{verbatim}
-millas = 26.2
-print(millas * 1.61)
+miles = 26.2
+print(miles * 1.61)
 \end{verbatim}
 
 Este comportamiento puede confundir al principio.
@@ -1631,7 +1631,7 @@ si las cadenas parecen números, por lo que las siguientes son ilegales:
 %
 Pero hay dos excepciones, {\tt +} y {\tt *}.
 
-El operados {\tt +} realiza una {\bf concatenación}, lo cual significa que
+El operador {\tt +} realiza una {\bf concatenación}, lo cual significa que
 une las cadenas enlazándolas de extremo a extremo.  Por ejemplo:
 \index{concatenación}
 
@@ -1669,15 +1669,15 @@ en lenguaje natural lo que el programa hace.  Estas notas se llaman
 {\bf comentarios}, y comienzan con el símbolo \verb"#":
 
 \begin{verbatim}
-# calcula el porcentaje de la hora que ha transcurrido
-porcentaje = (minuto * 100) / 60
+# compute the percentage of the hour that has elapsed
+percentage = (minute * 100) / 60
 \end{verbatim}
 %
 En este caso, el comentario aparece en una línea por sí sola.  Puedes también poner
 comentarios al final de una línea:
 
 \begin{verbatim}
-porcentaje = (minuto * 100) / 60     # porcentaje de una hora
+percentage = (minute * 100) / 60     # percentage of an hour
 \end{verbatim}
 %
 Todo desde el {\tt \#} hasta el final de la línea es ignorado---no
@@ -1690,13 +1690,13 @@ código.  Es razonable asumir que el lector puede descifrar
 Este comentario es redundante con el código e inútil:
 
 \begin{verbatim}
-v = 5     # asigna 5 a v
+v = 5     # assign 5 to v
 \end{verbatim}
 %
 Este comentario contiene información útil que no está en el código:
 
 \begin{verbatim}
-v = 5     # velocidad en metros/segundos.
+v = 5     # velocity in meters/second.
 \end{verbatim}
 %
 Los buenos nombres de variable pueden reducir la necesidad de comentarios, pero
@@ -1737,7 +1737,7 @@ cometerás menos errores y los encontrarás más rápido.
   \index{excepción} \index{lenguaje seguro} \index{seguro!lenguaje}
 
 Los errores de tiempo de ejecución son poco comunes en programas simples que verás en los
-primeros capítulos, así que puede pasar un tiempo antes que encuentres uno.
+primeros capítulos, así que puede pasar un tiempo antes de que encuentres uno.
 
 
 \item[Error semántico:] El tercer tipo de error es ``semántico'', lo cual
@@ -1754,7 +1754,7 @@ lo que hace.
 \end{description}
 
 
-\section{Glossary}
+\section{Glosario}
 
 \begin{description}
 
@@ -1881,7 +1881,7 @@ Practica usando el intérprete de Python como una calculadora:
 \end{exercise}
 
 
-\chapter{Functions}
+\chapter{Funciones}
 \label{funcchap}
 
 En el contexto de la programación, una {\bf función} es una secuencia de sentencias
