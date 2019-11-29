@@ -1908,7 +1908,7 @@ Ya hemos visto un ejemplo de una {\bf llamada a función}:
 \end{verbatim}
 %
 El nombre de la función es {\tt type}.  La expresión en paréntesis
-se llama el {\bf argumento} de la función.  El resultado, para esta
+se llama {\bf argumento} de la función.  El resultado, para esta
 función, es el tipo del argumento.
 \index{paréntesis!argumento en}
 
@@ -1970,8 +1970,8 @@ Por último, {\tt str} convierte su argumento en una cadena:
 \index{función matemática}
 \index{matemática!función}
 
-Python tiene un módulo math que proporciona la mayor parte de las
-funciones matemáticas familiares.  Un {\bf módulo} es un archivo que contiene una
+Python tiene un módulo matemático que proporciona la mayor parte de las
+funciones matemáticas conocidas.  Un {\bf módulo} es un archivo que contiene una
 colección de funciones relacionadas entre sí.
 \index{module}
 \index{module object}
@@ -1993,9 +1993,9 @@ muestras el objeto de módulo en pantalla, obtienes información sobre éste:
 %
 El objeto de módulo contiene las funciones y variables definidas en el
 módulo. Para tener acceso a una de las funciones, tienes que especificar el nombre
-del módulo y el nombre de la función, separado por un punto.
-Este formato se llama {\bf notación punto}.
-\index{notación punto}
+del módulo y el nombre de la función, separados por un punto.
+Este formato se llama {\bf notación de punto}.
+\index{notación de punto}
 
 \begin{verbatim}
 >>> ratio = signal_power / noise_power
@@ -2035,7 +2035,7 @@ de $\pi$, con precisión de alrededor de 15 digitos.
 
 Si sabes
 trigonometría, puedes verificar los resultados anteriores comparándolos con
-la raíz cuadrada de dos, dividido por dos:
+la raíz cuadrada de dos, dividida por dos:
 \index{función sqrt}
 \index{sqrt!función}
 
@@ -2121,9 +2121,9 @@ no toma ningún argumento.
 \index{dos puntos}
 
 La primera línea de la definición de función se llama {\bf encabezado} (en inglés, {\em header});
-el resto se llama {\bf cuerpo} (en inglés, {\em body}).  El encabezado tiene que terminar con el signo de dos puntos
-y el cuerpo tiene que tener sangría.  Por convención, la sangría es
-siempre cuatro espacios.  El cuerpo puede contener
+el resto se llama {\bf cuerpo} (en inglés, {\em body}).  El encabezado debe terminar con el signo de dos puntos
+y el cuerpo debe tener sangría.  Por convención, la sangría
+siempre se hace con cuatro espacios.  El cuerpo puede contener
 cualquier número de sentencias.
 
 Las cadenas en las sentencias print están encerradas en comillas
@@ -2133,7 +2133,7 @@ una comilla simple (que también es un apóstrofe) aparece en la cadena.
 
 Todas las comillas (simples y dobles)
 deben ser ``comillas rectas'', usualmente
-ubicadas al lado de Entrar en el teclado.  ``Comillas tipográficas'', como
+ubicadas cerca de Entrar en el teclado.  Las ``comillas tipográficas'', como
 las de esta oración, no son legales en Python.
 
 Si escribes una definición de función en modo interactivo, el intérprete
@@ -2236,7 +2236,7 @@ y mueve la definición de \verb"print_lyrics" a después de la definición de
 \section{Flujo de ejecución}
 \index{flujo de ejecución}
 
-Para asegurar que una función está definida antes de su primer uso,
+Para estar seguro de que una función está definida antes de su primer uso,
 tienes que conocer el orden en que se ejecutan las sentencias, el cual se
 llama {\bf flujo de ejecución}.
 
@@ -2277,7 +2277,7 @@ más sentido si sigues el flujo de ejecución.
 
 Algunas de las funciones que hemos visto requieren argumentos. Por
 ejemplo, cuando llamas a {\tt math.sin} pasas un número
-como un argumento.  Algunas funciones toman más de un argumento:
+como argumento.  Algunas funciones toman más de un argumento:
 {\tt math.pow} toma dos, la base y el exponente.
 
 Dentro de la función, los argumentos son asignados a
@@ -2292,10 +2292,10 @@ def print_twice(bruce):
 \end{verbatim}
 %
 Esta función asigna el argumento a un parámetro
-con nombre {\tt bruce}.  Cuando la función es llamada, imprime el valor del
+con nombre {\tt bruce}.  Cuando la función es llamada, ésta imprime el valor del
 parámetro (sea lo que sea) dos veces.
 
-Esta función funciona con cualquier valor que se pueda imprimir.
+Esta función puede usarse con cualquier valor que se pueda imprimir.
 
 \begin{verbatim}
 >>> print_twice('Spam')
@@ -2339,7 +2339,7 @@ Eric, the half a bee.
 Eric, the half a bee.
 \end{verbatim}
 %
-El nombre de la variable que pasamos como un argumento ({\tt michael}) no tiene
+El nombre de la variable que pasamos como argumento ({\tt michael}) no tiene
 nada que ver con el nombre del parámetro ({\tt bruce}).  No
 importa cómo se le llame al valor en su casa (en la función que llama);
 aquí en \verb"print_twice", a todos les llamamos {\tt bruce}.
@@ -2401,9 +2401,9 @@ función a la cual pertenece cada variable.
 \index{diagrama de pila}
 \index{pila!diagrama de}
 
-Cada función se representa por un {\bf marco}.  Un marco es un recuadro con
-el nombre de una función junto a éste y los parámetros y variables de
-la función dentro de éste.  El diagrama de pila para el ejemplo anterior se
+Cada función se representa por un {\bf marco}.  Un marco es un recuadro que tiene
+el nombre de una función al lado y los parámetros y variables de
+la función adentro.  El diagrama de pila para el ejemplo anterior se
 muestra en la Figura~\ref{fig.stack}.
 
 \begin{figure}
@@ -2418,7 +2418,7 @@ Los marcos se organizan en una pila que indica cuál función
 llama a cuál, y así.  En este ejemplo, \verb"print_twice"
 fue llamado por \verb"cat_twice", y \verb"cat_twice" fue llamado por
 \verb"__main__", el cual es un nombre especial para el marco más alto.  Cuando
-creas una variable afuera de cualquier función, pertenece a
+creas una variable afuera de todas las funciones, ésta pertenece a
 \verb"__main__".
 
 \index{main}
@@ -2458,53 +2458,53 @@ orden de los marcos en el diagrama de pila.  La función que se está
 ejecutando actualmente está al final.
 
 
-\section{Fruitful functions and void functions}
-\index{fruitful function}
-\index{void function}
-\index{function, fruitful}
-\index{function, void}
+\section{Funciones fructíferas y funciones nulas}
+\index{función fructífera}
+\index{función nula}
+\index{fructífera!función}
+\index{nula!función}
 
-Some of the functions we have used, such as the math functions, return
-results; for lack of a better name, I call them {\bf fruitful
-  functions}.  Other functions, like \verb"print_twice", perform an
-action but don't return a value.  They are called {\bf void
-  functions}.
+Algunas de las funciones que hemos usado, tales como las funciones matemáticas, devuelven
+resultados; por falta de un mejor nombre, las llamo {\bf funciones
+  fructíferas}.  Otras funciones, como \verb"print_twice", realizan una
+acción pero no devuelven un valor.  Son llamadas {\bf funciones
+  nulas}.
 
-When you call a fruitful function, you almost always
-want to do something with the result; for example, you might
-assign it to a variable or use it as part of an expression:
+Cuando llamas a una función fructífera, casi siempre
+quieres hacer algo con el resultado; por ejemplo, podrías
+asignarlo a una variable o usarlo como parte de una expresión:
 
 \begin{verbatim}
 x = math.cos(radians)
 golden = (math.sqrt(5) + 1) / 2
 \end{verbatim}
 %
-When you call a function in interactive mode, Python displays
-the result:
+Cuando llamas a una función en modo interactivo, Python muestra
+el resultado:
 
 \begin{verbatim}
 >>> math.sqrt(5)
 2.2360679774997898
 \end{verbatim}
 %
-But in a script, if you call a fruitful function all by itself,
-the return value is lost forever!
+Pero en un script, si llamas a una función fructífera por sí sola,
+¡el valor de retorno se pierde para siempre!
 
 \begin{verbatim}
 math.sqrt(5)
 \end{verbatim}
 %
-This script computes the square root of 5, but since it doesn't store
-or display the result, it is not very useful.
-\index{interactive mode}
-\index{script mode}
+Este script calcula la raíz cuadrada de 5, pero ya que no almacena
+ni muestra el resultado, no es muy útil.
+\index{modo interactivo}
+\index{modo script}
 
-Void functions might display something on the screen or have some
-other effect, but they don't have a return value.  If you
-assign the result to a variable, you get a special value called
+Las funciones nulas podrían mostrar algo en la pantalla o tener algún
+otro efecto, pero no tienen un valor de retorno.  Si
+asignas el resultado a una variable, obtienes un valor especial llamado
 {\tt None}.
-\index{None special value}
-\index{special value!None}
+\index{valor especial None}
+\index{None!valor especial}
 
 \begin{verbatim}
 >>> result = print_twice('Bing')
@@ -2514,24 +2514,24 @@ Bing
 None
 \end{verbatim}
 %
-The value {\tt None} is not the same as the string \verb"'None'".
-It is a special value that has its own type:
+El valor {\tt None} no es lo mismo que la cadena \verb"'None'".
+Es un valor especial que tiene su propio tipo:
 
 \begin{verbatim}
 >>> type(None)
 <class 'NoneType'>
 \end{verbatim}
 %
-The functions we have written so far are all void.  We will start
-writing fruitful functions in a few chapters.
-\index{NoneType type}
-\index{type!NoneType}
+Las funciones que hemos escrito hasta ahora son todas nulas.  Comenzaremos
+a escribir funciones fructíferas en unos capítulos más adelante.
+\index{tipo NoneType}
+\index{NoneType!tipo}
 
 
 \section{¿Por qué funciones?}
 \index{función!razones para usar una}
 
-Puede no estar claro por qué vale la pena el problema de dividir
+Puede que no esté claro por qué vale la pena el problema de dividir
 un programa en funciones.  Hay muchas razones:
 
 \begin{itemize}
@@ -2539,7 +2539,7 @@ un programa en funciones.  Hay muchas razones:
 \item Crear una nueva función te da la oportunidad de ponerle nombre a un grupo
 de sentencias, lo cual hace que tu programa sea más fácil de leer y depurar.
 
-\item Las funciones pueden hacer un programa más pequeño eliminando código
+\item Las funciones pueden hacer que un programa sea más pequeño al eliminar código
 repetitivo.  Después, si quieres hacer un cambio, sólo tienes
 que hacerlo en un lugar.
 
@@ -2595,19 +2595,19 @@ entre imprimir AAAA y BBBB.  Esto evolucionó más tarde a Linux.''
 
 \begin{description}
 
-\item[function:] A named sequence of statements that performs some
-useful operation.  Functions may or may not take arguments and may or
-may not produce a result.
+\item[función:] Una secuencia de sentencias que tiene nombre y realiza alguna
+operación útil.  Las funciones pueden o no tomar argumentos y pueden o no
+producir un resultado.
 \index{function}
 
 \item[definición de función:]  Una sentencia que crea una nueva función,
 especificando su nombre, parámetros y las sentencias que contiene.
 \index{definición de función}
 
-\item[function object:]  A value created by a function definition.
-The name of the function is a variable that refers to a function
-object.
-\index{function definition}
+\item[objeto de función:]  Un valor creado por una definición de función.
+El nombre de la función es una variable que hace referencia a un objeto
+de función.
+\index{objeto de función}
 
 \item[encabezado:] La primera línea de una definición de función.
 \index{encabezado}
@@ -2637,37 +2637,37 @@ se usa como expresión, el valor de retorno es el valor de
 la expresión.
 \index{valor de retorno}
 
-\item[fruitful function:] A function that returns a value.
-\index{fruitful function}
+\item[función fructífera:] Una función que devuelve un valor.
+\index{función fructífera}
 
-\item[void function:] A function that always returns {\tt None}.
-\index{void function}
+\item[función nula:] Una función que siempre devuelve {\tt None}.
+\index{función nula}
 
-\item[{\tt None}:]  A special value returned by void functions.
-\index{None special value}
-\index{special value!None}
+\item[{\tt None}:]  Un valor especial devuelto por funciones nulas.
+\index{valor especial None}
+\index{None!valor especial}
 
-\item[module:] A file that contains a
-collection of related functions and other definitions.
-\index{module}
+\item[módulo:] Un archivo que contiene una
+colección de funciones relacionadas entre sí y otras definiciones.
+\index{módulo}
 
-\item[import statement:] A statement that reads a module file and creates
-a module object.
-\index{import statement}
-\index{statement!import}
+\item[sentencia import:] Una sentencia que lee un archivo de módulo y crea
+un objeto de módulo.
+\index{sentencia import}
+\index{import!sentencia}
 
 \item[objeto de módulo:] Un valor creado por una sentencia {\tt import}
 que proporciona acceso a los valores definidos en el módulo.
 \index{objeto de módulo}
 
-\item[dot notation:]  The syntax for calling a function in another
-module by specifying the module name followed by a dot (period) and
-the function name.
+\item[notación de punto:]  La sintaxis para llamar a una función de otro
+módulo especificando el nombre del módulo, seguido de un punto y
+el nombre de la función.
 \index{dot notation}
 
-\item[composition:] Using an expression as part of a larger expression,
-or a statement as part of a larger statement.
-\index{composition}
+\item[composición:] Usar una expresión como parte de una expresión más grande,
+o una sentencia como parte de una sentencia más grande.
+\index{composición}
 
 \item[flujo de ejecución:]  El orden en que las sentencias se ejecutan.
 \index{flujo de ejecución}
@@ -2676,10 +2676,10 @@ or a statement as part of a larger statement.
 sus variables y los valores a los que hacen referencia.
 \index{stack diagram}
 
-\item[frame:]  A box in a stack diagram that represents a function call.
-It contains the local variables and parameters of the function.
-\index{function frame}
-\index{frame}
+\item[marco:]  Un recuadro en un diagrama de pila que representa una llamada a función.
+Contiene las variables locales y los parámetros de la función.
+\index{función!marco de}
+\index{marco}
 
 \item[rastreo:]  Una lista de las funciones que se están ejecutando,
 impresas cuando ocurre una excepción.
@@ -2797,7 +2797,7 @@ print('+', '-')
 \end{verbatim}
 %
 Por defecto, {\tt print} avanza a la siguiente línea, pero
-anular ese comportamiento y poner un espacio al final, como esto:
+puedes anular ese comportamiento y poner un espacio al final, como esto:
 
 \begin{verbatim}
 print('+', end=' ')
