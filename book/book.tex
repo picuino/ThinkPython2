@@ -2388,53 +2388,53 @@ tal cosa como {\tt bruce}.
 \index{parámetro}
 
 
-\section{Stack diagrams}
+\section{Diagramas de pila}
 \label{stackdiagram}
 \index{stack diagram}
 \index{function frame}
 \index{frame}
 
-To keep track of which variables can be used where, it is sometimes
-useful to draw a {\bf stack diagram}.  Like state diagrams, stack
-diagrams show the value of each variable, but they also show the
-function each variable belongs to.
-\index{stack diagram}
-\index{diagram!stack}
+Para hacer un seguimiento de qué variables se pueden usar en qué lugar, a veces es
+útil dibujar un {\bf diagrama de pila}.  Al igual que los diagramas de estado,
+los diagramas de pila muestran el valor de cada variable, pero también muestran la
+función a la cual pertenece cada variable.
+\index{diagrama de pila}
+\index{pila!diagrama de}
 
-Each function is represented by a {\bf frame}.  A frame is a box with
-the name of a function beside it and the parameters and variables of
-the function inside it.  The stack diagram for the previous example is
-shown in Figure~\ref{fig.stack}.
+Cada función se representa por un {\bf marco}.  Un marco es un recuadro con
+el nombre de una función junto a éste y los parámetros y variables de
+la función dentro de éste.  El diagrama de pila para el ejemplo anterior se
+muestra en la Figura~\ref{fig.stack}.
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/stack.pdf}}
-\caption{Stack diagram.}
+\caption{Diagrama de pila.}
 \label{fig.stack}
 \end{figure}
 
 
-The frames are arranged in a stack that indicates which function
-called which, and so on.  In this example, \verb"print_twice"
-was called by \verb"cat_twice", and \verb"cat_twice" was called by
-\verb"__main__", which is a special name for the topmost frame.  When
-you create a variable outside of any function, it belongs to
+Los marcos se organizan en una pila que indica cuál función
+llama a cuál, y así.  En este ejemplo, \verb"print_twice"
+fue llamado por \verb"cat_twice", y \verb"cat_twice" fue llamado por
+\verb"__main__", el cual es un nombre especial para el marco más alto.  Cuando
+creas una variable afuera de cualquier función, pertenece a
 \verb"__main__".
 
 \index{main}
 
-Each parameter refers to the same value as its corresponding
-argument.  So, {\tt part1} has the same value as
-{\tt line1}, {\tt part2} has the same value as {\tt line2},
-and {\tt bruce} has the same value as {\tt cat}.
+Cada parámetro hace referencia al mismo valor que su argumento
+correspondiente.  Así que, {\tt part1} tiene el mismo valor que
+{\tt line1}, {\tt part2} tiene el mismo valor que {\tt line2}
+y {\tt bruce} tiene el mismo valor que {\tt cat}.
 
-If an error occurs during a function call, Python prints the
-name of the function, the name of the function that called
-it, and the name of the function that called {\em that}, all the
-way back to \verb"__main__".
+Si ocurre un error durante una llamada de función, Python imprime el
+nombre de la función, el nombre de la función que la llamó
+y el nombre de la función que llamó a {\em esa}, todo el
+camino de vuelta a \verb"__main__".
 
-For example, if you try to access {\tt cat} from within
-\verb"print_twice", you get a {\tt NameError}:
+Por ejemplo, si intentas acceder a {\tt cat} desde adentro de
+\verb"print_twice", obtienes un {\tt NameError}:
 
 \begin{verbatim}
 Traceback (innermost last):
@@ -2447,15 +2447,15 @@ Traceback (innermost last):
 NameError: name 'cat' is not defined
 \end{verbatim}
 %
-This list of functions is called a {\bf traceback}.  It tells you what
-program file the error occurred in, and what line, and what functions
-were executing at the time.  It also shows the line of code that
-caused the error.
-\index{traceback}
+Esta lista de funciones se llama {\bf rastreo} (en inglés, {\em traceback}).  Te dice en qué
+archivo de programa ocurrió el error, y en qué línea, y qué funciones
+se estaban ejecutando en ese momento.  Además te muestra la línea de código que
+causó el error.
+\index{traceback}\index{rastreo}
 
-The order of the functions in the traceback is the same as the
-order of the frames in the stack diagram.  The function that is
-currently running is at the bottom.
+El orden de las funciones en el rastreo es el mismo que el
+orden de los marcos en el diagrama de pila.  La función que se está
+ejecutando actualmente está al final.
 
 
 \section{Fruitful functions and void functions}
@@ -2600,42 +2600,42 @@ useful operation.  Functions may or may not take arguments and may or
 may not produce a result.
 \index{function}
 
-\item[function definition:]  A statement that creates a new function,
-specifying its name, parameters, and the statements it contains.
-\index{function definition}
+\item[definición de función:]  Una sentencia que crea una nueva función,
+especificando su nombre, parámetros y las sentencias que contiene.
+\index{definición de función}
 
 \item[function object:]  A value created by a function definition.
 The name of the function is a variable that refers to a function
 object.
 \index{function definition}
 
-\item[header:] The first line of a function definition.
-\index{header}
+\item[encabezado:] La primera línea de una definición de función.
+\index{encabezado}
 
-\item[body:] The sequence of statements inside a function definition.
-\index{body}
+\item[cuerpo:] La secuencia de sentencias dentro de una definición de función.
+\index{cuerpo}
 
-\item[parameter:] A name used inside a function to refer to the value
-passed as an argument.
-\index{parameter}
+\item[parámetro:] Un nombre usado dentro de una función para referirse al valor
+pasado como argumento.
+\index{parámetro}
 
-\item[function call:] A statement that runs a function. It
-consists of the function name followed by an argument list in
-parentheses.
-\index{function call}
+\item[llamada a función:] Una sentencia que ejecuta una función. Ésta
+consiste en el nombre de la función seguido de una lista de argumentos en
+paréntesis.
+\index{llamada a función}
 
-\item[argument:]  A value provided to a function when the function is called.
-This value is assigned to the corresponding parameter in the function.
-\index{argument}
+\item[argumento:]  Un valor proporcionado a la función cuando la función es llamada.
+Este valor es asignado al parámetro correspondiente en la función.
+\index{argumento}
 
-\item[local variable:]  A variable defined inside a function.  A local
-variable can only be used inside its function.
-\index{local variable}
+\item[variable local:]  Una variable definida dentro de una función. Una variable
+local sólo puede usarse dentro de su función.
+\index{variable local}
 
-\item[return value:]  The result of a function.  If a function call
-is used as an expression, the return value is the value of
-the expression.
-\index{return value}
+\item[valor de retorno:]  El resultado de una función.  Si una llamada a función
+se usa como expresión, el valor de retorno es el valor de
+la expresión.
+\index{valor de retorno}
 
 \item[fruitful function:] A function that returns a value.
 \index{fruitful function}
@@ -2656,9 +2656,9 @@ a module object.
 \index{import statement}
 \index{statement!import}
 
-\item[module object:] A value created by an {\tt import} statement
-that provides access to the values defined in a module.
-\index{module}
+\item[objeto de módulo:] Un valor creado por una sentencia {\tt import}
+que proporciona acceso a los valores definidos en el módulo.
+\index{objeto de módulo}
 
 \item[dot notation:]  The syntax for calling a function in another
 module by specifying the module name followed by a dot (period) and
@@ -2669,11 +2669,11 @@ the function name.
 or a statement as part of a larger statement.
 \index{composition}
 
-\item[flow of execution:]  The order statements run in.
-\index{flow of execution}
+\item[flujo de ejecución:]  El orden en que las sentencias se ejecutan.
+\index{flujo de ejecución}
 
-\item[stack diagram:]  A graphical representation of a stack of functions,
-their variables, and the values they refer to.
+\item[diagrama de pila:]  Una representación de una pila de funciones,
+sus variables y los valores a los que hacen referencia.
 \index{stack diagram}
 
 \item[frame:]  A box in a stack diagram that represents a function call.
@@ -2681,9 +2681,9 @@ It contains the local variables and parameters of the function.
 \index{function frame}
 \index{frame}
 
-\item[traceback:]  A list of the functions that are executing,
-printed when an exception occurs.
-\index{traceback}
+\item[rastreo:]  Una lista de las funciones que se están ejecutando,
+impresas cuando ocurre una excepción.
+\index{rastreo}
 
 
 \end{description}
@@ -2705,20 +2705,20 @@ de la pantalla.
                                                                  monty
 \end{verbatim}
 
-Hint: Use string concatenation and repetition.  Also,
-Python provides a built-in function called {\tt len} that
-returns the length of a string, so the value of \verb"len('monty')" is 5.
+Pista: usa la repetición y concatenación de cadenas.  Además,
+Python proporciona una función incorporada llamada {\tt len} que
+devuelve la longitud de una cadena, por lo que el valor de \verb"len('monty')" es 5.
 
 \end{exercise}
 
 
 \begin{exercise}
-\index{function object}
-\index{object!function}
+\index{objeto de función}
+\index{función!objeto de}
 
-A function object is a value you can assign to a variable
-or pass as an argument.  For example, \verb"do_twice" is a function
-that takes a function object as an argument and calls it twice:
+Un objeto de función es un valor que puedes asignar a una variable o
+pasarlo como argumento.  Por ejemplo, \verb"do_twice" es una función
+que toma un objeto de función como argumento y lo llama dos veces:
 
 \begin{verbatim}
 def do_twice(f):
@@ -2726,8 +2726,8 @@ def do_twice(f):
     f()
 \end{verbatim}
 
-Here's an example that uses \verb"do_twice" to call a function
-named \verb"print_spam" twice.
+Aquí hay un ejemplo que usa \verb"do_twice" para llamar a una función
+con nombre \verb"print_spam" dos veces.
 
 \begin{verbatim}
 def print_spam():
@@ -2738,23 +2738,23 @@ do_twice(print_spam)
 
 \begin{enumerate}
 
-\item Type this example into a script and test it.
+\item Escribe este ejemplo en un script y pruébalo.
 
-\item Modify \verb"do_twice" so that it takes two arguments, a
-function object and a value, and calls the function twice,
-passing the value as an argument.
+\item Modifica \verb"do_twice" para que tome dos argumentos, un
+objeto de función y un valor, y llame a la función dos veces,
+pasando al valor como argumento.
 
-\item Copy the definition of
-\verb"print_twice" from earlier in this chapter to your script.
+\item Copia la definición de
+\verb"print_twice", presentada previamente en este capítulo, a tu script.
 
-\item Use the modified version of \verb"do_twice" to call
-\verb"print_twice" twice, passing \verb"'spam'" as an argument.
+\item Usa la versión modificada de \verb"do_twice" para llamar a
+\verb"print_twice" dos veces, pasando a \verb"'spam'" como argumento.
 
-\item Define a new function called
-\verb"do_four" that takes a function object and a value
-and calls the function four times, passing the value
-as a parameter.  There should be only
-two statements in the body of this function, not four.
+\item Define una nueva función llamada
+\verb"do_four" que tome un objeto de función y un valor
+y llame a la función cuatro veces, pasando al valor
+como parámetro.  Debería haber sólo
+dos sentencias en el cuerpo de esta función, no cuatro.
 
 \end{enumerate}
 
@@ -2766,14 +2766,14 @@ Solution: \url{http://thinkpython2.com/code/do_four.py}.
 
 \begin{exercise}
 
-Note: This exercise should be
-done using only the statements and other features we have learned so
-far.
+Nota: Este ejercicio debería hacerse
+usando sólo las sentencias y otras características que hemos aprendido hasta
+ahora.
 
 \begin{enumerate}
 
-\item Write a function that draws a grid like the following:
-\index{grid}
+\item Escribe una función que dibuje una cuadrícula como la siguiente:
+\index{cuadrícula}
 
 \begin{verbatim}
 + - - - - + - - - - +
@@ -2789,31 +2789,31 @@ far.
 + - - - - + - - - - +
 \end{verbatim}
 %
-Hint: to print more than one value on a line, you can print
-a comma-separated sequence of values:
+Pista: para imprimir más de un valor en una línea, puedes imprimir
+una secuencia de valores separada por comas:
 
 \begin{verbatim}
 print('+', '-')
 \end{verbatim}
 %
-By default, {\tt print} advances to the next line, but you
-can override that behavior and put a space at the end, like this:
+Por defecto, {\tt print} avanza a la siguiente línea, pero
+anular ese comportamiento y poner un espacio al final, como esto:
 
 \begin{verbatim}
 print('+', end=' ')
 print('-')
 \end{verbatim}
 %
-The output of these statements is \verb"'+ -'" on the same line.
-The output from the next print statement would begin on the next line.
+La salida de estas sentencias es \verb"'+ -'" en la misma línea.
+La salida desde la siguiente sentencia print debería comenzar en la siguiente línea.
 
-\item Write a function that draws a similar grid
-with four rows and four columns.
+\item Escribe una función que dibuje una cuadrícula similar
+con cuatro filas y cuatro columnas.
 
 \end{enumerate}
 
-Solution: \url{http://thinkpython2.com/code/grid.py}.
-Credit: This exercise is based on an exercise in Oualline, {\em
+Solución: \url{http://thinkpython2.com/code/grid.py}.
+Crédito: este ejercicio está basado en un ejercicio de Oualline, {\em
     Practical C Programming, Third Edition}, O'Reilly Media, 1997.
 
 \end{exercise}
