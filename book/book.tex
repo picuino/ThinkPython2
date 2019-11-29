@@ -189,7 +189,7 @@ e imprimir.
 La fuente de \LaTeX\ para este libro está disponible en
 \url{http://www.thinkpython2.com}
 
-Título original: {\emph Think Python: How to Think Like a Computer Scientist}
+Título original: {\em Think Python: How to Think Like a Computer Scientist}
 
 Traducción de Jorge Espinoza.
 
@@ -1187,7 +1187,7 @@ formal.
 \section{Depuración}
 \index{depuración}
 
-Los programadores cometen errores.  Por razones caprichosas, los {\ bf errores
+Los programadores cometen errores.  Por razones caprichosas, los {\bf errores
 de programación} se llaman {\em bugs} y el proceso de localizarlos se llama
 {\bf depuración} (en inglés, {\em debugging}).
 \index{depuración}\index{debugging}
@@ -1896,7 +1896,7 @@ especificas el nombre y la secuencia de sentencias.  Después, puedes
 ``llamar'' a la función por su nombre.
 \index{función}
 
-\section{LLamadas a funciones}
+\section{Llamadas a funciones}
 \label{functionchap}
 \index{llamada a función}
 
@@ -2120,8 +2120,8 @@ no toma ningún argumento.
 \index{sangría}
 \index{dos puntos}
 
-La primera línea de la definición de función se llama {\bf encabezado} (en inglés, {\emph header});
-el resto se llama {\bf cuerpo} (en inglés, {\emph body}).  El encabezado tiene que terminar con el signo de dos puntos
+La primera línea de la definición de función se llama {\bf encabezado} (en inglés, {\em header});
+el resto se llama {\bf cuerpo} (en inglés, {\em body}).  El encabezado tiene que terminar con el signo de dos puntos
 y el cuerpo tiene que tener sangría.  Por convención, la sangría es
 siempre cuatro espacios.  El cuerpo puede contener
 cualquier número de sentencias.
@@ -2137,7 +2137,7 @@ ubicadas al lado de Entrar en el teclado.  ``Comillas tipográficas'', como
 las de esta oración, no son legales en Python.
 
 Si escribes una definición de función en modo interactivo, el intérprete
-muestra puntos ({\tt ...}) que te hacen saber que la definición
+imprime puntos ({\tt ...}) que te hacen saber que la definición
 no está completa:
 \index{ellipses}
 
@@ -2268,22 +2268,22 @@ no siempre quieres leer de arriba a abajo.  A veces tiene
 más sentido si sigues el flujo de ejecución.
 
 
-\section{Parameters and arguments}
+\section{Parámetros y argumentos}
 \label{parameters}
-\index{parameter}
-\index{function parameter}
-\index{argument}
-\index{function argument}
+\index{parámetro}
+\index{función!parámetro de}
+\index{argumento}
+\index{función!argumento de}
 
-Some of the functions we have seen require arguments.  For
-example, when you call {\tt math.sin} you pass a number
-as an argument.  Some functions take more than one argument:
-{\tt math.pow} takes two, the base and the exponent.
+Algunas de las funciones que hemos visto requieren argumentos. Por
+ejemplo, cuando llamas a {\tt math.sin} pasas un número
+como un argumento.  Algunas funciones toman más de un argumento:
+{\tt math.pow} toma dos, la base y el exponente.
 
-Inside the function, the arguments are assigned to
-variables called {\bf parameters}.  Here is a definition for
-a function that takes an argument:
-\index{parentheses!parameters in}
+Dentro de la función, los argumentos son asignados a
+variables llamadas {\bf parámetros}.  Aquí hay una definición para
+una función que toma un argumento:
+\index{paréntesis!parámetros en}
 
 \begin{verbatim}
 def print_twice(bruce):
@@ -2291,11 +2291,11 @@ def print_twice(bruce):
     print(bruce)
 \end{verbatim}
 %
-This function assigns the argument to a parameter
-named {\tt bruce}.  When the function is called, it prints the value of
-the parameter (whatever it is) twice.
+Esta función asigna el argumento a un parámetro
+con nombre {\tt bruce}.  Cuando la función es llamada, imprime el valor del
+parámetro (sea lo que sea) dos veces.
 
-This function works with any value that can be printed.
+Esta función funciona con cualquier valor que se pueda imprimir.
 
 \begin{verbatim}
 >>> print_twice('Spam')
@@ -2309,12 +2309,12 @@ Spam
 3.14159265359
 \end{verbatim}
 %
-The same rules of composition that apply to built-in functions also
-apply to programmer-defined functions, so we can use any kind of expression
-as an argument for \verb"print_twice":
-\index{composition}
-\index{programmer-defined function}
-\index{function!programmer defined}
+Las mismas reglas de composición que se aplican a las funciones incorporadas también
+se aplican a las funciones definidas por el programador, así que podemos usar cualquier tipo de expresión
+como un argumento para \verb"print_twice":
+\index{composición}
+\index{función definida por el programador}
+\index{programador!función definida por el}
 
 \begin{verbatim}
 >>> print_twice('Spam '*4)
@@ -2325,12 +2325,12 @@ Spam Spam Spam Spam
 -1.0
 \end{verbatim}
 %
-The argument is evaluated before the function is called, so
-in the examples the expressions \verb"'Spam '*4" and
-{\tt math.cos(math.pi)} are only evaluated once.
-\index{argument}
+El argumento es evaluado antes de que se llame a la función, por lo que
+en los ejemplos las expresiones \verb"'Spam '*4" y
+{\tt math.cos(math.pi)} son evaluadas una sola vez.
+\index{argumento}
 
-You can also use a variable as an argument:
+También puedes usar una variable como un argumento:
 
 \begin{verbatim}
 >>> michael = 'Eric, the half a bee.'
@@ -2339,20 +2339,20 @@ Eric, the half a bee.
 Eric, the half a bee.
 \end{verbatim}
 %
-The name of the variable we pass as an argument ({\tt michael}) has
-nothing to do with the name of the parameter ({\tt bruce}).  It
-doesn't matter what the value was called back home (in the caller);
-here in \verb"print_twice", we call everybody {\tt bruce}.
+El nombre de la variable que pasamos como un argumento ({\tt michael}) no tiene
+nada que ver con el nombre del parámetro ({\tt bruce}).  No
+importa cómo se le llame al valor en su casa (en la función que llama);
+aquí en \verb"print_twice", a todos les llamamos {\tt bruce}.
 
 
-\section{Variables and parameters are local}
-\index{local variable}
-\index{variable!local}
+\section{Las variables y los parámetros son locales}
+\index{variable local}
+\index{local!variable}
 
-When you create a variable inside a function, it is {\bf local},
-which means that it only
-exists inside the function.  For example:
-\index{parentheses!parameters in}
+Cuando creas una variable dentro de una función, ésta es {\bf local},
+lo cual significa que existe
+solamente dentro de la función.  Por ejemplo:
+\index{paréntesis!parámetros en}
 
 \begin{verbatim}
 def cat_twice(part1, part2):
@@ -2360,8 +2360,8 @@ def cat_twice(part1, part2):
     print_twice(cat)
 \end{verbatim}
 %
-This function takes two arguments, concatenates them, and prints
-the result twice.  Here is an example that uses it:
+Esta función toma dos argumentos, los concatena e imprime
+el resultado dos veces.  Aquí hay un ejemplo que la usa:
 \index{concatenation}
 
 \begin{verbatim}
@@ -2372,20 +2372,20 @@ Bing tiddle tiddle bang.
 Bing tiddle tiddle bang.
 \end{verbatim}
 %
-When \verb"cat_twice" terminates, the variable {\tt cat}
-is destroyed.  If we try to print it, we get an exception:
+Cuando \verb"cat_twice" termina, la variable {\tt cat}
+se destruye.  Si intentamos imprimirla, obtenemos una excepción:
 \index{NameError}
-\index{exception!NameError}
+\index{excepción NameError}
 
 \begin{verbatim}
 >>> print(cat)
 NameError: name 'cat' is not defined
 \end{verbatim}
 %
-Parameters are also local.
-For example, outside \verb"print_twice", there is no
-such thing as {\tt bruce}.
-\index{parameter}
+Los parámetros también son locales.
+Por ejemplo, afuera de \verb"print_twice", no hay
+tal cosa como {\tt bruce}.
+\index{parámetro}
 
 
 \section{Stack diagrams}
@@ -2528,70 +2528,70 @@ writing fruitful functions in a few chapters.
 \index{type!NoneType}
 
 
-\section{Why functions?}
-\index{function, reasons for}
+\section{¿Por qué funciones?}
+\index{función!razones para usar una}
 
-It may not be clear why it is worth the trouble to divide
-a program into functions.  There are several reasons:
+Puede no estar claro por qué vale la pena el problema de dividir
+un programa en funciones.  Hay muchas razones:
 
 \begin{itemize}
 
-\item Creating a new function gives you an opportunity to name a group
-of statements, which makes your program easier to read and debug.
+\item Crear una nueva función te da la oportunidad de ponerle nombre a un grupo
+de sentencias, lo cual hace que tu programa sea más fácil de leer y depurar.
 
-\item Functions can make a program smaller by eliminating repetitive
-code.  Later, if you make a change, you only have
-to make it in one place.
+\item Las funciones pueden hacer un programa más pequeño eliminando código
+repetitivo.  Después, si quieres hacer un cambio, sólo tienes
+que hacerlo en un lugar.
 
-\item Dividing a long program into functions allows you to debug the
-parts one at a time and then assemble them into a working whole.
+\item Dividir un programa largo en funciones te permite depurar las
+partes una a la vez y luego reunirlas en un todo funcional.
 
-\item Well-designed functions are often useful for many programs.
-Once you write and debug one, you can reuse it.
+\item Las funciones bien diseñadas son a menudo útiles para muchos programas.
+Una vez que escribes y depuras una, la puedes reusar.
 
 \end{itemize}
 
 
-\section{Debugging}
+\section{Depuración}
 
-One of the most important skills you will acquire is debugging.
-Although it can be frustrating, debugging is one of the most
-intellectually rich, challenging, and interesting parts of
-programming.
-\index{experimental debugging}
-\index{debugging!experimental}
+Una de las habilidades más importantes que adquirirás es la depuración.
+Aunque puede ser frustrante, la depuración es una de las partes más
+intelectualmente ricas, desafiantes e interesantes de
+la programación.
+\index{depuración experimental}
+\index{experimental!depuración}
 
-In some ways debugging is like detective work.  You are confronted
-with clues and you have to infer the processes and events that led
-to the results you see.
+En algunas formas la depuración es como un trabajo de detective.  Te enfrentas
+a pistas y tienes que inferir los procesos y eventos que te guían
+a los resultados que ves.
 
-Debugging is also like an experimental science.  Once you have an idea
-about what is going wrong, you modify your program and try again.  If
-your hypothesis was correct, you can predict the result of the
-modification, and you take a step closer to a working program.  If
-your hypothesis was wrong, you have to come up with a new one.  As
-Sherlock Holmes pointed out, ``When you have eliminated the
-impossible, whatever remains, however improbable, must be the truth.''
-(A. Conan Doyle, {\em The Sign of Four})
+La depuración es también como una ciencia experimental.  Una vez que tienes una idea
+sobre qué va mal, modificas tu programa e intentas de nuevo.  Si
+tu hipótesis era correcta, puedes predecir el resultado de la
+modificación y das un paso más cerca hacia un programa que funcione.  Si
+tu hipótesis era incorrecta, tienes que inventar una nueva.  Como
+señaló Sherlock Holmes, ``Una vez descartado lo
+imposible, lo que queda, por improbable que parezca, debe ser la verdad.''
+(A. Conan Doyle, {\em El signo de los cuatro})
 \index{Holmes, Sherlock}
 \index{Doyle, Arthur Conan}
 
-For some people, programming and debugging are the same thing.  That
-is, programming is the process of gradually debugging a program until
-it does what you want.  The idea is that you should start with a
-working program and make small modifications,
-debugging them as you go.
+Para algunas personas, programar y depurar son lo mismo.  Es
+decir, programar es el proceso de depurar gradualmente un programa hasta que
+haga lo que tú quieres.  La idea es que deberías comenzar con un
+programa que funcione y hacer pequeñas modificaciones,
+depurándolas a medida que avanzas.
 
-For example, Linux is an operating system that contains millions of
-lines of code, but it started out as a simple program Linus Torvalds
-used to explore the Intel 80386 chip.  According to Larry Greenfield,
-``One of Linus's earlier projects was a program that would switch
-between printing AAAA and BBBB.  This later evolved to Linux.''
+Por ejemplo, Linux es un sistema operativo que contiene millones de
+líneas de código, pero partió como un programa simple que Linus Torvalds
+usaba para explorar el chip Intel 80386.  Según Larry Greenfield,
+``Uno de los proyectos anteriores de Linus era un programa que cambiaría
+entre imprimir AAAA y BBBB.  Esto evolucionó más tarde a Linux.''
 ({\em The Linux Users' Guide} Beta Version 1).
 \index{Linux}
 
 
-\section{Glossary}
+\section{Glosario}
 
 \begin{description}
 
@@ -2689,16 +2689,16 @@ printed when an exception occurs.
 \end{description}
 
 
-\section{Exercises}
+\section{Ejercicios}
 
 \begin{exercise}
-\index{len function}
-\index{function!len}
+\index{función len}
+\index{len!función}
 
-Write a function named \verb"right_justify" that takes a string
-named {\tt s} as a parameter and prints the string with enough
-leading spaces so that the last letter of the string is in column 70
-of the display.
+Escribe una función con nombre \verb"right_justify" que tome una cadena
+con nombre {\tt s} como parámetro e imprima la cadena con suficientes
+espacios al inicio de tal manera que la última letra de la cadena esté en la columna 70
+de la pantalla.
 
 \begin{verbatim}
 >>> right_justify('monty')
