@@ -2822,43 +2822,43 @@ Crédito: este ejercicio está basado en un ejercicio de Oualline, {\em
 
 
 
-\chapter{Case study: interface design}
+\chapter{Estudio de caso: diseño de interfaz}
 \label{turtlechap}
 
-This chapter presents a case study that demonstrates a process for
-designing functions that work together.
+Este capítulo presenta un estudio de caso que demuestra un proceso para
+diseñar funciones que trabajen juntas.
 
-It introduces the {\tt turtle} module, which allows you to
-create images using turtle graphics.  The {\tt turtle} module is
-included in most Python installations, but if you are running Python
-using PythonAnywhere, you won't be able to run the turtle examples (at
-least you couldn't when I wrote this).
+Se presenta el módulo {\tt turtle}, el cual te permite
+crear imágenes usando gráficas tortuga.  El módulo {\tt turtle}
+está incluido en la mayoría de las instalaciones de Python, pero si estás ejecutando Python
+usando PythonAnywhere, no podrás ejecutar los ejemplos de tortuga (al
+menos no podías cuando escribí esto).
 
-If you have already installed Python on your computer, you should
-be able to run the examples.  Otherwise, now is a good time
-to install.  I have posted instructions at
+Si ya has instalado Python en tu computador, deberías
+poder ejecutar los ejemplos.  Si no, ahora es un buen momento
+para instalarlo.  He publicado instrucciones en
 \url{http://tinyurl.com/thinkpython2e}.
 
-Code examples from this chapter are available from
+Los códigos de ejemplo de este capítulo están disponibles en
 \url{http://thinkpython2.com/code/polygon.py}.
 
 
-\section{The turtle module}
+\section{El módulo turtle}
 \label{turtle}
 
-To check whether you have the {\tt turtle} module, open the Python
-interpreter and type
+Para verificar si tienes el módulo {\tt turtle}, abre el intérprete de Python
+y escribe
 
 \begin{verbatim}
 >>> import turtle
 >>> bob = turtle.Turtle()
 \end{verbatim}
 
-When you run this code, it should create a new window
-with small arrow that represents the turtle.  Close the window.
+Cuando ejecutes este código, debería crearse una nueva ventana
+con una flecha pequeña que representa la tortuga.  Cierra la ventana.
 
-Create a file named {\tt mypolygon.py} and type in the following
-code:
+Crea un archivo con nombre {\tt mypolygon.py} y escribe en él el siguiente
+código:
 
 \begin{verbatim}
 import turtle
@@ -2867,39 +2867,39 @@ print(bob)
 turtle.mainloop()
 \end{verbatim}
 %
-The {\tt turtle} module (with a lowercase 't') provides a function
-called {\tt Turtle} (with an uppercase 'T') that creates a Turtle
-object, which we assign to a variable named {\tt bob}.
-Printing {\tt bob} displays something like:
+El módulo {\tt turtle} (con 't' minúscula) proporciona una función
+llamada {\tt Turtle} (con 'T' mayúscula) que crea un objeto Turtle,
+el cual asignamos a una variable con nombre {\tt bob}.
+Al imprimir {\tt bob} se muestra algo como:
 
 \begin{verbatim}
 <turtle.Turtle object at 0xb7bfbf4c>
 \end{verbatim}
 %
-This means that {\tt bob} refers to an object with type
+Esto significa que {\tt bob} hace referencia a un objeto con tipo
 {\tt Turtle}
-as defined in module {\tt turtle}.
+como se define en el módulo {\tt turtle}.
 
-\verb"mainloop" tells the window to wait for the user
-to do something, although in this case there's not much for
-the user to do except close the window.
+\verb"mainloop" le dice a la ventana que espere a que el usuario
+haga algo, aunque en este caso no hay mucho que pueda hacer
+el usuario excepto cerrar la ventana.
 
-Once you create a Turtle, you can call a {\bf method} to move it
-around the window.  A method is similar to a function, but it
-uses slightly different syntax.  For example, to move the turtle
-forward:
+Una vez que creas un Turtle, puedes llamar a un {\bf método} para moverlo
+alrededor de la ventana.  Un método es similar a una función, pero
+éste usa una sintaxis un poco diferente.  Por ejemplo, para mover la tortuga
+adelante:
 
 \begin{verbatim}
 bob.fd(100)
 \end{verbatim}
 %
-The method, {\tt fd}, is associated with the turtle
-object we're calling {\tt bob}.
-Calling a method is like making a request: you are asking {\tt bob}
-to move forward.
+El método, {\tt fd}, está asociado con el objeto
+tortuga que llamamos {\tt bob}.
+Llamar a un método es como hacer una solicitud: le estás pidiendo a {\tt bob}
+que se mueva hacia adelante.
 
-The argument of {\tt fd} is a distance in pixels, so the actual
-size depends on your display.
+El argumento de {\tt fd} es una distancia en pixeles, por lo que el tamaño
+real depende de tu pantalla.
 
 Other methods you can call on a Turtle are {\tt bk} to move
 backward, {\tt lt} for left turn, and {\tt rt} right turn.  The
