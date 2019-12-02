@@ -3,9 +3,9 @@ ThinkPython2e en español
 
 Traducción por Jorge Espinoza.
 
-`17% |########..........................................| 1chapter/wk`
+`18% |#########.........................................|`
 
-Fecha límite para terminar: 2020-04-05
+Fecha límite: 2020-04-05
 
 ## **Avance**
 
@@ -15,12 +15,12 @@ Fecha límite para terminar: 2020-04-05
 | 1  | The way of the program                    | **100%**      |              |
 | 2  | Variables, expressions and statements     | **100%**      |              |
 | 3  | Functions                                 | **100%**      |              |
-| 4  | Case study: interface design              | 24%           | 2019-12-08   |
-| 5  | Conditionals and recursion                | 0%            | 2019-12-15   |
-| 6  | Fruitful functions                        | 0%            | 2020-12-22   |
-| 7  | Iteration                                 | 0%            | 2020-12-29   |
-| 8  | Strings                                   | 0%            | 2020-01-05   |
-| 9  | Case study: word play                     | 0%            | 2020-01-12   |
+| 4  | Case study: interface design              | 45%           | 2019-12-04   |
+| 5  | Conditionals and recursion                | 0%            | 2019-12-11   |
+| 6  | Fruitful functions                        | 0%            | 2020-12-18   |
+| 7  | Iteration                                 | 0%            | 2020-12-25   |
+| 8  | Strings                                   | 0%            | 2020-01-01   |
+| 9  | Case study: word play                     | 0%            | 2020-01-08   |
 | 10 | Lists                                     | 0%            | 2020-01-19   |
 | 11 | Dictionaries                              | 0%            | 2020-01-26   |
 | 12 | Tuples                                    | 0%            | 2020-02-02   |

@@ -2995,157 +2995,157 @@ en cada paso por el bucle.  Esta versión también tiene el efecto
 de regresar a la tortuga a su posición inicial, apuntando a
 la dirección inicial.
 
-\section{Exercises}
+\section{Ejercicios}
 
-The following is a series of exercises using TurtleWorld.  They
-are meant to be fun, but they have a point, too.  While you are
-working on them, think about what the point is.
+Lo siguiente es una serie de ejercicios que usan Turtle.  Pretenden
+ser divertidos, pero también tienen un punto.  Mientras trabajes en
+ellos, piensa cuál es el punto.
 
-The following sections have solutions to the exercises, so
-don't look until you have finished (or at least tried).
+Las siguientes secciones tienen soluciones a los ejercicios, así que
+no mires hasta que hayas terminado (o al menos intentado).
 
 \begin{enumerate}
 
-\item Write a function called {\tt square} that takes a parameter
-named {\tt t}, which is a turtle.  It should use the turtle to draw
-a square.
+\item Escribe una función llamada {\tt cuadrado} que tome un parámetro
+con nombre {\tt t}, que es una tortuga.  Debería usar la tortuga para dibujar
+un cuadrado.
 
-Write a function call that passes {\tt bob} as an argument to
-{\tt square}, and then run the program again.
+Escribe una llamada a función que pase a {\tt bob} como un argumento a 
+{\tt cuadrado}, y luego ejecuta el programa de nuevo.
 
-\item Add another parameter, named {\tt length}, to {\tt square}.
-Modify the body so length of the sides is {\tt length}, and then
-modify the function call to provide a second argument.  Run the
-program again.  Test your program with a range of values for {\tt
-length}.
+\item Agrega otro parámetro, con nombre {\tt largo}, a {\tt cuadrado}.
+Modifica el cuerpo para que el largo de los lados sea {\tt largo}, y luego
+modifica la llamada a función para poner un segundo argumento.  Ejecuta el
+programa de nuevo.  Prueba tu programa con un rango de valores para {\tt
+largo}.
 
-\item Make a copy of {\tt square} and change the name to {\tt
-  polygon}.  Add another parameter named {\tt n} and modify the body
-  so it draws an n-sided regular polygon.  Hint: The exterior angles
-  of an n-sided regular polygon are $360/n$ degrees.  \index{polygon
-    function} \index{function!polygon}
+\item Haz una copia de {\tt cuadrado} y cambia el nombre a {\tt
+  poligono}.  Agrega otro parámetro con nombre {\tt n} y modifica el cuerpo
+  para que dibuje un polígono regular con n lados.  Pista: los ángulos exteriores
+  de un polígono regular con n-lados son de $360/n$ grados.  \index{función
+    polígono} \index{polígono!función}
 
-\item Write a function called {\tt circle} that takes a turtle,
-{\tt t}, and radius, {\tt r}, as parameters and that draws an
-approximate circle by calling {\tt polygon} with an appropriate
-length and number of sides.  Test your function with a range of values
-of {\tt r}.  \index{circle function} \index{function!circle}
+\item Escribe una función llamada {\tt circulo} que tome una tortuga,
+{\tt t}, y radio, {\tt r}, como parámetros y que dibuje un círculo
+aproximado llamando a {\tt polygon} con un largo y
+número de lados apropiado.  Prueba tu función con un rango de valores
+de {\tt r}.  \index{funcíon círculo} \index{círculo!función}
 
-Hint: figure out the circumference of the circle and make sure that
-{\tt length * n = circumference}.
+Pista: averigua el perímetro del círculo y asegúrate de que
+{\tt largo * n = perimetro}.
 
-\item Make a more general version of {\tt circle} called {\tt arc}
-that takes an additional parameter {\tt angle}, which determines
-what fraction of a circle to draw.  {\tt angle} is in units of
-degrees, so when {\tt angle=360}, {\tt arc} should draw a complete
-circle.
-\index{arc function}
-\index{function!arc}
+\item Haz una versión más general de {\tt circulo} llamada {\tt arco}
+que tome un parámetro adicional {\tt angulo}, que determine
+qué fracción de un círculo dibujar.  {\tt angulo} está en
+grados, así que cuando {\tt angle=360}, {\tt arco} debería dibujar un círculo
+completo.
+\index{función arco}
+\index{arco!función}
 
 \end{enumerate}
 
 
-\section{Encapsulation}
+\section{Encapsulamiento}
 
-The first exercise asks you to put your square-drawing code
-into a function definition and then call the function, passing
-the turtle as a parameter.  Here is a solution:
+El primer ejercicio te pide poner tu código dibuja cuadrados
+dentro de una definición de función y luego llamar a la función, pasando
+a la tortuga como un parámetro.  Aquí está la solución:
 
 \begin{verbatim}
-def square(t):
+def cuadrado(t):
     for i in range(4):
         t.fd(100)
         t.lt(90)
 
-square(bob)
+cuadrado(bob)
 \end{verbatim}
 %
-The innermost statements, {\tt fd} and {\tt lt} are indented twice to
-show that they are inside the {\tt for} loop, which is inside the
-function definition.  The next line, {\tt square(bob)}, is flush with
-the left margin, which indicates the end of both the {\tt for} loop
-and the function definition.
+Las sentencias de más adentro, {\tt fd} y {\tt lt}, tienen doble sangría para
+mostrar que están dentro del bucle {\tt for}, el cual está dentro de la
+definición de función.  La siguiente línea, {\tt cuadrado(bob)}, está alineada con
+el margen izquierdo, lo cual indica el término tanto del bucle {\tt for}
+como de la definición de función.
 
-Inside the function, {\tt t} refers to the same turtle {\tt bob}, so
-{\tt t.lt(90)} has the same effect as {\tt bob.lt(90)}.  In that
-case, why not
-call the parameter {\tt bob}?  The idea is that {\tt t} can be any
-turtle, not just {\tt bob}, so you could create a second turtle and
-pass it as an argument to {\tt square}:
+Dentro de la función, {\tt t} hace referencia a la misma tortuga {\tt bob}, por lo que
+{\tt t.lt(90)} tiene el mismo efecto que {\tt bob.lt(90)}.  En ese
+caso, ¿por qué no
+llamar al parámetro {\tt bob}?  La idea es que {\tt t} puede ser cualquier
+tortuga, no sólo bob {\tt bob}, así que podrías crear una segunda tortuga y
+pasarla como argumento a {\tt cuadrado}:
 
 \begin{verbatim}
 alice = turtle.Turtle()
-square(alice)
+cuadrado(alice)
 \end{verbatim}
 %
-Wrapping a piece of code up in a function is called {\bf
-encapsulation}.  One of the benefits of encapsulation is that it
-attaches a name to the code, which serves as a kind of documentation.
-Another advantage is that if you re-use the code, it is more concise
-to call a function twice than to copy and paste the body!
-\index{encapsulation}
+El acto de envolver un pedazo de código en una función se llama {\bf
+encapsulamiento}.  Uno de los beneficios del encapsulamiento es que
+adjunta un nombre al código, lo cual sirve como una especie de documentación.
+Otra ventaja es que si reutilizas el código, ¡es más conciso
+llamar a una función dos veces que copiar y pegar el cuerpo!
+\index{encapsulamiento}
 
 
-\section{Generalization}
+\section{Generalización}
 
-The next step is to add a {\tt length} parameter to {\tt square}.
-Here is a solution:
+El siguiente paso es agregar un parámetro {\tt largo} a {\tt cuadrado}.
+Aquí hay una solución:
 
 \begin{verbatim}
-def square(t, length):
+def cuadrado(t, largo):
     for i in range(4):
-        t.fd(length)
+        t.fd(largo)
         t.lt(90)
 
-square(bob, 100)
+cuadrado(bob, 100)
 \end{verbatim}
 %
-Adding a parameter to a function is called {\bf generalization}
-because it makes the function more general: in the previous
-version, the square is always the same size; in this version
-it can be any size.
-\index{generalization}
+El acto de agregar un parámetro a una función se llama {\bf generalización}
+porque hace que la función sea más general: en la versión
+anterior, el cuadrado tiene siempre el mismo tamaño; en esta versión
+puede ser cualquier tamaño.
+\index{generalización}
 
-The next step is also a generalization.  Instead of drawing
-squares, {\tt polygon} draws regular polygons with any number of
-sides.  Here is a solution:
+El siguiente paso es también una generalización.  En lugar de dibujar
+cuadrados, {\tt poligono} dibuja polígonos regulares con cualquier número de
+lados.  Aquí hay una solución:
 
 \begin{verbatim}
-def polygon(t, n, length):
-    angle = 360 / n
+def poligono(t, n, largo):
+    angulo = 360 / n
     for i in range(n):
-        t.fd(length)
-        t.lt(angle)
+        t.fd(largo)
+        t.lt(angulo)
 
-polygon(bob, 7, 70)
+poligono(bob, 7, 70)
 \end{verbatim}
 %
-This example draws a 7-sided polygon with side length 70.
+Este ejemplo dibuja un polígono de 7 lados de largo 70.
 
-If you are using Python 2, the value of {\tt angle} might be off
-because of integer division.  A simple solution is to compute
-{\tt angle = 360.0 / n}.  Because the numerator is a floating-point
-number, the result is floating point.
+Si estás usando Python 2, el valor de {\tt angulo} podría ser incorrecto
+debido a una división entera.  Una solución simple es calcular
+{\tt angulo = 360.0 / n}.  Dado que el numerador es un número de
+coma flotante, el resultado es de coma flotante.
 \index{Python 2}
 
-When a function has more than a few numeric arguments, it is easy to
-forget what they are, or what order they should be in.  In that case
-it is often a good idea to include the names of the parameters in the
-argument list:
+Cuando una función tiene más que unos pocos argumentos numéricos, es fácil
+olvidar qué son, o en qué orden deberían estar.  En ese caso
+a menudo es una buena idea incluir los nombres de los parámetros en la
+lista de argumentos:
 
 \begin{verbatim}
-polygon(bob, n=7, length=70)
+poligono(bob, n=7, largo=70)
 \end{verbatim}
 %
-These are called {\bf keyword arguments} because they include
-the parameter names as ``keywords'' (not to be confused with
-Python keywords like {\tt while} and {\tt def}).
-\index{keyword argument}
-\index{argument!keyword}
+Estos se llaman {\bf argumentos de palabra clave} porque incluyen
+a los nombres de parámetro como ``palabras clave'' (no confundir con
+las palabras clave de Python como {\tt while} y {\tt def}).
+\index{argumento de palabra clave}
+\index{palabra clave!argumento de}
 
-This syntax makes the program more readable.  It is also a reminder
-about how arguments and parameters work: when you call a function, the
-arguments are assigned to the parameters.
+Esta sintaxis hace que el programa sea más legible.  Es también un recordatorio
+sobre cómo funcionan los argumentos y los parámetros: cuando llamas a una función, los
+argumentos son asignados a los parámetros.
 
 
 \section{Interface design}
