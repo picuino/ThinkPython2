@@ -1998,7 +1998,7 @@ Este formato se llama {\bf notación de punto}.
 \index{notación de punto}
 
 \begin{verbatim}
->>> razon = potencia_senal / potencia_ruido
+>>> razon = potencia_sennal / potencia_ruido   # uso de 'nn' en lugar de 'ñ'.
 >>> decibeles = 10 * math.log10(razon)
 
 >>> radianes = 0.7
@@ -2006,7 +2006,7 @@ Este formato se llama {\bf notación de punto}.
 \end{verbatim}
 %
 El primer ejemplo usa \verb"math.log10" para calcular
-una relación señal-ruido en decibeles (suponiendo que \verb"potencia_senal" y
+una relación señal-ruido en decibeles (suponiendo que \verb"potencia_sennal" y
 \verb"potencia_ruido" están definidas).  El módulo math también proporciona {\tt log},
 el cual calcula logaritmos en base {\tt e}.
 \index{función log}
@@ -2365,8 +2365,8 @@ el resultado dos veces.  Aquí hay un ejemplo que la usa:
 \index{concatenation}
 
 \begin{verbatim}
->>> linea1 = 'Bing tiddle '
->>> linea2 = 'tiddle bang.'
+>>> linea1 = 'Bing tiddle '     # evitar tildes en nombres de variables.
+>>> linea2 = 'tiddle bang.'     # escribir 'linea' en lugar de 'línea'.
 >>> cat_2veces(linea1, linea2)
 Bing tiddle tiddle bang.
 Bing tiddle tiddle bang.
@@ -2901,17 +2901,17 @@ que se mueva hacia adelante.
 El argumento de {\tt fd} es una distancia en pixeles, por lo que el tamaño
 real depende de tu pantalla.
 
-Other methods you can call on a Turtle are {\tt bk} to move
-backward, {\tt lt} for left turn, and {\tt rt} right turn.  The
-argument for {\tt lt} and {\tt rt} is an angle in degrees.
+Otros método que puedes llamar en un Turtle son {\tt bk} ({\em backward}) para
+retroceder, {\tt lt} ({\em left turn}) para girar a la izquierda y {\tt rt} ({\em right turn}) para girar a la derecha.  El
+argumento para {\tt lt} y {\tt rt} es un ángulo en grados.
 
-Also, each Turtle is holding a pen, which is
-either down or up; if the pen is down, the Turtle leaves
-a trail when it moves.  The methods {\tt pu} and {\tt pd}
-stand for ``pen up'' and ``pen down''.
+Además, cada Turtle sostiene una pluma, que está
+arriba o abajo; si la pluma está abajo, la tortuga deja
+un rastro cuando se mueve.  Los métodos {\tt pu} y {\tt pd}
+representan ``pen up'' y ``pen down''.
 
-To draw a right angle, add these lines to the program
-(after creating {\tt bob} and before calling \verb"mainloop"):
+Para dibujar un ángulo recto, agrega estas líneas al programa
+(después de crear a {\tt bob} y antes de llamar a \verb"mainloop"):
 
 \begin{verbatim}
 bob.fd(100)
@@ -2919,19 +2919,19 @@ bob.lt(90)
 bob.fd(100)
 \end{verbatim}
 %
-When you run this program, you should see {\tt bob} move east and then
-north, leaving two line segments behind.
+Cuando ejecutes este programa, deberías ver a {\tt bob} moverse al este y luego
+al norte, dejando dos segmentos de línea atrás.
 
-Now modify the program to draw a square.  Don't go on until
-you've got it working!
+Ahora modifica el programa para dibujar un cuadrado.  ¡No avances hasta que
+lo hayas hecho funcionar!
 
 %\newpage
 
-\section{Simple repetition}
+\section{Repetición simple}
 \label{repetition}
-\index{repetition}
+\index{repetición}
 
-Chances are you wrote something like this:
+Es probable que hayas escrito algo así:
 
 \begin{verbatim}
 bob.fd(100)
@@ -2946,18 +2946,18 @@ bob.lt(90)
 bob.fd(100)
 \end{verbatim}
 %
-We can do the same thing more concisely with a {\tt for} statement.
-Add this example to {\tt mypolygon.py} and run it again:
-\index{for loop}
-\index{loop!for}
-\index{statement!for}
+Podemos hacer lo mismo de manera más concisa con una sentencia {\tt for}.
+Agrega este ejemplo a {\tt mypolygon.py} y ejecútalo de nuevo:
+\index{bucle for}
+\index{for!bucle}
+\index{sentencia for}
 
 \begin{verbatim}
 for i in range(4):
     print('¡Hola!')
 \end{verbatim}
 %
-You should see something like this:
+Deberías ver algo como esto:
 
 \begin{verbatim}
 ¡Hola!
@@ -2966,11 +2966,11 @@ You should see something like this:
 ¡Hola!
 \end{verbatim}
 %
-This is the simplest use of the {\tt for} statement; we will see
-more later.  But that should be enough to let you rewrite your
-square-drawing program.  Don't go on until you do.
+Este es el uso más simple de una sentencia {\tt for}; después veremos
+más.  Pero eso debería ser suficiente para dejarte reescribir tu
+programa que dibuja cruadrados.  No avances hasta que lo hagas.
 
-Here is a {\tt for} statement that draws a square:
+Aquí hay una sentencia {\tt for} que dibuja un cuadrado:
 
 \begin{verbatim}
 for i in range(4):
@@ -2978,22 +2978,22 @@ for i in range(4):
     bob.lt(90)
 \end{verbatim}
 %
-The syntax of a {\tt for} statement is similar to a function
-definition.  It has a header that ends with a colon and an indented
-body.  The body can contain any number of statements.
+La sintaxis de una sentencia {\tt for} es similar a una definición
+de función.  Tiene un encabezado que termina con el signo dos puntos y un cuerpo
+con sangrías.  El cuerpo puede contener cualquier número de sentencias.
 
-A {\tt for} statement is also called a {\bf loop} because
-the flow of execution runs through the body and then loops back
-to the top.  In this case, it runs the body four times.
-\index{loop}
+Una sentencia {\tt for} tambiés es llamada {\bf bucle} porque
+el flujo de ejecución recorre el cuerpo y luego vuelve
+hacia arriba.  Es este caso, recorre el cuerpo cuatro veces.
+\index{bucle}
 
-This version is actually a little different from the previous
-square-drawing code because it makes another turn after
-drawing the last side of the square.  The extra turn takes
-more time, but it simplifies the code if we do the same thing
-every time through the loop.  This version also has the effect
-of leaving the turtle back in the starting position, facing in
-the starting direction.
+Esta versión es en realidad un poco diferente del código
+que dibuja cuadrados propuesto anteriormente porque hace otro giro después
+de dibujar el último lado del cuadrado.  El giro extra toma
+más tiempo, pero simplifica el código si hacemos lo mismo
+en cada paso por el bucle.  Esta versión también tiene el efecto
+de regresar a la tortuga a su posición inicial, apuntando a
+la dirección inicial.
 
 \section{Exercises}
 
