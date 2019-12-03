@@ -3013,11 +3013,11 @@ un cuadrado.
 Escribe una llamada a función que pase a {\tt bob} como un argumento a 
 {\tt cuadrado}, y luego ejecuta el programa de nuevo.
 
-\item Agrega otro parámetro, con nombre {\tt largo}, a {\tt cuadrado}.
-Modifica el cuerpo para que el largo de los lados sea {\tt largo}, y luego
+\item Agrega otro parámetro, con nombre {\tt longitud}, a {\tt cuadrado}.
+Modifica el cuerpo para que la longitud de los lados sea {\tt longitud}, y luego
 modifica la llamada a función para poner un segundo argumento.  Ejecuta el
 programa de nuevo.  Prueba tu programa con un rango de valores para {\tt
-largo}.
+longitud}.
 
 \item Haz una copia de {\tt cuadrado} y cambia el nombre a {\tt
   poligono}.  Agrega otro parámetro con nombre {\tt n} y modifica el cuerpo
@@ -3027,12 +3027,12 @@ largo}.
 
 \item Escribe una función llamada {\tt circulo} que tome una tortuga,
 {\tt t}, y radio, {\tt r}, como parámetros y que dibuje un círculo
-aproximado llamando a {\tt polygon} con un largo y
+aproximado llamando a {\tt polygon} con una longitud y
 número de lados apropiado.  Prueba tu función con un rango de valores
 de {\tt r}.  \index{funcíon círculo} \index{círculo!función}
 
 Pista: averigua el perímetro del círculo y asegúrate de que
-{\tt largo * n = perimetro}.
+{\tt longitud * n = perimetro}.
 
 \item Haz una versión más general de {\tt circulo} llamada {\tt arco}
 que tome un parámetro adicional {\tt angulo}, que determine
@@ -3088,13 +3088,13 @@ llamar a una función dos veces que copiar y pegar el cuerpo!
 
 \section{Generalización}
 
-El siguiente paso es agregar un parámetro {\tt largo} a {\tt cuadrado}.
+El siguiente paso es agregar un parámetro {\tt longitud} a {\tt cuadrado}.
 Aquí hay una solución:
 
 \begin{verbatim}
-def cuadrado(t, largo):
+def cuadrado(t, longitud):
     for i in range(4):
-        t.fd(largo)
+        t.fd(longitud)
         t.lt(90)
 
 cuadrado(bob, 100)
@@ -3111,16 +3111,16 @@ cuadrados, {\tt poligono} dibuja polígonos regulares con cualquier número de
 lados.  Aquí hay una solución:
 
 \begin{verbatim}
-def poligono(t, n, largo):
+def poligono(t, n, longitud):
     angulo = 360 / n
     for i in range(n):
-        t.fd(largo)
+        t.fd(longitud)
         t.lt(angulo)
 
 poligono(bob, 7, 70)
 \end{verbatim}
 %
-Este ejemplo dibuja un polígono de 7 lados de largo 70.
+Este ejemplo dibuja un polígono de 7 lados de longitud 70.
 
 Si estás usando Python 2, el valor de {\tt angulo} podría ser incorrecto
 debido a una división entera.  Una solución simple es calcular
@@ -3134,7 +3134,7 @@ a menudo es una buena idea incluir los nombres de los parámetros en la
 lista de argumentos:
 
 \begin{verbatim}
-poligono(bob, n=7, largo=70)
+poligono(bob, n=7, longitud=70)
 \end{verbatim}
 %
 Estos se llaman {\bf argumentos de palabra clave} porque incluyen
@@ -3148,140 +3148,140 @@ sobre cómo funcionan los argumentos y los parámetros: cuando llamas a una func
 argumentos son asignados a los parámetros.
 
 
-\section{Interface design}
+\section{Diseño de interfaz}
 
-The next step is to write {\tt circle}, which takes a radius,
-{\tt r}, as a parameter.  Here is a simple solution that uses
-{\tt polygon} to draw a 50-sided polygon:
+El siguiente paso es escribir {\tt circulo}, el cual toma un radio,
+{\tt r}, como parámetro.  Aquí hay una solución simple que usa a
+{\tt poligono} para dibujar un polígono de 50 lados:
 
 \begin{verbatim}
 import math
 
-def circle(t, r):
-    circumference = 2 * math.pi * r
+def circulo(t, r):
+    perimetro = 2 * math.pi * r
     n = 50
-    length = circumference / n
-    polygon(t, n, length)
+    longitud = perimetro / n
+    poligono(t, n, longitud)
 \end{verbatim}
 %
-The first line computes the circumference of a circle with radius
-{\tt r} using the formula $2 \pi r$.  Since we use {\tt math.pi}, we
-have to import {\tt math}.  By convention, {\tt import} statements
-are usually at the beginning of the script.
+La primera linea calcula el perímetro de un círculo con radio
+{\tt r} usando la fórmula $2 \pi r$.  Dado que usamos {\tt math.pi},
+tenemos que importar {\tt math}.  Por convención, las sentencias {\tt import}
+usualmente están al comienzo del script.
 
-{\tt n} is the number of line segments in our approximation of a circle,
-so {\tt length} is the length of each segment.  Thus, {\tt polygon}
-draws a 50-sided polygon that approximates a circle with radius {\tt r}.
+{\tt n} es el número de segmentos de línea en tu aproximación de un círculo,
+por lo que {\tt longitud} es la longitud de cada segmento.  Así, {\tt poligono}
+dibuja un polígono de 50 lados que aproxima un círculo con radio {\tt r}.
 
-One limitation of this solution is that {\tt n} is a constant, which
-means that for very big circles, the line segments are too long, and
-for small circles, we waste time drawing very small segments.  One
-solution would be to generalize the function by taking {\tt n} as
-a parameter.  This would give the user (whoever calls {\tt circle})
-more control, but the interface would be less clean.
-\index{interface}
+Una limitación de esta solución es que {\tt n} es una constante, lo cual
+significa que para círculos muy grandes, los segmentos de línea son muy largos, y
+para círculos pequeños, ocupamos mucho tiempo dibujando segmentos muy pequeños.  Una
+solución sería generalizar la función para que tome a {\tt n} como
+parámetro.  Esto le daría al usuario (quien llame a {\tt circulo})
+más control, pero la interfaz sería menos limpia.
+\index{interfaz}
 
-The {\bf interface} of a function is a summary of how it is used: what
-are the parameters?  What does the function do?  And what is the return
-value?  An interface is ``clean'' if it allows the caller to do
-what they want without dealing with unnecessary details.
+La {\bf interfaz} de una función es un resumen de cómo se usa: ¿cuáles
+son los parámetros?  ¿Qué hace la funcíon?  ¿Y cuál es el valor de
+retorno?  Una interfaz es ``limpia'' si permite al que llama hacer
+lo que quiere sin lidiar con detalles innecesarios.
 
-In this example, {\tt r} belongs in the interface because it
-specifies the circle to be drawn.  {\tt n} is less appropriate
-because it pertains to the details of {\em how} the circle should
-be rendered.
+En este ejemplo, {\tt r} forma parte de la interfaz porque
+especifica el círculo a dibujar.  {\tt n} es menos apropiado
+porque pertenece a los detalles de {\em cómo} debería dibujarse
+el círculo.
 
-Rather than clutter up the interface, it is better
-to choose an appropriate value of {\tt n}
-depending on {\tt circumference}:
+En lugar de desordenar la interfaz, es mejor
+escoger un valor apropiado de {\tt n}
+que dependa del {\tt perímetro}:
 
 \begin{verbatim}
-def circle(t, r):
-    circumference = 2 * math.pi * r
-    n = int(circumference / 3) + 3
-    length = circumference / n
-    polygon(t, n, length)
+def circulo(t, r):
+    perimetro = 2 * math.pi * r
+    n = int(perimetro / 3) + 3
+    longitud = perimetro / n
+    poligono(t, n, longitud)
 \end{verbatim}
 %
-Now the number of segments is an integer near {\tt circumference/3},
-so the length of each segment is approximately 3, which is small
-enough that the circles look good, but big enough to be efficient,
-and acceptable for any size circle.
+Ahora, el número de segmentos es un entero cercano a {\tt perimetro/3},
+por lo que la longitud de cada segmento es aproximadamente 3, lo cual es suficientemente
+pequeño para que el círculo se vea bien, pero lo suficientemente grande para ser eficiente,
+y aceptable para cualquier tamaño de círculo.
 
-Adding 3 to {\tt n} guarantees that the polygon has at least 3 sides.
+Sumar 3 a {\tt n} garantiza que el polígono tenga al menos 3 lados.
 
 
-\section{Refactoring}
+\section{Refactorización}
 \label{refactoring}
-\index{refactoring}
+\index{refactorización}
 
-When I wrote {\tt circle}, I was able to re-use {\tt polygon}
-because a many-sided polygon is a good approximation of a circle.
-But {\tt arc} is not as cooperative; we can't use {\tt polygon}
-or {\tt circle} to draw an arc.
+Cuando escribí {\tt circulo}, fui capaz de reutilizar {\tt poligono}
+porque un polígono de muchos lados es una buena aproximación de un círculo.
+Pero {\tt arco} no es tan cooperativo; no podemos usar {\tt poligono}
+o {\tt circulo} para dibujar un arco.
 
-One alternative is to start with a copy
-of {\tt polygon} and transform it into {\tt arc}.  The result
-might look like this:
+Una alternativa es comenzar con una copia
+de {\tt poligono} y transformarla en {\tt arco}.  El resultado
+podría verse así:
 
 \begin{verbatim}
-def arc(t, r, angle):
-    arc_length = 2 * math.pi * r * angle / 360
-    n = int(arc_length / 3) + 1
-    step_length = arc_length / n
-    step_angle = angle / n
+def arco(t, r, angulo):
+    longitud_arco = 2 * math.pi * r * angulo / 360
+    n = int(longitud_arco / 3) + 1
+    longitud_paso = longitud_arco / n
+    angulo_paso = angulo / n
 
     for i in range(n):
-        t.fd(step_length)
-        t.lt(step_angle)
+        t.fd(longitud_paso)
+        t.lt(angulo_paso)
 \end{verbatim}
 %
-The second half of this function looks like {\tt polygon}, but we
-can't re-use {\tt polygon} without changing the interface.  We could
-generalize {\tt polygon} to take an angle as a third argument,
-but then {\tt polygon} would no longer be an appropriate name!
-Instead, let's call the more general function {\tt polyline}:
+La segunda mitad de esta función se parece a {\tt poligono}, pero
+no podemos reutilizar {\tt poligono} sin cambiar la interfaz.  Podríamos
+generalizar {\tt poligono} para que tome un angulo como tercer argumento,
+¡pero entonces {\tt poligono} ya no sería un nombre apropiado!
+En cambio, llamemos a la función más general {\tt polilinea}:
 
 \begin{verbatim}
-def polyline(t, n, length, angle):
+def polilinea(t, n, longitud, angulo):
     for i in range(n):
-        t.fd(length)
-        t.lt(angle)
+        t.fd(longitud)
+        t.lt(angulo)
 \end{verbatim}
 %
-Now we can rewrite {\tt polygon} and {\tt arc} to use {\tt polyline}:
+Ahora podemos reescribir {\tt poligono} y {\tt arco} para que use a {\tt polilinea}:
 
 \begin{verbatim}
-def polygon(t, n, length):
-    angle = 360.0 / n
-    polyline(t, n, length, angle)
+def poligono(t, n, longitud):
+    angulo = 360.0 / n
+    polilinea(t, n, longitud, angulo)
 
-def arc(t, r, angle):
-    arc_length = 2 * math.pi * r * angle / 360
-    n = int(arc_length / 3) + 1
-    step_length = arc_length / n
-    step_angle = float(angle) / n
-    polyline(t, n, step_length, step_angle)
+def arco(t, r, angulo):
+    longitud_arco = 2 * math.pi * r * angulo / 360
+    n = int(longitud_arco / 3) + 1
+    longitud_paso = longitud_arco / n
+    angulo_paso = float(angulo) / n
+    polilinea(t, n, longitud_paso, angulo_paso)
 \end{verbatim}
 %
-Finally, we can rewrite {\tt circle} to use {\tt arc}:
+Finalmente, podemos reescribir {\tt circulo} para que use a {\tt arco}:
 
 \begin{verbatim}
-def circle(t, r):
-    arc(t, r, 360)
+def circulo(t, r):
+    arco(t, r, 360)
 \end{verbatim}
 %
-This process---rearranging a program to improve
-interfaces and facilitate code re-use---is called {\bf refactoring}.
-In this case, we noticed that there was similar code in {\tt arc} and
-{\tt polygon}, so we ``factored it out'' into {\tt polyline}.
-\index{refactoring}
+Este proceso---reorganizar un programa para mejorar
+las interfaces y facilitar la reutilización de código---se llama {\bf refactorización}.
+En este caso, notamos que había código similar en {\tt arco} y
+{\tt poligono}, así que ``lo factorizamos'' en {\tt polilinea}.
+\index{refactorización}
 
-If we had planned ahead, we might have written {\tt polyline} first
-and avoided refactoring, but often you don't know enough at the
-beginning of a project to design all the interfaces.  Once you start
-coding, you understand the problem better.  Sometimes refactoring is a
-sign that you have learned something.
+Si hubiéramos planificado con anticipación, podríamos haber escrito {\tt polilinea} primero
+y evitar la refactorización, pero a menudo no sabes lo suficiente al
+comienzo de un proyecto para diseñar todas las interfaces.  Una vez que comienzas
+a escribir código, entiendes mejor el problema.  A veces la refactorización es una
+señal de que has aprendido algo.
 
 
 \section{A development plan}

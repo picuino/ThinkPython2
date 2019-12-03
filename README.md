@@ -3,7 +3,7 @@ ThinkPython2e en español
 
 Traducción por Jorge Espinoza.
 
-`18% |#########.........................................|`
+`19% |#########.........................................|`
 
 Fecha límite: 2020-04-05
 
@@ -11,28 +11,28 @@ Fecha límite: 2020-04-05
 
 | N° | Nombre de capítulo                        | Estado        | Fecha límite |
 |---:|-------------------------------------------|:-------------:|:------------:|
-| 0  | Preface                                   | 99%           | 2020-04-05   |
+| 0  | Preface                                   | 99%           | 2020-03-30   |
 | 1  | The way of the program                    | **100%**      |              |
 | 2  | Variables, expressions and statements     | **100%**      |              |
 | 3  | Functions                                 | **100%**      |              |
-| 4  | Case study: interface design              | 45%           | 2019-12-04   |
-| 5  | Conditionals and recursion                | 0%            | 2019-12-11   |
-| 6  | Fruitful functions                        | 0%            | 2020-12-18   |
-| 7  | Iteration                                 | 0%            | 2020-12-25   |
-| 8  | Strings                                   | 0%            | 2020-01-01   |
-| 9  | Case study: word play                     | 0%            | 2020-01-08   |
-| 10 | Lists                                     | 0%            | 2020-01-19   |
+| 4  | Case study: interface design              | 65%           | 2019-12-04   |
+| 5  | Conditionals and recursion                | 0%            | 2019-12-09   |
+| 6  | Fruitful functions                        | 0%            | 2020-12-15   |
+| 7  | Iteration                                 | 0%            | 2020-12-21   |
+| 8  | Strings                                   | 0%            | 2019-12-27   |
+| 9  | Case study: word play                     | 0%            | 2020-01-02   |
+| 10 | Lists                                     | 0%            | 2020-01-08   |
 | 11 | Dictionaries                              | 0%            | 2020-01-26   |
-| 12 | Tuples                                    | 0%            | 2020-02-02   |
-| 13 | Case study: data structure selection      | 0%            | 2020-02-09   |
-| 14 | Files                                     | 0%            | 2020-02-16   |
-| 15 | Classes and objects                       | 0%            | 2020-02-23   |
-| 16 | Classes and functions                     | 0%            | 2020-03-01   |
-| 17 | Classes and methods                       | 0%            | 2020-03-08   |
-| 18 | Inheritance                               | 0%            | 2020-03-15   |
-| 19 | The Goodies                               | 0%            | 2020-03-22   |
-| A  | Debugging                                 | 0%            | 2020-03-29   |
-| B  | Analysis of Algorithms                    | 0%            | 2020-04-05   |
+| 12 | Tuples                                    | 0%            | 2020-02-01   |
+| 13 | Case study: data structure selection      | 0%            | 2020-02-07   |
+| 14 | Files                                     | 0%            | 2020-02-13   |
+| 15 | Classes and objects                       | 0%            | 2020-02-19   |
+| 16 | Classes and functions                     | 0%            | 2020-02-25   |
+| 17 | Classes and methods                       | 0%            | 2020-03-02   |
+| 18 | Inheritance                               | 0%            | 2020-03-08   |
+| 19 | The Goodies                               | 0%            | 2020-03-14   |
+| A  | Debugging                                 | 0%            | 2020-03-20   |
+| B  | Analysis of Algorithms                    | 0%            | 2020-03-26   |
 
 
 
