@@ -20,7 +20,7 @@ all:	book.tex
 	pdflatex book
 	makeindex book.idx
 	pdflatex book
-	mv book.pdf thinkpython2.pdf
+	mv book.pdf thinkpython2-spanish.pdf
 
 hevea:	book.tex header.html footer.html
 	# replace the pdfs with eps

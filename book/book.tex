@@ -33,9 +33,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[bookmarks]{hyperref}
 
-\title{Piensa en Python}
+\title{Pensar en Python}
 \author{Allen B. Downey}
-\newcommand{\thetitle}{Piensa en Python: Pensando como un informático}
+\newcommand{\thetitle}{Pensar en Python: Aprende a pensar como un informático}
 \newcommand{\theversion}{2da Edición, Versión 2.4.0}
 \newcommand{\thedate}{}
 
@@ -100,8 +100,8 @@
 \vspace*{2.0in}
 
 \begin{spacing}{3}
-{\huge Piensa en Python}\\
-{\Large Pensando como un informático}
+{\huge Pensar en Python}\\
+{\Large Aprende a pensar como un informático}
 \end{spacing}
 
 \vspace{0.25in}
@@ -131,8 +131,8 @@
 \vspace*{2.0in}
 
 \begin{spacing}{3}
-{\huge Piensa en Python}\\
-{\Large Pensando como un informático}
+{\huge Pensar en Python}\\
+{\Large Aprende a pensar como un informático}
 \end{spacing}
 
 \vspace{0.25in}
@@ -258,8 +258,8 @@ el mínimo subconjunto útil de Java y excluí el resto.
 
 \end{itemize}
 
-Necesitaba un título, así que por capricho escogí {\em How to Think Like
-a Computer Scientist}.
+Necesitaba un título, así que por capricho escogí {\em Aprende a pensar como
+un informático}.
 
 Mi primera versión fue áspera, pero funcionó.  Los estudiantes hicieron la
 lectura y entendieron lo suficiente como para que yo pudiera ocupar el tiempo
@@ -289,7 +289,7 @@ corrigiendo errores, mejorando algunos de los ejemplos y agregando material,
 especialmente ejercicios.
 
 El resultado es este libro, ahora con el título menos grandioso
-{\em Think Python}.  Algunos de los cambios son:
+{\em Pensar en Python}.  Algunos de los cambios son:
 
 \begin{itemize}
 
@@ -311,7 +311,7 @@ El resultado es este libro, ahora con el título menos grandioso
 
 \end{itemize}
 
-La segunda edición de {\em Think Python} tiene nuevas características:
+La segunda edición de {\em Pensar en Python} tiene nuevas características:
 
 \begin{itemize}
 
@@ -379,8 +379,8 @@ sugerencias y correcciones en los últimos años.  Sus
 contribuciones, y su entusiasmo por este proyecto, han sido una
 ayuda enorme.
 
-Si tienes una sugerencia o corrección, por favovr envía un email a
-{\tt feedback@thinkpython.com}.  Si yo hago un cambio basado en tu
+Si tienes una sugerencia o corrección, por favor envía un email a
+{\tt feedback@thinkpython.com}.  Si hago un cambio basado en tu
 retroalimentación, te agregaré a la lista de colaboradores
 (a menos que pidas ser omitido).
 
@@ -796,19 +796,19 @@ instrucciones básicas aparecen en casi todos los lenguajes:
 
 \begin{description}
 
-\item[entrada:] obtener datos desde el teclado, un archivo, la red o algún
+\item[entrada:] Obtener datos desde el teclado, un archivo, la red o algún
 otro dispositivo.
 
-\item[salida:] mostrar datos en la pantalla, guardarlos en un
+\item[salida:] Mostrar datos en la pantalla, guardarlos en un
 archivo, enviarlos a través de la red, etc.
 
-\item[matemáticas:] realizar operaciones matemáticas básicas como la suma y
+\item[matemáticas:] Realizar operaciones matemáticas básicas como la suma y
 la multiplicación.
 
-\item[ejecución condicional:] verificar ciertas condiciones y
+\item[ejecución condicional:] Verificar ciertas condiciones y
 ejecutar el código apropiado.
 
-\item[repetición:] realizar alguna acción repetidas veces, usualmente con
+\item[repetición:] Realizar alguna acción repetidas veces, usualmente con
 alguna variación.
 
 \end{description}
@@ -827,8 +827,8 @@ Uno de los desafíos de comenzar con Python es que quizás debas
 instalar Python y software relacionado en tu computador.
 Si estás familiarizado con tu sistema operativo, y especialmente
 si te sientes cómodo con la interfaz de línea de comandos, no tendrás
-problemas instalando Python.  Sin embargo, para principiantes puede ser
-doloroso aprender sobre administración del sistema y programación al
+problemas instalando Python.  Sin embargo, puede ser doloroso para
+los principiantes aprender sobre administración del sistema y programación al
 mismo tiempo.
 \index{ejecutar Python}
 \index{Python!ejecutar}
@@ -855,7 +855,7 @@ sobre Python 2.
 El {\bf intérprete} de Python es un programa que lee y ejecuta
 código de Python.  Dependiendo de tu entorno, puedes iniciar el intérprete
 haciendo clic en un ícono o escribiendo {\tt python} en una
-línea de comando.
+línea de comandos.
 Cuando se inicia, deberías ver una salida como esta:
 \index{intérprete}
 
@@ -902,7 +902,7 @@ las palabras ``¡Hola, mundo!''.  En Python, se ve así:
 \end{verbatim}
 %
 Este es un ejemplo de una {\bf sentencia print}, aunque
-en realidad no imprime nada en papel.  Ésta muestra un resultado en la
+en realidad no imprime nada en papel.  Esta sentencia muestra un resultado en la
 pantalla.  En este caso, el resultado es la frase
 
 \begin{verbatim}
@@ -939,7 +939,7 @@ Después de ``Hola, mundo'', el siguiente paso es la aritmética.  Python
 proporciona {\bf operadores}, los cuales son símbolos especiales que
 representan computaciones como la suma y la multiplicación.
 
-Los operadores {\tt +}, {\tt -}, and {\tt *} realizan sumas,
+Los operadores {\tt +}, {\tt -} y {\tt *} realizan sumas,
 restas y multiplicaciones, como en los siguientes ejemplos:
 
 \begin{verbatim}
@@ -1044,7 +1044,7 @@ cadenas.
 Son cadenas.
 
 Cuando escribes un entero grande, podrías estar tentado a usar comas
-entre grupos de dígitos, como en {\tt 1,000,000}.  Este no es un
+entre grupos de dígitos, como en {\tt 1,000,000}.  No es un
 {\em entero} legal en Python, pero es legal:
 
 \begin{verbatim}
@@ -1075,7 +1075,7 @@ más sobre este tipo de secuencia más adelante.
 
 Los {\bf lenguajes naturales} son los lenguajes que hablan las personas,
 tales como el inglés, el español y el francés.  Éstos no fueron diseñados
-por las personas (aunque las personas tratan de imponerles algo de orden);
+por las personas (aunque las personas traten de imponerles algo de orden);
 evolucionan de manera natural.
 
 Los {\bf lenguajes formales} son lenguajes que están diseñados por personas
@@ -1229,85 +1229,85 @@ con mis sugerencias para la depuración.  ¡Espero que ayuden!
 
 \begin{description}
 
-\item[resolución de problema:]  el proceso de formular un problema, encontrar
+\item[resolución de problema:]  El proceso de formular un problema, encontrar
 una solución y expresarla.
 \index{resolución de problemas}
 
-\item[lenguaje de alto nivel:]  un lenguaje de programación como Python que
+\item[lenguaje de alto nivel:]  Un lenguaje de programación como Python que
 está diseñado para que los humanos puedan leer y escribir fácilmente.
 \index{lenguaje de alto nivel}
 
-\item[lenguaje de bajo nivel:]  un lenguaje de programación que está diseñado
+\item[lenguaje de bajo nivel:]  Un lenguaje de programación que está diseñado
 para que sea fácil de ejecutar por un computador; también llamado ``lenguaje de máquina'' o
 ``lenguaje ensamblador''.
 \index{lenguaje de bajo nivel}
 
-\item[portabilidad:]  una propiedad de un programa que puede ejecutarse en más
+\item[portabilidad:]  Una propiedad de un programa que puede ejecutarse en más
 de un tipo de computador.
 \index{portabilidad}
 
-\item[intérprete:]  un programa que lee otro programa y lo
+\item[intérprete:]  Un programa que lee otro programa y lo
 ejecuta.
 \index{intérprete}
 
-\item[prompt:] caracteres mostrados por el intérprete que indican
+\item[prompt:] Caracteres mostrados por el intérprete que indican
 que está listo para recibir la entrada del usuario.
 \index{prompt}
 
-\item[programa:] un conjunto de instrucciones que especifica una computación.
+\item[programa:] Un conjunto de instrucciones que especifica una computación.
 \index{programa}
 
-\item[sentencia print:]  una instrucción que hace que el intérprete de Python
+\item[sentencia print:]  Una instrucción que hace que el intérprete de Python
 muestre un valor en la pantalla.
 \index{sentencia print}
 \index{sentencia!print}
 
-\item[operador:]  un símbolo especial que representa una computación simple
+\item[operador:]  Un símbolo especial que representa una computación simple
 como suma, multiplicación o concatenación de cadenas.
 \index{operador}
 
-\item[valor:]  una de las unidades básicas de datos, como un número o una cadena,
+\item[valor:]  Una de las unidades básicas de datos, como un número o una cadena,
 que manipula un programa.
 \index{valor}
 
-\item[tipo:] una categoría de valores.  Los tipos que hemos visto hasta ahora
+\item[tipo:] Una categoría de valores.  Los tipos que hemos visto hasta ahora
 son los enteros (tipo {\tt int}), los números de coma flotante (tipo {\tt
-float}), y cadenas (tipo {\tt str}).
+float}) y cadenas (tipo {\tt str}).
 \index{tipo}
 
-\item[entero:] un tipo que representa números enteros.
+\item[entero:] Un tipo que representa números enteros.
 \index{entero}
 
-\item[coma flotante:] un tipo que representa números con partes
+\item[coma flotante:] Un tipo que representa números con partes
 fraccionarias.
 \index{coma flotante}
 
-\item[cadena:] un tipo que representa secuencias de caracteres.
+\item[cadena:] Un tipo que representa secuencias de caracteres.
 \index{cadena}
 
-\item[lenguaje natural:]  cualquiera de los lenguajes que hablan las personas y
+\item[lenguaje natural:]  Cualquiera de los lenguajes que hablan las personas y
 que evolucionaron de manera natural.
 \index{lenguaje natural}
 
-\item[lenguaje formal:]  cualquiera de los lenguajes que las personas han diseñado
+\item[lenguaje formal:]  Cualquiera de los lenguajes que las personas han diseñado
 para propósitos específicos, tales como representar ideas matemáticas o
 programas de computador; todos los lenguajes de programación son lenguajes formales.
 \index{lenguaje formal}
 
-\item[token:]  uno de los elementos básicos de la estructura sintáctica de
+\item[token:]  Uno de los elementos básicos de la estructura sintáctica de
 un programa, análogo a una palabra en un lenguaje natural.
 \index{token}
 
-\item[sintaxis:] las reglas que rigen la estructura de un programa.
+\item[sintaxis:] Las reglas que rigen la estructura de un programa.
 \index{sintaxis}
 
-\item[análisis sintáctico ({\em parse}):] examinar un programa y analizar la
+\item[análisis sintáctico ({\em parse}):] Examinar un programa y analizar la
 estructura sintáctica.\index{parse}\index{análisis sintáctico}
 
-\item[error de programación ({\em bug}):] un error en un programa.
+\item[error de programación ({\em bug}):] Un error en un programa.
 \index{bug}\index{error de programación}
 
-\item[depuración ({\em debugging}):] el proceso de encontrar y corregir
+\item[depuración ({\em debugging}):] El proceso de encontrar y corregir
 errores de programación.\index{depuración}\index{debugging}
 
 \end{description}
@@ -1343,7 +1343,7 @@ omites una de las comillas, o ambas?
 {\tt -2}.  ¿Qué ocurre si pones un signo más antes de un número?
 ¿Qué pasa con {\tt 2++2}?
 
-\item En notación matemática, los ceros adelante están bien, como en {\tt 09}.
+\item En notación matemática, los ceros a la izquierda están bien, como en {\tt 09}.
 ¿Qué ocurre si intentas esto en Python?  ¿Qué pasa con {\tt 011}?
 
 \item ¿Qué ocurre si tienes dos valores sin operador
@@ -1382,7 +1382,7 @@ Inicia el intérprete de Python y úsalo como una calculadora.
 
 \chapter{Variables, expresiones y sentencias}
 
-Una de las características más poderosas de un lenguaje de programaciónes la
+Una de las características más poderosas de un lenguaje de programación es la
 posibilidad de manipular {\bf variables}.  Una variable es un nombre que
 hace referencia a un valor.
 \index{variable}
@@ -1409,9 +1409,9 @@ asigna el valor (aproximado) de $\pi$ a {\tt pi}.
 \index{diagrama de estado}
 \index{estado!diagrama de}
 
-Una forma común de representar variables en papel es escribir el nombre con
+Una forma común de representar en papel las variables es escribir el nombre con
 una flecha apuntando a su valor.  Este tipo de figura se
-llama un {\bf diagrama de estado} porque muestra en qué estado está cada una
+llama {\bf diagrama de estado} porque muestra en qué estado está cada una
 de las variables (piénsalo como el estado mental de la variable).
 La Figura~\ref{fig.state2} muestra el resultado del ejemplo anterior.
 
@@ -1601,7 +1601,7 @@ recordar las reglas:
 para forzar una expresión a evaluar en el orden que tú quieras. Ya que
 las expresiones en paréntesis se evalúan primero, {\tt 2 * (3-1)} es 4,
 y {\tt (1+1)**(5-2)} es 8. También puedes usar paréntesis para hacer una
-expresión más fácil de leer, como en {\tt (minute * 100) / 60}, incluso
+expresión más fácil de leer, como en {\tt (minuto * 100) / 60}, incluso
 si no cambia el resultado.
 
 \item Los {\bf E}xponentes de potencias tienen la siguiente proridad, así que
@@ -1612,10 +1612,10 @@ si no cambia el resultado.
   4, y {\tt 6+4/2} es 8, no 5.
 
 \item Los operadores con la misma prioridad se evalúan de izquierda a
-  derecha (excepto la potenciación).  Así que en la expresión {\tt degrees /
+  derecha (excepto la potenciación).  Así que en la expresión {\tt grados /
     2 * pi}, la división ocurre primero y el resultado se multiplica
   por {\tt pi}.  Para dividir por $2 \pi$, puedes usar paréntesis o escribir
-  {\tt degrees / 2 / pi}.
+  {\tt grados / 2 / pi}.
 
 \end{itemize}
 
@@ -1714,9 +1714,9 @@ así que hay una compensación.
 \index{depuración}
 \index{bug}\index{error}
 
-Tres tipos de errores pueden ocurrir en un programa: errores de sintaxis, errores
+En un programa pueden ocurrir tres tipos de errores: errores de sintaxis, errores
 de tiempo de ejecución y errores semánticos.  Es útil
-distinguir entre ellos para rastrearlos más rápidamente.
+distinguir entre ellos para rastrearlos de manera más rápida.
 
 \begin{description}
 
@@ -1793,7 +1793,7 @@ para obtener un valor único.
 aquí, las sentencias que hemos visto son asignaciones y sentencias print.
 \index{sentencia}
 
-\item[ejecutar:]  LLevar a efecto una sentencia y hacer lo que dice.
+\item[ejecutar:]  Llevar a efecto una sentencia y hacer lo que dice.
 \index{ejecutar}
 
 \item[modo interactivo:] Una manera de usar el intérprete de Python
@@ -1998,11 +1998,11 @@ Este formato se llama {\bf notación de punto}.
 \index{notación de punto}
 
 \begin{verbatim}
->>> razon = potencia_sennal / potencia_ruido   # uso de 'nn' en lugar de 'ñ'.
+>>> razon = potencia_sennal / potencia_ruido  # uso de 'nn' en lugar de 'ñ'.
 >>> decibeles = 10 * math.log10(razon)
 
 >>> radianes = 0.7
->>> altura = math.sin(radians)
+>>> altura = math.sin(radianes)
 \end{verbatim}
 %
 El primer ejemplo usa \verb"math.log10" para calcular
@@ -2061,7 +2061,7 @@ incluyendo operadores aritméticos:
 x = math.sin(grados / 360.0 * 2 * math.pi)
 \end{verbatim}
 %
-E incluso llamadas a funciones:
+También llamadas a funciones:
 
 \begin{verbatim}
 x = math.exp(math.log(x+1))
@@ -2097,8 +2097,8 @@ Aquí hay un ejemplo:
 
 \begin{verbatim}
 def imprimir_letra():
-    print("Soy un leñador y estoy bien.")
-    print("Duermo toda la noche y trabajo todo el día.")
+    print("I'm a lumberjack, and I'm okay.")
+    print("I sleep all night and I work all day.")
 \end{verbatim}
 %
 {\tt def} es una palabra clave que indica que esta es una definición
@@ -2143,8 +2143,8 @@ no está completa:
 
 \begin{verbatim}
 >>> def imprimir_letra():
-...     print("Soy un leñador y estoy bien.")
-...     print("Duermo toda la noche y trabajo todo el día.")
+...     print("I'm a lumberjack, and I'm okay.")
+...     print("I sleep all night and I work all day.")
 ...
 \end{verbatim}
 %
@@ -2167,8 +2167,8 @@ para las funciones incorporadas:
 
 \begin{verbatim}
 >>> imprimir_letra()
-Soy un leñador y estoy bien.
-Duermo toda la noche y trabajo todo el día.
+I'm a lumberjack, and I'm okay.
+I sleep all night and I work all day.
 \end{verbatim}
 %
 Una vez que hayas definido una función, puedes usarla dentro de otra
@@ -2184,11 +2184,11 @@ def repetir_letra():
 Y luego llamar a \verb"repetir_letra":
 
 \begin{verbatim}
->>> repeat_lyrics()
-Soy un leñador y estoy bien.
-Duermo toda la noche y trabajo todo el día.
-Soy un leñador y estoy bien.
-Duermo toda la noche y trabajo todo el día.
+>>> repetir_letra()
+I'm a lumberjack, and I'm okay.
+I sleep all night and I work all day.
+I'm a lumberjack, and I'm okay.
+I sleep all night and I work all day.
 \end{verbatim}
 %
 Pero así no es realmente como sigue la canción.
@@ -2202,8 +2202,8 @@ programa completo se ve así:
 
 \begin{verbatim}
 def imprimir_letra():
-    print("Soy un leñador y estoy bien.")
-    print("Duermo toda la noche y trabajo todo el día.")
+    print("I'm a lumberjack, and I'm okay.")
+    print("I sleep all night and I work all day.")
 
 def repetir_letra():
     imprimir_letra()
@@ -2449,7 +2449,7 @@ NameError: name 'cat' is not defined
 %
 Esta lista de funciones se llama {\bf rastreo} (en inglés, {\em traceback}).  Te dice en qué
 archivo de programa ocurrió el error, y en qué línea, y qué funciones
-se estaban ejecutando en ese momento.  Además te muestra la línea de código que
+se estaban ejecutando en ese momento.  Además, te muestra la línea de código que
 causó el error.
 \index{traceback}\index{rastreo}
 
@@ -2458,19 +2458,19 @@ orden de los marcos en el diagrama de pila.  La función que se está
 ejecutando actualmente está al final.
 
 
-\section{Funciones fructíferas y funciones nulas}
-\index{función fructífera}
+\section{Funciones productivas y funciones nulas}
+\index{función productiva}
 \index{función nula}
-\index{fructífera!función}
+\index{productiva!función}
 \index{nula!función}
 
 Algunas de las funciones que hemos usado, tales como las funciones matemáticas, devuelven
 resultados; por falta de un mejor nombre, las llamo {\bf funciones
-  fructíferas}.  Otras funciones, como \verb"impr_2veces", realizan una
+  productivas}.  Otras funciones, como \verb"impr_2veces", realizan una
 acción pero no devuelven un valor.  Son llamadas {\bf funciones
   nulas}.
 
-Cuando llamas a una función fructífera, casi siempre
+Cuando llamas a una función productiva, casi siempre
 quieres hacer algo con el resultado; por ejemplo, podrías
 asignarlo a una variable o usarlo como parte de una expresión:
 
@@ -2487,7 +2487,7 @@ el resultado:
 2.2360679774997898
 \end{verbatim}
 %
-Pero en un script, si llamas a una función fructífera por sí sola,
+Pero en un script, si llamas a una función productiva por sí sola,
 ¡el valor de retorno se pierde para siempre!
 
 \begin{verbatim}
@@ -2523,7 +2523,7 @@ Es un valor especial que tiene su propio tipo:
 \end{verbatim}
 %
 Las funciones que hemos escrito hasta ahora son todas nulas.  Comenzaremos
-a escribir funciones fructíferas en unos capítulos más adelante.
+a escribir funciones productivas en unos capítulos más adelante.
 \index{tipo NoneType}
 \index{NoneType!tipo}
 
@@ -2637,8 +2637,8 @@ se usa como expresión, el valor de retorno es el valor de
 la expresión.
 \index{valor de retorno}
 
-\item[función fructífera:] Una función que devuelve un valor.
-\index{función fructífera}
+\item[función productiva:] Una función que devuelve un valor.
+\index{función productiva}
 
 \item[función nula:] Una función que siempre devuelve {\tt None}.
 \index{función nula}
@@ -2705,7 +2705,7 @@ de la pantalla.
                                                                  monty
 \end{verbatim}
 
-Pista: usa la repetición y concatenación de cadenas.  Además,
+Pista: usa la repetición de cadenas y la concatenación.  Además,
 Python proporciona una función incorporada llamada {\tt len} que
 devuelve la longitud de una cadena, por lo que el valor de \verb"len('monty')" es 5.
 
@@ -2774,7 +2774,7 @@ ahora.
 
 \item Escribe una función que dibuje una cuadrícula como la siguiente:
 \index{cuadrícula}
-
+\newpage
 \begin{verbatim}
 + - - - - + - - - - +
 |         |         |
@@ -2826,7 +2826,7 @@ Crédito: este ejercicio está basado en un ejercicio de Oualline, {\em
 \label{turtlechap}
 
 Este capítulo presenta un estudio de caso que demuestra un proceso para
-diseñar funciones que trabajen juntas.
+diseñar funciones que interactúen entre sí.
 
 Se presenta el módulo {\tt turtle}, el cual te permite
 crear imágenes usando gráficas tortuga.  El módulo {\tt turtle}
@@ -2857,8 +2857,8 @@ y escribe
 Cuando ejecutes este código, debería crearse una nueva ventana
 con una flecha pequeña que representa la tortuga.  Cierra la ventana.
 
-Crea un archivo con nombre {\tt mipoligono.py} y escribe en él el siguiente
-código:
+Crea un archivo con nombre {\tt mipoligono.py} y escribe en él las siguientes
+líneas de código:
 
 \begin{verbatim}
 import turtle
@@ -2884,7 +2884,7 @@ como se define en el módulo {\tt turtle}.
 haga algo, aunque en este caso no hay mucho que pueda hacer
 el usuario excepto cerrar la ventana.
 
-Una vez que creas un Turtle, puedes llamar a un {\bf método} para moverlo
+Una vez que creas una tortuga, puedes llamar a un {\bf método} para moverla
 alrededor de la ventana.  Un método es similar a una función, pero
 éste usa una sintaxis un poco diferente.  Por ejemplo, para mover la tortuga
 adelante:
@@ -2893,7 +2893,7 @@ adelante:
 bob.fd(100)
 \end{verbatim}
 %
-El método, {\tt fd}, está asociado con el objeto
+El método, {\tt fd} ({\em forward}), está asociado con el objeto
 tortuga que llamamos {\tt bob}.
 Llamar a un método es como hacer una solicitud: le estás pidiendo a {\tt bob}
 que se mueva hacia adelante.
@@ -2901,14 +2901,14 @@ que se mueva hacia adelante.
 El argumento de {\tt fd} es una distancia en pixeles, por lo que el tamaño
 real depende de tu pantalla.
 
-Otros método que puedes llamar en un Turtle son {\tt bk} ({\em backward}) para
+Otros métodos que puedes llamar en un objeto Turtle son {\tt bk} ({\em backward}) para
 retroceder, {\tt lt} ({\em left turn}) para girar a la izquierda y {\tt rt} ({\em right turn}) para girar a la derecha.  El
 argumento para {\tt lt} y {\tt rt} es un ángulo en grados.
 
 Además, cada Turtle sostiene una pluma, que está
 arriba o abajo; si la pluma está abajo, la tortuga deja
 un rastro cuando se mueve.  Los métodos {\tt pu} y {\tt pd}
-representan ``pen up'' y ``pen down''.
+representan ``{\em pen up}'' y ``{\em pen down}''.
 
 Para dibujar un ángulo recto, agrega estas líneas al programa
 (después de crear a {\tt bob} y antes de llamar a \verb"mainloop"):
@@ -3027,17 +3027,17 @@ longitud}.
 
 \item Escribe una función llamada {\tt circulo} que tome una tortuga,
 {\tt t}, y radio, {\tt r}, como parámetros y dibuje un círculo
-aproximado llamando a {\tt polygon} con una longitud y
+aproximado llamando a {\tt poligono} con una longitud y
 número de lados apropiado.  Prueba tu función con un rango de valores
 de {\tt r}.  \index{funcíon círculo} \index{círculo!función}
 
 Pista: averigua cuál es el perímetro del círculo y asegúrate de que
-{\tt longitud * n = perimetro}.
+se cumpla que {\tt longitud * n = perimetro}.
 
 \item Haz una versión más general de {\tt circulo} llamada {\tt arco}
 que tome un parámetro adicional {\tt angulo}, que determine
 qué fracción de un círculo dibujar.  {\tt angulo} está en
-grados, así que cuando {\tt angle=360}, {\tt arco} debería dibujar un círculo
+grados, así que cuando {\tt angulo=360}, {\tt arco} debería dibujar un círculo
 completo.
 \index{función arco}
 \index{arco!función}
@@ -3138,7 +3138,7 @@ poligono(bob, n=7, longitud=70)
 \end{verbatim}
 %
 Estos se llaman {\bf argumentos de palabra clave} porque incluyen
-a los nombres de parámetro como ``palabras clave'' (no confundir con
+a los nombres de parámetro tratándolos como ``palabras clave'' (no confundir con
 las palabras clave de Python como {\tt while} y {\tt def}).
 \index{argumento de palabra clave}
 \index{palabra clave!argumento de}
@@ -3326,7 +3326,7 @@ hay un ejemplo:
 \begin{verbatim}
 def polilinea(t, n, longitud, angulo):
     """Dibuja n segmentos de línea con la longitud dada
-    y el angulo (en grados) entre ellos.  t es una tortuga.
+    y el ángulo (en grados) entre ellos.  t es una tortuga.
     """
     for i in range(n):
         t.fd(longitud)
@@ -3407,7 +3407,7 @@ general (como una variable o parámetro).
 \index{generalización}
 
 \item[argumento de palabra clave:] Un argumento que incluye el nombre del
-parámetro como si fuera ``palabra clave''.
+parámetro tratándolo como ``palabra clave''.
 \index{argumento de palabra clave}
 \index{palabra clave!argumento de}
 
@@ -3506,7 +3506,7 @@ Solución: \url{http://thinkpython2.com/code/pie.py}.
 
 Las letras del alfabeto se pueden construir desde un número moderado
 de elementos básicos, como líneas verticales y horizontales y unas pocas
-curcas.  Diseña un alfabeto que pueda dibujarse con un número
+curvas.  Diseña un alfabeto que pueda dibujarse con un número
 mínimo de elementos básicos y luego escribe funciones que dibujen las letras.
 
 Deberías escribir una función para cada letra, con nombres
@@ -3523,7 +3523,7 @@ también requiere
 
 \begin{exercise}
 
-Lee sobre espirales en \url{http://en.wikipedia.org/wiki/Spiral}; luego
+Lee sobre espirales en \url{http://es.wikipedia.org/wiki/Espiral}; luego
 escribe un programa que dibuje una espiral arquimediana (o uno de los otros
 tipos).  Solución: \url{http://thinkpython2.com/code/spiral.py}.
 \index{espiral}
