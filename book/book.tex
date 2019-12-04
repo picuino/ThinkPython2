@@ -13,7 +13,7 @@
 
 % for some of these packages, you might have to install
 % texlive-latex-extra (in Ubuntu)
-
+% TODO: decidir cómo definir "the caller". Hasta el momento: "la llamadora"
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage{mathpazo}
@@ -373,7 +373,7 @@ a continuacion) que enviaron correcciones y sugerencias.
 
 \section*{Lista de colaboradores}
 
-\index{contributors}
+\index{colaboradores}
 Más de 100 lectores perspicaces y atentos han enviado
 sugerencias y correcciones en los últimos años.  Sus
 contribuciones, y su entusiasmo por este proyecto, han sido una
@@ -445,7 +445,7 @@ numerosas correcciones y sugerencias al libro.
 muchos errores tipográficos en el Capítulo 3.  Además, encontró errores en la función {\tt increment}
 en el Capítulo 13.
 
-\item John Ouzts corrigió la definición de ``return value''
+\item John Ouzts corrigió la definición de ``valor de retorno''
 en el Capítulo 3.
 
 \item Kevin Parks envió valiosos comentarios y sugerencias en cuanto a cómo
@@ -478,16 +478,16 @@ nuestro Latin que estuvo por mucho tiempo en el Capítulo 3.
 \item Chris Wrobel made corrections to the code in the chapter on
 file I/O and exceptions.
 
-\item Moshe Zadka has made invaluable contributions to this project.
-In addition to writing the first draft of the chapter on Dictionaries, he
-provided continual guidance in the early stages of the book.
+\item Moshe Zadka ha hecho contribuciones invaluables a este proyecto.
+Además de escribir el primer borrador del capítulo de Diccionarios,
+proporcionó orientación continua en las primeras etapas del libro.
 
 \item Christoph Zwerschke envió muchas correcciones y
 sugerencias pedagógicas, y explicó la diferencia entre {\em gleich}
 y {\em selbe}.
 
-\item James Mayer sent us a whole slew of spelling and
-typographical errors, including two in the contributor list.
+\item James Mayer nos envió una gran cantida de errores de ortografía
+y tipográficos, incluyendo dos en la lista de colaboradores.
 
 \item Hayden McAfee encontró una inconsistencia potencialmente confusa
 entre dos ejemplos.
@@ -3284,106 +3284,106 @@ a escribir código, entiendes mejor el problema.  A veces la refactorización es
 señal de que has aprendido algo.
 
 
-\section{A development plan}
+\section{Un plan de desarrollo}
 \index{development plan!encapsulation and generalization}
 
-A {\bf development plan} is a process for writing programs.  The
-process we used in this case study is ``encapsulation and
-generalization''.  The steps of this process are:
+Un {\bf plan de desarrollo} es un proceso para escribir programas.  El
+proceso que usamos en este estudio de caso es ``encapsulamiento y
+generalización''.  Los pasos de este proceso son:
 
 \begin{enumerate}
 
-\item Start by writing a small program with no function definitions.
+\item Comenzar escribiendo un programa pequeño sin definiciones de función.
 
-\item Once you get the program working, identify a coherent piece of
-  it, encapsulate the piece in a function and give it a name.
+\item Una vez que funciona el programa, identifica un parte
+  coherente, encapsula la parte en una función y dale un nombre.
 
-\item Generalize the function by adding appropriate parameters.
+\item Generaliza la función agregando parámetros apropiados.
 
-\item Repeat steps 1--3 until you have a set of working functions.
-Copy and paste working code to avoid retyping (and re-debugging).
+\item Repite los pasos 1--3 hasta que tengas un conjunto de funciones eficaces.
+Copia y pega código que funcione para evitar repetir (y volver a depurar).
 
-\item Look for opportunities to improve the program by refactoring.
-For example, if you have similar code in several places, consider
-factoring it into an appropriately general function.
+\item Busca oportunidades para mejorar el programa refactorizando.
+Por ejemplo, si tienes código similar en muchos lugares, considera
+factorizarlo dentro de una función general apropiada.
 
 \end{enumerate}
 
-This process has some drawbacks---we will see alternatives later---but
-it can be useful if you don't know ahead of time how to divide the
-program into functions.  This approach lets you design as you go
-along.
+Este proceso tiene algunos inconvenientes---más tarde veremos alternativas---pero
+puede ser útil si no sabes de antemano cómo dividir el
+programa en funciones.  Este enfoque te permite diseñar a medida que
+avanzas.
 
 
 \section{docstring}
 \label{docstring}
 \index{docstring}
 
-A {\bf docstring} is a string at the beginning of a function that
-explains the interface (``doc'' is short for ``documentation'').  Here
-is an example:
+Un {\bf docstring} es una cadena al comienzo de una función que
+explica la interfaz (``doc'' es la abreviatura de ``documentation'').  Aquí
+hay un ejemplo:
 
 \begin{verbatim}
-def polyline(t, n, length, angle):
-    """Draws n line segments with the given length and
-    angle (in degrees) between them.  t is a turtle.
+def polilinea(t, n, longitud, angulo):
+    """Dibuja n segmentos de línea con la longitud dada
+    y el angulo (en grados) entre ellos.  t es una tortuga.
     """
     for i in range(n):
-        t.fd(length)
-        t.lt(angle)
+        t.fd(longitud)
+        t.lt(angulo)
 \end{verbatim}
 %
-By convention, all docstrings are triple-quoted strings, also known
-as multiline strings because the triple quotes allow the string
-to span more than one line.
-\index{quotation mark}
-\index{triple-quoted string}
-\index{string!triple-quoted}
-\index{multiline string}
-\index{string!multiline}
+Por convención, todos los docstrings son cadenas entre triple comillas, también conocidas
+como cadenas multilínea porque las triple comillas permiten expandir
+la cadena a más de una línea.
+\index{comillas}
+\index{cadena entre triple comillas}
+\index{triple comillas!cadena entre}
+\index{cadena multilínea}
+\index{multilínea!cadena}
 
-It is terse, but it contains the essential information
-someone would need to use this function.  It explains concisely what
-the function does (without getting into the details of how it does
-it).  It explains what effect each parameter has on the behavior of
-the function and what type each parameter should be (if it is not
-obvious).
+Es breve, pero contiene la información escencial
+que alguien necesitaría para usar esta función.  Explica de manera concisa lo que
+hace la función (sin entrar en detalles sobre cómo lo
+hace).  Explica qué efecto tiene cada parámetro en el comportamiento de
+la función y qué tipo debería ser cada parámetro (si no es
+obvio).
 
-Writing this kind of documentation is an important part of interface
-design.  A well-designed interface should be simple to explain;
-if you have a hard time explaining one of your functions,
-maybe the interface could be improved.
+Escribir este tipo de documentación es una parte importante del diseño de la
+interfaz.  Una interfaz bien diseñada debería ser simple de explicar;
+si tienes dificultades al explicar una de tus funciones,
+quizás la interfaz podría mejorar.
 
 
-\section{Debugging}
-\index{debugging}
-\index{interface}
+\section{Depuración}
+\index{depuración}
+\index{interfaz}
 
-An interface is like a contract between a function and a caller.
-The caller agrees to provide certain parameters and the function
-agrees to do certain work.
+Una interfaz es como un contrato entre una función y una llamadora.
+La llamadora acepta proporcionar ciertos parámetros y la función
+acepta hacer cierto trabajo.
 
-For example, {\tt polyline} requires four arguments: {\tt t} has to be
-a Turtle; {\tt n} has to be an
-integer; {\tt length} should be a positive number; and {\tt
-  angle} has to be a number, which is understood to be in degrees.
+Por ejemplo, {\tt polilinea} requiere cuatro argumentos: {\tt t} tiene que ser
+Turtle; {\tt n} tiene que ser un
+entero; {\tt longitud} debería ser un número positivo; y {\tt
+  angulo} tiene que ser un número, que se entiende que está en grados.
 
-These requirements are called {\bf preconditions} because they
-are supposed to be true before the function starts executing.
-Conversely, conditions at the end of the function are
-{\bf postconditions}.  Postconditions include the intended
-effect of the function (like drawing line segments) and any
-side effects (like moving the Turtle or making other changes).
-\index{precondition}
-\index{postcondition}
+Estos requisitos se llaman {\bf precondiciones} porque
+se supone que son verdaderos antes de que la función comience a ejecutarse.
+De forma opuesta, las condiciones al final de la función son
+{\bf postcondiciones}.  Las postcondiciones incluyen el efecto
+previsto de la función (como al dibujar segmentos de línea) y cualquier
+efecto secundario (como mover la tortuga o hacer otros cambios).
+\index{precondición}
+\index{postcondición}
 
-Preconditions are the responsibility of the caller.  If the caller
-violates a (properly documented!) precondition and the function
-doesn't work correctly, the bug is in the caller, not the function.
+Las precondiciones son responsabilidad de la llamadora.  Si la llamadora
+viola una precondición (¡debidamente documentada!) y la función
+no funciona de forma correcta, el error está en la llamadora, no en la función.
 
-If the preconditions are satisfied and the postconditions are
-not, the bug is in the function.  If your pre- and postconditions
-are clear, they can help with debugging.
+Si las precondiciones se satisfacen y las postcondiciones
+no, el error está en la función.  Si tus pre y post condiciones
+están claras, pueden ayudar con la depuración.
 
 
 \section{Glossary}
