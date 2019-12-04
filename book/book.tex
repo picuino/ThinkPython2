@@ -13,7 +13,7 @@
 
 % for some of these packages, you might have to install
 % texlive-latex-extra (in Ubuntu)
-% TODO: decidir cómo definir "the caller". Hasta el momento: "la llamadora"
+
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage{mathpazo}
@@ -2341,7 +2341,7 @@ Eric, the half a bee.
 %
 El nombre de la variable que pasamos como argumento ({\tt michael}) no tiene
 nada que ver con el nombre del parámetro ({\tt bruce}).  No
-importa cómo se le llame al valor en su casa (en la función que llama);
+importa cómo se le llame al valor en su casa (en la llamadora);
 aquí en \verb"impr_2veces", a todos les llamamos {\tt bruce}.
 
 
@@ -2857,7 +2857,7 @@ y escribe
 Cuando ejecutes este código, debería crearse una nueva ventana
 con una flecha pequeña que representa la tortuga.  Cierra la ventana.
 
-Crea un archivo con nombre {\tt mypolygon.py} y escribe en él el siguiente
+Crea un archivo con nombre {\tt mipoligono.py} y escribe en él el siguiente
 código:
 
 \begin{verbatim}
@@ -2922,7 +2922,7 @@ bob.fd(100)
 Cuando ejecutes este programa, deberías ver a {\tt bob} moverse al este y luego
 al norte, dejando dos segmentos de línea atrás.
 
-Ahora modifica el programa para dibujar un cuadrado.  ¡No avances hasta que
+Ahora modifica el programa para dibujar un cuadrado.  ¡No continues hasta que
 lo hayas hecho funcionar!
 
 %\newpage
@@ -2947,7 +2947,7 @@ bob.fd(100)
 \end{verbatim}
 %
 Podemos hacer lo mismo de manera más concisa con una sentencia {\tt for}.
-Agrega este ejemplo a {\tt mypolygon.py} y ejecútalo de nuevo:
+Agrega este ejemplo a {\tt mipoligono.py} y ejecútalo de nuevo:
 \index{bucle for}
 \index{for!bucle}
 \index{sentencia for}
@@ -2968,7 +2968,7 @@ Deberías ver algo como esto:
 %
 Este es el uso más simple de una sentencia {\tt for}; después veremos
 más.  Pero eso debería ser suficiente para dejarte reescribir tu
-programa que dibuja cruadrados.  No avances hasta que lo hagas.
+programa que dibuja cruadrados.  No continues hasta que lo hagas.
 
 Aquí hay una sentencia {\tt for} que dibuja un cuadrado:
 
@@ -2982,7 +2982,7 @@ La sintaxis de una sentencia {\tt for} es similar a una definición
 de función.  Tiene un encabezado que termina con el signo dos puntos y un cuerpo
 con sangrías.  El cuerpo puede contener cualquier número de sentencias.
 
-Una sentencia {\tt for} tambiés es llamada {\bf bucle} porque
+Una sentencia {\tt for} también es llamada {\bf bucle} porque
 el flujo de ejecución recorre el cuerpo y luego vuelve
 hacia arriba.  Es este caso, recorre el cuerpo cuatro veces.
 \index{bucle}
@@ -3010,7 +3010,7 @@ no mires hasta que hayas terminado (o al menos intentado).
 con nombre {\tt t}, que es una tortuga.  Debería usar la tortuga para dibujar
 un cuadrado.
 
-Escribe una llamada a función que pase a {\tt bob} como un argumento a 
+Escribe una llamada a función que pase a {\tt bob} como argumento de 
 {\tt cuadrado}, y luego ejecuta el programa de nuevo.
 
 \item Agrega otro parámetro, con nombre {\tt longitud}, a {\tt cuadrado}.
@@ -3022,16 +3022,16 @@ longitud}.
 \item Haz una copia de {\tt cuadrado} y cambia el nombre a {\tt
   poligono}.  Agrega otro parámetro con nombre {\tt n} y modifica el cuerpo
   para que dibuje un polígono regular con n lados.  Pista: los ángulos exteriores
-  de un polígono regular con n-lados son de $360/n$ grados.  \index{función
+  de un polígono regular con n lados son de $360/n$ grados.  \index{función
     polígono} \index{polígono!función}
 
 \item Escribe una función llamada {\tt circulo} que tome una tortuga,
-{\tt t}, y radio, {\tt r}, como parámetros y que dibuje un círculo
+{\tt t}, y radio, {\tt r}, como parámetros y dibuje un círculo
 aproximado llamando a {\tt polygon} con una longitud y
 número de lados apropiado.  Prueba tu función con un rango de valores
 de {\tt r}.  \index{funcíon círculo} \index{círculo!función}
 
-Pista: averigua el perímetro del círculo y asegúrate de que
+Pista: averigua cuál es el perímetro del círculo y asegúrate de que
 {\tt longitud * n = perimetro}.
 
 \item Haz una versión más general de {\tt circulo} llamada {\tt arco}
@@ -3047,9 +3047,9 @@ completo.
 
 \section{Encapsulamiento}
 
-El primer ejercicio te pide poner tu código dibuja cuadrados
+El primer ejercicio te pide poner tu código que dibuja cuadrados
 dentro de una definición de función y luego llamar a la función, pasando
-a la tortuga como un parámetro.  Aquí está la solución:
+a la tortuga como parámetro.  Aquí está la solución:
 
 \begin{verbatim}
 def cuadrado(t):
@@ -3070,7 +3070,7 @@ Dentro de la función, {\tt t} hace referencia a la misma tortuga {\tt bob}, por
 {\tt t.lt(90)} tiene el mismo efecto que {\tt bob.lt(90)}.  En ese
 caso, ¿por qué no
 llamar al parámetro {\tt bob}?  La idea es que {\tt t} puede ser cualquier
-tortuga, no sólo bob {\tt bob}, así que podrías crear una segunda tortuga y
+tortuga, no sólo {\tt bob}, así que podrías crear una segunda tortuga y
 pasarla como argumento a {\tt cuadrado}:
 
 \begin{verbatim}
@@ -3183,7 +3183,7 @@ más control, pero la interfaz sería menos limpia.
 
 La {\bf interfaz} de una función es un resumen de cómo se usa: ¿cuáles
 son los parámetros?  ¿Qué hace la funcíon?  ¿Y cuál es el valor de
-retorno?  Una interfaz es ``limpia'' si permite al que llama hacer
+retorno?  Una interfaz es ``limpia'' si permite a la llamadora hacer
 lo que quiere sin lidiar con detalles innecesarios.
 
 En este ejemplo, {\tt r} forma parte de la interfaz porque
@@ -3359,7 +3359,7 @@ quizás la interfaz podría mejorar.
 \index{depuración}
 \index{interfaz}
 
-Una interfaz es como un contrato entre una función y una llamadora.
+Una interfaz es como un contrato entre una función y la llamadora.
 La llamadora acepta proporcionar ciertos parámetros y la función
 acepta hacer cierto trabajo.
 
@@ -3386,78 +3386,78 @@ no, el error está en la función.  Si tus pre y post condiciones
 están claras, pueden ayudar con la depuración.
 
 
-\section{Glossary}
+\section{Glosario}
 
 \begin{description}
 
-\item[method:] A function that is associated with an object and called
-using dot notation.
-\index{method}
+\item[método:] Una función que se asocia a un objeto y se llama
+usando notación de punto.
+\index{método}
 
-\item[loop:] A part of a program that can run repeatedly.
-\index{loop}
+\item[bucle:] Una parte de un programa que puede ejecutarse de forma repetida.
+\index{bucle}
 
-\item[encapsulation:] The process of transforming a sequence of
-statements into a function definition.
-\index{encapsulation}
+\item[encapsulamiento:] El proceso de transformar una secuencia de
+sentencias en una definición de función.
+\index{encapsulamiento}
 
-\item[generalization:] The process of replacing something
-unnecessarily specific (like a number) with something appropriately
-general (like a variable or parameter).
-\index{generalization}
+\item[generalización:] El proceso de reemplazar algo
+innecesariamente específico (como un número) con algo apropiadamente
+general (como una variable o parámetro).
+\index{generalización}
 
-\item[keyword argument:] An argument that includes the name of
-the parameter as a ``keyword''.
-\index{keyword argument}
-\index{argument!keyword}
+\item[argumento de palabra clave:] Un argumento que incluye el nombre del
+parámetro como ``palabra clave''.
+\index{argumento de palabra clave}
+\index{palabra clave!argumento de}
 
-\item[interface:] A description of how to use a function, including
-the name and descriptions of the arguments and return value.
-\index{interface}
+\item[interfaz:] Una descripción de cómo usar una función, incluyendo
+el nombre y descripciones de los argumentos y valor de retorno.
+\index{interfaz}
 
-\item[refactoring:] The process of modifying a working program to
-  improve function interfaces and other qualities of the code.
-\index{refactoring}
+\item[refactorización:] El proceso de modificar un programa que funciona para
+  mejorar las interfaces de funciones y otras cualidades del código.
+\index{refactorización}
 
-\item[development plan:] A process for writing programs.
-\index{development plan}
+\item[plan de desarrollo:] Un proceso para escribir programas.
+\index{plan de desarrollo}
 
-\item[docstring:] A string that appears at the top of a function
-  definition to document the function's interface.
+\item[docstring:] Una cadena que aparece en la parte superior de una definición
+  de función para documentar la interfaz de la función.
 \index{docstring}
 
-\item[precondition:] A requirement that should be satisfied by
-the caller before a function starts.
-\index{precondition}
+\item[precondición:] Un requisito que debería satisfacer la
+llamadora antes de que la función comience.
+\index{precondición}
 
-\item[postcondition:] A requirement that should be satisfied by
-the function before it ends.
-\index{precondition}
+\item[postcondición:] Un requisito que debería satisfacer la
+función antes de que termine.
+\index{precondición}
 
 \end{description}
 
 
-\section{Exercises}
+\section{Ejercicios}
 
 \begin{exercise}
 
-Download the code in this chapter from
+Descarga el código de este capítulo en
 \url{http://thinkpython2.com/code/polygon.py}.
 
 \begin{enumerate}
 
-\item Draw a stack diagram that shows the state of the program
-while executing {\tt circle(bob, radius)}.  You can do the
-arithmetic by hand or add {\tt print} statements to the code.
-\index{stack diagram}
+\item Dibuja un diagrama de pila que muestre el estado del programa
+al ejecutar {\tt circulo(bob, radio)}.  Puedes hacer la
+aritmética a mano o agregar sentencias {\tt print} al código.
+\index{diagrama de pila}
 
-\item The version of {\tt arc} in Section~\ref{refactoring} is not
-very accurate because the linear approximation of the
-circle is always outside the true circle.  As a result,
-the Turtle ends up a few pixels away from the correct
-destination.  My solution shows a way to reduce
-the effect of this error.  Read the code and see if it makes
-sense to you.  If you draw a diagram, you might see how it works.
+\item La versión de {\tt arco} en la Sección~\ref{refactoring} no es
+muy precisa debido a que la aproximación lineal del
+círculo está siempre afuera del verdadero círculo.  Como resultado,
+la tortuga termina a unos pocos pixeles de distancia del destino
+correcto.  Mi solución muestra una manera de reducir
+el efecto de este error.  Lee el código y ve si
+tiene sentido para ti.  Si dibujas un diagrama, podrías ver cómo trabaja.
 
 \end{enumerate}
 
@@ -3466,68 +3466,68 @@ sense to you.  If you draw a diagram, you might see how it works.
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/flowers.pdf}}
-\caption{Turtle flowers.}
+\caption{Flores de tortuga.}
 \label{fig.flowers}
 \end{figure}
 
 \begin{exercise}
-\index{flower}
+\index{flor}
 
-Write an appropriately general set of functions that
-can draw flowers as in Figure~\ref{fig.flowers}.
+Escribe un conjunto de funciones apropiadamente generales que
+puedan dibujar flores como en la Figura~\ref{fig.flowers}.
 
-Solution: \url{http://thinkpython2.com/code/flower.py},
-also requires \url{http://thinkpython2.com/code/polygon.py}.
+Solución: \url{http://thinkpython2.com/code/flower.py},
+también requiere \url{http://thinkpython2.com/code/polygon.py}.
 
 \end{exercise}
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/pies.pdf}}
-\caption{Turtle pies.}
+\caption{Pasteles de tortuga.}
 \label{fig.pies}
 \end{figure}
 
 
 \begin{exercise}
-\index{pie}
+\index{pastel}
 
-Write an appropriately general set of functions that
-can draw shapes as in Figure~\ref{fig.pies}.
+Escribe un conjunto de funciones apropiadamente generales que
+puedan dibujar formas como en la Figura~\ref{fig.pies}.
 
-Solution: \url{http://thinkpython2.com/code/pie.py}.
+Solución: \url{http://thinkpython2.com/code/pie.py}.
 
 \end{exercise}
 
 \begin{exercise}
-\index{alphabet}
-\index{turtle typewriter}
-\index{typewriter, turtle}
+\index{alfabeto}
+\index{tortuga!máquina de escribir}
+\index{máquina de escribir tortuga}
 
-The letters of the alphabet can be constructed from a moderate number
-of basic elements, like vertical and horizontal lines and a few
-curves.  Design an alphabet that can be drawn with a minimal
-number of basic elements and then write functions that draw the letters.
+Las letras del alfabeto se pueden construir desde un número moderado
+de elementos básicos, como líneas verticales y horizontales y unas pocas
+curcas.  Diseña un alfabeto que pueda dibujarse con un número
+mínimo de elementos básicos y luego escribe funciones que dibujen las letras.
 
-You should write one function for each letter, with names
-\verb"draw_a", \verb"draw_b", etc., and put your functions
-in a file named {\tt letters.py}.  You can download a
-``turtle typewriter'' from \url{http://thinkpython2.com/code/typewriter.py}
-to help you test your code.
+Deberías escribir una función para cada letra, con nombres
+\verb"dibujar_a", \verb"dibujar_b", etc., y poner tus funciones
+en un archivo con nombre {\tt letras.py}.  Puedes descargar una
+``máquina de escribir tortuga'' desde \url{http://thinkpython2.com/code/typewriter.py}
+para ayudarte a probar tu código.
 
-You can get a solution from \url{http://thinkpython2.com/code/letters.py};
-it also requires
+Puedes obtener una solución en \url{http://thinkpython2.com/code/letters.py};
+también requiere
 \url{http://thinkpython2.com/code/polygon.py}.
 
 \end{exercise}
 
 \begin{exercise}
 
-Read about spirals at \url{http://en.wikipedia.org/wiki/Spiral}; then
-write a program that draws an Archimedian spiral (or one of the other
-kinds).  Solution: \url{http://thinkpython2.com/code/spiral.py}.
-\index{spiral}
-\index{Archimedian spiral}
+Lee sobre espirales en \url{http://en.wikipedia.org/wiki/Spiral}; luego
+escribe un programa que dibuje una espiral arquimediana (o uno de los otros
+tipos).  Solución: \url{http://thinkpython2.com/code/spiral.py}.
+\index{espiral}
+\index{arquimediana!espiral}
 
 \end{exercise}
 

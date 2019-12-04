@@ -3,7 +3,7 @@ ThinkPython2e en español
 
 Traducción por Jorge Espinoza.
 
-`19% |#########.........................................|`
+`20% |##########........................................|`
 
 Fecha límite: 2020-04-05
 
@@ -15,7 +15,7 @@ Fecha límite: 2020-04-05
 | 1  | The way of the program                    | **100%**      |              |
 | 2  | Variables, expressions and statements     | **100%**      |              |
 | 3  | Functions                                 | **100%**      |              |
-| 4  | Case study: interface design              | 79%           | 2019-12-04   |
+| 4  | Case study: interface design              | **100%**      | 2019-12-04   |
 | 5  | Conditionals and recursion                | 0%            | 2019-12-09   |
 | 6  | Fruitful functions                        | 0%            | 2020-12-15   |
 | 7  | Iteration                                 | 0%            | 2020-12-21   |
