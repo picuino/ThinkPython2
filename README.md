@@ -1,11 +1,19 @@
-ThinkPython2e en español
-========================
+ThinkPython2-spanish
+====================
+
+Código LaTeX de *Pensar en Python*, la traducción al español de Think Python (2nd Edition).
 
 Traducción por Jorge Espinoza.
 
-`20% |##########........................................|`
+[Descargar libro traducido hasta el Capítulo 4.](https://github.com/jorge-e/ThinkPython2-spanish/blob/master/book/thinkpython2-spanish.pdf)
+
+La vesión original se puede encontrar en su propio [repositorio](https://github.com/AllenDowney/ThinkPython2) o descargar desde su [sitio web](http://greenteapress.com/wp/think-python-2e/).
+
 
 ## **Avance**
+
+`20% |##########........................................|`
+
 
 | N° | Nombre de capítulo                        | Estado        |
 |---:|-------------------------------------------|:-------------:|
@@ -31,19 +39,3 @@ Traducción por Jorge Espinoza.
 | 19 | The Goodies                               | 0%            |
 | A  | Debugging                                 | 0%            |
 | B  | Analysis of Algorithms                    | 0%            |
-
-
-
-ThinkPython
-===========
-
-LaTeX source, code examples, and exercise solutions for Think Python, 2nd edition, by Allen Downey.
-
-You can download this book in PDF from [Green Tea Press](http://greenteapress.com/wp/think-python-2e/) or buy it in paper and other formats from [O'Reilly Media](http://shop.oreilly.com/product/0636920045267.do).
-
-To build the book from source you will need a LaTeX installion.  I recommend the TeX Live distribution with the following packages:
-
-* texlive-latex-base
-* texlive-latex-extra
-* texlive-fonts-recommended
-
