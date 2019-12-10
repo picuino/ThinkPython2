@@ -561,7 +561,7 @@ el mismo día. Extraño.
 
 \item Charles Thayer nos animó a deshacernos de los punto y coma que
 habíamos puesto al final de algunas sentencias y a limpiar nuestro
-uso de ``argumento'' and ``parámetro''.
+uso de ``argumento'' y ``parámetro''.
 
 \item Roger Sperberg advirtió sobre una lógica retorcida en el Capítulo 3.
 
@@ -576,8 +576,8 @@ of Debugging and a typo in Chapter 4.
 
 \item Wim Champagne found a brain-o in a dictionary example.
 
-\item Douglas Wright pointed out a problem with floor division in
-{\tt arc}.
+\item Douglas Wright señaló un problema con la división entera en
+{\tt arco}.
 
 \item Jared Spindor encontró algo de basura al final de una oración.
 
@@ -601,7 +601,7 @@ separados.
 
 \item Andrew Turner {\tt en}contró un error en el Capítulo 8.
 
-\item Adam Hobart fixed a problem with floor division in {\tt arc}.
+\item Adam Hobart arregló un problema con la división entera en {\tt arco}.
 
 \item Daryl Hammond y Sarah Zimmerman advirtieron que serví
 {\tt math.pi} demasiado pronto.  Y Zim vio un error tipográfico.
@@ -723,7 +723,7 @@ al hacer que la gente comience ejecutando Python en un navegador.
 \item Xavier Van Aubel hizo muchas correcciones útiles en la segunda
 edición.
 
-\item William Murray corrected my definition of floor division.
+\item William Murray corrigió mi definición de división entera.
 
 \item Per Starb{\"a}ck me puso al día sobre nuevas líneas universales en Python 3.
 
@@ -875,7 +875,7 @@ ejecutando Python 3.  Si comienza con 2, estás ejecutando
 
 La última línea es un {\bf prompt} que indica que el intérprete está listo
 para que introduzcas código.
-Si escribes una línea de código y presionas la tecla Entrar, el intérprete
+Si escribes una línea de código y presionas la tecla Enter, el intérprete
 muestra el resultado:
 \index{prompt}
 
@@ -1998,15 +1998,15 @@ Este formato se llama {\bf notación de punto}.
 \index{notación de punto}
 
 \begin{verbatim}
->>> razon = potencia_sennal / potencia_ruido  # uso de 'nn' en lugar de 'ñ'.
->>> decibeles = 10 * math.log10(razon)
+>>> relacion = potencia_sennal / potencia_ruido   # uso de 'nn' y no 'ñ'.
+>>> decibeles = 10 * math.log10(relacion)
 
 >>> radianes = 0.7
 >>> altura = math.sin(radianes)
 \end{verbatim}
 %
 El primer ejemplo usa \verb"math.log10" para calcular
-una relación señal-ruido en decibeles (suponiendo que \verb"potencia_sennal" y
+una relación señal/ruido en decibeles (suponiendo que \verb"potencia_sennal" y
 \verb"potencia_ruido" están definidas).  El módulo math también proporciona {\tt log},
 el cual calcula logaritmos en base {\tt e}.
 \index{función log}
@@ -2133,7 +2133,7 @@ una comilla simple (que también es un apóstrofe) aparece en la cadena.
 
 Todas las comillas (simples y dobles)
 deben ser ``comillas rectas'', usualmente
-ubicadas cerca de Entrar en el teclado.  Las ``comillas tipográficas'', como
+ubicadas cerca de Enter en el teclado.  Las ``comillas tipográficas'', como
 las de esta oración, no son legales en Python.
 
 Si escribes una definición de función en modo interactivo, el intérprete
@@ -3543,7 +3543,7 @@ y módulo.
 \section{División entera y módulo}
 
 El operados {\bf división entera}, \verb"//", divide
-dos números y redondea a un entero.  Por ejemplo, supongamos que la
+dos números y redondea a un entero hacia abajo.  Por ejemplo, supongamos que la
 duración de una película es 105 minutos.  Quizás quieres saber
 cuánto dura en horas.  La división convencional
 devuelve un número de coma flotante:
@@ -3576,10 +3576,10 @@ Para obtener el resto, podrías restar una hora en minutos:
 \index{división de coma flotante}
 \index{entera!división}
 \index{coma flotante!división}
-\index{operador módulo}
+\index{operador de módulo}
 \index{módulo!operador}
 
-Una alternativa es usar el {\bf operador módulo}, \verb"%", el cual
+Una alternativa es usar el {\bf operador de módulo}, \verb"%", el cual
 divide dos números y devuelve el resto.
 
 \begin{verbatim}
@@ -3588,7 +3588,7 @@ divide dos números y devuelve el resto.
 45
 \end{verbatim}
 %
-El operador módulo es más útil de lo que parece.  Por
+El operador de módulo es más útil de lo que parece.  Por
 ejemplo, puedes verificar si un número es divisible por otro---si
 {\tt x \% y} es cero, entonces {\tt x} es divisible por {\tt y}.
 \index{divisibilidad}
@@ -3961,109 +3961,109 @@ bueno comenzar pronto.
 \index{for!bucle}
 
 
-\section{Stack diagrams for recursive functions}
+\section{Diagramas de pila para funciones recursivas}
 \label{recursive.stack}
-\index{stack diagram}
-\index{function frame}
-\index{frame}
+\index{diagrama de pila}
+\index{función!marco de}
+\index{marco}
 
-In Section~\ref{stackdiagram}, we used a stack diagram to represent
-the state of a program during a function call.  The same kind of
-diagram can help interpret a recursive function.
+En la Sección~\ref{stackdiagram}, usamos un diagrama de pila para representar
+el estado de un programa durante una llamada a función.  El mismo tipo de
+diagrama puede ayudar a interpretar una función recursiva.
 
-Every time a function gets called, Python creates a
-frame to contain the function's local variables and parameters.
-For a recursive function, there might be more than one frame on the
-stack at the same time.
+Cada vez que una función es llamada, Python crea un
+marco que contiene las variables locales y parámetros de la función.
+Para una función revursiva, podría haber más de un marco en la
+pila al mismo tiempo.
 
-Figure~\ref{fig.stack2} shows a stack diagram for {\tt countdown} called with
+La Figura~\ref{fig.stack2} muestra un diagrama de pila para {\tt cuenta\_reg} llamada con
 {\tt n = 3}.
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/stack2.pdf}}
-\caption{Stack diagram.}
+\caption{Diagrama de pila.}
 \label{fig.stack2}
 \end{figure}
 
 
-As usual, the top of the stack is the frame for \verb"__main__".
-It is empty because we did not create any variables in
-\verb"__main__" or pass any arguments to it.
-\index{base case}
-\index{recursion!base case}
+Como siempre, la parte de arriba de la pila es el marco para \verb"__main__".
+Está vacío porque no creamos variables en
+\verb"__main__" ni pasamos argumentos en ésta.
+\index{caso base}
+\index{recursividad!caso base de}
 
-The four {\tt countdown} frames have different values for the
-parameter {\tt n}.  The bottom of the stack, where {\tt n=0}, is
-called the {\bf base case}.  It does not make a recursive call, so
-there are no more frames.
+Los cuatro marcos de {\tt cuenta\_reg} tienen valores diferentes para el
+parámetro {\tt n}.  La parte de abajo de la pila, donde {\tt n=0}, se
+llama {\bf caso base}.  No hace una llamada recursiva, por lo que
+no hay más marcos.
 
-As an exercise, draw a stack diagram for \verb"print_n" called with
-\verb"s = 'Hello'" and {\tt n=2}.
-Then write a function called \verb"do_n" that takes a function
-object and a number, {\tt n}, as arguments, and that calls
-the given function {\tt n} times.
+Como ejercicio, dibuja un diagrama de pila para \verb"imprimir_n" llamada con
+\verb"s = 'Hola'" y {\tt n=2}.
+Luego escribe una función llamada \verb"hacer_n" que tome una objeto de
+función y un número, {\tt n}, como argumentos, y que llame
+a la dicha función {\tt n} veces.
 
 
-\section{Infinite recursion}
-\index{infinite recursion}
-\index{recursion!infinite}
-\index{runtime error}
-\index{error!runtime}
-\index{traceback}
+\section{Recursividad infinita}
+\index{recursividad infinita}
+\index{infinita!recursividad}
+\index{error de tiempo de ejecución}
+\index{tiempo de ejecución!error de}
+\index{rastreo}
 
-If a recursion never reaches a base case, it goes on making
-recursive calls forever, and the program never terminates.  This is
-known as {\bf infinite recursion}, and it is generally not
-a good idea.  Here is a minimal program with an infinite recursion:
+Si una recursividad nunca llega a un caso base, sigue haciendo
+llamadas recursivas por siempre y el programa nunca termina.  Esto se
+conoce como {\bf recursividad infinita} y en general no es
+una buena idea.  Aquí hay un programa mínimo con una recursividad infinita:
 
 \begin{verbatim}
-def recurse():
-    recurse()
+def recursivo():
+    recursivo()
 \end{verbatim}
 %
-In most programming environments, a program with infinite recursion
-does not really run forever.  Python reports an error
-message when the maximum recursion depth is reached:
-\index{exception!RuntimeError}
+En la mayoría de los entornos de programación, un programa con recursividad infinita
+no se ejecuta realmente por siempre.  Python entrega un
+mensaje de error cuando la recursividad alcanza la profundidad máxima:
+\index{excepción RuntimeError}
 \index{RuntimeError}
 
 \begin{verbatim}
-  File "<stdin>", line 2, in recurse
-  File "<stdin>", line 2, in recurse
-  File "<stdin>", line 2, in recurse
+  File "<stdin>", line 2, in recursivo
+  File "<stdin>", line 2, in recursivo
+  File "<stdin>", line 2, in recursivo
                   .
                   .
                   .
-  File "<stdin>", line 2, in recurse
+  File "<stdin>", line 2, in recursivo
 RuntimeError: Maximum recursion depth exceeded
 \end{verbatim}
 %
-This traceback is a little bigger than the one we saw in the
-previous chapter.  When the error occurs, there are 1000
-{\tt recurse} frames on the stack!
+Este rastreo es un poco más grande del que vimos en el
+capítulo anterior.  Cuando el error ocurre, ¡hay 1000
+marcos de {\tt recursivo} en la pila!
 
-If you encounter an infinite recursion by accident, review
-your function to confirm that there is a base case that does not
-make a recursive call.  And if there is a base case, check whether
-you are guaranteed to reach it.
+Si encuentras una recursividad infinita por accidente, revisa
+tu función para confirmar que hay un caso base que no
+hace una llamada recursiva.  Y si hay un caso base, verifica si
+tienes garantizado alcanzarlo.
 
 
-\section{Keyboard input}
-\index{keyboard input}
+\section{Entrada de teclado}
+\index{entrada de teclado}
 
-The programs we have written so far accept no input from the user.
-They just do the same thing every time.
+Los programas que hemos escrito hasta ahora no admiten entradas del usuario.
+Simplemente hacen siempre lo mismo.
 
-Python provides a built-in function called {\tt input} that
-stops the program and
-waits for the user to type something.  When the user presses {\sf
-  Return} or {\sf Enter}, the program resumes and \verb"input"
-returns what the user typed as a string.  In Python 2, the same
-function is called \verb"raw_input".
+Python proporciona una función incorporada llamada {\tt input} que
+detiene el programa y
+espera a que el usuario escriba algo.  Cuando el usuario presiona {\sf
+  Return} o {\sf Enter}, el programa continúa e \verb"input"
+devuelve lo que el usuario escribió como una cadena.  En Python 2, la misma
+función se llama \verb"raw_input".
 \index{Python 2}
-\index{input function}
-\index{function!input}
+\index{función input}
+\index{input!función}
 
 \begin{verbatim}
 >>> text = input()
@@ -4078,66 +4078,66 @@ prompt as an argument:
 \index{prompt}
 
 \begin{verbatim}
->>> name = input('What...is your name?\n')
-What...is your name?
-Arthur, King of the Britons!
->>> name
-'Arthur, King of the Britons!'
+>>> nombre = input('¿Cuál...es tu nombre?\n')
+¿Cuál...es tu nombre?
+¡Arturo, Rey de los Britones!
+>>> nombre
+'¡Arturo, Rey de los Britones!'
 \end{verbatim}
 %
-The sequence \verb"\n" at the end of the prompt represents a {\bf
-  newline}, which is a special character that causes a line break.
-That's why the user's input appears below the prompt.  \index{newline}
+La secuencia \verb"\n" al final de la pregunta representa una {\bf
+  nueva línea}, el cual es un carácter especial que provoca un salto de línea.
+Esa es la razón por la cual la entrada del usuario aparece debajo de la pregunta.  \index{nueva línea}
 
-If you expect the user to type an integer, you can try to convert
-the return value to {\tt int}:
+Si esperas que el usuario escriba un entero, puedes intentar convertir
+el valor de retorno a {\tt int}:
 
 \begin{verbatim}
->>> prompt = 'What...is the airspeed velocity of an unladen swallow?\n'
->>> speed = input(prompt)
-What...is the airspeed velocity of an unladen swallow?
+>>> pregunta = '¿Cuál...es la velocidad media de una golondrina sin carga?\n'
+>>> velocidad = input(pregunta)
+¿Cuál...es la velocidad media de una golondrina sin carga?
 42
->>> int(speed)
+>>> int(velocidad)
 42
 \end{verbatim}
 %
-But if the user types something other than a string of digits,
-you get an error:
+Pero si el usuario escribe algo distinto a una cadena de dígitos,
+obtienes un error:
 
 \begin{verbatim}
->>> speed = input(prompt)
-What...is the airspeed velocity of an unladen swallow?
-What do you mean, an African or a European swallow?
->>> int(speed)
+>>> speed = input(pregunta)
+¿Cuál...es la velocidad media de una golondrina sin carga?
+¿De qué especie, de la africana o de la europea?
+>>> int(velocidad)
 ValueError: invalid literal for int() with base 10
 \end{verbatim}
 %
-We will see how to handle this kind of error later.
+Más adelante veremos cómo tratar este tipo de error.
 \index{ValueError}
-\index{exception!ValueError}
+\index{excepción ValueError}
 
 
-\section{Debugging}
+\section{Depuración}
 \label{whitespace}
-\index{debugging}
-\index{traceback}
+\index{depuración}
+\index{rastreo}
 
-When a syntax or runtime error occurs, the error message contains
-a lot of information, but it can be overwhelming.  The most
-useful parts are usually:
+Cuando ocurre un error de sintaxis o de tiempo de ejecución, el mensaje de error contiene
+mucha información, pero puede ser abrumadora.  Las partes
+más útiles suelen ser:
 
 \begin{itemize}
 
-\item What kind of error it was, and
+\item Qué tipo de error fue y
 
-\item Where it occurred.
+\item Dónde ocurrió.
 
 \end{itemize}
 
-Syntax errors are usually easy to find, but there are a few
-gotchas.  Whitespace errors can be tricky because spaces and
-tabs are invisible and we are used to ignoring them.
-\index{whitespace}
+Los errores de sintaxis son generalmente fáciles de encontrar, pero hay algunas
+trampas.  Los errores de espacio en blanco pueden ser complicados porque los espacios y
+las sangrías son invisibles y estamos acostumbrados a ignorarlos.
+\index{espacio en blanco}
 
 \begin{verbatim}
 >>> x = 5
@@ -4148,132 +4148,132 @@ tabs are invisible and we are used to ignoring them.
 IndentationError: unexpected indent
 \end{verbatim}
 %
-In this example, the problem is that the second line is indented by
-one space.  But the error message points to {\tt y}, which is
-misleading.  In general, error messages indicate where the problem was
-discovered, but the actual error might be earlier in the code,
-sometimes on a previous line.
-\index{error!runtime}
-\index{runtime error}
+En este ejemplo, el problema es que la segunda línea está desajustada por
+un espacio.  Pero el mensaje de error señala a {\tt y}, lo cual es
+engañoso.  En general, los mensajes de error indican dónde fue descubierto
+el problema, pero el error real podría estar antes en el código,
+a veces en una línea anterior.
+\index{tiempo de ejecución!error de}
+\index{error de tiempo de ejecución}
 
-The same is true of runtime errors.  Suppose you are trying
-to compute a signal-to-noise ratio in decibels.  The formula
-is $SNR_{db} = 10 \log_{10} (P_{signal} / P_{noise})$.  In Python,
-you might write something like this:
+Lo mismo ocurre con los errores de tiempo de ejecución.  Supongamos que estás intentando
+calcular una relación señal/ruido en decibeles.  La fórmula
+es $RSR_{db} = 10 \log_{10} (P_{se\tilde{n}al} / P_{ruido})$.  En Python,
+podrías escribir algo así:
 
 \begin{verbatim}
 import math
-signal_power = 9
-noise_power = 10
-ratio = signal_power // noise_power
-decibels = 10 * math.log10(ratio)
-print(decibels)
+potencia_sennal = 9
+potencia_ruido = 10
+relacion = potencia_sennal // potencia_ruido
+decibeles = 10 * math.log10(relacion)
+print(decibeles)
 \end{verbatim}
 %
-When you run this program, you get an exception:
+Cuando ejecutas este programa, obtienes una excepción:
 %
-\index{exception!OverflowError}
+\index{excepción OverflowError}
 \index{OverflowError}
 
 \begin{verbatim}
 Traceback (most recent call last):
   File "snr.py", line 5, in ?
-    decibels = 10 * math.log10(ratio)
+    decibeles = 10 * math.log10(relacion)
 ValueError: math domain error
 \end{verbatim}
 %
-The error message indicates line 5, but there is nothing
-wrong with that line.  To find the real error, it might be
-useful to print the value of {\tt ratio}, which turns out to
-be 0.  The problem is in line 4, which uses floor division
-instead of floating-point division.
-\index{floor division}
-\index{division!floor}
+El mensaje de error indica la línea 5, pero no hay nada
+malo con esa línea.  Para encontrar el error real, podría ser
+útil imprimir el valor de {\tt relacion}, el cual resulta
+ser 0.  El problema está en la línea 4, la cual usa división entera
+en lugar de división de coma flotante.
+\index{división entera}
+\index{entera!división}
 
-You should take the time to read error messages carefully, but don't
-assume that everything they say is correct.
+Deberías tomarte el tiempo de leer cuidadosamente los mensajes de error, pero no
+supongas que todo lo que dice es correcto.
 
 
-\section{Glossary}
+\section{Glosario}
 
 \begin{description}
 
-\item[floor division:] An operator, denoted {\tt //}, that divides two
-  numbers and rounds down (toward negative infinity) to an integer.
-  \index{floor division}
-  \index{division!floor}
+\item[división entera:] Un operador, denotado por {\tt //}, que divide dos
+  números y redondea a un entero hacia abajo (hacia el infinito negativo).
+  \index{división entera}
+  \index{entera!división}
 
-\item[modulus operator:]  An operator, denoted with a percent sign
-({\tt \%}), that works on integers and returns the remainder when one
-number is divided by another.
-\index{modulus operator}
-\index{operator!modulus}
+\item[operador de módulo:]  Un operador, denotado con un signo de porcentaje
+({\tt \%}), que trabaja con enteros y revuelve el resto de
+dividir un número por otro.
+\index{operador de módulo}
+\index{módulo!operador}
 
-\item[boolean expression:]  An expression whose value is either
-{\tt True} or {\tt False}.
-\index{boolean expression}
-\index{expression!boolean}
+\item[expresión booleana:]  Una expresión cuyo valor es
+{\tt True} o {\tt False}.
+\index{expresión booleana}
+\index{booleana!expresión}
 
-\item[relational operator:] One of the operators that compares
-its operands: {\tt ==}, {\tt !=}, {\tt >}, {\tt <}, {\tt >=}, and {\tt <=}.
+\item[operador relacional:] Una de los operadores que comprara
+sus operandos: {\tt ==}, {\tt !=}, {\tt >}, {\tt <}, {\tt >=} y {\tt <=}.
 
-\item[logical operator:] One of the operators that combines boolean
-expressions: {\tt and}, {\tt or}, and {\tt not}.
+\item[operador lógico:] Uno de los operadores que combina expresiones
+booleanas: {\tt and}, {\tt or} y {\tt not}.
 
-\item[conditional statement:]  A statement that controls the flow of
-execution depending on some condition.
-\index{conditional statement}
-\index{statement!conditional}
+\item[sentencia condicional:]  Una sentencia que controla el flujo de
+ejecución dependiendo de una condición.
+\index{sentencia condicional}
+\index{condicional!sentencia}
 
-\item[condition:] The boolean expression in a conditional statement
-that determines which branch runs.
-\index{condition}
+\item[condición:] La expresión booleana en una sentencia condicional
+que determina cuál rama se ejecuta.
+\index{condición}
 
-\item[compound statement:]  A statement that consists of a header
-and a body.  The header ends with a colon (:).  The body is indented
-relative to the header.
-\index{compound statement}
+\item[sentencia compuesta:]  Una sentencia que consiste en un encabezado
+y un cuerpo.  El encabezado termina con un signo de dos puntos (:).  El cuerpo tiene sangrías
+relativas al encabezado.
+\index{sentencia compuesta}
 
-\item[branch:] One of the alternative sequences of statements in
-a conditional statement.
-\index{branch}
+\item[rama:] Una de las secuencias de sentencias alternativas en
+una sentencia condicional.
+\index{rama}
 
-\item[chained conditional:]  A conditional statement with a series
-of alternative branches.
-\index{chained conditional}
-\index{conditional!chained}
+\item[condicional encadenado:]  Una sentencia condicional con una serie
+de ramas alternativas.
+\index{condicional encadenado}
+\index{encadenado!condicional}
 
-\item[nested conditional:]  A conditional statement that appears
-in one of the branches of another conditional statement.
-\index{nested conditional}
-\index{conditional!nested}
+\item[condicional anidado:]  Una sentencia condicional que aparece
+en una de las ramas de otra sentencia condicional.
+\index{condicional anidado}
+\index{anidado!condicional}
 
-\item[return statement:] A statement that causes a function to
-end immediately and return to the caller.
+\item[sentencia return:] Una sentencia que provoca que una función
+termine inmediatamente y vuelva a la llamadora.
 
-\item[recursion:]  The process of calling the function that is
-currently executing.
-\index{recursion}
+\item[recursividad:]  El proceso de llamar a la función que ya se está
+ejecutando.
+\index{recursividad}
 
-\item[base case:]  A conditional branch in a
-recursive function that does not make a recursive call.
-\index{base case}
+\item[caso base:]  Una rama condicional de una
+función recursiva que no hace una llamada recursiva.
+\index{caso base}
 
-\item[infinite recursion:]  A recursion that doesn't have a
-base case, or never reaches it.  Eventually, an infinite recursion
-causes a runtime error.
-\index{infinite recursion}
+\item[recursividad infinita:]  Una recursividad que no tiene un
+caso base, o nunca lo alcanza.  Eventualmente, una recursividad infinita
+provoca un error de tiempo de ejecución.
+\index{recursividad infinita}
 
 \end{description}
 
-\section{Exercises}
+\section{Ejercicios}
 
 \begin{exercise}
 
-The {\tt time} module provides a function, also named {\tt time}, that
-returns the current Greenwich Mean Time in ``the epoch'', which is
-an arbitrary time used as a reference point.  On UNIX systems, the
-epoch is 1 January 1970.
+El módulo {\tt time} proporciona una función, con el mismo nombre {\tt time}, que
+devuelve el tiempo transcurrido desde la Hora Media de Greenwich (GMT) en ``la época'' ({\em epoch}), la cual es
+un momento arbitrario usado como punto de referencia.  En sistemas UNIX, la
+época es el 1 de enero de 1970.
 
 \begin{verbatim}
 >>> import time
@@ -4281,39 +4281,39 @@ epoch is 1 January 1970.
 1437746094.5735958
 \end{verbatim}
 
-Write a script that reads the current time and converts it to
-a time of day in hours, minutes, and seconds, plus the number of
-days since the epoch.
+Escribe un script que lea el tiempo actual y lo convierta a
+una hora del día en horas, minutos y segundos, además del número de
+días desde la época.
 
 \end{exercise}
 
 
 \begin{exercise}
-\index{Fermat's Last Theorem}
+\index{Último Teorema de Fermat}
 
-Fermat's Last Theorem says that there are no positive integers
-$a$, $b$, and $c$ such that
+El Último Teorema de Fermat dice que no hay enteros positivos
+$a$, $b$ y $c$ tales que
 
 \[ a^n + b^n = c^n \]
 %
-for any values of $n$ greater than 2.
+para cualquier valor de $n$ mayor que 2.
 
 \begin{enumerate}
 
-\item Write a function named \verb"check_fermat" that takes four
-parameters---{\tt a}, {\tt b}, {\tt c} and {\tt n}---and
-checks to see if Fermat's theorem holds.  If
-$n$ is greater than 2 and
+\item Escribe una función con nombre \verb"comprobar_fermat" que tome cuatro
+parámetros---{\tt a}, {\tt b}, {\tt c} y {\tt n}---y
+compruebe si se cumple el teorema de Fermat.  Si
+$n$ es mayor que 2 y
 
 \[a^n + b^n = c^n \]
 %
-the program should print, ``Holy smokes, Fermat was wrong!''
-Otherwise the program should print, ``No, that doesn't work.''
+el programa debería imprimir ``¡Ay caramba, Fermat se equivocó!''.
+De lo contrario, el programa debería imprimir ``No, eso no funciona.''
 
-\item Write a function that prompts the user to input values
-for {\tt a}, {\tt b}, {\tt c} and {\tt n}, converts them to
-integers, and uses \verb"check_fermat" to check whether they
-violate Fermat's theorem.
+\item Escribe una función que permita al usuario ingresar valores
+para {\tt a}, {\tt b}, {\tt c} y {\tt n}, los convierta a
+enteros y use a \verb"comprobar_fermat" para comprobar si éstos
+violan el teorema de Fermat.
 
 \end{enumerate}
 
@@ -4321,87 +4321,87 @@ violate Fermat's theorem.
 
 
 \begin{exercise}
-\index{triangle}
+\index{triángulo}
 
-If you are given three sticks, you may or may not be able to arrange
-them in a triangle.  For example, if one of the sticks is 12 inches
-long and the other two are one inch long, you will
-not be able to get the short sticks to meet in the middle.  For any
-three lengths, there is a simple test to see if it is possible to form
-a triangle:
+Si te dan tres palos, podrías ser capaz o no de formar
+un triángulo.  Por ejemplo, si uno de los palos mide 12 pulgadas
+y los otros dos miden una pulgada, no serás
+capaz de hacer que los palos se encuentren en el medio.  Para tres
+longitudes cualesquiera, hay una prueba simple para ver si es posible formar
+un triángulo:
 
 \begin{quotation}
-If any of the three lengths is greater than the sum of the other
-  two, then you cannot form a triangle.  Otherwise, you
-  can.  (If the sum of two lengths equals the third, they form
-    what is called a ``degenerate'' triangle.)
+Si cualquiera de las tres longitudes es mayor que la suma de las otras
+  dos, entonces no puedes formar un triángulo.  De lo contrario, sí
+  puedes.  (Si la suma de dos longitudes es igual a la tercera, forman
+    lo que llaman un triángulo ``degenerado''.)
 \end{quotation}
 
 \begin{enumerate}
 
-\item Write a function named \verb"is_triangle" that takes three
-  integers as arguments, and that prints either ``Yes'' or ``No'', depending
-  on whether you can or cannot form a triangle from sticks with the
-  given lengths.
+\item Escribe una función con nombre \verb"es_triangulo" que tome tres
+  enteros como argumentos e imprima ``Sí'' o ``No'', dependiendo
+  de si puedes o no formar un triángulo con palos cuyas longitudes sean
+  los enteros dados.
 
-\item Write a function that prompts the user to input three stick
-  lengths, converts them to integers, and uses \verb"is_triangle" to
-  check whether sticks with the given lengths can form a triangle.
+\item Escribe una función que permita al usuario ingresar tres longitudes de
+  palos, los convierta a enteros y usea a \verb"es_triangulo" para
+  comprobar si los palos con las longitudes dadas pueden formar un triángulo.
 
 \end{enumerate}
 
 \end{exercise}
 
 \begin{exercise}
-What is the output of the following program?
-Draw a stack diagram that shows the state of the program
-when it prints the result.
+¿Cuál es la salida del siguiente programa?
+Dibuja un diagrama de pila que muestre el estado del programa
+cuando imprime el resultado.
 
 \begin{verbatim}
-def recurse(n, s):
+def recursivo(n, s):
     if n == 0:
         print(s)
     else:
-        recurse(n-1, n+s)
+        recursivo(n-1, n+s)
 
-recurse(3, 0)
+recursivo(3, 0)
 \end{verbatim}
 
 \begin{enumerate}
 
-\item What would happen if you called this function like this: {\tt
-  recurse(-1, 0)}?
+\item ¿Qué ocurriría si llamas a esta función así: {\tt
+  recursivo(-1, 0)}?
 
-\item Write a docstring that explains everything someone would need to
-  know in order to use this function (and nothing else).
+\item Escribe un docstring que explique todo lo que alguien necesitaría
+  saber para usar esta función (y nada más).
 
 \end{enumerate}
 
 \end{exercise}
 
 
-The following exercises use the {\tt turtle} module, described in
-Chapter~\ref{turtlechap}:
-\index{TurtleWorld}
+Los siguientes ejercicios usan el módulo {\tt turtle}, descrito en el
+Capítulo~\ref{turtlechap}:
+%\index{Turtle}
 
 \begin{exercise}
 
-Read the following function and see if you can figure out
-what it does (see the examples in Chapter~\ref{turtlechap}).  Then run it
-and see if you got it right.
+Lee la siguiente función y mira si puedes averiguar
+lo que hace (mira los ejemplos en el Capítulo~\ref{turtlechap}).  Luego ejecútala
+y mira si la entendiste bien.
 
 \begin{verbatim}
-def draw(t, length, n):
+def dibujar(t, longitud, n):
     if n == 0:
         return
-    angle = 50
-    t.fd(length*n)
-    t.lt(angle)
-    draw(t, length, n-1)
-    t.rt(2*angle)
-    draw(t, length, n-1)
-    t.lt(angle)
-    t.bk(length*n)
+    angulo = 50
+    t.fd(longitud*n)
+    t.lt(angulo)
+    dibujar(t, longitud, n-1)
+    t.rt(2*angulo)
+    dibujar(t, longitud, n-1)
+    t.lt(angulo)
+    t.bk(longitud*n)
 \end{verbatim}
 
 \end{exercise}
@@ -4410,52 +4410,52 @@ def draw(t, length, n):
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/koch.pdf}}
-\caption{A Koch curve.}
+\caption{Una curva de Koch.}
 \label{fig.koch}
 \end{figure}
 
 \begin{exercise}
-\index{Koch curve}
+\index{Koch!curva de}\index{curva de Koch}
 
-The Koch curve is a fractal that looks something like
-Figure~\ref{fig.koch}.  To draw a Koch curve with length $x$, all you
-have to do is
+La curva de Koch es un fractal que se ve algo como la
+Figura~\ref{fig.koch}.  Para dibujar una curva de Koch con longitud $x$, todo lo que
+tienes que hacer es
 
 \begin{enumerate}
 
-\item Draw a Koch curve with length $x/3$.
+\item Dibujar una curva de Koch con longitud $x/3$.
 
-\item Turn left 60 degrees.
+\item Girar 60 grados a la izquierda.
 
-\item Draw a Koch curve with length $x/3$.
+\item Dibujar una curva de Koch con longitud $x/3$.
 
-\item Turn right 120 degrees.
+\item Girar 120 grados a la derecha.
 
-\item Draw a Koch curve with length $x/3$.
+\item Dibujar una curva de Koch con longitud $x/3$.
 
-\item Turn left 60 degrees.
+\item Girar 60 grados a la izquierda.
 
-\item Draw a Koch curve with length $x/3$.
+\item Dibujar una curva de Koch con longitud $x/3$.
 
 \end{enumerate}
 
-The exception is if $x$ is less than 3: in that case,
-you can just draw a straight line with length $x$.
+La excepción es si $x$ es menor que 3: en ese caso,
+puedes simplemente dibujar una línea recta con longitud $x$.
 
 \begin{enumerate}
 
-\item Write a function called {\tt koch} that takes a turtle and
-a length as parameters, and that uses the turtle to draw a Koch
-curve with the given length.
+\item Escribe una función llamada {\tt koch} que tome una tortuga y
+una longitud como parámetros y que use a la tortuga para dibujar una curva de Koch
+con la longitud dada.
 
-\item Write a function called {\tt snowflake} that draws three
-Koch curves to make the outline of a snowflake.
+\item Escribe una función llamada {\tt copo\_de\_nieve} que dibuje tres
+curvas de Koch que hagan el contorno de un copo de nieve.
 
-Solution: \url{http://thinkpython2.com/code/koch.py}.
+Solución: \url{http://thinkpython2.com/code/koch.py}.
 
-\item The Koch curve can be generalized in several ways.  See
-\url{http://en.wikipedia.org/wiki/Koch_snowflake} for examples and
-implement your favorite.
+\item La curva de Koch se puede generalizar en muchas formas.  Mira
+\url{http://en.wikipedia.org/wiki/Koch_snowflake} para ejemplos e
+implementa tu favorito.
 
 \end{enumerate}
 \end{exercise}
