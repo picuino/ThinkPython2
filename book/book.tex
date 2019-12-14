@@ -2083,7 +2083,7 @@ SyntaxError: can't assign to operator
 \index{excepción!SyntaxError}
 
 
-\section{Agregando nuevas funciones}
+\section{Agregar nuevas funciones}
 
 Hasta aquí, solo hemos estado usando las funciones que vienen con Python,
 pero también es posible agregar nuevas funciones.
@@ -3698,7 +3698,7 @@ que podrían ser confusas.  Podrías querer evitar esto (a menos que
 sepas lo que estás haciendo).
 
 
-\section{Ejecucioń condicional}
+\section{Ejecución condicional}
 \label{conditional.execution}
 
 \index{sentencia condicional}
@@ -4461,225 +4461,225 @@ implementa tu favorito.
 \end{exercise}
 
 
-\chapter{Fruitful functions}
+\chapter{Funciones productivas}
 \label{fruitchap}
 
-Many of the Python functions we have used, such as the math
-functions, produce return values.  But the functions we've written
-are all void: they have an effect, like printing a value
-or moving a turtle, but they don't have a return value.  In
-this chapter you will learn to write fruitful functions.
+Muchas de las funciones de Python que hemos usado, tales como las funciones
+matemáticas, producen valores de retorno. Pero las funciones que hemos escrito
+son todas vacías: tienen un efecto, como imprimir un valor
+o mover una tortuga, pero no tienen un valor de retorno.  En
+este capítulo aprenderás a escribir funciones productivas.
 
 
-\section{Return values}
-\index{return value}
+\section{Valores de retorno}
+\index{valor de retorno}
 
-Calling the function generates a return
-value, which we usually assign to a variable or use as part of an
-expression.
+Al llamar a una función se genera un valor de
+retorno, el cual usualmente asignamos a una variable o usamos como parte de una
+expresión.
 
 \begin{verbatim}
 e = math.exp(1.0)
-height = radius * math.sin(radians)
+altura = radio * math.sin(radianes)
 \end{verbatim}
 %
-The functions we have written so far are void.  Speaking casually,
-they have no return value; more precisely,
-their return value is {\tt None}.
+Las funciones que hemos escrito hasta ahora son todas vacías.  Dicho en términos vagos,
+no tienen valor de retorno; de manera más precisa,
+su valor de retorno es {\tt None}.
 
-In this chapter, we are (finally) going to write fruitful functions.
-The first example is {\tt area}, which returns the area of a circle
-with the given radius:
+En este capítulo, vamos a escribir (finalmente) funciones productivas.
+El primer ejemplo es {\tt area}, la cual devuelve el área de un círculo
+con un radio dado:
 
 \begin{verbatim}
-def area(radius):
-    a = math.pi * radius**2
+def area(radio):
+    a = math.pi * radio**2
     return a
 \end{verbatim}
 %
-We have seen the {\tt return} statement before, but in a fruitful
-function the {\tt return} statement includes
-an expression.  This statement means: ``Return immediately from
-this function and use the following expression as a return value.''
-The expression can be arbitrarily complicated, so we could
-have written this function more concisely:
-\index{return statement}
-\index{statement!return}
+Hemos visto la sentencia {\tt return} antes, pero en una función
+productiva la sentencia {\tt return} incluye
+una expresión.  Esta sentencia significa: ``Sal inmediatamente de
+esta función y usa la siguiente función como valor de retorno.''
+La expresión puede ser arbitrariamente complicada, por lo que podríamos
+haber escrito esta función de manera más concisa:
+\index{sentencia return}
+\index{return!sentencia}
 
 \begin{verbatim}
-def area(radius):
-    return math.pi * radius**2
+def area(radio):
+    return math.pi * radio**2
 \end{verbatim}
 %
-On the other hand, {\bf temporary variables} like {\tt a} can make
-debugging easier.
-\index{temporary variable}
-\index{variable!temporary}
+Por otra parte, las {\bf variables temporales} como {\tt a} pueden hacer
+más fácil la depuración.
+\index{variable temporal}
+\index{temporal!variable}
 
-Sometimes it is useful to have multiple return statements, one in each
-branch of a conditional:
+A veces es útil tener múltiples sentencias return, una en cada
+rama de un condicional:
 
 \begin{verbatim}
-def absolute_value(x):
+def valor_absoluto(x):
     if x < 0:
         return -x
     else:
         return x
 \end{verbatim}
 %
-Since these {\tt return} statements are in an alternative conditional,
-only one runs.
+Dado que estas sentencias {\tt return} están en un condicional alternativo,
+solo una se ejecuta.
 
-As soon as a return statement runs, the function
-terminates without executing any subsequent statements.
-Code that appears after a {\tt return} statement, or any other place
-the flow of execution can never reach, is called {\bf dead code}.
-\index{dead code}
+Tan pronto como se ejecute una sentencia return, la función
+termina sin ejecutar ninguna de las sentencias posteriores.
+El código que aparece después de una sentencia {\tt return}, o cualquier otro lugar
+que el flujo de ejecución nunca puede alcanzar, se llama {\bf código muerto}.
+\index{código muerto}
 
-In a fruitful function, it is a good idea to ensure
-that every possible path through the program hits a
-{\tt return} statement.  For example:
+En una función productiva, es una buena idea asegurarse de
+que cada camino posible a través del programa llega a una
+sentencia {\tt return}.  Por ejemplo:
 
 \begin{verbatim}
-def absolute_value(x):
+def valor_absoluto(x):
     if x < 0:
         return -x
     if x > 0:
         return x
 \end{verbatim}
 %
-This function is incorrect because if {\tt x} happens to be 0,
-neither condition is true, and the function ends without hitting a
-{\tt return} statement.  If the flow of execution gets to the end
-of a function, the return value is {\tt None}, which is not
-the absolute value of 0.
-\index{None special value}
-\index{special value!None}
+Esta función es incorrecta porque si {\tt x} es 0,
+ninguna condición es verdadera, y la función termina sin llegar a una
+sentencia {\tt return}.  Si el flujo de ejecución llega al final
+de una función, el valor de retorno es {\tt None}, lo cual no es
+el valor absoluto de 0.
+\index{valor especial None}
+\index{None!valor especial}
 
 \begin{verbatim}
->>> print(absolute_value(0))
+>>> print(valor_absoluto(0))
 None
 \end{verbatim}
 %
-By the way, Python provides a built-in function called
-{\tt abs} that computes absolute values.
-\index{abs function}
-\index{function!abs}
+Por cierto, Python proporciona una función incorporada llamada
+{\tt abs} que calcula valores absolutos.
+\index{función abs}
+\index{abs!función}
 
-As an exercise, write a {\tt compare} function that
-takes two values, {\tt x} and {\tt y}, and returns {\tt 1} if {\tt x > y},
-{\tt 0} if {\tt x == y}, and {\tt -1} if {\tt x < y}.
-\index{compare function}
-\index{function!compare}
+Como ejercicio, escribe una función {\tt comparar} que
+tome dos valores, {\tt x} e {\tt y}, y devuelva {\tt 1} si {\tt x > y},
+{\tt 0} si {\tt x == y} y {\tt -1} si {\tt x < y}.
+\index{función comparar}
+\index{comparar!función}
 
 
-\section{Incremental development}
+\section{Desarrollo incremental}
 \label{incremental.development}
-\index{development plan!incremental}
+\index{plan de desarrollo incremental}
 
-As you write larger functions, you might find yourself
-spending more time debugging.
+A medida que escribes funciones más grandes, podrías encontrarte
+pasando más tiempo depurando.
 
-To deal with increasingly complex programs,
-you might want to try a process called
-{\bf incremental development}.  The goal of incremental development
-is to avoid long debugging sessions by adding and testing only
-a small amount of code at a time.
-\index{testing!incremental development}
-\index{Pythagorean theorem}
+Para lidiar con programas cada vez más complejos,
+podrías querer intentar un proceso llamado
+{\bf desarrollo incremental}.  El objetivo del desarrollo incremental
+es evitar largas sesiones de depuración agregando y probando solo
+un trozo de código a la vez.
+\index{pruebas en desarrollo incremental}
+\index{Teorema de Pitágoras}
 
-As an example, suppose you want to find the distance between two
-points, given by the coordinates $(x_1, y_1)$ and $(x_2, y_2)$.
-By the Pythagorean theorem, the distance is:
+Como ejemplo, supongamos que quieres encontrar la distancia entre dos
+puntos, dados por las coordenadas $(x_1, y_1)$ y $(x_2, y_2)$.
+Por el teorema de Pitágoras, la distancia es:
 
 \begin{displaymath}
-\mathrm{distance} = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+\mathrm{distancia} = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
 \end{displaymath}
 %
-The first step is to consider what a {\tt distance} function should
-look like in Python.  In other words, what are the inputs (parameters)
-and what is the output (return value)?
+El primer paso es considerar cómo debería ser una función de {\tt distancia}
+en Python.  En otras palabras, ¿cuáles son las entradas (parámetros)
+y cuál es la salida (valor de retorno)?
 
-In this case, the inputs are two points, which you can represent
-using four numbers.  The return value is the distance represented by
-a floating-point value.
+En este caso, las entradas son dos puntos, que puedes representar
+usando cuatro números.  El valor de retorno es la distancia representada por
+un valor de coma flotante.
 
-Immediately you can write an outline of the function:
+Inmediatamente puedes escribir un esbozo de la función:
 
 \begin{verbatim}
-def distance(x1, y1, x2, y2):
+def distancia(x1, y1, x2, y2):
     return 0.0
 \end{verbatim}
 %
-Obviously, this version doesn't compute distances; it always returns
-zero.  But it is syntactically correct, and it runs, which means that
-you can test it before you make it more complicated.
+Obviamente, esta versión no calcula distancias; siempre devuelve
+cero.  Pero es sintácticamente correcta, y funciona, lo cual significa que
+puedes probarla antes de que la hagas más complicada.
 
-To test the new function, call it with sample arguments:
+Para probar la nueva función, llámala con argumentos de prueba:
 
 \begin{verbatim}
->>> distance(1, 2, 4, 6)
+>>> distancia(1, 2, 4, 6)
 0.0
 \end{verbatim}
 %
-I chose these values so that the horizontal distance is 3 and the
-vertical distance is 4; that way, the result is 5, the hypotenuse
-of a 3-4-5 triangle. When testing a function, it is
-useful to know the right answer.
-\index{testing!knowing the answer}
+Escojo estos valores para que la distancia horizontal sea 3 y la
+distancia vertical sea 4; de esa forma, el resultado es 5, la hipotenusa
+de un triángulo rectángulo 3-4-5. Al probar una función, es
+útil saber la respuesta correcta.
+\index{pruebas sabiendo la respuesta}
 
-At this point we have confirmed that the function is syntactically
-correct, and we can start adding code to the body.
-A reasonable next step is to find the differences
-$x_2 - x_1$ and $y_2 - y_1$.  The next version stores those values in
-temporary variables and prints them.
+En este punto hemos confirmado que la función es sintácticamente
+correcta y podemos comenzar agregando código al cuerpo.
+Un siguiente paso razonable es encontrar las diferencias
+$x_2 - x_1$ y $y_2 - y_1$.  La siguiente versión almacena esos valores en
+variables temporales y las imprime.
+
+\begin{verbatim}
+def distancia(x1, y1, x2, y2):
+    dx = x2 - x1
+    dy = y2 - y1
+    print('dx es', dx)
+    print('dy es', dy)
+    return 0.0
+\end{verbatim}
+%
+Si la función funciona, debería mostrar \verb"dx es 3" y
+\verb"dy es 4".  Si es así, sabemos que la función obtiene los argumentos
+correctos y realiza el primer cálculo de manera correcta.  Si no,
+solo hay que verificar unas pocas líneas.
+
+Luego calculamos la suma de los cuadrados de {\tt dx} y {\tt dy}:
 
 \begin{verbatim}
 def distance(x1, y1, x2, y2):
     dx = x2 - x1
     dy = y2 - y1
-    print('dx is', dx)
-    print('dy is', dy)
+    dcuadrado = dx**2 + dy**2
+    print('dcuadrado es: ', dcuadrado)
     return 0.0
 \end{verbatim}
 %
-If the function is working, it should display \verb"dx is 3" and
-\verb"dy is 4".  If so, we know that the function is getting the right
-arguments and performing the first computation correctly.  If not,
-there are only a few lines to check.
-
-Next we compute the sum of squares of {\tt dx} and {\tt dy}:
-
-\begin{verbatim}
-def distance(x1, y1, x2, y2):
-    dx = x2 - x1
-    dy = y2 - y1
-    dsquared = dx**2 + dy**2
-    print('dsquared is: ', dsquared)
-    return 0.0
-\end{verbatim}
-%
-Again, you would run the program at this stage and check the output
-(which should be 25).
-Finally, you can use {\tt math.sqrt} to compute and return the result:
+De nuevo, tendrías que ejecutar el programa en este punto y verificar la salida
+(que debería ser 25).
+Finalmente, puedes usar {\tt math.sqrt} para calcular y devolver el resultado:
 \index{sqrt}
-\index{function!sqrt}
+\index{función sqrt}
 
 \begin{verbatim}
-def distance(x1, y1, x2, y2):
+def distancia(x1, y1, x2, y2):
     dx = x2 - x1
     dy = y2 - y1
-    dsquared = dx**2 + dy**2
-    result = math.sqrt(dsquared)
-    return result
+    dcuadrado = dx**2 + dy**2
+    resultado = math.sqrt(dcuadrado)
+    return resultado
 \end{verbatim}
 %
-If that works correctly, you are done.  Otherwise, you might
-want to print the value of {\tt result} before the return
-statement.
+Si eso funciona de manera correcta, estás listo.  De lo contrario, podrías
+querer imprimir el valor de {\tt resultado} antes de la sentencia
+return.
 
-The final version of the function doesn't display anything when it
-runs; it only returns a value.  The {\tt print} statements we wrote
+La versión final de la función no muestra nada cuando se
+ejecuta; solo devuelve un valor.  The {\tt print} statements we wrote
 are useful for debugging, but once you get the function working, you
 should remove them.  Code like that is called {\bf scaffolding}
 because it is helpful for building the program but is not part of the
