@@ -4679,218 +4679,218 @@ querer imprimir el valor de {\tt resultado} antes de la sentencia
 return.
 
 La versión final de la función no muestra nada cuando se
-ejecuta; solo devuelve un valor.  The {\tt print} statements we wrote
-are useful for debugging, but once you get the function working, you
-should remove them.  Code like that is called {\bf scaffolding}
-because it is helpful for building the program but is not part of the
-final product.
-\index{scaffolding}
+ejecuta; solo devuelve un valor.  Las sentencias {\tt print} que escribimos
+son útiles para depurar, pero una vez que haces funcionar la función, deberías
+borrarlas.  Un código como ese se llama {\bf andamiaje} (en inglés, {\em scaffolding})
+porque es útil para construir el programa pero no es parte del
+producto final.
+\index{scaffolding}\index{andamiaje}
 
-When you start out, you should add only a line or two of code at a
-time.  As you gain more experience, you might find yourself writing
-and debugging bigger chunks.  Either way, incremental development
-can save you a lot of debugging time.
+Cuando empieces, deberías agregar solo una o dos líneas de código a la
+vez.  A medida que ganes experiencia, podrías encontrarte escribiendo
+y depurando partes más grandes.  De cualquier manera, el desarrollo incremental
+puede ahorrarte mucho tiempo de depuración.
 
-The key aspects of the process are:
+Los aspectos clave del proceso son:
 
 \begin{enumerate}
 
-\item Start with a working program and make small incremental changes.
-At any point, if there is an error, you should have a good idea
-where it is.
+\item Comienza con un programa que funcione y haz pequeños cambios incrementales.
+En cualquier punto, si hay un error, deberías tener una buena idea de
+dónde está.
 
-\item Use variables to hold intermediate values so you can
-display and check them.
+\item Usa variables que guarden valores intermedios de tal manera que puedas
+mostrarlos y verificarlos.
 
-\item Once the program is working, you might want to remove some of
-the scaffolding or consolidate multiple statements into compound
-expressions, but only if it does not make the program difficult to
-read.
+\item Una vez que el programa funciona, podrías querer borrar algo del
+andamiaje o consolidar varias sentencias en una expresión
+compuesta, pero solo si no hace que el programa sea difícil de
+leer.
 
 \end{enumerate}
 
-As an exercise, use incremental development to write a function
-called {\tt hypotenuse} that returns the length of the hypotenuse of a
-right triangle given the lengths of the other two legs as arguments.
-Record each stage of the development process as you go.
-\index{hypotenuse}
+Como ejercicio, usa desarrollo incremental para escribir una función
+llamada {\tt hipotenusa} que devuelva el largo de la hipotenusa de un
+triángulo rectánculo dadas las longitudes de los otros dos lados como argumentos.
+Graba cada etapa del proceso de desarrollo a medida que avances.
+\index{hipotenusa}
 
 
 
-\section{Composition}
-\index{composition}
-\index{function composition}
+\section{Composición}
+\index{composición}
+\index{composición de funciones}
 
-As you should expect by now, you can call one function from within
-another.  As an example, we'll write a function that takes two points,
-the center of the circle and a point on the perimeter, and computes
-the area of the circle.
+Como ya deberías esperar, puedes llamar a una función desde dentro de
+otra.  Como ejemplo, escribiremos una función que tome dos puntos,
+el centro del círculo y un punto del perímetro, y calcule
+el área del círculo.
 
-Assume that the center point is stored in the variables {\tt xc} and
-{\tt yc}, and the perimeter point is in {\tt xp} and {\tt yp}. The
-first step is to find the radius of the circle, which is the distance
-between the two points.  We just wrote a function, {\tt
-distance}, that does that:
-
-\begin{verbatim}
-radius = distance(xc, yc, xp, yp)
-\end{verbatim}
-%
-The next step is to find the area of a circle with that radius;
-we just wrote that, too:
+Supongamos que el punto central se almacena en las variables {\tt xc} e
+{\tt yc}, y el punto del perímetro está en {\tt xp} e {\tt yp}. El
+primer paso es encontrar el radio del círculo, que es la distiancia
+entre los dos puntos.  Acabamos de escribir una función, {\tt
+distancia}, que hace eso:
 
 \begin{verbatim}
-result = area(radius)
+radio = distancia(xc, yc, xp, yp)
 \end{verbatim}
 %
-Encapsulating these steps in a function, we get:
-\index{encapsulation}
+El siguiente paso es encontrar el área de un círculo con ese radio;
+también escribimos eso:
 
 \begin{verbatim}
-def circle_area(xc, yc, xp, yp):
-    radius = distance(xc, yc, xp, yp)
-    result = area(radius)
-    return result
+resultado = area(radio)
 \end{verbatim}
 %
-The temporary variables {\tt radius} and {\tt result} are useful for
-development and debugging, but once the program is working, we can
-make it more concise by composing the function calls:
+Encapsulando estos pasos en una función, obtenemos:
+\index{encapsulamiento}
 
 \begin{verbatim}
-def circle_area(xc, yc, xp, yp):
-    return area(distance(xc, yc, xp, yp))
+def area_circulo(xc, yc, xp, yp):
+    radio = distancia(xc, yc, xp, yp)
+    resultado = area(radio)
+    return resultado
+\end{verbatim}
+%
+Las variables temporales {\tt radio} y {\tt resultado} son útiles para
+el desarrollo y la depuración, pero una vez que el programa funciona, podemos
+hacerlo más conciso componiendo las llamadas a funciones:
+
+\begin{verbatim}
+def area_circulo(xc, yc, xp, yp):
+    return area(distancia(xc, yc, xp, yp))
 \end{verbatim}
 %
 
-\section{Boolean functions}
+\section{Funciones booleanas}
 \label{boolean}
 
-Functions can return booleans, which is often convenient for hiding
-complicated tests inside functions.  \index{boolean function}
-For example:
+Las funciones pueden devolver booleanos, lo cual es a menudo conveniente para ocultar
+pruebas complicadas dentro de las funciones.  \index{función booleana}
+Por ejemplo:
 
 \begin{verbatim}
-def is_divisible(x, y):
+def es_divisible(x, y):
     if x % y == 0:
         return True
     else:
         return False
 \end{verbatim}
 %
-It is common to give boolean functions names that sound like yes/no
-questions; \verb"is_divisible" returns either {\tt True} or {\tt False}
-to indicate whether {\tt x} is divisible by {\tt y}.
+Es común darle a las funciones booleanas nombres que suenen como preguntas
+sí/no; \verb"es_divisible" devuelve {\tt True} o {\tt False}
+para indicar si {\tt x} es divisible por {\tt y}.
 
-Here is an example:
+Aquí hay un ejemplo:
 
 \begin{verbatim}
->>> is_divisible(6, 4)
+>>> es_divisible(6, 4)
 False
->>> is_divisible(6, 3)
+>>> es_divisible(6, 3)
 True
 \end{verbatim}
 %
-The result of the {\tt ==} operator is a boolean, so we can write the
-function more concisely by returning it directly:
+El resultado del operador {\tt ==} es un booleano, por lo que podemos escribir la
+función de manera más concisa devolviéndolo directamente:
 
 \begin{verbatim}
-def is_divisible(x, y):
+def es_divisible(x, y):
     return x % y == 0
 \end{verbatim}
 %
-Boolean functions are often used in conditional statements:
-\index{conditional statement}
-\index{statement!conditional}
+Las funciones booleanas se usan a menudo en las sentencias condicionales:
+\index{sentencia condicional}
+\index{condicional!sentencia}
 
 \begin{verbatim}
-if is_divisible(x, y):
-    print('x is divisible by y')
+if es_divisible(x, y):
+    print('x es divisible por y')
 \end{verbatim}
 %
-It might be tempting to write something like:
+Puede ser tentador escribir algo como:
 
 \begin{verbatim}
-if is_divisible(x, y) == True:
-    print('x is divisible by y')
+if es_divisible(x, y) == True:
+    print('x es divisible por y')
 \end{verbatim}
 %
-But the extra comparison is unnecessary.
+Pero la comparación extra es innecesaria.
 
-As an exercise, write a function \verb"is_between(x, y, z)" that
-returns {\tt True} if $x \le y \le z$ or {\tt False} otherwise.
+Como ejercicio, escribe una función \verb"esta_entre(x, y, z)" que
+devuelva {\tt True} si $x \le y \le z$ o {\tt False} si no.
 
 
-\section{More recursion}
+\section{Más recursividad}
 \label{more.recursion}
-\index{recursion}
-\index{Turing complete language}
-\index{language!Turing complete}
+\index{recursividad}
+\index{lenguaje Turing completo}
+\index{Turing completo!lenguaje}
 \index{Turing, Alan}
-\index{Turing Thesis}
+\index{Tesis de Turing}
 
-We have only covered a small subset of Python, but you might
-be interested to know that this subset is a {\em complete}
-programming language, which means that anything that can be
-computed can be expressed in this language.  Any program ever written
-could be rewritten using only the language features you have learned
-so far (actually, you would need a few commands to control devices
-like the mouse, disks, etc., but that's all).
+Hemos cubierto solo un pequeño subconjunto de Python, pero podrías
+estar interesado en saber que este subconjunto es un lenguaje de programación {\em completo},
+lo cual significa que cualquier cosa que pueda ser
+calculada se puede expresar en este lenguaje.  Cualquier programa alguna vez escrito
+puede ser reescrito usando solo las características del lenguaje que has aprendido
+hasta ahora (en realidad, necesitarías unos pocos comandos para controlar dispositivos
+como el mouse, discos, etc., pero eso eso todo).
 
-Proving that claim is a nontrivial exercise first accomplished by Alan
-Turing, one of the first computer scientists (some would argue that he
-was a mathematician, but a lot of early computer scientists started as
-mathematicians).  Accordingly, it is known as the Turing Thesis.
-For a more complete (and accurate) discussion of the Turing Thesis,
-I recommend Michael Sipser's book {\em Introduction to the
+Probar ese aserto es un ejercicio no trivial realizado por primera vez por Alan
+Turing, uno de los primeros informáticos (algunos discuten que
+fue un matemático, pero muchos de los primeros informáticos comenzaron como
+matemáticos).  En consecuencia, se conoce como Tesis de Turing.
+Para un tratamiento más completo (y preciso) de la Tesis de Turing,
+recomiendo el libro de Michael Sipser {\em Introduction to the
 Theory of Computation}.
 
-To give you an idea of what you can do with the tools you have learned
-so far, we'll evaluate a few recursively defined mathematical
-functions.  A recursive definition is similar to a circular
-definition, in the sense that the definition contains a reference to
-the thing being defined.  A truly circular definition is not very
-useful:
+Para darte una idea de lo que puedes hacer con las herramientas que has aprendido
+hasta ahora, evaluaremos algunas funciones matemáticas definidas de forma
+recursiva.  Una definición recursiva es similar a una definición
+circular, en el sentido de que la definición contiene una referencia a lo que
+está siendo definido.  Una definición verdaderamente circular no es muy
+útil:
 
 \begin{description}
 
-\item[vorpal:] An adjective used to describe something that is vorpal.
+\item[vorpal:] Un adjetivo usado para describir algo que es vorpal.
 \index{vorpal}
-\index{circular definition}
-\index{definition!circular}
+\index{definición circular}
+\index{circular!definición}
 
 \end{description}
 
-If you saw that definition in the dictionary, you might be annoyed. On
-the other hand, if you looked up the definition of the factorial
-function, denoted with the symbol $!$, you might get something like
-this:
+Si vieras esa definición en el diccionario, podrías estar molesto. Por
+otra parte, si buscaras la definición de la función
+factorial, denotada con el símbolo $!$, podrías obtener algo
+así:
 %
 \begin{eqnarray*}
 &&  0! = 1 \\
 &&  n! = n (n-1)!
 \end{eqnarray*}
 %
-This definition says that the factorial of 0 is 1, and the factorial
-of any other value, $n$, is $n$ multiplied by the factorial of $n-1$.
+Esta definición dice que el factorial de 0 es 1 y el factorial de
+cualquier otro valor, $n$, es $n$ multiplicado por el factorial de $n-1$.
 
-So $3!$ is 3 times $2!$, which is 2 times $1!$, which is 1 times
-$0!$. Putting it all together, $3!$ equals 3 times 2 times 1 times 1,
-which is 6.
-\index{factorial function}
-\index{function!factorial}
-\index{recursive definition}
+Así que $3!$ es 3 por $2!$, lo cual es 2 por $1!$, lo cual es 1 por
+$0!$. Poniéndolo todo junto, $3!$ es igual a 3 por 2 por 1 por 1,
+lo cual es 6.
+\index{función factorial}
+\index{factorial!función}
+\index{recursiva!definición}
 
-If you can write a recursive definition of something, you can
-write a Python program to evaluate it. The first step is to decide
-what the parameters should be.  In this case it should be clear
-that {\tt factorial} takes an integer:
+Si puedes escribir una definición recursiva de algo, puedes
+escribir un programa en Python para evaluarla.  El primer paso es decidir
+cuáles deberían ser los parámetros.  En este caso debería estar claro
+que {\tt factorial} toma un entero:
 
 \begin{verbatim}
 def factorial(n):
 \end{verbatim}
 %
-If the argument happens to be 0, all we have to do is return 1:
+Si el argumento es 0, todo lo que tenemos que hacer es devolver 1:
 
 \begin{verbatim}
 def factorial(n):
@@ -4898,8 +4898,8 @@ def factorial(n):
         return 1
 \end{verbatim}
 %
-Otherwise, and this is the interesting part, we have to make a
-recursive call to find the factorial of $n-1$ and then multiply it by
+De lo contrario, y esta es la parte interesanto, tenemos que hacer una
+llamada recursiva para encontrar el factorial de $n-1$ y luego multiplicarlo por
 $n$:
 
 \begin{verbatim}
@@ -4907,68 +4907,68 @@ def factorial(n):
     if n == 0:
         return 1
     else:
-        recurse = factorial(n-1)
-        result = n * recurse
-        return result
+        recur = factorial(n-1)
+        resultado = n * recur
+        return resultado
 \end{verbatim}
 %
-The flow of execution for this program is similar to the flow of {\tt
-countdown} in Section~\ref{recursion}.  If we call {\tt factorial}
-with the value 3:
+El flujo de ejecución para este programa es similar al flujo de {\tt
+cuenta\_reg} de la Sección~\ref{recursion}.  Si llamamos a {\tt factorial}
+con el valor 3:
 
-Since 3 is not 0, we take the second branch and calculate the factorial
-of {\tt n-1}...
+Dado que 3 no es 0, tomamos la segunda rama y calculamos el factorial
+de {\tt n-1}...
 
 \begin{quote}
-Since 2 is not 0, we take the second branch and calculate the factorial of
+Dado que 2 no es 0, tomamos la segunda rama y calculamos el factorial de
 {\tt n-1}...
 
 
   \begin{quote}
-  Since 1 is not 0, we take the second branch and calculate the factorial
-  of {\tt n-1}...
+  Dado que 1 no es 0, tomamos la segunda rama y calculamos el factorial
+  de {\tt n-1}...
 
 
     \begin{quote}
-    Since 0 equals 0, we take the first branch and return 1
-    without making any more recursive calls.
+    Dado que 0 es igual a 0, tomamos la primera rama y devolvemos 1
+    sin hacer más llamadas recursivas.
     \end{quote}
 
 
-  The return value, 1, is multiplied by $n$, which is 1, and the
-  result is returned.
+  El valor de retorno, 1, se multiplica por $n$, que es 1, y se
+  devuelve el resultado.
   \end{quote}
 
 
-The return value, 1, is multiplied by $n$, which is 2, and the
-result is returned.
+El valor de retorno, 1, se multiplica por $n$, que es 2, y se
+devuelve el resultado.
 \end{quote}
 
 
-The return value (2) is multiplied by $n$, which is 3, and the result, 6,
-becomes the return value of the function call that started the whole
-process.
-\index{stack diagram}
+El valor de retorno (2) se multiplica por $n$, que es 3, y el resultado, 6,
+se convierte en el valor de retorno de la llamada a función que comenzó todo
+el proceso.
+\index{diagrama de pila}
 
-Figure~\ref{fig.stack3} shows what the stack diagram looks like for
-this sequence of function calls.
+La Figura~\ref{fig.stack3} muestra cómo se ve el diagrama de pila
+para esta sucesión de llamadas a función.
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/stack3.pdf}}
-\caption{Stack diagram.}
+\caption{Diagrama de pila.}
 \label{fig.stack3}
 \end{figure}
 
-The return values are shown being passed back up the stack.  In each
-frame, the return value is the value of {\tt result}, which is the
-product of {\tt n} and {\tt recurse}.
-\index{function frame}
-\index{frame}
+Los valores de retorno se muestran pasando de vuelta hacia arriba en la pila.  En cada
+marco, el valor de retorno es el valor de {\tt resultado}, el cual es el
+producto de {\tt n} y {\tt recur}.
+\index{función!marco de una}
+\index{marco}
 
-In the last frame, the local
-variables {\tt recurse} and {\tt result} do not exist, because
-the branch that creates them does not run.
+En el último marco, las variables
+locales {\tt recur} y {\tt resultado} no existen, porque
+la rama que las crea no se ejecuta.
 
 
 \section{Leap of faith}

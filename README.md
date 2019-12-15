@@ -1,7 +1,7 @@
 ThinkPython2-spanish
 ====================
 
-`27% |#############.....................................|`
+`29% |#############.....................................|`
 
 Código LaTeX de *Pensar en Python*, la traducción al español de Think Python (2nd Edition).
 
