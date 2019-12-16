@@ -475,8 +475,8 @@ del libro, y han hecho numerosas correcciones y sugerencicas.
 \item Peter Winstanley nos hizo saber sobre un error en
 nuestro Latin que estuvo por mucho tiempo en el Capítulo 3.
 
-\item Chris Wrobel made corrections to the code in the chapter on
-file I/O and exceptions.
+\item Chris Wrobel hizo correcciones al código en el capítulo de
+entrada/salida de archivo y excepciones.
 
 \item Moshe Zadka ha hecho contribuciones invaluables a este proyecto.
 Además de escribir el primer borrador del capítulo de Diccionarios,
@@ -535,7 +535,7 @@ en el capítulo 3.
 \item Ben Logan envió una serie de errores tipográficos y problemas con la traducción
 del libro a HTML.
 
-\item Jason Armstrong vio la palabra perdida en el Capítulo 2.
+\item Jason Armstrong vio la palabra que faltaba en el Capítulo 2.
 
 \item Louis Cordier notó un lugar en el Capítulo 16 donde el código
 no coincidía con el texto.
@@ -567,14 +567,14 @@ uso de ``argumento'' y ``parámetro''.
 
 \item Sam Bull advirtió sobre un párrafo confuso en el Capítulo 2.
 
-\item Andrew Cheung pointed out two instances of ``use before def''.
+\item Andrew Cheung señaló dos instancias de ``use before def''.
 
-\item C. Corey Capel spotted the missing word in the Third Theorem
-of Debugging and a typo in Chapter 4.
+\item C. Corey Capel vio la palabra que faltaba en el Tercer Teorema
+de Debugging y un error tipográfico en el Capítulo 4.
 
 \item Alessandra ayudó a aclarar alguna confusión con Turtle.
 
-\item Wim Champagne found a brain-o in a dictionary example.
+\item Wim Champagne encontró un error en un ejemplo de diccionario.
 
 \item Douglas Wright señaló un problema con la división entera en
 {\tt arco}.
@@ -643,8 +643,8 @@ un montón de errores tipográficos y un ``use before def''.
 
 \item Martin Zuther envió una larga lista de sugerencias.
 
-\item Adam Zimmerman found an inconsistency in my instance
-of an ``instance'' and several other errors.
+\item Adam Zimmerman encontró una inconsistencia en mi ejemplo
+de una ``instancia'' y muchos otros errores.
 
 \item Ratnakar Tiwari sugirió una nota al pie explicando los triángulos
 degenerados.
@@ -665,8 +665,8 @@ deletrear Jane Austen.
 
 \item Russell Coleman me ayudó con mi geometría.
 
-\item Nam Nguyen found a typo and pointed out that I used the Decorator
-pattern but didn't mention it by name.
+\item Nam Nguyen encontró un error tipográfico y advirtió que usé el patrón Decorator
+pero sin mencionar el nombre.
 
 \item St\'{e}phane Morin envió varias correcciones y sugerencias.
 
@@ -678,7 +678,7 @@ orden de operaciones.
 \item Alexandros Gezerlis estableció un nuevo estándar para el número y
 la calidad de sugerencias que envió.  ¡Estamos profundamente agradecidos!
 
-\item Gray Thomas knows his right from his left.
+\item Gray Thomas conoce su derecha desde su izquierda.
 
 \item Giovanni Escobar Sosa envió una larga lista de correcciones y
 sugerencias.
@@ -688,8 +688,8 @@ sugerencias.
 \item Will McGinnis advirtió que {\tt polyline} fue definida
 de manera diferente en dos lugares.
 
-\item Frank Hecker pointed out an exercise that was under-specified, and
-some broken links.
+\item Frank Hecker advirtió sobre un ejercicio que estaba subespecificado y
+algunos enlaces rotos.
 
 \item Animesh B me ayudó a limpiar un ejemplo confuso.
 
@@ -703,8 +703,8 @@ some broken links.
 
 \item Martin Nordsletten encontró un error en una solución de un ejercicio.
 
-\item Sven Hoexter pointed out that a variable named {\tt input}
-shadows a build-in function.
+\item Sven Hoexter advirtió que una variable con nombre {\tt input}
+ensombrece a una función incorporada.
 
 \item Stephen Gregory advirtió el problema con {\tt cmp}
 en Python 3.
@@ -816,7 +816,7 @@ alguna variación.
 Lo creas o no, eso es prácticamente todo lo que hay.  Cada
 programa que has usado, no importa cuán complicado, está compuesto de
 instrucciones que se parecen mucho a estas.  Así que puedes pensar en
-la programación como el proceso de romper una tarea grande y compleja en
+la programación como el proceso de separar una tarea grande y compleja en
 subtareas cada vez más pequeñas, hasta que cada subtarea sea lo suficientemente
 simple para hacerla con una de estas instrucciones básicas.
 
@@ -2104,7 +2104,7 @@ def imprimir_letra():
 {\tt def} es una palabra clave que indica que esta es una definición
 de función. El nombre de la función es \verb"imprimir_letra".  Las
 reglas para los nombres de funciones son las mismas que para los nombres de variables: las letras,
-los números y el guión bajo son legales, pero el primer caracter
+los números y el guión bajo son legales, pero el primer carácter
 no puede ser un número.  No puedes usar una palabra clave como nombre de una función,
 y deberías evitar tener una variable y una función con el mismo
 nombre.
@@ -4500,7 +4500,7 @@ def area(radio):
 Hemos visto la sentencia {\tt return} antes, pero en una función
 productiva la sentencia {\tt return} incluye
 una expresión.  Esta sentencia significa: ``Sal inmediatamente de
-esta función y usa la siguiente función como valor de retorno.''
+esta función y usa la siguiente expresión como valor de retorno.''
 La expresión puede ser arbitrariamente complicada, por lo que podríamos
 haber escrito esta función de manera más concisa:
 \index{sentencia return}
@@ -4568,7 +4568,7 @@ Por cierto, Python proporciona una función incorporada llamada
 
 Como ejercicio, escribe una función {\tt comparar} que
 tome dos valores, {\tt x} e {\tt y}, y devuelva {\tt 1} si {\tt x > y},
-{\tt 0} si {\tt x == y} y {\tt -1} si {\tt x < y}.
+devuelva {\tt 0} si {\tt x == y} o devuelva {\tt -1} si {\tt x < y}.
 \index{función comparar}
 \index{comparar!función}
 
@@ -4577,11 +4577,11 @@ tome dos valores, {\tt x} e {\tt y}, y devuelva {\tt 1} si {\tt x > y},
 \label{incremental.development}
 \index{plan de desarrollo incremental}
 
-A medida que escribes funciones más grandes, podrías encontrarte
+A medida vayas escribiendo funciones más grandes, podrías encontrarte
 pasando más tiempo depurando.
 
 Para lidiar con programas cada vez más complejos,
-podrías querer intentar un proceso llamado
+tal vez quieras intentar un proceso llamado
 {\bf desarrollo incremental}.  El objetivo del desarrollo incremental
 es evitar largas sesiones de depuración agregando y probando solo
 un trozo de código a la vez.
@@ -4643,10 +4643,10 @@ def distancia(x1, y1, x2, y2):
     return 0.0
 \end{verbatim}
 %
-Si la función funciona, debería mostrar \verb"dx es 3" y
+Si la función está bien, debería mostrar \verb"dx es 3" y
 \verb"dy es 4".  Si es así, sabemos que la función obtiene los argumentos
 correctos y realiza el primer cálculo de manera correcta.  Si no,
-solo hay que verificar unas pocas líneas.
+solo hay que revisar unas pocas líneas.
 
 Luego calculamos la suma de los cuadrados de {\tt dx} y {\tt dy}:
 
@@ -4674,13 +4674,13 @@ def distancia(x1, y1, x2, y2):
     return resultado
 \end{verbatim}
 %
-Si eso funciona de manera correcta, estás listo.  De lo contrario, podrías
-querer imprimir el valor de {\tt resultado} antes de la sentencia
+Si eso funciona de manera correcta, estás listo.  De lo contrario, tal vez
+quieras imprimir el valor de {\tt resultado} antes de la sentencia
 return.
 
 La versión final de la función no muestra nada cuando se
 ejecuta; solo devuelve un valor.  Las sentencias {\tt print} que escribimos
-son útiles para depurar, pero una vez que haces funcionar la función, deberías
+son útiles para depurar, pero una vez que la función esté bien, deberías
 borrarlas.  Un código como ese se llama {\bf andamiaje} (en inglés, {\em scaffolding})
 porque es útil para construir el programa pero no es parte del
 producto final.
@@ -4702,9 +4702,9 @@ dónde está.
 \item Usa variables que guarden valores intermedios de tal manera que puedas
 mostrarlos y verificarlos.
 
-\item Una vez que el programa funciona, podrías querer borrar algo del
+\item Una vez que el programa funciona, tal vez quieras borrar algo del
 andamiaje o consolidar varias sentencias en una expresión
-compuesta, pero solo si no hace que el programa sea difícil de
+compuesta, pero solo si no hace al programa difícil de
 leer.
 
 \end{enumerate}
@@ -4723,7 +4723,7 @@ Graba cada etapa del proceso de desarrollo a medida que avances.
 
 Como ya deberías esperar, puedes llamar a una función desde dentro de
 otra.  Como ejemplo, escribiremos una función que tome dos puntos,
-el centro del círculo y un punto del perímetro, y calcule
+el centro de un círculo y un punto de su perímetro, y calcule
 el área del círculo.
 
 Supongamos que el punto central se almacena en las variables {\tt xc} e
@@ -4829,8 +4829,8 @@ devuelva {\tt True} si $x \le y \le z$ o {\tt False} si no.
 \index{Turing, Alan}
 \index{Tesis de Turing}
 
-Hemos cubierto solo un pequeño subconjunto de Python, pero podrías
-estar interesado en saber que este subconjunto es un lenguaje de programación {\em completo},
+Hemos cubierto solo un pequeño subconjunto de Python, pero tal vez
+te interese saber que este subconjunto es un lenguaje de programación {\em completo},
 lo cual significa que cualquier cosa que pueda ser
 calculada se puede expresar en este lenguaje.  Cualquier programa alguna vez escrito
 puede ser reescrito usando solo las características del lenguaje que has aprendido
@@ -4849,7 +4849,7 @@ Para darte una idea de lo que puedes hacer con las herramientas que has aprendid
 hasta ahora, evaluaremos algunas funciones matemáticas definidas de forma
 recursiva.  Una definición recursiva es similar a una definición
 circular, en el sentido de que la definición contiene una referencia a lo que
-está siendo definido.  Una definición verdaderamente circular no es muy
+se está definiendo.  Una definición verdaderamente circular no es muy
 útil:
 
 \begin{description}
@@ -4898,7 +4898,7 @@ def factorial(n):
         return 1
 \end{verbatim}
 %
-De lo contrario, y esta es la parte interesanto, tenemos que hacer una
+De lo contrario, y esta es la parte interesante, tenemos que hacer una
 llamada recursiva para encontrar el factorial de $n-1$ y luego multiplicarlo por
 $n$:
 
@@ -4971,52 +4971,52 @@ locales {\tt recur} y {\tt resultado} no existen, porque
 la rama que las crea no se ejecuta.
 
 
-\section{Leap of faith}
-\index{recursion}
-\index{leap of faith}
+\section{Salto de fe}
+\index{recursividad}
+\index{salto de fe}
 
-Following the flow of execution is one way to read programs, but
-it can quickly become overwhelming.  An
-alternative is what I call the ``leap of faith''.  When you come to a
-function call, instead of following the flow of execution, you {\em
-assume} that the function works correctly and returns the right
-result.
+Seguir el flujo de ejecución es una manera de leer programas, pero
+puede volverse abrumador rápidamente.  Una
+alternativa es lo que yo llamo el ``salto de fe''.  Cuando llegas a una
+llamada a función, en lugar de seguir el flujo de ejecución, {\em
+supones} que la función funciona correctamente y que devuelve el resultado
+correcto.
 
-In fact, you are already practicing this leap of faith when you use
-built-in functions.  When you call {\tt math.cos} or {\tt math.exp},
-you don't examine the bodies of those functions.  You just
-assume that they work because the people who wrote the built-in
-functions were good programmers.
+De hecho, ya estás practicando este salto de fe cuando usas
+funciones incorporadas.  Cuando llamas a {\tt math.cos} o {\tt math.exp},
+no examinas los cuerpos de esas funciones.  Sólo
+supones que funcionan porque las personas que escribieron las funciones
+incorporadas eran buenos programadores.
 
-The same is true when you call one of your own functions.  For
-example, in Section~\ref{boolean}, we wrote a function called
-\verb"is_divisible" that determines whether one number is divisible by
-another.  Once we have convinced ourselves that this function is
-correct---by examining the code and testing---we can use the function
-without looking at the body again.
-\index{testing!leap of faith}
+Lo mismo es verdad cuando llamas a una de tus propias funciones.  Por
+ejemplo, en la Sección~\ref{boolean}, escribimos una función llamada
+\verb"es_divisible" que determina si un número es divisible por
+otro.  Una vez que nos hemos convencido de que esta función es
+correcta---examinando el código y probándolo---podemos usar la función
+sin mirar el cuerpo otra vez.
+\index{prueba de salto de fe}
 
-The same is true of recursive programs.  When you get to the recursive
-call, instead of following the flow of execution, you should assume
-that the recursive call works (returns the correct result) and then ask
-yourself, ``Assuming that I can find the factorial of $n-1$, can I
-compute the factorial of $n$?''  It is clear that you
-can, by multiplying by $n$.
+Lo mismo es verdad para las funciones recursivas.  Cuando lleges a la llamada
+recursiva, en lugar de seguir el flujo de ejecución, deberías suponer
+que la llamada recursiva funciona (revuelve el resultado correcto) y luego
+preguntarte, ``Suponiendo que puedo encontrar el factorial de $n-1$, ¿puedo
+calcular el factorial de $n$?''  Está claro que
+puedes, multiplicando por $n$.
 
-Of course, it's a bit strange to assume that the function works
-correctly when you haven't finished writing it, but that's why
-it's called a leap of faith!
+Desde luego, es un poco extraño suponer que la función funciona
+correctamente cuando no has terminado de escribirla, ¡pero es por eso
+que se llama salto de fe!
 
 
-\section{One more example}
+\section{Un ejemplo más}
 \label{one.more.example}
 
-\index{fibonacci function}
-\index{function!fibonacci}
-After {\tt factorial}, the most common example of a recursively
-defined mathematical function is {\tt fibonacci}, which has the
-following definition (see
-  \url{http://en.wikipedia.org/wiki/Fibonacci_number}):
+\index{función de fibonacci}
+\index{fibonacci!función de}
+Después de {\tt factorial}, el ejemplo más común de una función
+matemática definida de manera recursiva es {\tt fibonacci}, la cual tiene la
+siguiente definición (ver
+  \url{http://es.wikipedia.org/wiki/Sucesión_de_Fibonacci}):
 %
 \begin{eqnarray*}
 && \mathrm{fibonacci}(0) = 0 \\
@@ -5024,7 +5024,7 @@ following definition (see
 && \mathrm{fibonacci}(n) = \mathrm{fibonacci}(n-1) + \mathrm{fibonacci}(n-2)
 \end{eqnarray*}
 %
-Translated into Python, it looks like this:
+Traducido a Python, se ve así:
 
 \begin{verbatim}
 def fibonacci(n):
@@ -5036,21 +5036,21 @@ def fibonacci(n):
         return fibonacci(n-1) + fibonacci(n-2)
 \end{verbatim}
 %
-If you try to follow the flow of execution here, even for fairly
-small values of $n$, your head explodes.  But according to the
-leap of faith, if you assume that the two recursive calls
-work correctly, then it is clear that you get
-the right result by adding them together.
-\index{flow of execution}
+Si intentas seguir el flujo de ejecución aquí, incluso para valores
+de $n$ bastante pequeños, tu cabeza estalla.  Pero de acuerdo al
+salto de fe, si supones que las dos llamadas recursivas
+funcionan correctamente, entonces está claro que obtienes
+el resultado correcto al sumarlas.
+\index{flujo de ejecución}
 
 
-\section{Checking types}
+\section{Verificar tipos}
 \label{guardian}
 
-What happens if we call {\tt factorial} and give it 1.5 as an argument?
-\index{type checking}
-\index{error checking}
-\index{factorial function}
+¿Qué ocurre si llamamos a {\tt factorial} y le damos 1.5 como argumento?
+\index{verificación de tipos}
+\index{errores!verificación de}\index{verificación de errores}
+\index{factorial!función}\index{función factorial}
 \index{RuntimeError}
 
 \begin{verbatim}
@@ -5058,36 +5058,36 @@ What happens if we call {\tt factorial} and give it 1.5 as an argument?
 RuntimeError: Maximum recursion depth exceeded
 \end{verbatim}
 %
-It looks like an infinite recursion.  How can that be?  The function
-has a base case---when {\tt n == 0}.  But if {\tt n} is not an integer,
-we can {\em miss} the base case and recurse forever.
-\index{infinite recursion}
-\index{recursion!infinite}
+Se ve como una recursividad infinita.  ¿Cómo puede ser?  La función
+tiene un caso base---cuando {\tt n == 0}.  Pero si {\tt n} no es un entero,
+podemos {\em perder} el caso base y seguir con la recursividad sin parar.
+\index{recursividad infinita}
+\index{infinita!recursividad}
 
-In the first recursive call, the value of {\tt n} is 0.5.
-In the next, it is -0.5.  From there, it gets smaller
-(more negative), but it will never be 0.
+En la primera llamada recursiva, el valor de {\tt n} es 0.5.
+En la siguiente, es -0.5.  Desde allí, se hace menor
+(más negativo), pero nunca será 0.
 
-We have two choices.  We can try to generalize the {\tt factorial}
-function to work with floating-point numbers, or we can make {\tt
-  factorial} check the type of its argument.  The first option is
-called the gamma function and it's a
-little beyond the scope of this book.  So we'll go for the second.
-\index{gamma function}
+Tenemos dos opciones.  Podemos intentar generalizar la función {\tt factorial}
+para que funcione con números de coma flotante o podemos hacer que {\tt
+  factorial} verifique el tipo de sus argumentos.  La primera opción se
+llama la función gamma y está
+un poco más allá del alcance de este libro.  Entonces iremos por la segunda.
+\index{función gamma}
 
-We can use the built-in function {\tt isinstance} to verify the type
-of the argument.  While we're at it, we can also make sure the
-argument is positive:
-\index{isinstance function}
-\index{function!isinstance}
+Podemos usar la función incorporada {\tt isinstance} para verificar el tipo
+del argumento.  Mientras estemos en ello, podemos también asegurarnos de que el
+argumento sea positivo:
+\index{función isinstance}
+\index{isinstance!función}
 
 \begin{verbatim}
 def factorial(n):
     if not isinstance(n, int):
-        print('Factorial is only defined for integers.')
+        print('El factorial solo está definido para enteros.')
         return None
     elif n < 0:
-        print('Factorial is not defined for negative integers.')
+        print('El factorial no está definido para enteros negativos.')
         return None
     elif n == 0:
         return 1
@@ -5095,93 +5095,93 @@ def factorial(n):
         return n * factorial(n-1)
 \end{verbatim}
 %
-The first base case handles nonintegers; the
-second handles negative integers.  In both cases, the program prints
-an error message and returns {\tt None} to indicate that something
-went wrong:
+El primer caso base se encarga de los no enteros; el
+segundo se  encarga de los enteros negativos.  En ambos casos, el programa imprime
+un mensaje de error y devuelve {\tt None} para indicar que algo
+anduvo mal:
 
 \begin{verbatim}
 >>> print(factorial('fred'))
-Factorial is only defined for integers.
+El factorial solo está definido para enteros.
 None
 >>> print(factorial(-2))
-Factorial is not defined for negative integers.
+El factorial no está definido para enteros negativos.
 None
 \end{verbatim}
 %
-If we get past both checks, we know that $n$ is a non-negative integer, so we can prove that the recursion terminates.
-\index{guardian pattern}
-\index{pattern!guardian}
+Si pasamos ambas verificaciones, sabemos que $n$ es un entero no negativo, por lo que podemos probar que la recursividad termina.
+\index{patrón guardián}
+\index{guardián!patrón}
 
-This program demonstrates a pattern sometimes called a {\bf guardian}.
-The first two conditionals act as guardians, protecting the code that
-follows from values that might cause an error.  The guardians make it
-possible to prove the correctness of the code.
+Este programa demuestra un patrón a veces llamado {\bf guardián}.
+Los primeros dos condicionales actúan como guardianes, protegiendo el código que
+sigue de valores que podrían provocar un error.  Los guardianes hacen
+posible probar la exactitud del código.
 
-In Section~\ref{raise} we will see a more flexible alternative to printing
-an error message: raising an exception.
+En la Sección~\ref{raise} veremos una alternativa más flexible que imprime
+un mensaje de error: plantear una excepción.
 
 
-\section{Debugging}
+\section{Depuración}
 \label{factdebug}
 
-Breaking a large program into smaller functions creates natural
-checkpoints for debugging.  If a function is not
-working, there are three possibilities to consider:
-\index{debugging}
+Separar un programa grande en funciones pequeñas crea puntos de control
+naturales para la depuración.  Si una función no está
+funcionando, hay tres posibilidades a considerar:
+\index{depuración}
 
 \begin{itemize}
 
-\item There is something wrong with the arguments the function
-is getting; a precondition is violated.
+\item Hay algo mal con los argumentos que obtiene
+la función; se viola una precondición.
 
-\item There is something wrong with the function; a postcondition
-is violated.
+\item Hay algo mal con la función; se viola una
+postcondición.
 
-\item There is something wrong with the return value or the
-way it is being used.
+\item Hay algo mal con el valor de retorno o la
+manera en que se usa.
 
 \end{itemize}
 
-To rule out the first possibility, you can add a {\tt print} statement
-at the beginning of the function and display the values of the
-parameters (and maybe their types).  Or you can write code
-that checks the preconditions explicitly.
-\index{precondition}
-\index{postcondition}
+Para descartar la primera posibilidad, puedes agregar una sentencia {\tt print}
+al comienzo de la función y mostrar los valores de los
+parámetros (y quizás sus tipos).  O puedes escribir código
+que verifique las precondiciones de manera explícita.
+\index{precondición}
+\index{postcondición}
 
-If the parameters look good, add a {\tt print} statement before each
-{\tt return} statement and display the return value.  If
-possible, check the result by hand.  Consider calling the
-function with values that make it easy to check the result
-(as in Section~\ref{incremental.development}).
+Si los parámetros se ven bien, agrega una sentencia {\tt print} antes de cada
+sentencia {\tt return} y muestra el valor de retorno.  Si es
+posible, verifica el resultado a mano.  Considera llamar a la
+función con valores que faciliten la verificación del resultado
+(como en la Sección~\ref{incremental.development}).
 
-If the function seems to be working, look at the function call
-to make sure the return value is being used correctly (or used
-at all!).
-\index{flow of execution}
+Si la función parece funcionar, mira la llamada a función
+para asegurarte de que el valor de retorno se está usando correctamente (¡o si al
+menos se está usando!).
+\index{flujo de ejecución}
 
-Adding print statements at the beginning and end of a function
-can help make the flow of execution more visible.
-For example, here is a version of {\tt factorial} with
-print statements:
+Agregar sentencias print al comienzo y al final de una función
+puede ayudar a hacer más visible el flujo de ejecución.
+Por ejemplo, aquí hay una versión de {\tt factorial} con
+sentencias print:
 
 \begin{verbatim}
 def factorial(n):
-    space = ' ' * (4 * n)
-    print(space, 'factorial', n)
+    espacio = ' ' * (4 * n)
+    print(espacio, 'factorial', n)
     if n == 0:
-        print(space, 'returning 1')
+        print(espacio, 'devolviendo 1')
         return 1
     else:
-        recurse = factorial(n-1)
-        result = n * recurse
-        print(space, 'returning', result)
-        return result
+        recursivo = factorial(n-1)
+        resultado = n * recursivo
+        print(espacio, 'devolviendo', resultado)
+        return resultado
 \end{verbatim}
 %
-{\tt space} is a string of space characters that controls the
-indentation of the output.  Here is the result of {\tt factorial(4)} :
+{\tt espacio} es una cadena de caracteres de espacio que controla la
+sangría de la salida.  Aquí está el resultado de {\tt factorial(4)} :
 
 \begin{verbatim}
                  factorial 4
@@ -5189,55 +5189,55 @@ indentation of the output.  Here is the result of {\tt factorial(4)} :
          factorial 2
      factorial 1
  factorial 0
- returning 1
-     returning 1
-         returning 2
-             returning 6
-                 returning 24
+ devolviendo 1
+     devolviendo 1
+         devolviendo 2
+             devolviendo 6
+                 devolviendo 24
 \end{verbatim}
 %
-If you are confused about the flow of execution, this kind of
-output can be helpful.  It takes some time to develop effective
-scaffolding, but a little bit of scaffolding can save a lot of debugging.
+Si estás confundido acerca del flujo de ejecución, este tipo de
+salidas puede ser útil.  Desarrollar andamiaje eficaz toma algo de
+tiempo, pero un poco de andamiaje puede ahorrar mucha depuración.
 
 
-\section{Glossary}
+\section{Glosario}
 
 \begin{description}
 
-\item[temporary variable:]  A variable used to store an intermediate value in
-a complex calculation.
-\index{temporary variable}
-\index{variable!temporary}
+\item[variable temporal:]  Una variable usada para almacenar un valor intermedio en
+una computación compleja.
+\index{variable temporal}
+\index{temporal!variable}
 
-\item[dead code:]  Part of a program that can never run, often because
-it appears after a {\tt return} statement.
-\index{dead code}
+\item[código muerto:]  Parte de un programa que nunca se ejecuta, a menudo debido a que
+aparece después de una sentencia {\tt return}.
+\index{código muerto}
 
-\item[incremental development:]  A program development plan intended to
-avoid debugging by adding and testing only
-a small amount of code at a time.
-\index{incremental development}
+\item[desarrollo incremental:]  Un plan de desarrollo de programa destinado a
+evitar la depuración agregando y probando solo
+un trozo de código a la vez.
+\index{desarrollo incremental}
 
-\item[scaffolding:]  Code that is used during program development but is
-not part of the final version.
-\index{scaffolding}
+\item[andamiaje:]  Código que se usa durante el desarrollo de un programa pero
+no es parte de la versión final.
+\index{scaffolding}\index{andamiaje}
 
-\item[guardian:]  A programming pattern that uses a conditional
-statement to check for and handle circumstances that
-might cause an error.
-\index{guardian pattern}
-\index{pattern!guardian}
+\item[guardián:]  Un patrón de programación que usa una sentencia
+condicional para verificar y encargarse de circunstancias que
+podrían provocar un error.
+\index{patrón guardián}
+\index{guardián!patrón}
 
 \end{description}
 
 
-\section{Exercises}
+\section{Ejercicios}
 
 \begin{exercise}
 
-Draw a stack diagram for the following program.  What does the program print?
-\index{stack diagram}
+Dibuja un diagrama de pila para el siguiente programa.  ¿Qué imprime el programa?
+\index{diagrama de pila}
 
 \begin{verbatim}
 def b(z):
@@ -5251,8 +5251,8 @@ def a(x, y):
 
 def c(x, y, z):
     total = x + y + z
-    square = b(total)**2
-    return square
+    cuadrado = b(total)**2
+    return cuadrado
 
 x = 1
 y = x + 1
@@ -5265,23 +5265,23 @@ print(c(x, y+3, x+y))
 \begin{exercise}
 \label{ackermann}
 
-The Ackermann function, $A(m, n)$, is defined:
+La función de Ackermann, $A(m, n)$, se define:
 
 \begin{eqnarray*}
 A(m, n) = \begin{cases}
-              n+1 & \mbox{if } m = 0 \\
-        A(m-1, 1) & \mbox{if } m > 0 \mbox{ and } n = 0 \\
-A(m-1, A(m, n-1)) & \mbox{if } m > 0 \mbox{ and } n > 0.
+              n+1 & \mbox{si } m = 0 \\
+        A(m-1, 1) & \mbox{si } m > 0 \mbox{ y } n = 0 \\
+A(m-1, A(m, n-1)) & \mbox{si } m > 0 \mbox{ y } n > 0.
 \end{cases}
 \end{eqnarray*}
 %
-See \url{http://en.wikipedia.org/wiki/Ackermann_function}.
-Write a function named {\tt ack} that evaluates the Ackermann function.
-Use your function to evaluate {\tt ack(3, 4)}, which should be 125.
-What happens for larger values of {\tt m} and {\tt n}?
-Solution: \url{http://thinkpython2.com/code/ackermann.py}.
-\index{Ackermann function}
-\index{function!ack}
+Ver \url{http://es.wikipedia.org/wiki/Función_de_Ackermann}.
+Escribe una función con nombre {\tt ack} que evalúe la función de Ackermann.
+Usa tu función para evaluar {\tt ack(3, 4)}, que debería ser 125.
+¿Que ocurre para valores más grandes de {\tt m} y {\tt n}?
+Solución: \url{http://thinkpython2.com/code/ackermann.py}.
+\index{Ackermann!función de}
+\index{función ack}
 
 \end{exercise}
 
@@ -5289,74 +5289,74 @@ Solution: \url{http://thinkpython2.com/code/ackermann.py}.
 \begin{exercise}
 \label{palindrome}
 
-A palindrome is a word that is spelled the same backward and
-forward, like ``noon'' and ``redivider''.  Recursively, a word
-is a palindrome if the first and last letters are the same
-and the middle is a palindrome.
-\index{palindrome}
+Un palíndromo es una palabra que se deletrea igual hacia atrás y
+hacia adelante, como ``noon'' y ``redivider''.  De manera recursiva, una palabra
+es un palíndromo si la primera y la última letra son la misma
+y el medio es un palíndromo.
+\index{palíndromo}
 
-The following are functions that take a string argument and
-return the first, last, and middle letters:
+Las siguientes son funciones que toman una cadena como argumento y
+devuelven las letras primera, última y del medio:
 
 \begin{verbatim}
-def first(word):
-    return word[0]
+def primera(palabra):
+    return palabra[0]
 
-def last(word):
-    return word[-1]
+def ultima(palabra):
+    return palabra[-1]
 
-def middle(word):
-    return word[1:-1]
+def medio(palabra):
+    return palabra[1:-1]
 \end{verbatim}
 %
-We'll see how they work in Chapter~\ref{strings}.
+Veremos cómo funcionan en el Capítulo~\ref{strings}.
 
 \begin{enumerate}
 
-\item Type these functions into a file named {\tt palindrome.py}
-and test them out.  What happens if you call {\tt middle} with
-a string with two letters?  One letter?  What about the empty
-string, which is written \verb"''" and contains no letters?
+\item Escribe estas funciones en un archivo con nombre {\tt palindromo.py}
+y pruébalas.  ¿Qué ocurre si llamas a {\tt medio} con
+una cadena de dos letras?  ¿De una letra?  ¿Qué hay de la cadena
+vacía, la cual se escribe \verb"''" y no contiene letras?
 
-\item Write a function called \verb"is_palindrome" that takes
-a string argument and returns {\tt True} if it is a palindrome
-and {\tt False} otherwise.  Remember that you can use the
-built-in function {\tt len} to check the length of a string.
+\item Escribe una función llamada \verb"es_palindromo" que tome
+un argumento cadena y devuelva {\tt True} si es un palíndromo
+y {\tt False} en caso contrario.  Recuerda que puedes usar la
+función incorporada {\tt len} para verificar la longitud de una cadena.
 
 \end{enumerate}
 
-Solution: \url{http://thinkpython2.com/code/palindrome_soln.py}.
+Solución: \url{http://thinkpython2.com/code/palindrome_soln.py}.
 
 \end{exercise}
 
 \begin{exercise}
 
-A number, $a$, is a power of $b$ if it is divisible by $b$
-and $a/b$ is a power of $b$.  Write a function called
-\verb"is_power" that takes parameters {\tt a} and {\tt b}
-and returns {\tt True} if {\tt a} is a power of {\tt b}.
-Note: you will have to think about the base case.
+Un número, $a$, es potencia de $b$ si es divisible por $b$
+y además $a/b$ es potencia de $b$.  Escribe una función llamada
+\verb"es_potencia" que tome parámetros {\tt a} y {\tt b}
+y devuelva {\tt True} si {\tt a} es potencia de {\tt b}.
+Nota: tendrás que pensar en el caso base.
 
 \end{exercise}
 
 
 \begin{exercise}
-\index{greatest common divisor (GCD)}
-\index{GCD (greatest common divisor)}
+\index{máximo común divisor (MCD)}
+\index{MCD (máximo común divisor)}
 
-The greatest common divisor (GCD) of $a$ and $b$ is the largest number
-that divides both of them with no remainder.
+El máximo común divisor (MCD) de $a$ y $b$ es el número más grande
+que divide a ambos sin obtener resto.
 
-One way to find the GCD of two numbers is based on the observation
-that if $r$ is the remainder when $a$ is divided by $b$, then $gcd(a,
-b) = gcd(b, r)$.  As a base case, we can use $gcd(a, 0) = a$.
+Una manera de encontrar el MCD de dos números está basada en la observación
+de que si $r$ es el resto de dividir $a$ por $b$, entonces $mcd(a,
+b) = mcd(b, r)$.  Como caso base, podemos usar $mcd(a, 0) = a$.
 
-Write a function called
-\verb"gcd" that takes parameters {\tt a} and {\tt b}
-and returns their greatest common divisor.
+Escribe una función llamada
+\verb"mcd" que tome parámetros {\tt a} y {\tt b}
+y devuelva su máximo común divisor.
 
-Credit: This exercise is based on an example from Abelson and
-Sussman's {\em Structure and Interpretation of Computer Programs}.
+Crédito: Este ejercicio está basado en un ejemplo de
+{\em Structure and Interpretation of Computer Programs} de Abelson y Sussman.
 
 \end{exercise}
 
