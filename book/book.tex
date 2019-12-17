@@ -5413,7 +5413,7 @@ sentencia {\tt a = 7} es legal y {\tt 7 = a} no lo es.
 Además, en matemáticas, una proposición de igualdad es verdadera o
 falsa todo el tiempo.  Si $a=b$ ahora, entonces $a$ siempre será igual a $b$.
 En Python, una sentencia de asignación puede igualar dos variables, pero
-no tienen que seguir de esa manera:
+no tienen que permanecer iguales:
 
 \begin{verbatim}
 >>> a = 5
@@ -5446,7 +5446,7 @@ hacer que el código sea difícil de leer y depurar.
 \index{variable!actualizar}
 
 Un tipo común de reasignación es la {\bf actualización},
-donde el nuevo valor de la nueva variable depende del antiguo.
+donde el nuevo valor de la variable depende del antiguo.
 
 \begin{verbatim}
 >>> x = x + 1
@@ -5549,7 +5549,7 @@ termina: si {\tt n} es cero o negativo, el bucle nunca se ejecuta.
 De lo contrario, {\tt n} se hace más pequeño cada vez que se recorre
 el blucle, por lo que eventualmente tenemos que llegar a 0.
 
-Para algunos otros bucles, no es tan fácil decirlo.  Por ejemplo:
+Para otros bucles, no es tan fácil decirlo.  Por ejemplo:
 
 \begin{verbatim}
 def sucesion(n):
@@ -5564,7 +5564,7 @@ def sucesion(n):
 La condición para este bucle es {\tt n != 1}, por lo que el bucle continuará
 hasta que {\tt n} sea {\tt 1}, lo cual hace que la condición sea falsa.
 
-Cada vez que se recorre el bucle, el programa tiene como salida el valor de {\tt n}
+Cada vez que se recorre el bucle, el programa muestra el valor de {\tt n}
 y luego verifica si es par o impar.  Si es par, {\tt n} se
 divide por 2.  Si es impar, el valor de {\tt n} se reemplaza por
 {\tt n*3 + 1}. Por ejemplo, si el argumento pasado a {\tt sucesion}
@@ -5592,9 +5592,9 @@ Sección~\ref{recursion} usando iteración en lugar de recursividad.
 \index{sentencia break}
 \index{break!sentencia}
 
-A veces no sabes que es tiempo de terminar un bucle hasta que llegas a la mitad
+A veces no sabes que es momento de terminar un bucle hasta que llegas a la mitad
 del cuerpo.  En ese caso puedes usar la sentencia {\tt break}
-para saltar hacia afuera fuera del bucle.
+para saltar hacia afuera del bucle.
 
 Por ejemplo, supongamos que quieres tomar la entrada del usuario hasta que
 se escriba {\tt listo}.    Podrías escribir:
@@ -5614,7 +5614,7 @@ bucle se ejecuta hasta que llega a la sentencia break.
 
 Cada vez que pasa, solicita la entrada del usuario con un paréntesis angular.
 Si el usuario escribe {\tt listo}, la sentencia {\tt break} hace que se salga
-del bucle.  De lo contrario el programa echoes lo que escriba el usuario
+del bucle.  De lo contrario el programa repite lo que escriba el usuario
 y regresa a la parte superior del bucle.  Aquí hay una ejecución de muestra:
 
 \begin{verbatim}
@@ -5631,23 +5631,23 @@ parte superior) y puedes expresar la condición de detención de manera afirmati
 hasta que eso ocurra'').
 
 
-\section{Square roots}
+\section{Raíces cuadradas}
 \label{squareroot}
-\index{square root}
+\index{raíz cuadrada}
 
-Loops are often used in programs that compute
-numerical results by starting with an approximate answer and
-iteratively improving it.
-\index{Newton's method}
+Los bucles se usan a menudo en programas que calculan
+resultados numéricos iniciando con una respuesta aproximada y
+mejorándola iterativamente.
+\index{método de Newton}
 
-For example, one way of computing square roots is Newton's method.
-Suppose that you want to know the square root of $a$.  If you start
-with almost any estimate, $x$, you can compute a better
-estimate with the following formula:
+Por ejemplo, una manera de calcular raíces cuadradas es el método de Newton.
+Supongamos que quieres saber la raíz cuadrada de $a$.  Si comienzas
+con casi cualquier estimación, $x$, puedes calcular una mejor
+estimación con la siguiente fórmula:
 
 \[ y = \frac{x + a/x}{2} \]
 %
-For example, if $a$ is 4 and $x$ is 3:
+Por ejemplo, si $a$ es 4 y $x$ es 3:
 
 \begin{verbatim}
 >>> a = 4
@@ -5657,8 +5657,8 @@ For example, if $a$ is 4 and $x$ is 3:
 2.16666666667
 \end{verbatim}
 %
-The result is closer to the correct answer ($\sqrt{4} = 2$).  If we
-repeat the process with the new estimate, it gets even closer:
+El resultado está más cerca de la respuesta correcta ($\sqrt{4} = 2$).  Si
+repetimos el proceso con una nueva estimación, se acerca aún más:
 
 \begin{verbatim}
 >>> x = y
@@ -5667,8 +5667,8 @@ repeat the process with the new estimate, it gets even closer:
 2.00641025641
 \end{verbatim}
 %
-After a few more updates, the estimate is almost exact:
-\index{update}
+Después de algunas actualizaciones más, la estimación es casi exacta:
+\index{actualización}
 
 \begin{verbatim}
 >>> x = y
@@ -5681,10 +5681,10 @@ After a few more updates, the estimate is almost exact:
 2.00000000003
 \end{verbatim}
 %
-In general we don't know ahead of time how many steps it takes
-to get to the right answer, but we know when we get there
-because the estimate
-stops changing:
+En general no sabemos de antemano cuántos pasos toma
+llegar a la respuesta correcta, pero sabemos cuándo la obtenemos
+porque la estimación
+deja de cambiar:
 
 \begin{verbatim}
 >>> x = y
@@ -5697,9 +5697,9 @@ stops changing:
 2.0
 \end{verbatim}
 %
-When {\tt y == x}, we can stop.  Here is a loop that starts
-with an initial estimate, {\tt x}, and improves it until it
-stops changing:
+Cuando {\tt y == x}, podemos parar.  Aquí hay un bucle que comienza
+con una estimación inicial, {\tt x}, y la mejora hasta que
+deja de cambiar:
 
 \begin{verbatim}
 while True:
@@ -5710,159 +5710,159 @@ while True:
     x = y
 \end{verbatim}
 %
-For most values of {\tt a} this works fine, but in general it is
-dangerous to test {\tt float} equality.
-Floating-point values are only approximately right:
-most rational numbers, like $1/3$, and irrational numbers, like
-$\sqrt{2}$, can't be represented exactly with a {\tt float}.
-\index{floating-point}
+Para la mayoría de los valores de {\tt a} esto funciona bien, pero en general es
+peligroso probar la igualdad de números {\tt float}.
+Los valores de coma flotante son solo aproximadamente correctos:
+la mayoría de los números racionales, como $1/3$, y los números irracionales, como
+$\sqrt{2}$, no se pueden representar de manera exacta con un {\tt float}.
+\index{coma flotante}
 \index{epsilon}
 
-Rather than checking whether {\tt x} and {\tt y} are exactly equal, it
-is safer to use the built-in function {\tt abs} to compute the
-absolute value, or magnitude, of the difference between them:
+En lugar de verificar si {\tt x} e {\tt y} son exactamente iguales, es
+más seguro usar la función {\tt abs} para calcular el
+valor absoluto, o magnitud, de la diferencia entre estos:
 
 \begin{verbatim}
     if abs(y-x) < epsilon:
         break
 \end{verbatim}
 %
-Where \verb"epsilon" has a value like {\tt 0.0000001} that
-determines how close is close enough.
+Donde \verb"epsilon" tiene un valor como {\tt 0.0000001} que
+determina qué tan cerca es lo suficientemente cerca.
 
 
-\section{Algorithms}
-\index{algorithm}
+\section{Algoritmos}
+\index{algoritmo}
 
-Newton's method is an example of an {\bf algorithm}: it is a
-mechanical process for solving a category of problems (in this
-case, computing square roots).
+El método de Newton es un ejemplo de un {\bf algoritmo}: es un
+proceso mecánico para resolver una categoría de problemas (en este
+caso, calcular raíces cuadradas).
 
-To understand what an algorithm is, it might help to start with
-something that is not an algorithm.  When you learned to multiply
-single-digit numbers, you probably memorized the multiplication table.
-In effect, you memorized 100 specific solutions.  That kind of
-knowledge is not algorithmic.
+Para entender qué es un algoritmo, podría ayudar comenzar con
+algo que no es un algoritmo.  Cuando aprendiste a multiplicar
+números de un solo dígito, probablemente memorizaste la tabla de multiplicar.
+En realidad, memorizaste 100 soluciones específicas.  Esa clase de
+conocimiento no es algorítmica.
 
-But if you were ``lazy'', you might have learned a few
-tricks.  For example, to find the product of $n$ and 9, you can
-write $n-1$ as the first digit and $10-n$ as the second
-digit.  This trick is a general solution for multiplying any
-single-digit number by 9.  That's an algorithm!
-\index{addition with carrying}
-\index{carrying, addition with}
-\index{subtraction!with borrowing}
-\index{borrowing, subtraction with}
+Pero si fueras ``perezoso'', podrías haber aprendido algunos
+trucos.  Por ejemplo, para encontrar el producto de $n$ y 9, puedes
+escribir $n-1$ como el primer dígito y $10-n$ como el segundo
+dígito.  Este truco es una solución general para multiplicar cualquier
+número de un solo dígito por 9.  ¡Eso es un algoritmo!
+\index{suma con reserva}
+\index{reserva, suma con}
+\index{resta con préstamo}
+\index{préstamo, resta con}
 
-Similarly, the techniques you learned for addition with carrying,
-subtraction with borrowing, and long division are all algorithms.  One
-of the characteristics of algorithms is that they do not require any
-intelligence to carry out.  They are mechanical processes where
-each step follows from the last according to a simple set of rules.
+Del mismo modo, las técnicas que aprendiste para la suma con reserva,
+resta con préstamo y división larga son todas algoritmos.  Una
+de las características de los algoritmos es que no requieren ninguna
+inteligencia para realizarlos.  Son procesos mecánicos donde
+cada paso sigue al último de acuerdo a un conjunto simple de reglas.
 
-Executing algorithms is boring, but designing them is interesting,
-intellectually challenging, and a central part of computer science.
+Ejecutar algoritmos es aburrido, pero diseñarlos es interesante,
+intelectualmente desafiante y una parte central de las ciencias de la computación.
 
-Some of the things that people do naturally, without difficulty or
-conscious thought, are the hardest to express algorithmically.
-Understanding natural language is a good example.  We all do it, but
-so far no one has been able to explain {\em how} we do it, at least
-not in the form of an algorithm.
+Algunas de las cosas que las personas hacen de manera natural, sin dificultad o
+pensamiento consciente, son las más difíciles de expresar de manera algorítmica.
+Entender un lenguaje natural es un buen ejemplo.  Todos lo hacemos, pero
+hasta ahora nadie ha sido capaz de explicar {\em cómo} lo hacemos, al menos
+no en la forma de un algoritmo.
 
 
-\section{Debugging}
+\section{Depuración}
 \label{bisectbug}
 
-As you start writing bigger programs, you might find yourself
-spending more time debugging.  More code means more chances to
-make an error and more places for bugs to hide.
-\index{debugging!by bisection}
-\index{bisection, debugging by}
+A medida que comiences a escribir programas más grandes, podrías encontrarte
+pasando más tiempo depurando.  Más código significa más posibilidades de
+cometer un error y más lugares para esconder errores de programación.
+\index{depuración!por bisección}
+\index{bisección!depuración por}
 
-One way to cut your debugging time is ``debugging by bisection''.
-For example, if there are 100 lines in your program and you
-check them one at a time, it would take 100 steps.
+Una manera de acortar tu tiempo de depuración es la ``depuración por bisección''.
+Por ejemplo, si hay 100 líneas en tu programa y las
+revisas una a la vez, tomaría 100 pasos.
 
-Instead, try to break the problem in half.  Look at the middle
-of the program, or near it, for an intermediate value you
-can check.  Add a {\tt print} statement (or something else
-that has a verifiable effect) and run the program.
+En cambio, intenta separar el problema por la mitad.  Mira la mitad
+del programa, o cerca de esta, para un valor intermedio que
+puedas verificar.  Agrega una sentencia {\tt print} (o algo más
+que tenga un efecto verificable) y ejecuta el programa.
 
-If the mid-point check is incorrect, there must be a problem in the
-first half of the program.  If it is correct, the problem is
-in the second half.
+Si la verificación en el punto medio es incorrecta, debe haber un problema en la
+primera mitad del programa.  Si es correcta, el problema está
+en la segunda mitad.
 
-Every time you perform a check like this, you halve the number of
-lines you have to search.  After six steps (which is fewer than 100),
-you would be down to one or two lines of code, at least in theory.
+Cada vez que hagas una verificación como esta, reduces a la mitad el número
+de líneas que tienes que buscar.  Después de seis pasos (lo cual es menos que 100),
+estarías con una o dos líneas de código, al menos en teoría.
 
-In practice it is not always clear what
-the ``middle of the program'' is and not always possible to
-check it.  It doesn't make sense to count lines and find the
-exact midpoint.  Instead, think about places
-in the program where there might be errors and places where it
-is easy to put a check.  Then choose a spot where you
-think the chances are about the same that the bug is before
-or after the check.
-
-
+En la práctica no siempre está claro cuál es
+la ``mitad del programa'' y no siempre es posible
+verificarla.  No tiene sentido contar líneas y encontrar el
+punto medio exacto.  En cambio, piensa en lugares
+en el programa donde podría haber errores y lugares donde es
+fácil poner una verificación.  Luego escoge un sitio donde
+creas que las posibilidades de que el error esté antes o después
+de la verificación son casi las mismas.
 
 
-\section{Glossary}
+
+
+\section{Glosario}
 
 \begin{description}
 
-\item[reassignment:] Assigning a new value to a variable that
-already exists.
-\index{reassignment}
+\item[reasignación:] Asignar un nuevo valor a una variable que
+ya existe.
+\index{reasignación}
 
-\item[update:] An assignment where the new value of the variable
-depends on the old.
-\index{update}
+\item[actualización:] Una asignación donde el nuevo valor de una variable
+depende del antiguo.
+\index{actualización}
 
-\item[initialization:] An assignment that gives an initial value to
-a variable that will be updated.
-\index{initialization!variable}
+\item[inicialización:] Una asignación que le da un valor inicial a
+una variable que será actualizada.
+\index{inicialización de variable}
 
-\item[increment:] An update that increases the value of a variable
-(often by one).
-\index{increment}
+\item[incremento:] Una actualización que aumenta el valor de una variable
+(a menudo en uno).
+\index{incremento}
 
-\item[decrement:] An update that decreases the value of a variable.
-\index{decrement}
+\item[decremento:] Una actualización que disminuye el valor de una variable.
+\index{decremento}
 
-\item[iteration:] Repeated execution of a set of statements using
-either a recursive function call or a loop.
-\index{iteration}
+\item[iteración:] Ejecución repetida de un conjunto de sentencias usando
+una llamada a función recursiva o un bucle.
+\index{iteración}
 
-\item[infinite loop:] A loop in which the terminating condition is
-never satisfied.
-\index{infinite loop}
+\item[bucle infinito:] Un bucle cuya condición de terminación nunca
+se satisface.
+\index{bucle infinito}
 
-\item[algorithm:]  A general process for solving a category of
-problems.
-\index{algorithm}
+\item[algoritmo:]  Un proceso general para resolver una categoría de
+problemas.
+\index{algoritmo}
 
 \end{description}
 
 
-\section{Exercises}
+\section{Ejercicios}
 
 \begin{exercise}
-\index{algorithm!square root}
+\index{algoritmo de raíz cuadrada}
 
-Copy the loop from Section~\ref{squareroot}
-and encapsulate it in a function called
-\verb"mysqrt" that takes {\tt a} as a parameter, chooses a
-reasonable value of {\tt x}, and returns an estimate of the square
-root of {\tt a}.  \index{encapsulation}
+Copia el bucle de la Sección~\ref{squareroot}
+y encapsúlalo en una función llamada
+\verb"mi_sqrt" que tome {\tt a} como parámetro, escoja un
+valor razonable de {\tt x} y devuelva una estimación de la raíz
+cuadrada de {\tt a}.  \index{encapsulamiento}
 
-To test it, write a function named \verb"test_square_root"
-that prints a table like this:
+Para probarla, escribe una función con nombre \verb"probar_raiz_cuadrada"
+que imprima una tabla como esta:
 
 \begin{verbatim}
-a   mysqrt(a)     math.sqrt(a)  diff
--   ---------     ------------  ----
+a   mi_sqrt(a)    math.sqrt(a)  diferencia
+-   ----------    ------------  ----------
 1.0 1.0           1.0           0.0
 2.0 1.41421356237 1.41421356237 2.22044604925e-16
 3.0 1.73205080757 1.73205080757 0.0
@@ -5874,19 +5874,19 @@ a   mysqrt(a)     math.sqrt(a)  diff
 9.0 3.0           3.0           0.0
 \end{verbatim}
 %
-The first column is a number, $a$; the second column is the square
-root of $a$ computed with \verb"mysqrt"; the third column is the
-square root computed by {\tt math.sqrt}; the fourth column is the
-absolute value of the difference between the two estimates.
+La primera columna es un número, $a$; la segunda columna es la raíz
+cuadrada de $a$ calculada con \verb"mi_sqrt"; la tercera columna es la
+raíz cuadrada calculada por {\tt math.sqrt}; la cuarta columna es el
+valor absoluto de la diferencia entre las dos estimaciones.
 \end{exercise}
 
 
 \begin{exercise}
-\index{eval function}
-\index{function!eval}
+\index{función eval}
+\index{eval!función}
 
-The built-in function {\tt eval} takes a string and evaluates
-it using the Python interpreter.  For example:
+La función incorporada {\tt eval} toma una cadena y la evalúa
+usando el intérprete de Python.  Por ejemplo:
 
 \begin{verbatim}
 >>> eval('1 + 2 * 3')
@@ -5898,12 +5898,12 @@ it using the Python interpreter.  For example:
 <class 'float'>
 \end{verbatim}
 %
-Write a function called \verb"eval_loop" that iteratively
-prompts the user, takes the resulting input and evaluates
-it using {\tt eval}, and prints the result.
+Escribe una función llamada \verb"bucle_eval" que, de manera iterativa,
+solicite la entrada del usuario, tome la entrada resultante y la evalúe
+usando {\tt eval}, e imprima el resultado.
 
-It should continue until the user enters \verb"'done'", and then
-return the value of the last expression it evaluated.
+Debería continuar hasta que el usuario ingrese \verb"'listo'" y luego
+devuelva el valor de la última expresión que evaluó.
 
 \end{exercise}
 
@@ -5911,22 +5911,22 @@ return the value of the last expression it evaluated.
 \begin{exercise}
 \index{Ramanujan, Srinivasa}
 
-The mathematician Srinivasa Ramanujan found an
-infinite series
-that can be used to generate a numerical
-approximation of $1 / \pi$:
+El matemático Srinivasa Ramanujan encontró una
+serie infinita
+que se puede usar para generar una aproximación
+numérica de $1 / \pi$:
 \index{pi}
 
 \[ \frac{1}{\pi} = \frac{2\sqrt{2}}{9801}
 \sum^\infty_{k=0} \frac{(4k)!(1103+26390k)}{(k!)^4 396^{4k}} \]
 
-Write a function called \verb"estimate_pi" that uses this formula
-to compute and return an estimate of $\pi$.  It should use a {\tt while}
-loop to compute terms of the summation until the last term is
-smaller than {\tt 1e-15} (which is Python notation for $10^{-15}$).
-You can check the result by comparing it to {\tt math.pi}.
+Escribe una función llamada \verb"estimacion_pi" que use esta fórmula
+para calcular y devolver una estimación de $\pi$.  Debería usar un bucle {\tt while}
+para calcular términos de la sumatoria hasta que el último término sea
+más pequeño que {\tt 1e-15} (lo cual es la notación de Python para $10^{-15}$).
+Puedes verificar el resultado comparándolo con {\tt math.pi}.
 
-Solution: \url{http://thinkpython2.com/code/pi.py}.
+Solución: \url{http://thinkpython2.com/code/pi.py}.
 
 \end{exercise}
 
