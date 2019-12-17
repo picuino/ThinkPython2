@@ -5361,25 +5361,25 @@ Crédito: Este ejercicio está basado en un ejemplo de
 \end{exercise}
 
 
-\chapter{Iteration}
+\chapter{Iteración}
 
-This chapter is about iteration, which is the ability to run
-a block of statements repeatedly.  We saw a kind of iteration,
-using recursion, in Section~\ref{recursion}.
-We saw another kind, using a {\tt for} loop,
-in Section~\ref{repetition}.  In this chapter we'll see yet another
-kind, using a {\tt while} statement.
-But first I want to say a little more about variable assignment.
+Este capítulo trata sobre iteración, que es la capacidad de ejecutar
+un bloque de sentencias de forma repetida.  Vimos un tipo de iteración,
+usando recursividad, en la Sección~\ref{recursion}.
+Vimos otro tipo, usando un blucle {\tt for},
+en la Sección~\ref{repetition}.  Es este capítulo veremos otro
+tipo, usando una sentencia {\tt while}.
+Pero primero quiero decir un poco más sobre la asignación de variables.
 
 
-\section{Reassignment}
-\index{assignment}
-\index{statement!assignment}
-\index{reassignment}
+\section{Reasignación}
+\index{asignación}
+\index{sentencia de asignación}
+\index{reasignación}
 
-As you may have discovered, it is legal to make more than one
-assignment to the same variable.  A new assignment makes an existing
-variable refer to a new value (and stop referring to the old value).
+Como habrás descubierto, es legal hacer más de una
+asignación a la misma variable.  Una nueva asignación hace que una variable existente
+haga referencia a un nuevo valor (y deje de hacer referencia al valor antiguo).
 
 \begin{verbatim}
 >>> x = 5
@@ -5390,245 +5390,245 @@ variable refer to a new value (and stop referring to the old value).
 7
 \end{verbatim}
 %
-The first time we display
-{\tt x}, its value is 5; the second time, its
-value is 7.
+La primera vez que mostramos
+{\tt x}, su valor es 5; la segunda vez, su
+valor es 7.
 
-Figure~\ref{fig.assign2} shows what {\bf reassignment} looks
-like in a state diagram. \index{state diagram} \index{diagram!state}
+La Figura~\ref{fig.assign2} muestra cómo se ve una {\bf reasignación}
+en un diagrama de estado. \index{diagrama de estado} \index{estado!diagrama de}
 
-At this point I want to address a common source of
-confusion.
-Because Python uses the equal sign ({\tt =}) for assignment, it is
-tempting to interpret a statement like {\tt a = b} as a
-mathematical
-proposition of equality; that is, the claim that {\tt a} and
-{\tt b} are equal.  But this interpretation is wrong.
-\index{equality and assignment}
+En este punto quiero abordar un origen común de
+confusión.
+Debido a que Python usa el signo igual ({\tt =}) para la asignación, es
+tentador interpretar una sentencia del tipo {\tt a = b} como una
+proposición
+matemática de igualdad; es decir, la afirmación de que {\tt a} y
+{\tt b} son iguales.  Pero esta interpretación es incorrecta.
+\index{igualdad y asignación}
 
-First, equality is a symmetric relationship and assignment is not.  For
-example, in mathematics, if $a=7$ then $7=a$.  But in Python, the
-statement {\tt a = 7} is legal and {\tt 7 = a} is not.
+Primero, la igualdad es una relación simétrica y la asignación no lo es.  Por
+ejemplo, en matemáticas, si $a=7$ entonces $7=a$.  Pero en Python, la
+sentencia {\tt a = 7} es legal y {\tt 7 = a} no lo es.
 
-Also, in mathematics, a proposition of equality is either true or
-false for all time.  If $a=b$ now, then $a$ will always equal $b$.
-In Python, an assignment statement can make two variables equal, but
-they don't have to stay that way:
+Además, en matemáticas, una proposición de igualdad es verdadera o
+falsa todo el tiempo.  Si $a=b$ ahora, entonces $a$ siempre será igual a $b$.
+En Python, una sentencia de asignación puede igualar dos variables, pero
+no tienen que seguir de esa manera:
 
 \begin{verbatim}
 >>> a = 5
->>> b = a    # a and b are now equal
->>> a = 3    # a and b are no longer equal
+>>> b = a    # a y b son iguales ahora
+>>> a = 3    # a y b ya no son iguales
 >>> b
 5
 \end{verbatim}
 %
-The third line changes the value of {\tt a} but does not change the
-value of {\tt b}, so they are no longer equal.
+La tercera línea cambia el valor de {\tt a} pero no cambia el
+valor de {\tt b}, por lo que ya no son iguales.
 
-Reassigning variables is often useful, but you should use it
-with caution.  If the values of variables change frequently, it can
-make the code difficult to read and debug.
+La reasignación de variables es a menudo útil, pero deberías usarla
+con precaución.  Si los valores de las variables cambian frecuentemente, puede
+hacer que el código sea difícil de leer y depurar.
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/assign2.pdf}}
-\caption{State diagram.}
+\caption{Diagrama de estado.}
 \label{fig.assign2}
 \end{figure}
 
 
 
-\section{Updating variables}
+\section{Actualizar variables}
 \label{update}
 
-\index{update}
-\index{variable!updating}
+\index{actualizar}
+\index{variable!actualizar}
 
-A common kind of reassignment is an {\bf update},
-where the new value of the variable depends on the old.
+Un tipo común de reasignación es la {\bf actualización},
+donde el nuevo valor de la nueva variable depende del antiguo.
 
 \begin{verbatim}
 >>> x = x + 1
 \end{verbatim}
 %
-This means ``get the current value of {\tt x}, add one, and then
-update {\tt x} with the new value.''
+Esto significa ``obten el valor actual de {\tt x}, suma uno, y luego
+actualiza {\tt x} con el nuevo valor.''
 
-If you try to update a variable that doesn't exist, you get an
-error, because Python evaluates the right side before it assigns
-a value to {\tt x}:
+Si intentas actualizar una variable que no existe, obtienes un
+error, debido a que Python evalúa el lado derecho antes de asignar
+un valor a {\tt x}:
 
 \begin{verbatim}
 >>> x = x + 1
 NameError: name 'x' is not defined
 \end{verbatim}
 %
-Before you can update a variable, you have to {\bf initialize}
-it, usually with a simple assignment:
-\index{initialization (before update)}
+Antes de que puedas actualizar una variable, la tienes que {\bf inicializar},
+usualmente con una simple asignación:
+\index{inicialización (antes de actualizar)}
 
 \begin{verbatim}
 >>> x = 0
 >>> x = x + 1
 \end{verbatim}
 %
-Updating a variable by adding 1 is called an {\bf increment};
-subtracting 1 is called a {\bf decrement}.
-\index{increment}
-\index{decrement}
+Actualizar una variable sumando 1 se llama {\bf incremento};
+restando 1 se llama {\bf decremento}.
+\index{incremento}
+\index{decremento}
 
 
 
 
-\section{The {\tt while} statement}
-\index{statement!while}
-\index{while loop}
-\index{loop!while}
-\index{iteration}
+\section{La sentencia {\tt while}}
+\index{sentencia while}
+\index{bucle while}
+\index{while!bucle}
+\index{iteración}
 
-Computers are often used to automate repetitive tasks.  Repeating
-identical or similar tasks without making errors is something that
-computers do well and people do poorly.  In a computer program,
-repetition is also called {\bf iteration}.
+Los computadores a menudo se usan para automatizar tareas repetitivas.  Repetir
+tareas idénticas o similares sin cometer errores es algo que
+los computadores hacen bien y las personas hacen mal.  En un programa de computador,
+la repetición también se llama {\bf iteración}.
 
-We have already seen two functions, {\tt countdown} and
-\verb"print_n", that iterate using recursion.  Because iteration is so
-common, Python provides language features to make it easier.
-One is the {\tt for} statement we saw in Section~\ref{repetition}.
-We'll get back to that later.
+Ya hemos visto dos funciones, {\tt cuenta\_reg} e
+\verb"imprimir_n", que iteran usando recursividad.  Debido a que la iteración es tan
+común, Python proporciona características del lenguaje que la hacen más fácil.
+Una es la sentencia {\tt for} que vimos en la Sección~\ref{repetition}.
+Volveremos a eso más adelante.
 
-Another is the {\tt while} statement.  Here is a version of {\tt
-countdown} that uses a {\tt while} statement:
+Otra es la sentencia {\tt while}.  Aquí hay una versión de {\tt
+cuenta\_reg} que usa una sentencia {\tt while}:
 
 \begin{verbatim}
-def countdown(n):
+def cuenta_reg(n):
     while n > 0:
         print(n)
         n = n - 1
-    print('Blastoff!')
+    print('¡Despegue!')
 \end{verbatim}
 %
-You can almost read the {\tt while} statement as if it were English.
-It means, ``While {\tt n} is greater than 0,
-display the value of {\tt n} and then decrement
-{\tt n}.  When you get to 0, display the word {\tt Blastoff!}''
-\index{flow of execution}
+Casi puedes leer la sentencia {\tt while} como si fuera inglés.
+Significa, ``Mientras {\tt n} sea mayor que 0,
+muestra el valor de {\tt n} y luego decrementa
+{\tt n}.  Cuando llegues a 0, muestra la palabra {\tt ¡Despegue!}''
+\index{flujo de ejecución}
 
-More formally, here is the flow of execution for a {\tt while} statement:
+De manera más formal, aquí está el flujo de ejecución para una sentencia {\tt while}:
 
 \begin{enumerate}
 
-\item Determine whether the condition is true or false.
+\item Determinar si la condición es verdadera o falsa.
 
-\item If false, exit the {\tt while} statement
-and continue execution at the next statement.
+\item Si es falsa, salir de la sentencia {\tt while}
+y continuar con la ejecucion de la siguiente sentencia.
 
-\item If the condition is true, run the
-body and then go back to step 1.
+\item Si la condición es verdadera, ejecutar el
+cuerpo y luego volver al paso 1.
 
 \end{enumerate}
 
-This type of flow is called a loop because the third step
-loops back around to the top.
-\index{condition}
-\index{loop}
-\index{body}
+Este tipo de flujo se llama bucle porque el tercer paso
+hace que vuelva hacia arriba.
+\index{condición}
+\index{bucle}
+\index{cuerpo}
 
-The body of the loop should change the value of one or more variables
-so that the condition becomes false eventually and the loop
-terminates.  Otherwise the loop will repeat forever, which is called
-an {\bf infinite loop}.  An endless source of amusement for computer
-scientists is the observation that the directions on shampoo,
-``Lather, rinse, repeat'', are an infinite loop.
-\index{infinite loop}
-\index{loop!infinite}
+El cuerpo del bucle debería cambiar el valor de una o más variables
+de modo que la condición se vuelva falsa eventualmente y el bucle
+termine.  De lo contrario el bucle se repetirá por siempre, lo cual se llama
+{\bf bucle infinito}.  Una fuente interminable de diversión para
+informáticos es la observación de que las instrucciones en un champú,
+``Enjabonar, enjuagar, repetir'', son un bucle infinito.
+\index{bucle infinito}
+\index{infinito!bucle}
 
-In the case of {\tt countdown}, we can prove that the loop
-terminates: if {\tt n} is zero or negative, the loop never runs.
-Otherwise, {\tt n} gets smaller each time through the
-loop, so eventually we have to get to 0.
+En el caso de {\tt cuenta\_reg}, podemos probar que el bucle
+termina: si {\tt n} es cero o negativo, el bucle nunca se ejecuta.
+De lo contrario, {\tt n} se hace más pequeño cada vez que se recorre
+el blucle, por lo que eventualmente tenemos que llegar a 0.
 
-For some other loops, it is not so easy to tell.  For example:
+Para algunos otros bucles, no es tan fácil decirlo.  Por ejemplo:
 
 \begin{verbatim}
-def sequence(n):
+def sucesion(n):
     while n != 1:
         print(n)
-        if n % 2 == 0:        # n is even
+        if n % 2 == 0:        # n es par
             n = n / 2
-        else:                 # n is odd
+        else:                 # n es impar
             n = n*3 + 1
 \end{verbatim}
 %
-The condition for this loop is {\tt n != 1}, so the loop will continue
-until {\tt n} is {\tt 1}, which makes the condition false.
+La condición para este bucle es {\tt n != 1}, por lo que el bucle continuará
+hasta que {\tt n} sea {\tt 1}, lo cual hace que la condición sea falsa.
 
-Each time through the loop, the program outputs the value of {\tt n}
-and then checks whether it is even or odd.  If it is even, {\tt n} is
-divided by 2.  If it is odd, the value of {\tt n} is replaced with
-{\tt n*3 + 1}. For example, if the argument passed to {\tt sequence}
-is 3, the resulting values of {\tt n} are 3, 10, 5, 16, 8, 4, 2, 1.
+Cada vez que se recorre el bucle, el programa tiene como salida el valor de {\tt n}
+y luego verifica si es par o impar.  Si es par, {\tt n} se
+divide por 2.  Si es impar, el valor de {\tt n} se reemplaza por
+{\tt n*3 + 1}. Por ejemplo, si el argumento pasado a {\tt sucesion}
+es 3, los valores resultantes de {\tt n} son 3, 10, 5, 16, 8, 4, 2, 1.
 
-Since {\tt n} sometimes increases and sometimes decreases, there is no
-obvious proof that {\tt n} will ever reach 1, or that the program
-terminates.  For some particular values of {\tt n}, we can prove
-termination.  For example, if the starting value is a power of two,
-{\tt n} will be even every time through the loop
-until it reaches 1. The previous example ends with such a sequence,
-starting with 16.
+Dado que {\tt n} a veces aumenta y a veces disminuye, no hay
+demostración obvia de que {\tt n} alcanzará el 1 alguna vez, o que el programa
+termina.  Para algunos valores particulares de {\tt n}, podemos probar que
+termina.  Por ejemplo, si el valor inicial es una potencia de dos,
+{\tt n} será par cada vez que se recorra el bucle
+hasta que alcance el 1. El ejemplo anterior termina con tal sucesión,
+comenzando con 16.
 \index{Collatz conjecture}
 
-The hard question is whether we can prove that this program terminates
-for {\em all} positive values of {\tt n}.  So far, no one has
-been able to prove it {\em or} disprove it!  (See
-  \url{http://en.wikipedia.org/wiki/Collatz_conjecture}.)
+La pregunta difícil es si podemos probar que este programa termina
+para {\em todos} los valores positivos de {\tt n}.  Hasta ahora, ¡nadie ha
+sido capaz de probarlo {\em o} refutarlo!  (Ver
+  \url{http://es.wikipedia.org/wiki/Conjetura_de_Collatz}.)
 
-As an exercise, rewrite the function \verb"print_n" from
-Section~\ref{recursion} using iteration instead of recursion.
+Como ejercicio, reescribe la función \verb"print_n" de la
+Sección~\ref{recursion} usando iteración en lugar de recursividad.
 
 
 \section{{\tt break}}
-\index{break statement}
-\index{statement!break}
+\index{sentencia break}
+\index{break!sentencia}
 
-Sometimes you don't know it's time to end a loop until you get half
-way through the body.  In that case you can use the {\tt break}
-statement to jump out of the loop.
+A veces no sabes que es tiempo de terminar un bucle hasta que llegas a la mitad
+del cuerpo.  En ese caso puedes usar la sentencia {\tt break}
+para saltar hacia afuera fuera del bucle.
 
-For example, suppose you want to take input from the user until they
-type {\tt done}.  You could write:
+Por ejemplo, supongamos que quieres tomar la entrada del usuario hasta que
+se escriba {\tt listo}.    Podrías escribir:
 
 \begin{verbatim}
 while True:
-    line = input('> ')
-    if line == 'done':
+    linea = input('> ')
+    if linea == 'listo':
         break
-    print(line)
+    print(linea)
 
-print('Done!')
+print('¡Listo!')
 \end{verbatim}
 %
-The loop condition is {\tt True}, which is always true, so the
-loop runs until it hits the break statement.
+La condición del bucle es {\tt True}, lo cual siempre es verdadero, así que el
+bucle se ejecuta hasta que llega a la sentencia break.
 
-Each time through, it prompts the user with an angle bracket.
-If the user types {\tt done}, the {\tt break} statement exits
-the loop.  Otherwise the program echoes whatever the user types
-and goes back to the top of the loop.  Here's a sample run:
+Cada vez que pasa, solicita la entrada del usuario con un paréntesis angular.
+Si el usuario escribe {\tt listo}, la sentencia {\tt break} hace que se salga
+del bucle.  De lo contrario el programa echoes lo que escriba el usuario
+y regresa a la parte superior del bucle.  Aquí hay una ejecución de muestra:
 
 \begin{verbatim}
-> not done
-not done
-> done
-Done!
+> no listo
+no listo
+> listo
+¡Listo!
 \end{verbatim}
 %
-This way of writing {\tt while} loops is common because you
-can check the condition anywhere in the loop (not just at the
-top) and you can express the stop condition affirmatively
-(``stop when this happens'') rather than negatively (``keep going
-until that happens'').
+Esta forma de escribir bucles {\tt while} es común porque puedes
+verificar la condición en cualquier lugar del bucle (no solo en la
+parte superior) y puedes expresar la condición de detención de manera afirmativa
+(``detente cuando esto ocurra'') en lugar de negativa (``sigue haciendo
+hasta que eso ocurra'').
 
 
 \section{Square roots}
