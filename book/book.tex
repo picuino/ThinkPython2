@@ -2663,7 +2663,7 @@ que proporciona acceso a los valores definidos en el módulo.
 \item[notación de punto:]  La sintaxis para llamar a una función de otro
 módulo especificando el nombre del módulo, seguido de un punto y
 el nombre de la función.
-\index{dot notation}
+\index{notación de punto}
 
 \item[composición:] Usar una expresión como parte de una expresión más grande,
 o una sentencia como parte de una sentencia más grande.
@@ -5931,191 +5931,191 @@ Solución: \url{http://thinkpython2.com/code/pi.py}.
 \end{exercise}
 
 
-\chapter{Strings}
+\chapter{Cadenas}
 \label{strings}
 
-Strings are not like integers, floats, and booleans.  A string
-is a {\bf sequence}, which means it is
-an ordered collection of other values.  In this chapter you'll see
-how to access the characters that make up a string, and you'll
-learn about some of the methods strings provide.
-\index{sequence}
+Las cadenas no son como los enteros, números de coma flotante y booleanos.  Una cadena
+es una {\bf secuencia}, lo cual significa que es
+una colección ordenada de valores.  En este capítulo verás
+cómo acceder a los caracteres que forman una cadena y
+aprenderás sobre algunos de los métodos que proporcionan las cadenas.
+\index{secuencia}
 
 
-\section{A string is a sequence}
+\section{Una cadena es una secuencia}
 
-\index{sequence}
-\index{character}
-\index{bracket operator}
-\index{operator!bracket}
-A string is a sequence of characters.
-You can access the characters one at a time with the
-bracket operator:
+\index{secuencia}
+\index{carácter}
+\index{operador corchetes}
+\index{corchetes!operador}
+Una cadena es una secuencia de caracteres.
+Puedes acceder a los caracteres uno a la vez con el
+operador corchetes:
 
 \begin{verbatim}
->>> fruit = 'banana'
->>> letter = fruit[1]
+>>> fruta = 'banana'
+>>> letra = fruta[1]
 \end{verbatim}
 %
-The second statement selects character number 1 from {\tt
-fruit} and assigns it to {\tt letter}.
-\index{index}
+La segunda sentencia selecciona el carácter número 1 de {\tt
+fruit} y lo asigna a {\tt letra}.
+\index{índice}
 
-The expression in brackets is called an {\bf index}.
-The index indicates which character in the sequence you
-want (hence the name).
+La expresión en los corchetes se llama {\bf índice}.
+El índice indica cuál carácter en la secuencia
+quieres (de ahí el nombre).
 
-But you might not get what you expect:
+Pero podrías no obtener lo que esperas:
 
 \begin{verbatim}
->>> letter
+>>> letra
 'a'
 \end{verbatim}
 %
-For most people, the first letter of \verb"'banana'" is {\tt b}, not
-{\tt a}.  But for computer scientists, the index is an offset from the
-beginning of the string, and the offset of the first letter is zero.
+Para la mayoría de las personas, la primera letra de \verb"'banana'" es {\tt b}, no
+{\tt a}.  Pero para los informáticos, el índice es un desplazamiento desde el
+comienzo de la cadena, y el desplazamiento de la primera letra es cero.
 
 \begin{verbatim}
->>> letter = fruit[0]
->>> letter
+>>> letra = fruta[0]
+>>> letra
 'b'
 \end{verbatim}
 %
-So {\tt b} is the 0th letter (``zero-eth'') of \verb"'banana'", {\tt
-  a} is the 1th letter (``one-eth''), and {\tt n} is the 2th letter
-(``two-eth'').  \index{index!starting at zero} \index{zero, index
-  starting at}
+Entonces {\tt b} es la 0-ésima letra  (``cero-ésima'') de \verb"'banana'", {\tt
+  a} es la 1-ésima letra (``uno-ésima'') y {\tt n} es la 2-ésima letra
+(``dos-ésima'').  \index{índice!a partir de cero} \index{cero, índice
+  a partir de}
 
-As an index you can use an expression that contains variables and
-operators:
+Como índice, puedes usar una expresión que contenga variables y
+operadores:
 \index{index}
 
 \begin{verbatim}
 >>> i = 1
->>> fruit[i]
+>>> fruta[i]
 'a'
->>> fruit[i+1]
+>>> fruta[i+1]
 'n'
 \end{verbatim}
 %
 
-But the value of the index has to be an integer.  Otherwise you
-get:
-\index{exception!TypeError}
+Pero el valor del índice tiene que ser un entero.  De lo contrario,
+obtienes:
+\index{excepción TypeError}
 \index{TypeError}
 
 \begin{verbatim}
->>> letter = fruit[1.5]
+>>> letra = fruta[1.5]
 TypeError: string indices must be integers
 \end{verbatim}
 %
 
 \section{{\tt len}}
-\index{len function}
-\index{function!len}
+\index{función len}
+\index{len!función}
 
-{\tt len} is a built-in function that returns the number of characters
-in a string:
+{\tt len} es una función incorporada que devuelve el número de caracteres
+en una cadena:
 
 \begin{verbatim}
->>> fruit = 'banana'
->>> len(fruit)
+>>> fruta = 'banana'
+>>> len(fruta)
 6
 \end{verbatim}
 %
-To get the last letter of a string, you might be tempted to try something
-like this:
-\index{exception!IndexError}
+Para obtener la última letra de una cadena, podrías estar tentado a intentar algo
+así:
+\index{excepción IndexError}
 \index{IndexError}
 
 \begin{verbatim}
->>> length = len(fruit)
->>> last = fruit[length]
+>>> longitud = len(fruta)
+>>> ultima = fruta[longitud]
 IndexError: string index out of range
 \end{verbatim}
 %
-The reason for the {\tt IndexError} is that there is no letter in {\tt
-'banana'} with the index 6.  Since we started counting at zero, the
-six letters are numbered 0 to 5.  To get the last character, you have
-to subtract 1 from {\tt length}:
+El motivo del {\tt IndexError} es que no hay letra en {\tt
+'banana'} con el índice 6.  Dado que comenzamos a contar desde cero, las
+seis letras se enumeran del 0 al 5.  Para obtener el último carácter, tienes
+que restar 1 a {\tt longitud}:
 
 \begin{verbatim}
->>> last = fruit[length-1]
->>> last
+>>> ultima = fruta[longitud-1]
+>>> ultima
 'a'
 \end{verbatim}
 %
-Or you can use negative indices, which count backward from
-the end of the string.  The expression {\tt fruit[-1]} yields the last
-letter, {\tt fruit[-2]} yields the second to last, and so on.
-\index{index!negative}
-\index{negative index}
+O puedes usar índices negativos, los cuales cuentan hacia atrás desde
+el final de la cadena.  La expresión {\tt fruta[-1]} entrega la última
+letra, {\tt fruta[-2]} entrega la penúltima, y así.
+\index{índice negativo}
+\index{negativo!índice}
 
 
-\section{Traversal with a {\tt for} loop}
+\section{Recorrido con un bucle {\tt for}}
 \label{for}
-\index{traversal}
-\index{loop!traversal}
-\index{for loop}
-\index{loop!for}
-\index{statement!for}
-\index{traversal}
+\index{recorrido}
+\index{bucle!recorrido en}
+\index{bucle for}
+\index{for!bucle}
+\index{sentencia for}
+\index{recorrido}
 
-A lot of computations involve processing a string one character at a
-time.  Often they start at the beginning, select each character in
-turn, do something to it, and continue until the end.  This pattern of
-processing is called a {\bf traversal}.  One way to write a traversal
-is with a {\tt while} loop:
-
-\begin{verbatim}
-index = 0
-while index < len(fruit):
-    letter = fruit[index]
-    print(letter)
-    index = index + 1
-\end{verbatim}
-%
-This loop traverses the string and displays each letter on a line by
-itself.  The loop condition is {\tt index < len(fruit)}, so
-when {\tt index} is equal to the length of the string, the
-condition is false, and the body of the loop doesn't run.  The
-last character accessed is the one with the index {\tt len(fruit)-1},
-which is the last character in the string.
-
-As an exercise, write a function that takes a string as an argument
-and displays the letters backward, one per line.
-
-Another way to write a traversal is with a {\tt for} loop:
+Muchas computaciones implican procesar una cadena un carácter a la
+vez.  A menudo parten al comienzo, seleccionan cada carácter en
+turno, le hacen algo, y continúan hasta el final.  Este patrón de
+procesamiento se llama {\bf recorrido}.  Una manera de escribir un recorrido
+es con un bucle {\tt while}:
 
 \begin{verbatim}
-for letter in fruit:
-    print(letter)
+indice = 0
+while indice < len(fruta):
+    letra = fruta[indice]
+    print(letra)
+    indice = indice + 1
 \end{verbatim}
 %
-Each time through the loop, the next character in the string is assigned
-to the variable {\tt letter}.  The loop continues until no characters are
-left.
-\index{concatenation}
-\index{abecedarian}
+Este bucle recorre la cadena y muestra cada letra en una
+línea.  La condición del bucle es {\tt indice < len(fruta)}, entonces
+cuando {\tt indice} es igual a la longitud de la cadena, la
+condición es falsa, y el cuerpo del bucle no se ejecuta.  El
+último carácter accedido es el que tiene índice {\tt len(fruta)-1},
+el cual es el último carácter en la cadena.
+
+Como ejercicio, escribe una función que tome una cadena como argumento
+y muestre las letras hacia atrás, una por línea.
+
+Otra manera de escribir un recorrido es con un bucle {\tt for}:
+
+\begin{verbatim}
+for letra in fruta:
+    print(letra)
+\end{verbatim}
+%
+Cada vez que se recorre el bucle, el siguiente carácter en la cadena se asigna
+a la variable {\tt letra}.  El bucle continúa hasta que no quedan
+caracteres.
+\index{concatenación}
+\index{abecedario}
 \index{McCloskey, Robert}
 
-The following example shows how to use concatenation (string addition)
-and a {\tt for} loop to generate an abecedarian series (that is, in
-alphabetical order).  In Robert McCloskey's book {\em Make
-Way for Ducklings}, the names of the ducklings are Jack, Kack, Lack,
-Mack, Nack, Ouack, Pack, and Quack.  This loop outputs these names in
-order:
+El siguiente ejemplo muestra cómo usar la concatenación (suma de cadenas)
+y un bucle {\tt for} para generar una serie abecedaria (es decir, en
+orden alfabético).  En el libro de Robert McCloskey {\em Abran
+paso a los patitos}, los nombres de los patitos son Jack, Kack, Lack,
+Mack, Nack, Ouack, Pack, and Quack.  Este bucle muestra estos nombres en
+orden:
 
 \begin{verbatim}
-prefixes = 'JKLMNOPQ'
-suffix = 'ack'
+prefijos = 'JKLMNOPQ'
+sufijo = 'ack'
 
-for letter in prefixes:
-    print(letter + suffix)
+for letra in prefijos:
+    print(letra + sufijo)
 \end{verbatim}
 %
-The output is:
+La salida es:
 
 \begin{verbatim}
 Jack
@@ -6128,8 +6128,8 @@ Pack
 Qack
 \end{verbatim}
 %
-Of course, that's not quite right because ``Ouack'' and ``Quack'' are
-misspelled.  As an exercise, modify the program to fix this error.
+Desde luego, eso no es del todo correcto porque ``Ouack'' y ``Quack'' están
+mal escritos.  Como ejercicio, modifica el programa para arreglar este error.
 
 
 
@@ -6149,11 +6149,11 @@ similar to selecting a character:
 'Python'
 \end{verbatim}
 %
-The operator {\tt [n:m]} returns the part of the string from the
-``n-eth'' character to the ``m-eth'' character, including the first but
-excluding the last.  This behavior is counterintuitive, but it might
-help to imagine the indices pointing {\em between} the
-characters, as in Figure~\ref{fig.banana}.
+El operador {\tt [n:m]} devuelve la parte de la cadena desde el 
+``n-ésimo'' carácter al ``m-ésimo'' carácter, incluyendo el primero pero
+excluyendo el último.  Este comportamiento es contraintuitivo, pero tal vez
+ayude imaginar los índices apuntando {\em entre} los
+caracteres, como en la Figura~\ref{fig.banana}.
 
 \begin{figure}
 \centerline
@@ -6174,62 +6174,62 @@ goes to the end of the string:
 'ana'
 \end{verbatim}
 %
-If the first index is greater than or equal to the second the result
-is an {\bf empty string}, represented by two quotation marks:
-\index{quotation mark}
+Si el primer índice es mayor o igual al segundo, el resultado
+es una {\bf cadena vacía}, representada por dos comillas:
+\index{comillas}
 
 \begin{verbatim}
->>> fruit = 'banana'
->>> fruit[3:3]
+>>> fruta = 'banana'
+>>> fruta[3:3]
 ''
 \end{verbatim}
 %
-An empty string contains no characters and has length 0, but other
-than that, it is the same as any other string.
+Una cadena vacía no contiene caracteres y tiene longitud 0, pero aparte
+de eso, es lo mismo que cualquier otra cadena.
 
-Continuing this example, what do you think
-{\tt fruit[:]} means?  Try it and see.
+Continuando con este ejemplo, ¿qué crees que significa
+{\tt fruit[:]}?  Pruébalo y mira.
 \index{copy!slice}
 \index{slice!copy}
 
 
 
-\section{Strings are immutable}
-\index{mutability}
-\index{immutability}
-\index{string!immutable}
+\section{Las cadenas son inmutables}
+\index{mutabilidad}
+\index{inmutabilidad}
+\index{cadena inmutable}
 
-It is tempting to use the {\tt []} operator on the left side of an
-assignment, with the intention of changing a character in a string.
-For example:
+Es tentador usar el operador {\tt []} en el lado izquierdo de una
+asignación, con la intención de cambiar un carácter en una cadena.
+Por ejemplo:
 \index{TypeError}
-\index{exception!TypeError}
+\index{excepción TypeError}
 
 \begin{verbatim}
->>> greeting = 'Hello, world!'
->>> greeting[0] = 'J'
+>>> saludo = 'Hello, world!'
+>>> saludo[0] = 'J'
 TypeError: 'str' object does not support item assignment
 \end{verbatim}
 %
-The ``object'' in this case is the string and the ``item'' is
-the character you tried to assign.  For now, an object is
-the same thing as a value, but we will refine that definition
-later (Section~\ref{equivalence}).
-\index{object}
-\index{item}
-\index{item assignment}
-\index{assignment!item}
-\index{immutability}
+El ``objeto'' en este caso es la cadena y el ``ítem'' es
+el carácter que intentaste asignar.  Por ahora, un objeto es
+lo mismo que un valor, pero refinaremos esa definición
+más adelante (Sección~\ref{equivalence}).
+\index{objeto}
+\index{ítem}
+\index{asignación de ítem}
+\index{ítem!asignación de}
+\index{inmutabilidad}
 
-The reason for the error is that
-strings are {\bf immutable}, which means you can't change an
-existing string.  The best you can do is create a new string
-that is a variation on the original:
+La razón del error es que
+las cadenas son {\bf inmutables}, lo cual significa que no puedes cambiar una
+cadena que ya existe.  Lo mejor que puedes hacer es crear una nueva cadena
+que sea una variación de la original:
 
 \begin{verbatim}
->>> greeting = 'Hello, world!'
->>> new_greeting = 'J' + greeting[1:]
->>> new_greeting
+>>> saludo = 'Hello, world!'
+>>> nuevo_saludo = 'J' + saludo[1:]
+>>> nuevo_saludo
 'Jello, world!'
 \end{verbatim}
 %
@@ -6239,261 +6239,261 @@ the original string.
 \index{concatenation}
 
 
-\section{Searching}
+\section{Buscar}
 \label{find}
 
-What does the following function do?
-\index{find function}
-\index{function!find}
+¿Qué hace la siguiente función?
+\index{función find}
+\index{find!función}
 
 \begin{verbatim}
-def find(word, letter):
-    index = 0
-    while index < len(word):
-        if word[index] == letter:
-            return index
-        index = index + 1
+def find(palabra, letra):
+    indice = 0
+    while indice < len(palabra):
+        if palabra[indice] == letra:
+            return indice
+        indice = indice + 1
     return -1
 \end{verbatim}
 %
-In a sense, {\tt find} is the inverse of the {\tt []} operator.
-Instead of taking an index and extracting the corresponding character,
-it takes a character and finds the index where that character
-appears.  If the character is not found, the function returns {\tt
+En un sentido, {\tt find} es la inversa del operador {\tt []}.
+En lugar de tomar un índice y extraer el carácter correspondiente,
+toma un carácter y encuentra el índice donde aparece ese
+carácter.  Si el carácter no se encuentra, la función devuelve {\tt
 -1}.
 
-This is the first example we have seen of a {\tt return} statement
-inside a loop.  If {\tt word[index] == letter}, the function breaks
-out of the loop and returns immediately.
+Este es el primer ejemplo que hemos visto de una sentencia {\tt return}
+dentro de un bucle.  Si {\tt palabra[indice] == letra}, la función se sale
+del bucle y devuelve inmediatamente.
 
-If the character doesn't appear in the string, the program
-exits the loop normally and  returns {\tt -1}.
+Si el carácter no aparece en la cadena, el programa
+termina el bucle de manera normal y devuelve {\tt -1}.
 
-This pattern of computation---traversing a sequence and returning
-when we find what we are looking for---is called a {\bf search}.
-\index{traversal}
-\index{search pattern}
-\index{pattern!search}
+Este patrón de computación---recorrer una secuencia y devolver
+cuando encontramos lo que buscamos---se llama {\bf búsqueda}.
+\index{recorrido}
+\index{patrón búsqueda}
+\index{búsqueda!patrón}
 
-As an exercise, modify {\tt find} so that it has a
-third parameter, the index in {\tt word} where it should start
-looking.
+Como ejercicio, modifica {\tt find} para que tenga un
+tercer parámetro, el índice en {\tt palabra} donde debería comenzar a
+buscar.
 
 
-\section{Looping and counting}
+\section{Bucle y conteo}
 \label{counter}
-\index{counter}
-\index{counting and looping}
-\index{looping and counting}
-\index{looping!with strings}
+\index{contador}
+\index{conteo y bucle}
+\index{bucle y conteo}
+\index{bucle!con cadenas}
 
-The following program counts the number of times the letter {\tt a}
-appears in a string:
+El siguiente programa cuenta el número de veces que aparece la letra {\tt a}
+en una cadena:
 
 \begin{verbatim}
-word = 'banana'
-count = 0
-for letter in word:
-    if letter == 'a':
-        count = count + 1
-print(count)
+palabra = 'banana'
+contar = 0
+for letra in palabra:
+    if letra == 'a':
+        contar = contar + 1
+print(contar)
 \end{verbatim}
 %
-This program demonstrates another pattern of computation called a {\bf
-counter}.  The variable {\tt count} is initialized to 0 and then
-incremented each time an {\tt a} is found.
-When the loop exits, {\tt count}
-contains the result---the total number of {\tt a}'s.
+Este programa demuestra otro patrón de computación llamado {\bf
+contador}.  La variable {\tt contar} se inicializa en 0 y luego
+se incrementa cada vez que se encuentra una {\tt a}.
+Cuando el bucle termina, {\tt contar}
+contiene el resultado---el número total de letras {\tt a}.
 
-\index{encapsulation}
-As an exercise, encapsulate this code in a function named {\tt
-count}, and generalize it so that it accepts the string and the
-letter as arguments.
+\index{encapsulamiento}
+Como ejercicio, encapsula este código en una función con nombre {\tt
+contar}, y generalízalo para que acepte a la cadena y la
+letra como argumentos.
 
-Then rewrite the function so that instead of
-traversing the string, it uses the three-parameter version of {\tt
-find} from the previous section.
+Luego reescribe la función de modo que, en lugar de
+recorrer la cadena, usa la versión de tres parámetros de {\tt
+find} de la sección anterior.
 
 
-\section{String methods}
+\section{Métodos de cadena}
 \label{optional}
 
-Strings provide methods that perform a variety of useful operations.
-A method is similar to a function---it takes arguments and
-returns a value---but the syntax is different.  For example, the
-method {\tt upper} takes a string and returns a new string with
-all uppercase letters.
-\index{method}
-\index{string!method}
+Las cadenas proporcionan métodos que realizan una variedad de operaciones útiles.
+Un método es similar a una función---toma argumentos y
+devuelve un valor---pero la sintaxis es diferente.  Por ejemplo, el
+método {\tt upper} toma una cadena y devuelve una nueva cadena con
+todas las letras mayúsculas.
+\index{método}
+\index{cadena!método de}
 
-Instead of the function syntax {\tt upper(word)}, it uses
-the method syntax {\tt word.upper()}.
+En lugar de la sintaxis de función {\tt upper(palabra)}, usa
+la sintaxis de método {\tt palabra.upper()}.
 
 \begin{verbatim}
->>> word = 'banana'
->>> new_word = word.upper()
->>> new_word
+>>> palabra = 'banana'
+>>> nueva_palabra = palabra.upper()
+>>> nueva_palabra
 'BANANA'
 \end{verbatim}
 %
-This form of dot notation specifies the name of the method, {\tt
-upper}, and the name of the string to apply the method to, {\tt
-word}.  The empty parentheses indicate that this method takes no
-arguments.
-\index{parentheses!empty}
-\index{dot notation}
+Esta forma de notación de punto especifica el nombre del método, {\tt
+upper}, y el nombre de la cadena a la cual se le aplica el método, {\tt
+palabra}.  Los paréntesis vacíos indican que este método no toma
+argumentos.
+\index{paréntesis vacíos}
+\index{notación de punto}
 
-A method call is called an {\bf invocation}; in this case, we would
-say that we are invoking {\tt upper} on {\tt word}.
-\index{invocation}
+Una llamada a un método se llama {\bf invocación}; en este caso,
+diríamos que estamos invocando a {\tt upper} en {\tt palabra}.
+\index{invocación}
 
-As it turns out, there is a string method named {\tt find} that
-is remarkably similar to the function we wrote:
+Como resultado, hay un método de cadena con nombre {\tt find} que
+es notablemente similar a la función que escribimos:
 
 \begin{verbatim}
->>> word = 'banana'
->>> index = word.find('a')
->>> index
+>>> palabra = 'banana'
+>>> indice = palabra.find('a')
+>>> indice
 1
 \end{verbatim}
 %
-In this example, we invoke {\tt find} on {\tt word} and pass
-the letter we are looking for as a parameter.
+En este ejemplo, invocamos a {\tt find} en {\tt palabra} y pasamos
+como parámetro la letra que buscamos.
 
-Actually, the {\tt find} method is more general than our function;
-it can find substrings, not just characters:
+En realidad, el método {\tt find} es más general que nuestra función;
+puede encontrar subcadenas, no solo caracteres:
 
 \begin{verbatim}
->>> word.find('na')
+>>> palabra.find('na')
 2
 \end{verbatim}
 %
-By default, {\tt find} starts at the beginning of the string, but
-it can take a second argument, the index where it should start:
-\index{optional argument}
-\index{argument!optional}
+Por defecto, {\tt find} parte del comienzo de la cadena, pero
+puede tomar un segundo argumento, el índice donde debería partir:
+\index{argumento opcional}
+\index{opcional!argumento}
 
 \begin{verbatim}
->>> word.find('na', 3)
+>>> palabra.find('na', 3)
 4
 \end{verbatim}
 %
-This is an example of an {\bf optional argument};
-{\tt find} can
-also take a third argument, the index where it should stop:
+Este es un ejemplo de {\bf argumento opcional};
+{\tt find} puede
+tomar también un tercer argumento, el índice donde debería detenerse:
 
 \begin{verbatim}
->>> name = 'bob'
->>> name.find('b', 1, 2)
+>>> nombre = 'bob'
+>>> nombre.find('b', 1, 2)
 -1
 \end{verbatim}
 %
-This search fails because {\tt b} does not
-appear in the index range from {\tt 1} to {\tt 2}, not including {\tt
+Esta búsqueda falla porque {\tt b} no
+aparece en el rango de índices desde {\tt 1} hasta {\tt 2}, sin incluir el {\tt
 2}.  Searching up to, but not including, the second index makes
 {\tt find} consistent with the slice operator.
 
 
 
-\section{The {\tt in} operator}
+\section{El operador {\tt in}}
 \label{inboth}
-\index{in operator}
-\index{operator!in}
-\index{boolean operator}
-\index{operator!boolean}
+\index{operador in}
+\index{in!operador}
+\index{operador booleano}
+\index{booleano!operador}
 
-The word {\tt in} is a boolean operator that takes two strings and
-returns {\tt True} if the first appears as a substring in the second:
+La palabra {\tt in} es un operador booleano que toma dos cadenas y
+devuelve {\tt True} si la primera aparece como una subcadena en la segunda:
 
 \begin{verbatim}
 >>> 'a' in 'banana'
 True
->>> 'seed' in 'banana'
+>>> 'semilla' in 'banana'
 False
 \end{verbatim}
 %
-For example, the following function prints all the
-letters from {\tt word1} that also appear in {\tt word2}:
+Por ejemplo, la siguiente función imprime todas las
+letras de {\tt palabra1} que también aparecen en {\tt palabra2}:
 
 \begin{verbatim}
-def in_both(word1, word2):
-    for letter in word1:
-        if letter in word2:
-            print(letter)
+def en_ambas(palabra1, palabra2):
+    for letra in palabra1:
+        if letra in palabra2:
+            print(letra)
 \end{verbatim}
 %
-With well-chosen variable names,
-Python sometimes reads like English.  You could read
-this loop, ``for (each) letter in (the first) word, if (the) letter
-(appears) in (the second) word, print (the) letter.''
+Con nombres de variables bien escogidos,
+Python a veces se lee como en inglés, en este caso mezclado con español.  Podrías leer
+este bucle, ``para (cada) letra en (la primera) palabra, si (la) letra
+(aparece) en (la segunda) palabra, imprimir (la) letra.''
 
-Here's what you get if you compare apples and oranges:
+Esto es lo que obtienes si comparas uvas y tunas:
 
 \begin{verbatim}
->>> in_both('apples', 'oranges')
+>>> en_ambas('uvas', 'tunas')
+u
 a
-e
 s
 \end{verbatim}
 %
 
-\section{String comparison}
-\index{string!comparison}
-\index{comparison!string}
+\section{Comparación de cadenas}
+\index{cadenas!comparación de}
+\index{comparación de cadenas}
 
-The relational operators work on strings.  To see if two strings are equal:
+Los operadores relacionales funcionan en las cadenas.  Para ver si dos cadenas son iguales:
 
 \begin{verbatim}
-if word == 'banana':
-    print('All right, bananas.')
+if palabra == 'banana':
+    print('Todo bien, bananas.')
 \end{verbatim}
 %
-Other relational operations are useful for putting words in alphabetical
-order:
+Otras operaciones relacionales son útiles para poner palabras en orden
+alfabético:
 
 \begin{verbatim}
-if word < 'banana':
-    print('Your word, ' + word + ', comes before banana.')
-elif word > 'banana':
-    print('Your word, ' + word + ', comes after banana.')
+if palabra < 'banana':
+    print('Tu palabra, ' + palabra + ', viene antes de banana.')
+elif palabra > 'banana':
+    print('Tu palabra, ' + palabra + ', viene después de banana.')
 else:
-    print('All right, bananas.')
+    print('Todo bien, bananas.')
 \end{verbatim}
 %
-Python does not handle uppercase and lowercase letters the same way
-people do.  All the uppercase letters come before all the
-lowercase letters, so:
+Python no maneja letras mayúsculas y minúsculas de la misma manera en que
+lo hacen las personas.  Todas las letras mayúsculas vienen antes de todas las
+letras minúsculas, entonces:
 
 \begin{verbatim}
-Your word, Pineapple, comes before banana.
+Tu palabra, Piña, viene antes de banana.
 \end{verbatim}
 %
-A common way to address this problem is to convert strings to a
-standard format, such as all lowercase, before performing the
-comparison.  Keep that in mind in case you have to defend yourself
-against a man armed with a Pineapple.
+Una manera común de abordar este problema es convertir las cadenas a un
+formato estándar, por ejemplo todas minúsculas, antes de realizar
+la comparación.  Ten eso en mente en caso de que tengas que defenderte
+de un hombre armado con una Piña.
 
 
-\section{Debugging}
-\index{debugging}
-\index{traversal}
+\section{Depuración}
+\index{depuración}
+\index{recorrido}
 
-When you use indices to traverse the values in a sequence,
-it is tricky to get the beginning and end of the traversal
-right.  Here is a function that is supposed to compare two
-words and return {\tt True} if one of the words is the reverse
-of the other, but it contains two errors:
+Cuando usas índices para recorrer los valores en una secuencia,
+es difícil obtener el comienzo y final de un recorrido
+de manera correcta.  Aquí hay una función que se supone que compara dos
+palabras y devuelve {\tt True} si una de las palabras es el reverso
+de la otra, pero contiene dos errores:
 
 \begin{verbatim}
-def is_reverse(word1, word2):
-    if len(word1) != len(word2):
+def es_reverso(palabra1, palabra2):
+    if len(palabra1) != len(palabra2):
         return False
 
     i = 0
-    j = len(word2)
+    j = len(palabra2)
 
     while j > 0:
-        if word1[i] != word2[j]:
+        if palabra1[i] != palabra2[j]:
             return False
         i = i+1
         j = j-1
@@ -6501,182 +6501,182 @@ def is_reverse(word1, word2):
     return True
 \end{verbatim}
 %
-The first {\tt if} statement checks whether the words are the
-same length.  If not, we can return {\tt False} immediately.
-Otherwise, for the rest of the function, we can assume that the words
-are the same length.  This is an example of the guardian pattern
-in Section~\ref{guardian}.
-\index{guardian pattern}
-\index{pattern!guardian}
-\index{index}
+La primera sentencia {\tt if} verifica si las palabras tienen la
+misma longitud.  Si no, podemos devolver {\tt False} inmediatamente.
+De lo contrario, para el resto de la función, podemos suponer que las palabras
+tienen la misma longitud.  Este es un ejemplo del patrón guardián
+de la Sección~\ref{guardian}.
+\index{patrón guardián}
+\index{guardián!patrón}
+\index{índice}
 
-{\tt i} and {\tt j} are indices: {\tt i} traverses {\tt word1}
-forward while {\tt j} traverses {\tt word2} backward.  If we find
-two letters that don't match, we can return {\tt False} immediately.
-If we get through the whole loop and all the letters match, we
-return {\tt True}.
+{\tt i} y {\tt j} son índices: {\tt i} recorre a {\tt palabra1}
+hacia adelante mientras {\tt j} recorre a {\tt palabra2} hacia atrás.  Si encontramos
+dos letras que no coinciden, podemos devolver {\tt False} inmediatamente.
+Si terminamos todo el bucle y todas las letras coinciden,
+devolvemos {\tt True}.
 
-If we test this function with the words ``pots'' and ``stop'', we
-expect the return value {\tt True}, but we get an IndexError:
+Si probamos esta función con las palabras ``pots'' y ``stop'',
+esperamos el valor de retorno {\tt True}, pero obtenemos un IndexError:
 \index{IndexError}
-\index{exception!IndexError}
+\index{excepción IndexError}
 
 \begin{verbatim}
->>> is_reverse('pots', 'stop')
+>>> es_reverso('pots', 'stop')
 ...
-  File "reverse.py", line 15, in is_reverse
-    if word1[i] != word2[j]:
+  File "reverso.py", line 15, in es_reverso
+    if palabra1[i] != palabra2[j]:
 IndexError: string index out of range
 \end{verbatim}
 %
-For debugging this kind of error, my first move is to
-print the values of the indices immediately before the line
-where the error appears.
+Para depurar este tipo de error, mi primer movimiento es
+imprimir los valores de los índices inmediatamente antes de la línea
+donde aparece el error.
 
 \begin{verbatim}
     while j > 0:
-        print(i, j)        # print here
+        print(i, j)        # imprimir aquí
 
-        if word1[i] != word2[j]:
+        if palabra1[i] != palabra2[j]:
             return False
         i = i+1
         j = j-1
 \end{verbatim}
 %
-Now when I run the program again, I get more information:
+Ahora cuando ejecuto el programa de nuevo, obtengo más información:
 
 \begin{verbatim}
->>> is_reverse('pots', 'stop')
+>>> es_reverso('pots', 'stop')
 0 4
 ...
 IndexError: string index out of range
 \end{verbatim}
 %
-The first time through the loop, the value of {\tt j} is 4,
-which is out of range for the string \verb"'pots'".
-The index of the last character is 3, so the
-initial value for {\tt j} should be {\tt len(word2)-1}.
+La primera vez que se recorre el bucle, el valor de {\tt j} es 4,
+lo cual está fuera de rango para la cadena \verb"'pots'".
+El índice del último carácter es 3, por lo que el
+valor inicial para {\tt j} debería ser {\tt len(palabra2)-1}.
 
-If I fix that error and run the program again, I get:
+Si arreglo este error y ejecuto el programa de nuevo, obtengo:
 
 \begin{verbatim}
->>> is_reverse('pots', 'stop')
+>>> es_reverso('pots', 'stop')
 0 3
 1 2
 2 1
 True
 \end{verbatim}
 %
-This time we get the right answer, but it looks like the loop only ran
-three times, which is suspicious.  To get a better idea of what is
-happening, it is useful to draw a state diagram.  During the first
-iteration, the frame for \verb"is_reverse" is shown in
-Figure~\ref{fig.state4}.  \index{state diagram} \index{diagram!state}
+Esta vez obtenemos la respuesta correcta, pero se ve como si el bucle solo se ejecutara
+tres veces, lo cual es sospechoso.  Para obtener una mejor idea de lo que está
+ocurriendo, es útil dibujar un diagrama de estado.  Durante la primera
+iteración, el marco para \verb"es_reverso" se muestra en la
+Figura~\ref{fig.state4}.  \index{diagrama se estado} \index{estado!diagrama de}
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/state4.pdf}}
-\caption{State diagram.}
+\caption{Diagrama de estado.}
 \label{fig.state4}
 \end{figure}
 
-I took some license by arranging the variables in the frame
-and adding dotted lines to show that the values of {\tt i} and
-{\tt j} indicate characters in {\tt word1} and {\tt word2}.
+Me tomé la licencia de organizar las variables en el marco
+y agregar líneas punteadas para mostrar que los valores de {\tt i} y
+{\tt j} indican caracteres en {\tt palabra1} y {\tt palabra2}.
 
-Starting with this diagram, run the program on paper, changing the
-values of {\tt i} and {\tt j} during each iteration.  Find and fix the
-second error in this function.
+Comenzando con este diagrama, ejecuta el programa en papel, cambiando los
+valores de {\tt i} y {\tt j} durante cada iteración.  Encuentra y arregla el
+segundo error en esta función.
 \label{isreverse}
 
 
-\section{Glossary}
+\section{Glosario}
 
 \begin{description}
 
-\item[object:] Something a variable can refer to.  For now,
-you can use ``object'' and ``value'' interchangeably.
-\index{object}
+\item[objeto:] Algo a lo cual una variable puede hacer referencia.  Por ahora,
+puedes usar ``objeto'' y ``valor'' indistintamente.
+\index{objeto}
 
-\item[sequence:] An ordered collection of
-values where each value is identified by an integer index.
-\index{sequence}
+\item[secuencia:] Una colección ordenada de
+valores donde cada valor se identifica por un índice entero.
+\index{secuencia}
 
-\item[item:] One of the values in a sequence.
-\index{item}
+\item[ítem:] Uno de los valores en una secuencia.
+\index{ítem}
 
-\item[index:] An integer value used to select an item in
-a sequence, such as a character in a string.  In Python
-indices start from 0.
-\index{index}
+\item[índice:] Un valor entero usado para seleccionar un ítem en
+una secuencia, tal como un carácter en una cadena.  En Python,
+los índices parten desde 0.
+\index{índice}
 
 \item[slice:] A part of a string specified by a range of indices.
 \index{slice}
 
-\item[empty string:] A string with no characters and length 0, represented
-by two quotation marks.
-\index{empty string}
+\item[cadena vacía:] Una cadena sin caracteres y con longitud 0, representada
+por dos comillas.
+\index{cadena vacía}
 
-\item[immutable:] The property of a sequence whose items cannot
-be changed.
-\index{immutability}
+\item[inmutable:] La propiedad de una secuencia cuyos ítems no pueden
+cambiarse.
+\index{inmutabilidad}
 
-\item[traverse:] To iterate through the items in a sequence,
-performing a similar operation on each.
-\index{traversal}
+\item[recorrer:] Iterar a través de los ítems en una secuencia,
+realizando una operación similar en cada uno de estos.
+\index{recorrido}
 
-\item[search:] A pattern of traversal that stops
-when it finds what it is looking for.
-\index{search pattern}
-\index{pattern!search}
+\item[búsqueda:] Un patrón de un recorrido que se detiene
+cuando encuentra lo que busca.
+\index{patrón búsqueda}
+\index{búsqueda!patrón}
 
-\item[counter:] A variable used to count something, usually initialized
-to zero and then incremented.
+\item[contador:] Una variable usada para contar algo, usualmente inicializado
+en cero y luego incrementada.
 \index{counter}
 
-\item[invocation:] A statement that calls a method.
-\index{invocation}
+\item[invocación:] Una sentencia que llama a un método.
+\index{invocación}
 
-\item[optional argument:] A function or method argument that is not
-required.
-\index{optional argument}
-\index{argument!optional}
+\item[optional argument:] Un argumento de función o de método que no es
+obligatorio.
+\index{argumento opcional}
+\index{opcional!argumento}
 
 \end{description}
 
 
-\section{Exercises}
+\section{Ejercicios}
 
 \begin{exercise}
-\index{string method}
-\index{method!string}
+\index{método de cadena}
+\index{cadena!método de}
 
-Read the documentation of the string methods at
+Lee la documentación de los métodos de cadena en
 \url{http://docs.python.org/3/library/stdtypes.html#string-methods}.
-You might want to experiment with some of them to make sure you
-understand how they work.  {\tt strip} and {\tt replace} are
-particularly useful.
+Tal vez quieras experimentar con algunos para asegurarte de que
+entiendes cómo funcionan.  {\tt strip} y {\tt replace} son
+particularmente útiles.
 
-The documentation uses a syntax that might be confusing.
-For example, in \verb"find(sub[, start[, end]])", the brackets
-indicate optional arguments.  So {\tt sub} is required, but
-{\tt start} is optional, and if you include {\tt start},
-then {\tt end} is optional.
-\index{optional argument}
-\index{argument!optional}
+La documentación usa una sintaxis que podría confundir.
+Por ejemplo, en \verb"find(sub[, start[, end]])", los corchetes
+indican argumentos opcionales.  Entonces {\tt sub} es obligatorio, pero
+{\tt start} es opcional, y si incluyes {\tt start},
+entonces {\tt end} es opcional.
+\index{argumento opcional}
+\index{opcional!argumento}
 
 \end{exercise}
 
 
 \begin{exercise}
-\index{count method}
-\index{method!count}
+\index{método count}
+\index{count!método}
 
-There is a string method called {\tt count} that is similar
-to the function in Section~\ref{counter}.  Read the documentation
-of this method
-and write an invocation that counts the number of {\tt a}'s
-in \verb"'banana'".
+Hay un método de cadena llamado {\tt count} que es similar
+a la función de la Sección~\ref{counter}.  Lee la documentación
+de este método
+y escribe una invocación que cuente el número de letras {\tt a}
+en \verb"'banana'".
 \end{exercise}
 
 
@@ -6707,38 +6707,38 @@ from Exercise~\ref{palindrome}.
 
 \begin{exercise}
 
-The following functions are all {\em intended} to check whether a
-string contains any lowercase letters, but at least some of them are
-wrong.  For each function, describe what the function actually does
-(assuming that the parameter is a string).
+Las siguientes funciones tienen la {\em intención} de verificar si una
+cadena contiene al menos una letra minúscula, pero algunas están
+equivocadas.  Para cada función, describe qué hace realmente la función
+(suponiendo que el parámetro es una cadena).
 
 \begin{verbatim}
-def any_lowercase1(s):
+def contiene_minuscula1(s):
     for c in s:
         if c.islower():
             return True
         else:
             return False
 
-def any_lowercase2(s):
+def contiene_minuscula2(s):
     for c in s:
         if 'c'.islower():
             return 'True'
         else:
             return 'False'
 
-def any_lowercase3(s):
+def contiene_minuscula3(s):
     for c in s:
         flag = c.islower()
     return flag
 
-def any_lowercase4(s):
+def contiene_minuscula4(s):
     flag = False
     for c in s:
         flag = flag or c.islower()
     return flag
 
-def any_lowercase5(s):
+def contiene_minuscula5(s):
     for c in s:
         if not c.islower():
             return False
@@ -6753,40 +6753,40 @@ def any_lowercase5(s):
 \index{rotation, letter}
 
 \label{exrotate}
-A Caesar cypher is a weak form of encryption that involves ``rotating'' each
-letter by a fixed number of places.  To rotate a letter means
-to shift it through the alphabet, wrapping around to the beginning if
-necessary, so 'A' rotated by 3 is 'D' and 'Z' rotated by 1 is 'A'.
+Un cifrado César es una forma débil de encriptación que implica la ``rotación'' de cada
+letra en un número fijo de lugares.  Rotar una letra significa
+desplazarla a través del alfabeto, volviendo al comienzo si
+es necesario, por lo que 'A' rotada en 3 es 'D' y 'Z' rotada en 1 es 'A'.
 
-To rotate a word, rotate each letter by the same amount.
-For example, ``cheer'' rotated by 7 is ``jolly'' and ``melon'' rotated
-by -10 is ``cubed''.  In the movie {\em 2001: A Space Odyssey}, the
-ship computer is called HAL, which is IBM rotated by -1.
+Para rotar una palabra, rota cada letra en la misma cantidad.
+Por ejemplo, ``cheer'' rotada en 7 es ``jolly'' y ``melon'' rotada
+en -10 es ``cubed''.  En la película {\em 2001: Odisea del espacio}, el
+computador de la nave se llama HAL, que es IBM rotada en -1.
 
 %For example ``sleep''
 %rotated by 9 is ``bunny'' and ``latex'' rotated by 7 is ``shale''.
 
-Write a function called \verb"rotate_word"
-that takes a string and an integer as parameters, and returns
-a new string that contains the letters from the original string
-rotated by the given amount.
+Escribe una función llamada \verb"rotar_palabra"
+que tome una cadena y un entero como parámetros y devuelva
+una nueva cadena que contenga las letras de la cadena original
+rotadas en la cantidad dada.
 
-You might want to use the built-in function {\tt ord}, which converts
-a character to a numeric code, and {\tt chr}, which converts numeric
-codes to characters.  Letters of the alphabet are encoded in alphabetical
-order, so for example:
+Tal vez quieras usasr la función incorporada {\tt ord}, que convierte
+un carácter en un código numérico, y {\tt chr}, que convierte códigos
+numéricos en caracteres.  Las letras del alfabeto están codificadas en orden alfabético,
+así por ejemplo:
 
 \begin{verbatim}
 >>> ord('c') - ord('a')
 2
 \end{verbatim}
 
-Because \verb"'c'" is the two-eth letter of the alphabet.  But
-beware: the numeric codes for upper case letters are different.
+Debido a que \verb"'c'" es la dos-ésima letra del alfabeto.  Pero ten
+cuidado: los códigos numéricos para las letras mayúsculas son diferentes.
 
-Potentially offensive jokes on the Internet are sometimes encoded in
-ROT13, which is a Caesar cypher with rotation 13.  If you are not
-easily offended, find and decode some of them.  Solution:
+Chistes potencialmente ofensivos en internet a veces están codificados en
+ROT13, lo cual es un cifrado César con rotación 13.  Si no te
+ofendes fácilmente, encuentra y decodifica algunos.  Solución:
 \url{http://thinkpython2.com/code/rotate.py}.
 
 \end{exercise}
