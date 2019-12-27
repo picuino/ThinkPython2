@@ -1043,7 +1043,7 @@ cadenas.
 %
 Son cadenas.
 
-Cuando escribes un entero grande, podrías estar tentado a usar comas
+Cuando escribes un entero grande, tal vez estés tentado a usar comas
 entre grupos de dígitos, como en {\tt 1,000,000}.  No es un
 {\em entero} legal en Python, pero es legal:
 
@@ -2583,7 +2583,7 @@ programa que funcione y hacer pequeñas modificaciones,
 depurándolas a medida que avanzas.
 
 Por ejemplo, Linux es un sistema operativo que contiene millones de
-líneas de código, pero partió como un programa simple que Linus Torvalds
+líneas de código, pero comenzó como un programa simple que Linus Torvalds
 usaba para explorar el chip Intel 80386.  Según Larry Greenfield,
 ``Uno de los proyectos anteriores de Linus era un programa que cambiaría
 entre imprimir AAAA y BBBB.  Esto evolucionó más tarde a Linux.''
@@ -3295,7 +3295,7 @@ generalización''.  Los pasos de este proceso son:
 
 \item Comenzar escribiendo un programa pequeño sin definiciones de función.
 
-\item Una vez que funciona el programa, identifica un parte
+\item Una vez que funciona el programa, identifica una parte
   coherente, encapsula la parte en una función y dale un nombre.
 
 \item Generaliza la función agregando parámetros apropiados.
@@ -4584,7 +4584,7 @@ Para lidiar con programas cada vez más complejos,
 tal vez quieras intentar un proceso llamado
 {\bf desarrollo incremental}.  El objetivo del desarrollo incremental
 es evitar largas sesiones de depuración agregando y probando solo
-un trozo de código a la vez.
+un pedazo de código a la vez.
 \index{pruebas en desarrollo incremental}
 \index{Teorema de Pitágoras}
 
@@ -5216,7 +5216,7 @@ aparece después de una sentencia {\tt return}.
 
 \item[desarrollo incremental:]  Un plan de desarrollo de programa destinado a
 evitar la depuración agregando y probando solo
-un trozo de código a la vez.
+un pedazo de código a la vez.
 \index{desarrollo incremental}
 
 \item[andamiaje:]  Código que se usa durante el desarrollo de un programa pero
@@ -5958,7 +5958,7 @@ operador corchetes:
 \end{verbatim}
 %
 La segunda sentencia selecciona el carácter número 1 de {\tt
-fruit} y lo asigna a {\tt letra}.
+fruta} y lo asigna a {\tt letra}.
 \index{índice}
 
 La expresión en los corchetes se llama {\bf índice}.
@@ -6024,7 +6024,7 @@ en una cadena:
 6
 \end{verbatim}
 %
-Para obtener la última letra de una cadena, podrías estar tentado a intentar algo
+Para obtener la última letra de una cadena, tal vez estés tentado a intentar algo
 así:
 \index{excepción IndexError}
 \index{IndexError}
@@ -6062,7 +6062,7 @@ letra, {\tt fruta[-2]} entrega la penúltima, y así.
 \index{sentencia for}
 \index{recorrido}
 
-Muchas computaciones implican procesar una cadena un carácter a la
+Muchas computaciones implican procesar una cadena trabajando un carácter a la
 vez.  A menudo parten al comienzo, seleccionan cada carácter en
 turno, le hacen algo, y continúan hasta el final.  Este patrón de
 procesamiento se llama {\bf recorrido}.  Una manera de escribir un recorrido
@@ -6133,13 +6133,13 @@ mal escritos.  Como ejercicio, modifica el programa para arreglar este error.
 
 
 
-\section{String slices}
+\section{Trozos de cadena}
 \label{slice}
-\index{slice operator} \index{operator!slice} \index{index!slice}
-\index{string!slice} \index{slice!string}
+\index{operador de trozo} \index{trozo!operador de} \index{índice de trozo}
+\index{cadena!trozo de} \index{trozo de cadena} \index{slice}
 
-A segment of a string is called a {\bf slice}.  Selecting a slice is
-similar to selecting a character:
+Un segmento de una cadena se llama {\bf trozo} (en inglés, {\em slice}).  Seleccionar un trozo es
+similar a seleccionar un carácter:
 
 \begin{verbatim}
 >>> s = 'Monty Python'
@@ -6158,19 +6158,19 @@ caracteres, como en la Figura~\ref{fig.banana}.
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/banana.pdf}}
-\caption{Slice indices.}
+\caption{Índices de trozo.}
 \label{fig.banana}
 \end{figure}
 
-If you omit the first index (before the colon), the slice starts at
-the beginning of the string.  If you omit the second index, the slice
-goes to the end of the string:
+Si omites el primer índice (antes del signo de dos puntos), el trozo comienza al
+principio de la cadena.  Si omites el segundo índice, el trozo
+llega hasta el final de la cadena:
 
 \begin{verbatim}
->>> fruit = 'banana'
->>> fruit[:3]
+>>> fruta = 'banana'
+>>> fruta[:3]
 'ban'
->>> fruit[3:]
+>>> fruta[3:]
 'ana'
 \end{verbatim}
 %
@@ -6188,9 +6188,9 @@ Una cadena vacía no contiene caracteres y tiene longitud 0, pero aparte
 de eso, es lo mismo que cualquier otra cadena.
 
 Continuando con este ejemplo, ¿qué crees que significa
-{\tt fruit[:]}?  Pruébalo y mira.
-\index{copy!slice}
-\index{slice!copy}
+{\tt fruta[:]}?  Pruébalo y mira.
+\index{trozo!copia}
+\index{copia!trozo}
 
 
 
@@ -6233,10 +6233,10 @@ que sea una variación de la original:
 'Jello, world!'
 \end{verbatim}
 %
-This example concatenates a new first letter onto
-a slice of {\tt greeting}.  It has no effect on
-the original string.
-\index{concatenation}
+Este ejemplo concatena una nueva primera letra en
+un trozo de {\tt saludo}.  No tiene efecto en
+la cadena original.
+\index{concatenación}
 
 
 \section{Buscar}
@@ -6307,11 +6307,11 @@ contiene el resultado---el número total de letras {\tt a}.
 
 \index{encapsulamiento}
 Como ejercicio, encapsula este código en una función con nombre {\tt
-contar}, y generalízalo para que acepte a la cadena y la
+contar}, y generalízalo para que acepte la cadena y la
 letra como argumentos.
 
 Luego reescribe la función de modo que, en lugar de
-recorrer la cadena, usa la versión de tres parámetros de {\tt
+recorrer la cadena, use la versión de tres parámetros de {\tt
 find} de la sección anterior.
 
 
@@ -6347,7 +6347,7 @@ Una llamada a un método se llama {\bf invocación}; en este caso,
 diríamos que estamos invocando a {\tt upper} en {\tt palabra}.
 \index{invocación}
 
-Como resultado, hay un método de cadena con nombre {\tt find} que
+Resulta que hay un método de cadena con nombre {\tt find} que
 es notablemente similar a la función que escribimos:
 
 \begin{verbatim}
@@ -6368,8 +6368,8 @@ puede encontrar subcadenas, no solo caracteres:
 2
 \end{verbatim}
 %
-Por defecto, {\tt find} parte del comienzo de la cadena, pero
-puede tomar un segundo argumento, el índice donde debería partir:
+Por defecto, {\tt find} comienza al principio de la cadena, pero
+puede tomar un segundo argumento, el índice donde debería comenzar:
 \index{argumento opcional}
 \index{opcional!argumento}
 
@@ -6390,8 +6390,8 @@ tomar también un tercer argumento, el índice donde debería detenerse:
 %
 Esta búsqueda falla porque {\tt b} no
 aparece en el rango de índices desde {\tt 1} hasta {\tt 2}, sin incluir el {\tt
-2}.  Searching up to, but not including, the second index makes
-{\tt find} consistent with the slice operator.
+2}.  Buscar hasta el segundo índice, sin incluirlo, hace a
+{\tt find} consistente con el operador de trozo.
 
 
 
@@ -6610,8 +6610,8 @@ una secuencia, tal como un carácter en una cadena.  En Python,
 los índices parten desde 0.
 \index{índice}
 
-\item[slice:] A part of a string specified by a range of indices.
-\index{slice}
+\item[trozo ({\em slice}):] Una parte de una cadena especificada por un rango de índices.
+\index{slice}\index{trozo}
 
 \item[cadena vacía:] Una cadena sin caracteres y con longitud 0, representada
 por dos comillas.
@@ -6630,7 +6630,7 @@ cuando encuentra lo que busca.
 \index{patrón búsqueda}
 \index{búsqueda!patrón}
 
-\item[contador:] Una variable usada para contar algo, usualmente inicializado
+\item[contador:] Una variable usada para contar algo, usualmente inicializada
 en cero y luego incrementada.
 \index{counter}
 
@@ -6681,27 +6681,27 @@ en \verb"'banana'".
 
 
 \begin{exercise}
-\index{step size}
-\index{slice operator}
-\index{operator!slice}
+\index{tamaño de paso}
+\index{operador de trozo}
+\index{trozo!operador de}
 
-A string slice can take a third index that specifies the ``step
-size''; that is, the number of spaces between successive characters.
-A step size of 2 means every other character; 3 means every third,
+Un trozo de cadena puede tomar un tercer índice que especifique el ``tamaño
+de paso''; es decir, el número de espacios entre caracteres sucesivos.
+Un tamaño de paso de 2 significa cada dos caracteres; 3 significa cada tres,
 etc.
 
 \begin{verbatim}
->>> fruit = 'banana'
->>> fruit[0:5:2]
+>>> fruta = 'banana'
+>>> fruta[0:5:2]
 'bnn'
 \end{verbatim}
 
-A step size of -1 goes through the word backwards, so
-the slice \verb"[::-1]" generates a reversed string.
-\index{palindrome}
+Un tamaño de paso de -1 pasa a través de la palabra hacia atrás, por lo cual
+el trozo \verb"[::-1]" genera una cadena invertida.
+\index{palíndromo}
 
-Use this idiom to write a one-line version of \verb"is_palindrome"
-from Exercise~\ref{palindrome}.
+Usa esta notación para escribir una versión de una línea de \verb"es_palindromo"
+del Ejercicio~\ref{palindrome}.
 \end{exercise}
 
 
