@@ -7843,17 +7843,17 @@ pero sin incluirlo.
 
 
 
-\section{Lists and strings}
-\index{list}
-\index{string}
-\index{sequence}
+\section{Listas y cadenas}
+\index{lista}
+\index{cadena}
+\index{secuencia}
 
-A string is a sequence of characters and a list is a sequence
-of values, but a list of characters is not the same as a
-string.  To convert from a string to a list of characters,
-you can use {\tt list}:
-\index{list!function}
-\index{function!list}
+Una cadena es una secuencia de caracteres y una lista es una secuencia
+de valores, pero una lista de caracteres no es lo mismo que una
+cadena.  Para convertir de una cadena a una lista de caracteres,
+puedes usar {\tt list}:
+\index{list!función}
+\index{función!list}
 
 \begin{verbatim}
 >>> s = 'spam'
@@ -7862,15 +7862,15 @@ you can use {\tt list}:
 ['s', 'p', 'a', 'm']
 \end{verbatim}
 %
-Because {\tt list} is the name of a built-in function, you should
-avoid using it as a variable name.  I also avoid {\tt l} because
-it looks too much like {\tt 1}.  So that's why I use {\tt t}.
+Dado que {\tt list} es el nombre de una función incorporada, deberías
+evitar usarlo como nombre de variable.  También evito {\tt l} porque
+se parece mucho a {\tt 1}.  Entonces por eso uso {\tt t}.
 
-The {\tt list} function breaks a string into individual letters.  If
-you want to break a string into words, you can use the {\tt split}
-method:
-\index{split method}
-\index{method!split}
+La función {\tt list} separa la cadena en letras individuales.  Si
+quieres separar una cadena en palabras, puedes usar
+el método {\tt split}:
+\index{método split}
+\index{split!método}
 
 \begin{verbatim}
 >>> s = 'pining for the fjords'
@@ -7879,80 +7879,80 @@ method:
 ['pining', 'for', 'the', 'fjords']
 \end{verbatim}
 %
-An optional argument called a {\bf delimiter} specifies which
-characters to use as word boundaries.
-The following example
-uses a hyphen as a delimiter:
-\index{optional argument}
-\index{argument!optional}
-\index{delimiter}
+Un argumento opcional llamado {\bf delimitador} especifica qué
+caracteres usar como separador de palabras.
+El siguiente ejemplo
+usa un guión como delimitador:
+\index{argumento opcional}
+\index{opcional!argumento}
+\index{delimitador}
 
 \begin{verbatim}
 >>> s = 'spam-spam-spam'
->>> delimiter = '-'
->>> t = s.split(delimiter)
+>>> delimitador = '-'
+>>> t = s.split(delimitador)
 >>> t
 ['spam', 'spam', 'spam']
 \end{verbatim}
 %
-{\tt join} is the inverse of {\tt split}.  It
-takes a list of strings and
-concatenates the elements.  {\tt join} is a string method,
-so you have to invoke it on the delimiter and pass the
-list as a parameter:
-\index{join method}
-\index{method!join}
-\index{concatenation}
+{\tt join} es el inverso de {\tt split}.
+Toma una lista de cadenas y
+concatena los elementos.  {\tt join} es un método de cadena,
+por lo que tienes que invocarlo en el delimitador y pasarle la
+lista como parámetro:
+\index{método join}
+\index{join!método}
+\index{concatenación}
 
 \begin{verbatim}
 >>> t = ['pining', 'for', 'the', 'fjords']
->>> delimiter = ' '
->>> s = delimiter.join(t)
+>>> delimitador = ' '
+>>> s = delimitador.join(t)
 >>> s
 'pining for the fjords'
 \end{verbatim}
 %
-In this case the delimiter is a space character, so
-{\tt join} puts a space between words.  To concatenate
-strings without spaces, you can use the empty string,
-\verb"''", as a delimiter.
-\index{empty string}
-\index{string!empty}
+En este caso el delimitador es un carácter de espacio, por lo que
+{\tt join} pone un espacio entre las palabras.  Para concatenar
+cadenas sin espacios, puedes usar la cadena vacía,
+\verb"''", como delimitador.
+\index{cadena vacía}
+\index{vacía!cadena}
 
 
-\section{Objects and values}
+\section{Objetos y valores}
 \label{equivalence}
-\index{object}
-\index{value}
+\index{objeto}
+\index{valor}
 
-If we run these assignment statements:
+Si ejecutamos estas sentencias de asignación:
 
 \begin{verbatim}
 a = 'banana'
 b = 'banana'
 \end{verbatim}
 %
-We know that {\tt a} and {\tt b} both refer to a
-string, but we don't
-know whether they refer to the {\em same} string.
-There are two possible states, shown in Figure~\ref{fig.list1}.
+Sabemos que {\tt a} y {\tt b} hacen referencia a una
+cadena, pero no
+sabemos si hacen referencia a la {\em misma} cadena.
+Hay dos estados posibles, mostrados en la Figura~\ref{fig.list1}.
 \index{aliasing}
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/list1.pdf}}
-\caption{State diagram.}
+\caption{Diagrama de estado.}
 \label{fig.list1}
 \end{figure}
 
-In one case, {\tt a} and {\tt b} refer to two different objects that
-have the same value.  In the second case, they refer to the same
-object.
-\index{is operator}
-\index{operator!is}
+En el primer caso, {\tt a} y {\tt b} hacen referencia a dos objetos diferentes que
+tienen el mismo valor.  En el segundo caso, hacen referencia al mismo
+objeto.
+\index{operador is}
+\index{is!operador}
 
-To check whether two variables refer to the same object, you can
-use the {\tt is} operator.
+Para verificar si dos variables hacen referencia al mismo objeto, puedes
+usar el operador {\tt is}.
 
 \begin{verbatim}
 >>> a = 'banana'
@@ -7961,9 +7961,9 @@ use the {\tt is} operator.
 True
 \end{verbatim}
 %
-In this example, Python only created one string object, and both {\tt
-  a} and {\tt b} refer to it.  But when you create two lists, you get
-two objects:
+En este ejemplo, Python solo crea un objeto de cadena y tanto {\tt
+  a} como {\tt b} hacen referencia a este.  Pero cuando creas dos listas, obtienes
+dos objetos:
 
 \begin{verbatim}
 >>> a = [1, 2, 3]
@@ -7972,33 +7972,33 @@ two objects:
 False
 \end{verbatim}
 %
-So the state diagram looks like Figure~\ref{fig.list2}.
-\index{state diagram}
-\index{diagram!state}
+Entonces el diagrama de estado se ve como la Figura~\ref{fig.list2}.
+\index{diagrama de estado}
+\index{estado!diagrama de}
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/list2.pdf}}
-\caption{State diagram.}
+\caption{Diagrama de estado.}
 \label{fig.list2}
 \end{figure}
 
-In this case we would say that the two lists are {\bf equivalent},
-because they have the same elements, but not {\bf identical}, because
-they are not the same object.  If two objects are identical, they are
-also equivalent, but if they are equivalent, they are not necessarily
-identical.
-\index{equivalence}
-\index{identity}
+En este caso diríamos que las dos listas son {\bf equivalentes},
+porque tienen los mismos elementos, pero no {\bf idénticos}, porque
+no son el mismo objeto.  Si dos objetos son idénticos, son
+también equivalentes, pero si son equivalentes, no necesariamente son
+idénticos.
+\index{equivalencia}
+\index{identidad}
 
-Until now, we have been using ``object'' and ``value''
-interchangeably, but it is more precise to say that an object has a
-value.  If you evaluate {\tt [1, 2, 3]}, you get a list
-object whose value is a sequence of integers.  If another
-list has the same elements, we say it has the same value, but
-it is not the same object.
-\index{object}
-\index{value}
+Hasta ahora, hemos estado usando ``objeto'' y ``valor''
+indistintamente, pero es más preciso decir que un objeto tiene un
+valor.  Si evalúas {\tt [1, 2, 3]}, obtienes un objeto de
+lista cuyo valor es una secuencia de enteros.  Si otra
+lista tiene los mismos elementos, decimos que tiene el mismo valor, pero
+no es el mismo objeto.
+\index{objeto}
+\index{valor}
 
 
 \section{Aliasing}
@@ -8186,49 +8186,49 @@ Here's how it is used:
 
 
 
-\section{Debugging}
-\index{debugging}
+\section{Depuración}
+\index{depuración}
 
-Careless use of lists (and other mutable objects)
-can lead to long hours of debugging.  Here are some common
-pitfalls and ways to avoid them:
+El uso descuidado de las listas (y otros objetos mutables)
+puede llevar a largas horas de depuración.  Aquí hay algunas
+trampas comunes y maneras de evitarlas:
 
 \begin{enumerate}
 
-\item Most list methods modify the argument and
-  return {\tt None}.  This is the opposite of the string methods,
-  which return a new string and leave the original alone.
+\item La mayoría de los métodos de lista modifican el argumento y
+  devuelven {\tt None}.  Esto es lo opuesto a los métodos de cadena,
+  que devuelven una nueva cadena y dejan sola a la original.
 
-If you are used to writing string code like this:
-
-\begin{verbatim}
-word = word.strip()
-\end{verbatim}
-
-It is tempting to write list code like this:
+Si estás acostumbrado a escribir código de cadena como este:
 
 \begin{verbatim}
-t = t.sort()           # WRONG!
+palabra = palabra.strip()
 \end{verbatim}
-\index{sort method}
-\index{method!sort}
 
-Because {\tt sort} returns {\tt None}, the
-next operation you perform with {\tt t} is likely to fail.
+Es tentador escribir código de lista como este:
 
-Before using list methods and operators, you should read the
-documentation carefully and then test them in interactive mode.
+\begin{verbatim}
+t = t.sort()           # ¡INCORRECTO!
+\end{verbatim}
+\index{método sort}
+\index{sort!método}
+
+Dado que {\tt sort} devuelve {\tt None}, es probable que la
+siguiente operación que realices con {\tt t} falle.
+
+Antes de usar métodos y operadores de lista, deberías leer la
+documentación cuidadosamente y luego probarlos en modo interactivo.
 
 \item Pick an idiom and stick with it.
 
-Part of the problem with lists is that there are too many
-ways to do things.  For example, to remove an element from
-a list, you can use {\tt pop}, {\tt remove}, {\tt del},
-or even a slice assignment.
+Parte del problema con las listas es que hay muchas
+maneras de hacer las cosas.  Por ejemplo, para eliminar un elemento de
+una lista, puedes usar {\tt pop}, {\tt remove}, {\tt del},
+o incluso una asignación de trozo.
 
-To add an element, you can use the {\tt append} method or
-the {\tt +} operator.  Assuming that {\tt t} is a list and
-{\tt x} is a list element, these are correct:
+Para agregar un elemento, puedes usar el método {\tt append} o
+el operador {\tt +}.  Suponiendo que {\tt t} es una lista y
+{\tt x} es un elemento de lista, estos son correctos:
 
 \begin{verbatim}
 t.append(x)
@@ -8236,13 +8236,13 @@ t = t + [x]
 t += [x]
 \end{verbatim}
 
-And these are wrong:
+Y estos son incorrectos:
 
 \begin{verbatim}
-t.append([x])          # WRONG!
-t = t.append(x)        # WRONG!
-t + [x]                # WRONG!
-t = t + x              # WRONG!
+t.append([x])          # ¡INCORRECTO!
+t = t.append(x)        # ¡INCORRECTO!
+t + [x]                # ¡INCORRECTO!
+t = t + x              # ¡INCORRECTO!
 \end{verbatim}
 
 Try out each of these examples in interactive mode to make sure
@@ -8286,16 +8286,16 @@ which returns a new, sorted list and leaves the original alone.
 
 
 
-\section{Glossary}
+\section{Glosario}
 
 \begin{description}
 
-\item[list:] A sequence of values.
-\index{list}
+\item[lista:] Una secuencia de valores.
+\index{lista}
 
-\item[element:] One of the values in a list (or other sequence),
-also called items.
-\index{element}
+\item[elemento:] Uno de los valores en una lista (u otra secuencia),
+también llamados ítems.
+\index{elemento}
 
 \item[nested list:] A list that is an element of another list.
 \index{nested list}
@@ -8329,11 +8329,11 @@ selects the elements that satisfy some criterion.
 has a type and a value.
 \index{object}
 
-\item[equivalent:] Having the same value.
-\index{equivalent}
+\item[equivalente:] Tener el mismo valor.
+\index{equivalente}
 
-\item[identical:] Being the same object (which implies equivalence).
-\index{identical}
+\item[idéntico:] Ser el mismo objeto (lo cual implica equivalencia).
+\index{idéntico}
 
 \item[reference:] The association between a variable and its value.
 \index{reference}
@@ -8349,20 +8349,20 @@ string should be split.
 \end{description}
 
 
-\section{Exercises}
+\section{Ejercicios}
 
-You can download solutions to these exercises from
+Puedes descargar las solucioes a estos ejercicios desde
 \url{http://thinkpython2.com/code/list_exercises.py}.
 
 \begin{exercise}
 
-Write a function called \verb"nested_sum" that takes a list of lists
-of integers and adds up the elements from all of the nested lists.
-For example:
+Escribe una función llamada \verb"suma_anidada" que tome una lista de listas
+de enteros y sume los elementos de todas las listas anidadas.
+Por ejemplo:
 
 \begin{verbatim}
 >>> t = [[1, 2], [3], [4, 5, 6]]
->>> nested_sum(t)
+>>> suma_anidada(t)
 21
 \end{verbatim}
 
@@ -8370,12 +8370,12 @@ For example:
 
 \begin{exercise}
 \label{cumulative}
-\index{cumulative sum}
+\index{suma acumulativa}
 
-Write a function called {\tt cumsum} that takes a list of numbers and
-returns the cumulative sum; that is, a new list where the $i$th
-element is the sum of the first $i+1$ elements from the original list.
-For example:
+Escribe una función llamada {\tt cumsum} que tome una lista de números y
+devuelva la suma acumulativa; es decir, una nueva lista donde el $i$-ésimo
+elemento es la suma de los primeros $i+1$ elementos de la lista original.
+Por ejemplo:
 
 \begin{verbatim}
 >>> t = [1, 2, 3]
@@ -8387,13 +8387,13 @@ For example:
 
 \begin{exercise}
 
-Write a function called \verb"middle" that takes a list and
-returns a new list that contains all but the first and last
-elements.  For example:
+Escribe una función llamada \verb"medio" que tome una lista y
+devuelva una nueva lista que contenga todos los elementos excepto el primero
+y el último.  Por ejemplo:
 
 \begin{verbatim}
 >>> t = [1, 2, 3, 4]
->>> middle(t)
+>>> medio(t)
 [2, 3]
 \end{verbatim}
 
@@ -8401,13 +8401,13 @@ elements.  For example:
 
 \begin{exercise}
 
-Write a function called \verb"chop" that takes a list, modifies it
-by removing the first and last elements, and returns {\tt None}.
-For example:
+Escribe una función llamada \verb"acortar" que tome una lista, la modifique
+eliminando el primer y último elemento, y devuelva {\tt None}.
+Por ejemplo:
 
 \begin{verbatim}
 >>> t = [1, 2, 3, 4]
->>> chop(t)
+>>> acortar(t)
 >>> t
 [2, 3]
 \end{verbatim}
@@ -8470,8 +8470,8 @@ with the {\tt randint} function in the {\tt random} module.
 \index{randint function}
 \index{function!randint}
 
-You can download my
-solution from \url{http://thinkpython2.com/code/birthday.py}.
+Puedes descargar mi
+solución desde \url{http://thinkpython2.com/code/birthday.py}.
 
 \end{exercise}
 
