@@ -100,7 +100,7 @@
 \vspace*{2.0in}
 
 \begin{spacing}{3}
-{\huge Pensar en Python}\\
+{\huge Piensa en Python}\\
 {\Large Aprende a pensar como un informático}
 \end{spacing}
 
@@ -131,7 +131,7 @@
 \vspace*{2.0in}
 
 \begin{spacing}{3}
-{\huge Pensar en Python}\\
+{\huge Piensa en Python}\\
 {\Large Aprende a pensar como un informático}
 \end{spacing}
 
@@ -289,7 +289,7 @@ corrigiendo errores, mejorando algunos de los ejemplos y agregando material,
 especialmente ejercicios.
 
 El resultado es este libro, ahora con el título menos grandioso
-{\em Pensar en Python}.  Algunos de los cambios son:
+{\em Piensa en Python}.  Algunos de los cambios son:
 
 \begin{itemize}
 
@@ -311,7 +311,7 @@ El resultado es este libro, ahora con el título menos grandioso
 
 \end{itemize}
 
-La segunda edición de {\em Pensar en Python} tiene nuevas características:
+La segunda edición de {\em Piensa en Python} tiene nuevas características:
 
 \begin{itemize}
 
@@ -3802,7 +3802,7 @@ elif opcion == 'c':
 \end{verbatim}
 %
 Cada condición es verificada en orden.  Si la primera es falsa,
-se verifica la siguiente, y así.  Si una de ellas es
+se verifica la siguiente, y así sucesivamente.  Si una de ellas es
 verdadera, se ejecuta la rama correspondiente y la sentencia
 termina.  Incluso si más de una condición es verdadera, solo se ejecuta
 la primera rama verdadera.
@@ -6048,7 +6048,7 @@ que restar 1 a {\tt longitud}:
 %
 O puedes usar índices negativos, los cuales cuentan hacia atrás desde
 el final de la cadena.  La expresión {\tt fruta[-1]} entrega la última
-letra, {\tt fruta[-2]} entrega la penúltima, y así.
+letra, {\tt fruta[-2]} entrega la penúltima, y así sucesivamente.
 \index{índice negativo}
 \index{negativo!índice}
 
@@ -6133,12 +6133,12 @@ mal escritos.  Como ejercicio, modifica el programa para arreglar este error.
 
 
 
-\section{Trozos de cadena}
+\section{Cortes de cadena}
 \label{slice}
-\index{operador de trozo} \index{trozo!operador de} \index{índice de trozo}
-\index{cadena!trozo de} \index{trozo de cadena} \index{slice}
+\index{operador corte} \index{corte!operador} \index{índice de corte}
+\index{cadena!corte de} \index{corte de cadena} \index{slice}
 
-Un segmento de una cadena se llama {\bf trozo} (en inglés, {\em slice}).  Seleccionar un trozo es
+Un segmento de una cadena se llama {\bf corte} (en inglés, {\em slice}).  Seleccionar un corte es
 similar a seleccionar un carácter:
 
 \begin{verbatim}
@@ -6158,12 +6158,12 @@ caracteres, como en la Figura~\ref{fig.banana}.
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/banana.pdf}}
-\caption{Índices de trozo.}
+\caption{Índices de corte.}
 \label{fig.banana}
 \end{figure}
 
-Si omites el primer índice (antes del signo de dos puntos), el trozo comienza al
-principio de la cadena.  Si omites el segundo índice, el trozo
+Si omites el primer índice (antes del signo de dos puntos), el corte comienza al
+principio de la cadena.  Si omites el segundo índice, el corte
 llega hasta el final de la cadena:
 
 \begin{verbatim}
@@ -6189,8 +6189,8 @@ de eso, es lo mismo que cualquier otra cadena.
 
 Continuando con este ejemplo, ¿qué crees que significa
 {\tt fruta[:]}?  Pruébalo y mira.
-\index{trozo!copia}
-\index{copia!trozo}
+\index{corte!copia}
+\index{copia!corte}
 
 
 
@@ -6234,7 +6234,7 @@ que sea una variación de la original:
 \end{verbatim}
 %
 Este ejemplo concatena una nueva primera letra en
-un trozo de {\tt saludo}.  No tiene efecto en
+un corte de {\tt saludo}.  No tiene efecto en
 la cadena original.
 \index{concatenación}
 
@@ -6280,11 +6280,11 @@ tercer parámetro, el índice en {\tt palabra} donde debería comenzar a
 buscar.
 
 
-\section{Bucle y conteo}
+\section{Bucles y conteo}
 \label{counter}
 \index{contador}
-\index{conteo y bucle}
-\index{bucle y conteo}
+\index{conteo y bucles}
+\index{bucles y conteo}
 \index{bucle!con cadenas}
 
 El siguiente programa cuenta el número de veces que aparece la letra {\tt a}
@@ -6391,7 +6391,7 @@ tomar también un tercer argumento, el índice donde debería detenerse:
 Esta búsqueda falla porque {\tt b} no
 aparece en el rango de índices desde {\tt 1} hasta {\tt 2}, sin incluir el {\tt
 2}.  Buscar hasta el segundo índice, sin incluirlo, hace a
-{\tt find} consistente con el operador de trozo.
+{\tt find} consistente con el operador corte.
 
 
 
@@ -6610,8 +6610,8 @@ una secuencia, tal como un carácter en una cadena.  En Python,
 los índices parten desde 0.
 \index{índice}
 
-\item[trozo ({\em slice}):] Una parte de una cadena especificada por un rango de índices.
-\index{slice}\index{trozo}
+\item[corte ({\em slice}):] Una parte de una cadena especificada por un rango de índices.
+\index{slice}\index{corte}
 
 \item[cadena vacía:] Una cadena sin caracteres y con longitud 0, representada
 por dos comillas.
@@ -6632,7 +6632,7 @@ cuando encuentra lo que busca.
 
 \item[contador:] Una variable usada para contar algo, usualmente inicializada
 en cero y luego incrementada.
-\index{counter}
+\index{contador}
 
 \item[invocación:] Una sentencia que llama a un método.
 \index{invocación}
@@ -6682,10 +6682,10 @@ en \verb"'banana'".
 
 \begin{exercise}
 \index{tamaño de paso}
-\index{operador de trozo}
-\index{trozo!operador de}
+\index{operador corte}
+\index{corte!operador}
 
-Un trozo de cadena puede tomar un tercer índice que especifique el ``tamaño
+Un corte de cadena puede tomar un tercer índice que especifique el ``tamaño
 de paso''; es decir, el número de espacios entre caracteres sucesivos.
 Un tamaño de paso de 2 significa cada dos caracteres; 3 significa cada tres,
 etc.
@@ -6697,7 +6697,7 @@ etc.
 \end{verbatim}
 
 Un tamaño de paso de -1 pasa a través de la palabra hacia atrás, por lo que
-el trozo \verb"[::-1]" genera una cadena invertida.
+el corte \verb"[::-1]" genera una cadena invertida.
 \index{palíndromo}
 
 Usa esta notación para escribir una versión de una línea de \verb"es_palindromo"
@@ -7061,8 +7061,8 @@ problema resuelto y aplicas una solución existente.  \index{reducción a un
   problema previamente resuelto} \index{plan de desarrollo!reducción}
 
 
-\section{Bucle con índices}
-\index{bucle!con índices}
+\section{Bucles con índices}
+\index{bucles!con índices}
 \index{índice!bucle con}
 
 Escribí las funciones de la sección anterior con bucles {\tt for}
@@ -7447,8 +7447,8 @@ final de la lista.
 \end{itemize}
 \index{lista!índice}
 
-\index{lista!membership}
-\index{membership!lista}
+\index{lista!pertenencia}
+\index{pertenencia!lista}
 \index{operador in}
 \index{in!operador}
 
@@ -7549,14 +7549,14 @@ El primer ejemplo repite {\tt [0]} cuatro veces.  El segundo ejemplo
 repite la lista {\tt [1, 2, 3]} tres veces.
 
 
-\section{Trozos de lista}
-\index{operador de trozo}
-\index{trozo!operador de}
-\index{índice!trozo}
-\index{lista!trozo}
-\index{trozo!lista}\index{slice}
+\section{Cortes de lista}
+\index{operador corte}
+\index{corte!operador}
+\index{índice de corte}
+\index{lista!corte}
+\index{corte!lista}\index{slice}
 
-El operador de trozo también funciona en las listas:
+El operador corte también funciona en las listas:
 
 \begin{verbatim}
 >>> t = ['a', 'b', 'c', 'd', 'e', 'f']
@@ -7568,12 +7568,12 @@ El operador de trozo también funciona en las listas:
 ['d', 'e', 'f']
 \end{verbatim}
 %
-Si omites el primer índice, el trozo comienza al principio.
-Si omites el segundo, el trozo llega al final.  Entonces, si
-omites ambos, el trozo es una copia de la lista completa.
+Si omites el primer índice, el corte comienza al principio.
+Si omites el segundo, el corte llega al final.  Entonces, si
+omites ambos, el corte es una copia de la lista completa.
 \index{lista!copia}
-\index{trozo!copia}
-\index{copia!trozo}
+\index{corte!copia}
+\index{copia!corte}
 
 \begin{verbatim}
 >>> t[:]
@@ -7584,10 +7584,10 @@ Dado que las listas son mutables, a menudo es útil crear una copia
 antes de realizar operacioines que modifiquen listas.
 \index{mutabilidad}
 
-Un operador de trozo en el lado izquierdo de una asignación
+Un operador de corte en el lado izquierdo de una asignación
 puede actualizar múltiples elementos:
-\index{trozo!actualizar}\index{slice}
-\index{actualizar!trozo}
+\index{corte!actualizar}\index{slice}
+\index{actualizar!corte}
 
 \begin{verbatim}
 >>> t = ['a', 'b', 'c', 'd', 'e', 'f']
@@ -7829,7 +7829,7 @@ El valor de retorno de {\tt remove} es {\tt None}.
 \index{None!valor especial}
 
 Para remover más de un elemento, puedes usar {\tt del} con
-índices de trozo:
+índices de corte:
 
 \begin{verbatim}
 >>> t = ['a', 'b', 'c', 'd', 'e', 'f']
@@ -7838,7 +7838,7 @@ Para remover más de un elemento, puedes usar {\tt del} con
 ['a', 'f']
 \end{verbatim}
 %
-Como siempre, el trozo selecciona todos los elementos hasta el segundo índice
+Como siempre, el corte selecciona todos los elementos hasta el segundo índice
 pero sin incluirlo.
 
 
@@ -8148,10 +8148,10 @@ def sin_cabeza_mal(t):
     t = t[1:]              # ¡INCORRECTO!
 \end{verbatim}
 %
-El operador de trozo crea una nueva lista y la asignación
+El operador corte crea una nueva lista y la asignación
 hace que {\tt t} se refiera a esta, pero eso no afecta a la llamadora.
-\index{operador de trozo}\index{slice}
-\index{trozo!operador de}
+\index{operador corte}\index{slice}
+\index{corte!operador}
 %
 \begin{verbatim}
 >>> t4 = [1, 2, 3]
@@ -8224,7 +8224,7 @@ documentación cuidadosamente y luego probarlos en modo interactivo.
 Parte del problema con las listas es que hay muchas
 maneras de hacer las cosas.  Por ejemplo, para eliminar un elemento de
 una lista, puedes usar {\tt pop}, {\tt remove}, {\tt del},
-o incluso una asignación de trozo.
+o incluso una asignación de corte.
 
 Para agregar un elemento, puedes usar el método {\tt append} o
 el operador {\tt +}.  Suponiendo que {\tt t} es una lista y
@@ -8499,10 +8499,10 @@ Solución: \url{http://thinkpython2.com/code/wordlist.py}.
 \begin{exercise}
 \label{wordlist1}
 \label{bisection}
-\index{membership!búsqueda de bisección}
+\index{pertenencia!búsqueda de bisección}
 \index{búsqueda de bisección}
 \index{bisección, búsqueda de}
-\index{membership!búsqueda binaria}
+\index{pertenencia!búsqueda binaria}
 \index{búsqueda binaria}
 \index{binaria, búsqueda}
 
@@ -8564,196 +8564,195 @@ Crédito: Este ejercicio está inspirado en un ejemplo de \url{http://puzzlers.o
 \end{exercise}
 
 
-\chapter{Dictionaries}
+\chapter{Diccionarios}
 
-This chapter presents another built-in type called a dictionary.
-Dictionaries are one of Python's best features; they are the
-building blocks of many efficient and elegant algorithms.
+Este capítulo presenta otro tipo incorporado llamado diccionario.
+Los diccionarios son una de las mejores características de Python; son los
+bloques de construcción de muchos algoritmos eficientes y elegantes.
 
 
-\section{A dictionary is a mapping}
+\section{Un diccionario es un mapeo}
 
-\index{dictionary}
-\index{dictionary}
-\index{type!dict}
-\index{key}
-\index{key-value pair}
-\index{index}
-A {\bf dictionary} is like a list, but more general.  In a list,
-the indices have to be integers; in a dictionary they can
-be (almost) any type.
+\index{diccionario}
+\index{tipo!dict}
+\index{clave}
+\index{par clave-valor}
+\index{índice}
+Un {\bf diccionario} es como una lista, pero más general.  En una lista,
+los índices tienen que ser enteros; en un diccionario pueden ser
+(casi) de cualquier tipo.
 
-A dictionary contains a collection of indices, which are called {\bf
-  keys}, and a collection of values.  Each key is associated with a
-single value.  The association of a key and a value is called a {\bf
-  key-value pair} or sometimes an {\bf item}.  \index{item}
+Un diccionario contiene una colección de índices, los cuales se llaman {\bf
+  claves} y una colección de valores.  Cada clave está asociada a un
+valor único.  La adociación de una clave y un valor se llama {\bf
+  par clave-valor}, o a veces {\bf ítem}.  \index{ítem}
 
-In mathematical language, a dictionary represents a {\bf mapping}
-from keys to values, so you can also say that each key
-``maps to'' a value.
-As an example, we'll build a dictionary that maps from English
-to Spanish words, so the keys and the values are all strings.
+En lenguaje matemático, un diccionario representa un {\bf mapeo}
+de las claves a los valores, por tanto puedes decir también que cada clave
+``mapea a'' un valor.
+Como ejemplo, construiremos un diccionario que mapea de palabras en inglés
+a palabras en español, así las claves y los valores son todas cadenas.
 
-The function {\tt dict} creates a new dictionary with no items.
-Because {\tt dict} is the name of a built-in function, you
-should avoid using it as a variable name.
-\index{dict function}
-\index{function!dict}
+La función {\tt dict} crea un nuevo diccionario sin ítems.
+Como {\tt dict} es el nombre de una función incorporada,
+deberías evitar usarla como nombre de variable.
+\index{función dict}
+\index{dict!función}
 
 \begin{verbatim}
->>> eng2sp = dict()
->>> eng2sp
+>>> ing_esp = dict()
+>>> ing_esp
 {}
 \end{verbatim}
 
-The squiggly-brackets, \verb"{}", represent an empty dictionary.
-To add items to the dictionary, you can use square brackets:
-\index{squiggly bracket}
-\index{bracket!squiggly}
+Las llaves, \verb"{}", representan un diccionario vacío.
+Para agregar ítems al diccionario, puedes usar los corchetes:
+\index{llaves}
+%\index{bracket!squiggly}
 
 \begin{verbatim}
->>> eng2sp['one'] = 'uno'
+>>> ing_esp['one'] = 'uno'
 \end{verbatim}
 %
-This line creates an item that maps from the key
-\verb"'one'" to the value \verb"'uno'".  If we print the
-dictionary again, we see a key-value pair with a colon
-between the key and value:
+Esta línea crea un ítem que mapea de la clave
+\verb"'one'" al valor \verb"'uno'".  Si imprimimos el
+diccionario de nuevo, vemos un par clave-valor con un signo de dos puntos
+entre la clave y el valor:
 
 \begin{verbatim}
->>> eng2sp
+>>> ing_esp
 {'one': 'uno'}
 \end{verbatim}
 %
-This output format is also an input format.  For example,
-you can create a new dictionary with three items:
+Este formato de salida es también un formato de entrada.  Por ejemplo,
+puedes crear un nuevo diccionario con tres ítems:
 
 \begin{verbatim}
->>> eng2sp = {'one': 'uno', 'two': 'dos', 'three': 'tres'}
+>>> ing_esp = {'one': 'uno', 'two': 'dos', 'three': 'tres'}
 \end{verbatim}
 %
-But if you print {\tt eng2sp}, you might be surprised:
+Pero si imprimes {\tt ing\_esp}, podrías sorprenderte:
 
 \begin{verbatim}
->>> eng2sp
+>>> ing_esp
 {'one': 'uno', 'three': 'tres', 'two': 'dos'}
 \end{verbatim}
 %
-The order of the key-value pairs might not be the same.  If
-you type the same example on your computer, you might get a
-different result.  In general, the order of items in
-a dictionary is unpredictable.
+El orden de los pares clave-valor podría no ser el mismo.  Si
+escribiste el mismo ejemplo en tu computador, podrías obtener un
+resultado diferente.  En general, el orden de los ítems en
+un diccionario es impredecible.
 
-But that's not a problem because
-the elements of a dictionary are never indexed with integer indices.
-Instead, you use the keys to look up the corresponding values:
+Pero eso no es un problema porque
+los elementos de un diccionario nunca se indexan con índices enteros.
+En cambio, usas las claves para buscar los valores correspondientes:
 
 \begin{verbatim}
->>> eng2sp['two']
+>>> ing_esp['two']
 'dos'
 \end{verbatim}
 %
-The key \verb"'two'" always maps to the value \verb"'dos'" so the order
-of the items doesn't matter.
+La clave \verb"'two'" siempre mapea al valor \verb"'dos'", entonces el orden
+de los ítems no importa.
 
-If the key isn't in the dictionary, you get an exception:
-\index{exception!KeyError}
+Si la clave no está en el diccionario, obtienes una excepción:
+\index{excepción!KeyError}
 \index{KeyError}
 
 \begin{verbatim}
->>> eng2sp['four']
+>>> ing_esp['four']
 KeyError: 'four'
 \end{verbatim}
 %
-The {\tt len} function works on dictionaries; it returns the
-number of key-value pairs:
-\index{len function}
-\index{function!len}
+La función {\tt len} funciona en diccionarios; devuelve el
+número de pares clave-valor:
+\index{función len}
+\index{len!función}
 
 \begin{verbatim}
->>> len(eng2sp)
+>>> len(ing_esp)
 3
 \end{verbatim}
 %
-The {\tt in} operator works on dictionaries, too; it tells you whether
-something appears as a {\em key} in the dictionary (appearing
-as a value is not good enough).
-\index{membership!dictionary}
-\index{in operator}
-\index{operator!in}
+El operador {\tt in} también funciona en diccionarios; te dice si
+algo aparece como una {\em clave} en el diccionario (aparecer
+como un valor no basta).
+\index{pertenencia!diccionario}
+\index{in!operador}
+\index{operator in}
 
 \begin{verbatim}
->>> 'one' in eng2sp
+>>> 'one' in ing_esp
 True
->>> 'uno' in eng2sp
+>>> 'uno' in ing_esp
 False
 \end{verbatim}
 %
-To see whether something appears as a value in a dictionary, you
-can use the method {\tt values}, which returns a collection of
-values, and then use the {\tt in} operator:
-\index{values method}
-\index{method!values}
+Para ver si algo aparece como un valor en un diccionario,
+puedes usar el método {\tt values}, el cual devuelve una colección de
+valores, y entonces usar el operador {\tt in}:
+\index{método values}
+\index{values!método}
 
 \begin{verbatim}
->>> vals = eng2sp.values()
->>> 'uno' in vals
+>>> valores = ing_esp.values()
+>>> 'uno' in valores
 True
 \end{verbatim}
 %
-The {\tt in} operator uses different algorithms for lists and
-dictionaries.  For lists, it searches the elements of the list in
-order, as in Section~\ref{find}.  As the list gets longer, the search
-time gets longer in direct proportion.
+El operador {\tt in} usa diferentes algoritmos para las listas y los
+diccionarios.  Para las listas, busca los elementos de la lista en
+orden, como en la Sección~\ref{find}.  A medida que la lista se vuelve más larga,
+el tiempo de búsqueda se hace más largo en proporción directa.
 
-Python dictionaries use a data structure
-called a {\bf hashtable} that has a remarkable property: the
-{\tt in} operator takes about the same amount of time no matter how
-many items are in the dictionary.  I explain how that's possible
-in Section~\ref{hashtable}, but the explanation might not make
-sense until you've read a few more chapters.
+Los diccionarios de Python usan una estructura de datos
+llamada {\bf tabla hash} que tiene una propiedad notable: el
+operador {\tt in} toma casi la misma cantidad de tiempo sin importar
+cuántos ítems hay en el diccionario.  Explico cómo es eso posible
+en la Sección~\ref{hashtable}, pero la explicación podría no tener
+sentido hasta que hayas leído algunos capítulos más.
 
 
-\section{Dictionary as a collection of counters}
+\section{El diccionario como colección de contadores}
 \label{histogram}
-\index{counter}
+\index{contador}
 
-Suppose you are given a string and you want to count how many
-times each letter appears.  There are several ways you could do it:
+Supongamos que te dan una cadena y quieres contar cuántas
+veces aparece cada letra.  Hay varias maneras en que podrías hacerlo:
 
 \begin{enumerate}
 
-\item You could create 26 variables, one for each letter of the
-alphabet.  Then you could traverse the string and, for each
-character, increment the corresponding counter, probably using
-a chained conditional.
+\item Podrías crear 26 variables, una para cada letra del
+alfabeto.  Luego podrías recorrer la cadena y, para cada
+carácter, incrementar el contador correspondiente, probablemente usando
+un condicional encadenado.
 
-\item You could create a list with 26 elements.  Then you could
-convert each character to a number (using the built-in function
-{\tt ord}), use the number as an index into the list, and increment
-the appropriate counter.
+\item Podrías crear una lista de 26 elementos.  Luego podrías
+convertir cada carácter a un número (usando la función incorporada
+{\tt ord}), usar el número como un índice dentro de la lista e incrementar
+el contador apropiado.
 
-\item You could create a dictionary with characters as keys
-and counters as the corresponding values.  The first time you
-see a character, you would add an item to the dictionary.  After
-that you would increment the value of an existing item.
+\item Podrías crear un diccionario con caracteres como claves
+y contadores como los valores correspondientes.  La primera vez que
+veas un carácter, añadirías un ítem al diccionario.  Después
+de eso incrementarías el valor de un ítem existente.
 
 \end{enumerate}
 
-Each of these options performs the same computation, but each
-of them implements that computation in a different way.
-\index{implementation}
+Cada una de estas opciones realiza la misma computación, pero cada una
+de ellas implementa esa computación de una manera diferente.
+\index{implementación}
 
-An {\bf implementation} is a way of performing a computation;
-some implementations are better than others.  For example,
-an advantage of the dictionary implementation is that we don't
-have to know ahead of time which letters appear in the string
-and we only have to make room for the letters that do appear.
+Una {\bf implementación} es una manera de realizar una computación;
+algunas implementaciones son mejores que otras.  Por ejemplo,
+una ventaja de la implementación con diccionario es que no
+tenemos que saber de antemano qué letras aparecen en la cadena
+y solo tenemos que hacer espacio para las letras que sí aparecen.
 
-Here is what the code might look like:
+Así es como se vería el código:
 
 \begin{verbatim}
-def histogram(s):
+def histograma(s):
     d = dict()
     for c in s:
         if c not in d:
@@ -8763,41 +8762,41 @@ def histogram(s):
     return d
 \end{verbatim}
 %
-The name of the function is {\tt histogram}, which is a statistical
-term for a collection of counters (or frequencies).
-\index{histogram}
-\index{frequency}
-\index{traversal}
+El nombre de la función es {\tt histograma}, el cual es un término
+estadístico para una colección de contadores (o frecuencias).
+\index{histograma}
+\index{frecuencia}
+\index{recorrido}
 
-The first line of the
-function creates an empty dictionary.  The {\tt for} loop traverses
-the string.  Each time through the loop, if the character {\tt c} is
-not in the dictionary, we create a new item with key {\tt c} and the
-initial value 1 (since we have seen this letter once).  If {\tt c} is
-already in the dictionary we increment {\tt d[c]}.
+La primera línea de la
+función crea un diccionario vacío.  El bucle {\tt for} recorre
+la cadena.  En cada paso por el bucle, si el carácter {\tt c} no
+está en el diccionario, creamos un nuevo ítem con clave {\tt c} y el
+valor inicial 1 (dado que hemos visto esta letra una vez).  Si {\tt c}
+ya está en el diccionario incrementamos {\tt d[c]}.
 \index{histogram}
 
-Here's how it works:
+Funciona así:
 
 \begin{verbatim}
->>> h = histogram('brontosaurus')
+>>> h = histograma('brontosaurus')
 >>> h
 {'a': 1, 'b': 1, 'o': 2, 'n': 1, 's': 2, 'r': 2, 'u': 2, 't': 1}
 \end{verbatim}
 %
-The histogram indicates that the letters \verb"'a'" and \verb"'b'"
-appear once; \verb"'o'" appears twice, and so on.
+El histograma indica que las letras \verb"'a'" y \verb"'b'"
+aparecen una vez; \verb"'o'" aparece dos veces, y así sucesivamente.
 
 
-\index{get method}
-\index{method!get}
-Dictionaries have a method called {\tt get} that takes a key
-and a default value.  If the key appears in the dictionary,
-{\tt get} returns the corresponding value; otherwise it returns
-the default value.  For example:
+\index{método get}
+\index{get!método}
+Los diccionarios tienen un método llamado {\tt get} que toma una clave
+y un valor por defecto.  Si la clave aparece en el diccionario,
+{\tt get} devuelve el valor correspondiente; de lo contrario, devuelve
+el valor por defecto.  Por ejemplo:
 
 \begin{verbatim}
->>> h = histogram('a')
+>>> h = histograma('a')
 >>> h
 {'a': 1}
 >>> h.get('a', 0)
@@ -8806,30 +8805,30 @@ the default value.  For example:
 0
 \end{verbatim}
 %
-As an exercise, use {\tt get} to write {\tt histogram} more concisely.  You
-should be able to eliminate the {\tt if} statement.
+Como ejercicio, usa {\tt get} para escribir {\tt histograma} de manera más concisa.
+Deberías ser capaz de eliminar la sentencia {\tt if}.
 
 
-\section{Looping and dictionaries}
-\index{dictionary!looping with}
-\index{looping!with dictionaries}
-\index{traversal}
+\section{Bucles y diccionarios}
+\index{diccionario!bucles con}
+\index{bucle!con diccionarios}
+\index{recorrido}
 
-If you use a dictionary in a {\tt for} statement, it traverses
-the keys of the dictionary.  For example, \verb"print_hist"
-prints each key and the corresponding value:
+Si usas un diccionario en una sentencia {\tt for}, esta recorre
+las claves del diccionario.  Por ejemplo, \verb"imprimir_hist"
+imprime cada clave y el valor correspondiente:
 
 \begin{verbatim}
-def print_hist(h):
+def imprimir_hist(h):
     for c in h:
         print(c, h[c])
 \end{verbatim}
 %
-Here's what the output looks like:
+La salida se ve así:
 
 \begin{verbatim}
->>> h = histogram('parrot')
->>> print_hist(h)
+>>> h = histograma('parrot')
+>>> imprimir_hist(h)
 a 1
 p 1
 r 2
@@ -8837,14 +8836,14 @@ t 1
 o 1
 \end{verbatim}
 %
-Again, the keys are in no particular order.  To traverse the keys
-in sorted order, you can use the built-in function {\tt sorted}:
-\index{sorted!function}
-\index{function!sorted}
+Nuevamente, las claves no estan en un orden particular.  Para recorrer las claves
+en orden, puedes usar la función incorporada {\tt sorted}:
+\index{sorted!función}
+\index{función!sorted}
 
 \begin{verbatim}
->>> for key in sorted(h):
-...     print(key, h[key])
+>>> for clave in sorted(h):
+...     print(clave, h[clave])
 a 1
 o 1
 p 1
@@ -8855,186 +8854,186 @@ t 1
 %TODO: get this on Atlas
 
 
-\section{Reverse lookup}
+\section{Consulta inversa}
 \label{raise}
-\index{dictionary!lookup}
-\index{dictionary!reverse lookup}
-\index{lookup, dictionary}
-\index{reverse lookup, dictionary}
+\index{diccionario!consulta}
+\index{diccionario!consulta inversa}
+\index{consulta, diccionario}
+\index{consulta inversa, diccionario}
 
-Given a dictionary {\tt d} and a key {\tt k}, it is easy to
-find the corresponding value {\tt v = d[k]}.  This operation
-is called a {\bf lookup}.
+Dado un diccionario {\tt d} y una clave {\tt k}, es fácil
+encontrar el valor correspondiente {\tt v = d[k]}.  Esta operación
+se llama {\bf consulta}.
 
-But what if you have {\tt v} and you want to find {\tt k}?
-You have two problems: first, there might be more than one
-key that maps to the value {\tt v}.  Depending on the application,
-you might be able to pick one, or you might have to make
-a list that contains all of them.  Second, there is no
-simple syntax to do a {\bf reverse lookup}; you have to search.
+¿Y qué pasa si tienes {\tt v} y quieres encontrar {\tt k}?
+Tienes dos problemas: primero, podría haber más de una
+clave que mapee al valor {\tt v}.  Dependiendo de la aplicación,
+quizás puedas elegir una o tengas que hacer
+una lista que las contenga a todas.  Segundo, no hay
+una sintaxis sencilla para hacer una {\bf consulta inversa}; tienes que buscar.
 
-Here is a function that takes a value and returns the first
-key that maps to that value:
+Aquì hay una función que toma un valor y devuelve la primera
+clave que mapea a ese valor:
 
 \begin{verbatim}
-def reverse_lookup(d, v):
+def consulta_inversa(d, v):
     for k in d:
         if d[k] == v:
             return k
     raise LookupError()
 \end{verbatim}
 %
-This function is yet another example of the search pattern, but it
-uses a feature we haven't seen before, {\tt raise}.  The
-{\bf raise statement} causes an exception; in this case it causes a
-{\tt LookupError}, which is a built-in exception used to indicate
-that a lookup operation failed.
-\index{search}
-\index{pattern!search} \index{raise statement} \index{statement!raise}
-\index{exception!LookupError} \index{LookupError}
+Esta función es otro ejemplo del patrón de búsqueda pero esta
+usa una característica que no hemos visto antes, {\tt raise}.  La
+{\bf sentencia raise} causa una excepción; en este caso causa un
+{\tt LookupError}, el cual es una excepción incorporada que se usa para indicar
+que falló una operación de consulta.
+\index{búsqueda}
+\index{búsqueda!patrón} \index{sentencia raise} \index{raise!sentencia}
+\index{excepción!LookupError} \index{LookupError}
 
-If we get to the end of the loop, that means {\tt v}
-doesn't appear in the dictionary as a value, so we raise an
-exception.
+Si se llega al final del bucle, significa que {\tt v}
+no aparece en el diccionario como valor, por lo que plantea una
+excepción.
 
-Here is an example of a successful reverse lookup:
+Aquí hay un ejemplo de una consulta inversa eficaz:
 
 \begin{verbatim}
->>> h = histogram('parrot')
->>> key = reverse_lookup(h, 2)
->>> key
+>>> h = histograma('parrot')
+>>> clave = consulta_inversa(h, 2)
+>>> clave 
 'r'
 \end{verbatim}
 %
-And an unsuccessful one:
+Y una ineficaz:
 
 \begin{verbatim}
->>> key = reverse_lookup(h, 3)
+>>> clave = consulta_inversa(h, 3)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-  File "<stdin>", line 5, in reverse_lookup
+  File "<stdin>", line 5, in consulta_inversa
 LookupError
 \end{verbatim}
 %
-The effect when you raise an exception is the same as when
-Python raises one: it prints a traceback and an error message.
-\index{traceback}
-\index{optional argument}
-\index{argument!optional}
+El efecto de cuando levantas una excepción mediante {\tt raise} es el mismo de cuando
+Python levanta una: imprime un rastreo y un mensaje de error.
+\index{rastreo}
+\index{argumento opcional}
+\index{opcional!argumento}
 
-When you raise an exception, you can provide a detailed error message as an optional argument.  For example:
+Cuando levantes una excepción, puedes proporcionar un mensaje de error detallado como argumento opcional.  Por ejemplo:
 
 \begin{verbatim}
->>> raise LookupError('value does not appear in the dictionary')
+>>> raise LookupError('el valor no aparece en el diccionario')
 Traceback (most recent call last):
   File "<stdin>", line 1, in ?
-LookupError: value does not appear in the dictionary
+LookupError: el valor no aparece en el diccionario
 \end{verbatim}
 %
-A reverse lookup is much slower than a forward lookup; if you
-have to do it often, or if the dictionary gets big, the performance
-of your program will suffer.
+Una consulta inversa en mucho más lenta que una consulta directa; si
+tienes que hacerlo a menudo, o si el diccionario se vuelve grande, el rendimiento
+de tu progama se verá afectado.
 
 
-\section{Dictionaries and lists}
+\section{Diccionarios y listas}
 \label{invert}
 
-Lists can appear as values in a dictionary.  For example, if you
-are given a dictionary that maps from letters to frequencies, you
-might want to invert it; that is, create a dictionary that maps
-from frequencies to letters.  Since there might be several letters
-with the same frequency, each value in the inverted dictionary
-should be a list of letters.
-\index{invert dictionary}
-\index{dictionary!invert}
+Las listas pueden aparecer como valores en un diccionario.  Por ejemplo, si
+te dan un diccionario que mapea de letras a frecuencias,
+quizás quieras invertirlo; es decir, crear un diccionario que mapee
+de frecuencias a letras.  Dado que podría haber muchas letras
+con la misma frecuencia, cada valor en el diccionario invertido
+debería ser una lista de letras.
+\index{invertir diccionario}
+\index{diccionario!invertir}
 
-Here is a function that inverts a dictionary:
+Aquí hay una función que invierte un diccionario:
 
 \begin{verbatim}
-def invert_dict(d):
-    inverse = dict()
-    for key in d:
-        val = d[key]
-        if val not in inverse:
-            inverse[val] = [key]
+def invertir_dict(d):
+    inverso = dict()
+    for clave in d:
+        valor = d[clave]
+        if valor not in inverso:
+            inverso[valor] = [clave]
         else:
-            inverse[val].append(key)
-    return inverse
+            inverso[valor].append(clave)
+    return inverso
 \end{verbatim}
 %
-Each time through the loop, {\tt key} gets a key from {\tt d} and
-{\tt val} gets the corresponding value.  If {\tt val} is not in {\tt
-  inverse}, that means we haven't seen it before, so we create a new
-item and initialize it with a {\bf singleton} (a list that contains a
-single element).  Otherwise we have seen this value before, so we
-append the corresponding key to the list.  \index{singleton}
+En cada paso por el bucle, {\tt clave} obtiene una clave de {\tt d} y
+{\tt valor} obtiene el valor correspondiente.  Si {\tt valor} no está en {\tt
+  inverso}, lo cual significa que no lo hemos visto antes, entonces creamos un nuevo
+ítem y lo inicializamos con un {\bf singleton} (una lista que contiene un
+único elemento).  De lo contrario, hemos visto este valor antes, por lo cual
+anexamos a la lista la clave correspondiente.  \index{singleton}
 
-Here is an example:
+Aquí hay un ejemplo:
 
 \begin{verbatim}
->>> hist = histogram('parrot')
+>>> hist = histograma('parrot')
 >>> hist
 {'a': 1, 'p': 1, 'r': 2, 't': 1, 'o': 1}
->>> inverse = invert_dict(hist)
->>> inverse
+>>> inverso = invertir_dict(hist)
+>>> inverso
 {1: ['a', 'p', 't', 'o'], 2: ['r']}
 \end{verbatim}
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/dict1.pdf}}
-\caption{State diagram.}
+\caption{Diagrama de estado.}
 \label{fig.dict1}
 \end{figure}
 
-Figure~\ref{fig.dict1} is a state diagram showing {\tt hist} and {\tt inverse}.
-A dictionary is represented as a box with the type {\tt dict} above it
-and the key-value pairs inside.  If the values are integers, floats or
-strings, I draw them inside the box, but I usually draw lists
-outside the box, just to keep the diagram simple.
-\index{state diagram}
-\index{diagram!state}
+La Figura~\ref{fig.dict1} es un diagrama de estado que muestra a {\tt hist} e {\tt inverso}.
+Un diccionario se representa como una caja con el tipo {\tt dict} arriba suyo
+y el par clave-valor adentro.  Si los valores son enteros, de coma flotante o
+cadenas, los dibujo adentro de la caja, pero usualmente dibujo las listas
+afuera de la caja, solo para mantener simple al diagrama.
+\index{diagrama de estado}
+\index{estado!diagrama de}
 
-Lists can be values in a dictionary, as this example shows, but they
-cannot be keys.  Here's what happens if you try:
+Las listas pueden ser valores en un diccionario, tal como muestra este ejemplo simple, pero
+no pueden ser claves.  Aquí está lo que ocurre si lo intentas:
 \index{TypeError}
-\index{exception!TypeError}
+\index{excepción!TypeError}
 
 
 \begin{verbatim}
 >>> t = [1, 2, 3]
 >>> d = dict()
->>> d[t] = 'oops'
+>>> d[t] = 'ups'
 Traceback (most recent call last):
   File "<stdin>", line 1, in ?
 TypeError: list objects are unhashable
 \end{verbatim}
 %
-I mentioned earlier that a dictionary is implemented using
-a hashtable and that means that the keys have to be {\bf hashable}.
-\index{hash function}
+Anteriormente mencioné que un diccionario se implementa usando
+una tabla hash y eso significa que las claves tienen que ser {\bf hashables}.
+\index{función hash}
 \index{hashable}
 
-A {\bf hash} is a function that takes a value (of any kind)
-and returns an integer.  Dictionaries use these integers,
-called hash values, to store and look up key-value pairs.
-\index{immutability}
+Un {\bf hash} es una función que toma un valor (de cualquier tipo)
+y devuelve un entero.  Los diccionarios usan estos enteros,
+llamados valores hash, para almacenar y consultar pares clave-valor.
+\index{inmutabilidad}
 
-This system works fine if the keys are immutable.  But if the
-keys are mutable, like lists, bad things happen.  For example,
-when you create a key-value pair, Python hashes the key and
-stores it in the corresponding location.  If you modify the
-key and then hash it again, it would go to a different location.
-In that case you might have two entries for the same key,
-or you might not be able to find a key.  Either way, the
-dictionary wouldn't work correctly.
+Este sistema funciona bien si las claves son inmutables.  Pero si las
+claves son mutables, como las listas, ocurren cosas malas.  Por ejemplo,
+cuando creas un par clave-valor, Python hashea la clave y
+la almacena en la ubicación correspondiente.  Si modificas la
+clave y luego la hasheas de nuevo, iría a una ubicación diferente.
+En ese caso podrías tener dos entradas para la misma clave,
+o quizás no seas capaz de encontrar una clave.  De cualquier manera, el
+diccionario no funcionaría de manera correcta.
 
-That's why keys have to be hashable, and why mutable types like
-lists aren't.  The simplest way to get around this limitation is to
-use tuples, which we will see in the next chapter.
+Por eso es que las claves tienen que ser hashables y, por la misma razón, los tipos mutables como
+las listas no lo son.  La manera más simple de evitar esta limitación es
+usar tuplas, las cuales veremos en el capítulo siguiente.
 
-Since dictionaries are mutable, they can't be used as keys,
-but they {\em can} be used as values.
+Dado que los diccionarios son mutables, estos no pueden usarse como claves,
+pero {\em pueden} usarse como valores.
 
 
 \section{Memos}
@@ -9894,7 +9893,7 @@ for letter, number in t:
     print(number, letter)
 \end{verbatim}
 %
-Each time through the loop, Python selects the next tuple in
+En cada paso por el bucle, Python selects the next tuple in
 the list and assigns the elements to {\tt letter} and
 {\tt number}.  The output of this loop is:
 \index{loop}
@@ -15975,7 +15974,7 @@ If something goes wrong during runtime, Python
 prints a message that includes the name of the
 exception, the line of the program where the problem occurred,
 and a traceback.
-\index{traceback}
+\index{rastreo}
 
 The traceback identifies the function that is currently running, and
 then the function that called it, and then the function that called
