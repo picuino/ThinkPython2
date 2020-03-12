@@ -33,9 +33,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[bookmarks]{hyperref}
 
-\title{Pensar en Python}
+\title{Piensa en Python}
 \author{Allen B. Downey}
-\newcommand{\thetitle}{Pensar en Python: Aprende a pensar como un informático}
+\newcommand{\thetitle}{Piensa en Python: Aprende a pensar como un informático}
 \newcommand{\theversion}{2da Edición, Versión 2.4.0}
 \newcommand{\thedate}{}
 
@@ -9039,192 +9039,192 @@ pero {\em pueden} usarse como valores.
 \section{Memos}
 \label{memoize}
 
-If you played with the {\tt fibonacci} function from
-Section~\ref{one.more.example}, you might have noticed that the bigger
-the argument you provide, the longer the function takes to run.
-Furthermore, the run time increases quickly.
+Si jugaste con la función {\tt fibonacci} de la
+Sección~\ref{one.more.example}, quizás has notado que mientras más grande
+es el argumento que entregues, más tarda la función en ejecutarse.
+Además, el tiempo de ejecución aumenta rápidamente. 
 \index{fibonacci function}
 \index{function!fibonacci}
 
-To understand why, consider Figure~\ref{fig.fibonacci}, which shows
-the {\bf call graph} for {\tt fibonacci} with {\tt n=4}:
+Para entender el por qué, considera la Figura~\ref{fig.fibonacci}, la cual muestra
+el {\bf gráfico de llamadas} para {\tt fibonacci} con {\tt n=4}:
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.7]{figs/fibonacci.pdf}}
-\caption{Call graph.}
+\caption{Gráfico de llamadas.}
 \label{fig.fibonacci}
 \end{figure}
 
-A call graph shows a set of function frames, with lines connecting each
-frame to the frames of the functions it calls.  At the top of the
-graph, {\tt fibonacci} with {\tt n=4} calls {\tt fibonacci} with {\tt
-n=3} and {\tt n=2}.  In turn, {\tt fibonacci} with {\tt n=3} calls
-{\tt fibonacci} with {\tt n=2} and {\tt n=1}.  And so on.
-\index{function frame}
-\index{frame}
-\index{call graph}
+Un gráfico de llamadas muestra un conjunto de marcos de funciones, con líneas que conectan cada
+marco a los marcos de las funciones que llama.  En la parte de arriba del
+gráfico, {\tt fibonacci} con {\tt n=4} llama {\tt fibonacci} con {\tt
+n=3} y {\tt n=2}.  A su vez, {\tt fibonacci} con {\tt n=3} llama a
+{\tt fibonacci} con {\tt n=2} y {\tt n=1}.  Y así sucesivamente.
+\index{marco de función}
+\index{marco}
+\index{gráfico de llamadas}
 
-Count how many times {\tt fibonacci(0)} and {\tt fibonacci(1)} are
-called.  This is an inefficient solution to the problem, and it gets
-worse as the argument gets bigger.
+Cuenta cuántas veces se llama a {\tt fibonacci(0)} y {\tt fibonacci(1)}.
+Esta es una solución ineficiente para el probema y se pone peor
+a medida que el argumento se hace más grande.
 \index{memo}
 
-One solution is to keep track of values that have already been
-computed by storing them in a dictionary.  A previously computed value
-that is stored for later use is called a {\bf memo}.  Here is a
-``memoized'' version of {\tt fibonacci}:
+Una solución es hacer un seguimiento de los valores que ya han sido
+calculados almacenándolos en un diccionario.   Un valor previamente calculado
+que se almacena para un uso posterior se llama {\bf memo}.  Aquí hay una versión
+``memoizada'' de {\tt fibonacci}:
 
 \begin{verbatim}
-known = {0:0, 1:1}
+conocidos = {0:0, 1:1}
 
 def fibonacci(n):
-    if n in known:
-        return known[n]
+    if n in conocidos:
+        return conocidos[n]
 
-    res = fibonacci(n-1) + fibonacci(n-2)
-    known[n] = res
-    return res
+    resultado = fibonacci(n-1) + fibonacci(n-2)
+    conocidos[n] = resultado
+    return resultado
 \end{verbatim}
 %
-{\tt known} is a dictionary that keeps track of the Fibonacci
-numbers we already know.  It starts with
-two items: 0 maps to 0 and 1 maps to 1.
+{\tt conocidos} es un diccionario que hace un seguimiento de los números de Fibonacci
+que ya conocemos.  Comienza con
+dos ítems: 0 mapea a 0 y 1 mapea a 1.
 
-Whenever {\tt fibonacci} is called, it checks {\tt known}.
-If the result is already there, it can return
-immediately.  Otherwise it has to
-compute the new value, add it to the dictionary, and return it.
+Cada vez que se llama a {\tt fibonacci}, este revisa a {\tt conocidos}.
+Si el resultado ya está ahí, puede devolverlo
+inmediatamente.  De lo contrario, tiene que
+calcular el nuevo valor, agregarlo al diccionario y devolverlo.
 
-If you run this version of {\tt fibonacci} and compare it with
-the original, you will find that it is much faster.
+Si ejecutas esta versión de {\tt fibonacci} y la comparas con
+la original, encontrarás que esta es mucho más rápida.
 
 
 
-\section{Global variables}
-\index{global variable}
-\index{variable!global}
+\section{Variables globales}
+\index{variable global}
+\index{global!variable}
 
-In the previous example, {\tt known} is created outside the function,
-so it belongs to the special frame called \verb"__main__".
-Variables in \verb"__main__" are sometimes called {\bf global}
-because they can be accessed from any function.  Unlike local
-variables, which disappear when their function ends, global variables
-persist from one function call to the next.
-\index{flag}
+En los ejemplos anteriores, {\tt conocidos} se crea fuera de la función,
+por lo que pertenece al marco especial llamado \verb"__main__".
+Las variables en \verb"__main__" a veces se llaman {\bf globales}
+porque se puede acceder a ellos desde cualquier función.  A diferencia de las variables
+locales, que desaparecen cuando su función termina, las variables globales 
+persisten de una llamada a función a la siguiente.
+\index{flag}\index{bandera}
 \index{main}
 
-It is common to use global variables for {\bf flags}; that is,
-boolean variables that indicate (``flag'') whether a condition
-is true.  For example, some programs use
-a flag named {\tt verbose} to control the level of detail in the
-output:
+Es común usar variables globales para las {\bf banderas} (en inglés, {\em flags}); es decir,
+variables booleanas que indican si una condición
+es verdadera.  Por ejemplo, algunos programas usan
+una bandera llamada {\tt verbose} para controlar el nivel de detalle en la
+salida:
 
 \begin{verbatim}
 verbose = True
 
-def example1():
+def ejemplo1():
     if verbose:
-        print('Running example1')
+        print('Ejecutando ejemplo1')
 \end{verbatim}
 %
-If you try to reassign a global variable, you might be surprised.
-The following example is supposed to keep track of whether the
-function has been called:
-\index{reassignment}
+Si intentas reasignar una variable global, quizás te sorprendas.
+El siguiente ejemplo se supone que hace seguimiento de si la
+función ha sido llamada:
+\index{reasignación}
 
 \begin{verbatim}
-been_called = False
+fue_llamada = False
 
-def example2():
-    been_called = True         # WRONG
-\end{verbatim}
-%
-But if you run it you will see that the value of \verb"been_called"
-doesn't change.  The problem is that {\tt example2} creates a new local
-variable named \verb"been_called".  The local variable goes away when
-the function ends, and has no effect on the global variable.
-\index{global statement}
-\index{statement!global}
-\index{declaration}
+def ejemplo2():
+    fue_llamada = True         # INCORRECTO 
+\end{verbatim} 
+% 
+Pero si lo ejecutas verás que el valor de \verb"fue_llamada"
+no cambia. El problema es que {\tt ejemplo2} crea una nueva variable local
+con nombre \verb"fue_llamada".  La variable local se va cuando 
+la función termina, y no tiene efecto en la variable global.
+\index{sentencia global}
+\index{global!sentencia}
+\index{declaración}
 
-To reassign a global variable inside a function you have to
-{\bf declare} the global variable before you use it:
+Para reasignar una variable global dentro de una función tienes que
+{\bf declarar} la variable global antes de usarla:
 
 \begin{verbatim}
-been_called = False
+fue_llamada = False
 
-def example2():
-    global been_called
-    been_called = True
+def ejemplo2():
+    global fue_llamada
+    fue_llamada = True
 \end{verbatim}
 %
 The {\bf global statement} tells the interpreter
-something like, ``In this function, when I say \verb"been_called", I
+something like, ``In this function, when I say \verb"fue_llamada", I
 mean the global variable; don't create a local one.''
-\index{update!global variable}
-\index{global variable!update}
+\index{actualizar!variable global}
+\index{variable global!actializar}
 
-Here's an example that tries to update a global variable:
+Aquí hay un ejemplo que intenta actualizar una variable global:
 
 \begin{verbatim}
-count = 0
+contar = 0
 
-def example3():
-    count = count + 1          # WRONG
+def ejemplo3():
+    contar = contar + 1          # INCORRECTO
 \end{verbatim}
 %
-If you run it you get:
+Si lo ejecutas obtienes:
 \index{UnboundLocalError}
-\index{exception!UnboundLocalError}
+\index{excepción!UnboundLocalError}
 
 \begin{verbatim}
-UnboundLocalError: local variable 'count' referenced before assignment
+UnboundLocalError: local variable 'contar' referenced before assignment
 \end{verbatim}
 %
-Python assumes that {\tt count} is local, and under that assumption
-you are reading it before writing it.  The solution, again,
-is to declare {\tt count} global.
+Python supone que {\tt contar} es local, y bajo ese supuesto
+lo estás leyendo antes de escribirlo.  La solución, nuevamente,
+es declarar {\tt contar} como global.
 \index{counter}
 
 \begin{verbatim}
-def example3():
-    global count
-    count += 1
+def ejemplo3():
+    global contar
+    contar += 1
 \end{verbatim}
 %
-If a global variable refers to a mutable value, you can modify
-the value without declaring the variable:
-\index{mutability}
+Si una variable global se refiere a un valor mutable, puedes modificar
+el valor sin declarar la variable:
+\index{mutabilidad}
 
 \begin{verbatim}
-known = {0:0, 1:1}
+conocidos = {0:0, 1:1}
 
-def example4():
-    known[2] = 1
+def ejemplo4():
+    conocidos[2] = 1
 \end{verbatim}
 %
-So you can add, remove and replace elements of a global list or
-dictionary, but if you want to reassign the variable, you
-have to declare it:
+Entonces puedes agregar, eliminar y reemplazar elementos de una lista global o diccionario
+global, pero si quieres reasignar la variable,
+tienes que declararla:
 
 \begin{verbatim}
-def example5():
-    global known
-    known = dict()
+def ejemplo5():
+    global conocidos
+    conocidos = dict()
 \end{verbatim}
 %
-Global variables can be useful, but if you have a lot of them,
-and you modify them frequently, they can make programs
-hard to debug.
+Las variables globales pueden ser útiles, pero si tienes muchas de estas,
+y las modificas frecuentemente, pueden hacer que los programas sean
+difíciles de depurar.
 
 
-\section{Debugging}
-\index{debugging}
+\section{Depuración}
+\index{depuración}
 
-As you work with bigger datasets it can become unwieldy to
-debug by printing and checking the output by hand.  Here are some
-suggestions for debugging large datasets:
+A medida que trabajes con conjuntos de datos más grandes, depurar imprimiendo y
+verificando la salida a mano puede volverse algo difícil de manejar.  Aquí hay algunas
+sugerencias para depurar conjuntos grandes de datos.
 
 \begin{description}
 
