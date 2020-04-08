@@ -5625,7 +5625,7 @@ no listo
 \end{verbatim}
 %
 Esta forma de escribir bucles {\tt while} es común porque puedes
-verificar la condición en cualquier lugar del bucle (no solo en la
+v the type of a value.erificar la condición en cualquier lugar del bucle (no solo en la
 parte superior) y puedes expresar la condición de detención de manera afirmativa
 (``detente cuando esto ocurra'') en lugar de negativa (``sigue haciendo
 hasta que eso ocurra'').
@@ -8863,7 +8863,7 @@ t 1
 
 Dado un diccionario {\tt d} y una clave {\tt k}, es fácil
 encontrar el valor correspondiente {\tt v = d[k]}.  Esta operación
-se llama {\bf consulta}.
+se llama {\bf consulta} (en inglés, {\emph lookup}).
 
 ¿Y qué pasa si tienes {\tt v} y quieres encontrar {\tt k}?
 Tienes dos problemas: primero, podría haber más de una
@@ -9159,9 +9159,9 @@ def ejemplo2():
     fue_llamada = True
 \end{verbatim}
 %
-The {\bf global statement} tells the interpreter
-something like, ``In this function, when I say \verb"fue_llamada", I
-mean the global variable; don't create a local one.''
+La {\bf sentencia global} le dice al intérprete
+algo como, ``En esta función, cuando digo \verb"fue_llamada", I
+significa la variable global; no crees una local.''
 \index{actualizar!variable global}
 \index{variable global!actializar}
 
@@ -9228,107 +9228,107 @@ sugerencias para depurar conjuntos grandes de datos.
 
 \begin{description}
 
-\item[Scale down the input:] If possible, reduce the size of the
-dataset.  For example if the program reads a text file, start with
-just the first 10 lines, or with the smallest example you can find.
-You can either edit the files themselves, or (better) modify the
-program so it reads only the first {\tt n} lines.
+\item[Reduce la escala:] Si es posible, reduce el tamaño del
+conjunto de datos.  Por ejemplo, si el programa lee un archivo de texto, comienza 
+solo con las primeras 10 líneas, o con el ejemplo más pequeño que puedas encontrar.
+Puedes editar aquellos archivos o (mejor) modificar el
+programa de manera que este lea solo las primeras {\tt n} líneas.
 
-If there is an error, you can reduce {\tt n} to the smallest
-value that manifests the error, and then increase it gradually
-as you find and correct errors.
+Si hay un error, puedes reducir {\tt n} al valor más pequeño
+que muestre el error y luego incrementarlo gradualmente
+mientras encuentras y corriges los errores.
 
-\item[Check summaries and types:] Instead of printing and checking the
-entire dataset, consider printing summaries of the data: for example,
-the number of items in a dictionary or the total of a list of numbers.
+\item[Revisa resúmenes y tipos:] En lugar de imprimir y verificar el conjunto
+de datos completo, considera imprimir resúmenes de los datos: por ejemplo
+el número de ítems en el diccionario o el total de una lista de números.
 
-A common cause of runtime errors is a value that is not the right
-type.  For debugging this kind of error, it is often enough to print
-the type of a value.
+Una causa común de errores de tiempo de ejecución es un valor que no es del tipo
+correcto.  Para depurar esta clase de errores, a menudo es suficiente imprimir
+el tipo del valor.
 
-\item[Write self-checks:]  Sometimes you can write code to check
-for errors automatically.  For example, if you are computing the
-average of a list of numbers, you could check that the result is
-not greater than the largest element in the list or less than
-the smallest.  This is called a ``sanity check'' because it detects
-results that are ``insane''.
-\index{sanity check}
-\index{consistency check}
+\item[Escribe verificaciones automáticas:]  A veces puedes escribir código para verificar
+errores de manera automática. Por ejemplo, si estás calculando el
+promedio de una lista de números, podrías verificar que el resultado no
+es mayor que el elemento más grande de la lista ni menor que
+el más pequeño. A esto se le llama ``prueba de cordura'' (en inglés, {\em sanity check})
+porque detecta resultados que son ``locos''.
+\index{sanity check}\index{prueba de cordura}
+\index{prueba de consistencia}
 
-Another kind of check compares the results of two different
-computations to see if they are consistent.  This is called a
-``consistency check''.
+Otro tipo de prueba compara los resultados de dos computaciones
+diferentes para ver si son consistentes. A esto se le llama
+``prueba de consistencia''.
 
 \item[Format the output:] Formatting debugging output
 can make it easier to spot an error.  We saw an example in
-Section~\ref{factdebug}.  Another tool you might find useful is the {\tt pprint} module, which provides
-a {\tt pprint} function that displays built-in types in
-a more human-readable format ({\tt pprint} stands for
+Section~\ref{factdebug}.  Otra herramienta que quizás encuentres útil es el módulo {\tt pprint},
+el cual proporciona una función {\tt pprint} que muestra tipos incorporados en
+un formato más legible por humanos ({\tt pprint} significa
 ``pretty print'').
 \index{pretty print}
-\index{pprint module}
-\index{module!pprint}
+\index{módulo pprint}
+\index{pprint!módulo}
 
 \end{description}
 
-Again, time you spend building scaffolding can reduce
-the time you spend debugging.
-\index{scaffolding}
+Nuevamente, el tiempo que pasas construyendo andamiaje puede reducir
+el tiempo que pasas depurando.
+\index{scaffolding}\index{andamiaje}
 
 
-\section{Glossary}
+\section{Glosario}
 
 \begin{description}
 
-\item[mapping:] A relationship in which each element of one set
-corresponds to an element of another set.
-\index{mapping}
+\item[mapeo:] Una relación en la cual cada elemento de un conjunto
+corresponde a un elemento de otro conjunto.
+\index{mapeo}
 
-\item[dictionary:] A mapping from keys to their
-corresponding values.
-\index{dictionary}
+\item[diccionario:] Un mapeo de las claves a sus
+valores correspondienes.
+\index{diccionario}
 
-\item[key-value pair:] The representation of the mapping from
-a key to a value.
-\index{key-value pair}
+\item[par clave-valor:] La representación del mapeo de
+una clave a un valor.
+\index{par clave-valor}
 
-\item[item:] In a dictionary, another name for a key-value
-  pair.
-\index{item!dictionary}
+\item[ítem:] En un diccionario, otro nombre para un par
+clave-valor.
+\index{ítem de un diccionario}
 
-\item[key:] An object that appears in a dictionary as the
-first part of a key-value pair.
-\index{key}
+\item[clave:] Un objeto que aparece en un diccionario como la
+primera parte de un par clave-valor.
+\index{clave}
 
-\item[value:] An object that appears in a dictionary as the
-second part of a key-value pair.  This is more specific than
-our previous use of the word ``value''.
-\index{value}
+\item[valor:] Un objeto que aparece en un diccionario como la
+segunda parte de un par clave-valor.  Esto es más específico que
+nuestro uso anterior de la palabra ``valor''.
+\index{valor}
 
-\item[implementation:] A way of performing a computation.
-\index{implementation}
+\item[implementación:] Una manera de realizar una computación.
+\index{implementación}
 
-\item[hashtable:] The algorithm used to implement Python
-dictionaries.
-\index{hashtable}
+\item[tabla hash:] El algoritmo usado para implementar los
+diccionarios de Python.
+\index{tabla hash}
 
-\item[hash function:] A function used by a hashtable to compute the
-location for a key.
-\index{hash function}
+\item[función hash:] Una función usada por una tabla hash para calcular
+la ubicación para una clave.
+\index{función hash}
 
-\item[hashable:] A type that has a hash function.  Immutable
-types like integers,
-floats and strings are hashable; mutable types like lists and
-dictionaries are not.
+\item[hashable:] Un tipoi que tiene una función hash.  Los tipos inmutables
+como los enteros, números de
+coma flotante y cadenas son hashables; los tipos mutables como las listas y
+diccionarios no lo son.
 \index{hashable}
 
-\item[lookup:] A dictionary operation that takes a key and finds
-the corresponding value.
-\index{lookup}
+\item[consulta:] Una operación de diccionario que toma una clave y encuentra
+el valor correspondiente.
+\index{consulta}
 
-\item[reverse lookup:] A dictionary operation that takes a value and finds
-one or more keys that map to it.
-\index{reverse lookup}
+\item[consulta inversa:] Una operación de diccionario que toma un valor y encuentra
+una o más claves que mapean a este.
+\index{consulta inversa}
 
 \item[raise statement:]  A statement that (deliberately) raises an exception.
 \index{raise statement}
@@ -9347,14 +9347,14 @@ each callee.
 computation.
 \index{memo}
 
-\item[global variable:]  A variable defined outside a function.  Global
-variables can be accessed from any function.
-\index{global variable}
+\item[variable global:]  Una variable definida fuera de la función. Las
+variables globales pueden ser accesibles desde cualquier función.
+\index{variable global}
 
-\item[global statement:]  A statement that declares a variable name
-global.
-\index{global statement}
-\index{statement!global}
+\item[sentencia global:]  Una sentencia que declara global a un nombre
+de variable.
+\index{sentencia global}
+\index{global!sentencia}
 
 \item[flag:] A boolean variable used to indicate whether a condition
 is true.
