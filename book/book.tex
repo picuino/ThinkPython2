@@ -9259,9 +9259,9 @@ Otro tipo de prueba compara los resultados de dos computaciones
 diferentes para ver si son consistentes. A esto se le llama
 ``prueba de consistencia''.
 
-\item[Format the output:] Formatting debugging output
-can make it easier to spot an error.  We saw an example in
-Section~\ref{factdebug}.  Otra herramienta que quizás encuentres útil es el módulo {\tt pprint},
+\item[Dale formato a la salida:] Dar formato a la salida de la depuración
+puede hacer más fácil detectar un error.  Vimos un ejemplo en la 
+Sección~\ref{factdebug}.  Otra herramienta que quizás encuentres útil es el módulo {\tt pprint},
 el cual proporciona una función {\tt pprint} que muestra tipos incorporados en
 un formato más legible por humanos ({\tt pprint} significa
 ``pretty print'').
@@ -9343,8 +9343,8 @@ each callee.
 \index{call graph}
 \index{diagram!call graph}
 
-\item[memo:] A computed value stored to avoid unnecessary future
-computation.
+\item[memo:] Un valor calculado que se almacena para evitar una futura
+computación innecesaria.
 \index{memo}
 
 \item[variable global:]  Una variable definida fuera de la función. Las
@@ -9367,22 +9367,22 @@ interpreter something about a variable.
 \end{description}
 
 
-\section{Exercises}
+\section{Ejercicios}
 
 \begin{exercise}
 \label{wordlist2}
-\index{set membership}
-\index{membership!set}
+\index{pertenencia a conjunto}
+\index{conjunto!pertenencia}
 
-Write a function that reads the words in {\tt words.txt} and
-stores them as keys in a dictionary.  It doesn't matter what the
-values are.  Then you can use the {\tt in} operator
-as a fast way to check whether a string is in
-the dictionary.
+Escribe una función que lea las palabras en {\tt words.txt} y
+las almacene como claves en un diccionario.  No importa cuáles sean
+los valores.  Luego puedes usar el operador {\tt in}
+como una manera rápida de verificar si una cadena está en
+el diccionario.
 
-If you did Exercise~\ref{wordlist1}, you can compare the speed
-of this implementation with the list {\tt in} operator and the
-bisection search.
+Si hiciste el Ejercicio~\ref{wordlist1}, puedes comparar la velocidad
+de esta implementación con el operador {\tt in} de lista y la
+búsqueda de bisección.
 
 \end{exercise}
 
@@ -9390,52 +9390,52 @@ bisection search.
 \begin{exercise}
 \label{setdefault}
 
-Read the documentation of the dictionary method {\tt setdefault}
-and use it to write a more concise version of \verb"invert_dict".
-Solution: \url{http://thinkpython2.com/code/invert_dict.py}.
-\index{setdefault method}
-\index{method!setdefault}
+Lee la documentación del método de diccionario {\tt setdefault}
+y úsalo para escribir una versión más concisa de \verb"invertir_dict".
+Solución: \url{http://thinkpython2.com/code/invert_dict.py}.
+\index{setdefault!método}
+\index{método setdefault}
 
 \end{exercise}
 
 
 \begin{exercise}
-Memoize the Ackermann function from Exercise~\ref{ackermann} and see if
-memoization makes it possible to evaluate the function with bigger
-arguments.  Hint: no.
-Solution: \url{http://thinkpython2.com/code/ackermann_memo.py}.
-\index{Ackermann function}
-\index{function!ack}
+Memoiza la función de Ackermann del Ejercicio~\ref{ackermann} y mira si
+la memoización permite evaluar la función con argumentos
+más grandes.  Pista: no.
+Solución: \url{http://thinkpython2.com/code/ackermann_memo.py}.
+\index{Ackermann!función}
+\index{función!ack}
 
 \end{exercise}
 
 
 
 \begin{exercise}
-\index{duplicate}
+\index{duplicado}
 
-If you did Exercise~\ref{duplicate}, you already have
-a function named \verb"has_duplicates" that takes a list
-as a parameter and returns {\tt True} if there is any object
-that appears more than once in the list.
+Si hiciste el Ejercicio~\ref{duplicate}, ya tienes
+una función con nombre \verb"tiene_duplicados" que toma una lista
+como parámetro y devuelve {\tt True} si hay algún objeto
+que aparece más de una vez en la lista.
 
-Use a dictionary to write a faster, simpler version of
-\verb"has_duplicates".
-Solution: \url{http://thinkpython2.com/code/has_duplicates.py}.
+Usa un diccionario para escribir una versión más rápida y simple de
+\verb"tiene_duplicados".
+Solución: \url{http://thinkpython2.com/code/has_duplicates.py}.
 
 \end{exercise}
 
 
 \begin{exercise}
 \label{exrotatepairs}
-\index{letter rotation}
-\index{rotation!letters}
+\index{rotación de letras}
+\index{letras!rotación de}
 
-Two words are ``rotate pairs'' if you can rotate one of them
-and get the other (see \verb"rotate_word" in Exercise~\ref{exrotate}).
+Dos palabras son ``pares rotativos'' si puedes rotar una de ellas
+y obtener la otra (see \verb"rotar_palabra" en el Ejercicio~\ref{exrotate}).
 
-Write a program that reads a wordlist and finds all the rotate
-pairs.  Solution: \url{http://thinkpython2.com/code/rotate_pairs.py}.
+Escribe un programa que lea una lista de palabras y encuentre todos los pares
+rotativos.  Solución: \url{http://thinkpython2.com/code/rotate_pairs.py}.
 
 \end{exercise}
 
@@ -9444,50 +9444,50 @@ pairs.  Solution: \url{http://thinkpython2.com/code/rotate_pairs.py}.
 \index{Car Talk}
 \index{Puzzler}
 
-Here's another Puzzler from {\em Car Talk}
+Aquí hay otro Puzzler de {\em Car Talk}
 (\url{http://www.cartalk.com/content/puzzlers}):
 
 \begin{quote}
-This was sent in by a fellow named Dan O'Leary. He came upon a common
-one-syllable, five-letter word recently that has the following unique
-property. When you remove the first letter, the remaining letters form
-a homophone of the original word, that is a word that sounds exactly
-the same. Replace the first letter, that is, put it back and remove
-the second letter and the result is yet another homophone of the
-original word. And the question is, what's the word?
+Este fue enviado por un compañero llamado Dan O'Leary. Se encontró hace poco con una palabra
+monosílaba de cinco letras común, que tiene la siguiente propiedad
+única. Cuando quitas la primera letra, las demás letras forman
+un homófono de la palabra original, es decir, una palabra que suena exactamente
+igual. Reemplaza la primera letra, es decir, ponla de nuevo y quita
+la segunda letra y el resultado es otro homófono de la
+palabra original. Y la pregunta es, ¿cuál es la palabra?
 
-Now I'm going to give you an example that doesn't work. Let's look at
-the five-letter word, `wrack.' W-R-A-C-K, you know like to `wrack with
-pain.' If I remove the first letter, I am left with a four-letter
-word, 'R-A-C-K.' As in, `Holy cow, did you see the rack on that buck!
-It must have been a nine-pointer!' It's a perfect homophone. If you
-put the `w' back, and remove the `r,' instead, you're left with the
-word, `wack,' which is a real word, it's just not a homophone of the
-other two words.
+Ahora voy a darte un ejemplo que no funciona. Veamos la palabra
+de cinco letras, `wrack.' W-R-A-C-K, you know like to `wrack with
+pain.' Si quito la primero letra, me quedo con una palabra de cuatro
+letras, 'R-A-C-K.' As in, `Holy cow, did you see the rack on that buck!
+It must have been a nine-pointer!' Es un homófono perfecto. Si
+vuelves a poner la `w' y quitas la `r' en su lugar, te quedas con la
+palabra `wack' que es una palabra real, que simplemente no es un homófono de las
+otras dos palabras.
 
-But there is, however, at least one word that Dan and we know of,
-which will yield two homophones if you remove either of the first two
-letters to make two, new four-letter words. The question is, what's
-the word?
+Pero hay, de todas maneras, al menos una palabra de la cual Dan y nosotros sabemos,
+que entregará dos homófonos, si quitas cualquiera de las primeras dos
+letras para hacer dos nuevas palabras de cuatro letras. La pregunta es, ¿cuál
+es la palabra?
 \end{quote}
-\index{homophone}
+\index{homófono}
 \index{reducible word}
 \index{word, reducible}
 
-You can use the dictionary from Exercise~\ref{wordlist2} to check
-whether a string is in the word list.
+Puedes usar el diccionario del Ejercicio~\ref{wordlist2} para verificar
+si una cadena está en la lista de palabras.
 
-To check whether two words are homophones, you can use the CMU
-Pronouncing Dictionary.  You can download it from
-\url{http://www.speech.cs.cmu.edu/cgi-bin/cmudict} or from
-\url{http://thinkpython2.com/code/c06d} and you can also download
-\url{http://thinkpython2.com/code/pronounce.py}, which provides a function
-named \verb"read_dictionary" that reads the pronouncing dictionary and
-returns a Python dictionary that maps from each word to a string that
-describes its primary pronunciation.
+Para verificar si dos palabras son homófonas, puedes usar el CMU
+Diccionario de Pronunciación de la CMU.  Lo puedes descargar de
+\url{http://www.speech.cs.cmu.edu/cgi-bin/cmudict} o de
+\url{http://thinkpython2.com/code/c06d} y también puedes descargar
+\url{http://thinkpython2.com/code/pronounce.py}, lo cual proporciona una función
+con nombre \verb"read_dictionary" que lee el diccionario de pronunciación y
+devuelve un diccionario de Python que mapea de cada palabra a una cadena que 
+describe su pronunciación primaria.
 
-Write a program that lists all the words that solve the Puzzler.
-Solution: \url{http://thinkpython2.com/code/homophone.py}.
+Escribe un programa que haga una lista de todas las palabras que resuelven el Puzzler.
+Solución: \url{http://thinkpython2.com/code/homophone.py}.
 
 \end{exercise}
 
