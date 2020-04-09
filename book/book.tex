@@ -9316,7 +9316,7 @@ diccionarios de Python.
 la ubicación para una clave.
 \index{función hash}
 
-\item[hashable:] Un tipoi que tiene una función hash.  Los tipos inmutables
+\item[hashable:] Un tipo que tiene una función hash.  Los tipos inmutables
 como los enteros, números de
 coma flotante y cadenas son hashables; los tipos mutables como las listas y
 diccionarios no lo son.
@@ -9330,11 +9330,11 @@ el valor correspondiente.
 una o más claves que mapean a este.
 \index{consulta inversa}
 
-\item[raise statement:]  A statement that (deliberately) raises an exception.
-\index{raise statement}
-\index{statement!raise}
+\item[sentencia raise:]  Una sentencia que (deliberadamente) levanta una excepción.
+\index{sentencia raise}
+\index{raise!sentencia}
 
-\item[singleton:] A list (or other sequence) with a single element.
+\item[singleton:] Una lista (u otra secuencia) con un solo elemento.
 \index{singleton}
 
 \item[call graph:] A diagram that shows every frame created during
@@ -9356,13 +9356,13 @@ de variable.
 \index{sentencia global}
 \index{global!sentencia}
 
-\item[flag:] A boolean variable used to indicate whether a condition
-is true.
-\index{flag}
+\item[bandera:] Una variable booleana que se usa para indicar si una condición
+es verdadera.
+\index{bandera}
 
-\item[declaration:] A statement like {\tt global} that tells the
-interpreter something about a variable.
-\index{declaration}
+\item[declaración:] Una sentencia como {\tt global} que le dice al
+intérprete algo sobre una variable.
+\index{declaración}
 
 \end{description}
 
@@ -9471,8 +9471,8 @@ letras para hacer dos nuevas palabras de cuatro letras. La pregunta es, ¿cuál
 es la palabra?
 \end{quote}
 \index{homófono}
-\index{reducible word}
-\index{word, reducible}
+\index{palabra reducible}
+\index{reducible, palabra}
 
 Puedes usar el diccionario del Ejercicio~\ref{wordlist2} para verificar
 si una cadena está en la lista de palabras.
@@ -9493,13 +9493,13 @@ Solución: \url{http://thinkpython2.com/code/homophone.py}.
 
 
 
-\chapter{Tuples}
+\chapter{Tuplas}
 \label{tuplechap}
 
-This chapter presents one more built-in type, the tuple, and then
-shows how lists, dictionaries, and tuples work together.
-I also present a useful feature for variable-length argument lists,
-the gather and scatter operators.
+Este capítulo presenta un tipo incorporado más, la tupla, y luego
+muestra cómo las listas, los diccionarios y las tuplas trabajan juntos.
+Además presento una característica útil para listas de argumento de longitud variable,
+los operadores de reunión y dispersión.
 
 One note: there is no consensus on how to pronounce ``tuple''.
 Some people say ``tuh-ple'', which rhymes with ``supple''.  But
@@ -9507,35 +9507,35 @@ in the context of programming, most people say ``too-ple'', which
 rhymes with ``quadruple''.
 
 
-\section{Tuples are immutable}
-\index{tuple}
-\index{type!tuple}
-\index{sequence}
+\section{Las tuplas son inmutables}
+\index{tupla}
+\index{tipo!tupla}
+\index{secuencia}
 
-A tuple is a sequence of values.  The values can be any type, and
-they are indexed by integers, so in that respect tuples are a lot
-like lists.  The important difference is that tuples are immutable.
-\index{mutability}
-\index{immutability}
+Una tupla es una secuencia de valores.  Los valores pueden ser de cualquier tipo y 
+están indexados por enteros, por lo que en ese sentido las tuplas se parecen mucho
+a las listas.  La diferencia importante es que las tuplas son inmutables.
+\index{mutabilidad}
+\index{inmutabilidad}
 
-Syntactically, a tuple is a comma-separated list of values:
+Sintácticamente, una tupla es una lista de valores separados por comas:
 
 \begin{verbatim}
 >>> t = 'a', 'b', 'c', 'd', 'e'
 \end{verbatim}
 %
-Although it is not necessary, it is common to enclose tuples in
-parentheses:
-\index{parentheses!tuples in}
+Aunque no es necesario, es común encerrar las tuplas en
+paréntesis:
+\index{paréntesis!tuplas en}
 
 \begin{verbatim}
 >>> t = ('a', 'b', 'c', 'd', 'e')
 \end{verbatim}
 %
-To create a tuple with a single element, you have to include a final
-comma:
+Para crear una tupla con un solo elemento, tienes que incluir una coma
+final:
 \index{singleton}
-\index{tuple!singleton}
+\index{tupla!singleton}
 
 \begin{verbatim}
 >>> t1 = 'a',
@@ -9543,7 +9543,7 @@ comma:
 <class 'tuple'>
 \end{verbatim}
 %
-A value in parentheses is not a tuple:
+Un valor en paréntesis no es una tupla:
 
 \begin{verbatim}
 >>> t2 = ('a')
@@ -9551,10 +9551,10 @@ A value in parentheses is not a tuple:
 <class 'str'>
 \end{verbatim}
 %
-Another way to create a tuple is the built-in function {\tt tuple}.
-With no argument, it creates an empty tuple:
-\index{tuple function}
-\index{function!tuple}
+Otra manera de crear una tupla es la función incorporada {\tt tuple}.
+Sin argumentos, esta crea una tupla vacía:
+\index{función tuple}
+\index{tuple!función}
 
 \begin{verbatim}
 >>> t = tuple()
@@ -9562,8 +9562,8 @@ With no argument, it creates an empty tuple:
 ()
 \end{verbatim}
 %
-If the argument is a sequence (string, list or tuple), the result
-is a tuple with the elements of the sequence:
+Si el argumento es una secuencia (cadena, lista o tupla), el resultado
+es una tupla con los elementos de la secuencia:
 
 \begin{verbatim}
 >>> t = tuple('lupins')
@@ -9571,13 +9571,13 @@ is a tuple with the elements of the sequence:
 ('l', 'u', 'p', 'i', 'n', 's')
 \end{verbatim}
 %
-Because {\tt tuple} is the name of a built-in function, you should
-avoid using it as a variable name.
+Dado que {\tt tuple} es el nombre de una función incorporada, deberías
+evitar usarlo como nombre de una variable.
 
-Most list operators also work on tuples.  The bracket operator
-indexes an element:
-\index{bracket operator}
-\index{operator!bracket}
+La mayoría de los operadores de lista también funcionan en tuplas.  El operador corchetes
+indexa un elemento:
+\index{operador corchetes}
+\index{corchetes!operador}
 
 \begin{verbatim}
 >>> t = ('a', 'b', 'c', 'd', 'e')
@@ -9585,31 +9585,31 @@ indexes an element:
 'a'
 \end{verbatim}
 %
-And the slice operator selects a range of elements.
-\index{slice operator}
-\index{operator!slice}
-\index{tuple!slice}
-\index{slice!tuple}
+Y el operador corte selecciona un rango de elementos.
+\index{operador corte}\index{slice}
+\index{corte!operador}
+\index{tupla!corte}
+\index{corte!tupla}
 
 \begin{verbatim}
 >>> t[1:3]
 ('b', 'c')
 \end{verbatim}
 %
-But if you try to modify one of the elements of the tuple, you get
-an error:
-\index{exception!TypeError}
+Pero si intentas modificar uno de los elementos de la tupla, obtienes
+un error:
+\index{excepción!TypeError}
 \index{TypeError}
-\index{item assignment}
-\index{assignment!item}
+\index{asignación de ítem}
+\index{ítem!asignación de}
 
 \begin{verbatim}
 >>> t[0] = 'A'
 TypeError: object doesn't support item assignment
 \end{verbatim}
 %
-Because tuples are immutable, you can't modify the elements.  But you
-can replace one tuple with another:
+Dado que las tuplas son inmutables, no puedes modificar los elementos.  Sin embargo,
+puedes reemplazar una tupla con otra:
 
 \begin{verbatim}
 >>> t = ('A',) + t[1:]
@@ -9617,15 +9617,15 @@ can replace one tuple with another:
 ('A', 'b', 'c', 'd', 'e')
 \end{verbatim}
 %
-This statement makes a new tuple and then makes {\tt t} refer to it.
+Esta sentencia crea una nueva tupla y luego hace que {\tt t} se refiera a esta.
 
-The relational operators work with tuples and other sequences;
-Python starts by comparing the first element from each
-sequence.  If they are equal, it goes on to the next elements,
-and so on, until it finds elements that differ.  Subsequent
-elements are not considered (even if they are really big).
-\index{comparison!tuple}
-\index{tuple!comparison}
+Los operadores relacionales funcionan con las tuplas y otras secuencias;
+Python comienza comparando el primer elemento de cada
+secuencia.  Si son iguales, avanza al los siguientes elementos,
+y así sucesivamente, hasta que encuentre elementos que sean diferentes.  No se consideran
+los elementos posteriores (incluso si son realmente grandes).
+\index{tupla!comparación}
+\index{comparación!tupla}
 
 \begin{verbatim}
 >>> (0, 1, 2) < (0, 3, 4)
@@ -9636,16 +9636,16 @@ True
 
 
 
-\section{Tuple assignment}
+\section{Asignación de tupla}
 \label{tuple.assignment}
-\index{tuple!assignment}
-\index{assignment!tuple}
+\index{tupla!asignación de}
+\index{asignación de tupla}
 \index{swap pattern}
 \index{pattern!swap}
 
-It is often useful to swap the values of two variables.
-With conventional assignments, you have to use a temporary
-variable.  For example, to swap {\tt a} and {\tt b}:
+A menudo es útil intercambiar los valores de dos variables.
+Con asignaciones convencionales, tienes que usar una variable
+temporal.  Por ejemplo, para intercambiar {\tt a} y {\tt b}:
 
 \begin{verbatim}
 >>> temp = a
@@ -9653,20 +9653,20 @@ variable.  For example, to swap {\tt a} and {\tt b}:
 >>> b = temp
 \end{verbatim}
 %
-This solution is cumbersome; {\bf tuple assignment} is more elegant:
+Esta solución es incómoda; la {\bf asignación de tupla} es más elegante:
 
 \begin{verbatim}
 >>> a, b = b, a
 \end{verbatim}
 %
-The left side is a tuple of variables; the right side is a tuple of
-expressions.  Each value is assigned to its respective variable.
-All the expressions on the right side are evaluated before any
-of the assignments.
+El lado izquierdo es una tupla de variables; el lado derecho es una tupla de
+expresiones.  Cada valor es asignado a su respectiva variable.
+Todas las expresiones en el lado derecho son evaluadas antes de cualquiera
+de las asignaciones.
 
-The number of variables on the left and the number of
-values on the right have to be the same:
-\index{exception!ValueError}
+El número de variables en el lazo izquierdo y el número de valores del
+lado derecho tienen que ser el mismo:
+\index{excepción!ValueError}
 \index{ValueError}
 
 \begin{verbatim}
@@ -9674,47 +9674,47 @@ values on the right have to be the same:
 ValueError: too many values to unpack
 \end{verbatim}
 %
-More generally, the right side can be any kind of sequence
-(string, list or tuple).  For example, to split an email address
-into a user name and a domain, you could write:
-\index{split method}
-\index{method!split}
+De manera más general, el lado derecho puede ser cualquier tipo de secuencia
+(cadena, lista o tupla).  Por ejemplo, para separar una direccion de email
+en nombre de usuario y dominio, podrías intentar:
+\index{método split}
+\index{split!método}
 \index{email address}
 
 \begin{verbatim}
->>> addr = 'monty@python.org'
->>> uname, domain = addr.split('@')
+>>> direccion = 'monty@python.org'
+>>> nombre_usuario, dominio = direccion.split('@')
 \end{verbatim}
 %
-The return value from {\tt split} is a list with two elements;
-the first element is assigned to {\tt uname}, the second to
-{\tt domain}.
+El valor de retorno de {\tt split} es una lista con dos elementos;
+el primer elemento se asigna a {\tt nombre\_usuario}, el segundo a
+{\tt dominio}.
 
 \begin{verbatim}
->>> uname
+>>> nombre_usuario
 'monty'
->>> domain
+>>> dominio
 'python.org'
 \end{verbatim}
 %
 
-\section{Tuples as return values}
-\index{tuple}
-\index{value!tuple}
-\index{return value!tuple}
-\index{function, tuple as return value}
+\section{Tuplas como valores de retorno}
+\index{tupla}
+\index{valor!tupla}
+\index{valor de retorno!tupla}
+\index{función, tupla como valor de retorno}
 
-Strictly speaking, a function can only return one value, but
-if the value is a tuple, the effect is the same as returning
-multiple values.  For example, if you want to divide two integers
-and compute the quotient and remainder, it is inefficient to
-compute {\tt x//y} and then {\tt x\%y}.  It is better to compute
-them both at the same time.
+Estrictamente hablando, una función solo puede devolver un valor de retorno, pero
+si el valor es una tupla, el efecto es el mismo que revolver
+múltiples valores.  Por ejemplo, si quieres dividir dos enteros
+y calcular el cociente y el resto, es ineficiente
+calcular {\tt x//y} y luego {\tt x\%y}.  Es mejor calcular
+ambos al mismo tiempo.
 \index{divmod}
 
-The built-in function {\tt divmod} takes two arguments and
-returns a tuple of two values, the quotient and remainder.
-You can store the result as a tuple:
+La función incorporada {\tt divmod} toma dos argumentos y
+devuelve una tupla de dos valores, el cociente y el resto.
+Puedes almacenar el resultado como una tupla:
 
 \begin{verbatim}
 >>> t = divmod(7, 3)
@@ -9722,69 +9722,69 @@ You can store the result as a tuple:
 (2, 1)
 \end{verbatim}
 %
-Or use tuple assignment to store the elements separately:
-\index{tuple assignment}
-\index{assignment!tuple}
+O usar asignación de tupla para almacenar los elementos por separado:
+\index{asignación de tupla}
+\index{tupla!asignación de}
 
 \begin{verbatim}
->>> quot, rem = divmod(7, 3)
->>> quot
+>>> cociente, resto = divmod(7, 3)
+>>> cociente
 2
->>> rem
+>>> resto
 1
 \end{verbatim}
 %
-Here is an example of a function that returns a tuple:
+Aquí hay un ejemplo de una función que devuelve una tupla:
 
 \begin{verbatim}
 def min_max(t):
     return min(t), max(t)
 \end{verbatim}
 %
-{\tt max} and {\tt min} are built-in functions that find
-the largest and smallest elements of a sequence.  \verb"min_max"
-computes both and returns a tuple of two values.
-\index{max function}
-\index{function!max}
-\index{min function}
-\index{function!min}
+{\tt max} y {\tt min} son funciones incorporadas que encuentran
+los elementos más grande y más pequeño de una secuencia.  \verb"min_max"
+calcula ambos y devuelve una tupla de dos valores.
+\index{max!función}
+\index{función!max}
+\index{min función}
+\index{función!min}
 
 
-\section{Variable-length argument tuples}
+\section{Tuplas de argumento de longitud variable}
 \label{gather}
-\index{variable-length argument tuple}
-\index{argument!variable-length tuple}
-\index{gather}
-\index{parameter!gather}
-\index{argument!gather}
+\index{tupla de argumento de longitud variable}
+\index{argumento!tupla de longitud variable}
+\index{reunión}
+\index{parámetro de reunión}
+\index{argumento!reunión}
 
-Functions can take a variable number of arguments.  A parameter
-name that begins with {\tt *} {\bf gathers} arguments into
-a tuple.  For example, {\tt printall}
-takes any number of arguments and prints them:
+Las funciones pueden tomar un número variable de argumentos.  Un nombre de parámetro
+que comienza con {\tt *} hace una {\bf reunión} de argumentos en
+una tupla.  Por ejemplo, {\tt printall}
+toma cualquier número de argumentos y los imprime:
 
 \begin{verbatim}
 def printall(*args):
     print(args)
 \end{verbatim}
 %
-The gather parameter can have any name you like, but {\tt args} is
-conventional.  Here's how the function works:
+El parámetro de reunión puede tener cualquier nombre que te guste, pero {\tt args} es
+convencional.  Aquí se muestra cómo opera la función:
 
 \begin{verbatim}
 >>> printall(1, 2.0, '3')
 (1, 2.0, '3')
 \end{verbatim}
 %
-The complement of gather is {\bf scatter}.  If you have a
-sequence of values and you want to pass it to a function
-as multiple arguments, you can use the {\tt *} operator.
-For example, {\tt divmod} takes exactly two arguments; it
-doesn't work with a tuple:
-\index{scatter}
-\index{argument scatter}
+El complemento de la reunión es la {\bf dispersión}.  Si tienes una
+secuencia de valores y quieres pasarlo a una función
+como multiples argumentos, puedes usar el operador {\tt *}.
+Por ejemplo, {\tt divmod} toma exactamente dos argumentos;
+no funciona con una tupla:
+\index{dispersión}
+\index{argumento!dispersión}
 \index{TypeError}
-\index{exception!TypeError}
+\index{excepción!TypeError}
 
 \begin{verbatim}
 >>> t = (7, 3)
@@ -9792,48 +9792,48 @@ doesn't work with a tuple:
 TypeError: divmod expected 2 arguments, got 1
 \end{verbatim}
 %
-But if you scatter the tuple, it works:
+Pero si dispersas la tupla, funciona:
 
 \begin{verbatim}
 >>> divmod(*t)
 (2, 1)
 \end{verbatim}
 %
-Many of the built-in functions use
-variable-length argument tuples.  For example, {\tt max}
-and {\tt min} can take any number of arguments:
-\index{max function}
-\index{function!max}
-\index{min function}
-\index{function!min}
+Muchas de las funciones incorporadas usan
+tuplas de argumento de longitud variable.  Por ejemplo, {\tt max}
+y {\tt min} pueden tomar cualquier número de argumentos:
+\index{max función}
+\index{función!max}
+\index{min función}
+\index{función!min}
 
 \begin{verbatim}
 >>> max(1, 2, 3)
 3
 \end{verbatim}
 %
-But {\tt sum} does not.
-\index{sum function}
-\index{function!sum}
+Pero {\tt sum} no puede.
+\index{sum!función}
+\index{función sum}
 
 \begin{verbatim}
 >>> sum(1, 2, 3)
 TypeError: sum expected at most 2 arguments, got 3
 \end{verbatim}
 %
-As an exercise, write a function called \verb"sum_all" that takes any number
-of arguments and returns their sum.
+Como ejercicio, escribe una función llamada \verb"sumar_todos" que tome cualquier número
+de argumentos y devuelva su suma.
 
 
-\section{Lists and tuples}
-\index{zip function}
-\index{function!zip}
+\section{Listas y tuplas}
+\index{zip!función}
+\index{función zip}
 
-{\tt zip} is a built-in function that takes two or more sequences and
-interleaves them.  The name of the function refers to
-a zipper, which interleaves two rows of teeth.
+{\tt zip} es una función incorporada que toma dos o más secuencias y
+las intercala.  El nombre de la función se refiere a
+una cremallera ({\em zipper}), ya que esta intercala dos filas de dientes.
 
-This example zips a string and a list:
+Este ejemplo hace zip a una cadena y una lista:
 
 \begin{verbatim}
 >>> s = 'abc'
@@ -9842,61 +9842,61 @@ This example zips a string and a list:
 <zip object at 0x7f7d0a9e7c48>
 \end{verbatim}
 %
-The result is a {\bf zip object} that knows how to iterate through
-the pairs.  The most common use of {\tt zip} is in a {\tt for} loop:
+El resultado es un {\bf objeto zip} que sabe cómo iterar a través
+de los pares.  El uso más común de {\tt zip} es en un bucle {\tt for}:
 
 \begin{verbatim}
->>> for pair in zip(s, t):
-...     print(pair)
+>>> for par in zip(s, t):
+...     print(par)
 ...
 ('a', 0)
 ('b', 1)
 ('c', 2)
 \end{verbatim}
 %
-A zip object is a kind of {\bf iterator}, which is any object
-that iterates through a sequence.  Iterators are similar to lists in some
-ways, but unlike lists, you can't use an index to select an element from
-an iterator.
-\index{iterator}
+Un objeto zip es una especie de {\bf iterador}, que es cualquier objeto
+que itera a través de una secuencia.  Los iteradores son similares a las listas de alguna
+manera, pero a diferencia de las listas, no puedes usar un índice para seleccionar un elemento de
+un iterador.
+\index{iterador}
 
-If you want to use list operators and methods, you can
-use a zip object to make a list:
+Si quieres usar operadores de lista y métodos, puedes
+usar un objeto zip para hacer una lista:
 
 \begin{verbatim}
 >>> list(zip(s, t))
 [('a', 0), ('b', 1), ('c', 2)]
 \end{verbatim}
 %
-The result is a list of tuples; in this example, each tuple contains
-a character from the string and the corresponding element from
-the list.
-\index{list!of tuples}
+El resultado es una lista de tuplas; en este ejemplo, cada tupla contiene
+un carácter de la cadena y el elemento correspondiente de
+la lista.
+\index{lista!de tuplas}
 
-If the sequences are not the same length, the result has the
-length of the shorter one.
+Si las secuencias no tienen la misma longitud, el resultado tiene la
+longitud de la secuencia más corta.
 
 \begin{verbatim}
 >>> list(zip('Anne', 'Elk'))
 [('A', 'E'), ('n', 'l'), ('n', 'k')]
 \end{verbatim}
 %
-You can use tuple assignment in a {\tt for} loop to traverse a list of
-tuples:
-\index{traversal}
-\index{tuple assignment}
-\index{assignment!tuple}
+Puedes usar asignación de tupla en un bucle {\tt for} para recorrer una lista de
+tuplas:
+\index{recorrido}
+\index{asignación de tupla}
+\index{tupla!asignación de}
 
 \begin{verbatim}
 t = [('a', 0), ('b', 1), ('c', 2)]
-for letter, number in t:
-    print(number, letter)
+for letra, numero in t:
+    print(numero, letra)
 \end{verbatim}
 %
-En cada paso por el bucle, Python selects the next tuple in
-the list and assigns the elements to {\tt letter} and
-{\tt number}.  The output of this loop is:
-\index{loop}
+En cada paso por el bucle, Python selecciona la siguiente tupla en
+la lista y asigna los elementos a {\tt letra} y
+{\tt numero}.  La salida de este bucle es:
+\index{bucle}
 
 \begin{verbatim}
 0 a
@@ -9904,36 +9904,36 @@ the list and assigns the elements to {\tt letter} and
 2 c
 \end{verbatim}
 %
-If you combine {\tt zip}, {\tt for} and tuple assignment, you get a
-useful idiom for traversing two (or more) sequences at the same
-time.  For example, \verb"has_match" takes two sequences, {\tt t1} and
-{\tt t2}, and returns {\tt True} if there is an index {\tt i}
-such that {\tt t1[i] == t2[i]}:
-\index{for loop}
+Si combinas {\tt zip}, {\tt for} y asignación de tupla, obtienes una
+manera útil para recorrer dos (o más) secuencias al mismo
+tiempo.  Por ejemplo, \verb"tiene_coincidencia" toma dos secuencias, {\tt t1} y
+{\tt t2}, y devuelve {\tt True} si hay un índice {\tt i}
+tal que {\tt t1[i] == t2[i]}:
+\index{bucle for}
 
 \begin{verbatim}
-def has_match(t1, t2):
+def tiene_coincidencia(t1, t2):
     for x, y in zip(t1, t2):
         if x == y:
             return True
     return False
 \end{verbatim}
 %
-If you need to traverse the elements of a sequence and their
-indices, you can use the built-in function {\tt enumerate}:
-\index{traversal}
-\index{enumerate function}
-\index{function!enumerate}
+Si necesitas recorrer los elementos de una secuencia y sus
+índices, puedes usar la función incorporada {\tt enumerate}:
+\index{recorrido}
+\index{función enumerate}
+\index{enumerate!función}
 
 \begin{verbatim}
-for index, element in enumerate('abc'):
-    print(index, element)
+for indice, elemento in enumerate('abc'):
+    print(indice, elemento)
 \end{verbatim}
 %
-The result from {\tt enumerate} is an enumerate object, which
-iterates a sequence of pairs; each pair contains an index (starting
-from 0) and an element from the given sequence.
-In this example, the output is
+El resultado de {\tt enumerate} es un objeto enumerate, que
+itera una secuencia de pares; cada par contiene un índice (comenzando
+desde 0) y un elemento de la secuencia dada.
+En este ejemplo, la salida es
 
 \begin{verbatim}
 0 a
@@ -9941,10 +9941,10 @@ In this example, the output is
 2 c
 \end{verbatim}
 %
-Again.
-\index{iterator}
-\index{object!enumerate}
-\index{enumerate object}
+Nuevamente.
+\index{iterador}
+\index{objeto enumerate}
+\index{enumerate!objeto}
 
 
 \section{Dictionaries and tuples}
