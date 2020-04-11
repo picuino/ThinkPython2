@@ -10115,30 +10115,30 @@ recorre la lista en orden invertido.
 \index{iterador}
 
 
-\section{Debugging}
-\index{debugging}
-\index{data structure}
-\index{shape error}
-\index{error!shape}
+\section{Depuración}
+\index{depuración}
+\index{estructura de datos}
+\index{error de forma}
+\index{forma!error de}
 
-Lists, dictionaries and tuples are examples of {\bf data
-  structures}; in this chapter we are starting to see compound data
-structures, like lists of tuples, or dictionaries that contain tuples
-as keys and lists as values.  Compound data structures are useful, but
-they are prone to what I call {\bf shape errors}; that is, errors
-caused when a data structure has the wrong type, size, or structure.
-For example, if you are expecting a list with one integer and I
-give you a plain old integer (not in a list), it won't work.
-\index{structshape module}
-\index{module!structshape}
+Las listas, diccionarios y tuplas son ejemplos de {\bf estructuras
+  de datos}; en este capítulo comenzamos a ver estructuras de datos
+combinadas, como listas de tuplas, o diccionarios que contienen tuplas
+como claves y listas como valores.  Las estructuras de datos combinadas son útiles,
+pero son propensas a lo que yo llamo {\bf errores de forma}; es decir, errores
+causados cuando una estructura de datos tiene el tipo, tamaño o estructura
+incorrecta. Por ejemplo, si estás esperando una lista con un entero y yo
+te doy un simple y viejo entero (no en una lista), no funcionará.
+\index{módulo structshape}
+\index{structshape!módulo}
 
-To help debug these kinds of errors, I have written a module
-called {\tt structshape} that provides a function, also called
-{\tt structshape}, that takes any kind of data structure as
-an argument and returns a string that summarizes its shape.
-You can download it from \url{http://thinkpython2.com/code/structshape.py}
+Para ayudar a depurar esta clase de errores, he escrito un módulo
+llamado {\tt structshape} que proporciona una función, también llamada
+{\tt structshape}, que toma cualquier tipo de estructura de datos como
+argumento y ddevuelve una cadena que resume su forma.
+Puedes descargarlo en \url{http://thinkpython2.com/code/structshape.py}
 
-Here's the result for a simple list:
+Aquí hay un resultado para una lista simple:
 
 \begin{verbatim}
 >>> from structshape import structshape
@@ -10147,8 +10147,8 @@ Here's the result for a simple list:
 'list of 3 int'
 \end{verbatim}
 %
-A fancier program might write ``list of 3 int{\em s}'', but it
-was easier not to deal with plurals.  Here's a list of lists:
+Un programa más elegante podría escribir ``list of 3 int{\em s}'', pero
+fue más fácil no lidiar con los prurales.  Aquí hay una lista de listas:
 
 \begin{verbatim}
 >>> t2 = [[1,2], [3,4], [5,6]]
@@ -10156,8 +10156,8 @@ was easier not to deal with plurals.  Here's a list of lists:
 'list of 3 list of 2 int'
 \end{verbatim}
 %
-If the elements of the list are not the same type,
-{\tt structshape} groups them, in order, by type:
+Si los elementos de la lista no son del mismo tipo,
+{\tt structshape} los agrupa, en orden, por tipo:
 
 \begin{verbatim}
 >>> t3 = [1, 2, 3, 4.0, '5', '6', [7], [8], 9]
@@ -10165,7 +10165,7 @@ If the elements of the list are not the same type,
 'list of (3 int, float, 2 str, 2 list of int, int)'
 \end{verbatim}
 %
-Here's a list of tuples:
+Aquí hay una lista de tuplas:
 
 \begin{verbatim}
 >>> s = 'abc'
@@ -10174,7 +10174,7 @@ Here's a list of tuples:
 'list of 3 tuple of (int, str)'
 \end{verbatim}
 %
-And here's a dictionary with 3 items that map integers to strings.
+Y aquí hay un diccionario con 3 ítems que mapean enteros a cadenas.
 
 \begin{verbatim}
 >>> d = dict(lt)
@@ -10182,79 +10182,79 @@ And here's a dictionary with 3 items that map integers to strings.
 'dict of 3 int->str'
 \end{verbatim}
 %
-If you are having trouble keeping track of your data structures,
-{\tt structshape} can help.
+Si tienes problemas al hacer seguimiento de tus estructuras de datos,
+{\tt structshape} puede ayudar.
 
 
-\section{Glossary}
+\section{Glosario}
 
 \begin{description}
 
-\item[tuple:] An immutable sequence of elements.
-\index{tuple}
+\item[tupla:] Una secuencia inmutable de elementos.
+\index{tupla}
 
-\item[tuple assignment:] An assignment with a sequence on the
-right side and a tuple of variables on the left.  The right
-side is evaluated and then its elements are assigned to the
-variables on the left.
-\index{tuple assignment}
-\index{assignment!tuple}
+\item[asignación de tupla:] Una asignación con una secuencia en el
+lado derecho y una tupla de variables en el lado izquierdo.  El lado
+derecho es evaluado y luego sus elementos son asignados a las
+variables en el lado izquierdo.
+\index{asignación de tupla}
+\index{tupla!asignación de}
 
-\item[gather:] An operation that collects multiple arguments into a tuple.
-\index{gather}
+\item[reunión:] Una operación que junta múltiples argumentos en una tupla.
+\index{reunión}
 
-\item[scatter:] An operation that makes a sequence behave like multiple arguments.
-\index{scatter}
+\item[dispersión:] Una operación que hace que una secuencia se comporte como múltiples argumentos.
+\index{dispersión}
 
-\item[zip object:] The result of calling a built-in function {\tt zip};
-an object that iterates through a sequence of tuples.
-\index{zip object}
-\index{object!zip}
+\item[objeto zip:] El resultado de llamar a la función incorporada {\tt zip};
+un objeto que itera a través de una secuencia de tuplas.
+\index{objeto zip}
+\index{zip!objeto}
 
-\item[iterator:] An object that can iterate through a sequence, but
-which does not provide list operators and methods.
-\index{iterator}
+\item[iterador:] Un objeto que itera a través de una secuencia, pero
+que no proporciona operadores ni métodos de lista.
+\index{iterador}
 
-\item[data structure:] A collection of related values, often
-organized in lists, dictionaries, tuples, etc.
-\index{data structure}
+\item[estructura de datos:] Una colección de valores relacionados, a menudo
+organizada en listas, diccionarios, tuplas, etc.
+\index{estructura de datos}
 
-\item[shape error:] An error caused because a value has the
-wrong shape; that is, the wrong type or size.
-\index{shape}
+\item[error de forma:] Un error causado porque un valor tiene la forma
+incorrecta; es decir, el tipo o tamaño incorrecto.
+\index{forma}
 
 \end{description}
 
 
-\section{Exercises}
+\section{Ejercicios}
 
 \begin{exercise}
 
-Write a function called \verb"most_frequent" that takes a string and
-prints the letters in decreasing order of frequency.  Find text
-samples from several different languages and see how letter frequency
-varies between languages.  Compare your results with the tables at
-\url{http://en.wikipedia.org/wiki/Letter_frequencies}.  Solution:
-\url{http://thinkpython2.com/code/most_frequent.py}.  \index{letter
-  frequency} \index{frequency!letter}
+Escribe una función llamada \verb"mas_frecuente" que tome una cadena e
+imprima las letras en orden de frecuencia descendente.  Encuentra ejemplos
+de texto en varios idiomas diferentes y ve cómo varía la frecuencia de letras
+entre los idiomas.  Compara tus resultados con las tablas en
+\url{http://en.wikipedia.org/wiki/Letter_frequencies}.  Solución:
+\url{http://thinkpython2.com/code/most_frequent.py}.  \index{frecuencia de
+  letras} \index{letras!frecuencia}
 
 \end{exercise}
 
 
 \begin{exercise}
-\label{anagrams}
-\index{anagram set}
-\index{set!anagram}
+\label{anagramas}
+\index{conjunto de anagramas}
+\index{anagramas!conjunto de}
 
-More anagrams!
+¡Más anagramas!
 
 \begin{enumerate}
 
-\item Write a program
-that reads a word list from a file (see Section~\ref{wordlist}) and
-prints all the sets of words that are anagrams.
+\item Escribe un programa
+que lea una lista de palabras desde un archivo (ver Sección~\ref{wordlist}) e
+imprima todos los conjuntos de palabras que son anagramas.
 
-Here is an example of what the output might look like:
+Aquí hay un ejemplo de cómo se vería la salida:
 
 \begin{verbatim}
 ['deltas', 'desalt', 'lasted', 'salted', 'slated', 'staled']
@@ -10263,38 +10263,38 @@ Here is an example of what the output might look like:
 ['resmelts', 'smelters', 'termless']
 \end{verbatim}
 %
-Hint: you might want to build a dictionary that maps from a
-collection of letters to a list of words that can be spelled with those
-letters.  The question is, how can you represent the collection of
-letters in a way that can be used as a key?
+Pista: quizás quieras construir un diccionario que mapee de una
+colección de letras a una lista de palabras que puedan escribir con esas
+letras.  La pregunta es, ¿cómo puedes representar la colección de
+letras de manera que se pueda usar como clave?
 
-\item Modify the previous program so that it prints the longest list
-of anagrams first, followed by the second longest, and so on.
+\item Modifica el programa anterior para que imprima la lista de anagramas
+más grande primero, seguido de la segunda más grande, y así sucesivamente.
 \index{Scrabble}
 \index{bingo}
 
-\item In Scrabble a ``bingo'' is when you play all seven tiles in
-your rack, along with a letter on the board, to form an eight-letter
-word.  What collection of 8 letters forms the most possible bingos?
+\item En Scrabble un ``bingo'' es cuando juegas todas las siete fichas en
+tu atril, junto con una letra en el tablero, para formar una palabra de ocho
+letras.  ¿Qué colección de 8 letras forma la mayor cantidad de bingos posible?
 
 % (7, ['angriest', 'astringe', 'ganister', 'gantries', 'granites',
 % 'ingrates', 'rangiest'])
 
-Solution: \url{http://thinkpython2.com/code/anagram_sets.py}.
+Solución: \url{http://thinkpython2.com/code/anagram_sets.py}.
 
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-\index{metathesis}
+\index{metátesis}
 
-Two words form a ``metathesis pair'' if you can transform one into the
-other by swapping two letters; for example, ``converse'' and
-``conserve''.  Write a program that finds all of the metathesis pairs
-in the dictionary.  Hint: don't test all pairs of words, and don't
-test all possible swaps.  Solution:
-\url{http://thinkpython2.com/code/metathesis.py}.  Credit: This
-exercise is inspired by an example at \url{http://puzzlers.org}.
+Dos palabras forman un ``par de metátesis'' si puedes transformar una en la
+otra intercambiando dos letras; por ejemplo, ``converse'' y
+``conserve''.  Escribe un programa que encuentre todos los pares de metátesis
+en el diccionario.  Pista: no pruebes todos los pares de palabras ni
+pruebes todos los posibles intercambios.  Solución:
+\url{http://thinkpython2.com/code/metathesis.py}.  Crédito: Este
+ejercicio está inspirado por un ejemplo de \url{http://puzzlers.org}.
 
 \end{exercise}
 
@@ -10303,58 +10303,58 @@ exercise is inspired by an example at \url{http://puzzlers.org}.
 \index{Car Talk}
 \index{Puzzler}
 
-Here's another Car Talk Puzzler
+Aquí hay otro Puzzler de Car Talk
 (\url{http://www.cartalk.com/content/puzzlers}):
 
 \begin{quote}
-What is the longest English word, that remains a valid English word,
-as you remove its letters one at a time?
+¿Cuál es la palabra en inglés más larga, que sigue siendo una palabra en inglés
+válida, a medida que eliminas sus letras una a la vez?
 
-Now, letters can be removed from either end, or the middle, but you
-can't rearrange any of the letters. Every time you drop a letter, you
-wind up with another English word. If you do that, you're eventually
-going to wind up with one letter and that too is going to be an
-English word---one that's found in the dictionary. I want to know
-what's the longest word and how many letters does it
-have?
+A ver, las letras se pueden eliminar desde cualquier extremo, o del medio, pero
+no puedes reorganizar ninguna de las letras. Cada vez que retiras una letra,
+terminas con otra palabra en inglés. Si haces eso, eventualmente
+vas a terminar con una letra y esa también va a ser una
+palabra en inglés---una que se encuentra en el diccionario. Quiero saber:
+¿cuál es la palabra más larga y cuantas letras
+tiene?
 
-I'm going to give you a little modest example: Sprite. Ok? You start
-off with sprite, you take a letter off, one from the interior of the
-word, take the r away, and we're left with the word spite, then we
-take the e off the end, we're left with spit, we take the s off, we're
-left with pit, it, and I.
+Voy a darte un pequeño ejemplo modesto: Sprite. ¿De acuerdo? Inicias
+con sprite, quitas una letra, una del interior de la
+palabra, te llevas la r, y nos quedamos con la palabra spite, luego
+quitamos la e del final, nos quedamos con spit, quitamos la s, nos
+quedamos con pit, it, y por último I.
 \end{quote}
-\index{reducible word}
-\index{word, reducible}
+\index{palabra reducible}
+\index{reducible, palabra}
 
-Write a program to find all words that can be reduced in this way,
-and then find the longest one.
+Escribe un programa que encuentre todas las palabras que se pueden reducir de
+esta manera, y luego encuentra la más larga.
 
-This exercise is a little more challenging than most, so here are
-some suggestions:
+Este ejercicio es más desafiante que la mayoría, así que aquí hay
+algunas sugerencias:
 
 \begin{enumerate}
 
-\item You might want to write a function that takes a word and
-  computes a list of all the words that can be formed by removing one
-  letter.  These are the ``children'' of the word.
-\index{recursive definition}
-\index{definition!recursive}
+\item Quizás quieras escribir una función que tome una palabra y
+  obtenga una lista de todas las palabras que se pueden formar eliminando una
+  letra.  Estas son las ``hijas'' de la palabra.
+\index{definición recursiva}
+\index{recursiva!definición}
 
-\item Recursively, a word is reducible if any of its children
-are reducible.  As a base case, you can consider the empty
-string reducible.
+\item De manera recursiva, una palabra es reducible si cualquiera de sus hijas
+son reducibles.  Como caso base, puedes considerar la cadena vacía
+reducible.
 
-\item The wordlist I provided, {\tt words.txt}, doesn't
-contain single letter words.  So you might want to add
-``I'', ``a'', and the empty string.
+\item La lista de palabras que dispongo, {\tt words.txt}, no
+contiene palabras de una sola letra.  Entonces quizás quieras agregar
+``I'', ``a'' y la cadena vacía.
 
-\item To improve the performance of your program, you might want
-to memoize the words that are known to be reducible.
+\item Para mejorar el desempeño de tu programa, quizás quieras
+memoizar las palabras que se sabe que son reducibles.
 
 \end{enumerate}
 
-Solution: \url{http://thinkpython2.com/code/reducible.py}.
+Solución: \url{http://thinkpython2.com/code/reducible.py}.
 
 \end{exercise}
 
