@@ -9947,15 +9947,15 @@ Nuevamente.
 \index{enumerate!objeto}
 
 
-\section{Dictionaries and tuples}
+\section{Diccionarios y tuplas}
 \label{dictuple}
-\index{dictionary}
-\index{items method}
-\index{method!items}
-\index{key-value pair}
+\index{diccionario}
+\index{método items}
+\index{items!método}
+\index{par clave-valor}
 
-Dictionaries have a method called {\tt items} that returns a sequence of
-tuples, where each tuple is a key-value pair.
+Los diccionarios tienen un método llamado {\tt items} que devuelve una secuencia de
+tuplas, donde cada tupla es un par clave-valor.
 
 \begin{verbatim}
 >>> d = {'a':0, 'b':1, 'c':2}
@@ -9964,25 +9964,25 @@ tuples, where each tuple is a key-value pair.
 dict_items([('c', 2), ('a', 0), ('b', 1)])
 \end{verbatim}
 %
-The result is a \verb"dict_items" object, which is an iterator that
-iterates the key-value pairs.  You can use it in a {\tt for} loop
-like this:
-\index{iterator}
+El resultado es un objeto \verb"dict_items", el cual es un iterador que
+itera los pares clave-valor.  Puedes usarlo en un bucle {\tt for}
+así:
+\index{iterador}
 
 \begin{verbatim}
->>> for key, value in d.items():
-...     print(key, value)
+>>> for clave, valor in d.items():
+...     print(clave, valor)
 ...
 c 2
 a 0
 b 1
 \end{verbatim}
 %
-As you should expect from a dictionary, the items are in no
-particular order.
+Tal como esperarías de un diccionario, los ítems no están en un
+orden particular.
 
-Going in the other direction, you can use a list of tuples to
-initialize a new dictionary: \index{dictionary!initialize}
+En sentido contrario, puedes usar una lista de tuplas para
+inicializar un nuevo diccionario: \index{diccionario!inicializar}
 
 \begin{verbatim}
 >>> t = [('a', 0), ('c', 2), ('b', 1)]
@@ -9991,9 +9991,9 @@ initialize a new dictionary: \index{dictionary!initialize}
 {'a': 0, 'c': 2, 'b': 1}
 \end{verbatim}
 
-Combining {\tt dict} with {\tt zip} yields a concise way
-to create a dictionary:
-\index{zip function!use with dict}
+Combinando {\tt dict} con {\tt zip} se produce una manera concisa
+de crear un diccionario:
+\index{función zip!usar con dict}
 
 \begin{verbatim}
 >>> d = dict(zip('abc', range(3)))
@@ -10001,118 +10001,118 @@ to create a dictionary:
 {'a': 0, 'c': 2, 'b': 1}
 \end{verbatim}
 %
-The dictionary method {\tt update} also takes a list of tuples
-and adds them, as key-value pairs, to an existing dictionary.
-\index{update method}
-\index{method!update}
-\index{traverse!dictionary}
-\index{dictionary!traversal}
+El método de diccionario {\tt update} además toma una lista de tuplas
+y las agrega, como pares clave-valor, a un diccionario existente.
+\index{método update}
+\index{update!método}
+\index{recorrido!diccionario}
+\index{diccionario!recorrido}
 
-It is common to use tuples as keys in dictionaries (primarily because
-you can't use lists).  For example, a telephone directory might map
-from last-name, first-name pairs to telephone numbers.  Assuming
-that we have defined {\tt last}, {\tt first} and {\tt number}, we
-could write:
-\index{tuple!as key in dictionary}
+Es común usar tuplas como claves en diccionarios (principalmente porque
+no puedes usar listas).  Por ejemplo, un directorio telefónico podría mapear
+de pares apellido, nombre a números telefónicos.  Suponiendo
+que hemos definido {\tt apellido}, {\tt nombre} y {\tt numero},
+podríamos escribir:
+\index{tupla!como clave en diccionario}
 \index{hashable}
 
 \begin{verbatim}
-directory[last, first] = number
+directorio[apellido, nombre] = numero
 \end{verbatim}
 %
-The expression in brackets is a tuple.  We could use tuple
-assignment to traverse this dictionary.
-\index{tuple!in brackets}
+La expresión en corchetes es una tupla.  Podríamos usar asignación
+de tupla para recorrer este diccionario.
+\index{tupla!en corchetes}
 
 \begin{verbatim}
-for last, first in directory:
-    print(first, last, directory[last,first])
+for apellido, nombre in directorio:
+    print(nombre, apellido, directorio[apellido,nombre])
 \end{verbatim}
 %
-This loop traverses the keys in {\tt directory}, which are tuples.  It
-assigns the elements of each tuple to {\tt last} and {\tt first}, then
-prints the name and corresponding telephone number.
+Este bucle recorre las claves en {\tt directorio}, las cuales son tuplas.  Asigna
+los elementos de cada tupla a {\tt apellido} y {\tt nombre}, luego
+imprime el nombre completo y el número telefónico correspondiente.
 
-There are two ways to represent tuples in a state diagram.  The more
-detailed version shows the indices and elements just as they appear in
-a list.  For example, the tuple \verb"('Cleese', 'John')" would appear
-as in Figure~\ref{fig.tuple1}.
-\index{state diagram}
-\index{diagram!state}
+Hay dos maneras de representar tuplas en diagrama de estado.  La versión
+más detallada muestra los índices y elementos tal como aparecen en
+una lista.  Por ejemplo, la tupla \verb"('Cleese', 'John')" se mostraía
+como en la Figura~\ref{fig.tuple1}.
+\index{diagrama de estado}
+\index{estado!diagrama de}
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/tuple1.pdf}}
-\caption{State diagram.}
+\caption{Diagrama de estado.}
 \label{fig.tuple1}
 \end{figure}
 
-But in a larger diagram you might want to leave out the
-details.  For example, a diagram of the telephone directory might
-appear as in Figure~\ref{fig.dict2}.
+Pero en un diagrama más grande quizás quieras omitir los
+detalles.  Por ejemplo, un diagrama del directorio telefónico podría
+mostrarse como en la Figura~\ref{fig.dict2}.
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/dict2.pdf}}
-\caption{State diagram.}
+\caption{Diagrama de estado.}
 \label{fig.dict2}
 \end{figure}
 
-Here the tuples are shown using Python syntax as a graphical
-shorthand.  The telephone number in the diagram is the complaints line
-for the BBC, so please don't call it.
+Aquí las tuplas se muestran usando la notación de la sintáxis de Python.
+El número de teléfono del diagrama es la línea de reclamos
+de la BBC, así que por favor no lo llames.
 
 
-\section{Sequences of sequences}
-\index{sequence}
+\section{Secuencias de secuencias}
+\index{secuencia}
 
-I have focused on lists of tuples, but almost all of the examples in
-this chapter also work with lists of lists, tuples of tuples, and
-tuples of lists.  To avoid enumerating the possible combinations, it
-is sometimes easier to talk about sequences of sequences.
+Me he enfocado en listas de tuplas, pero casi todos los ejemplos de
+este capítulo funcionan también con listas de listas, tuplas de tuplas y
+tuplas de listas.  Para evitar enumerar las posibles combinaciones, a veces
+es más fácil hablar de secuencias de secuencias.
 
-In many contexts, the different kinds of sequences (strings, lists and
-tuples) can be used interchangeably.  So how should you choose one
-over the others?
-\index{string}
-\index{list}
-\index{tuple}
-\index{mutability}
-\index{immutability}
+En muchos contextos, los diferentes tipos de secuencias (cadenas, listas y
+tuplas) se pueden usar indistintamente.  Entonces, ¿cómo deberías escoger uno
+sobre los otros?
+\index{cadena}
+\index{lista}
+\index{tupla}
+\index{mutabilidad}
+\index{inmutabilidad}
 
-To start with the obvious, strings are more limited than other
-sequences because the elements have to be characters.  They are
-also immutable.  If you need the ability to change the characters
-in a string (as opposed to creating a new string), you might
-want to use a list of characters instead.
+Para comenzar con lo obvio, las cadenas son más limitadas que otras
+secuencias porque los elementos tienen que ser caracteres.  Además
+son inmutables.  Si necesitas la posibilidad de cambiar los caracteres
+en una cadena (en contraposición a crear una nueva cadena), quizás quieras
+usar una lista de caracteres en su lugar.
 
-Lists are more common than tuples, mostly because they are mutable.
-But there are a few cases where you might prefer tuples:
+Las listas son más comunes que las tuplas, principalmente porque son mutables.
+Sin embargo, hay algunos casos donde podrías preferir tuplas:
 
 \begin{enumerate}
 
-\item In some contexts, like a {\tt return} statement, it is
-syntactically simpler to create a tuple than a list.
+\item En algunos contextos, como una sentencia {\tt return}, es
+sintácticamente más simple crear una tupla que una lista.
 
-\item If you want to use a sequence as a dictionary key, you
-have to use an immutable type like a tuple or string.
+\item Si quieres usar una secuencia como clave de diccionario,
+tienes que usar un tipo inmutable como una tupla o una cadena.
 
-\item If you are passing a sequence as an argument to a function,
-using tuples reduces the potential for unexpected behavior
-due to aliasing.
+\item Si pasas una secuencia como argumento a una función,
+usar tuplas reduce las posibilidades de comportamiento inesperado
+debido a los alias.
 
 \end{enumerate}
 
-Because tuples are immutable, they don't provide methods like {\tt
-  sort} and {\tt reverse}, which modify existing lists.  But Python
-provides the built-in function {\tt sorted}, which takes any sequence
-and returns a new list with the same elements in sorted order, and
-{\tt reversed}, which takes a sequence and returns an iterator that
-traverses the list in reverse order.
-\index{sorted function}
-\index{function!sorted} \index{reversed function}
-\index{function!reversed}
-\index{iterator}
+Dado que las tuplas son inmutables, no proporcionan métodos como {\tt
+  sort} y {\tt reverse}, los cuales modifican listas existentes.  Sin embargo, Python
+proporciona la función incorporada {\tt sorted}, la cual toma cualquier secuencia
+y devuelve una nueva lista con los mismos elementos en orden, y
+{\tt reversed}, que toma una secuencia y devuelve un iterador que
+recorre la lista en orden invertido.
+\index{función sorted}
+\index{sorted!función} \index{función reversed}
+\index{reversed!función}
+\index{iterador}
 
 
 \section{Debugging}
