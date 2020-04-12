@@ -996,7 +996,7 @@ como una letra o un número.  Algunos valores que hemos visto hasta ahora son
 
 Estos valores pertenecen a diferentes {\bf tipos}: {\tt 2} es un {\bf entero}
 (en inglés, {\em integer}), {\tt 42.0} es un {\bf número de coma flotante} (en
-inglés, {\em floating-point number}), y \verb"'Hello, World!'" es una {\bf
+inglés, {\em floating-point number}), y \verb"'¡Hola, Mundo!'" es una {\bf
 cadena} (en inglés, {\em string}), llamada así porque las letras que contiene están unidas.
 \index{entero}
 \index{coma flotante}
@@ -10490,7 +10490,7 @@ aquí en adelante).
 
 La función {\tt random} devuelve un número de coma flotante aleatorio
 entre 0.0 y 1.0 (incluyendo 0.0 pero no 1.0).  Cada vez que
-llamas a {\tt random}, obtienes el siguiente número en de una larga serie.
+llamas a {\tt random}, obtienes el siguiente número de una larga serie.
 Para ver una muestra, ejecuta este bucle:
 
 \begin{verbatim}
@@ -10587,91 +10587,91 @@ Este programa lee {\tt emma.txt}, el cual contiene el texto de {\em
   Emma} de Jane Austen.
 \index{Austen, Jane}
 
-\verb"process_file" loops through the lines of the file,
-passing them one at a time to \verb"process_line".  The histogram
-{\tt hist} is being used as an accumulator.
-\index{accumulator!histogram}
-\index{traversal}
+\verb"procesar_archivo" recorre las líneas del archivo,
+pasándolas una a la vez a \verb"procesar_linea".  El histograma
+{\tt hist} se usa como acumulador.
+\index{acumulador!histograma}
+\index{recorrido}
 
-\verb"process_line" uses the string method {\tt replace} to replace
-hyphens with spaces before using {\tt split} to break the line into a
-list of strings.  It traverses the list of words and uses {\tt strip}
-and {\tt lower} to remove punctuation and convert to lower case.  (It
-is a shorthand to say that strings are ``converted''; remember that
-strings are immutable, so methods like {\tt strip} and {\tt lower}
-return new strings.)
+\verb"procesar_linea" usa el método de cadena {\tt replace} para reemplazar
+los guiones con espacios antes de usar {\tt split} para separar la línea en una
+lista de cadenas.  Recorre la lista de palabras y usa {\tt strip}
+y {\tt lower} para eliminar la puntuación y convertir a minúsculas.  (Es
+una abreviatura decir que las cadenas se ``convierten''; recuerda que
+las cadenas son inmutables, por lo que los métodos como {\tt strip} y {\tt lower}
+devuelven cadenas nuevas.)
 
-Finally, \verb"process_line" updates the histogram by creating a new
-item or incrementing an existing one.
-\index{update!histogram}
+Finalmente, \verb"procesar_linea" actualiza el histograma creando un nuevo
+ítem o incrementando una existente.
+\index{actualizar!histograma}
 
-To count the total number of words in the file, we can add up
-the frequencies in the histogram:
+Para contar el número total de palabras en el archivo, podemos sumar
+las frecuencias del histograma:
 
 \begin{verbatim}
-def total_words(hist):
+def total_palabras(hist):
     return sum(hist.values())
 \end{verbatim}
 %
-The number of different words is just the number of items in
-the dictionary:
+El número de palabras diferentes es solo el número de ítems en
+el diccionario:
 
 \begin{verbatim}
-def different_words(hist):
+def palabras_diferentes(hist):
     return len(hist)
 \end{verbatim}
 %
-Here is some code to print the results:
+Aquí hay algo de código para imprimir los resultados:
 
 \begin{verbatim}
-print('Total number of words:', total_words(hist))
-print('Number of different words:', different_words(hist))
+print('Número total de palabras:', total_palabras(hist))
+print('Número de palabras diferentes:', palabras_diferentes(hist))
 \end{verbatim}
 %
-And the results:
+Y los resultados:
 
 \begin{verbatim}
-Total number of words: 161080
-Number of different words: 7214
+Número total de palabras: 161080
+Número de palabras diferentes: 7214
 \end{verbatim}
 %
 
-\section{Most common words}
+\section{Palabras más comunes}
 
-To find the most common words, we can make a list of tuples,
-where each tuple contains a word and its frequency,
-and sort it.
+Para encontrar las palabras más comunes, podemos hacer una lista de tuplas,
+donde cada tupla contenga una palabra y su frecuencia,
+y ordenarla.
 
-The following function takes a histogram and returns a list of
-word-frequency tuples:
+La siguiente función toma un histograma y devuelve una lista de
+tuplas palabra-frecuencia:
 
 \begin{verbatim}
-def most_common(hist):
+def mas_comunes(hist):
     t = []
-    for key, value in hist.items():
-        t.append((value, key))
+    for clave, valor in hist.items():
+        t.append((valor, clave))
 
     t.sort(reverse=True)
     return t
 \end{verbatim}
 
-In each tuple, the frequency appears first, so the resulting list is
-sorted by frequency.  Here is a loop that prints the ten most common
-words:
+En cada tupla, la frecuencia aparece primero, por lo que la lista resultante es
+ordenada por frecuencia.  Aquí hay un bucle que imprime las diez palabras más
+comunes:
 
 \begin{verbatim}
-t = most_common(hist)
-print('The most common words are:')
-for freq, word in t[:10]:
-    print(word, freq, sep='\t')
+t = mas_comunes(hist)
+print('Las palabras más comunes son:')
+for frecuencia, palabra in t[:10]:
+    print(palabra, frecuencia, sep='\t')
 \end{verbatim}
 %
-I use the keyword argument {\tt sep} to tell {\tt print} to use a tab
-character as a ``separator'', rather than a space, so the second
-column is lined up.  Here are the results from {\em Emma}:
+Yo uso el argumento de palabra clave {\tt sep} para decirle a {\tt print} que use un
+carácter de tabulación como ``separador'', en lugar de un espacio, así la segunda
+columna está alineada.  Aquí están los resultados de {\em Emma}:
 
 \begin{verbatim}
-The most common words are:
+Las palabras más comunes son:
 to      5242
 the     5205
 and     4897
@@ -10684,150 +10684,150 @@ was     2400
 she     2364
 \end{verbatim}
 %
-This code can be simplified using the {\tt key} parameter of
-the {\tt sort} function.  If you are curious, you can read about it
-at \url{https://wiki.python.org/moin/HowTo/Sorting}.
+Este código se puede simplificar usando el parámetro {\tt key} de
+la función {\tt sort}.  Si eres curioso, puedes leer sobre este
+en \url{https://wiki.python.org/moin/HowTo/Sorting}.
 
 
-\section{Optional parameters}
-\index{optional parameter}
-\index{parameter!optional}
+\section{Parámetros opcionales}
+\index{parámetro opcional}
+\index{opcional!parámetro}
 
-We have seen built-in functions and methods that take optional
-arguments.  It is possible to write programmer-defined functions
-with optional arguments, too.  For example, here is a function that
-prints the most common words in a histogram
+Hemos visto funciones y métodos que toman argumentos
+opcionales.  Es posible, además, escribir funciones definidas por el programador
+con argumentos opcionales.  Por ejemplo, aquí hay una función que
+imprime las palabras más comunes en un histograma
 \index{programmer-defined function}
 \index{function!programmer defined}
 
 \begin{verbatim}
-def print_most_common(hist, num=10):
-    t = most_common(hist)
-    print('The most common words are:')
-    for freq, word in t[:num]:
-        print(word, freq, sep='\t')
+def imprime_mas_comunes(hist, num=10):
+    t = mas_comunes(hist)
+    print('Las palabras más comunes son:')
+    for frecuencia, palabra in t[:num]:
+        print(palabra, frecuencia, sep='\t')
 \end{verbatim}
 
-The first parameter is required; the second is optional.
-The {\bf default value} of {\tt num} is 10.
-\index{default value}
-\index{value!default}
+El primer parámetro es obligatorio; el segundo es opcional.
+El {\bf valor por defecto} de {\tt num} es 10.
+\index{valor por defecto}
+\index{por defecto!valor}
 
-If you only provide one argument:
+Si solo entregas un argumento:
 
 \begin{verbatim}
-print_most_common(hist)
+imprimir_mas_comunes(hist)
 \end{verbatim}
 
-{\tt num} gets the default value.  If you provide two arguments:
+{\tt num} obtiene el valor por defecto.  Si entregas dos argumentos:
 
 \begin{verbatim}
-print_most_common(hist, 20)
+imprimir_mas_comunes(hist, 20)
 \end{verbatim}
 
-{\tt num} gets the value of the argument instead.  In other
-words, the optional argument {\bf overrides} the default value.
-\index{override}
+{\tt num} obtiene el valor del argumento en su lugar.  En otras
+palabras, el argumento opcional {\bf anula} al valor por defecto.
+\index{anular}
 
-If a function has both required and optional parameters, all
-the required parameters have to come first, followed by the
-optional ones.
+Si una función tiene parámetros tanto obligatorios como opcionales, todos
+los parámetros obligatorios tienen que ir primero, seguido por los
+opcionales.
 
 
-\section{Dictionary subtraction}
+\section{Diferencia de diccionarios}
 \label{dictsub}
-\index{dictionary!subtraction}
-\index{subtraction!dictionary}
+\index{diccionario!diferencia}
+\index{diferencia!diccionario}
 
-Finding the words from the book that are not in the word list
-from {\tt words.txt} is a problem you might recognize as set
-subtraction; that is, we want to find all the words from one
-set (the words in the book) that are not in the other (the
-words in the list).
+Encontrar las palabras del libro que no están en la lista de palabras
+de {\tt words.txt} es un problema que podrías reconocer como diferencia
+de conjuntos; es decir, queremos encontrar todas las palabras de un
+conjunto (las palabras en el libro) que no están en el otro (las
+palabras en la lista).
 
-{\tt subtract} takes dictionaries {\tt d1} and {\tt d2} and returns a
-new dictionary that contains all the keys from {\tt d1} that are not
-in {\tt d2}.  Since we don't really care about the values, we
-set them all to None.
+{\tt diferencia} toma dos diccionarios {\tt d1} y {\tt d2} y devuelve un
+nuevo diccionario que contiene todas las claves de {\tt d1} que no están
+en {\tt d2}.  Dado que en realidad no nos importan los valores,
+los ponemos todos como None.
 
 \begin{verbatim}
-def subtract(d1, d2):
+def diferencia(d1, d2):
     res = dict()
-    for key in d1:
-        if key not in d2:
-            res[key] = None
+    for clave in d1:
+        if clave not in d2:
+            res[clave] = None
     return res
 \end{verbatim}
 %
-To find the words in the book that are not in {\tt words.txt},
-we can use \verb"process_file" to build a histogram for
-{\tt words.txt}, and then subtract:
+Para encontrar las palabras en el libro que no están en {\tt words.txt},
+podemos usar \verb"procesar_archivo" para construir un histograma para
+{\tt words.txt}, y luego obtener la diferencia:
 
 \begin{verbatim}
-words = process_file('words.txt')
-diff = subtract(hist, words)
+palabras = procesar_archivo('words.txt')
+dif = diferencia(hist, palabras)
 
-print("Words in the book that aren't in the word list:")
-for word in diff:
-    print(word, end=' ')
+print("Palabras en el libro que no están en la lista de palabras:")
+for palabra in dif:
+    print(palabra, end=' ')
 \end{verbatim}
 %
-Here are some of the results from {\em Emma}:
+Aquí hay algunos de los resultados para {\em Emma}:
 
 \begin{verbatim}
-Words in the book that aren't in the word list:
+Palabras en el libro que no están en la lista de palabras:
 rencontre jane's blanche woodhouses disingenuousness
 friend's venice apartment ...
 \end{verbatim}
 %
-Some of these words are names and possessives.  Others, like
-``rencontre'', are no longer in common use.  But a few are common
-words that should really be in the list!
+Algunas de esas palabras son nombres y posesivos.  Otros, como
+``rencontre'', ya no son de uso común.  Sin embargo, ¡algunas son
+palabras comunes que realmente deberían estar en la lista!
 
 \begin{exercise}
-\index{set}
-\index{type!set}
+\index{conjunto}\index{set}
+\index{tipo!set}
 
-Python provides a data structure called {\tt set} that provides many
-common set operations.  You can read about them in Section~\ref{sets},
-or read the documentation at
+Python proporciona una estructura de datos llamada {\tt set} que provee muchas
+operaciones de conjunto comunes.  Puedes leer sobre estas en la Sección~\ref{sets},
+o leer la documentación en
 \url{http://docs.python.org/3/library/stdtypes.html#types-set}.
 
-Write a program that uses set subtraction to find words in the book
-that are not in the word list.  Solution:
+Escribe un programa que use diferencia de conjuntos para encontrar palabras en el libro
+que no están en la lista.  Solución:
 \url{http://thinkpython2.com/code/analyze_book2.py}.
 
 \end{exercise}
 
 
-\section{Random words}
+\section{Palabras aleatorias}
 \label{randomwords}
-\index{histogram!random choice}
+\index{histograma!elección aleatoria}
 
-To choose a random word from the histogram, the simplest algorithm
-is to build a list with multiple copies of each word, according
-to the observed frequency, and then choose from the list:
+Para escoger una palabra de forma aleatoria del histograma, el algoritmo más simple
+es construie una lista con múltiples copias de cada palabra, según
+la frecuencia observada, y luego escoger de la lista:
 
 \begin{verbatim}
-def random_word(h):
+def palabra_aleatoria(h):
     t = []
-    for word, freq in h.items():
-        t.extend([word] * freq)
+    for palabra, frecuencia in h.items():
+        t.extend([palabra] * frecuencia)
 
     return random.choice(t)
 \end{verbatim}
 %
-The expression {\tt [word] * freq} creates a list with {\tt freq}
-copies of the string {\tt word}.  The {\tt extend}
-method is similar to {\tt append} except that the argument is
-a sequence.
+La expresión {\tt [palabra] * frecuencia} crea una lista con {\tt frecuencia}
+copias de la cadena {\tt palabra}.  El método {\tt extend}
+es similar a {\tt append} excepto que el argumento es
+una secuencia.
 
-This algorithm works, but it is not very efficient; each time you
-choose a random word, it rebuilds the list, which is as big as
-the original book.  An obvious improvement is to build the list
-once and then make multiple selections, but the list is still big.
+Este algoritmo funciona, pero no es muy eficiente; cada vez que
+escoges una palabra aleatoria, reconstruye la lista, la cual es tan grande como
+el libro original.  Una mejora obvio es construir la lista
+una vez y luego hacer múltiples selecciones, pero la lista es grande aún.
 
-An alternative is:
+Una alternativa es:
 
 \begin{enumerate}
 
