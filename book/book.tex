@@ -8463,7 +8463,7 @@ puedes leer en \url{http://es.wikipedia.org/wiki/Paradoja_del_cumpleaños}.
 Si hay 23 estudiantes en tu clase, ¿cuáles son las posibilidades
 de que dos de ustedes tengan el mismo cumpleaños?  Puedes estimar esta
 probabilidad generando muestras al azar de 23 cumpleaños
-y verificar coincidencias.  Pista: puedes generar cumpleaños al azar
+y verificar coincidencias.  Pista: puedes generar cumpleaños aleatorio
 con la función {\tt randint} del módulo {\tt random}.
 \index{módulo random}
 \index{random!módulo}
@@ -10831,54 +10831,54 @@ Una alternativa es:
 
 \begin{enumerate}
 
-\item Use {\tt keys} to get a list of the words in the book.
+\item Usar {\tt keys} para obtener una lista de las palabras del libro.
 
-\item Build a list that contains the cumulative sum of the word
-  frequencies (see Exercise~\ref{cumulative}).  The last item
-  in this list is the total number of words in the book, $n$.
+\item Construir una lista que contenga la suma acumulativa de las frecuencias
+  de las palabras (ver Ejercicio~\ref{cumulative}).  El último ítem
+  es esta lista es el número total de palabras en el libro, $n$.
 
-\item Choose a random number from 1 to $n$.  Use a bisection search
-  (See Exercise~\ref{bisection}) to find the index where the random
-  number would be inserted in the cumulative sum.
+\item Escoger un número de 1 a $n$.  Usar búsqueda de bisección
+  (ver Ejercicio~\ref{bisection}) para encontrar el índice donde el número
+  aleatorio sería insertado en la suma acumulativa.
 
-\item Use the index to find the corresponding word in the word list.
+\item Usar el índice para encontrar la palabra correspondiente en la lista de palabras.
 
 \end{enumerate}
 
 \begin{exercise}
 \label{randhist}
-\index{algorithm}
+\index{algoritmo}
 
-Write a program that uses this algorithm to choose a random word from
-the book.  Solution:
+Escribe un programa que use este algoritmo para escoger una palabra aleatoria del
+libro.  Solución:
 \url{http://thinkpython2.com/code/analyze_book3.py}.
 
 \end{exercise}
 
 
 
-\section{Markov analysis}
+\section{Análisis de Markov}
 \label{markov}
-\index{Markov analysis}
+\index{Análisis de Markov}
 
-If you choose words from the book at random, you can get a
-sense of the vocabulary, but you probably won't get a sentence:
+Si escoges palabras del libro de manera aleatoria, puedes obtener una
+idea del vocabulario, pero probablemente no obtendrás una oración:
 
 \begin{verbatim}
 this the small regard harriet which knightley's it most things
 \end{verbatim}
 %
-A series of random words seldom makes sense because there
-is no relationship between successive words.  For example, in
-a real sentence you would expect an article like ``the'' to
-be followed by an adjective or a noun, and probably not a verb
-or adverb.
+Una serie de palabras aleatorias rara vez tiene sentido porque
+no hay relación entre palabras sucesivas.  Por ejemplo, en
+una oración real esperarías que un artículo como ``the'' esté
+seguida por un adjetivo o un sustantivo, y probablemente no un verbo
+o un adverbio.
 
-One way to measure these kinds of relationships is Markov
-analysis, which
-characterizes, for a given sequence of words, the probability of the
-words that might come next.  For example, the song {\em Eric, the Half a
-  Bee} begins:
+Una manera de medir estas relaciones es el análisis de
+Markov, que
+caracteriza, para una secuencia de palabras dada, la probabilidad de las
+palabras que podrían venir después.  Por ejemplo, la canción {\em Eric, the Half a
+  Bee} comienza:
 
 \begin{quote}
 Half a bee, philosophically, \\
@@ -10892,50 +10892,50 @@ When half the bee is not a bee \\
 Due to some ancient injury? \\
 \end{quote}
 %
-In this text,
-the phrase ``half the'' is always followed by the word ``bee'',
-but the phrase ``the bee'' might be followed by either
-``has'' or ``is''.
-\index{prefix}
-\index{suffix}
-\index{mapping}
+En este texto,
+la frase ``half the'' está siempre seguida por la palabra ``bee'',
+pero la frase ``the bee'' podria estar seguida por
+``has'' o ``is''.
+\index{prefijo}
+\index{sufijo}
+\index{mapeo}
 
-The result of Markov analysis is a mapping from each prefix
-(like ``half the'' and ``the bee'') to all possible suffixes
-(like ``has'' and ``is'').
-\index{random text}
-\index{text!random}
+El resultado del análisis de Markov es un mapeo de cada prefijo
+(como ``half the'' y ``the bee'') a todos los posibles sufijos
+(como ``has'' y ``is'').
+\index{texto aleatorio}
+\index{aleatorio!texto}
 
-Given this mapping, you can generate a random text by
-starting with any prefix and choosing at random from the
-possible suffixes.  Next, you can combine the end of the
-prefix and the new suffix to form the next prefix, and repeat.
+Dado este mapeo, puedes generar un texto aleatorio
+comenzando con cualquier prefijo y escogieno de manera aleatoria
+en los posibles sufijos.  Después, puedes combinar el final del
+prefijo y el nuevo sufijo para formar el nuevo prefijo, y repetir.
 
-For example, if you start with the prefix ``Half a'', then the
-next word has to be ``bee'', because the prefix only appears
-once in the text.  The next prefix is ``a bee'', so the
-next suffix might be ``philosophically'', ``be'' or ``due''.
+Por ejemplo, si comienzas con el prefijo ``Half a'', entonces la
+siguiente palabra tiene que ser ``bee'', porque el prefijo solo aparece
+una vez en el texto.  El siguiente prefijo es ``a bee'', por lo que el
+siguiente sufijo podría ser ``philosophically'', ``be'' o ``due''.
 
-In this example the length of the prefix is always two, but
-you can do Markov analysis with any prefix length.
+En este ejemplo la longitud del prefijo es siempre dos, pero
+puedes hacer análisis de Markov con cualquier longitud de prefijo.
 
 \begin{exercise}
 
-Markov analysis:
+Análisis de Markov:
 
 \begin{enumerate}
 
-\item Write a program to read a text from a file and perform Markov
-analysis.  The result should be a dictionary that maps from
-prefixes to a collection of possible suffixes.  The collection
-might be a list, tuple, or dictionary; it is up to you to make
-an appropriate choice.  You can test your program with prefix
-length two, but you should write the program in a way that makes
-it easy to try other lengths.
+\item Escribe un programa que lea un texto desde un archivo y realice análisis
+de Markov.  El resultado podría ser un diccionario que mapee de
+prefijos a una colección de posibles sufijos.  La colección
+podría ser una lista, tupla o diccionario; depende de ti hacer
+una elección apropiada.  Puedes probar tu programa con prefijo
+de largo dos, pero podrías escribir el programa de una manera en que resulte
+fácil intentar otras longitudes.
 
-\item Add a function to the previous program to generate random text
-based on the Markov analysis.  Here is an example from {\em Emma}
-with prefix length 2:
+\item Agrega una función al programa anterior que genere texto aleatorio
+basado en el análisis de Markov.  Aquí hay un ejemplo de {\em Emma}
+con prefijo de largo 2:
 
 \begin{quote}
 He was very clever, be it sweetness or be angry, ashamed or only
@@ -10944,278 +10944,278 @@ were never meant for me?" "I cannot make speeches, Emma:" he soon cut
 it all himself.
 \end{quote}
 
-For this example, I left the punctuation attached to the words.
-The result is almost syntactically correct, but not quite.
-Semantically, it almost makes sense, but not quite.
+Para este ejemplo, dejé la puntuación unida a las palabras.
+El resultado es casi sintácticamente correcto, pero no del todo.
+Semánticamente, casi tiene sentido, pero no del todo.
 
-What happens if you increase the prefix length?  Does the random
-text make more sense?
+¿Qué ocurre si aumentas la longitud del prefijo?  ¿Tiene más sentido
+el texto aleatorio?
 
-\item Once your program is working, you might want to try a mash-up:
-if you combine text from two or more books, the random
-text you generate will blend the vocabulary and phrases from
-the sources in interesting ways.
+\item Una vez que tu programa funcione, quizás quieras intentar un mash-up:
+si combinas texto de dos o más libros, el texto aleatorio
+que generes mezclará el vocabulario y las frases de
+las fuentes de maneras interesantes.
 \index{mash-up}
 
 \end{enumerate}
 
-Credit: This case study is based on an example from Kernighan and
+Crédito: Este estudio de caso está basado en un ejemplo de Kernighan and
 Pike, {\em The Practice of Programming}, Addison-Wesley, 1999.
 
 \end{exercise}
 
-You should attempt this exercise before you go on; then you can
-download my solution from \url{http://thinkpython2.com/code/markov.py}.
-You will also need \url{http://thinkpython2.com/code/emma.txt}.
+Deberías intenras este ejercicio antes de continuar; luego puedes
+descargar mi solución en \url{http://thinkpython2.com/code/markov.py}.
+Además necesitarás \url{http://thinkpython2.com/code/emma.txt}.
 
 
-\section{Data structures}
-\index{data structure}
+\section{Estructuras de datos}
+\index{estructuras de datos}
 
-Using Markov analysis to generate random text is fun, but there is
-also a point to this exercise: data structure selection.  In your
-solution to the previous exercises, you had to choose:
+Usar análisis de Markov para generar texto aleatorio es divertido, pero también
+hay un punto en este ejercicio: selección de estructura de datos.  En tu
+solución al ejercicio anterior, tuviste que escoger:
 
 \begin{itemize}
 
-\item How to represent the prefixes.
+\item Cómo representar los prefijos.
 
-\item How to represent the collection of possible suffixes.
+\item Cómo representar la colección de posibles sufijos.
 
-\item How to represent the mapping from each prefix to
-the collection of possible suffixes.
+\item Cómo representar el mapeo de cada prefijo a
+la colección de posibles sufijos.
 
 \end{itemize}
 
-The last one is easy: a dictionary is the obvious choice
-for a mapping from keys to corresponding values.
+El último es fácil: un diccionario es la elección obvia
+para mapear de claves a valores correspondientes.
 
-For the prefixes, the most obvious options are string,
-list of strings, or tuple of strings.
+Para los prefijos, las opciones más obvias son cadenas,
+lista de cadenas o tupla de cadenas.
 
-For the suffixes,
-one option is a list; another is a histogram (dictionary).
-\index{implementation}
+Para los sufijos,
+una opción es una lista; otra es un histograma (diccionario).
+\index{implementación}
 
-How should you choose?  The first step is to think about
-the operations you will need to implement for each data structure.
-For the prefixes, we need to be able to remove words from
-the beginning and add to the end.  For example, if the current
-prefix is ``Half a'', and the next word is ``bee'', you need
-to be able to form the next prefix, ``a bee''.
-\index{tuple!as key in dictionary}
+¿Cómo deberías escoger?  El primero paso es pensar en
+las operaciones que necesitarás implementar para cada esturcura de datos.
+Para prefijos, necesitamos poder eliminar palabras del
+principio y agregar al final.  Por ejemplo, si el prefijo actual
+es ``Half a'', y la siguiente palabra es ``bee'', necesitas
+poder formar el siguiente prefijo, ``a bee''.
+\index{tupla!como clave en diccionario}
 
-Your first choice might be a list, since it is easy to add
-and remove elements, but we also need to be able to use the
-prefixes as keys in a dictionary, so that rules out lists.
-With tuples, you can't append or remove, but you can use
-the addition operator to form a new tuple:
+Tu primera elección podría ser una lista, dado que es fácil agregar y
+eliminar elementos, pero también necesitamos poder usar los
+prefijos y claves en un diccionario, así que eso descarta las listas.
+Con las tuplas, no puedes anexar o eliminar, pero puedes usar
+el operador suma para formar una nueva tupla:
 
 \begin{verbatim}
-def shift(prefix, word):
-    return prefix[1:] + (word,)
+def cambiar(prefijo, palabra):
+    return prefijo[1:] + (palabra,)
 \end{verbatim}
 %
-{\tt shift} takes a tuple of words, {\tt prefix}, and a string,
-{\tt word}, and forms a new tuple that has all the words
-in {\tt prefix} except the first, and {\tt word} added to
-the end.
+{\tt cambiar} toma una tupla de palabras, {\tt prefijo}, y una cadena,
+{\tt palabra}, y forma una nueva tupla que tiene todas las palabras
+en {\tt prefijo} excepto la primera, y {\tt palabra} agregada al
+final.
 
-For the collection of suffixes, the operations we need to
-perform include adding a new suffix (or increasing the frequency
-of an existing one), and choosing a random suffix.
+Para la colección de sufijos, las operaciones que necesitamos
+realizar incluyen agregar un nuevo sufijo (o aumentar la frecuencia
+de uno existente) y escoger un sufijo aleatorio.
 
-Adding a new suffix is equally easy for the list implementation
-or the histogram.  Choosing a random element from a list
-is easy; choosing from a histogram is harder to do
-efficiently (see Exercise~\ref{randhist}).
+Agregar un nuevo sufijo es igual de fácil para la implementación de lista
+o el histograma.  Escoger un elemento aleatorio de una lista
+es fácil; escoger del histograma es más díficil de hacer 
+de manera eficiente (ver Ejercicio~\ref{randhist}).
 
-So far we have been talking mostly about ease of implementation,
-but there are other factors to consider in choosing data structures.
-One is run time.  Sometimes there is a theoretical reason to expect
-one data structure to be faster than other; for example, I mentioned
-that the {\tt in} operator is faster for dictionaries than for lists,
-at least when the number of elements is large.
+Hasta ahora hemos estado hablando principalmente sobre la facilidad de la implementación,
+pero hay otros factores a considerar al escoger estructuras de datos.
+Uno es el tiempo de ejecución.  A veces hay una razón teórica para esperar
+que una estructura de datos sea más rápida que otra; por ejemplo, mencioné
+que el operador {\tt in} es más rápido para diccionarios que para listas,
+al menos cuando el número de elementos es grande.
 
-But often you don't know ahead of time which implementation will
-be faster.  One option is to implement both of them and see which
-is better.  This approach is called {\bf benchmarking}.  A practical
-alternative is to choose the data structure that is
-easiest to implement, and then see if it is fast enough for the
-intended application.  If so, there is no need to go on.  If not,
-there are tools, like the {\tt profile} module, that can identify
-the places in a program that take the most time.
-\index{benchmarking}
-\index{profile module}
-\index{module!profile}
+Sin embargo, a menudo no sabes de antemano cuál implementación
+será más rápida.  Una opción es implementar ambas y ver cuál
+es mejor.  Este enfoque se llama {\bf evaluación comparativa} (en inglés, {\em benchmarking}).
+Una alternativa práctica es escoger la estructura de datos que sea
+la más fácil de implementar, y luego ver si es lo suficientemente rápida para
+la aplicación en cuestión.  Si es así, no hay necesidad de seguir.  Si no,
+hay herramientas, como el módulo {\tt profile}, que puede identificar
+los lugares en un programa que toman la mayor parte del tiempo.
+\index{evaluación comparativa}\index{benchmarking}
+\index{módulo profile}
+\index{profile!módulo}
 
-The other factor to consider is storage space.  For example, using a
-histogram for the collection of suffixes might take less space because
-you only have to store each word once, no matter how many times it
-appears in the text.  In some cases, saving space can also make your
-program run faster, and in the extreme, your program might not run at
-all if you run out of memory.  But for many applications, space is a
-secondary consideration after run time.
+El otro factor a considerar es el espacio de almacenamiento.  Por ejemplo, usar un
+histograma para la colección de sufijos podría ocupar menos espacio porque
+solo tienes que almacenar cada palabra una vez, sin importar cuántas veces
+aparezca en el texto.  En algunos casos, ahorrar espacio puede también hacer que tu
+programa se ejecute más rápido, y en el caso extremo, tu programa podría no ejecutarse
+en absoluto si te quedas sin memoria.  Sin embargo, para muchas aplicaciones el espacio es
+una consideración secundaria después del tiempo de ejecución.
 
-One final thought: in this discussion, I have implied that
-we should use one data structure for both analysis and generation.  But
-since these are separate phases, it would also be possible to use one
-structure for analysis and then convert to another structure for
-generation.  This would be a net win if the time saved during
-generation exceeded the time spent in conversion.
+Una útlima reflexión: en esta discusión, he insinuado que
+deberíamos usar una estructura de datos tanto para el análisis como para la generación.
+Pero dado que estas son fases separadas, sería posible también usar una
+estructura para el análisis y luego convertirla a otra estructura para
+la generación.  Esto sería una ganancia neta si el tiempo ahorrado durante
+la generación excediera al tiempo ocupado en la conversión.
 
 
-\section{Debugging}
-\index{debugging}
+\section{Depuración}
+\index{depuración}
 
-When you are debugging a program, and especially if you are
-working on a hard bug, there are five things to try:
+Cuando estés depurando un programa, y especialmente si estás
+trabajando en un error de programación difícil, hay cinco cosas para probar:
 
 \begin{description}
 
-\item[Reading:] Examine your code, read it back to yourself, and
-check that it says what you meant to say.
+\item[Lectura:] Examina tu código, léelo de nuevo a ti mismo y
+verifica que dice lo que querías decir.
 
-\item[Running:] Experiment by making changes and running different
-versions.  Often if you display the right thing at the right place
-in the program, the problem becomes obvious, but sometimes you have to
-build scaffolding.
+\item[Ejecución:] Experimenta haciendo cambios y ejecutando versiones
+diferentes.  A menudo, si muestras en pantalla lo correcto en el lugar correcto
+del programa, el problema de vuelve obvio, pero a veces tienes que
+construir andamiaje.
 
-\item[Ruminating:] Take some time to think!  What kind of error
-is it: syntax, runtime, or semantic?  What information can you get from
-the error messages, or from the output of the program?  What kind of
-error could cause the problem you're seeing?  What did you change
-last, before the problem appeared?
+\item[Rumiación:] ¡Tómate un tiempo para pensar!  ¿Que tipo de error
+es: de sintaxis, de tiempo de ejecución o semántico?  ¿Qué información puedes obtener a partir
+de los mensajes de error o de la salida del programa?  ¿Qué tipo de
+error podría causar el problema que estás viendo?  ¿Qué cambiaste
+últimamente, antes de que el problema apareciera?
 
-\item[Rubberducking:] If you explain the problem to someone else, you
-  sometimes find the answer before you finish asking the question.
-  Often you don't need the other person; you could just talk to a rubber
-  duck.  And that's the origin of the well-known strategy called {\bf
-    rubber duck debugging}.  I am not making this up; see
-  \url{https://en.wikipedia.org/wiki/Rubber_duck_debugging}.
+\item[Patito de goma:] Si le explicas el problema a alguien más,
+  a veces encuentras la respuesta antes de terminar la pregunta.
+  A menudo no necesitas a la otra persona; podrías simplemente hablarle a un
+  patito de goma.  Y ese es el origen de la conocida estrategia llamada {\bf
+  método de depuración del patito de goma} (en inglés, {\em rubber duck debugging}).
+  No estoy inventando; ver \url{https://en.wikipedia.org/wiki/Rubber_duck_debugging}.
 
-\item[Retreating:] At some point, the best thing to do is back
-off, undoing recent changes, until you get back to a program that
-works and that you understand.  Then you can start rebuilding.
+\item[Retroceso:] En algún punto, lo mejor que se puede hacer es
+retroceder, deshacer los cambios recientes, hasta que regreses a un programa que
+funcione y que entiendas.  Luego puedes comenzar a reconstruir.
 
 \end{description}
 
-Beginning programmers sometimes get stuck on one of these activities
-and forget the others.  Each activity comes with its own failure
-mode.
-\index{typographical error}
+Los programadores principiantes a veces se atascan en una de estas actividades
+y olvidan las otras.  Cada actividad viene con su propio modo
+de fallo.
+\index{error tipográfico}
 
-For example, reading your code might help if the problem is a
-typographical error, but not if the problem is a conceptual
-misunderstanding.  If you don't understand what your program does, you
-can read it 100 times and never see the error, because the error is in
-your head.
-\index{experimental debugging}
+Por ejemplo, leer tu código podría ayudar si el problema es un
+error tipográfico, pero no si el problema es un malentendido
+conceptual.  Si no entiendes lo que tu programa hace,
+puedes leerlo 100 veces y nunca ver el error, porque el error está en
+tu cabeza.
+\index{depuración experimental}
 
-Running experiments can help, especially if you run small, simple
-tests.  But if you run experiments without thinking or reading your
-code, you might fall into a pattern I call ``random walk programming'',
-which is the process of making random changes until the program
-does the right thing.  Needless to say, random walk programming
-can take a long time.
-\index{random walk programming}
-\index{development plan!random walk programming}
+Ejecutar experimentos puede ayudar, especialmente si ejecutas pruebas
+pequeñas y simples.  Pero si ejecutas experimentos sin pensar ni leer tu
+código, podrías caer en un patrón que yo llamo ``programación de camina aleatorio'',
+que es el proceso de hacer cambios aleatorios hasta que el programa
+haga lo correcto.  No hace falta decir que la programación de camino aleatorio
+puede tomar mucho tiempo.
+\index{programación de camino aleatorio}
+\index{plan de desarrollo!programación de camino aleatorio}
 
-You have to take time to think.  Debugging is like an
-experimental science.  You should have at least one hypothesis about
-what the problem is.  If there are two or more possibilities, try to
-think of a test that would eliminate one of them.
+Tienes que tomarte el tiempo de pensar.  La depuración es como una
+ciencia experimental.  Deberías tener al menos una hipótesis acerca de
+cuál es el problema.  Si hay dos o más posibilidades, intenta
+pensar en una prueba que eliminaría una de ellas.
 
-But even the best debugging techniques will fail if there are too many
-errors, or if the code you are trying to fix is too big and
-complicated.  Sometimes the best option is to retreat, simplifying the
-program until you get to something that works and that you
-understand.
+Sin embargo, incluso las mejores técnicas de depuración fallarán si hay muchos
+errores, o si el código que intentas arreglar es muy brande y
+complicado.  A veces la mejor opción es retirarse, simplificando el
+programa hasta que obtengas algo que funcione y que
+entiendas.
 
-Beginning programmers are often reluctant to retreat because
-they can't stand to delete a line of code (even if it's wrong).
-If it makes you feel better, copy your program into another file
-before you start stripping it down.  Then you can copy the pieces
-back one at a time.
+Los programadores principiantes son a menudo reacios a retroceder porque
+no pueden soportar eliminar una línea de códiigo (incluso si es incorrecta).
+Si te hace sentir mejor, copia tu programa en otro archivo
+antes de comenzar a recortarlo.  Luego puedes volver a copiar los
+pedazos uno a la vez.
 
-Finding a hard bug requires reading, running, ruminating, and
-sometimes retreating.  If you get stuck on one of these activities,
-try the others.
+Encontrar un error de programación difícil requiere lectura, ejecución, rumiación y
+a veces retroceso.  Si te atascas en una de estas actividades,
+intenta las otras.
 
 
-\section{Glossary}
+\section{Glosario}
 
 \begin{description}
 
-\item[deterministic:] Pertaining to a program that does the same
-thing each time it runs, given the same inputs.
-\index{deterministic}
+\item[determinista:] Dicho de un programa que hace lo
+mismo cada vez que se ejecuta, dadas las mismas entradas.
+\index{determinista}
 
-\item[pseudorandom:] Pertaining to a sequence of numbers that appears
-to be random, but is generated by a deterministic program.
-\index{pseudorandom}
+\item[pseudoaleatorio:] Dicho de una secuencia de números que aparenta
+se aleatorio, pero se genera por un programa determinista.
+\index{pseudoaleatorio}
 
-\item[default value:] The value given to an optional parameter if no
-argument is provided.
-\index{default value}
+\item[valor por defecto:] El valor dado a un parámetro opcional si
+no se le entrega un argumento.
+\index{valor por defecto}
 
-\item[override:] To replace a default value with an argument.
-\index{override}
+\item[anular:] Reelmplazar un valor por defecto con un argumento.
+\index{anular}
 
-\item[benchmarking:] The process of choosing between data structures
-by implementing alternatives and testing them on a sample of the
-possible inputs.
-\index{benchmarking}
+\item[evaluación comparativa:] El proceso de escoger entre estructuras de datos
+implementando alternativas y probándolas en una muestra de
+posibles entradas.
+\index{evaluación comparativa}
 
-\item[rubber duck debugging:] Debugging by explaining your problem
-to an inanimate object such as a rubber duck.  Articulating the
-problem can help you solve it, even if the rubber duck doesn't know
+\item[método de depuración del patito de goma:] Depurar explicando tu problema
+a un objeto animado tal como un patito de goma.  Articular el
+problema puede ayudarte a resolverlo, incluso si el patito de goma no sabe
 Python.
-\index{rubber duck debugging}
-\index{debugging!rubber duck}
+\index{rubber duck debugging}\index{patito de goma, depuración}
+\index{depuración!patito de goma}
 
 \end{description}
 
 
-\section{Exercises}
+\section{Ejercicios}
 
 \begin{exercise}
-\index{word frequency}
-\index{frequency!word}
-\index{Zipf's law}
+\index{frecuencia de palabras}
+\index{palabras!frecuencia de}
+\index{Ley de Zipf}
 
-The ``rank'' of a word is its position in a list of words
-sorted by frequency: the most common word has rank 1, the
-second most common has rank 2, etc.
+El ``rango'' de una palabra es su posición en una lista de palabras
+ordenadas por frecuencia: la palabra más común tiene rango 1, la
+segunda más común tiene rango 2, etc.
 
-Zipf's law describes a relationship between the ranks and frequencies
-of words in natural languages
-(\url{http://en.wikipedia.org/wiki/Zipf's_law}).  Specifically, it
-predicts that the frequency, $f$, of the word with rank $r$ is:
+La ley de Zipf describe una relación entre los rangos y frecuencias de
+palabras en lenguajes naturales
+(\url{http://en.wikipedia.org/wiki/Zipf's_law}).  Específicamente,
+predice que la frecuencia, $f$, de cada palabra con rango $r$ es:
 
 \[ f = c r^{-s} \]
 %
-where $s$ and $c$ are parameters that depend on the language and the
-text.  If you take the logarithm of both sides of this equation, you
-get:
-\index{logarithm}
+donde $s$ y $c$ son parámetros que dependen del lenguaje y el
+texto.  Si tomas el logaritmo de ambos lados de esta ecuación,
+obtienes:
+\index{logaritmo}
 
 \[ \log f = \log c - s \log r \]
 %
-So if you plot log $f$ versus log $r$, you should get
-a straight line with slope $-s$ and intercept log $c$.
+Entonces, si graficas log $f$ versus log $r$, deberías obtener
+una línea recta con pendiente $-s$ e intercepto log $c$.
 
-Write a program that reads a text from a file, counts
-word frequencies, and prints one line
-for each word, in descending order of frequency, with
-log $f$ and log $r$.  Use the graphing program of your
-choice to plot the results and check whether they form
-a straight line.  Can you estimate the value of $s$?
+Escribe un programa que lea un texto de un archivo, cuente
+las frecuencias de palabras e imprima una línea
+para cada palabra, en orden de frecuencia descendiente, con
+log $f$ y log $r$.  Usa el progmara de gráficos de tu
+elección para graficar los resultados y verificar si forman
+una línea recta.  ¿Puedes estimar el valor de $s$?
 
-Solution: \url{http://thinkpython2.com/code/zipf.py}.
-To run my solution, you need the plotting module {\tt matplotlib}.
-If you installed Anaconda, you already have {\tt matplotlib};
-otherwise you might have to install it.
+Solución: \url{http://thinkpython2.com/code/zipf.py}.
+Para ejecutar mi solución, necesitas el módulo de gráficos {\tt matplotlib}.
+Si instalaste Anaconda, ya tienes {\tt matplotlib};
+de lo contrario, quizás tengas que instalarlo.
 \index{matplotlib}
 
 \end{exercise}
