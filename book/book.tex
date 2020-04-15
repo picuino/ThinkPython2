@@ -3590,7 +3590,7 @@ divide dos números y devuelve el resto.
 \end{verbatim}
 %
 El operador de módulo es más útil de lo que parece.  Por
-ejemplo, puedes verificar si un número es divisible por otro---si
+ejemplo, puedes verificar si un número es divisible por otro: si
 {\tt x\%y} es cero, entonces {\tt x} es divisible por {\tt y}.
 \index{divisibilidad}
 
@@ -3695,7 +3695,7 @@ True
 \end{verbatim}
 %
 Esta flexibilidad puede ser útil, pero hay algunas sutilezas
-que podrían ser confusas.  Podrías querer evitar esto (a menos que
+que podrían ser confusas.  Quizás quieras evitar esto (a menos que
 sepas lo que estás haciendo).
 
 
@@ -3882,8 +3882,8 @@ def cuenta_reg(n):
 \end{verbatim}
 %
 Si {\tt n} es 0 o negativo, muestra la palabra, ``¡Despegue!''
-De lo contrario, muestra {\tt n} y luego llama a la función con nombre {\tt
-cuenta\_reg}---a sí misma---pasando a {\tt n-1} como argumento.
+De lo contrario, muestra a {\tt n} y luego llama a la función con nombre {\tt
+cuenta\_reg} ---a sí misma--- pasando a {\tt n-1} como argumento.
 
 ¿Qué ocurre si llamamos a esta función así?
 
@@ -3932,7 +3932,7 @@ ejecutarla se llama {\bf recursividad}.
 \index{recursividad}
 \index{función recursiva}
 
-Como otro ejemplo, podemos escribir una función que imprima una
+Como ejemplo adicional, podemos escribir una función que imprima una
 cadena {\tt n} veces.
 
 \begin{verbatim}
@@ -3949,9 +3949,9 @@ de la función no se ejecutan.
 \index{sentencia return}
 \index{return!sentencia}
 
-El resto de la función es similar a {\tt cuenta\_reg}: muestra
-{\tt s} y luego se llama a sí misma para mostrar {\tt s} otras $n-1$
-veces.  Entonces el número de líneas de salida es {\tt 1 + (n - 1)}, lo cual
+El resto de la función es similar a {\tt cuenta\_reg}: muestra a
+{\tt s} y luego se llama a sí misma para mostrar a {\tt s} otras $n-1$
+veces.  Entonces, el número de líneas de salida es {\tt 1 + (n - 1)}, lo cual
 suma {\tt n}.
 
 Para ejemplos simples como este, probablemente es más fácil usar un bucle {\tt
@@ -4001,7 +4001,7 @@ no hay más marcos.
 
 Como ejercicio, dibuja un diagrama de pila para \verb"imprimir_n" llamada con
 \verb"s = 'Hola'" y {\tt n=2}.
-Luego escribe una función llamada \verb"hacer_n" que tome una objeto de
+Luego escribe una función llamada \verb"hacer_n" que tome un objeto de
 función y un número, {\tt n}, como argumentos, y que llame
 a dicha función {\tt n} veces.
 
@@ -4164,9 +4164,9 @@ podrías escribir algo así:
 
 \begin{verbatim}
 import math
-potencia_sennal = 9
+potencia_senal = 9
 potencia_ruido = 10
-relacion = potencia_sennal // potencia_ruido
+relacion = potencia_senal // potencia_ruido
 decibeles = 10 * math.log10(relacion)
 print(decibeles)
 \end{verbatim}
@@ -4186,7 +4186,7 @@ ValueError: math domain error
 El mensaje de error indica la línea 5, pero no hay nada
 malo con esa línea.  Para encontrar el error real, podría ser
 útil imprimir el valor de {\tt relacion}, el cual resulta
-ser 0.  El problema está en la línea 4, la cual usa división entera
+ser 0.  El problema está en la línea 4, que usa división entera
 en lugar de división de coma flotante.
 \index{división entera}
 \index{entera!división}
@@ -4302,7 +4302,7 @@ para cualquier valor de $n$ mayor que 2.
 \begin{enumerate}
 
 \item Escribe una función con nombre \verb"comprobar_fermat" que tome cuatro
-parámetros---{\tt a}, {\tt b}, {\tt c} y {\tt n}---y
+parámetros ---{\tt a}, {\tt b}, {\tt c} y {\tt n}--- y
 compruebe si se cumple el teorema de Fermat.  Si
 $n$ es mayor que 2 y
 
@@ -4313,7 +4313,7 @@ De lo contrario, el programa debería imprimir ``No, eso no funciona.''
 
 \item Escribe una función que permita al usuario ingresar valores
 para {\tt a}, {\tt b}, {\tt c} y {\tt n}, los convierta a
-enteros y use a \verb"comprobar_fermat" para comprobar si
+enteros y use a la función \verb"comprobar_fermat" para comprobar si
 violan el teorema de Fermat.
 
 \end{enumerate}
@@ -4346,7 +4346,7 @@ Si cualquiera de las tres longitudes es mayor que la suma de las otras
   los enteros dados.
 
 \item Escribe una función que permita al usuario ingresar tres longitudes de
-  palos, los convierta a enteros y usea a \verb"es_triangulo" para
+  palos, los convierta a enteros y use a la función \verb"es_triangulo" para
   comprobar si los palos con las longitudes dadas pueden formar un triángulo.
 
 \end{enumerate}
