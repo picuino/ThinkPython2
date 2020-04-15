@@ -1428,7 +1428,7 @@ La Figura~\ref{fig.state2} muestra el resultado del ejemplo anterior.
 \index{variable}
 
 Los programadores generalmente escogen nombres para sus variables que
-sean significativos---documentan para qué se usa la variable.
+sean significativos: documentan para qué se usa la variable.
 
 Los nombres de variable pueden ser tan largos como quieras.  Pueden contener
 tanto letras como números, pero no pueden comenzar con un número.
@@ -1494,7 +1494,7 @@ una variable, así que las siguientes son todas expresiones legales:
 \end{verbatim}
 %
 Cuando escribes una expresión en el prompt, el intérprete
-lo {\bf evalúa}, lo cual significa que encuentra el valor de
+la {\bf evalúa}, lo cual significa que encuentra el valor de
 la expresión.
 En este ejemplo, {\tt n} tiene el valor 17 y
 {\tt n + 25} tiene el valor 42.
@@ -1528,7 +1528,7 @@ pero si estás trabajando con más que unas pocas líneas de código, puede ser
 algo torpe.
 \index{modo interactivo}
 
-La alternativa es guardar código en un archivo llamado un {\bf script} y
+La alternativa es guardar código en un archivo llamado {\bf script} y
 entonces usar el intérprete en {\bf modo script} para ejecutar el script.  Por
 convención, los scripts de Python tienen nombres que terminan con {\tt .py}.
 \index{script}
@@ -1608,7 +1608,7 @@ si no cambia el resultado.
 {\tt 1 + 2**3} es 9, no 27, y {\tt 2 * 3**2} es 18, no 36.
 
 \item La {\bf M}ultiplicación y la {\bf D}ivisión tienen mayor prioridad
-	que la {\bf A}dición (suma) y la {\bf S}sustracción (resta).  Así que {\tt 2*3-1} es 5, no
+	que la {\bf A}dición (suma) y la {\bf S}ustracción (resta).  Así que {\tt 2*3-1} es 5, no
   4, y {\tt 6+4/2} es 8, no 5.
 
 \item Los operadores con la misma prioridad se evalúan de izquierda a
@@ -1659,7 +1659,7 @@ equivalente a {\tt 4+4+4}, esperamos que \verb"'Spam'*3" sea lo mismo que
 manera significativa en la que la concatenación y la repetición son
 diferentes de la suma y multiplicación de enteros.
 ¿Puedes pensar en una propiedad que tiene la suma
-que la concatenación no?
+que la concatenación no tiene?
 \index{conmutatividad}
 
 
@@ -1671,7 +1671,7 @@ de leer.  Los lenguajes formales son densos y a menudo es difícil
 mirar un pedazo de código y descifrar lo que hace, o por qué.
 
 Por esta razón, es una buena idea añadir notas a tus programas para explicar
-en lenguaje natural lo que el programa hace.  Estas notas se llaman
+en lenguaje natural lo que hace el programa.  Estas notas se llaman
 {\bf comentarios}, y comienzan con el símbolo \verb"#":
 
 \begin{verbatim}
@@ -1686,11 +1686,11 @@ comentarios al final de una línea:
 porcentaje = (minuto * 100) / 60     # porcentaje de una hora
 \end{verbatim}
 %
-Todo desde el {\tt \#} hasta el final de la línea es ignorado---no
+Todo desde el {\tt \#} hasta el final de la línea es ignorado: no
 tiene efecto en la ejecución del programa.
 
-Los comentarios son más útiles cuando documentan características no obvias del
-código.  Es razonable asumir que el lector puede descifrar
+Los comentarios son más útiles cuando documentan características del
+código que no son obvias.  Es razonable asumir que el lector puede descifrar
 {\em qué} hace el código; es más útil explicar {\em por qué}.
 
 Este comentario es redundante con el código e inútil:
@@ -1720,7 +1720,7 @@ distinguir entre ellos para rastrearlos de manera más rápida.
 
 \begin{description}
 
-\item[Error de sintaxis:] La ``Sintaxis'' se refiere a la estructura de un programa
+\item[Error de sintaxis:] La ``sintaxis'' se refiere a la estructura de un programa
   y las reglas sobre esa estructura.  Por ejemplo, los paréntesis tienen
   que venir en pares que coincidan, por lo que {\tt (1 + 2)} es legal, pero {\tt 8)}
   es un {\bf error de sintaxis}.  \index{error de sintaxis} \index{sintaxis!error de}
@@ -1878,8 +1878,8 @@ Practica usando el intérprete de Python como una calculadora:
   por cada copia adicional.  ¿Cuál es el costo al por mayor para
   60 copias?
 
-\item Si dejo mi casa a las 6:52 am y corro 1 milla a un ritmo fácil
-  (8:15 por milla), luego 3 millas un poco más fuerte (7:12 por milla) y 1 milla
+\item Si dejo mi casa a las 6:52 a.m. y corro 1 milla a un ritmo fácil
+  (8 minutos y 15 segundos por milla), luego 3 millas a tempo (7 minutos y 12 segundos por milla) y 1 milla
   a ritmo fácil de nuevo, ¿a qué hora llego a casa para el desayuno?
 \index{ritmo de carrera}
 
