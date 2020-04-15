@@ -2753,7 +2753,7 @@ pasando al valor como argumento.
 \item Define una nueva función llamada
 \verb"hacer_4veces" que tome un objeto de función y un valor
 y llame a la función cuatro veces, pasando al valor
-como parámetro.  Debería haber solo
+como argumento.  Debería haber solo
 dos sentencias en el cuerpo de esta función, no cuatro.
 
 \end{enumerate}
@@ -2886,7 +2886,7 @@ el usuario excepto cerrar la ventana.
 
 Una vez que creas una tortuga, puedes llamar a un {\bf método} para moverla
 alrededor de la ventana.  Un método es similar a una función, pero
-este usa una sintaxis un poco diferente.  Por ejemplo, para mover la tortuga
+usa una sintaxis un poco diferente.  Por ejemplo, para mover la tortuga
 adelante:
 
 \begin{verbatim}
@@ -2997,12 +2997,13 @@ la dirección inicial.
 
 \section{Ejercicios}
 
-Lo siguiente es una serie de ejercicios que usan Turtle.  Pretenden
+Lo siguiente es una serie de ejercicios que usan el módulo {\tt turtle}.  Pretenden
 ser divertidos, pero también tienen un punto.  Mientras trabajes en
 ellos, piensa cuál es el punto.
+\index{módulo turtle}\index{turtle!módulo}
 
 Las siguientes secciones tienen soluciones a los ejercicios, así que
-no mires hasta que hayas terminado (o al menos intentado).
+no las mires hasta que hayas terminado (o al menos intentado).
 
 \begin{enumerate}
 
@@ -3238,7 +3239,7 @@ def arco(t, r, angulo):
 %
 La segunda mitad de esta función se parece a {\tt poligono}, pero
 no podemos reutilizar {\tt poligono} sin cambiar la interfaz.  Podríamos
-generalizar {\tt poligono} para que tome un angulo como tercer argumento,
+generalizar {\tt poligono} para que tome un ángulo como tercer argumento,
 ¡pero entonces {\tt poligono} ya no sería un nombre apropiado!
 En cambio, llamemos {\tt polilinea} a la función más general: 
 
@@ -3271,8 +3272,8 @@ def circulo(t, r):
     arco(t, r, 360)
 \end{verbatim}
 %
-Este proceso---reorganizar un programa para mejorar
-las interfaces y facilitar la reutilización de código---se llama {\bf refactorización}.
+Este proceso ---reorganizar un programa para mejorar
+las interfaces y facilitar la reutilización de código--- se llama {\bf refactorización}.
 En este caso, notamos que había código similar en {\tt arco} y
 {\tt poligono}, así que ``lo factorizamos'' en {\tt polilinea}.
 \index{refactorización}
@@ -3309,7 +3310,7 @@ factorizarlo dentro de una función general apropiada.
 
 \end{enumerate}
 
-Este proceso tiene algunos inconvenientes---más tarde veremos alternativas---pero
+Este proceso tiene algunos inconvenientes ---más tarde veremos alternativas--- pero
 puede ser útil si no sabes de antemano cómo dividir el
 programa en funciones.  Este enfoque te permite diseñar a medida que
 avanzas.
@@ -3346,7 +3347,7 @@ Es breve, pero contiene la información escencial
 que alguien necesitaría para usar esta función.  Explica de manera concisa lo que
 hace la función (sin entrar en detalles sobre cómo lo
 hace).  Explica qué efecto tiene cada parámetro en el comportamiento de
-la función y qué tipo debería ser cada parámetro (si no es
+la función y de qué tipo debería ser cada parámetro (si no es
 obvio).
 
 Escribir este tipo de documentación es una parte importante del diseño de la
@@ -3359,8 +3360,8 @@ quizás la interfaz podría mejorar.
 \index{depuración}
 \index{interfaz}
 
-Una interfaz es como un contrato entre una función y la llamadora.
-La llamadora acepta proporcionar ciertos parámetros y la función
+Una interfaz es como un contrato entre una función y otra función que llama.
+La llamadora acepta proporcionar ciertos argumentos y la función
 acepta hacer cierto trabajo.
 
 Por ejemplo, {\tt polilinea} requiere cuatro argumentos: {\tt t} tiene que ser
@@ -3466,7 +3467,7 @@ tiene sentido para ti.  Si dibujas un diagrama, podrías ver cómo trabaja.
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/flowers.pdf}}
-\caption{Flores de tortuga.}
+\caption{Flores tortuga.}
 \label{fig.flowers}
 \end{figure}
 
@@ -3484,7 +3485,7 @@ también requiere \url{http://thinkpython2.com/code/polygon.py}.
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/pies.pdf}}
-\caption{Pasteles de tortuga.}
+\caption{Pasteles tortuga.}
 \label{fig.pies}
 \end{figure}
 
