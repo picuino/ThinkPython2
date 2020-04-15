@@ -1998,7 +1998,7 @@ Este formato se llama {\bf notación de punto}.
 \index{notación de punto}
 
 \begin{verbatim}
->>> relacion = potencia_sennal / potencia_ruido   # uso de 'nn' y no 'ñ'.
+>>> relacion = potencia_senal / potencia_ruido
 >>> decibeles = 10 * math.log10(relacion)
 
 >>> radianes = 0.7
@@ -2006,9 +2006,9 @@ Este formato se llama {\bf notación de punto}.
 \end{verbatim}
 %
 El primer ejemplo usa \verb"math.log10" para calcular
-una relación señal/ruido en decibeles (suponiendo que \verb"potencia_sennal" y
+una relación señal/ruido en decibeles (suponiendo que \verb"potencia_senal" y
 \verb"potencia_ruido" están definidas).  El módulo math también proporciona {\tt log},
-el cual calcula logaritmos en base {\tt e}.
+que calcula logaritmos en base {\tt e}.
 \index{función log}
 \index{log!función}
 \index{función seno}
@@ -2048,8 +2048,8 @@ la raíz cuadrada de dos, dividida por dos:
 \section{Composición}
 \index{composición}
 
-Hasta aquí, hemos visto los elementos de un programa---variables,
-expresiones y sentencias---de forma aislada, sin hablar sobre cómo
+Hasta aquí, hemos visto los elementos de un programa ---variables,
+expresiones y sentencias--- de forma aislada, sin hablar sobre cómo
 combinarlos.
 
 Una de las características más útiles de los lenguajes de programación es su
@@ -2237,11 +2237,11 @@ y mueve la definición de \verb"imprimir_letra" a después de la definición de
 \index{flujo de ejecución}
 
 Para estar seguro de que una función está definida antes de su primer uso,
-tienes que conocer el orden en que se ejecutan las sentencias, el cual se
+tienes que conocer el orden en que se ejecutan las sentencias, lo cual se
 llama {\bf flujo de ejecución}.
 
 La ejecución siempre comienza con la primera sentencia del programa.
-Las sentencias se ejecutan una a la vez, en orden de arriba a abajo.
+Las sentencias se ejecutan una a la vez, en orden desde arriba hacia abajo.
 
 Las definiciones de función no alteran el flujo de ejecución del
 programa, pero recuerda que las sentencias dentro de la función no
@@ -2253,9 +2253,9 @@ la función, ejecuta las sentencias que están allí y luego regresa
 para retomar donde lo había dejado.
 
 Eso suena bastante simple, hasta que recuerdas que una función puede
-llamar a otra.  Mientras está en el medio de una función, el programa podría
-tener que ejecutar las sentencias en otra función.  Luego, mientras
-se ejecuta esa nueva función, ¡el programa podría tener que ejecutar
+llamar a otra.  Mientras está en el medio de una función, el programa quizás
+tenga que ejecutar las sentencias en otra función.  Luego, mientras
+se ejecuta esa nueva función, ¡el programa quizás tenga que ejecutar
 otra función más!
 
 Afortunadamente, Python es bueno haciendo seguimiento de dónde está, así que cada
@@ -2264,7 +2264,7 @@ la función que la llamó.  Cuando llega al final del programa,
 termina.
 
 En resumen, cuando lees un programa,
-no siempre quieres leer de arriba a abajo.  A veces tiene
+no siempre quieres leer desde arriba hacia abajo.  A veces tiene
 más sentido si sigues el flujo de ejecución.
 
 
@@ -2277,8 +2277,8 @@ más sentido si sigues el flujo de ejecución.
 
 Algunas de las funciones que hemos visto requieren argumentos. Por
 ejemplo, cuando llamas a {\tt math.sin} pasas un número
-como argumento.  Algunas funciones toman más de un argumento:
-{\tt math.pow} toma dos, la base y el exponente.
+como argumento.  Algunas funciones toman más de un argumento;
+{\tt math.pow} toma dos: la base y el exponente.
 
 Dentro de la función, los argumentos son asignados a
 variables llamadas {\bf parámetros}.  Aquí hay una definición para
@@ -2365,8 +2365,8 @@ el resultado dos veces.  Aquí hay un ejemplo que la usa:
 \index{concatenation}
 
 \begin{verbatim}
->>> linea1 = 'Bing tiddle '     # evitar tildes en nombres de variables.
->>> linea2 = 'tiddle bang.'     # escribir 'linea' en lugar de 'línea'.
+>>> linea1 = 'Bing tiddle '
+>>> linea2 = 'tiddle bang.'
 >>> cat_2veces(linea1, linea2)
 Bing tiddle tiddle bang.
 Bing tiddle tiddle bang.
@@ -2390,18 +2390,18 @@ tal cosa como {\tt bruce}.
 
 \section{Diagramas de pila}
 \label{stackdiagram}
-\index{stack diagram}
-\index{function frame}
-\index{frame}
+\index{stack diagram}\index{diagrama de pila}
+\index{marco de una función}
+\index{frame}\index{marco}
 
 Para hacer un seguimiento de qué variables se pueden usar en qué lugar, a veces es
-útil dibujar un {\bf diagrama de pila}.  Al igual que los diagramas de estado,
+útil dibujar un {\bf diagrama de pila} (en inglés, {\em stack diagram}).  Al igual que los diagramas de estado,
 los diagramas de pila muestran el valor de cada variable, pero también muestran la
 función a la cual pertenece cada variable.
 \index{diagrama de pila}
 \index{pila!diagrama de}
 
-Cada función se representa por un {\bf marco}.  Un marco es un recuadro que tiene
+Cada función se representa por un {\bf marco} (en inglés, {\em frame}).  Un marco es un recuadro que tiene
 el nombre de una función al lado y los parámetros y variables de
 la función adentro.  El diagrama de pila para el ejemplo anterior se
 muestra en la Figura~\ref{fig.stack}.
@@ -2415,10 +2415,10 @@ muestra en la Figura~\ref{fig.stack}.
 
 
 Los marcos se organizan en una pila que indica cuál función
-llama a cuál, y así.  En este ejemplo, \verb"impr_2veces"
+llama a cuál, y así sucesivamente.  En este ejemplo, \verb"impr_2veces"
 fue llamado por \verb"cat_2veces", y \verb"cat_2veces" fue llamado por
 \verb"__main__", el cual es un nombre especial para el marco más alto.  Cuando
-creas una variable afuera de todas las funciones, esta pertenece a
+creas una variable afuera de todas las funciones, pertenece a
 \verb"__main__".
 
 \index{main}
@@ -2468,7 +2468,7 @@ Algunas de las funciones que hemos usado, tales como las funciones matemáticas,
 resultados; por falta de un mejor nombre, las llamo {\bf funciones
   productivas}.  Otras funciones, como \verb"impr_2veces", realizan una
 acción pero no devuelven un valor.  Son llamadas {\bf funciones
-  nulas}.
+  nulas} (en inglés, {\em void functions}).
 
 Cuando llamas a una función productiva, casi siempre
 quieres hacer algo con el resultado; por ejemplo, podrías
@@ -2673,7 +2673,7 @@ o una sentencia como parte de una sentencia más grande.
 \index{flujo de ejecución}
 
 \item[diagrama de pila:]  Una representación de una pila de funciones,
-sus variables y los valores a los cuales estos se refieren.
+sus variables y los valores a los cuales se refieren.
 \index{stack diagram}
 
 \item[marco:]  Un recuadro en un diagrama de pila que representa una llamada a función.
