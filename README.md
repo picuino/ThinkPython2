@@ -9,7 +9,7 @@ Traducción por Jorge Espinoza.
 
 Para obtener el libro, se puede escoger cualquiera de las siguientes opciones:
 
-* [Descargar libro traducido hasta el Capítulo 10.](https://github.com/jorgelespinoza/ThinkPython2-spanish/blob/master/book/thinkpython2-spanish.pdf)
+* [Descargar libro traducido hasta el Capítulo 13.](https://github.com/jorgelespinoza/ThinkPython2-spanish/blob/master/book/thinkpython2-spanish.pdf)
 * Compilar desde código fuente, para lo cual se necesita una distribución de LaTeX. Funciona con Tex Live y los siguientes paquetes instalados:
   * texlive-latex-base
   * texlive-latex-extra
