@@ -9499,13 +9499,13 @@ Solución: \url{http://thinkpython2.com/code/homophone.py}.
 
 Este capítulo presenta un tipo incorporado más, la tupla, y luego
 muestra cómo las listas, los diccionarios y las tuplas trabajan juntos.
-Además presento una característica útil para listas de argumento de longitud variable,
+Además, presento una característica útil para listas de argumento de longitud variable:
 los operadores de reunión y dispersión.
 
-One note: there is no consensus on how to pronounce ``tuple''.
-Some people say ``tuh-ple'', which rhymes with ``supple''.  But
-in the context of programming, most people say ``too-ple'', which
-rhymes with ``quadruple''.
+% One note: there is no consensus on how to pronounce ``tuple''.
+% Some people say ``tuh-ple'', which rhymes with ``supple''.  But
+% in the context of programming, most people say ``too-ple'', which
+% rhymes with ``quadruple''.
 
 
 \section{Las tuplas son inmutables}
@@ -9622,9 +9622,9 @@ Esta sentencia crea una nueva tupla y luego hace que {\tt t} se refiera a esta.
 
 Los operadores relacionales funcionan con las tuplas y otras secuencias;
 Python comienza comparando el primer elemento de cada
-secuencia.  Si son iguales, avanza al los siguientes elementos,
-y así sucesivamente, hasta que encuentre elementos que sean diferentes.  No se consideran
-los elementos posteriores (incluso si son realmente grandes).
+secuencia.  Si son iguales, avanza a los siguientes elementos,
+y así sucesivamente, hasta que encuentre elementos que sean diferentes.  Los elementos
+posteriores no se consideran (incluso si son realmente grandes).
 \index{tupla!comparación}
 \index{comparación!tupla}
 
@@ -9706,7 +9706,7 @@ el primer elemento se asigna a {\tt nombre\_usuario}, el segundo a
 \index{función, tupla como valor de retorno}
 
 Estrictamente hablando, una función solo puede devolver un valor de retorno, pero
-si el valor es una tupla, el efecto es el mismo que revolver
+si el valor es una tupla, el efecto es el mismo que devolver
 múltiples valores.  Por ejemplo, si quieres dividir dos enteros
 y calcular el cociente y el resto, es ineficiente
 calcular {\tt x//y} y luego {\tt x\%y}.  Es mejor calcular
@@ -9723,7 +9723,7 @@ Puedes almacenar el resultado como una tupla:
 (2, 1)
 \end{verbatim}
 %
-O usar asignación de tupla para almacenar los elementos por separado:
+O bien usar asignación de tupla para almacenar los elementos por separado:
 \index{asignación de tupla}
 \index{tupla!asignación de}
 
@@ -9751,9 +9751,9 @@ calcula ambos y devuelve una tupla de dos valores.
 \index{función!min}
 
 
-\section{Tuplas de argumento de longitud variable}
+\section{Tuplas de argumentos de longitud variable}
 \label{gather}
-\index{tupla de argumento de longitud variable}
+\index{tupla de argumentos de longitud variable}
 \index{argumento!tupla de longitud variable}
 \index{reunión}
 \index{parámetro de reunión}
@@ -10030,13 +10030,13 @@ for apellido, nombre in directorio:
     print(nombre, apellido, directorio[apellido,nombre])
 \end{verbatim}
 %
-Este bucle recorre las claves en {\tt directorio}, las cuales son tuplas.  Asigna
+Este bucle recorre las claves en {\tt directorio}, que son tuplas.  Asigna
 los elementos de cada tupla a {\tt apellido} y {\tt nombre}, luego
 imprime el nombre completo y el número telefónico correspondiente.
 
 Hay dos maneras de representar tuplas en diagrama de estado.  La versión
 más detallada muestra los índices y elementos tal como aparecen en
-una lista.  Por ejemplo, la tupla \verb"('Cleese', 'John')" se mostraía
+una lista.  Por ejemplo, la tupla \verb"('Cleese', 'John')" se mostraría
 como en la Figura~\ref{fig.tuple1}.
 \index{diagrama de estado}
 \index{estado!diagrama de}
@@ -10074,7 +10074,7 @@ es más fácil hablar de secuencias de secuencias.
 
 En muchos contextos, los diferentes tipos de secuencias (cadenas, listas y
 tuplas) se pueden usar indistintamente.  Entonces, ¿cómo deberías escoger uno
-sobre los otros?
+por sobre los otros?
 \index{cadena}
 \index{lista}
 \index{tupla}
@@ -10082,7 +10082,7 @@ sobre los otros?
 \index{inmutabilidad}
 
 Para comenzar con lo obvio, las cadenas son más limitadas que otras
-secuencias porque los elementos tienen que ser caracteres.  Además
+secuencias porque los elementos tienen que ser caracteres.  Además,
 son inmutables.  Si necesitas la posibilidad de cambiar los caracteres
 en una cadena (en contraposición a crear una nueva cadena), quizás quieras
 usar una lista de caracteres en su lugar.
@@ -10128,7 +10128,7 @@ combinadas, como listas de tuplas, o diccionarios que contienen tuplas
 como claves y listas como valores.  Las estructuras de datos combinadas son útiles,
 pero son propensas a lo que yo llamo {\bf errores de forma}; es decir, errores
 causados cuando una estructura de datos tiene el tipo, tamaño o estructura
-incorrecta. Por ejemplo, si estás esperando una lista con un entero y yo
+incorrecta. Por ejemplo, si estás esperando una lista que contiene un entero y yo
 te doy un simple y viejo entero (no en una lista), no funcionará.
 \index{módulo structshape}
 \index{structshape!módulo}
@@ -10136,7 +10136,7 @@ te doy un simple y viejo entero (no en una lista), no funcionará.
 Para ayudar a depurar esta clase de errores, he escrito un módulo
 llamado {\tt structshape} que proporciona una función, también llamada
 {\tt structshape}, que toma cualquier tipo de estructura de datos como
-argumento y ddevuelve una cadena que resume su forma.
+argumento y devuelve una cadena que resume su forma.
 Puedes descargarlo en \url{http://thinkpython2.com/code/structshape.py}
 
 Aquí hay un resultado para una lista simple:
@@ -10149,7 +10149,7 @@ Aquí hay un resultado para una lista simple:
 \end{verbatim}
 %
 Un programa más elegante podría escribir ``list of 3 int{\em s}'', pero
-fue más fácil no lidiar con los prurales.  Aquí hay una lista de listas:
+fue más fácil no lidiar con los plurales.  Aquí hay una lista de listas:
 
 \begin{verbatim}
 >>> t2 = [[1,2], [3,4], [5,6]]
@@ -10274,7 +10274,7 @@ más grande primero, seguido de la segunda más grande, y así sucesivamente.
 \index{Scrabble}
 \index{bingo}
 
-\item En Scrabble un ``bingo'' es cuando juegas todas las siete fichas en
+\item En Scrabble, un ``bingo'' es cuando juegas todas las siete fichas de
 tu atril, junto con una letra en el tablero, para formar una palabra de ocho
 letras.  ¿Qué colección de 8 letras forma la mayor cantidad de bingos posible?
 
@@ -10308,14 +10308,14 @@ Aquí hay otro Puzzler de Car Talk
 (\url{http://www.cartalk.com/content/puzzlers}):
 
 \begin{quote}
-¿Cuál es la palabra en inglés más larga, que sigue siendo una palabra en inglés
-válida, a medida que eliminas sus letras una a la vez?
+¿Cuál es la palabra en inglés más larga que, a medida que eliminas sus letras
+una a la vez, sigue siendo una palabra en inglés válida?
 
 A ver, las letras se pueden eliminar desde cualquier extremo, o del medio, pero
 no puedes reorganizar ninguna de las letras. Cada vez que retiras una letra,
 terminas con otra palabra en inglés. Si haces eso, eventualmente
 vas a terminar con una letra y esa también va a ser una
-palabra en inglés---una que se encuentra en el diccionario. Quiero saber:
+palabra en inglés, una que se encuentra en el diccionario. Quiero saber:
 ¿cuál es la palabra más larga y cuantas letras
 tiene?
 
@@ -10346,7 +10346,7 @@ algunas sugerencias:
 son reducibles.  Como caso base, puedes considerar la cadena vacía
 reducible.
 
-\item La lista de palabras que dispongo, {\tt words.txt}, no
+\item La lista de palabras que proporciono, {\tt words.txt}, no
 contiene palabras de una sola letra.  Entonces quizás quieras agregar
 ``I'', ``a'' y la cadena vacía.
 
