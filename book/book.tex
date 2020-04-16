@@ -5364,7 +5364,7 @@ Crédito: Este ejercicio está basado en un ejemplo de
 
 \chapter{Iteración}
 
-Este capítulo trata sobre iteración, que es la capacidad de ejecutar
+Este capítulo trata sobre la iteración, que es la capacidad de ejecutar
 un bloque de sentencias de forma repetida.  Vimos un tipo de iteración,
 usando recursividad, en la Sección~\ref{recursion}.
 Vimos otro tipo, usando un blucle {\tt for},
@@ -5538,7 +5538,7 @@ hace que vuelva hacia arriba.
 
 El cuerpo del bucle debería cambiar el valor de una o más variables
 de modo que la condición se vuelva falsa eventualmente y el bucle
-termine.  De lo contrario el bucle se repetirá por siempre, lo cual se llama
+termine.  De lo contrario, el bucle se repetirá por siempre, lo cual se llama
 {\bf bucle infinito}.  Una fuente interminable de diversión para
 informáticos es la observación de que las instrucciones en un champú,
 ``Enjabonar, enjuagar, repetir'', son un bucle infinito.
@@ -5563,7 +5563,7 @@ def sucesion(n):
 \end{verbatim}
 %
 La condición para este bucle es {\tt n != 1}, por lo que el bucle continuará
-hasta que {\tt n} sea {\tt 1}, lo cual hace que la condición sea falsa.
+hasta que {\tt n} sea {\tt 1}, que hace que la condición sea falsa.
 
 En cada paso por el bucle, el programa muestra el valor de {\tt n}
 y luego verifica si es par o impar.  Si es par, {\tt n} se
@@ -5611,11 +5611,11 @@ print('¡Listo!')
 \end{verbatim}
 %
 La condición del bucle es {\tt True}, lo cual siempre es verdadero, así que el
-bucle se ejecuta hasta que llega a la sentencia break.
+bucle se ejecuta hasta que llega a la sentencia {\tt break}.
 
-Cada vez que pasa, solicita la entrada del usuario con un paréntesis angular.
+En cada paso, solicita la entrada del usuario con un paréntesis angular.
 Si el usuario escribe {\tt listo}, la sentencia {\tt break} hace que se salga
-del bucle.  De lo contrario el programa repite lo que escriba el usuario
+del bucle.  De lo contrario, el programa repite lo que escriba el usuario
 y regresa a la parte superior del bucle.  Aquí hay una ejecución de muestra:
 
 \begin{verbatim}
@@ -5735,17 +5735,17 @@ determina qué tan cerca es lo suficientemente cerca.
 \section{Algoritmos}
 \index{algoritmo}
 
-El método de Newton es un ejemplo de un {\bf algoritmo}: es un
+El método de Newton es un ejemplo de {\bf algoritmo}: es un
 proceso mecánico para resolver una categoría de problemas (en este
 caso, calcular raíces cuadradas).
 
-Para entender qué es un algoritmo, podría ayudar comenzar con
+Para entender qué es un algoritmo, quizás ayude comenzar con
 algo que no es un algoritmo.  Cuando aprendiste a multiplicar
 números de un solo dígito, probablemente memorizaste la tabla de multiplicar.
 En realidad, memorizaste 100 soluciones específicas.  Esa clase de
 conocimiento no es algorítmica.
 
-Pero si fueras ``perezoso'', podrías haber aprendido algunos
+Pero si eras ``perezoso'', podrías haber aprendido algunos
 trucos.  Por ejemplo, para encontrar el producto de $n$ y 9, puedes
 escribir $n-1$ como el primer dígito y $10-n$ como el segundo
 dígito.  Este truco es una solución general para multiplicar cualquier
@@ -5802,7 +5802,7 @@ la ``mitad del programa'' y no siempre es posible
 verificarla.  No tiene sentido contar líneas y encontrar el
 punto medio exacto.  En cambio, piensa en lugares
 en el programa donde podría haber errores y lugares donde es
-fácil poner una verificación.  Luego escoge un sitio donde
+fácil poner una verificación.  Luego, escoge un sitio donde
 creas que las posibilidades de que el error esté antes o después
 de la verificación son casi las mismas.
 
@@ -5836,7 +5836,7 @@ una variable que será actualizada.
 una llamada a función recursiva o un bucle.
 \index{iteración}
 
-\item[bucle infinito:] Un bucle cuya condición de terminación nunca
+\item[bucle infinito:] Un bucle cuya condición para terminar nunca
 se satisface.
 \index{bucle infinito}
 
@@ -5854,7 +5854,7 @@ problemas.
 
 Copia el bucle de la Sección~\ref{squareroot}
 y encapsúlalo en una función llamada
-\verb"mi_sqrt" que tome {\tt a} como parámetro, escoja un
+\verb"mi_sqrt" que tome a {\tt a} como parámetro, escoja un
 valor razonable de {\tt x} y devuelva una estimación de la raíz
 cuadrada de {\tt a}.  \index{encapsulamiento}
 
@@ -5924,7 +5924,7 @@ numérica de $1 / \pi$:
 Escribe una función llamada \verb"estimacion_pi" que use esta fórmula
 para calcular y devolver una estimación de $\pi$.  Debería usar un bucle {\tt while}
 para calcular términos de la sumatoria hasta que el último término sea
-más pequeño que {\tt 1e-15} (lo cual es la notación de Python para $10^{-15}$).
+más pequeño que {\tt 1e-15} (que es la notación de Python para $10^{-15}$).
 Puedes verificar el resultado comparándolo con {\tt math.pi}.
 
 Solución: \url{http://thinkpython2.com/code/pi.py}.
