@@ -10374,7 +10374,7 @@ Solución: \url{http://thinkpython2.com/code/reducible.py}.
 En este punto has aprendido sobre las estructuras de datos de Python esenciales,
 y has visto algunos de los algoritmos que los usan.
 Si te gustaría saber más sobre algoritmos, este podría ser un buen
-momento para leer el Capítulo~\ref{algorithms}.
+momento para leer el Apéndice~\ref{algorithms}.
 Sin embargo, no tienes que leerlo antes de continuar; puedes leerlo
 cuando estés interesado.
 
@@ -10431,7 +10431,7 @@ Modifica tu programa del ejercicio anterior para que lea el libro
 que descargaste, se salte la información del encabezado al principio
 del archivo y procese el resto de las palabras como antes.
 
-Luego modifica el programa para que cuente el número total de palabras en
+Luego, modifica el programa para que cuente el número total de palabras en
 el libro y el número de veces que se usa cada palabra.
 \index{frecuencia de palabras}
 \index{palabras!frecuencia de}
@@ -10470,11 +10470,11 @@ de palabras y cuántas de ellas son realmente oscuras?
 Dadas las mismas entradas, la mayoría de los programas de computador generan
 las mismas salidas cada vez, por lo que se dice que son {\bf deterministas}.
 El determinismo es usualmente algo bueno, ya que esperamos que los mismos
-calculos produzcan el mismo resultado.  Para algunas aplicaciones, sin embargo,
+cálculos produzcan el mismo resultado.  Para algunas aplicaciones, sin embargo,
 queremos que el computador sea impredecible.  Los juegos son un ejemplo
 obvio, pero hay más.
 
-Hacer un programa verdaderamente no determinista resulta ser difícil,
+Hacer un programa verdaderamente no determinista resulta difícil,
 pero hay maneras de hacer que al menos parezca no determinista.  Una de
 ellas es usar algoritmos que generen números {\bf pseudoaleatorios}.
 Los números pseudoaleatorios no son verdaderamente aleatorios porque se generan
@@ -10556,7 +10556,7 @@ con probabilidad $1/3$.
 
 Deberías intentar los ejemplos anteriores antes de continuar.
 Puedes descargar mi solución en
- \url{http://thinkpython2.com/code/analyze_book1.py}.  Además
+ \url{http://thinkpython2.com/code/analyze_book1.py}.  Además,
 necesitarás \url{http://thinkpython2.com/code/emma.txt}.
 
 Aquí hay un programa que lee un archivo y construye un histograma de las
@@ -10603,7 +10603,7 @@ las cadenas son inmutables, por lo que los métodos como {\tt strip} y {\tt lowe
 devuelven cadenas nuevas.)
 
 Finalmente, \verb"procesar_linea" actualiza el histograma creando un nuevo
-ítem o incrementando una existente.
+ítem o incrementando uno existente.
 \index{actualizar!histograma}
 
 Para contar el número total de palabras en el archivo, podemos sumar
@@ -10644,7 +10644,7 @@ donde cada tupla contenga una palabra y su frecuencia,
 y ordenarla.
 
 La siguiente función toma un histograma y devuelve una lista de
-tuplas palabra-frecuencia:
+tuplas frecuencia-palabra:
 
 \begin{verbatim}
 def mas_comunes(hist):
@@ -10663,8 +10663,8 @@ comunes:
 \begin{verbatim}
 t = mas_comunes(hist)
 print('Las palabras más comunes son:')
-for frecuencia, palabra in t[:10]:
-    print(palabra, frecuencia, sep='\t')
+for frec, palabra in t[:10]:
+    print(palabra, frec, sep='\t')
 \end{verbatim}
 %
 Yo uso el argumento de palabra clave {\tt sep} para decirle a {\tt print} que use un
@@ -10697,7 +10697,7 @@ en \url{https://wiki.python.org/moin/HowTo/Sorting}.
 Hemos visto funciones y métodos que toman argumentos
 opcionales.  Es posible, además, escribir funciones definidas por el programador
 con argumentos opcionales.  Por ejemplo, aquí hay una función que
-imprime las palabras más comunes en un histograma
+imprime las palabras más comunes en un histograma:
 \index{programmer-defined function}
 \index{function!programmer defined}
 
@@ -10705,8 +10705,8 @@ imprime las palabras más comunes en un histograma
 def imprime_mas_comunes(hist, num=10):
     t = mas_comunes(hist)
     print('Las palabras más comunes son:')
-    for frecuencia, palabra in t[:num]:
-        print(palabra, frecuencia, sep='\t')
+    for frec, palabra in t[:num]:
+        print(palabra, frec, sep='\t')
 \end{verbatim}
 
 El primer parámetro es obligatorio; el segundo es opcional.
@@ -10746,7 +10746,7 @@ de conjuntos; es decir, queremos encontrar todas las palabras de un
 conjunto (las palabras en el libro) que no están en el otro (las
 palabras en la lista).
 
-{\tt diferencia} toma dos diccionarios {\tt d1} y {\tt d2} y devuelve un
+{\tt diferencia} toma dos diccionarios, {\tt d1} y {\tt d2}, y devuelve un
 nuevo diccionario que contiene todas las claves de {\tt d1} que no están
 en {\tt d2}.  Dado que en realidad no nos importan los valores,
 los ponemos todos como None.
@@ -10781,7 +10781,7 @@ rencontre jane's blanche woodhouses disingenuousness
 friend's venice apartment ...
 \end{verbatim}
 %
-Algunas de esas palabras son nombres y posesivos.  Otros, como
+Algunas de esas palabras son nombres y posesivos.  Otras, como
 ``rencontre'', ya no son de uso común.  Sin embargo, ¡algunas son
 palabras comunes que realmente deberían estar en la lista!
 
@@ -10806,26 +10806,26 @@ que no están en la lista.  Solución:
 \index{histograma!elección aleatoria}
 
 Para escoger una palabra de forma aleatoria del histograma, el algoritmo más simple
-es construie una lista con múltiples copias de cada palabra, según
+es construir una lista con múltiples copias de cada palabra, según
 la frecuencia observada, y luego escoger de la lista:
 
 \begin{verbatim}
 def palabra_aleatoria(h):
     t = []
-    for palabra, frecuencia in h.items():
-        t.extend([palabra] * frecuencia)
+    for palabra, frec in h.items():
+        t.extend([palabra] * frec)
 
     return random.choice(t)
 \end{verbatim}
 %
-La expresión {\tt [palabra] * frecuencia} crea una lista con {\tt frecuencia}
+La expresión {\tt [palabra] * frec} crea una lista con {\tt frec}
 copias de la cadena {\tt palabra}.  El método {\tt extend}
-es similar a {\tt append} excepto que el argumento es
+es similar a {\tt append}, excepto que el argumento es
 una secuencia.
 
 Este algoritmo funciona, pero no es muy eficiente; cada vez que
-escoges una palabra aleatoria, reconstruye la lista, la cual es tan grande como
-el libro original.  Una mejora obvio es construir la lista
+escoges una palabra aleatoria, reconstruye la lista, que es tan grande como
+el libro original.  Una mejora obvia es construir la lista
 una vez y luego hacer múltiples selecciones, pero la lista es grande aún.
 
 Una alternativa es:
@@ -10836,7 +10836,7 @@ Una alternativa es:
 
 \item Construir una lista que contenga la suma acumulativa de las frecuencias
   de las palabras (ver Ejercicio~\ref{cumulative}).  El último ítem
-  es esta lista es el número total de palabras en el libro, $n$.
+  en esta lista es el número total de palabras en el libro: $n$.
 
 \item Escoger un número de 1 a $n$.  Usar búsqueda de bisección
   (ver Ejercicio~\ref{bisection}) para encontrar el índice donde el número
@@ -10872,7 +10872,7 @@ this the small regard harriet which knightley's it most things
 Una serie de palabras aleatorias rara vez tiene sentido porque
 no hay relación entre palabras sucesivas.  Por ejemplo, en
 una oración real esperarías que un artículo como ``the'' esté
-seguida por un adjetivo o un sustantivo, y probablemente no un verbo
+seguida por un adjetivo o un sustantivo, y probablemente no por un verbo
 o un adverbio.
 
 Una manera de medir estas relaciones es el análisis de
@@ -10895,7 +10895,7 @@ Due to some ancient injury? \\
 %
 En este texto,
 la frase ``half the'' está siempre seguida por la palabra ``bee'',
-pero la frase ``the bee'' podria estar seguida por
+pero la frase ``the bee'' podría estar seguida por
 ``has'' o ``is''.
 \index{prefijo}
 \index{sufijo}
@@ -10903,12 +10903,12 @@ pero la frase ``the bee'' podria estar seguida por
 
 El resultado del análisis de Markov es un mapeo de cada prefijo
 (como ``half the'' y ``the bee'') a todos los posibles sufijos
-(como ``has'' y ``is'').
+(como ``has'' e ``is'').
 \index{texto aleatorio}
 \index{aleatorio!texto}
 
 Dado este mapeo, puedes generar un texto aleatorio
-comenzando con cualquier prefijo y escogieno de manera aleatoria
+comenzando con cualquier prefijo y escogiendo de manera aleatoria
 en los posibles sufijos.  Después, puedes combinar el final del
 prefijo y el nuevo sufijo para formar el nuevo prefijo, y repetir.
 
@@ -10917,7 +10917,7 @@ siguiente palabra tiene que ser ``bee'', porque el prefijo solo aparece
 una vez en el texto.  El siguiente prefijo es ``a bee'', por lo que el
 siguiente sufijo podría ser ``philosophically'', ``be'' o ``due''.
 
-En este ejemplo la longitud del prefijo es siempre dos, pero
+En este ejemplo, la longitud del prefijo es siempre dos, pero
 puedes hacer análisis de Markov con cualquier longitud de prefijo.
 
 \begin{exercise}
@@ -10965,16 +10965,16 @@ Pike, {\em The Practice of Programming}, Addison-Wesley, 1999.
 
 \end{exercise}
 
-Deberías intenras este ejercicio antes de continuar; luego puedes
+Deberías intentar este ejercicio antes de continuar; luego puedes
 descargar mi solución en \url{http://thinkpython2.com/code/markov.py}.
-Además necesitarás \url{http://thinkpython2.com/code/emma.txt}.
+Además, necesitarás \url{http://thinkpython2.com/code/emma.txt}.
 
 
 \section{Estructuras de datos}
 \index{estructuras de datos}
 
 Usar análisis de Markov para generar texto aleatorio es divertido, pero también
-hay un punto en este ejercicio: selección de estructura de datos.  En tu
+hay un punto en este ejercicio: la selección de la estructura de datos.  En tu
 solución al ejercicio anterior, tuviste que escoger:
 
 \begin{itemize}
@@ -11079,10 +11079,10 @@ verifica que dice lo que querías decir.
 
 \item[Ejecución:] Experimenta haciendo cambios y ejecutando versiones
 diferentes.  A menudo, si muestras en pantalla lo correcto en el lugar correcto
-del programa, el problema de vuelve obvio, pero a veces tienes que
+del programa, el problema se vuelve obvio, pero a veces tienes que
 construir andamiaje.
 
-\item[Rumiación:] ¡Tómate un tiempo para pensar!  ¿Que tipo de error
+\item[Rumiación:] ¡Tómate un tiempo para pensar!  ¿Qué tipo de error
 es: de sintaxis, de tiempo de ejecución o semántico?  ¿Qué información puedes obtener a partir
 de los mensajes de error o de la salida del programa?  ¿Qué tipo de
 error podría causar el problema que estás viendo?  ¿Qué cambiaste
@@ -11115,7 +11115,7 @@ tu cabeza.
 
 Ejecutar experimentos puede ayudar, especialmente si ejecutas pruebas
 pequeñas y simples.  Pero si ejecutas experimentos sin pensar ni leer tu
-código, podrías caer en un patrón que yo llamo ``programación de camina aleatorio'',
+código, podrías caer en un patrón que yo llamo ``programación de camino aleatorio'',
 que es el proceso de hacer cambios aleatorios hasta que el programa
 haga lo correcto.  No hace falta decir que la programación de camino aleatorio
 puede tomar mucho tiempo.
@@ -11128,8 +11128,8 @@ cuál es el problema.  Si hay dos o más posibilidades, intenta
 pensar en una prueba que eliminaría una de ellas.
 
 Sin embargo, incluso las mejores técnicas de depuración fallarán si hay muchos
-errores, o si el código que intentas arreglar es muy brande y
-complicado.  A veces la mejor opción es retirarse, simplificando el
+errores, o si el código que intentas arreglar es muy grande y
+complicado.  A veces la mejor opción es retroceder, simplificando el
 programa hasta que obtengas algo que funcione y que
 entiendas.
 
@@ -11153,14 +11153,14 @@ mismo cada vez que se ejecuta, dadas las mismas entradas.
 \index{determinista}
 
 \item[pseudoaleatorio:] Dicho de una secuencia de números que aparenta
-se aleatorio, pero se genera por un programa determinista.
+ser aleatorio, pero se genera por un programa determinista.
 \index{pseudoaleatorio}
 
 \item[valor por defecto:] El valor dado a un parámetro opcional si
 no se le entrega un argumento.
 \index{valor por defecto}
 
-\item[anular:] Reelmplazar un valor por defecto con un argumento.
+\item[anular:] Reemplazar un valor por defecto con un argumento.
 \index{anular}
 
 \item[evaluación comparativa:] El proceso de escoger entre estructuras de datos
@@ -11169,7 +11169,7 @@ posibles entradas.
 \index{evaluación comparativa}
 
 \item[método de depuración del patito de goma:] Depurar explicando tu problema
-a un objeto animado tal como un patito de goma.  Articular el
+a un objeto inanimado tal como un patito de goma.  Articular el
 problema puede ayudarte a resolverlo, incluso si el patito de goma no sabe
 Python.
 \index{rubber duck debugging}\index{patito de goma, depuración}
