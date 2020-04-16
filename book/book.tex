@@ -2341,7 +2341,7 @@ Eric, the half a bee.
 %
 El nombre de la variable que pasamos como argumento ({\tt michael}) no tiene
 nada que ver con el nombre del parámetro ({\tt bruce}).  No
-importa cómo se le llame al valor en su casa (en la llamadora);
+importa cómo se le llame al valor en su casa (en la sentencia llamadora);
 aquí en \verb"impr_2veces", a todos les llamamos {\tt bruce}.
 
 
@@ -3184,7 +3184,7 @@ más control, pero la interfaz sería menos limpia.
 
 La {\bf interfaz} de una función es un resumen de cómo se usa: ¿cuáles
 son los parámetros?  ¿Qué hace la funcíon?  ¿Y cuál es el valor de
-retorno?  Una interfaz es ``limpia'' si permite a la llamadora hacer
+retorno?  Una interfaz es ``limpia'' si permite a la sentencia llamadora hacer
 lo que quiere sin lidiar con detalles innecesarios.
 
 En este ejemplo, {\tt r} forma parte de la interfaz porque
@@ -3360,7 +3360,7 @@ quizás la interfaz podría mejorar.
 \index{depuración}
 \index{interfaz}
 
-Una interfaz es como un contrato entre una función y otra función que llama.
+Una interfaz es como un contrato entre una función y la sentencia llamadora.
 La llamadora acepta proporcionar ciertos argumentos y la función
 acepta hacer cierto trabajo.
 
@@ -3428,7 +3428,7 @@ el nombre y descripciones de los argumentos y el valor de retorno.
 \index{docstring}
 
 \item[precondición:] Un requisito que debería satisfacer la
-llamadora antes de que la función comience.
+sentencia llamadora antes de que la función comience.
 \index{precondición}
 
 \item[postcondición:] Un requisito que debería satisfacer la
@@ -3944,7 +3944,7 @@ def imprimir_n(s, n):
 \end{verbatim}
 %
 Si {\tt n <= 0} la {\bf sentencia return} hace que se salga de la función.  El
-flujo de ejecución vuelve inmediatamente a la llamadora y las líneas restantes
+flujo de ejecución vuelve inmediatamente a la sentencia llamadora y las líneas restantes
 de la función no se ejecutan.
 \index{sentencia return}
 \index{return!sentencia}
@@ -4250,7 +4250,7 @@ en una de las ramas de otra sentencia condicional.
 \index{anidado!condicional}
 
 \item[sentencia return:] Una sentencia que provoca que una función
-termine inmediatamente y vuelva a la llamadora.
+termine inmediatamente y vuelva a la sentencia llamadora.
 
 \item[recursividad:]  El proceso de llamar a la función que ya se está
 ejecutando.
@@ -4467,7 +4467,7 @@ implementa tu favorito.
 
 Muchas de las funciones de Python que hemos usado, tales como las funciones
 matemáticas, producen valores de retorno. Pero las funciones que hemos escrito
-son todas vacías: tienen un efecto, como imprimir un valor
+son todas nulas: tienen un efecto, como imprimir un valor
 o mover una tortuga, pero no tienen un valor de retorno.  En
 este capítulo aprenderás a escribir funciones productivas.
 
@@ -4476,7 +4476,7 @@ este capítulo aprenderás a escribir funciones productivas.
 \index{valor de retorno}
 
 Al llamar a una función se genera un valor de
-retorno, el cual usualmente asignamos a una variable o usamos como parte de una
+retorno, que usualmente asignamos a una variable o usamos como parte de una
 expresión.
 
 \begin{verbatim}
@@ -4484,12 +4484,12 @@ e = math.exp(1.0)
 altura = radio * math.sin(radianes)
 \end{verbatim}
 %
-Las funciones que hemos escrito hasta ahora son todas vacías.  Dicho en términos vagos,
+Las funciones que hemos escrito hasta ahora son todas nulas.  Dicho en términos vagos,
 no tienen valor de retorno; de manera más precisa,
 su valor de retorno es {\tt None}.
 
 En este capítulo, vamos a escribir (finalmente) funciones productivas.
-El primer ejemplo es {\tt area}, la cual devuelve el área de un círculo
+El primer ejemplo es {\tt area}, que devuelve el área de un círculo
 con un radio dado:
 
 \begin{verbatim}
@@ -4529,7 +4529,7 @@ def valor_absoluto(x):
 \end{verbatim}
 %
 Dado que estas sentencias {\tt return} están en un condicional alternativo,
-solo una se ejecuta.
+solo se ejecuta una.
 
 Tan pronto como se ejecute una sentencia return, la función
 termina sin ejecutar ninguna de las sentencias posteriores.
@@ -4538,7 +4538,7 @@ que el flujo de ejecución nunca puede alcanzar, se llama {\bf código muerto}.
 \index{código muerto}
 
 En una función productiva, es una buena idea asegurarse de
-que cada camino posible a través del programa llega a una
+que cada camino posible a través del programa llegue a una
 sentencia {\tt return}.  Por ejemplo:
 
 \begin{verbatim}
@@ -4862,7 +4862,7 @@ se está definiendo.  Una definición verdaderamente circular no es muy
 
 \end{description}
 
-Si vieras esa definición en el diccionario, podrías estar molesto. Por
+Si vieras esa definición en el diccionario, quizás te moleste. Por
 otra parte, si buscaras la definición de la función
 factorial, denotada con el símbolo $!$, podrías obtener algo
 así:
@@ -4961,8 +4961,8 @@ para esta sucesión de llamadas a función.
 \label{fig.stack3}
 \end{figure}
 
-Los valores de retorno se muestran pasando de vuelta hacia arriba en la pila.  En cada
-marco, el valor de retorno es el valor de {\tt resultado}, el cual es el
+Los valores de retorno se muestran volviendo hacia arriba en la pila.  En cada
+marco, el valor de retorno es el valor de {\tt resultado}, que es el
 producto de {\tt n} y {\tt recur}.
 \index{función!marco de una}
 \index{marco}
@@ -4993,19 +4993,19 @@ Lo mismo es verdad cuando llamas a una de tus propias funciones.  Por
 ejemplo, en la Sección~\ref{boolean}, escribimos una función llamada
 \verb"es_divisible" que determina si un número es divisible por
 otro.  Una vez que nos hemos convencido de que esta función es
-correcta---examinando el código y probándolo---podemos usar la función
+correcta ---examinando el código y probándolo--- podemos usar la función
 sin mirar el cuerpo otra vez.
 \index{prueba de salto de fe}
 
-Lo mismo es verdad para las funciones recursivas.  Cuando lleges a la llamada
+Lo mismo es verdad para las funciones recursivas.  Cuando llegues a la llamada
 recursiva, en lugar de seguir el flujo de ejecución, deberías suponer
-que la llamada recursiva funciona (revuelve el resultado correcto) y luego
-preguntarte, ``Suponiendo que puedo encontrar el factorial de $n-1$, ¿puedo
+que la llamada recursiva funciona (devuelve el resultado correcto) y luego
+preguntarte: ``suponiendo que puedo encontrar el factorial de $n-1$, ¿puedo
 calcular el factorial de $n$?''  Está claro que
 puedes, multiplicando por $n$.
 
-Desde luego, es un poco extraño suponer que la función funciona
-correctamente cuando no has terminado de escribirla, ¡pero es por eso
+Desde luego, es un poco extraño suponer que la función hace lo
+correcto cuando no has terminado de escribirla, ¡pero es por eso
 que se llama salto de fe!
 
 
@@ -5015,7 +5015,7 @@ que se llama salto de fe!
 \index{función de fibonacci}
 \index{fibonacci!función de}
 Después de {\tt factorial}, el ejemplo más común de una función
-matemática definida de manera recursiva es {\tt fibonacci}, la cual tiene la
+matemática definida de manera recursiva es {\tt fibonacci}, que tiene la
 siguiente definición (ver
   \url{http://es.wikipedia.org/wiki/Sucesión_de_Fibonacci}):
 %
@@ -5048,7 +5048,7 @@ el resultado correcto al sumarlas.
 \section{Verificar tipos}
 \label{guardian}
 
-¿Qué ocurre si llamamos a {\tt factorial} y le damos 1.5 como argumento?
+¿Qué ocurre si llamamos a {\tt factorial} y le entregamos 1.5 como argumento?
 \index{verificación de tipos}
 \index{errores!verificación de}\index{verificación de errores}
 \index{factorial!función}\index{función factorial}
@@ -5060,7 +5060,7 @@ RuntimeError: Maximum recursion depth exceeded
 \end{verbatim}
 %
 Se ve como una recursividad infinita.  ¿Cómo puede ser?  La función
-tiene un caso base---cuando {\tt n == 0}.  Pero si {\tt n} no es un entero,
+tiene un caso base: cuando {\tt n == 0}.  Pero si {\tt n} no es un entero,
 podemos {\em perder} el caso base y seguir con la recursividad sin parar.
 \index{recursividad infinita}
 \index{infinita!recursividad}
@@ -5133,13 +5133,13 @@ funcionando, hay tres posibilidades a considerar:
 
 \begin{itemize}
 
-\item Hay algo mal con los argumentos que obtiene
+\item Hay algo mal en los argumentos que obtiene
 la función; se viola una precondición.
 
-\item Hay algo mal con la función; se viola una
+\item Hay algo mal en la función; se viola una
 postcondición.
 
-\item Hay algo mal con el valor de retorno o la
+\item Hay algo mal en el valor de retorno o la
 manera en que se usa.
 
 \end{itemize}
@@ -5320,8 +5320,8 @@ una cadena de dos letras?  ¿De una letra?  ¿Qué hay de la cadena
 vacía, la cual se escribe \verb"''" y no contiene letras?
 
 \item Escribe una función llamada \verb"es_palindromo" que tome
-un argumento cadena y devuelva {\tt True} si es un palíndromo
-y {\tt False} en caso contrario.  Recuerda que puedes usar la
+una cadena como argumento y devuelva {\tt True} si es un palíndromo
+y {\tt False} si no.  Recuerda que puedes usar la
 función incorporada {\tt len} para verificar la longitud de una cadena.
 
 \end{enumerate}
@@ -8071,7 +8071,7 @@ a la misma cadena o no.
 \index{parámetro}
 
 Cuando pasas una lista a una función, la funcíon obtiene una referencia a
-la lista.  Si la función modifica la lista, la llamadora ve
+la lista.  Si la función modifica la lista, la sentencia llamadora ve
 el cambio.  Por ejemplo, \verb"sin_cabeza" quita el primer elemento
 de una lista:
 
