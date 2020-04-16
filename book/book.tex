@@ -8583,9 +8583,9 @@ Un {\bf diccionario} es como una lista, pero más general.  En una lista,
 los índices tienen que ser enteros; en un diccionario pueden ser
 (casi) de cualquier tipo.
 
-Un diccionario contiene una colección de índices, los cuales se llaman {\bf
-  claves} y una colección de valores.  Cada clave está asociada a un
-valor único.  La adociación de una clave y un valor se llama {\bf
+Un diccionario contiene una colección de índices, que se llaman {\bf
+  claves}, y una colección de valores.  Cada clave está asociada a un
+valor único.  La asociación de una clave y un valor se llama {\bf
   par clave-valor}, o a veces {\bf ítem}.  \index{ítem}
 
 En lenguaje matemático, un diccionario representa un {\bf mapeo}
@@ -8772,9 +8772,9 @@ estadístico para una colección de contadores (o frecuencias).
 La primera línea de la
 función crea un diccionario vacío.  El bucle {\tt for} recorre
 la cadena.  En cada paso por el bucle, si el carácter {\tt c} no
-está en el diccionario, creamos un nuevo ítem con clave {\tt c} y el
+está en el diccionario, creamos un nuevo ítem con clave {\tt c} y
 valor inicial 1 (dado que hemos visto esta letra una vez).  Si {\tt c}
-ya está en el diccionario incrementamos {\tt d[c]}.
+ya está en el diccionario, incrementamos {\tt d[c]}.
 \index{histogram}
 
 Funciona así:
@@ -8815,7 +8815,7 @@ Deberías ser capaz de eliminar la sentencia {\tt if}.
 \index{bucle!con diccionarios}
 \index{recorrido}
 
-Si usas un diccionario en una sentencia {\tt for}, esta recorre
+Si usas un diccionario en una sentencia {\tt for}, recorre
 las claves del diccionario.  Por ejemplo, \verb"imprimir_hist"
 imprime cada clave y el valor correspondiente:
 
@@ -8864,7 +8864,7 @@ t 1
 
 Dado un diccionario {\tt d} y una clave {\tt k}, es fácil
 encontrar el valor correspondiente {\tt v = d[k]}.  Esta operación
-se llama {\bf consulta} (en inglés, {\emph lookup}).
+se llama {\bf consulta} (en inglés, {\em lookup}).
 
 ¿Y qué pasa si tienes {\tt v} y quieres encontrar {\tt k}?
 Tienes dos problemas: primero, podría haber más de una
@@ -8873,7 +8873,7 @@ quizás puedas elegir una o tengas que hacer
 una lista que las contenga a todas.  Segundo, no hay
 una sintaxis sencilla para hacer una {\bf consulta inversa}; tienes que buscar.
 
-Aquì hay una función que toma un valor y devuelve la primera
+Aquí hay una función que toma un valor y devuelve la primera
 clave que mapea a ese valor:
 
 \begin{verbatim}
@@ -8884,10 +8884,10 @@ def consulta_inversa(d, v):
     raise LookupError()
 \end{verbatim}
 %
-Esta función es otro ejemplo del patrón de búsqueda pero esta
+Esta función es otro ejemplo del patrón de búsqueda pero que
 usa una característica que no hemos visto antes, {\tt raise}.  La
 {\bf sentencia raise} causa una excepción; en este caso causa un
-{\tt LookupError}, el cual es una excepción incorporada que se usa para indicar
+{\tt LookupError}, que es una excepción incorporada que se usa para indicar
 que falló una operación de consulta.
 \index{búsqueda}
 \index{búsqueda!patrón} \index{sentencia raise} \index{raise!sentencia}
@@ -8931,7 +8931,7 @@ Traceback (most recent call last):
 LookupError: el valor no aparece en el diccionario
 \end{verbatim}
 %
-Una consulta inversa en mucho más lenta que una consulta directa; si
+Una consulta inversa es mucho más lenta que una consulta directa; si
 tienes que hacerlo a menudo, o si el diccionario se vuelve grande, el rendimiento
 de tu progama se verá afectado.
 
@@ -8975,8 +8975,8 @@ Aquí hay un ejemplo:
 >>> hist = histograma('parrot')
 >>> hist
 {'a': 1, 'p': 1, 'r': 2, 't': 1, 'o': 1}
->>> inverso = invertir_dict(hist)
->>> inverso
+>>> inv = invertir_dict(hist)
+>>> inv
 {1: ['a', 'p', 't', 'o'], 2: ['r']}
 \end{verbatim}
 
@@ -8987,9 +8987,9 @@ Aquí hay un ejemplo:
 \label{fig.dict1}
 \end{figure}
 
-La Figura~\ref{fig.dict1} es un diagrama de estado que muestra a {\tt hist} e {\tt inverso}.
+La Figura~\ref{fig.dict1} es un diagrama de estado que muestra a {\tt hist} e {\tt inv}.
 Un diccionario se representa como una caja con el tipo {\tt dict} arriba suyo
-y el par clave-valor adentro.  Si los valores son enteros, de coma flotante o
+y el par clave-valor adentro.  Si los valores son enteros, números de coma flotante o
 cadenas, los dibujo adentro de la caja, pero usualmente dibujo las listas
 afuera de la caja, solo para mantener simple al diagrama.
 \index{diagrama de estado}
@@ -9048,7 +9048,7 @@ Además, el tiempo de ejecución aumenta rápidamente.
 \index{function!fibonacci}
 
 Para entender el por qué, considera la Figura~\ref{fig.fibonacci}, la cual muestra
-el {\bf gráfico de llamadas} para {\tt fibonacci} con {\tt n=4}:
+el {\bf gráfico de llamadas} para {\tt fibonacci} con {\tt n=4}.
 
 \begin{figure}
 \centerline
@@ -9058,7 +9058,7 @@ el {\bf gráfico de llamadas} para {\tt fibonacci} con {\tt n=4}:
 \end{figure}
 
 Un gráfico de llamadas muestra un conjunto de marcos de funciones, con líneas que conectan cada
-marco a los marcos de las funciones que llama.  En la parte de arriba del
+marco a los marcos de las funciones llamadas.  En la parte de arriba del
 gráfico, {\tt fibonacci} con {\tt n=4} llama {\tt fibonacci} con {\tt
 n=3} y {\tt n=2}.  A su vez, {\tt fibonacci} con {\tt n=3} llama a
 {\tt fibonacci} con {\tt n=2} y {\tt n=1}.  Y así sucesivamente.
@@ -9092,7 +9092,7 @@ def fibonacci(n):
 que ya conocemos.  Comienza con
 dos ítems: 0 mapea a 0 y 1 mapea a 1.
 
-Cada vez que se llama a {\tt fibonacci}, este revisa a {\tt conocidos}.
+Cada vez que se llama a {\tt fibonacci}, revisa a {\tt conocidos}.
 Si el resultado ya está ahí, puede devolverlo
 inmediatamente.  De lo contrario, tiene que
 calcular el nuevo valor, agregarlo al diccionario y devolverlo.
@@ -9144,7 +9144,7 @@ def ejemplo2():
 Pero si lo ejecutas verás que el valor de \verb"fue_llamada"
 no cambia. El problema es que {\tt ejemplo2} crea una nueva variable local
 con nombre \verb"fue_llamada".  La variable local se va cuando 
-la función termina, y no tiene efecto en la variable global.
+la función termina y no tiene efecto en la variable global.
 \index{sentencia global}
 \index{global!sentencia}
 \index{declaración}
@@ -9161,8 +9161,8 @@ def ejemplo2():
 \end{verbatim}
 %
 La {\bf sentencia global} le dice al intérprete
-algo como, ``En esta función, cuando digo \verb"fue_llamada", I
-significa la variable global; no crees una local.''
+algo como ``En esta función, cuando digo \verb"fue_llamada",
+quiero decir la variable global; no crees una local.''
 \index{actualizar!variable global}
 \index{variable global!actializar}
 
@@ -9215,7 +9215,7 @@ def ejemplo5():
     conocidos = dict()
 \end{verbatim}
 %
-Las variables globales pueden ser útiles, pero si tienes muchas de estas,
+Las variables globales pueden ser útiles, pero si tienes muchas,
 y las modificas frecuentemente, pueden hacer que los programas sean
 difíciles de depurar.
 
@@ -9240,7 +9240,7 @@ que muestre el error y luego incrementarlo gradualmente
 mientras encuentras y corriges los errores.
 
 \item[Revisa resúmenes y tipos:] En lugar de imprimir y verificar el conjunto
-de datos completo, considera imprimir resúmenes de los datos: por ejemplo
+de datos completo, considera imprimir resúmenes de los datos: por ejemplo,
 el número de ítems en el diccionario o el total de una lista de números.
 
 Una causa común de errores de tiempo de ejecución es un valor que no es del tipo
@@ -9314,7 +9314,7 @@ diccionarios de Python.
 \index{tabla hash}
 
 \item[función hash:] Una función usada por una tabla hash para calcular
-la ubicación para una clave.
+la ubicación de una clave.
 \index{función hash}
 
 \item[hashable:] Un tipo que tiene una función hash.  Los tipos inmutables
@@ -9338,11 +9338,11 @@ una o más claves que mapean a este.
 \item[singleton:] Una lista (u otra secuencia) con un solo elemento.
 \index{singleton}
 
-\item[call graph:] A diagram that shows every frame created during
-the execution of a program, with an arrow from each caller to
-each callee.
-\index{call graph}
-\index{diagram!call graph}
+\item[gráfico de llamadas:] Un diagrama que muestra cada marco creado durante
+la ejecución de un programa, con una flecha desde cada llamador
+hacia cada llamado.
+\index{gráfico de llamadas}
+\index{diagrama!gráfico de llamadas}
 
 \item[memo:] Un valor calculado que se almacena para evitar una futura
 computación innecesaria.
@@ -9401,7 +9401,7 @@ Solución: \url{http://thinkpython2.com/code/invert_dict.py}.
 
 
 \begin{exercise}
-Memoiza la función de Ackermann del Ejercicio~\ref{ackermann} y mira si
+Memoiza la función de Ackermann del Ejercicio~\ref{ackermann} y ve si
 la memoización permite evaluar la función con argumentos
 más grandes.  Pista: no.
 Solución: \url{http://thinkpython2.com/code/ackermann_memo.py}.
@@ -9433,7 +9433,7 @@ Solución: \url{http://thinkpython2.com/code/has_duplicates.py}.
 \index{letras!rotación de}
 
 Dos palabras son ``pares rotativos'' si puedes rotar una de ellas
-y obtener la otra (see \verb"rotar_palabra" en el Ejercicio~\ref{exrotate}).
+y obtener la otra (ver \verb"rotar_palabra" en el Ejercicio~\ref{exrotate}).
 
 Escribe un programa que lea una lista de palabras y encuentre todos los pares
 rotativos.  Solución: \url{http://thinkpython2.com/code/rotate_pairs.py}.
@@ -9458,9 +9458,9 @@ la segunda letra y el resultado es otro homófono de la
 palabra original. Y la pregunta es, ¿cuál es la palabra?
 
 Ahora voy a darte un ejemplo que no funciona. Veamos la palabra
-de cinco letras, `wrack.' W-R-A-C-K, you know like to `wrack with
+de cinco letras, `wrack.' W-R-A-C-K, ya sabes, como `wrack with
 pain.' Si quito la primero letra, me quedo con una palabra de cuatro
-letras, 'R-A-C-K.' As in, `Holy cow, did you see the rack on that buck!
+letras, 'R-A-C-K.' Como en `Holy cow, did you see the rack on that buck!
 It must have been a nine-pointer!' Es un homófono perfecto. Si
 vuelves a poner la `w' y quitas la `r' en su lugar, te quedas con la
 palabra `wack' que es una palabra real, que simplemente no es un homófono de las
@@ -9478,11 +9478,11 @@ es la palabra?
 Puedes usar el diccionario del Ejercicio~\ref{wordlist2} para verificar
 si una cadena está en la lista de palabras.
 
-Para verificar si dos palabras son homófonas, puedes usar el CMU
-Diccionario de Pronunciación de la CMU.  Lo puedes descargar de
-\url{http://www.speech.cs.cmu.edu/cgi-bin/cmudict} o de
+Para verificar si dos palabras son homófonas, puedes usar el
+Diccionario de Pronunciación de la CMU.  Lo puedes descargar en
+\url{http://www.speech.cs.cmu.edu/cgi-bin/cmudict} o en
 \url{http://thinkpython2.com/code/c06d} y también puedes descargar
-\url{http://thinkpython2.com/code/pronounce.py}, lo cual proporciona una función
+\url{http://thinkpython2.com/code/pronounce.py}, que proporciona una función
 con nombre \verb"read_dictionary" que lee el diccionario de pronunciación y
 devuelve un diccionario de Python que mapea de cada palabra a una cadena que 
 describe su pronunciación primaria.
