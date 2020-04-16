@@ -894,11 +894,11 @@ y ejecutar código.
 \index{Hola, mundo}
 
 Tradicionalmente, el primer programa que escribes en un nuevo lenguaje
-de programación se llama ``¡Hola, mundo!'' porque todo lo que hace es mostrar
-las palabras ``¡Hola, mundo!''.  En Python, se ve así:
+de programación se llama ``Hola, mundo'' porque todo lo que hace es mostrar
+las palabras ``Hola, mundo''.  En Python, se ve así:
 
 \begin{verbatim}
->>> print('¡Hola, mundo!')
+>>> print('Hola, mundo')
 \end{verbatim}
 %
 Este es un ejemplo de una {\bf sentencia print}, aunque
@@ -906,7 +906,7 @@ en realidad no imprime nada en papel.  Esta sentencia muestra un resultado en la
 pantalla.  En este caso, el resultado es la frase
 
 \begin{verbatim}
-¡Hola, mundo!
+Hola, mundo
 \end{verbatim}
 %
 Las comillas en el programa marcan el principio y el final
@@ -924,7 +924,7 @@ una función, así que no usa paréntesis.
 \index{Python 2}
 
 \begin{verbatim}
->>> print '¡Hola, mundo!'
+>>> print 'Hola, mundo'
 \end{verbatim}
 %
 Esta distinción tendrá más sentido pronto, pero eso es suficiente para
@@ -992,11 +992,11 @@ estos en \url{http://wiki.python.org/moin/BitwiseOperators}.
 
 Un {\bf valor} es una de las cosas básicas con las que funciona un programa,
 como una letra o un número.  Algunos valores que hemos visto hasta ahora son
-{\tt 2}, {\tt 42.0} y \verb"'¡Hola, mundo!'".
+{\tt 2}, {\tt 42.0} y \verb"'Hola, mundo'".
 
 Estos valores pertenecen a diferentes {\bf tipos}: {\tt 2} es un {\bf entero}
 (en inglés, {\em integer}), {\tt 42.0} es un {\bf número de coma flotante} (en
-inglés, {\em floating-point number}), y \verb"'¡Hola, Mundo!'" es una {\bf
+inglés, {\em floating-point number}), y \verb"'Hola, mundo'" es una {\bf
 cadena} (en inglés, {\em string}), llamada así porque las letras que contiene están unidas.
 \index{entero}
 \index{coma flotante}
@@ -1009,7 +1009,7 @@ puede decir:
 <class 'int'>
 >>> type(42.0)
 <class 'float'>
->>> type('¡Hola, mundo!')
+>>> type('Hola, mundo')
 <class 'str'>
 \end{verbatim}
 %
@@ -1321,7 +1321,7 @@ Es una buena idea leer este libro en frente de un computador para que puedas
 probar los ejemplos mientras avanzas.
 
 Cada vez que experimentes con una nueva característica, deberías intentar
-cometer errores.  Por ejemplo, en el programa ``¡Hola, mundo!'',
+cometer errores.  Por ejemplo, en el programa ``Hola, mundo'',
 ¿qué ocurre si omites una de las comillas?  ¿Y
 si omites ambas?  ¿Qué ocurre si escribes {\tt print} de manera incorrecta?
 \index{mensaje de error}
@@ -5951,7 +5951,7 @@ aprenderás sobre algunos de los métodos que proporcionan las cadenas.
 \index{corchetes!operador}
 Una cadena es una secuencia de caracteres.
 Puedes acceder a los caracteres uno a la vez con el
-operador corchetes:
+operador de corchetes:
 
 \begin{verbatim}
 >>> fruta = 'banana'
@@ -6025,7 +6025,7 @@ en una cadena:
 6
 \end{verbatim}
 %
-Para obtener la última letra de una cadena, tal vez estés tentado a intentar algo
+Para obtener la última letra de una cadena, quizás te tientes a intentar algo
 así:
 \index{excepción IndexError}
 \index{IndexError}
@@ -6047,7 +6047,7 @@ que restar 1 a {\tt longitud}:
 'a'
 \end{verbatim}
 %
-O puedes usar índices negativos, los cuales cuentan hacia atrás desde
+O puedes usar índices negativos, que cuentan hacia atrás desde
 el final de la cadena.  La expresión {\tt fruta[-1]} entrega la última
 letra, {\tt fruta[-2]} entrega la penúltima, y así sucesivamente.
 \index{índice negativo}
@@ -6082,7 +6082,7 @@ línea.  La condición del bucle es {\tt indice < len(fruta)}, entonces
 cuando {\tt indice} es igual a la longitud de la cadena, la
 condición es falsa, y el cuerpo del bucle no se ejecuta.  El
 último carácter accedido es el que tiene índice {\tt len(fruta)-1},
-el cual es el último carácter en la cadena.
+que es el último carácter en la cadena.
 
 Como ejercicio, escribe una función que tome una cadena como argumento
 y muestre las letras hacia atrás, una por línea.
@@ -6105,7 +6105,7 @@ El siguiente ejemplo muestra cómo usar la concatenación (suma de cadenas)
 y un bucle {\tt for} para generar una serie abecedaria (es decir, en
 orden alfabético).  En el libro de Robert McCloskey {\em Abran
 paso a los patitos}, los nombres de los patitos son Jack, Kack, Lack,
-Mack, Nack, Ouack, Pack, and Quack.  Este bucle muestra estos nombres en
+Mack, Nack, Ouack, Pack, and Quack.  Este bucle muestra dichos nombres en
 orden:
 
 \begin{verbatim}
@@ -6136,7 +6136,7 @@ mal escritos.  Como ejercicio, modifica el programa para arreglar este error.
 
 \section{Cortes de cadena}
 \label{slice}
-\index{operador corte} \index{corte!operador} \index{índice de corte}
+\index{operador de corte} \index{corte!operador} \index{índice de corte}
 \index{cadena!corte de} \index{corte de cadena} \index{slice}
 
 Un segmento de una cadena se llama {\bf corte} (en inglés, {\em slice}).  Seleccionar un corte es
@@ -6207,7 +6207,7 @@ Por ejemplo:
 \index{excepción TypeError}
 
 \begin{verbatim}
->>> saludo = 'Hello, world!'
+>>> saludo = 'Hola, mundo'
 >>> saludo[0] = 'J'
 TypeError: 'str' object does not support item assignment
 \end{verbatim}
@@ -6228,19 +6228,19 @@ cadena que ya existe.  Lo mejor que puedes hacer es crear una nueva cadena
 que sea una variación de la original:
 
 \begin{verbatim}
->>> saludo = 'Hello, world!'
+>>> saludo = 'Hola, mundo'
 >>> nuevo_saludo = 'J' + saludo[1:]
 >>> nuevo_saludo
-'Jello, world!'
+'Jola, mundo'
 \end{verbatim}
 %
-Este ejemplo concatena una nueva primera letra en
+Este ejemplo concatena una nueva primera letra con
 un corte de {\tt saludo}.  No tiene efecto en
 la cadena original.
 \index{concatenación}
 
 
-\section{Buscar}
+\section{Búsqueda}
 \label{find}
 
 ¿Qué hace la siguiente función?
@@ -6270,8 +6270,8 @@ del bucle y devuelve inmediatamente.
 Si el carácter no aparece en la cadena, el programa
 termina el bucle de manera normal y devuelve {\tt -1}.
 
-Este patrón de computación---recorrer una secuencia y devolver
-cuando encontramos lo que buscamos---se llama {\bf búsqueda}.
+Este patrón de computación ---recorrer una secuencia y devolver
+cuando encontramos lo que buscamos--- se llama {\bf búsqueda}.
 \index{recorrido}
 \index{patrón búsqueda}
 \index{búsqueda!patrón}
@@ -6304,11 +6304,11 @@ Este programa demuestra otro patrón de computación llamado {\bf
 contador}.  La variable {\tt contar} se inicializa en 0 y luego
 se incrementa cada vez que se encuentra una {\tt a}.
 Cuando el bucle termina, {\tt contar}
-contiene el resultado---el número total de letras {\tt a}.
+contiene el resultado: el número total de letras {\tt a}.
 
 \index{encapsulamiento}
 Como ejercicio, encapsula este código en una función con nombre {\tt
-contar}, y generalízalo para que acepte la cadena y la
+contar} y generalízalo para que acepte la cadena y la
 letra como argumentos.
 
 Luego reescribe la función de modo que, en lugar de
@@ -6320,8 +6320,8 @@ find} de la sección anterior.
 \label{optional}
 
 Las cadenas proporcionan métodos que realizan una variedad de operaciones útiles.
-Un método es similar a una función---toma argumentos y
-devuelve un valor---pero la sintaxis es diferente.  Por ejemplo, el
+Un método es similar a una función ---toma argumentos y
+devuelve un valor--- pero la sintaxis es diferente.  Por ejemplo, el
 método {\tt upper} toma una cadena y devuelve una nueva cadena con
 todas las letras mayúsculas.
 \index{método}
@@ -6392,7 +6392,7 @@ tomar también un tercer argumento, el índice donde debería detenerse:
 Esta búsqueda falla porque {\tt b} no
 aparece en el rango de índices desde {\tt 1} hasta {\tt 2}, sin incluir el {\tt
 2}.  Buscar hasta el segundo índice, sin incluirlo, hace a
-{\tt find} consistente con el operador corte.
+{\tt find} consistente con el operador de corte.
 
 
 
@@ -6424,9 +6424,9 @@ def en_ambas(palabra1, palabra2):
 \end{verbatim}
 %
 Con nombres de variables bien escogidos,
-Python a veces se lee como en inglés, en este caso mezclado con español.  Podrías leer
-este bucle, ``para (cada) letra en (la primera) palabra, si (la) letra
-(aparece) en (la segunda) palabra, imprimir (la) letra.''
+Python a veces se lee como el inglés.  Podrías leer
+este bucle, ``{\em para} (cada) letra {\em en} (la primera) palabra, {\em si} (la) letra
+(aparece) {\em en} (la segunda) palabra, {\em imprimir} (la) letra.''
 
 Esto es lo que obtienes si comparas uvas y tunas:
 
@@ -6638,7 +6638,7 @@ en cero y luego incrementada.
 \item[invocación:] Una sentencia que llama a un método.
 \index{invocación}
 
-\item[optional argument:] Un argumento de función o de método que no es
+\item[argumento opcional:] Un argumento de función o de método que no es
 obligatorio.
 \index{argumento opcional}
 \index{opcional!argumento}
@@ -6683,7 +6683,7 @@ en \verb"'banana'".
 
 \begin{exercise}
 \index{tamaño de paso}
-\index{operador corte}
+\index{operador de corte}
 \index{corte!operador}
 
 Un corte de cadena puede tomar un tercer índice que especifique el ``tamaño
@@ -6770,7 +6770,7 @@ computador de la nave se llama HAL, que es IBM rotada en -1.
 Escribe una función llamada \verb"rotar_palabra"
 que tome una cadena y un entero como parámetros y devuelva
 una nueva cadena que contenga las letras de la cadena original
-rotadas en la cantidad dada.
+rotadas en la cantidad entregada.
 
 Tal vez quieras usasr la función incorporada {\tt ord}, que convierte
 un carácter en un código numérico, y {\tt chr}, que convierte códigos
@@ -6785,8 +6785,8 @@ así por ejemplo:
 Debido a que \verb"'c'" es la dos-ésima letra del alfabeto.  Pero ten
 cuidado: los códigos numéricos para las letras mayúsculas son diferentes.
 
-Chistes potencialmente ofensivos en internet a veces están codificados en
-ROT13, lo cual es un cifrado César con rotación 13.  Si no te
+Los chistes potencialmente ofensivos en internet a veces están codificados en
+ROT13, que es un cifrado César con rotación 13.  Si no te
 ofendes fácilmente, encuentra y decodifica algunos.  Solución:
 \url{http://thinkpython2.com/code/rotate.py}.
 
@@ -7551,13 +7551,13 @@ repite la lista {\tt [1, 2, 3]} tres veces.
 
 
 \section{Cortes de lista}
-\index{operador corte}
+\index{operador de corte}
 \index{corte!operador}
 \index{índice de corte}
 \index{lista!corte}
 \index{corte!lista}\index{slice}
 
-El operador corte también funciona en las listas:
+El operador de corte también funciona en las listas:
 
 \begin{verbatim}
 >>> t = ['a', 'b', 'c', 'd', 'e', 'f']
@@ -8149,9 +8149,9 @@ def sin_cabeza_mal(t):
     t = t[1:]              # ¡INCORRECTO!
 \end{verbatim}
 %
-El operador corte crea una nueva lista y la asignación
+El operador de corte crea una nueva lista y la asignación
 hace que {\tt t} se refiera a esta, pero eso no afecta a la llamadora.
-\index{operador corte}\index{slice}
+\index{operador de corte}\index{slice}
 \index{corte!operador}
 %
 \begin{verbatim}
@@ -9586,8 +9586,8 @@ indexa un elemento:
 'a'
 \end{verbatim}
 %
-Y el operador corte selecciona un rango de elementos.
-\index{operador corte}\index{slice}
+Y el operador de corte selecciona un rango de elementos.
+\index{operador de corte}\index{slice}
 \index{corte!operador}
 \index{tupla!corte}
 \index{corte!tupla}
