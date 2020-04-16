@@ -3030,7 +3030,7 @@ longitud}.
 {\tt t}, y radio, {\tt r}, como parámetros y dibuje un círculo
 aproximado llamando a {\tt poligono} con una longitud y
 número de lados apropiado.  Prueba tu función con un rango de valores
-de {\tt r}.  \index{funcíon círculo} \index{círculo!función}
+de {\tt r}.  \index{función círculo} \index{círculo!función}
 
 Pista: averigua cuál es el perímetro del círculo y asegúrate de que
 se cumpla que {\tt longitud * n = perimetro}.
@@ -3183,7 +3183,7 @@ más control, pero la interfaz sería menos limpia.
 \index{interfaz}
 
 La {\bf interfaz} de una función es un resumen de cómo se usa: ¿cuáles
-son los parámetros?  ¿Qué hace la funcíon?  ¿Y cuál es el valor de
+son los parámetros?  ¿Qué hace la función?  ¿Y cuál es el valor de
 retorno?  Una interfaz es ``limpia'' si permite a la sentencia llamadora hacer
 lo que quiere sin lidiar con detalles innecesarios.
 
@@ -5947,7 +5947,7 @@ aprenderás sobre algunos de los métodos que proporcionan las cadenas.
 
 \index{secuencia}
 \index{carácter}
-\index{operador corchetes}
+\index{operador de corchetes}
 \index{corchetes!operador}
 Una cadena es una secuencia de caracteres.
 Puedes acceder a los caracteres uno a la vez con el
@@ -7378,11 +7378,11 @@ Como podrías esperar, puedes asignar valores de lista a variables:
 \index{lista!elemento}
 \index{acceso}
 \index{índice}
-\index{operador corchetes}
+\index{operador de corchetes}
 \index{corchetes!operador}
 
 La sintaxis para acceder a los elementos de una lista es la misma que para
-acceder a los caracteres de una cadena---el operador corchetes.  La
+acceder a los caracteres de una cadena: el operador de corchetes.  La
 expresión dentro de los corchetes especifica el índice.  Recuerda que los
 índices comienzan en 0:
 
@@ -7391,7 +7391,7 @@ expresión dentro de los corchetes especifica el índice.  Recuerda que los
 'Cheddar'
 \end{verbatim}
 %
-A diferencia de las cadenas, las listas son mutables.  Cuando el operador corchetes aparece
+A diferencia de las cadenas, las listas son mutables.  Cuando el operador de corchetes aparece
 en el lado izquierdo de una asignación, este identifica el elemento de la
 lista que será asignado.
 \index{mutabilidad}
@@ -7421,7 +7421,7 @@ quesos}, {\tt numeros} y {\tt vacio}.
 \label{fig.liststate}
 \end{figure}
 
-Las listas se representan por cajas con la palabra ``lista'' por fuera
+Las listas se representan por cajas con la palabra ``list'' por fuera
 y los elementos de la lista por dentro.  {\tt quesos} se refiere a
 una lista con tres elementos con índices 0, 1 y 2.
 {\tt numeros} contiene dos elementos; el diagrama muestra que el
@@ -7829,7 +7829,7 @@ El valor de retorno de {\tt remove} es {\tt None}.
 \index{valor especial None}
 \index{None!valor especial}
 
-Para remover más de un elemento, puedes usar {\tt del} con
+Para eliminar más de un elemento, puedes usar {\tt del} con
 índices de corte:
 
 \begin{verbatim}
@@ -8070,7 +8070,7 @@ a la misma cadena o no.
 \index{referencia}
 \index{parámetro}
 
-Cuando pasas una lista a una función, la funcíon obtiene una referencia a
+Cuando pasas una lista a una función, la función obtiene una referencia a
 la lista.  Si la función modifica la lista, la sentencia llamadora ve
 el cambio.  Por ejemplo, \verb"sin_cabeza" quita el primer elemento
 de una lista:
@@ -8137,7 +8137,7 @@ Aquí hay un ejemplo que usa el operador {\tt +}:
 [1, 2, 3, 4]
 \end{verbatim}
 %
-El resultado del operador es una nueva lista, y la lista original no ha
+El resultado del operador es una nueva lista y la lista original no ha
 cambiado.
 
 Esta diferencia es importante cuando escribes funciones que
@@ -8352,7 +8352,7 @@ debería separarse una cadena.
 
 \section{Ejercicios}
 
-Puedes descargar las solucioes a estos ejercicios desde
+Puedes descargar las soluciones a estos ejercicios en
 \url{http://thinkpython2.com/code/list_exercises.py}.
 
 \begin{exercise}
@@ -8458,11 +8458,11 @@ original.
 \begin{exercise}
 
 Este ejercicio está relacionado con la denominada ``Paradoja del cumpleaños'', de la cual
-puedes leer en \url{http://es.wikipedia.org/wiki/Paradoja_del_cumpleaños}.
+puedes leer en \url{http://es.wikipedia.org/wiki/Paradoja_del_cumplea\~nos}.
 \index{paradoja del cumpleaños}
 
 Si hay 23 estudiantes en tu clase, ¿cuáles son las posibilidades
-de que dos de ustedes tengan el mismo cumpleaños?  Puedes estimar esta
+de que dos de ustedes estén de cumpleaños el mismo día?  Puedes estimar esta
 probabilidad generando muestras al azar de 23 cumpleaños
 y verificar coincidencias.  Pista: puedes generar cumpleaños aleatorio
 con la función {\tt randint} del módulo {\tt random}.
@@ -8472,7 +8472,7 @@ con la función {\tt randint} del módulo {\tt random}.
 \index{randint!función}
 
 Puedes descargar mi
-solución desde \url{http://thinkpython2.com/code/birthday.py}.
+solución en \url{http://thinkpython2.com/code/birthday.py}.
 
 \end{exercise}
 
@@ -8524,12 +8524,12 @@ lista de palabras tiene 113,809 palabras, tomará alrededor de 17 pasos
 para encontrar la palabra o concluir que no está.
 
 Escribe una función llamada \verb"in_bisect" que tome una lista ordenada
-y un valor objetivo y devuelva {\tt True} si la palabra está
+y un valor objetivo, y devuelva {\tt True} si la palabra está
 en la lista y {\tt False} si no está.
 \index{módulo bisect}
 \index{bisect!módulo}
 
-¡O podrías leer la documentación del módulo {\tt bisect}
+¡O bien podrías leer la documentación del módulo {\tt bisect}
 y usar eso!  Solución: \url{http://thinkpython2.com/code/inlist.py}.
 
 \end{exercise}
@@ -8559,7 +8559,7 @@ Crédito: Este ejercicio está inspirado en un ejemplo de \url{http://puzzlers.o
 
 \item ¿Puedes encontrar alguna palabra que sea un triple entrelazado; es decir,
   leyendo cada tres letras se forma una palabra, comenzando con la primera, la segunda o
-  la tercera?
+  la tercera letra?
 
 \end{enumerate}
 \end{exercise}
@@ -9575,9 +9575,9 @@ es una tupla con los elementos de la secuencia:
 Dado que {\tt tuple} es el nombre de una función incorporada, deberías
 evitar usarlo como nombre de una variable.
 
-La mayoría de los operadores de lista también funcionan en tuplas.  El operador corchetes
+La mayoría de los operadores de lista también funcionan en tuplas.  El operador de corchetes
 indexa un elemento:
-\index{operador corchetes}
+\index{operador de corchetes}
 \index{corchetes!operador}
 
 \begin{verbatim}
