@@ -382,7 +382,7 @@ ayuda enorme.
 Si tienes una sugerencia o corrección, por favor envía un email a
 {\tt feedback@thinkpython.com}.  Si hago un cambio basado en tu
 retroalimentación, te agregaré a la lista de colaboradores
-(a menos que pidas ser omitido).
+(a menos que pidas que te omita).
 
 Si incluyes al menos una parte de la oración en donde
 aparece el error, eso me facilita la búsqueda.  Los números de página
@@ -825,8 +825,8 @@ simple para hacerla con una de estas instrucciones básicas.
 
 Uno de los desafíos de comenzar con Python es que quizás debas
 instalar Python y software relacionado en tu computador.
-Si estás familiarizado con tu sistema operativo, y especialmente
-si te sientes cómodo con la interfaz de línea de comandos, no tendrás
+Si conoces bien tu sistema operativo, y especialmente
+si manejas bien la interfaz de línea de comandos, no tendrás
 problemas instalando Python.  Sin embargo, puede ser doloroso para
 los principiantes aprender sobre administración del sistema y programación al
 mismo tiempo.
@@ -834,7 +834,7 @@ mismo tiempo.
 \index{Python!ejecutar}
 
 Para evitar ese problema, recomiendo que comiences ejecutando Python
-en un navegador.  Después, cuando estés cómodo con Python, haré
+en un navegador.  Después, cuando te familiarices con Python, haré
 sugerencias para instalar Python en tu computador.
 \index{Python en un navegador}
 
@@ -970,8 +970,8 @@ eleva un número a una potencia:
 \end{verbatim}
 %
 En algunos otros lenguajes, \verb"^" se usa para potenciación, pero
-en Python es un operador bit a bit llamado XOR.  Si no estás familiarizado
-con los operadores bit a bit, el resultado te sorprenderá:
+en Python es un operador bit a bit llamado XOR.  Si no conoces
+los operadores bit a bit, el resultado te sorprenderá:
 
 \begin{verbatim}
 >>> 6 ^ 2
@@ -1043,7 +1043,7 @@ cadenas.
 %
 Son cadenas.
 
-Cuando escribes un entero grande, tal vez estés tentado a usar comas
+Cuando escribas un entero grande, tal vez sientas la tentación de usar comas
 entre grupos de dígitos, como en {\tt 1,000,000}.  No es un
 {\em entero} legal en Python, pero es legal:
 
@@ -8200,7 +8200,7 @@ trampas comunes y maneras de evitarlas:
   devuelven {\tt None}.  Esto es lo opuesto a los métodos de cadena,
   que devuelven una nueva cadena y dejan sola a la original.
 
-Si estás acostumbrado a escribir código de cadena como este:
+Si te acostumbraste a escribir código de cadena como este:
 
 \begin{verbatim}
 palabra = palabra.strip()
@@ -10376,7 +10376,7 @@ y has visto algunos de los algoritmos que los usan.
 Si te gustaría saber más sobre algoritmos, este podría ser un buen
 momento para leer el Apéndice~\ref{algorithms}.
 Sin embargo, no tienes que leerlo antes de continuar; puedes leerlo
-cuando estés interesado.
+cuando te interese.
 
 Este capítulo presenta un estudio de caso con ejercicios que te hacen
 pensar sobre escoger estructuras de datos y practicar usándolos.
@@ -10686,7 +10686,7 @@ she     2364
 \end{verbatim}
 %
 Este código se puede simplificar usando el parámetro {\tt key} de
-la función {\tt sort}.  Si eres curioso, puedes leer sobre este
+la función {\tt sort}.  Si tienes curiosidad, puedes leer sobre este
 en \url{https://wiki.python.org/moin/HowTo/Sorting}.
 
 
@@ -15677,512 +15677,512 @@ memoize if you write it using conditional expressions.
 
 \appendix
 
-\chapter{Debugging}
+\chapter{Depuración}
 \index{debugging}
 
-When you are debugging, you should distinguish among different
-kinds of errors in order to track them down more quickly:
+Cuando estés depurando, deberías distinguir entre los diferentes
+tipos de errores con el fin de rastrearlos de manera más rápida:
 
 \begin{itemize}
 
-\item Syntax errors are discovered by the interpreter when it is
-  translating the source code into byte code.  They indicate
-  that there is something wrong with the structure of the program.
-  Example: Omitting the colon at the end of a {\tt def} statement
-  generates the somewhat redundant message {\tt SyntaxError: invalid
+\item Los errores de sintaxis son descubiertos por el intérprete cuando está
+  traduciendo el código fuente a código byte.  Indican
+  que hay algo mal en la estructura del programa.
+  Ejemplo: omitir el signo de dos puntos al final de una sentencia {\tt def}
+  genera el mensaje algo redundante {\tt SyntaxError: invalid
     syntax}.
-\index{syntax error}
-\index{error!syntax}
+\index{error de sintaxis}
+\index{sintaxis!error de}
 
-\item Runtime errors are produced by the interpreter if something goes
-  wrong while the program is running.  Most runtime error messages
-  include information about where the error occurred and what
-  functions were executing.  Example: An infinite recursion eventually
-  causes the runtime error ``maximum recursion depth exceeded''.
-\index{runtime error}
-\index{error!runtime}
-\index{exception}
+\item Los errores de tiempo de ejecución son producidos por el intérprete si algo va
+  mal mientras el programa se está ejecutando.  La mayoría de los mensajes de error de tiempo de ejecución
+  incluyen información acerca de dónde ocurrió el error y qué
+  funciones se estaban ejecutando.  Ejemplo: una recursividad infinita eventualmente
+  causa el error de tiempo de ejecución ``maximum recursion depth exceeded''.
+\index{error de tiempo de ejecución}
+\index{tiempo de ejecución!error de}
+\index{excepción}
 
-\item Semantic errors are problems with a program that runs without
-  producing error messages but doesn't do the right thing.  Example:
-  An expression may not be evaluated in the order you expect, yielding
-  an incorrect result.
-\index{semantic error}
-\index{error!semantic}
+\item Los errores semánticos son problemas con un programa que se ejecuta sin
+  producir mensajes de error pero no hacen lo correcto.  Ejemplo:
+  una expresión puede que no sea evaluada en el orden que esperas, entregando
+  un resultado incorrecto.
+\index{error semántico}
+\index{semántico!error}
 
 \end{itemize}
 
-The first step in debugging is to figure out which kind of
-error you are dealing with.  Although the following sections are
-organized by error type, some techniques are
-applicable in more than one situation.
+El primer paso en la depuración es averiguar con qué tipo de
+error estás lidiando.  Aunque las siguientes secciones están
+organizadas por tipo de error, algunas técnicas son
+aplicables en más de una situación.
 
 
-\section{Syntax errors}
-\index{error message}
+\section{Errores de sintaxis}
+\index{mensaje de error}
 
-Syntax errors are usually easy to fix once you figure out what they
-are.  Unfortunately, the error messages are often not helpful.
-The most common messages are {\tt SyntaxError: invalid syntax} and
-{\tt SyntaxError: invalid token}, neither of which is very informative.
+Los errores de sintaxis son generalmente fáciles de arreglar una vez que averiguas cuáles
+son.  Desafortunadamente, los mensajes de error a menudo no son útiles.
+Los mensajes más comunes son {\tt SyntaxError: invalid syntax} y
+{\tt SyntaxError: invalid token}, de los cuales ninguno es muy informativo.
 
-On the other hand, the message does tell you where in the program the
-problem occurred.  Actually, it tells you where Python
-noticed a problem, which is not necessarily where the error
-is.  Sometimes the error is prior to the location of the error
-message, often on the preceding line.
-\index{incremental development}
-\index{development plan!incremental}
+Por otra parte, el mensaje sí te dice dónde en el programa
+ocurrió el problema.  En realidad, te dice dónde Python
+notó un problema, que no necesariamente es donde el error
+está.  A veces el error está antes de la ubicación del mensaje
+de error, a menudo en la línea precedente.
+\index{desarrollo incremental}
+\index{plan de desarrollo!incremental}
 
-If you are building the program incrementally, you should have
-a good idea about where the error is.  It will be in the last
-line you added.
+Si estás construyendo el programa de manera incremental, deberías tener
+una buena idea acerca de dónde está el error.  Estará en la última
+línea que agregaste.
 
-If you are copying code from a book, start by comparing
-your code to the book's code very carefully.  Check every character.
-At the same time, remember that the book might be wrong, so
-if you see something that looks like a syntax error, it might be.
+Si estás copiando código de un libro, comienza comparando
+tu código con el código del libro muy cuidadosamente.  Revisa cada carácter.
+Al mismo tiempo, recuerda que el libro podría estar mal, por tanto
+si ves algo que parece un error de sintaxis, puede serlo.
 
-Here are some ways to avoid the most common syntax errors:
-\index{syntax}
+Aquí hay algunas maneras de evitar los errores de sintaxis más comunes:
+\index{sintaxis}
 
 \begin{enumerate}
 
-\item Make sure you are not using a Python keyword for a variable name.
-\index{keyword}
+\item Asegúrate de que no estás usando una palabra clave de Python para un nombre de variable.
+\index{palabra clave}
 
-\item Check that you have a colon at the end of the header of every
-compound statement, including {\tt for}, {\tt while},
-{\tt if}, and {\tt def} statements.
-\index{header}
-\index{colon}
+\item Verifica que tienes un signo de dos puntos al final del encabezado de cada
+sentencia compuesta, incluyendo las sentencias {\tt for}, {\tt while},
+{\tt if} y {\tt def}.
+\index{encabezado}
+\index{signo de dos puntos}
 
-\item Make sure that any strings in the code have matching
-quotation marks.  Make sure that all quotation marks are
-``straight quotes'', not ``curly quotes''.
-\index{quotation mark}
+\item Asegúrate de que todas las cadenas en el código tengan comillas
+coincidentes.  Asegúrate de que todas las comillas son
+``comillas rectas'', no ``comillas tipográficas''.
+\index{comillas}
 
-\item If you have multiline strings with triple quotes (single or double), make
-sure you have terminated the string properly.  An unterminated string
-may cause an {\tt invalid token} error at the end of your program,
-or it may treat the following part of the program as a string until it
-comes to the next string.  In the second case, it might not produce an error
-message at all!
-\index{multiline string}
-\index{string!multiline}
+\item Si tienes cadenas multilínea con comillas triples (simples o dobles),
+asegúrate de que has terminado la cadena de manera apropiada.  Una cadena sin terminar
+puede causar un error {\tt invalid token} al final de tu programa,
+o puede tratar la siguiente parte del programa como una cadena hasta que
+llega a la siguiente cadena.  En el segundo caso, ¡podría no producir ningún mensaje
+de error!
+\index{cadena multilínea}
+\index{multilínea!cadena}
 
-\item An unclosed opening operator---\verb+(+, \verb+{+, or
-  \verb+[+---makes Python continue with the next line as part of the
-  current statement.  Generally, an error occurs almost immediately in
-  the next line.
+\item Un operador de apertura no cerrado ---\verb+(+, \verb+{+ o
+  \verb+[+--- hace que Python continúe con la línea siguiente como parte de la
+  sentencia actual.  Generalmente, ocurre un error casi inmediatamente en
+  la línea siguient.
 
-\item Check for the classic {\tt =} instead of {\tt ==} inside
-a conditional.
-\index{conditional}
+\item Revisa el clásico {\tt =} en lugar de {\tt ==} dentro
+de un condicional.
+\index{condicional}
 
-\item Check the indentation to make sure it lines up the way it
-is supposed to.  Python can handle space and tabs, but if you mix
-them it can cause problems.  The best way to avoid this problem
-is to use a text editor that knows about Python and generates
-consistent indentation.
-\index{indentation}
-\index{whitespace}
+\item Revisa la sangría para asegurarte de que esté alineada como se
+supone que debe.  Python puede manejar el espacio y la tabulación, pero si los mezclas
+puede causar problemas.  La mejor manera de evitar este problema
+es usar un editor de texto que sepa sobre Python y genere
+sangría consistente.
+\index{sangría}
+\index{espacio en blanco}
 
-\item If you have non-ASCII characters in the code (including strings
-and comments), that might cause a problem, although Python 3 usually
-handles non-ASCII characters.  Be careful if you paste in text from
-a web page or other source.
+\item Si tienes caracteres no ASCII en el código (incluyendo cadenas
+y comentarios), podría causar un problema, aunque Python 3 generalmente
+maneja caracteres no ASCII.  Ten cuidado si pegas texto de
+una página web u otra fuente.
 
 \end{enumerate}
 
-If nothing works, move on to the next section...
+Si nada funciona, pasa a la siguiente sección...
 
 
-\subsection{I keep making changes and it makes no difference.}
+\subsection{Sigo haciendo cambios y no hay diferencia.}
 
-If the interpreter says there is an error and you don't see it, that
-might be because you and the interpreter are not looking at the same
-code.  Check your programming environment to make sure that the
-program you are editing is the one Python is trying to run.
+Si el intérprete dice que hay un error y tú no lo ves,
+podría ser porque tú y el intérprete no están mirando el mismo
+código.  Revisa tu entorno de programación para asegurarte de que el
+programa que estás editando es el que Python está intentando ejecutar.
 
-If you are not sure, try putting an obvious and deliberate syntax
-error at the beginning of the program.  Now run it again.  If the
-interpreter doesn't find the new error, you are not running the
-new code.
+Si no estás seguro, intenta poniendo un error de sintaxis obvio y deliberado
+al principio del programa.  Ahora ejecútalo de nuevo.  Si el
+intérprete no encuentra el nuevo error, no estás ejecutando el
+código nuevo.
 
-There are a few likely culprits:
-
-\begin{itemize}
-
-\item You edited the file and forgot to save the changes before
-running it again.  Some programming environments do this
-for you, but some don't.
-
-\item You changed the name of the file, but you are still running
-the old name.
-
-\item Something in your development environment is configured
-incorrectly.
-
-\item If you are writing a module and using {\tt import},
-make sure you don't give your module the same name as one
-of the standard Python modules.
-
-\item If you are using {\tt import} to read a module, remember
-that you have to restart the interpreter or use {\tt reload}
-to read a modified file.  If you import the module again, it
-doesn't do anything.
-\index{module!reload}
-\index{reload function}
-\index{function!reload}
-
-\end{itemize}
-
-If you get stuck and you can't figure out what is going on, one
-approach is to start again with a new program like ``Hello, World!'',
-and make sure you can get a known program to run.  Then gradually add
-the pieces of the original program to the new one.
-
-
-\section{Runtime errors}
-
-Once your program is syntactically correct,
-Python can read it and at least start running it.  What could
-possibly go wrong?
-
-
-\subsection{My program does absolutely nothing.}
-
-This problem is most common when your file consists of functions and
-classes but does not actually invoke a function to start execution.
-This may be intentional if you only plan to import this module to
-supply classes and functions.
-
-If it is not intentional, make sure there is a function call
-in the program, and make sure the flow of execution reaches
-it (see ``Flow of Execution'' below).
-
-
-\subsection{My program hangs.}
-\index{infinite loop}
-\index{infinite recursion}
-\index{hanging}
-
-If a program stops and seems to be doing nothing, it is ``hanging''.
-Often that means that it is caught in an infinite loop or infinite
-recursion.
+Hay algunos posibles culpables:
 
 \begin{itemize}
 
-\item If there is a particular loop that you suspect is the
-problem, add a {\tt print} statement immediately before the loop that says
-``entering the loop'' and another immediately after that says
-``exiting the loop''.
+\item Editaste el archivo y olvidaste guardar los cambios antes de
+ejecutarlo de nuevo.  Algunos entornos de programación hacen esto
+por ti, pero otros no.
 
-Run the program.  If you get the first message and not the second,
-you've got an infinite loop.  Go to the ``Infinite Loop'' section
-below.
+\item Cambiaste el nombre del archivo, pero todavía estás ejecutando
+el nombre antiguo.
 
-\item Most of the time, an infinite recursion will cause the program
-to run for a while and then produce a ``RuntimeError: Maximum
-recursion depth exceeded'' error.  If that happens, go to the
-``Infinite Recursion'' section below.
+\item Algo en tu entorno de desarrollo está configurado
+de manera incorrecta.
 
-If you are not getting this error but you suspect there is a problem
-with a recursive method or function, you can still use the techniques
-in the ``Infinite Recursion'' section.
+\item Si estás escribiendo un módulo y usando {\tt import},
+asegúrate de que no le das a tu módulo el mismo nombre que uno
+de los módulos estándar de Python.
 
-\item If neither of those steps works, start testing other
-loops and other recursive functions and methods.
+\item Si estás usando {\tt import} para leer un módulo, recuerda
+que tienes que reiniciar el intérprete o usar {\tt reload}
+para leer un archivo modificado.  Si importas el módulo de nuevo,
+no hace nada.
+\index{módulo!reload}
+\index{función reload}
+\index{reload!función}
 
-\item If that doesn't work, then it is possible that
-you don't understand the flow of execution in your program.
-Go to the ``Flow of Execution'' section below.
+\end{itemize}
+
+Si te atascas y no puedes averiguar qué está pasando, una
+manera de abordarlo es comenzar de nuevo con un nuevo programa como ``Hola, mundo''
+y asegurarte de que puedes obtener un programa conocido para ejecutar.  Luego agrega gradualmente
+los pedazos del programa original al nuevo programa.
+
+
+\section{Errores de tiempo de ejecución}
+
+Una vez que tu programa está sintácticamente correcto,
+Python puede leerlo y al menos comenzar a ejecutarlo.  ¿Qué podría
+salir mal?
+
+
+\subsection{Mi programa no hace absolutamente nada.}
+
+Este problema es más común cuando tu archivo se compone de funciones y
+clases pero en realidad no invoca una función para comenzar la ejecución.
+Esto puede ser intencional si solo planeas importar este módulo para
+proporcionar clases y funciones.
+
+Si no es intentional, asegúrate de que hay una llamada a función
+en el programa, y asegúrate de que el flujo de ejecución
+lo alcanza (ver ``Flujo de ejecución'' más adelante).
+
+
+\subsection{Mi programa se congela.}
+\index{bucle infinito}
+\index{recursividad infinita}
+\index{congelamiento}
+
+Si un programa se detiene y parece estar haciendo nada, está ``congelado''.
+A menudo eso significa que está atrapado en un bucle infinito o una
+recursividad infinita.
+
+\begin{itemize}
+
+\item Si hay un bucle en particular del cual sospechas que es el
+problema, agrega una sentencia {\tt print} inmediatamente antes del bucle que
+diga ``entrando al bucle'' y otro inmediatamente después que diga
+``saliendo del bucle''.
+
+Ejecuta el programa.  Si obtienes el primer mensaje y no el segundo,
+tienes un bucle infinito.  Ve a la sección ``Bucle infinito''
+de más adelante.
+
+\item La mayor parte del tiempo, una recursividad infinita causará que el
+programa se ejecute por un momento y luego produzca un error ``RuntimeError: Maximum
+recursion depth exceeded''.  Si eso ocurre, ve a la sección
+``Recursividad infinita'' de más adelante.
+
+Si no obtienes este error pero sospechas que hay un problema
+con una función recursiva o método recursivo, todavía puedes usar las térnicas
+de la sección ``Recursividad infinita''.
+
+\item Si ninguno de esos pasos funcioan, comienza a probar otros
+bucles y otras funciones y métodos recursivos.
+
+\item Si eso no funciona, entonces es posible que
+no entiendas el flujo de ejecución de tu programa.
+Ve a la sección ``Flujo de ejecución'' de más adelante.
 
 \end{itemize}
 
 
-\subsubsection{Infinite Loop}
-\index{infinite loop}
-\index{loop!infinite}
-\index{condition}
-\index{loop!condition}
+\subsubsection{Bucle infinito}
+\index{bucle infinito}
+\index{infinito!bucle}
+\index{condición}
+\index{bucle!condición}
 
-If you think you have an infinite loop and you think you know
-what loop is causing the problem, add a {\tt print} statement at
-the end of the loop that prints the values of the variables in
-the condition and the value of the condition.
+Si crees que tienes un bicle infinito y crees que sabes
+qué bucle está causando el problema, agrega una sentencia {\tt print}
+al final del bucle que imprima los valores de las variables en
+la condición y el valor de la condición.
 
-For example:
+Por ejemplo:
 
 \begin{verbatim}
 while x > 0 and y < 0 :
-    # do something to x
-    # do something to y
+    # hacer algo a x
+    # hacer algo a y 
 
     print('x: ', x)
     print('y: ', y)
-    print("condition: ", (x > 0 and y < 0))
+    print("condición: ", (x > 0 and y < 0))
 \end{verbatim}
 %
-Now when you run the program, you will see three lines of output
-for each time through the loop.  The last time through the
-loop, the condition should be {\tt False}.  If the loop keeps
-going, you will be able to see the values of {\tt x} and {\tt y},
-and you might figure out why they are not being updated correctly.
+Ahora cuando ejecutes el programa, verás tres líneas de salida
+para cada vez que se pase por el bucle.  En el último paso por el
+bucle, la condición debería ser {\tt False}.  Si el bucle
+continúa, podrás ver los valores de {\tt x} e {\tt y},
+y podrías averiguar por qué no se están actualizando correctamente.
 
 
-\subsubsection{Infinite Recursion}
-\index{infinite recursion}
-\index{recursion!infinite}
+\subsubsection{Recursividad infinita}
+\index{recursividad infinita}
+\index{infinita!recursividad}
 
-Most of the time, infinite recursion causes the program to run
-for a while and then produce a {\tt Maximum recursion depth exceeded}
-error.
+La mayor parte del tiempo, la recursividad infinita causa que el programa se
+ejecute por un momento y luego produzca un error
+{\tt Maximum recursion depth exceeded}.
 
-If you suspect that a function is causing an infinite
-recursion, make sure that there is a base case.
-There should be some condition that causes the
-function to return without making a recursive invocation.
-If not, you need to rethink the algorithm and identify a base
-case.
+Si sospechas que una función está causando una recursividad
+infinita, asegúrate de que hay un caso base.
+Debería haber alguna condición que cause que la
+función devuelva sin hacer una invocación recursiva.
+Si no, necesitas volver a pensar el algoritmo e identificar un caso
+base.
 
-If there is a base case but the program doesn't seem to be reaching
-it, add a {\tt print} statement at the beginning of the function
-that prints the parameters.  Now when you run the program, you will see
-a few lines of output every time the function is invoked,
-and you will see the parameter values.  If the parameters are not moving
-toward the base case, you will get some ideas about why not.
-
-
-\subsubsection{Flow of Execution}
-\index{flow of execution}
-
-If you are not sure how the flow of execution is moving through
-your program, add {\tt print} statements to the beginning of each
-function with a message like ``entering function {\tt foo}'', where
-{\tt foo} is the name of the function.
-
-Now when you run the program, it will print a trace of each
-function as it is invoked.
+Si hay un caso base pero el programa no parece estar alcanzándolo,
+agrega una sentencia {\tt print} al principio de la función
+que imprima los parámetros.  Ahora cuando ejecutes el programa, verás
+algunas líneas de salida cada vez que se invoca a la función,
+y verás los valores de los parámetros.  Si los parámetros no se están moviendo
+hacia el caso base, obtendrás algunas ideas sobre por qué no ocurre.
 
 
-\subsection{When I run the program I get an exception.}
-\index{exception}
-\index{runtime error}
+\subsubsection{Flujo de ejecución}
+\index{flujo de ejecución}
 
-If something goes wrong during runtime, Python
-prints a message that includes the name of the
-exception, the line of the program where the problem occurred,
-and a traceback.
+Si no estás seguro de cómo se está moviendo el flujo de ejecución a través
+de tu programa, agrega sentencias {\tt print} al principio de cada
+función con un mensaje como ``entrando a la función {\tt foo}'', donde
+{\tt foo} es el nombre de la función.
+
+Ahora cuando ejecutes el programa, imprimirá una señal de cada
+función que se invoque.
+
+
+\subsection{Cuando ejecuto el programa obtengo una excepción.}
+\index{excepción}
+\index{error de tiempo de ejecución}
+
+Si algo va mal durante el tiempo de ejecución, Python
+imprime un mensaje que incluye el nombre de la
+excepción, la línea del programa donde ocurrió el problema
+y un rastreo.
 \index{rastreo}
 
-The traceback identifies the function that is currently running, and
-then the function that called it, and then the function that called
-{\em that}, and so on.  In other words, it traces the sequence of
-function calls that got you to where you are, including the line
-number in your file where each call occurred.
+El rastreo identifica la función que se está ejecutando actualmente y
+luego la función que la llamó, y luego la función que llamo a
+{\em aquella}, y así sucesivamente.  En otras palabras, rastrea la secuencia de
+llamadas a función que te llevaron a donde estás, incluyendo el número
+de línea en tu archivo donde ocurrió cada llamada.
 
-The first step is to examine the place in the program where
-the error occurred and see if you can figure out what happened.
-These are some of the most common runtime errors:
+El primer paso es examinar el lugar en el programa donde
+ocurrió el error y ver si puedes averiguar lo que sucedió.
+Estos son algunos de los errores de tiempo de ejecución más comunes:
 
 \begin{description}
 
-\item[NameError:]  You are trying to use a variable that doesn't
-exist in the current environment.  Check if the name
-is spelled right, or at least consistently.
-And remember that local variables are local; you
-cannot refer to them from outside the function where they are defined.
+\item[NameError:]  Estás intentando usar una variable que no
+existe en el entorno actual.  Revisa si el nombre
+está bien escrito, o al menos de manera consistente.
+Y recuerda que las variables locales son locales; 
+no puedes referirte a estas desde afuera de la función donde se definieron.
 \index{NameError}
-\index{exception!NameError}
+\index{excepción!NameError}
 
-\item[TypeError:] There are several possible causes:
+\item[TypeError:] Hay varias causas posibles:
 \index{TypeError}
-\index{exception!TypeError}
+\index{excepción!TypeError}
 
 \begin{itemize}
 
-\item  You are trying to use a value improperly.  Example: indexing
-a string, list, or tuple with something other than an integer.
-\index{index}
+\item  Estás intentando usar un valor de manera inapropiada.  Ejemplo: indexar
+una cadena, lista o tupla con algo más que un entero.
+\index{índice}
 
-\item There is a mismatch between the items in a format string and
-the items passed for conversion.  This can happen if either the number
-of items does not match or an invalid conversion is called for.
-\index{format operator}
-\index{operator!format}
+\item Hay una discordancia entre los ítems en una cadena de formato y
+los ítems pasados para una conversión.  Eso puede ocurrir si el número
+de ítems no coincide o si se pidió una conversión no válida.
+\index{operador de formato}
+\index{formato!operador de}
 
-\item You are passing the wrong number of arguments to a function.
-For methods, look at the method definition and
-check that the first parameter is {\tt self}.  Then look at the
-method invocation; make sure you are invoking the method on an
-object with the right type and providing the other arguments
-correctly.
+\item Estás pasando el número equivocado de argumentos a una función.
+Para los métodos, mira la definición del método y
+verifica que el primer parámetro es {\tt self}.  Luego, mira la
+invocación del método; asegúrate de que estás invocando al método en un
+objeto con el tipo correcto y proporcionando los otros argumentos
+de manera correcta.
 
 \end{itemize}
 
-\item[KeyError:]  You are trying to access an element of a dictionary
-using a key that the dictionary does not contain.  If the keys
-are strings, remember that capitalization matters.
+\item[KeyError:]  Estás intentando acceder a un elemento de un diccionario
+usando una clave que el diccionario no contiene.  Si las claves
+son cadenas, recuerda que las mayúsculas importan.
 \index{KeyError}
-\index{exception!KeyError}
-\index{dictionary}
+\index{excepción!KeyError}
+\index{diccionario}
 
-\item[AttributeError:] You are trying to access an attribute or method
-  that does not exist.  Check the spelling!  You can use the built-in
-  function {\tt vars} to list the attributes that do exist.
+\item[AttributeError:] Estás intentando acceder a un atributo o método
+  que no existe.  ¡Revisa la ortografía!  Puedes usar la función
+  incorporada {\tt vars} para hacer una lista de los atributos que sí existen.
 \index{dir function}
 \index{function!dir}
 
-If an AttributeError indicates that an object has {\tt NoneType},
-that means that it is {\tt None}.  So the problem is not the
-attribute name, but the object.
+Si un AttributeError indica que un objeto tiene {\tt NoneType},
+eso significa que es {\tt None}.  Entonces el problema no es el
+nombre de atributo, sino el objeto.
 
-The reason the object is none might be that you forgot
-to return a value from a function; if you get to the end of
-a function without hitting a {\tt return} statement, it returns
-{\tt None}.  Another common cause is using the result from
-a list method, like {\tt sort}, that returns {\tt None}.
+La razón por la cual el objeto es {\tt None} podría ser que olvidaste
+devolver un valor desde una función; si llegas al final de
+una función ponienfo una sentencia {\tt return}, devuelve
+{\tt None}.  Otra causa común es usar el resultado de
+un método de lista, como {\tt sort}, que devuelve {\tt None}.
 \index{AttributeError}
-\index{exception!AttributeError}
+\index{excepción!AttributeError}
 
-\item[IndexError:] The index you are using
-to access a list, string, or tuple is greater than
-its length minus one.  Immediately before the site of the error,
-add a {\tt print} statement to display
-the value of the index and the length of the array.
-Is the array the right size?  Is the index the right value?
+\item[IndexError:] El índice que estás usando
+para acceder a una lista, cadena o tupla es mayor que
+su longitud menos uno.  Inmediatamente antes del lugar del error,
+agrega una sentencia {\tt print} para mostrar en pantalla
+el valor del índice y la longitud de la secuencia.
+¿Tiene la secuencia el tamaño correcto?  ¿Tiene el índice el valor correcto?
 \index{IndexError}
-\index{exception!IndexError}
+\index{excepción!IndexError}
 
 \end{description}
 
-The Python debugger ({\tt pdb}) is useful for tracking down
-exceptions because it allows you to examine the state of the
-program immediately before the error.  You can read
-about {\tt pdb} at \url{https://docs.python.org/3/library/pdb.html}.
-\index{debugger (pdb)}
+El depurador de Python ({\tt pdb}, {\em Python debugger}) es útil para rastrear
+excepciones porque te permite examinar el estado del
+programa inmediatamente antes del error.  Puedes leer
+sobre {\tt pdb} en \url{https://docs.python.org/3/library/pdb.html}.
+\index{depurador (pdb)}
 \index{pdb (Python debugger)}
 
 
-\subsection{I added so many {\tt print} statements I get inundated with
-output.}
-\index{print statement}
-\index{statement!print}
+\subsection{Agregué tantas sentencias {\tt print} que me inundé con
+la salida.}
+\index{sentencia print}
+\index{print!sentencia}
 
-One of the problems with using {\tt print} statements for debugging
-is that you can end up buried in output.  There are two ways
-to proceed: simplify the output or simplify the program.
+Uno de los problemas al usar sentencias {\tt print} para depurar
+es que puedes terminar enterrándote en la salida.  Hay dos maneras
+de proceder: simplificar la salida o simplificar el programa.
 
-To simplify the output, you can remove or comment out {\tt print}
-statements that aren't helping, or combine them, or format
-the output so it is easier to understand.
+Para simplificar la salida, puedes eliminar o poner como comentarios
+las sentencias {\tt print} que no están ayudando, o combinarlas, o dar formato
+a la salida para que sea más fácil de entender.
 
-To simplify the program, there are several things you can do.  First,
-scale down the problem the program is working on.  For example, if you
-are searching a list, search a {\em small} list.  If the program takes
-input from the user, give it the simplest input that causes the
-problem.
-\index{dead code}
+Para simplificar el programa, hay varias cosas que puedes hacer.  Primero,
+reduce la escala del problema en el cual está trabajando el programa.  Por
+ejemplo, si estás buscando una lista, busca una lista {\em pequeña}.  Si el
+programa toma entrada del usuario, dale la entrada más simple que cause el
+problema.
+\index{código muerto}
 
-Second, clean up the program.  Remove dead code and reorganize the
-program to make it as easy to read as possible.  For example, if you
-suspect that the problem is in a deeply nested part of the program,
-try rewriting that part with simpler structure.  If you suspect a
-large function, try splitting it into smaller functions and testing them
-separately.
-\index{testing!minimal test case}
-\index{test case, minimal}
+Segundo, limpia el programa.  Elimina el código muerto y reorganiza el
+programa para hacerlo tan fácil de leer como sea posible.  Por ejemplo, si
+sospechas que el problema está en una parte profundamente anidada del programa,
+intenta reescribir esa parte con una estructura más simple.  Si sospechas de
+una función grande, intenta separarla en funciones más pequeñas y probarlas
+de manera separada.
+\index{prueba!caso de prueba mínimo}
+\index{caso de prueba mínimo}
 
-Often the process of finding the minimal test case leads you to the
-bug.  If you find that a program works in one situation but not in
-another, that gives you a clue about what is going on.
+A menudo el proceso de encontrar el caso de prueba mínimo te guía al
+error.  Si encuentras que un programa funciona en una situación pero no en
+otra, eso te da una pisa sobre qué está pasando.
 
-Similarly, rewriting a piece of code can help you find subtle
-bugs.  If you make a change that you think shouldn't affect the
-program, and it does, that can tip you off.
-
-
-\section{Semantic errors}
-
-In some ways, semantic errors are the hardest to debug,
-because the interpreter provides no information
-about what is wrong.  Only you know what the program is supposed to
-do.
-\index{semantic error}
-\index{error!semantic}
-
-The first step is to make a connection between the program
-text and the behavior you are seeing.  You need a hypothesis
-about what the program is actually doing.  One of the things
-that makes that hard is that computers run so fast.
-
-You will often wish that you could slow the program down to human
-speed, and with some debuggers you can.  But the time it takes to
-insert a few well-placed {\tt print} statements is often short compared to
-setting up the debugger, inserting and removing breakpoints, and
-``stepping'' the program to where the error is occurring.
+Del mismo modo, reescribir un pedazo de código puede ayudarte a encontrar
+errores sutiles.  Si haces un cambio que crees que no debería afectar al
+programa, y sí afecta, eso te puede dar una pista.
 
 
-\subsection{My program doesn't work.}
+\section{Errores semánticos}
 
-You should ask yourself these questions:
+De alguna manera, los errores semánticos son los más difíciles de depurar,
+porque el intérprete no proporciona información
+sobre qué está mal.  Solo tú sabes lo que se supone que debe hacer el
+programa.
+\index{error semántico}
+\index{semántico!error}
+
+El primer paso es hacer una conexión entre el texto del programa
+y el comportamiento que ves.  Necesitas una hipótesis
+sobre qué está haciendo realmente el programa.  Una de las cosas
+que hace que eso sea difícil es que los computadores funcionan muy rápido.
+
+A menudo desearás poder ralentizar el programa a velocidad humana,
+y con algunos depuradores puedes hacerlo.  Pero el tiempo que toma insertar
+unas pocas sentencias {\tt print} bien ubicadas es a menudo corto comparado 
+con el de configurar el depurador, insertar y eliminar puntos de interrupción,
+y avanzar ``paso a paso'' en el programa hasta donde ocurre el error.
+
+
+\subsection{Mi programa no funciona.}
+
+Deberías hacerte estas preguntas:
 
 \begin{itemize}
 
-\item Is there something the program was supposed to do but
-which doesn't seem to be happening?  Find the section of the code
-that performs that function and make sure it is executing when
-you think it should.
+\item ¿Hay algo que se supone que el programa debe hacer pero
+que no parece estar ocurriendo?  Encuentra la sección del código
+que realiza esa función y asegúrate de que se está ejecutando cuando
+crees que debería.
 
-\item Is something happening that shouldn't?  Find code in
-your program that performs that function and see if it is
-executing when it shouldn't.
+\item ¿Ocurre algo que no debería?  Encuentra código en
+tu programa que realiza esa función y ve si se está
+ejecutando cuando no debería.
 
-\item Is a section of code producing an effect that is not
-what you expected?  Make sure that you understand the code in
-question, especially if it involves functions or methods in
-other Python modules.  Read the documentation for the functions you call.
-Try them out by writing simple test cases and checking the results.
+\item ¿Hay una sección de código produciendo un efecto que no es
+lo que esperabas?  Asegúrate de que entiendes el código en
+cuestión, especialmente si involucra funciones o métodos de
+otros módulos de Python.  Lee la documentación para las funciones que llamas.
+Pruébalas escribiendo casos de prueba simples y verificando los resultados.
 
 \end{itemize}
 
-In order to program, you need a mental model of how
-programs work.  If you write a program that doesn't do what you expect,
-often the problem is not in the program; it's in your mental
-model.
-\index{model, mental}
-\index{mental model}
+Para programar, necesitas un modelo mental de cómo
+funcionan los programas.  Si escribes un programa que no hace lo que esperas,
+muchas veces el problema no está en el programa; está en tu modelo
+mental.
+\index{modelo mental}
+\index{mental, modelo}
 
-The best way to correct your mental model is to break the program
-into its components (usually the functions and methods) and test
-each component independently.  Once you find the discrepancy
-between your model and reality, you can solve the problem.
+La mejor manera de corregir tu modelo mental es separar el programa
+en sus componentes (generalmente las funciones y métodos) y probar
+cada componente de manera independiente.  Una vez que encuentras la discrepancia
+entre tu modelo y la realidad, puedes resolver el problema.
 
-Of course, you should be building and testing components as you
-develop the program.  If you encounter a problem,
-there should be only a small amount of new code
-that is not known to be correct.
+Por supuesto, deberías estar construyendo y probando componentes a medida que
+desarrollas el programa.  Si encuentras un problema,
+debería haber solo una pequeña cantidad de código nuevo
+que no se sabe que es correcto.
 
 
-\subsection{I've got a big hairy expression and it doesn't
-do what I expect.}
-\index{expression!big and hairy}
-\index{big, hairy expression}
+\subsection{Tengo una expresión grande y fea, y no
+hace lo que yo espero.}
+\index{expresión!grande y fea}
+\index{grande y fea, expresión}
 
-Writing complex expressions is fine as long as they are readable,
-but they can be hard to debug.  It is often a good idea to
-break a complex expression into a series of assignments to
-temporary variables.
+Escribir expresiones complejas está bien mientras sean legibles,
+pero pueden ser difíciles de depurar.  Muchas veces es una buena idea
+separar una expresión compleja en una serie de asignaciones a
+variables temporales.
 
-For example:
+Por ejemplo:
 
 \begin{verbatim}
 self.hands[i].addCard(self.hands[self.findNeighbor(i)].popCard())
 \end{verbatim}
 %
-This can be rewritten as:
+Esto se puede reescribir como:
 
 \begin{verbatim}
 neighbor = self.findNeighbor(i)
@@ -16190,142 +16190,142 @@ pickedCard = self.hands[neighbor].popCard()
 self.hands[i].addCard(pickedCard)
 \end{verbatim}
 %
-The explicit version is easier to read because the variable
-names provide additional documentation, and it is easier to debug
-because you can check the types of the intermediate variables
-and display their values.
-\index{temporary variable}
-\index{variable!temporary}
+La versión explícita es más fácil de leer porque los nombres de variable
+proporcionan documentación adicional, y es más fácil depurar
+porque puedes verificar los tipos de las variables intermedias
+y mostrar sus valores en pantalla.
+\index{variable temporal}
+\index{temporal!variable}
 
-Another problem that can occur with big expressions is
-that the order of evaluation may not be what you expect.
-For example, if you are translating the expression
-$\frac{x}{2 \pi}$ into Python, you might write:
+Otro problema que puede ocurrir con las expresiones grandes es que
+el orden de evaluación puede que no sea lo que esperas.
+Por ejemplo, si estás traduciendo la expresión
+$\frac{x}{2 \pi}$ a Python, podrías escribir:
 
 \begin{verbatim}
 y = x / 2 * math.pi
 \end{verbatim}
 %
-That is not correct because multiplication and division have
-the same precedence and are evaluated from left to right.
-So this expression computes $x \pi / 2$.
-\index{order of operations}
-\index{precedence}
+Eso no es correcto porque la multiplicación y la división tienen
+la misma prioridad y se evalúan de izquierda a derecha.
+Entonces esta expresión calcula $x \pi / 2$.
+\index{orden de operaciones}
+\index{prioridad}
 
-A good way to debug expressions is to add parentheses to make
-the order of evaluation explicit:
+Una buena manera de depurar expresiones es agregar paréntesis para hacer
+que el orden de evaluación sea explícito:
 
 \begin{verbatim}
  y = x / (2 * math.pi)
 \end{verbatim}
 %
-Whenever you are not sure of the order of evaluation, use
-parentheses.  Not only will the program be correct (in the sense
-of doing what you intended), it will also be more readable for
-other people who haven't memorized the order of operations.
+Siempre que no estés seguro del orden de evaluación, usa
+paréntesis.  No solo estará correcto el programa (en el sentido
+de hacer lo que pretendías), también será más legible para
+otras personas que no han memorizado el orden de las operaciones.
 
 
-\subsection{I've got a function that doesn't return what I
-expect.}
-\index{return statement}
-\index{statement!return}
+\subsection{Tengo una función que no devuelve lo que
+yo espero.}
+\index{sentencia return}
+\index{return!sentencia}
 
-If you have a {\tt return} statement with a complex expression,
-you don't have a chance to print the result before
-returning.  Again, you can use a temporary variable.  For
-example, instead of:
+Si tienes una sentencia {\tt return} con una expresión compleja,
+no tienes la posibilidad de imprimir el resultado antes de
+devolverlo.  De nuevo, puedes usar una variable temporal.  Por
+ejemplo, en lugar de:
 
 \begin{verbatim}
 return self.hands[i].removeMatches()
 \end{verbatim}
 %
-you could write:
+podrías escribir:
 
 \begin{verbatim}
 count = self.hands[i].removeMatches()
 return count
 \end{verbatim}
 %
-Now you have the opportunity to display the value of
-{\tt count} before returning.
+Ahora tienes la oportunidad de mostrar en pantalla el valor de
+{\tt count} antes de devolverlo.
 
 
-\subsection{I'm really, really stuck and I need help.}
+\subsection{De verdad me atasqué y necesito ayuda.}
 
-First, try getting away from the computer for a few minutes.
-Computers emit waves that affect the brain, causing these
-symptoms:
-
-\begin{itemize}
-
-\item Frustration and rage.
-\index{frustration}
-\index{rage}
-\index{debugging!emotional response}
-\index{emotional debugging}
-
-\item Superstitious beliefs (``the computer hates me'') and
-magical thinking (``the program only works when I wear my
-hat backward'').
-\index{debugging!superstition}
-\index{superstitious debugging}
-
-\item Random walk programming (the attempt to program by writing
-every possible program and choosing the one that does the right
-thing).
-\index{random walk programming}
-\index{development plan!random walk programming}
-
-\end{itemize}
-
-If you find yourself suffering from any of these symptoms, get
-up and go for a walk.  When you are calm, think about the program.
-What is it doing?  What are some possible causes of that
-behavior?  When was the last time you had a working program,
-and what did you do next?
-
-Sometimes it just takes time to find a bug.  I often find bugs
-when I am away from the computer and let my mind wander.  Some
-of the best places to find bugs are trains, showers, and in bed,
-just before you fall asleep.
-
-
-\subsection{No, I really need help.}
-
-It happens.  Even the best programmers occasionally get stuck.
-Sometimes you work on a program so long that you can't see the
-error.  You need a fresh pair of eyes.
-
-Before you bring someone else in, make sure you are prepared.
-Your program should be as simple
-as possible, and you should be working on the smallest input
-that causes the error.  You should have {\tt print} statements in the
-appropriate places (and the output they produce should be
-comprehensible).  You should understand the problem well enough
-to describe it concisely.
-
-When you bring someone in to help, be sure to give
-them the information they need:
+Primero, intenta alejarte del computador por algunos minutos.
+Los computadores emiten ondas que afectan al cerebro, causando estos
+síntomas:
 
 \begin{itemize}
 
-\item If there is an error message, what is it
-and what part of the program does it indicate?
+\item Frustración e ira.
+\index{frustración}
+\index{ira}
+\index{depuración!respuesta emocional}
+\index{depuración emocional}
 
-\item What was the last thing you did before this error occurred?
-What were the last lines of code that you wrote, or what is
-the new test case that fails?
+\item Creencias supersticiosas (``el computador me odia'') y
+pensamiento mágico (``el programa solo funciona cuando uso mi
+gorra hacia atrás'').
+\index{depuración!superstición}
+\index{supersticiosa, depuración}
 
-\item What have you tried so far, and what have you learned?
+\item Programación de camino aleatorio (el intento de programar escribiendo
+cada programa posible y escoger el que hace lo
+correcto).
+\index{programación de camino aleatorio}
+\index{plan de desarrollo!programación de camino aleatorio}
 
 \end{itemize}
 
-When you find the bug, take a second to think about what you
-could have done to find it faster.  Next time you see something
-similar, you will be able to find the bug more quickly.
+Si te encuentras sufriendo alguno de estos síntomas, levántate
+y ve a dar un paseo.  Cuando te hayas tranquilizado, piensa en el programa.
+¿Qué está haciendo?  ¿Cuáles son algunas posibles causas de aquel
+comportamiento?  ¿Cuándo fue la última vez que tuviste un programa eficaz,
+y qué hiciste después?
 
-Remember, the goal is not just to make the program
-work.  The goal is to learn how to make the program work.
+A veces solo toma tiempo encontrar un error de programación.  A menudo
+encuentro errores cuando estor lejos del computador y dejo vagar a mi mente.
+Algunos de los mejores lugares para encontrar errores son los trenes, las
+duchas y en la cama, justo antes de dormirte.
+
+
+\subsection{No, realmente necesito ayuda.}
+
+Sucede.  Incluso los mejores programadores se atascan ocasionalmente.
+A veces trabajas en un programa tan largo que no puedes ver el
+error.  Necesitas otro punto de vista.
+
+Antes de traer a alguien más, asegúrate de tener todo preparado.
+Tu programa debería ser tan simple
+como sea posible, y deberías estar trabajando en la entrada más pequeña
+que causa el error.  Deberías tener sentencias {\tt print} en los
+lugares apropiados (y la salida que producen debería ser
+comprensible).  Deberías entender el problema lo suficientemente bien
+como para describirlo de manera concisa.
+
+Cuando traigas a alguien para que te ayude, asegúrate de darle
+la información que necesita:
+
+\begin{itemize}
+
+\item Si hay un mensaje de error, ¿cuál es
+y qué parte del programa indica?
+
+\item ¿Qué fue lo último que hiciste antes de que ocurriera este error?
+¿Cuáles fueron las últimas líneas de código que escribiste o cuál es
+el nuevo caso de prueba que falla?
+
+\item ¿Qué has intentado hasta ahora y qué has aprendido?
+
+\end{itemize}
+
+Cuando encuentres el error, tómate un segundo para pensar sobre qué
+podrías haber hecho para encontrarlo de manera más rápida.  La próxima vez
+que veas algo similar, serás capaz de entontrar el error con más rapidez.
+
+Recuerda, la meta no solo es hacer que el programa
+funcione.  La meta es aprender cómo hacer que el programa funcione.
 
 
 \chapter{Analysis of Algorithms}
