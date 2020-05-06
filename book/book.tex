@@ -15703,8 +15703,8 @@ tipos de errores con el fin de rastrearlos de manera más rápida:
 \index{tiempo de ejecución!error de}
 \index{excepción}
 
-\item Los errores semánticos son problemas con un programa que se ejecuta sin
-  producir mensajes de error pero no hacen lo correcto.  Ejemplo:
+\item Los errores semánticos son problemas que tiene un programa que se ejecuta sin
+  producir mensajes de error pero sin hacer lo correcto.  Ejemplo:
   una expresión puede que no sea evaluada en el orden que esperas, entregando
   un resultado incorrecto.
 \index{error semántico}
@@ -15726,10 +15726,10 @@ son.  Desafortunadamente, los mensajes de error a menudo no son útiles.
 Los mensajes más comunes son {\tt SyntaxError: invalid syntax} y
 {\tt SyntaxError: invalid token}, de los cuales ninguno es muy informativo.
 
-Por otra parte, el mensaje sí te dice dónde en el programa
+Por otra parte, el mensaje sí te dice el lugar del programa donde
 ocurrió el problema.  En realidad, te dice dónde Python
-notó un problema, que no necesariamente es donde el error
-está.  A veces el error está antes de la ubicación del mensaje
+notó un problema, que no necesariamente es donde está
+el error.  A veces el error está antes de la ubicación del mensaje
 de error, a menudo en la línea precedente.
 \index{desarrollo incremental}
 \index{plan de desarrollo!incremental}
@@ -15774,7 +15774,7 @@ de error!
 \item Un operador de apertura no cerrado ---\verb+(+, \verb+{+ o
   \verb+[+--- hace que Python continúe con la línea siguiente como parte de la
   sentencia actual.  Generalmente, ocurre un error casi inmediatamente en
-  la línea siguient.
+  la línea siguiente.
 
 \item Revisa el clásico {\tt =} en lugar de {\tt ==} dentro
 de un condicional.
@@ -15858,7 +15858,7 @@ clases pero en realidad no invoca una función para comenzar la ejecución.
 Esto puede ser intencional si solo planeas importar este módulo para
 proporcionar clases y funciones.
 
-Si no es intentional, asegúrate de que hay una llamada a función
+Si no es intencional, asegúrate de que hay una llamada a función
 en el programa, y asegúrate de que el flujo de ejecución
 lo alcanza (ver ``Flujo de ejecución'' más adelante).
 
@@ -15892,7 +15892,7 @@ Si no obtienes este error pero sospechas que hay un problema
 con una función recursiva o método recursivo, todavía puedes usar las térnicas
 de la sección ``Recursividad infinita''.
 
-\item Si ninguno de esos pasos funcioan, comienza a probar otros
+\item Si ninguno de esos pasos funciona, comienza a probar otros
 bucles y otras funciones y métodos recursivos.
 
 \item Si eso no funciona, entonces es posible que
@@ -15908,7 +15908,7 @@ Ve a la sección ``Flujo de ejecución'' de más adelante.
 \index{condición}
 \index{bucle!condición}
 
-Si crees que tienes un bicle infinito y crees que sabes
+Si crees que tienes un bucle infinito y crees que sabes
 qué bucle está causando el problema, agrega una sentencia {\tt print}
 al final del bucle que imprima los valores de las variables en
 la condición y el valor de la condición.
@@ -15941,7 +15941,7 @@ ejecute por un momento y luego produzca un error
 {\tt Maximum recursion depth exceeded}.
 
 Si sospechas que una función está causando una recursividad
-infinita, asegúrate de que hay un caso base.
+infinita, asegúrate de que haya un caso base.
 Debería haber alguna condición que cause que la
 función devuelva sin hacer una invocación recursiva.
 Si no, necesitas volver a pensar el algoritmo e identificar un caso
@@ -16004,7 +16004,7 @@ no puedes referirte a estas desde afuera de la función donde se definieron.
 \begin{itemize}
 
 \item  Estás intentando usar un valor de manera inapropiada.  Ejemplo: indexar
-una cadena, lista o tupla con algo más que un entero.
+una cadena, lista o tupla con algo que no es un entero.
 \index{índice}
 
 \item Hay una discordancia entre los ítems en una cadena de formato y
@@ -16041,7 +16041,7 @@ nombre de atributo, sino el objeto.
 
 La razón por la cual el objeto es {\tt None} podría ser que olvidaste
 devolver un valor desde una función; si llegas al final de
-una función ponienfo una sentencia {\tt return}, devuelve
+una función poniendo una sentencia {\tt return}, devuelve
 {\tt None}.  Otra causa común es usar el resultado de
 un método de lista, como {\tt sort}, que devuelve {\tt None}.
 \index{AttributeError}
@@ -16097,7 +16097,7 @@ de manera separada.
 
 A menudo el proceso de encontrar el caso de prueba mínimo te guía al
 error.  Si encuentras que un programa funciona en una situación pero no en
-otra, eso te da una pisa sobre qué está pasando.
+otra, eso te da una pista sobre qué está pasando.
 
 Del mismo modo, reescribir un pedazo de código puede ayudarte a encontrar
 errores sutiles.  Si haces un cambio que crees que no debería afectar al
@@ -16285,7 +16285,7 @@ comportamiento?  ¿Cuándo fue la última vez que tuviste un programa eficaz,
 y qué hiciste después?
 
 A veces solo toma tiempo encontrar un error de programación.  A menudo
-encuentro errores cuando estor lejos del computador y dejo vagar a mi mente.
+encuentro errores cuando estoy lejos del computador y dejo vagar a mi mente.
 Algunos de los mejores lugares para encontrar errores son los trenes, las
 duchas y en la cama, justo antes de dormirte.
 
