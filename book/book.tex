@@ -11223,43 +11223,43 @@ de lo contrario, quizás tengas que instalarlo.
 
 
 
-\chapter{Files}
+\chapter{Archivos}
 
-This chapter introduces the idea of ``persistent'' programs that
-keep data in permanent storage, and shows how to use different
-kinds of permanent storage, like files and databases.
+Este capítulo presenta la idea de programas ``persistente'' que
+mantienen los datos en almacenamiento permanente y muestra cómo usar diferentes
+tipos de almacenamiento permanente, como archivos y bases de datos.
 
 
-\section{Persistence}
-\index{file}
-\index{type!file}
-\index{persistence}
+\section{Persistencia}
+\index{archivo}
+\index{tipo!archivo}
+\index{persistencia}
 
-Most of the programs we have seen so far are transient in the
-sense that they run for a short time and produce some output,
-but when they end, their data disappears.  If you run the program
-again, it starts with a clean slate.
+La mayoría de los programas que hemos visto hasta ahora son transitorios en el
+sentido de que se ejecutan por un tiempo corto y producen alguna salida,
+pero cuando terminan, sus datos desaparecen.  Si ejecutas el programa
+de nuevo, comienza con una pizarra limpia.
 
-Other programs are {\bf persistent}: they run for a long time
-(or all the time); they keep at least some of their data
-in permanent storage (a hard drive, for example); and
-if they shut down and restart, they pick up where they left off.
+Otros programas son {\bf persistentes}: se ejecutan por un tiempo largo
+(o todo el tiempo); mantienen al menos algunos de sus datos
+en almacenamiento permanente (un disco duro, por ejemplo); y
+si se apagan y reinician, retoman donde lo dejaron.
 
-Examples of persistent programs are operating systems, which
-run pretty much whenever a computer is on, and web servers,
-which run all the time, waiting for requests to come in on
-the network.
+Ejemplos de programas persistentes son los sistemas operativos, que se
+se ejecutan casi siempre que un computador está encendido, y los servidores web,
+que se ejecutan todo el tiempo, esperando por solicitudes para entrar en
+la red.
 
-One of the simplest ways for programs to maintain their data
-is by reading and writing text files.  We have already seen
-programs that read text files; in this chapter we will see programs
-that write them.
+Una de las maneras más simples que tienen los programas para mantener sus datos 
+es leyendo y escribiendo archivos de texto.  Ya hemos visto
+programas que leen archivos de texto; en este capítulo veremos programas
+que los escriban.
 
-An alternative is to store the state of the program in a database.
-In this chapter I will present a simple database and a module,
-{\tt pickle}, that makes it easy to store program data.
-\index{pickle module}
-\index{module!pickle}
+Una alternativa es almacenar el estado del programa en una base de datos.
+En este capítulo presentaré una base de datos simple y un módulo,
+{\tt pickle}, que facilita el almacenamiento de datos del programa.
+\index{módulo pickle}
+\index{pickle!módulo}
 
 
 \section{Reading and writing}
@@ -16328,28 +16328,28 @@ Recuerda, la meta no solo es hacer que el programa
 funcione.  La meta es aprender cómo hacer que el programa funcione.
 
 
-\chapter{Analysis of Algorithms}
+\chapter{Análisis de algoritmos}
 \label{algorithms}
 
 \begin{quote}
-This appendix is an edited excerpt from {\it Think Complexity}, by
-Allen B. Downey, also published by O'Reilly Media (2012).  When you
-are done with this book, you might want to move on to that one.
+Este apéndice es un estracto de {\it Think Complexity}, por
+Allen B. Downey, también publicado por O'Reilly Media (2012).  Cuando hayas
+terminado con este libro, quizás quieras continuar con aquel.
 \end{quote}
 
-{\bf Analysis of algorithms} is a branch of computer science that
-studies the performance of algorithms, especially their run time and
-space requirements.  See
+{\bf Análisis de algoritmos} es una rama de las ciencias de la computación que
+estudia el rendimiento de algoritmos, especialmente su tiempo de ejecución y
+requerimientos de espacios.  Ver
 \url{http://en.wikipedia.org/wiki/Analysis_of_algorithms}.
-\index{algorithm} \index{analysis of algorithms}
+\index{algoritmo} \index{análisis de algorirmos}
 
 The practical goal of algorithm analysis is to predict the performance
 of different algorithms in order to guide design decisions.
 
-During the 2008 United States Presidential Campaign, candidate
-Barack Obama was asked to perform an impromptu analysis when
-he visited Google.  Chief executive Eric Schmidt jokingly asked him
-for ``the most efficient way to sort a million 32-bit integers.''
+Durante la campaña presidencial de los Estados Unidos de 2008, al candidato
+Barack Obama le pidieron que realizara un análisis improvisado cuando
+visitó Google.  El director ejecutivo Eric Schmidt le preguntó en broma
+por ``la manera más eficiente para ordenar un millón de enteros de 32 bit.''
 Obama had apparently been tipped off, because he quickly
 replied, ``I think the bubble sort would be the wrong way to go.''
 See \url{http://www.youtube.com/watch?v=k4RRi_ntQc8}.
