@@ -11225,7 +11225,7 @@ de lo contrario, quizás tengas que instalarlo.
 
 \chapter{Archivos}
 
-Este capítulo presenta la idea de programas ``persistente'' que
+Este capítulo presenta la idea de programas ``persistentes'' que
 mantienen los datos en almacenamiento permanente y muestra cómo usar diferentes
 tipos de almacenamiento permanente, como archivos y bases de datos.
 
@@ -11262,137 +11262,137 @@ En este capítulo presentaré una base de datos simple y un módulo,
 \index{pickle!módulo}
 
 
-\section{Reading and writing}
-\index{file!reading and writing}
+\section{Leer y escribir}
+\index{archivo!leer y escribir}
 
-A text file is a sequence of characters stored on a permanent
-medium like a hard drive, flash memory, or CD-ROM.  We saw how
-to open and read a file in Section~\ref{wordlist}.
-\index{open function}
-\index{function!open}
+Un archivo de texto es una secuencia de caracteres almacenados en un medio
+permanente como un disco duro, memoria flash o CD-ROM.  Vimos cómo
+abrir y leer un archivo en la Sección~\ref{wordlist}.
+\index{función open}
+\index{open!función}
 
-To write a file, you have to open it with mode \verb"'w'" as a second
-parameter:
+Para escribir un archivo, tienese que abrirlo con el modo \verb"'w'" como segundo
+parámetro:
 
 \begin{verbatim}
 >>> fout = open('output.txt', 'w')
 \end{verbatim}
 %
-If the file already exists, opening it in write mode clears out
-the old data and starts fresh, so be careful!
-If the file doesn't exist, a new one is created.
+Si el archivo existe, abrirlo en modo escritura quita
+los datos antiguos y comienza de nuevo, ¡así que ten cuidado!
+Si el archivo no existe, se crea uno nuevo.
 
-{\tt open} returns a file object that provides methods for working
-with the file.
-The {\tt write} method puts data into the file.
-
-\begin{verbatim}
->>> line1 = "This here's the wattle,\n"
->>> fout.write(line1)
-24
-\end{verbatim}
-%
-The return value is the number of characters that were written.
-The file object keeps track of where it is, so if
-you call {\tt write} again, it adds the new data to the end of
-the file.
+{\tt open} devuelve un objeto de archivo que proporciona métodos para trabajar
+con el archivo.
+El método {\tt write} pone datos en el archivo.
 
 \begin{verbatim}
->>> line2 = "the emblem of our land.\n"
->>> fout.write(line2)
-24
+>>> linea1 = "He aquí el junco,\n"
+>>> fout.write(linea1)
+18
 \end{verbatim}
 %
-When you are done writing, you should close the file.
+El valor de retorno es el número de caracteres que fueron escritos.
+El objeto de archivo hace un seguimiento de dónde está, por lo cual si
+llamas a {\tt write} de nuevo, agrega los nuevos datos al final del
+archivo.
+
+\begin{verbatim}
+>>> linea2 = "emblema de nuestra tierra.\n"
+>>> fout.write(linea2)
+27
+\end{verbatim}
+%
+Cuando hayas terminado de escribir, deberías cerrar el archivo.
 
 \begin{verbatim}
 >>> fout.close()
 \end{verbatim}
 %
-\index{close method}
-\index{method!close}
+\index{método close}
+\index{close!método}
 %
-If you don't close the file, it gets closed for you when the
-program ends.
+Si tú no cierras el archivo, se cierra cuando el
+programa termina.
 
 
-\section{Format operator}
-\index{format operator}
-\index{operator!format}
+\section{Operador de formato}
+\index{operador de formato}
+\index{formato!operador de}
 
-The argument of {\tt write} has to be a string, so if we want
-to put other values in a file, we have to convert them to
-strings.  The easiest way to do that is with {\tt str}:
+El argumento de {\tt write} tiene que ser una cadena, por lo cual si queremos
+poner valores en un archivo, tenemos que convertirlos a
+cadenas.  La manera más fácil de hacer eso es con {\tt str}:
 
 \begin{verbatim}
 >>> x = 52
 >>> fout.write(str(x))
 \end{verbatim}
 %
-An alternative is to use the {\bf format operator}, {\tt \%}.  When
-applied to integers, {\tt \%} is the modulus operator.  But
-when the first operand is a string, {\tt \%} is the format operator.
+Una alternativa es usar el {\bf operador de formato}, {\tt \%}.  Cuando
+se aplica a enteros, {\tt \%} es el operador de módulo.  Pero
+cuando el primer operando es una cadena, {\tt \%} es el operador de formato.
 \index{format string}
 
-The first operand is the {\bf format string}, which contains
-one or more {\bf format sequences}, which
-specify how
-the second operand is formatted.  The result is a string.
-\index{format sequence}
+El primer operando es la {\bf cadena de formato}, la cual contiene
+una o más {\bf secuencias de formato}, las cuales
+especifican cómo
+se da formato al segundo operando.  El resultado es una cadena.
+\index{secuencia de formato}
 
-For example, the format sequence \verb"'%d'" means that
-the second operand should be formatted as a decimal
-integer:
+Por ejemplo, la secuencia de formato \verb"'%d'" significa que
+el segundo operando debería formatearse como un entero
+decimal:
 
 \begin{verbatim}
->>> camels = 42
->>> '%d' % camels
+>>> camellos = 42
+>>> '%d' % camellos
 '42'
 \end{verbatim}
 %
-The result is the string \verb"'42'", which is not to be confused
-with the integer value {\tt 42}.
+El resultado es la cadena \verb"'42'", la cual no debe confundirse
+con el valor entero {\tt 42}.
 
-A format sequence can appear anywhere in the string,
-so you can embed a value in a sentence:
-
-\begin{verbatim}
->>> 'I have spotted %d camels.' % camels
-'I have spotted 42 camels.'
-\end{verbatim}
-%
-If there is more than one format sequence in the string,
-the second argument has to be a tuple.  Each format sequence is
-matched with an element of the tuple, in order.
-
-The following example uses \verb"'%d'" to format an integer,
-\verb"'%g'" to format a floating-point number, and
-\verb"'%s'" to format a string:
+Una secuencia de formato puede aparecer en cualquier lugar de la cadena,
+así que puedes incrustar un valor en una oración:
 
 \begin{verbatim}
->>> 'In %d years I have spotted %g %s.' % (3, 0.1, 'camels')
-'In 3 years I have spotted 0.1 camels.'
+>>> 'He visto %d camellos.' % camellos
+'He visto 42 camellos.'
 \end{verbatim}
 %
-The number of elements in the tuple has to match the number
-of format sequences in the string.  Also, the types of the
-elements have to match the format sequences:
-\index{exception!TypeError}
+Si hay más de una secuencia de formato en la cadena,
+el segundo argumento tiene que ser una tupla.  Cada secuencia de formato es
+emparejada con un elemento de la tupla, en orden.
+
+El siguiente ejemplo usa \verb"'%d'" para dar formato a un entero,
+\verb"'%g'" para dar formato a un número de coma flotante y
+\verb"'%s'" para dar formato a una cadena:
+
+\begin{verbatim}
+>>> 'En %d años I he visto %g %s.' % (3, 0.1, 'camellos')
+'En 3 años he visto 0.1 camellos.'
+\end{verbatim}
+%
+El número de elementos en la tupla tiene que coincidir con el número
+de secuencias de formato en la cadena.  Además, los tipos de los
+elementos tienen que coincidir con las secuencias de formato:
+\index{excepción!TypeError}
 \index{TypeError}
 
 \begin{verbatim}
 >>> '%d %d %d' % (1, 2)
 TypeError: not enough arguments for format string
->>> '%d' % 'dollars'
+>>> '%d' % 'dólares'
 TypeError: %d format: a number is required, not str
 \end{verbatim}
 %
-In the first example, there aren't enough elements; in the
-second, the element is the wrong type.
+En el primer ejemplo, no hay suficientes elementos; en el
+segundo, el elemento tiene tipo incorrecto.
 
-For more information on the format operator, see
-\url{https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting}.  A more powerful alternative is the string
-format method, which you can read about at
+Para más información sobre el operador de formato, ver
+\url{https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting}.  Una alternativa más poderosa es
+el método de cadena format, del cual puedes leer en
 \url{https://docs.python.org/3/library/stdtypes.html#str.format}.
 
 % You can specify the number of digits as part of the format sequence.
@@ -11410,26 +11410,26 @@ format method, which you can read about at
 % digits after the decimal point.
 
 
-\section{Filenames and paths}
+\section{Nombres de archivo y rutas}
 \label{paths}
-\index{filename}
-\index{path}
-\index{directory}
-\index{folder}
+\index{nombre de archivo}
+\index{path}\index{ruta}
+\index{directorio}
+\index{carpeta}
 
-Files are organized into {\bf directories} (also called ``folders'').
-Every running program has a ``current directory'', which is the
-default directory for most operations.
-For example, when you open a file for reading, Python looks for it in the
-current directory.
-\index{os module}
-\index{module!os}
+Los archivos se organizan en {\bf directorios} (también llamados ``carpetas'').
+Cada programa que se ejecuta tiene un ``directorio actual'', que es el
+directorio por defecto para la mayor parte de las operaciones.
+Por ejemplo, cuando abres un archivo para lectura, Python lo busca en el
+directorio actual.
+\index{módulo os}
+\index{os!módulo}
 
-The {\tt os} module provides functions for working with files and
-directories (``os'' stands for ``operating system'').  {\tt os.getcwd}
-returns the name of the current directory:
-\index{getcwd function}
-\index{function!getcwd}
+El módulo {\tt os} proporciona funciones para trabajar con archivos y
+directorios (``os'' significa ``operating system'').  {\tt os.getcwd}
+devuelve el nombre del directorio actual:
+\index{función getcwd}
+\index{getcwd!función}
 
 \begin{verbatim}
 >>> import os
@@ -11438,44 +11438,44 @@ returns the name of the current directory:
 '/home/dinsdale'
 \end{verbatim}
 %
-{\tt cwd} stands for ``current working directory''.  The result in
-this example is {\tt /home/dinsdale}, which is the home directory of a
-user named {\tt dinsdale}.
-\index{working directory}
-\index{directory!working}
+{\tt cwd} significa ``current working directory''.  El resultado en
+este ejemplo es {\tt /home/dinsdale}, lo cual es el directorio principal de un
+usuario con nombre {\tt dinsdale}.
+\index{directorio de trabajo}
+\index{trabajo!directorio de}
 
-A string like \verb"'/home/dinsdale'" that identifies a file or
-directory is called a {\bf path}.
+Una cadena como \verb"'/home/dinsdale'" que identifica un archivo o un
+directorio se llama {\bf ruta} (en inglés, \em{path}).
 
-A simple filename, like {\tt memo.txt} is also considered a path,
-but it is a {\bf relative path} because it relates to the current
-directory.  If the current directory is {\tt /home/dinsdale}, the
-filename {\tt memo.txt} would refer to {\tt /home/dinsdale/memo.txt}.
-\index{relative path} \index{path!relative}
-\index{absolute path} \index{path!absolute}
+Un nombre de archivo simple, como {\tt memo.txt} también se considera una ruta,
+pero es una {\bf ruta relativa} porque se relaciona con el directorio
+actual.  Si el directorio actual es {\tt /home/dinsdale}, el
+nombre de archivo {\tt memo.txt} haría referencia a {\tt /home/dinsdale/memo.txt}.
+\index{ruta relativa} \index{relativa!ruta}
+\index{ruta absoluta} \index{absoluta!ruta}
 
-A path that begins with {\tt /} does not depend on the current
-directory; it is called an {\bf absolute path}.  To find the absolute
-path to a file, you can use {\tt os.path.abspath}:
+Una ruta que comienza con {\tt /} no depende del directorio
+actual; se llama {\bf ruta absoluta}.  Para encontrar la ruta
+absoluta de un archivo, puedes usar {\tt os.path.abspath}:
 
 \begin{verbatim}
 >>> os.path.abspath('memo.txt')
 '/home/dinsdale/memo.txt'
 \end{verbatim}
 %
-{\tt os.path} provides other functions for working with filenames
-and paths.  For example,
-{\tt os.path.exists} checks
-whether a file or directory exists:
-\index{exists function}
-\index{function!exists}
+{\tt os.path} proporciona otras funciones para trabajar con nombres de archivo
+y rutas.  Por ejemplo,
+{\tt os.path.exists} verifica
+si un archivo o directorio existe:
+\index{función exists}
+\index{exists!función}
 
 \begin{verbatim}
 >>> os.path.exists('memo.txt')
 True
 \end{verbatim}
 %
-If it exists, {\tt os.path.isdir} checks whether it's a directory:
+Si existe, {\tt os.path.isdir} verifica si es un directorio:
 
 \begin{verbatim}
 >>> os.path.isdir('memo.txt')
@@ -11484,41 +11484,41 @@ False
 True
 \end{verbatim}
 %
-Similarly, {\tt os.path.isfile} checks whether it's a file.
+Del mismo modo, {\tt os.path.isfile} verifica si es un archivo.
 
-{\tt os.listdir} returns a list of the files (and other directories)
-in the given directory:
+{\tt os.listdir} devuelve una lista de los archivos (y otros directorios)
+en el directorio dado:
 
 \begin{verbatim}
 >>> os.listdir(cwd)
 ['music', 'photos', 'memo.txt']
 \end{verbatim}
 %
-To demonstrate these functions, the following example
-``walks'' through a directory, prints
-the names of all the files, and calls itself recursively on
-all the directories.
-\index{walk, directory}
-\index{directory!walk}
+Para demostrar estas funciones, el siguiente ejemplo
+``recorre'' un directorio, imprime
+los nombres de todos los archivos y se llama a sí mismo de manera recursiva en
+todos los directorios.
+\index{directorio!recorrer}
+\index{recorrer directorio}
 
 \begin{verbatim}
-def walk(dirname):
-    for name in os.listdir(dirname):
-        path = os.path.join(dirname, name)
+def walk(nombre_dir):
+    for nombre in os.listdir(nombre_dir):
+        ruta = os.path.join(nombre_dir, nombre)
 
-        if os.path.isfile(path):
-            print(path)
+        if os.path.isfile(ruta):
+            print(ruta)
         else:
-            walk(path)
+            walk(ruta)
 \end{verbatim}
 %
-{\tt os.path.join} takes a directory and a file name and joins
-them into a complete path.
+{\tt os.path.join} toma un directorio y un archivo y los une
+en una ruta completa.
 
-The {\tt os} module provides a function called {\tt walk} that is
-similar to this one but more versatile.  As an exercise, read the
-documentation and use it to print the names of the files in a given
-directory and its subdirectories.  You can download my solution from
+El módulo {\tt os} proporciona una función llamada {\tt walk} que es
+similar a esta pero más versátil.  Como ejercicio, lee la
+documentación y úsala para imprimir los nombres de los archivos
+en un directorio dado y sus subdirectorios.  Puedes descargar mi solución desde
 \url{http://thinkpython2.com/code/walk.py}.
 
 
