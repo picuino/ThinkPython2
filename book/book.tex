@@ -16339,82 +16339,82 @@ terminado con este libro, quizás quieras continuar con aquel.
 
 {\bf Análisis de algoritmos} es una rama de las ciencias de la computación que
 estudia el rendimiento de algoritmos, especialmente su tiempo de ejecución y
-requerimientos de espacios.  Ver
+requerimientos de espacio.  Ver
 \url{http://en.wikipedia.org/wiki/Analysis_of_algorithms}.
 \index{algoritmo} \index{análisis de algorirmos}
 
-The practical goal of algorithm analysis is to predict the performance
-of different algorithms in order to guide design decisions.
+El objetivo práctico del análisis de algoritmos es predecir el rendimiento
+de diferentes algoritmos con el fin de guiar decisiones de diseño.
 
 Durante la campaña presidencial de los Estados Unidos de 2008, al candidato
 Barack Obama le pidieron que realizara un análisis improvisado cuando
 visitó Google.  El director ejecutivo Eric Schmidt le preguntó en broma
 por ``la manera más eficiente para ordenar un millón de enteros de 32 bit.''
-Obama had apparently been tipped off, because he quickly
-replied, ``I think the bubble sort would be the wrong way to go.''
-See \url{http://www.youtube.com/watch?v=k4RRi_ntQc8}.
+Obama aparentemente se había dado un tropezón, porque rápidamente
+respondió, ``Pienso que el ordenamiendo de burbuja sería la manera incorrecta de proceder.''
+Ver \url{http://www.youtube.com/watch?v=k4RRi_ntQc8}.
 \index{Obama, Barack}
 \index{Schmidt, Eric}
-\index{bubble sort}
+\index{bubble sort}\index{ordenamiento de burbuja}
 
-This is true: bubble sort is conceptually simple but slow for
-large datasets.  The answer Schmidt was probably looking for is
-``radix sort'' (\url{http://en.wikipedia.org/wiki/Radix_sort})\footnote{
-But if you get a question like this in an interview, I think
-a better answer is, ``The fastest way to sort a million integers
-is to use whatever sort function is provided by the language
-I'm using.  Its performance is good enough for the vast majority
-of applications, but if it turned out that my application was too
-slow, I would use a profiler to see where the time was being
-spent.  If it looked like a faster sort algorithm would have
-a significant effect on performance, then I would look
-around for a good implementation of radix sort.''}.
-\index{radix sort}
+Esto es verdad: el ordenamiento de burbuja (en inglés, \em{bubble sort}) es conceptualmente simple pero lento
+para bases de datos grandes.  La respuesta que Schmidt probablemente estaba buscando es
+``ordenamiento radix'' (\url{http://en.wikipedia.org/wiki/Radix_sort})\footnote{
+Pero si tienes una pregunta como esta en una entrevista, pienso que
+una mejor respuesta es, ``La manera más rápida de ordenar un millón de enteros
+es usar cualquier función de ordenamiento que sea proporcionada por el lenguaje
+que estoy usando.  Su rendimiento es suficientemente bueno para la gran mayoría
+de las aplicaciones, pero si resulta que mi aplicación fue muy
+lenta, usaría un analizador de rendimiento para ver dónde fue utilizado
+el tiempo.  Si pareciera que un algoritmo de ordenamiento más rápido tendría
+un efecto importante en el rendimiento, entonces buscaría
+una buena implementación del ordenamiento radix.''}.
+\index{radix sort}\index{ordenamiento radix}
 
-The goal of algorithm analysis is to make meaningful
-comparisons between algorithms, but there are some problems:
-\index{comparing algorithms}
+El objetivo del análisis de algoritmos es hacer comparaciones
+significativas entre algoritmos, pero hay algunos problemas:
+\index{comparar algoritmos}
 
 \begin{itemize}
 
-\item The relative performance of the algorithms might
-depend on characteristics of the hardware, so one algorithm
-might be faster on Machine A, another on Machine B.
-The general solution to this problem is to specify a
-{\bf machine model} and analyze the number of steps, or
-operations, an algorithm requires under a given model.
-\index{machine model}
+\item El rendimiento relativo de los algoritmos podría
+depender de características del hardware, por lo cual un algoritmo
+podría ser más rápido en la Máquina A y otra en la Máquina B.
+La solución general a este problema es especificar un
+{\bf modelo de máquina} y analizar el número de pasos, u
+operaciones, que un algoritmo requiere según una máquina modelo dada.
+\index{máquina modelo}
 
-\item Relative performance might depend on the details of
-the dataset.  For example, some sorting
-algorithms run faster if the data are already partially sorted;
-other algorithms run slower in this case.
-A common way to avoid this problem is to analyze the
-{\bf worst case} scenario.  It is sometimes useful to
-analyze average case performance, but that's usually harder,
-and it might not be obvious what set of cases to average over.
-\index{worst case}
-\index{average case}
+\item El rendimiento relativo podría depender de los detalles del
+conjunto de datos.  Por ejemplo, algunos algoritmos
+de ordenamiento se ejecutan de manera más rápida si los datos ya están parcialmente ordenados;
+otros algoritmos se ejecutan de manera más lenta en este caso.
+Una manera común de evitar este problema es analizar el
+escenario del {\bf peor caso}.  A veces es útil
+analizar el rendimiento del caso promedio, pero eso usualmente es más difícil,
+y podría no ser obvio sobre qué conjunto de casos establecer el promedio.
+\index{peor caso}
+\index{caso promedio}
 
-\item Relative performance also depends on the size of the
-problem.  A sorting algorithm that is fast for small lists
-might be slow for long lists.
-The usual solution to this problem is to express run time
-(or number of operations) as a function of problem size,
-and group functions into categories depending on how quickly
-they grow as problem size increases.
+\item El rendimiento relativo depende también del tamaño del
+problema.  Un algoritmo de ordenamiento que es rápido para listas pequeñas
+podría ser lento para listas largas.
+La solución usual a este problema es expresar el tiempo de ejecución
+(o número de operaciones) como una función del tamaño del problema,
+y agrupar funciones en categorías dependiendo de qué tan rápido
+crecen a medida que el tamaño del problema aumenta.
 
 \end{itemize}
 
-The good thing about this kind of comparison is that it lends
-itself to simple classification of algorithms.  For example,
-if I know that the run time of Algorithm A tends to be
-proportional to the size of the input, $n$, and Algorithm B
-tends to be proportional to $n^2$, then I
-expect A to be faster than B, at least for large values of $n$.
+Lo bueno de este tipo de comparaciones es que asegura
+una clasificación simple de los algoritmos.  Por ejemplo,
+si sé que el tiempo de ejecución del Algorigmo A tiende a ser
+proporcional al tamaño de la entrada, $n$, y el Algoritmo B
+tiende a ser proporcional a $n^2$, entonces
+espero que A sea más rápido que B, al menos para valores grandes de $n$.
 
-This kind of analysis comes with some caveats, but we'll get
-to that later.
+Esta tipo de análisis viene con algunas advertencias, pero llegaremos
+a eso más adelante.
 
 
 \section{Order of growth}
