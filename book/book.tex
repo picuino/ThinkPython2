@@ -11522,149 +11522,149 @@ en un directorio dado y sus subdirectorios.  Puedes descargar mi solución desde
 \url{http://thinkpython2.com/code/walk.py}.
 
 
-\section{Catching exceptions}
+\section{Capturar excepciones}
 \label{catch}
 
-A lot of things can go wrong when you try to read and write
-files.  If you try to open a file that doesn't exist, you get an
+Muchas cosas pueden salir mal cuando intentas leer y escribir
+archivos.  Si intentas abrir un archivo que no existe, obtienes un
 {\tt IOError}:
-\index{open function}
-\index{function!open}
-\index{exception!IOError}
+\index{función open}
+\index{open!función}
+\index{excepción!IOError}
 \index{IOError}
 
 \begin{verbatim}
->>> fin = open('bad_file')
-IOError: [Errno 2] No such file or directory: 'bad_file'
+>>> fin = open('archivo_malo')
+IOError: [Errno 2] No such file or directory: 'archivo_malo'
 \end{verbatim}
 %
-If you don't have permission to access a file:
-\index{file!permission}
-\index{permission, file}
+Si no tienes permisos de acceso a un archivo:
+\index{permisos de archivo}
+\index{archivo!permisos de}
 
 \begin{verbatim}
 >>> fout = open('/etc/passwd', 'w')
 PermissionError: [Errno 13] Permission denied: '/etc/passwd'
 \end{verbatim}
 %
-And if you try to open a directory for reading, you get
+Y si intentas abrir un directorio para lectura, obtienes
 
 \begin{verbatim}
 >>> fin = open('/home')
 IsADirectoryError: [Errno 21] Is a directory: '/home'
 \end{verbatim}
 %
-To avoid these errors, you could use functions like {\tt os.path.exists}
-and {\tt os.path.isfile}, but it would take a lot of time and code
-to check all the possibilities (if ``{\tt Errno 21}'' is any
-indication, there are at least 21 things that can go wrong).
-\index{exception, catching}
-\index{try statement}
-\index{statement!try}
+Para evitar estos errores, podrías usar funciones como {\tt os.path.exists}
+y {\tt os.path.isfile}, pero tomaría mucho tiempo y código
+verificar todas las posibilidades (si ``{\tt Errno 21}'' es alguna
+indicación, hay al menos 21 cosas que pueden salir mal).
+\index{excepción, detectar}
+\index{sentencia try}
+\index{try!sentencia}
 
-It is better to go ahead and try---and deal with problems if they
-happen---which is exactly what the {\tt try} statement does.  The
-syntax is similar to an {\tt if...else} statement:
+Es mejor continuar y avanzar---y lidiar con los problemas si
+ocurren---que es exactamente lo que hace la sentencia {\tt try}.  La
+sintaxis es similar a una sentencia {\tt if...else}:
 
 \begin{verbatim}
 try:
-    fin = open('bad_file')
+    fin = open('archivo_malo')
 except:
-    print('Something went wrong.')
+    print('Algo salió mal.')
 \end{verbatim}
 %
-Python starts by executing the {\tt try} clause.  If all goes
-well, it skips the {\tt except} clause and proceeds.  If an
-exception occurs, it jumps out of the {\tt try} clause and
-runs the {\tt except} clause.
+Python comienza ejecutando la cláusula {\tt try}.  Si todo sale
+bien, se salta la cláusula {\tt except} y continúa.  Si ocurre
+una excepción, salta fuera de la cláusula {\tt try} y
+ejecuta la cláusula {\tt except}.
 
-Handling an exception with a {\tt try} statement is called {\bf
-catching} an exception.  In this example, the {\tt except} clause
-prints an error message that is not very helpful.  In general,
-catching an exception gives you a chance to fix the problem, or try
-again, or at least end the program gracefully.
+Manejar una excepción con una sentencia {\tt try} se llama {\bf
+capturar} una excepción.  En este ejemplo, la cláusula {\tt except}
+imprime un mensaje de error que no es de mucha ayuda.  En general,
+capturar una excepción te da una oportunidad de arreglar el problema, o intentar
+de nuevo, o al menos terminar el programa de manera elegante.
 
 
-\section{Databases}
-\index{database}
+\section{Bases de datos}
+\index{base de datos}
 
-A {\bf database} is a file that is organized for storing data.  Many
-databases are organized like a dictionary in the sense that they map
-from keys to values.  The biggest difference between a database and a
-dictionary is that the database is on disk (or other permanent
-storage), so it persists after the program ends.  \index{dbm
-  module} \index{module!dbm}
+Una {\bf base de datos} es un archivo que está organizado para almacenar datos.  Muchas
+bases de datos están organizadas como un diccionario en el sentido de que mapean
+de claves a valores.  La diferencia más grande entre una base de datos y un
+diccionario es que la base de datos está en un disco (u otro almacenamiento
+permanente), por lo cual persiste después de que el programa termina.  \index{módulo
+  dbm} \index{dbm!módulo}
 
-The module {\tt dbm} provides an interface for creating
-and updating database files.
-As an example, I'll create a database
-that contains captions for image files.
-\index{open function}
-\index{function!open}
+El módulo {\tt dbm} proporciona una interfaz para crear
+y actualizar archivos de base de datos.
+Como ejemplo, crearé una base de datos
+que contiene títulos para archivos de imagen.
+\index{función open}
+\index{open!función}
 
-Opening a database is similar to opening other files:
+Abrir una base de datos es similar a abrir otros archivos:
 
 \begin{verbatim}
 >>> import dbm
->>> db = dbm.open('captions', 'c')
+>>> db = dbm.open('títulos', 'c')
 \end{verbatim}
 %
-The mode \verb"'c'" means that the database should be created if
-it doesn't already exist.  The result is a database object
-that can be used (for most operations) like a dictionary.
-\index{database object}
-\index{object!database}
+El modo \verb"'c'" significa que la base de datos debería ser creada si
+no existe ya.  El resultado es un objeto de base de datos
+que puede ser usado (para la mayoría de las operaciones) como un diccionario.
+\index{objeto de base de datos}
+\index{base de datos!objeto}
 
-When you create a new item, {\tt dbm} updates the database file.
-\index{update!database}
+Cuando creas un nuevo ítem, {\tt dbm} actualiza el archivo de base de datos.
+\index{actualizar!base de datos}
 
 \begin{verbatim}
->>> db['cleese.png'] = 'Photo of John Cleese.'
+>>> db['cleese.png'] = 'Foto de John Cleese.'
 \end{verbatim}
 %
-When you access one of the items, {\tt dbm} reads the file:
+Cuando accedes a uno de los ítems, {\tt dbm} lee el archivo:
 
 \begin{verbatim}
 >>> db['cleese.png']
-b'Photo of John Cleese.'
+b'Foto de John Cleese.'
 \end{verbatim}
 %
-The result is a {\bf bytes object}, which is why it begins with {\tt
-  b}.  A bytes object is similar to a string in many ways.  When you
-get farther into Python, the difference becomes important, but for now
-we can ignore it.
-\index{bytes object}
-\index{object!bytes}
+El resultado es un {\bf objeto de bytes}, que es la razón por la cual comienza con {\tt
+  b}.  Un objeto de bytes es similar a una cadena en muchos sentidos.  Cuando
+te adentras más en Python, la diferencia se vuelve importante, pero por ahora
+podemos ignorarla.
+\index{objeto de bytes}
+\index{bytes!objeto}
 
-If you make another assignment to an existing key, {\tt dbm} replaces
-the old value:
+Si haces otra asignación a una clave existente, {\tt dbm} reemplaza
+el valor antiguo:
 
 \begin{verbatim}
->>> db['cleese.png'] = 'Photo of John Cleese doing a silly walk.'
+>>> db['cleese.png'] = 'Foto de John Cleese haciendo un tonto paseo.'
 >>> db['cleese.png']
-b'Photo of John Cleese doing a silly walk.'
+b'Foto de John Cleese haciendo un tonto paseo.'
 \end{verbatim}
 %
 
-Some dictionary methods, like {\tt keys} and {\tt items}, don't
-work with database objects.  But iteration with a {\tt for}
-loop works:
-\index{dictionary methods!dbm module}
+Algunos métodos de diccionario, como {\tt keys} e {\tt items}, no
+funcionan con objetos de base de datos.  Pero la iteración con un bucle {\tt for}
+funciona:
+\index{métodos de diccionario!módulo dbm}
 
 \begin{verbatim}
-for key in db:
-    print(key, db[key])
+for clave in db:
+    print(clave, db[clave])
 \end{verbatim}
 %
-As with other files, you should close the database when you are
-done:
+Al igual que los otros archivos, deberías cerrar la base de datos cuando
+termines:
 
 \begin{verbatim}
 >>> db.close()
 \end{verbatim}
 %
-\index{close method}
-\index{method!close}
+\index{método close}
+\index{close!método}
 
 
 \section{Pickling}
@@ -16417,63 +16417,63 @@ Esta tipo de análisis viene con algunas advertencias, pero llegaremos
 a eso más adelante.
 
 
-\section{Order of growth}
+\section{Orden de crecimiento}
 
-Suppose you have analyzed two algorithms and expressed
-their run times in terms of the size of the input:
-Algorithm A takes $100n+1$ steps to solve a problem with
-size $n$; Algorithm B takes $n^2 + n + 1$ steps.
-\index{order of growth}
+Supongamos que has analizado dos algoritmos y has expresado
+sus tiempos de ejecución en términos del tamaño de la entrada:
+Al Algoritmo A le toma $100n+1$ pasos resolver un problema con
+tamaño $n$; al Algorithm B le toma $n^2 + n + 1$ pasos.
+\index{orden de crecimiento}
 
-The following table shows the run time of these algorithms
-for different problem sizes:
+La siguiente tabla muestra el tiempo de ejecución de estos algoritmos
+para diferentes tamaños de problema:
 
 \begin{tabular}{|r|r|r|}
 \hline
-Input     &   Run time of     & Run time of \\
-size      &   Algorithm A     & Algorithm B \\
+Tamaño de & Tiempo de ejecución & Tiempo de ejecución \\
+entrada   & del Algoritmo A     & del Algoritmo B \\
 \hline
-10        &   1 001           & 111         \\
-100       &   10 001          & 10 101         \\
-1 000     &   100 001         & 1 001 001         \\
-10 000    &   1 000 001       & 100 010 001         \\
+10        &   1 001             & 111         \\
+100       &   10 001            & 10 101         \\
+1 000     &   100 001           & 1 001 001         \\
+10 000    &   1 000 001         & 100 010 001         \\
 \hline
 \end{tabular}
 
-At $n=10$, Algorithm A looks pretty bad; it takes almost 10 times
-longer than Algorithm B.  But for $n=100$ they are about the same, and
-for larger values A is much better.
+Cuando $n=10$, el Algoritmo A se ve bastante mal; toma casi 10 veces
+más que el Algoritmo B.  Pero para $n=100$ son casi lo mismo, y
+para valores más grandes A es mucho mejor.
 
-The fundamental reason is that for large values of $n$, any function
-that contains an $n^2$ term will grow faster than a function whose
-leading term is $n$.  The {\bf leading term} is the term with the
-highest exponent.
-\index{leading term}
-\index{exponent}
+La razón fundamental es que para valores grandes de $n$, cualquier función
+que contienen el término $n^2$ crecerá más rápido que una función cuyo
+término principal es $n$.  El {\bf término principal} es el término con el
+exponente más alto.
+\index{término principal}
+\index{exponente}
 
-For Algorithm A, the leading term has a large coefficient, 100, which
-is why B does better than A for small $n$.  But regardless of the
-coefficients, there will always be some value of $n$ where
-$a n^2 > b n$, for any values of $a$ and $b$.
-\index{leading coefficient}
+Para el Algoritmo A, el término principal tiene un coeficiente grande, 100, que
+es el motivo por el cual B es mejor que A para $n$ pequeño.  Pero a pesar de los
+coeficientes, siempre habrá algún valor de $n$ donde
+$a n^2 > b n$, para cualquier valor de $a$ y $b$.
+\index{coeficiente principal}
 
-The same argument applies to the non-leading terms.  Even if the run
-time of Algorithm A were $n+1000000$, it would still be better than
-Algorithm B for sufficiently large $n$.
+El mismo argumento se aplica a los términos no principales.  Incluso si el tiempo
+de ejecución del Algoritmo A fuera $n+1000000$, seguiría siendo mejor que el
+Algoritmo B para $n$ suficientemente grande.
 
-In general, we expect an algorithm with a smaller leading term to be a
-better algorithm for large problems, but for smaller problems, there
-may be a {\bf crossover point} where another algorithm is better.  The
-location of the crossover point depends on the details of the
-algorithms, the inputs, and the hardware, so it is usually ignored for
-purposes of algorithmic analysis.  But that doesn't mean you can forget
-about it.
-\index{crossover point}
+En general, esperamos que un algoritmo con un término principal más pequeño sea un
+mejor algoritmo para problemas grandes, pero para problemas más pequeños puede
+haber un {\bf punto de cruce} donde otro algoritmom es mejor.  La
+ubicación del punto de cruce depende de los detalles de los
+algoritmos, las entradas y el hardware, por lo cual usualmente se ignora para
+propósitos de análisis algorítmico.  Pero eso no significa que puedes
+olvidarlo.
+\index{punto de cruce}
 
-If two algorithms have the same leading order term, it is hard to say
-which is better; again, the answer depends on the details.  So for
-algorithmic analysis, functions with the same leading term
-are considered equivalent, even if they have different coefficients.
+Si dos algoritmos tienen el mismo término de orden principal, es difícil decir
+cuál es mejor; nuevamente, la respuesta depende de los detalles.  Entonces para
+análisis algorítmico, las funciones con el mismo término principal
+se consideran equivalentes, incluso si tienen coeficientes diferentes.
 
 An {\bf order of growth} is a set of functions whose growth
 behavior is considered equivalent.  For example, $2n$, $100n$ and $n+1$
