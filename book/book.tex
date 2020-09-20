@@ -11667,19 +11667,19 @@ termines:
 \index{close!método}
 
 
-\section{Pickling}
-\index{pickling}
+\section{Uso de pickle}
+\index{pickle}
 
-A limitation of {\tt dbm} is that the keys and values have to be
-strings or bytes.  If you try to use any other type, you get an error.
-\index{pickle module} \index{module!pickle}
+Una limitación de {\tt dbm} es que las claves y valores tienen que ser
+cadenas o bytes.  Si intentas usar cualquier otro tipo, obtienes un error.
+\index{módulo pickle} \index{pickle!módulo}
 
-The {\tt pickle} module can help.  It translates
-almost any type of object into a string suitable for storage in a
-database, and then translates strings back into objects.
+El módulo {\tt pickle} puede ayudar.  Este módulo traduce
+casi cualquier tipo de objeto en una cadena adecuada para almacenar
+en una base de datos y también traduce cadenas para que vuelvan a ser objetos.
 
-{\tt pickle.dumps} takes an object as a parameter and returns
-a string representation ({\tt dumps} is short for ``dump string''):
+{\tt pickle.dumps} toma un objeto como parámetro y devuelve
+una representación de cadena ({\tt dumps} es una abreviatura de ``dump string''):
 
 \begin{verbatim}
 >>> import pickle
@@ -11688,9 +11688,9 @@ a string representation ({\tt dumps} is short for ``dump string''):
 b'\x80\x03]q\x00(K\x01K\x02K\x03e.'
 \end{verbatim}
 %
-The format isn't obvious to human readers; it is meant to be
-easy for {\tt pickle} to interpret.  {\tt pickle.loads}
-(``load string'') reconstitutes the object:
+El formato no es obvio para lectores humanos; está destinado a ser
+fácil para que {\tt pickle} lo interprete.  {\tt pickle.loads}
+(``load string'') reconstituye el objeto:
 
 \begin{verbatim}
 >>> t1 = [1, 2, 3]
@@ -11700,8 +11700,8 @@ easy for {\tt pickle} to interpret.  {\tt pickle.loads}
 [1, 2, 3]
 \end{verbatim}
 %
-Although the new object has the same value as the old, it is
-not (in general) the same object:
+Aunque el nuevo objeto tiene el mismo valor que el antiguo, no es
+(en general) el mismo objeto:
 
 \begin{verbatim}
 >>> t1 == t2
@@ -11710,65 +11710,65 @@ True
 False
 \end{verbatim}
 %
-In other words, pickling and then unpickling has the same effect
-as copying the object.
+En otras palabras, ``picklear'' y luego ``despicklear'' tiene el mismo efecto
+que copiar el objeto.
 
-You can use {\tt pickle} to store non-strings in a database.
-In fact, this combination is so common that it has been
-encapsulated in a module called {\tt shelve}.
-\index{shelve module}
-\index{module!shelve}
+Puedes usar {\tt pickle} para almacenar objetos que no sean cadena en una base de datos.
+De hecho, esta combinación es tan común que ha sido
+encapsulada en un módulo llamado {\tt shelve}.
+\index{módulo shelve}
+\index{shelve!módulo}
 
 
-\section{Pipes}
+\section{Tuberías}
 \index{shell}
-\index{pipe}
+\index{tubería}
 
-Most operating systems provide a command-line interface,
-also known as a {\bf shell}.  Shells usually provide commands
-to navigate the file system and launch applications.  For
-example, in Unix you can change directories with {\tt cd},
-display the contents of a directory with {\tt ls}, and launch
-a web browser by typing (for example) {\tt firefox}.
-\index{ls (Unix command)}
-\index{Unix command!ls}
+La mayoría de los sistemas operativos proporcionan una interfaz de línea de comandos,
+también conocida como {\bf shell}.  Las shells generalmente proporcionan comandos
+para navegar el sistema de archivos e iniciar aplicaciones.  Por
+ejemplo, en Unix puedes cambiar directorios con {\tt cd},
+mostrar los contenidos de un directorio con {\tt ls} e iniciar
+un navegador web escribiendo (por ejemplo) {\tt firefox}.
+\index{ls (comando Unix)}
+\index{comando Unix!ls}
 
-Any program that you can launch from the shell can also be
-launched from Python using a {\bf pipe object}, which
-represents a running program.
+Cualquier programa que puedes iniciar desde la shell puede también
+iniciarse desde Python usando un {\bf objeto de tubería} (en inglés, \em{pipe}), que
+representa un programa en ejecución.
 
-For example, the Unix command {\tt ls -l} normally displays the
-contents of the current directory in long format.  You can
-launch {\tt ls} with {\tt os.popen}\footnote{{\tt popen} is deprecated
-now, which means we are supposed to stop using it and start using
-the {\tt subprocess} module.  But for simple cases, I find
-{\tt subprocess} more complicated than necessary.  So I am going
-to keep using {\tt popen} until they take it away.}:
-\index{popen function}
-\index{function!popen}
+Por ejemplo, el comando Unix {\tt ls -l} normalmente muestra los
+contenidos del directorio actual en formato largo.  Puedes
+ejecutar {\tt ls} con {\tt os.popen}\footnote{{\tt popen} ahora está
+obsoleto, lo cual significa que se supone que debemos dejar de usarla y comenzar a usar
+el módulo {\tt subprocess}.  Pero para casos simples, encuentro a
+{\tt subprocess} más complicado que necesario.  Entonces voy a
+seguir usando {\tt popen} hasta que lo quiten.}:
+\index{función popen}
+\index{popen!función}
 
 \begin{verbatim}
 >>> cmd = 'ls -l'
 >>> fp = os.popen(cmd)
 \end{verbatim}
 %
-The argument is a string that contains a shell command.  The
-return value is an object that behaves like an open
-file.  You can read the output from the {\tt ls} process one
-line at a time with {\tt readline} or get the whole thing at
-once with {\tt read}:
-\index{readline method}
-\index{method!readline}
-\index{read method}
-\index{method!read}
+El argumento es una cadena que contiene un comando de shell.  El
+valor de retorno es un objeto que se comporta como un archivo
+abierto.  Puedes leer la salida del proceso {\tt ls} una
+línea a la vez con {\tt readline} u obtener todo de una vez
+con {\tt read}:
+\index{método readline}
+\index{readline!método}
+\index{método read}
+\index{read!método}
 
 \begin{verbatim}
 >>> res = fp.read()
 \end{verbatim}
 %
-When you are done, you close the pipe like a file:
-\index{close method}
-\index{method!close}
+Cuando termines, cierras la tubería como un archivo:
+\index{método close}
+\index{close!método}
 
 \begin{verbatim}
 >>> stat = fp.close()
@@ -11776,24 +11776,24 @@ When you are done, you close the pipe like a file:
 None
 \end{verbatim}
 %
-The return value is the final status of the {\tt ls} process;
-{\tt None} means that it ended normally (with no errors).
+El valor de retorno es el estado final del proceso {\tt ls};
+{\tt None} significa que termina de manera normal (sin errores).
 
-For example, most Unix systems provide a command called {\tt md5sum}
-that reads the contents of a file and computes a ``checksum''.
-You can read about MD5 at \url{http://en.wikipedia.org/wiki/Md5}.  This
-command provides an efficient way to check whether two files
-have the same contents.  The probability that different contents
-yield the same checksum is very small (that is, unlikely to happen
-before the universe collapses).
+Por ejemplo, la mayoría de los sistemas Unix proporcionan un comando llamado {\tt md5sum}
+que lee los contenidos de un archivo y calcula una ``suma de verificación''.
+Puedes leer sobre MD5 en \url{http://en.wikipedia.org/wiki/Md5}.  Este
+comando proporciona una manera eficiente de verificar que dos filas
+tengan los mismos contenidos.  La probabilidad de que diferentes contenidos
+entreguen la misma suma de verificación es muy pequeña (es decir, improbable que ocurra
+antes de que el universo colapse).
 \index{md5}
-\index{checksum}
+\index{suma de verificación}
 
-You can use a pipe to run {\tt md5sum} from Python and get the result:
+Puedes usar una tubería para ejecutar {\tt md5sum} desde Python y obtener el resultado:
 
 \begin{verbatim}
->>> filename = 'book.tex'
->>> cmd = 'md5sum ' + filename
+>>> nombre_archivo = 'book.tex'
+>>> cmd = 'md5sum ' + nombre_archivo
 >>> fp = os.popen(cmd)
 >>> res = fp.read()
 >>> stat = fp.close()
@@ -11805,100 +11805,100 @@ None
 
 
 
-\section{Writing modules}
+\section{Escribir módulos}
 \label{modules}
-\index{module, writing}
-\index{word count}
+\index{módulo, escribir}
+\index{contar palabras}
 
-Any file that contains Python code can be imported as a module.
-For example, suppose you have a file named {\tt wc.py} with the following
-code:
+Cualquier archivo que contiene código Python puede importarse como módulo.
+Por ejemplo, supongamos que tienes un archivo con nombre {\tt wc.py} con el siguiente
+código:
 
 \begin{verbatim}
-def linecount(filename):
-    count = 0
-    for line in open(filename):
-        count += 1
-    return count
+def contar_lineas(nombre_archivo):
+    contar = 0
+    for linea in open(nombre_archivo):
+        contar += 1
+    return contar
 
-print(linecount('wc.py'))
+print(contar_lineas('wc.py'))
 \end{verbatim}
 %
-If you run this program, it reads itself and prints the number
-of lines in the file, which is 7.
-You can also import it like this:
+Si ejecutas este programa, se lee a sí mismo e imprime el número
+de líneas en el archivo, el cual es 7.
+Puedes también importarlo así:
 
 \begin{verbatim}
 >>> import wc
 7
 \end{verbatim}
 %
-Now you have a module object {\tt wc}:
-\index{module object}
-\index{object!module}
+Ahora teienes un objeto de módulo {\tt wc}:
+\index{objeto de módulo}
+\index{módulo!objeto}
 
 \begin{verbatim}
 >>> wc
 <module 'wc' from 'wc.py'>
 \end{verbatim}
 %
-The module object provides \verb"linecount":
+El objeto de módulo proporciona \verb"contar_lineas":
 
 \begin{verbatim}
->>> wc.linecount('wc.py')
+>>> wc.contar_lineas('wc.py')
 7
 \end{verbatim}
 %
-So that's how you write modules in Python.
+Entonces así es como escribes módulos en Python.
 
-The only problem with this example is that when you import
-the module it runs the test code at the bottom.  Normally
-when you import a module, it defines new functions but it
-doesn't run them.
-\index{import statement}
-\index{statement!import}
+El úlico problema con este ejemplo es que cuando importas
+el módulo ejecuta el código de prueba de la parte final.  Normalmente,
+cuando importas un módulo, este define nuevas funciones pero
+no las ejecuta.
+\index{sentencia import}
+\index{import!sentencia}
 
-Programs that will be imported as modules often
-use the following idiom:
+Los programas que serán importados como módulos a menudo
+utilizan la siguiente forma:
 
 \begin{verbatim}
 if __name__ == '__main__':
-    print(linecount('wc.py'))
+    print(contar_lineas('wc.py'))
 \end{verbatim}
 %
-\verb"__name__" is a built-in variable that is set when the
-program starts.  If the program is running as a script,
-\verb"__name__" has the value \verb"'__main__'"; in that
-case, the test code runs.  Otherwise,
-if the module is being imported, the test code is skipped.
+\verb"__name__" es una variable incorporada que se establece cuando
+el programa inicia.  Si el programa se está ejecutando como un script,
+\verb"__name__" tiene el valor \verb"'__main__'"; en ese
+caso, el código de prueba se ejecuta.  De lo contrario,
+si el módulo se está importando, se salta el código de prueba.
 
-\index{name built-in variable}
+\index{name, variable incorporada}
 \index{main}
 
-As an exercise, type this example into a file named {\tt wc.py} and run
-it as a script.  Then run the Python interpreter and
-{\tt import wc}.  What is the value of \verb"__name__"
-when the module is being imported?
+Como ejercicio, escribe este ejemplo en un archivo con nombre {\tt wc.py} y ejecútalo
+como un script.  Luego ejecuta el intérprete de Python y
+haz {\tt import wc}.  ¿Cuál es el valor de \verb"__name__"
+cuando el módulo se está importando?
 
-Warning: If you import a module that has already been imported,
-Python does nothing.  It does not re-read the file, even if it has
-changed.
-\index{module!reload}
-\index{reload function}
-\index{function!reload}
+Advertencia: Si importas un módulo que ya ha sido importado,
+Python no hace nada.  No vuelve a leer el archivo, incluso si ha
+cambiado.
+\index{módulo reload}
+\index{función reload}
+\index{reload!función}
 
-If you want to reload a module, you can use the built-in function
-{\tt reload}, but it can be tricky, so the safest thing to do is
-restart the interpreter and then import the module again.
+Si quieres volver a cargar un módulo, puedes usar la función incorporada
+{\tt reload}, pero puede ser complicado, por lo cual lo más seguro es
+reiniciar el intérprete y luego importar el módulo de nuevo.
 
 
-\section{Debugging}
-\index{debugging}
-\index{whitespace}
+\section{Depuración}
+\index{depuración}
+\index{espacio en blanco}
 
-When you are reading and writing files, you might run into problems
-with whitespace.  These errors can be hard to debug because spaces,
-tabs and newlines are normally invisible:
+Cuando lees y escribes archivos, podrías tener problemas
+con el espacio en blanco.  Estos errores pueden ser difíciles de depurar porque los espacios,
+sangrías y nuevas líneas son normalmente invisibles:
 
 \begin{verbatim}
 >>> s = '1 2\t 3\n 4'
@@ -11906,96 +11906,96 @@ tabs and newlines are normally invisible:
 1 2	 3
  4
 \end{verbatim}
-\index{repr function}
-\index{function!repr}
-\index{string representation}
+\index{función repr}
+\index{repr!función}
+\index{representación de cadena}
 
-The built-in function {\tt repr} can help.  It takes any object as an
-argument and returns a string representation of the object.  For
-strings, it represents whitespace
-characters with backslash sequences:
+La función incorporada {\tt repr} puede ayudar.  Toma cualquier objeto como
+argumento y devuelve una representación de cadena del objeto.  Para
+las cadenas, representa los caracteres de
+espacio en blanco con secuencias de barras invertidas:
 
 \begin{verbatim}
 >>> print(repr(s))
 '1 2\t 3\n 4'
 \end{verbatim}
 
-This can be helpful for debugging.
+Esto puede ser útil para depurar.
 
-One other problem you might run into is that different systems
-use different characters to indicate the end of a line.  Some
-systems use a newline, represented \verb"\n".  Others use
-a return character, represented \verb"\r".  Some use both.
-If you move files between different systems, these inconsistencies
-can cause problems.
-\index{end of line character}
+Otro problema que podrías encontrar es que sistemas diferentes
+usan caracteres diferentes para indicar el fin de una línea.  Algunos
+sistemas usan una nueva línea, representada por \verb"\n".  Otros usan
+un caracter ``return'', representado por \verb"\r".  Algunos usan ambos.
+Si mueves archivos entre sistemas diferentes, estas inconsistencias
+pueden causar problemas.
+\index{carácter de fin de línea}
 
-For most systems, there are applications to convert from one
-format to another.  You can find them (and read more about this
-issue) at \url{http://en.wikipedia.org/wiki/Newline}.  Or, of course, you
-could write one yourself.
+Para la mayoría de los sistemas, hay aplicaciones para convertir de
+un formato a otro.  Puedes encontrarlas (y leer más sobre este
+tema) en \url{http://en.wikipedia.org/wiki/Newline}.  O, por supuesto,
+puedes escribir una por tu cuenta.
 
 
-\section{Glossary}
+\section{Glosario}
 
 \begin{description}
 
-\item[persistent:] Pertaining to a program that runs indefinitely
-and keeps at least some of its data in permanent storage.
-\index{persistence}
+\item[persistente:] Dicho de un programa que se ejecuta indefinidamente
+y mantiene al menos alguno de sus datos en almacenamiento permanente.
+\index{persistencia}
 
-\item[format operator:] An operator, {\tt \%}, that takes a format
-string and a tuple and generates a string that includes
-the elements of the tuple formatted as specified by the format string.
-\index{format operator}
-\index{operator!format}
+\item[operador de formato:] Un operador, {\tt \%}, que toma una cadena
+de formato y una tupla y genera una cadena que incluye
+los elementos de la tupla con el formato especificado por la cadena de formato.
+\index{operador de formato}
+\index{formato!operador de}
 
-\item[format string:] A string, used with the format operator, that
-contains format sequences.
-\index{format string}
+\item[cadena de formato:] Una cadena, usada con el operador de formato, que
+contiene secuencias de formato.
+\index{cadena de formato}
 
-\item[format sequence:] A sequence of characters in a format string,
-like {\tt \%d}, that specifies how a value should be formatted.
-\index{format sequence}
+\item[secuencia de formato:] Una secuencia de caracteres en una cadena de formato,
+como {\tt \%d}, que especifica cómo debería ser el formato de un valor.
+\index{secuencia de formato}
 
-\item[text file:] A sequence of characters stored in permanent
-storage like a hard drive.
-\index{text file}
+\item[archivo de texto:] Una secuencia de caracteres guardado en almacenamiento
+permanente como un disco duro.
+\index{archivo de texto}
 
-\item[directory:] A named collection of files, also called a folder.
-\index{directory}
+\item[directorio:] Una colección de archivos que tiene un nombre, también llamado carpeta.
+\index{directorio}
 
-\item[path:] A string that identifies a file.
-\index{path}
+\item[ruta:] Una cadena que identifica un archivo.
+\index{ruta}
 
-\item[relative path:] A path that starts from the current directory.
-\index{relative path}
+\item[ruta relativa:] Una ruta que comienza desde el directorio actual.
+\index{ruta relativa}
 
-\item[absolute path:] A path that starts from the topmost directory
-in the file system.
-\index{absolute path}
+\item[ruta absoluta:] Una ruta que comienza desde el directorio más alto
+en el sistema de archivos.
+\index{ruta absoluta}
 
-\item[catch:] To prevent an exception from terminating
-a program using the {\tt try}
-and {\tt except} statements.
-\index{catch}
+\item[capturar]: Evitar que una exceptión termine
+un programa utilizando las sentencias {\tt try}
+y {\tt except}.
+\index{capturar}
 
-\item[database:] A file whose contents are organized like a dictionary
-with keys that correspond to values.
-\index{database}
+\item[base de datos:] Un archivo cuyo contenido está organizado como un diccionario
+con claves que corresponden a valores.
+\index{base de datos}
 
-\item[bytes object:] An object similar to a string.
-\index{bytes object}
-\index{object!bytes}
+\item[objeto de bytes:] Un objeto similar a una cadena.
+\index{objeto de bytes}
+\index{bytes!objeto}
 
-\item[shell:] A program that allows users to type commands and then
-executes them by starting other programs.
+\item[shell:] Un programa que permite a los usuarios escribir comandos y luego
+ejecutarlos iniciando otros programas.
 \index{shell}
 
-\item[pipe object:] An object that represents a running program, allowing
-a Python program to run commands and read the results.
-\index{pipe object}
-\index{object!pipe}
+\item[objeto de tubería:] Un objeto que representa un programa en ejecución, permitiendo
+a un programa de Python ejecutar comandos y leer los resultados.
+\index{objeto de tubería}
+\index{tubería!objeto}
 
 \end{description}
 
@@ -12004,35 +12004,35 @@ a Python program to run commands and read the results.
 
 \begin{exercise}
 
-Write a function called {\tt sed} that takes as arguments a pattern string,
-a replacement string, and two filenames; it should read the first file
-and write the contents into the second file (creating it if
-necessary).  If the pattern string appears anywhere in the file, it
-should be replaced with the replacement string.
+Escribe una función llamada {\tt sed} que tome como argumentos una cadena de patrón,
+una cadena de reemplazo y dos nombres de archivo; debería leer el primer archivo
+y escribir los contenidos en el segundo archivo (creándolo si es
+necesario).  Si la cadena de patrón aparece en algún lugar en el archivo,
+debería reemplazarse con la cadena de reemplazo.
 
-If an error occurs while opening, reading, writing or closing files,
-your program should catch the exception, print an error message, and
-exit.  Solution: \url{http://thinkpython2.com/code/sed.py}.
+Si ocurre un error mientras se abren, leen, escriben o cierran los archivos,
+tu programa debería capturar la excepción, imprimir un mensaje de error y
+salir.  Solución: \url{http://thinkpython2.com/code/sed.py}.
 
 \end{exercise}
 
 
 \begin{exercise}
-\index{anagram set}
-\index{set!anagram}
+\index{conjunto de anagramas}
+\index{anagramas!conjutno de}
 
-If you download my solution to Exercise~\ref{anagrams} from
-\url{http://thinkpython2.com/code/anagram_sets.py}, you'll see that it creates
-a dictionary that maps from a sorted string of letters to the list of
-words that can be spelled with those letters.  For example,
-\verb"'opst'" maps to the list
+Si descargas mi solución al Ejercicio~\ref{anagrams} de
+\url{http://thinkpython2.com/code/anagram_sets.py}, verás que crea
+un diccionario que mapea de una cadena ordenada de letras a la lista de
+palabras que se pueden formar con esas letras.  Por ejemplo,
+\verb"'opst'" mapea a la lista
 \verb"['opts', 'post', 'pots', 'spot', 'stop', 'tops']".
 
-Write a module that imports \verb"anagram_sets" and provides
-two new functions: \verb"store_anagrams" should store the
-anagram dictionary in a ``shelf''; \verb"read_anagrams" should
-look up a word and return a list of its anagrams.
-Solution: \url{http://thinkpython2.com/code/anagram_db.py}.
+Escribe un módulo que importe \verb"anagram_sets" y proporcione
+dos nuevas funciones: \verb"store_anagrams" debería almacenar el
+diccionario de anagrama en un ``estante''; \verb"read_anagrams" debería
+buscar una palabra y devolver una lista de sus anagramas.
+Solución: \url{http://thinkpython2.com/code/anagram_db.py}.
 
 \end{exercise}
 
@@ -12041,34 +12041,34 @@ Solution: \url{http://thinkpython2.com/code/anagram_db.py}.
 \label{checksum}
 \index{MP3}
 
-In a large collection of MP3 files, there may be more than one
-copy of the same song, stored in different directories or with
-different file names.  The goal of this exercise is to search for
-duplicates.
+En una gran coleccioń de archivos MP3, puede haber más de una
+copia de la misma canción, almacenados en directorios diferentes o con
+nombres de archivo diferentes.  El objetivo de este ejercicio es buscar
+duplicados.
 
 \begin{enumerate}
 
-\item Write a program that searches a directory and all of its
-subdirectories, recursively, and returns a list of complete paths
-for all files with a given suffix (like {\tt .mp3}).
-Hint: {\tt os.path} provides several useful functions for
-manipulating file and path names.
-\index{duplicate}
-\index{MD5 algorithm}
-\index{algorithm!MD5}
-\index{checksum}
+\item Escribe un programa que busque un directorio y todos sus
+subdirectorios, de manera recursiva, y devuelva una lista de rutas completas
+para todos los archivos con un sufijo dado (como {\tt .mp3}).
+Pista: {\tt os.path} proporciona varias funciones útiles para
+manipular nombres de archivo y de rutas.
+\index{duplicado}
+\index{algoritmo MD5}
+\index{MD5!algoritmo}
+\index{suma de verificación}
 
-\item To recognize duplicates, you can use {\tt md5sum}
-to compute a ``checksum'' for each files.  If two files have
-the same checksum, they probably have the same contents.
+\item Para reconocer duplicados, puedes utilizar {\tt md5sum}
+para calcular una ``suma de verificación'' para cada archivo.  Si dos archivos tienen
+la misma suma de verificación, probablemente tienen los mismos contenidos.
 \index{md5sum}
 
-\item To double-check, you can use the Unix command {\tt diff}.
+\item Para doble verificación, puedes utilizar el comando Unix {\tt diff}.
 \index{diff}
 
 \end{enumerate}
 
-Solution: \url{http://thinkpython2.com/code/find_duplicates.py}.
+Solución: \url{http://thinkpython2.com/code/find_duplicates.py}.
 
 \end{exercise}
 
