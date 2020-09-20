@@ -1846,7 +1846,7 @@ errores a propósito para ver qué sale mal.
 
 \begin{itemize}
 
-\item Hemos visto que {\tt n = 42} es legal.  ¿Qué hay de {\tt 42 = n}?
+\item Hemos visto que {\tt n = 42} es legal.  ¿Qué pasa con {\tt 42 = n}?
 
 \item ¿Qué ocurre con {\tt x = y = 1}?
 
@@ -5316,7 +5316,7 @@ Veremos cómo funcionan en el Capítulo~\ref{strings}.
 
 \item Escribe estas funciones en un archivo con nombre {\tt palindromo.py}
 y pruébalas.  ¿Qué ocurre si llamas a {\tt medio} con
-una cadena de dos letras?  ¿De una letra?  ¿Qué hay de la cadena
+una cadena de dos letras?  ¿De una letra?  ¿Qué pasa con la cadena
 vacía, la cual se escribe \verb"''" y no contiene letras?
 
 \item Escribe una función llamada \verb"es_palindromo" que tome
@@ -6953,7 +6953,7 @@ letras {\tt acefhlo}?  ¿Una distinta a ``Hoe alfalfa''?
 Escribe una función con nombre \verb"usa_todas" que tome una palabra y una
 cadena de letras requeridas y devuelva {\tt True} si la palabra
 usa todas las letras requeridas al menos una vez.  ¿Cuántas palabras
-que usan todas las vocales {\tt aeiou} existen?  ¿Qué hay de {\tt aeiouy}?
+que usan todas las vocales {\tt aeiou} existen?  ¿Qué pasa con {\tt aeiouy}?
 
 \end{exercise}
 
@@ -16475,111 +16475,111 @@ cuál es mejor; nuevamente, la respuesta depende de los detalles.  Entonces para
 análisis algorítmico, las funciones con el mismo término principal
 se consideran equivalentes, incluso si tienen coeficientes diferentes.
 
-An {\bf order of growth} is a set of functions whose growth
-behavior is considered equivalent.  For example, $2n$, $100n$ and $n+1$
-belong to the same order of growth, which is written $O(n)$ in
-{\bf Big-Oh notation} and often called {\bf linear} because every function
-in the set grows linearly with $n$.
-\index{big-oh notation}
-\index{linear growth}
+Un {\bf orden de crecimiento} es un conjunto de funciones cuyo comportamiento
+de crecimiento se considera equivalente.  Por ejemplo, $2n$, $100n$ y $n+1$
+pertenecen al mismo orden de crecimiento, el cual se escribe $O(n)$ en
+{\bf notación O grande} (en inglés, \em{Big-Oh}) y a menudo llamada {\bf lineal} porque cada función
+en el conjunto crece de manera lineal con $n$.
+\index{big-oh} \index{notación O grande}
+\index{crecimiento lineal}
 
-All functions with the leading term $n^2$ belong to $O(n^2)$; they are
-called {\bf quadratic}.
-\index{quadratic growth}
+Todas las funciones con el término principal $n^2$ pertenecen a $O(n^2)$; se
+llaman {\bf cuadráticas}.
+\index{crecimiento cuadrático}
 
-The following table shows some of the orders of growth that
-appear most commonly in algorithmic analysis,
-in increasing order of badness.
-\index{badness}
+La siguiente tabla muestra algunos de los órdenes de crecimiento que
+aparecen más comúnmente en el análisis algorítmico,
+en orcen creciente de ineficiencia.
+\index{ineficiencia}
 
 \begin{tabular}{|r|r|r|}
 \hline
-Order of     &   Name      \\
-growth       &               \\
+Orden de     &   Nombre      \\
+crecimiento  &               \\
 \hline
-$O(1)$             & constant \\
-$O(\log_b n)$      & logarithmic (for any $b$) \\
-$O(n)$             & linear \\
-$O(n \log_b n)$    & linearithmic \\
-$O(n^2)$           & quadratic     \\
-$O(n^3)$           & cubic     \\
-$O(c^n)$           & exponential (for any $c$)    \\
+$O(1)$             & constante \\
+$O(\log_b n)$      & logarítmica (para cualquier $b$) \\
+$O(n)$             & lineal \\
+$O(n \log_b n)$    & linearítmica \\
+$O(n^2)$           & cuadrática    \\
+$O(n^3)$           & cúbica    \\
+$O(c^n)$           & exponencial (para cualquier $c$)    \\
 \hline
 \end{tabular}
 
-For the logarithmic terms, the base of the logarithm doesn't matter;
-changing bases is the equivalent of multiplying by a constant, which
-doesn't change the order of growth.  Similarly, all exponential
-functions belong to the same order of growth regardless of the base of
-the exponent.
-Exponential functions grow very quickly, so exponential algorithms are
-only useful for small problems.
-\index{logarithmic growth}
-\index{exponential growth}
+Para los términos logarítmicos, la base del logarítmo no importa;
+cambiar las bases es el equivalente a multiplicar por una constante, la cual
+no cambia el orden de crecimiento.  De igual manera, todas las
+funciones exponenciales pertenecen al mismo orden de crecimiento, independiente de
+la base del exponente.
+Las funciones exponenciales crecen de manera muy rápida, por lo cual los algoritmos exponenciales
+solo son útiles para problemas pequeños.
+\index{crecimiento logarítmico}
+\index{crecimiento exponencial}
 
 
 \begin{exercise}
 
-Read the Wikipedia page on Big-Oh notation at
-\url{http://en.wikipedia.org/wiki/Big_O_notation} and
-answer the following questions:
+Lee la página de Wikipedia sobre la notación O grande en
+\url{http://en.wikipedia.org/wiki/Big_O_notation} y
+responde las siguientes preguntas:
 
 \begin{enumerate}
-\item What is the order of growth of $n^3 + n^2$?
-What about $1000000 n^3 + n^2$?
-What about $n^3 + 1000000 n^2$?
+\item ¿Cuál es el orden de crecimiento de $n^3 + n^2$?
+¿Qué pasa con $1000000 n^3 + n^2$?
+¿Qué pasa con $n^3 + 1000000 n^2$?
 
-\item What is the order of growth of $(n^2 + n) \cdot (n + 1)$?  Before
-  you start multiplying, remember that you only need the leading term.
+\item ¿Cuál es el orden de crecimiento de $(n^2 + n) \cdot (n + 1)$?  Antes
+  de que empieces a multiplicar, recuerda que solo necesitas el término principal.
 
-\item If $f$ is in $O(g)$, for some unspecified function $g$, what can
-  we say about $af+b$, where $a$ and $b$ are constants?
+\item Si $f$ está en $O(g)$, para una función $g$ no especificada, ¿qué podemos
+  decir de $af+b$, donde $a$ y $b$ son constantes?
 
-\item If $f_1$ and $f_2$ are in $O(g)$, what can we say about $f_1 + f_2$?
+\item Si $f_1$ y $f_2$ están en $O(g)$, ¿qué podemos decir de $f_1 + f_2$?
 
-\item If  $f_1$ is in $O(g)$
-and $f_2$ is in $O(h)$,
-what can we say about  $f_1 + f_2$?
+\item Si $f_1$ está en $O(g)$
+y $f_2$ está en $O(h)$,
+¿qué podemos decir de $f_1 + f_2$?
 
-\item If  $f_1$ is in $O(g)$ and $f_2$ is $O(h)$,
-what can we say about  $f_1 \cdot f_2$?
+\item Si $f_1$ está en $O(g)$ y $f_2$ es $O(h)$,
+¿qué podemos decir de $f_1 \cdot f_2$?
 \end{enumerate}
 
 \end{exercise}
 
-Programmers who care about performance often find this kind of
-analysis hard to swallow.  They have a point: sometimes the
-coefficients and the non-leading terms make a real difference.
-Sometimes the details of the hardware, the programming language, and
-the characteristics of the input make a big difference.  And for small
-problems, order of growth is irrelevant.
+Los programadores que se preocupan del rendimiento a menudo encuentran este tipo de
+análisis difícil de tragar.  Ellos tienen un punto: a veces los
+coeficientes y los términos no principales hacen una diferencia real.
+A veces los detalles del hardware, el lenguaje de programación y
+las características de la entrada hacen una gran diferencia.  Y para problemas
+pequeños, el orden de crecimiento es irrelevante.
 
-But if you keep those caveats in mind, algorithmic analysis is a
-useful tool.  At least for large problems, the ``better'' algorithm
-is usually better, and sometimes it is {\em much} better.  The
-difference between two algorithms with the same order of growth is
-usually a constant factor, but the difference between a good algorithm
-and a bad algorithm is unbounded!
+Pero si tienes en cuenta esas consideraciones, el análisis algorítmico es una
+herramienta útil.  Al menos para problemas grandes, el ``mejor'' algoritmo
+es generalmente mejor, y a veces es {\em mucho} mejor.  La
+diferencia entre dos algoritmos con el mismo orden de crecimiento es
+generalmente un factor constante, ¡pero la diferencia entre un buen algoritmo
+y un mal algoritmo es ilimitada!
 
 
-\section{Analysis of basic Python operations}
+\section{Análisis de operaciones básicas de Python}
 
-In Python, most arithmetic operations are constant time;
-multiplication usually takes longer than addition and subtraction, and
-division takes even longer, but these run times don't depend on the
-magnitude of the operands.  Very large integers are an exception; in
-that case the run time increases with the number of digits.
+En Python, la mayoría de las operaciones aritméticas son de tiempo constante;
+la multiplicación generalmente toma más tiempo que la adición y sustracción, y
+la división toma aún más, pero estos tiempos de ejecución no dependen de la
+magnitud de los operandos.  Los enteros muy grandes son una excepción; en
+ese caso el tiempo de ejecución aumenta con el número de dígitos.
 \index{analysis of primitives}
 
-Indexing operations---reading or writing elements in a sequence
-or dictionary---are also constant time, regardless of the size
-of the data structure.
-\index{indexing}
+Las operaciones de indexado---leer o escribir elementos en una secuencia
+o diccionario---también son de tiempo constante, independiente de del tamaño
+de la estructura de datos.
+\index{indexar}
 
-A {\tt for} loop that traverses a sequence or dictionary is
-usually linear, as long as all of the operations in the body
-of the loop are constant time.  For example, adding up the
-elements of a list is linear:
+Un bucle {\tt for} que recorre una secuencia o diccionario es
+generalmente lineal, siempre y cuando todas las operaciones en el cuerpo
+del bucle sean de tiempo constante.  Por ejemplo, agregar los
+elementos de una lista es lineal:
 
 \begin{verbatim}
     total = 0
@@ -16587,72 +16587,72 @@ elements of a list is linear:
         total += x
 \end{verbatim}
 
-The built-in function {\tt sum} is also linear because it does
-the same thing, but it tends to be faster because it is a more
-efficient implementation; in the language of algorithmic analysis,
-it has a smaller leading coefficient.
+La función incorporada {\tt sum} es también lineal porque hace
+lo mismo, pero tiende a ser más rápido porque es una implementación
+más eficiente; en el lenguaje del análisis algorítmico,
+tiene un coeficiente principal más pequeño.
 
-As a rule of thumb, if the body of a loop is in $O(n^a)$ then
-the whole loop is in $O(n^{a+1})$.  The exception is if you can
-show that the loop exits after a constant number of iterations.
-If a loop runs $k$ times regardless of $n$, then
-the loop is in $O(n^a)$, even for large $k$.
+Como regla general, si el cuerpo de un bucle está en $O(n^a)$ entonces
+el bucle completo está en $O(n^{a+1})$.  La excepción es si puedes
+mostrar que se sale del bucle después de un número constante de iteraciones.
+Si un bucle se ejecuta $k$ veces independiente de $n$, entonces
+el bucle está en $O(n^a)$, incluso para $k$ grande.
 
-Multiplying by $k$ doesn't change the order of growth, but neither
-does dividing.  So if the body of a loop is in $O(n^a)$ and it runs
-$n/k$ times, the loop is in $O(n^{a+1})$, even for large $k$.
+Multiplicar por $k$ no cambia el orden de crecimiento, ni tampoco
+dividir.  Entonces si el cuerpo de un bucle está en $O(n^a)$ y se ejecuta
+$n/k$ veces, el bucle está en $O(n^{a+1})$, incluso para $k$ grande.
 
-Most string and tuple operations are linear, except indexing and {\tt
-  len}, which are constant time.  The built-in functions {\tt min} and
-{\tt max} are linear.  The run-time of a slice operation is
-proportional to the length of the output, but independent of the size
-of the input.
-\index{string methods}
-\index{tuple methods}
+La mayoría de las operaciones de cadena y de tupla son lineales, excepto indexar y {\tt
+  len}, que es de tiempo constante.  Las funciones incorporadas {\tt min} y
+{\tt max} son lineales.  El tiempo de ejecución de una operación de corte es
+proporcional a la longitud de la salida, pero independiente del tamaño
+de la entrada.
+\index{métodos de cadena}
+\index{métodos de tupla}
 
-String concatenation is linear; the run time depends on the sum
-of the lengths of the operands.
-\index{string concatenation}
+La concatenación de cadenas es lineal; el tiempo de ejecución depende de la suma
+de las longitudes de los operandos.
+\index{concatenacióin de cadenas}
 
-All string methods are linear, but if the lengths of
-the strings are bounded by a constant---for example, operations on single
-characters---they are considered constant time.
-The string method {\tt join} is linear; the run time depends on
-the total length of the strings.
+Todos los métodos de cadena son lineales, pero si las longitudes de las
+cadenas están acotadas por una constante---por ejempmlo, operaciones en caracteres
+individuales---se consideran de tiempo constante.
+El método de cadena {\tt join} es lineal; el tiempo de ejecución depende de
+la longitud total de las cadenas.
 \index{join@{\tt join}}
 
-Most list methods are linear, but there are some exceptions:
-\index{list methods}
+La mayoría de los métodos de lista son lineales, pero hay algunas excepciones:
+\index{métodos de lista}
 
 \begin{itemize}
 
-\item Adding an element to the end of a list is constant time on
-average; when it runs out of room it occasionally gets copied
-to a bigger location, but the total time for $n$ operations
-is $O(n)$, so the average time for each
-operation is $O(1)$.
+\item Agregar un elemento al final de una lista es de tiempo constante en
+promedio; cuando se queda sin espacio, ocasionalmente es copiada
+a una ubicación más grande, pero el tiempo total para $n$ operaciones
+es $O(n)$, por lo cual el tiempo promedio para cada
+operación es $O(1)$.
 
-\item Removing an element from the end of a list is constant time.
+\item Eliminar un elemento del final de una lista es de tiempo constante.
 
-\item Sorting is $O(n \log n)$.
-\index{sorting}
+\item El ordenamiento es $O(n \log n)$.
+\index{ordenamiento}
 
 \end{itemize}
 
-Most dictionary operations and methods are constant time, but
-there are some exceptions:
-\index{dictionary methods}
+La mayoría de las operaciones y métodos de diccionario son de tiempo constante, pero
+hay algunas excepciones:
+\index{métodos de diccionario}
 
 \begin{itemize}
 
-\item The run time of {\tt update} is
-  proportional to the size of the dictionary passed as a parameter,
-  not the dictionary being updated.
+\item El tiempo de ejecución de {\tt update} es
+  proporcional al tamaño del diccionario que se pasa como parámetro,
+  no del diccionario que está siendo actualizado.
 
-\item {\tt keys}, {\tt values} and {\tt items} are constant time because
-  they return iterators.  But
-  if you loop through the iterators, the loop will be linear.
-\index{iterator}
+\item {\tt keys}, {\tt values} e {\tt items} son de tiempo constante porque
+  devuelven iteradores.  Pero
+  si recorres un bucle con los iteradores, el bucle será lineal.
+\index{iterador}
 
 \end{itemize}
 
@@ -16663,35 +16663,35 @@ Section~\ref{hashtable}.
 
 \begin{exercise}
 
-Read the Wikipedia page on sorting algorithms at
-\url{http://en.wikipedia.org/wiki/Sorting_algorithm} and answer
-the following questions:
-\index{sorting}
+Lee la página de Wikipedia sobre algoritmos de ordenamiento en
+\url{http://en.wikipedia.org/wiki/Sorting_algorithm} y responde
+las siguientes preguntas:
+\index{ordenamiento}
 
 \begin{enumerate}
 
-\item What is a ``comparison sort?'' What is the best worst-case order
-  of growth for a comparison sort?  What is the best worst-case order
-  of growth for any sort algorithm?
-\index{comparison sort}
+\item ¿Qué es un ``ordenamiento de comparación?'' ¿Cuál es el mejor orden de crecimiento
+  del peor caso para un ordenamiento de comparación?  ¿Cuál es el orden de crecimiento
+  del peor caso para cualquier algoritmo de ordenamiento?
+\index{ordenamiento de comparación}
 
-\item What is the order of growth of bubble sort, and why does Barack
-  Obama think it is ``the wrong way to go?''
+\item ¿Cuál es el orden de crecimiento del ordenamiento de burbuja, y por qué Barack
+  Obama piensa que es ``la manera incorrecta de proceder?''
 
-\item What is the order of growth of radix sort?  What preconditions
-  do we need to use it?
+\item ¿Cuál es el orden de crecimiento del ordenamiento radix?  ¿Qué precondiciones
+  necesitamos para usarlo?
 
-\item What is a stable sort and why might it matter in practice?
-\index{stable sort}
+\item ¿Qué es un ordenamiento estable y por qué podría importar en la práctica?
+\index{ordenamiento estable}
 
-\item What is the worst sorting algorithm (that has a name)?
+\item ¿Cuál es el peor algoritmo de ordenamiento (y cuál es su nombre)?
 
-\item What sort algorithm does the C library use?  What sort algorithm
-  does Python use?  Are these algorithms stable?  You might have to
-  Google around to find these answers.
+\item ¿Qué algoritmo de ordenamiento usa la librería de C?  ¿Qué algoritmo de ordenamiento
+  usa Python?  ¿Son estos algorimos estables?  Quizás tengas que
+  usar Google para encontrar estas respuestas.
 
-\item Many of the non-comparison sorts are linear, so why does does
-  Python use an $O(n \log n)$ comparison sort?
+\item Muchos de los algoritmos de ordenamiento diferentes al de comparación son lineales, entonces ¿por qué
+  Python usa un algoritmo de comparación $O(n \log n)$?
 
 \end{enumerate}
 
