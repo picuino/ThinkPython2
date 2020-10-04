@@ -16334,13 +16334,13 @@ funcione.  La meta es aprender cómo hacer que el programa funcione.
 \label{algorithms}
 
 \begin{quote}
-Este apéndice es un estracto de {\it Think Complexity}, por
+Este apéndice es un extracto de {\it Think Complexity}, por
 Allen B. Downey, también publicado por O'Reilly Media (2012).  Cuando hayas
 terminado con este libro, quizás quieras continuar con aquel.
 \end{quote}
 
-{\bf Análisis de algoritmos} es una rama de las ciencias de la computación que
-estudia el rendimiento de algoritmos, especialmente su tiempo de ejecución y
+El {\bf análisis de algoritmos} es una rama de las ciencias de la computación que
+estudia el rendimiento de los algoritmos, especialmente su tiempo de ejecución y
 requerimientos de espacio.  Ver
 \url{http://en.wikipedia.org/wiki/Analysis_of_algorithms}.
 \index{algoritmo} \index{análisis de algorirmos}
@@ -16353,7 +16353,7 @@ Barack Obama le pidieron que realizara un análisis improvisado cuando
 visitó Google.  El director ejecutivo Eric Schmidt le preguntó en broma
 por ``la manera más eficiente para ordenar un millón de enteros de 32 bit.''
 Obama aparentemente se había dado un tropezón, porque rápidamente
-respondió, ``Pienso que el ordenamiendo de burbuja sería la manera incorrecta de proceder.''
+respondió: ``Pienso que el ordenamiendo de burbuja sería la manera incorrecta de proceder.''
 Ver \url{http://www.youtube.com/watch?v=k4RRi_ntQc8}.
 \index{Obama, Barack}
 \index{Schmidt, Eric}
@@ -16381,10 +16381,10 @@ significativas entre algoritmos, pero hay algunos problemas:
 
 \item El rendimiento relativo de los algoritmos podría
 depender de características del hardware, por lo cual un algoritmo
-podría ser más rápido en la Máquina A y otra en la Máquina B.
+podría ser más rápido en la Máquina A y otro en la Máquina B.
 La solución general a este problema es especificar un
 {\bf modelo de máquina} y analizar el número de pasos, u
-operaciones, que un algoritmo requiere según un modelo de máquina dada.
+operaciones, que un algoritmo requiere según un modelo de máquina dado.
 \index{modelo de máquina}
 
 \item El rendimiento relativo podría depender de los detalles del
@@ -16392,9 +16392,9 @@ conjunto de datos.  Por ejemplo, algunos algoritmos
 de ordenamiento se ejecutan de manera más rápida si los datos ya están parcialmente ordenados;
 otros algoritmos se ejecutan de manera más lenta en este caso.
 Una manera común de evitar este problema es analizar el
-escenario del {\bf peor de los casos}.  A veces es útil
-analizar el rendimiento del caso promedio, pero eso usualmente es más difícil,
-y podría no ser obvio sobre qué conjunto de casos establecer el promedio.
+{\bf peor de los casos}.  A veces es útil
+analizar el rendimiento del caso promedio, pero eso es generalmente más difícil,
+y el conjunto de casos sobre el cual se establece el promedio podría no ser obvio.
 \index{peor de los casos}
 \index{caso promedio}
 
@@ -16411,11 +16411,11 @@ crecen a medida que el tamaño del problema aumenta.
 Lo bueno de este tipo de comparaciones es que asegura
 una clasificación simple de los algoritmos.  Por ejemplo,
 si sé que el tiempo de ejecución del Algorigmo A tiende a ser
-proporcional al tamaño de la entrada, $n$, y el Algoritmo B
+proporcional al tamaño de la entrada, $n$, y el algoritmo B
 tiende a ser proporcional a $n^2$, entonces
 espero que A sea más rápido que B, al menos para valores grandes de $n$.
 
-Esta tipo de análisis viene con algunas advertencias, pero llegaremos
+Este tipo de análisis viene con algunas advertencias, pero llegaremos
 a eso más adelante.
 
 
@@ -16423,8 +16423,8 @@ a eso más adelante.
 
 Supongamos que has analizado dos algoritmos y has expresado
 sus tiempos de ejecución en términos del tamaño de la entrada:
-Al Algoritmo A le toma $100n+1$ pasos resolver un problema con
-tamaño $n$; al Algorithm B le toma $n^2 + n + 1$ pasos.
+al algoritmo A le toma $100n+1$ pasos resolver un problema con
+tamaño $n$; al algoritmo B le toma $n^2 + n + 1$ pasos.
 \index{orden de crecimiento}
 
 La siguiente tabla muestra el tiempo de ejecución de estos algoritmos
@@ -16433,7 +16433,7 @@ para diferentes tamaños de problema:
 \begin{tabular}{|r|r|r|}
 \hline
 Tamaño de & Tiempo de ejecución & Tiempo de ejecución \\
-entrada   & del Algoritmo A     & del Algoritmo B \\
+entrada   & del algoritmo A     & del algoritmo B \\
 \hline
 10        &   1 001             & 111         \\
 100       &   10 001            & 10 101         \\
@@ -16442,30 +16442,30 @@ entrada   & del Algoritmo A     & del Algoritmo B \\
 \hline
 \end{tabular}
 
-Cuando $n=10$, el Algoritmo A se ve bastante mal; toma casi 10 veces
-más que el Algoritmo B.  Pero para $n=100$ son casi lo mismo, y
+Cuando $n=10$, el algoritmo A se ve bastante mal; toma casi 10 veces
+más que el algoritmo B.  Pero para $n=100$ son casi lo mismo, y
 para valores más grandes A es mucho mejor.
 
-La razón fundamental es que para valores grandes de $n$, cualquier función
-que contienen el término $n^2$ crecerá más rápido que una función cuyo
+La razón fundamental es que, para valores grandes de $n$, cualquier función
+que contiene el término $n^2$ crecerá más rápido que una función cuyo
 término principal es $n$.  El {\bf término principal} es el término con el
 exponente más alto.
 \index{término principal}
 \index{exponente}
 
-Para el Algoritmo A, el término principal tiene un coeficiente grande, 100, que
+Para el algoritmo A, el término principal tiene un coeficiente grande, 100, que
 es el motivo por el cual B es mejor que A para $n$ pequeño.  Pero a pesar de los
 coeficientes, siempre habrá algún valor de $n$ donde
 $a n^2 > b n$, para cualquier valor de $a$ y $b$.
 \index{coeficiente principal}
 
 El mismo argumento se aplica a los términos no principales.  Incluso si el tiempo
-de ejecución del Algoritmo A fuera $n+1000000$, seguiría siendo mejor que el
-Algoritmo B para $n$ suficientemente grande.
+de ejecución del algoritmo A fuera $n+1000000$, seguiría siendo mejor que el
+algoritmo B para $n$ suficientemente grande.
 
 En general, esperamos que un algoritmo con un término principal más pequeño sea un
 mejor algoritmo para problemas grandes, pero para problemas más pequeños puede
-haber un {\bf punto de cruce} donde otro algoritmom es mejor.  La
+haber un {\bf punto de cruce} donde otro algoritmo es mejor.  La
 ubicación del punto de cruce depende de los detalles de los
 algoritmos, las entradas y el hardware, por lo cual usualmente se ignora para
 propósitos de análisis algorítmico.  Pero eso no significa que puedes
@@ -16481,11 +16481,11 @@ Un {\bf orden de crecimiento} es un conjunto de funciones cuyo comportamiento
 de crecimiento se considera equivalente.  Por ejemplo, $2n$, $100n$ y $n+1$
 pertenecen al mismo orden de crecimiento, el cual se escribe $O(n)$ en
 {\bf notación O grande} (en inglés, {\em Big-Oh}) y a menudo llamada {\bf lineal} porque cada función
-en el conjunto crece de manera lineal con $n$.
+de dicho conjunto crece de manera lineal con $n$.
 \index{big-oh} \index{notación O grande}
 \index{crecimiento lineal}
 
-Todas las funciones con el término principal $n^2$ pertenecen a $O(n^2)$; se
+Todas las funciones con el término principal $n^2$ pertenecen a $O(n^2)$: se
 llaman {\bf cuadráticas}.
 \index{crecimiento cuadrático}
 
@@ -16509,7 +16509,7 @@ $O(c^n)$           & exponencial (para cualquier $c$)    \\
 \hline
 \end{tabular}
 
-Para los términos logarítmicos, la base del logarítmo no importa;
+Para los términos logarítmicos, la base del logarítmo no importa:
 cambiar las bases es el equivalente a multiplicar por una constante, la cual
 no cambia el orden de crecimiento.  De igual manera, todas las
 funciones exponenciales pertenecen al mismo orden de crecimiento, independiente de
@@ -16561,7 +16561,7 @@ herramienta útil.  Al menos para problemas grandes, el ``mejor'' algoritmo
 es generalmente mejor, y a veces es {\em mucho} mejor.  La
 diferencia entre dos algoritmos con el mismo orden de crecimiento es
 generalmente un factor constante, ¡pero la diferencia entre un buen algoritmo
-y un mal algoritmo es ilimitada!
+y un mal algoritmo no tiene límites!
 
 
 \section{Análisis de operaciones básicas de Python}
@@ -16574,13 +16574,13 @@ ese caso el tiempo de ejecución aumenta con el número de dígitos.
 \index{analysis of primitives}
 
 Las operaciones de indexado---leer o escribir elementos en una secuencia
-o diccionario---también son de tiempo constante, independiente de del tamaño
+o diccionario---también son de tiempo constante, independiente del tamaño
 de la estructura de datos.
 \index{indexar}
 
 Un bucle {\tt for} que recorre una secuencia o diccionario es
 generalmente lineal, siempre y cuando todas las operaciones en el cuerpo
-del bucle sean de tiempo constante.  Por ejemplo, agregar los
+del bucle sean de tiempo constante.  Por ejemplo, sumar los
 elementos de una lista es lineal:
 
 \begin{verbatim}
@@ -16589,19 +16589,19 @@ elementos de una lista es lineal:
         total += x
 \end{verbatim}
 
-La función incorporada {\tt sum} es también lineal porque hace
-lo mismo, pero tiende a ser más rápido porque es una implementación
+La función incorporada {\tt sum} también es lineal porque hace
+lo mismo, pero tiende a ser más rápida porque es una implementación
 más eficiente; en el lenguaje del análisis algorítmico,
 tiene un coeficiente principal más pequeño.
 
 Como regla general, si el cuerpo de un bucle está en $O(n^a)$ entonces
-el bucle completo está en $O(n^{a+1})$.  La excepción es si puedes
-mostrar que se sale del bucle después de un número constante de iteraciones.
+el bucle completo está en $O(n^{a+1})$.  La excepción es cuando puedes
+mostrar que el bucle se interrumpe después de un número constante de iteraciones.
 Si un bucle se ejecuta $k$ veces independiente de $n$, entonces
 el bucle está en $O(n^a)$, incluso para $k$ grande.
 
 Multiplicar por $k$ no cambia el orden de crecimiento, ni tampoco
-dividir.  Entonces si el cuerpo de un bucle está en $O(n^a)$ y se ejecuta
+dividir.  Entonces, si el cuerpo de un bucle está en $O(n^a)$ y se ejecuta
 $n/k$ veces, el bucle está en $O(n^{a+1})$, incluso para $k$ grande.
 
 La mayoría de las operaciones de cadena y de tupla son lineales, excepto indexar y {\tt
@@ -16612,14 +16612,14 @@ de la entrada.
 \index{métodos de cadena}
 \index{métodos de tupla}
 
-La concatenación de cadenas es lineal; el tiempo de ejecución depende de la suma
+La concatenación de cadenas es lineal: el tiempo de ejecución depende de la suma
 de las longitudes de los operandos.
 \index{concatenacióin de cadenas}
 
 Todos los métodos de cadena son lineales, pero si las longitudes de las
-cadenas están acotadas por una constante---por ejempmlo, operaciones en caracteres
+cadenas están acotadas por una constante---por ejemplo, operaciones en caracteres
 individuales---se consideran de tiempo constante.
-El método de cadena {\tt join} es lineal; el tiempo de ejecución depende de
+El método de cadena {\tt join} es lineal: el tiempo de ejecución depende de
 la longitud total de las cadenas.
 \index{join@{\tt join}}
 
@@ -16678,7 +16678,7 @@ las siguientes preguntas:
 \index{ordenamiento de comparación}
 
 \item ¿Cuál es el orden de crecimiento del ordenamiento de burbuja, y por qué Barack
-  Obama piensa que es ``la manera incorrecta de proceder?''
+  Obama piensa que es ``la manera incorrecta de proceder''?
 
 \item ¿Cuál es el orden de crecimiento del ordenamiento radix?  ¿Qué precondiciones
   necesitamos para usarlo?
@@ -16714,7 +16714,7 @@ de ejecución es lineal.
 \index{búsqueda lineal}
 
 El operador {\tt in} para secuencias usa una búsqueda lineal; los métodos
-de cadena como {\tt find} y {\tt count} también la usan.
+de cadena como {\tt find} y {\tt count} también.
 \index{operador in@{\tt in}}
 
 Si los elementos de la secuencia están en orden, puedes usar una {\bf
@@ -16728,15 +16728,15 @@ primera mitad de la secuencia.  De lo contrario, buscas la segunda mitad.
 De cualquier manera, disminuyes el número de ítems restantes a la mitad.
 \index{búsqueda de bisección}
 
-Si la secuencia tiene 1.000.000 ítems, tomará cerca de 20 pasos
-encontrar la palabra o concluir que no está.  Entonces eso es cerca de 50.000
+Si la secuencia tiene 1.000.000 de ítems, tomará cerca de 20 pasos
+encontrar la palabra o concluir que no está.  Entonces, eso es cerca de 50.000
 veces más rápido que una búsqueda lineal.
 
 La búsqueda de bisección puede ser mucho más rápida que una búsqueda lineal, pero
 requiere que la secuencia esté en orden, lo cual podría requerir
 trabajo extra.
 
-Hay otraa estructura de datos, llamada {\bf tabla hash} (en inglés, {\em hashtable}) que
+Hay otra estructura de datos, llamada {\bf tabla hash} (en inglés, {\em hashtable}) que
 es incluso más rápida---puede hacer una búsqueda en tiempo constante---y
 no requiere que los ítems estén ordenados.  Los diccionarios de Python
 se implementan usando tablas hash, por lo cual la mayoría de las operaciones
@@ -16748,12 +16748,12 @@ de diccionario, incluyendo el operador {\tt in}, son de tiempo constante.
 
 Para explicar cómo funcionan las tablas hash y por qué su rendimiento es tan
 bueno, comienzo con una implementación simple de un mapa y
-gradualmente mejorarlo hasta que sea una tabla hash.
+gradualmente lo mejoro hasta que sea una tabla hash.
 \index{tabla hash}\index{hashtable}
 
 Yo uso Python para demostrar estas implementaciones, pero en la vida
 real no escribirías código como este en Python: ¡solo usarías un
-diccionario!  Para el resto de este capítulo, tienes que imaginas que
+diccionario!  Para el resto de este capítulo, tienes que imaginar que
 los diccionarios no existen y quieres implementar una estructura de datos
 que mapee de claves a valores.  Las operaciones que tienes que
 implementar son:
@@ -16797,7 +16797,7 @@ toma tiempo constante.
 {\tt get} usa un bucle {\tt for} para buscar la lista:
 encuentra la clave objetivo y devuelve el valor correspondiente;
 de lo contrario, ocurre un {\tt KeyError}.
-Entonces {\tt get} es lineal.
+Entonces, {\tt get} es lineal.
 \index{KeyError@{\tt KeyError}}
 
 Una alternativa es mantener la lista ordenada por clave.  Entonces {\tt get}
@@ -16840,13 +16840,13 @@ class BetterMap:
 
 \verb"find_map" es usado por
 {\tt add} y {\tt get}
-para averiguar cuál mapa poner en el
-nuevo ítem, o cuál mapa buscar.
+para averiguar en cuál mapa poner el
+nuevo ítem, o en cuál mapa buscar.
 
 \verb"find_map" usa la función incorporada {\tt hash}, que toma
 casi cualquier objeto de Python y devuelve un entero.  Una limitación de esta
 implementación es que solo funciona con claves hashables.  Los tipos
-mutablese como las listas y diccionarios no son hashables.
+mutables como las listas y los diccionarios no son hashables.
 \index{función hash}
 
 Los objetos hashables que se consideran equivalentes devuelven el mismo valor
@@ -16856,7 +16856,7 @@ valores diferentes pueden devolver el mismo valor hash.
 \verb"find_map" usa el operador de módulo para ajustar los valores hash
 en el rango entre 0 y {\tt len(self.maps)}, por lo cual el resultado es un índice
 legal en la lista.  Por supuesto, esto significa que muchos valores
-hash diferentes se ajustarán al mismo índices.  Pero si la función hash
+hash diferentes se ajustarán al mismo índice.  Pero si la función hash
 distribuye las cosas de manera muy uniforme (que es para lo que están diseñadas
 las funciones hash), entonces esperamos $n/100$ ítems por cada LinearMap.
 
@@ -16866,9 +16866,9 @@ que LinearMap.  El orden de crecimiento es aún lineal, pero el
 coeficiente principal es más pequeño.  Eso es bueno, pero aún no es
 tan bueno como una tabla hash.
 
-Aquí (finalmente) esá la idea clave que hace rápidas a las tablas hash: si
+Aquí (finalmente) está la idea clave que hace que las tablas hash sean rápidas: si
 puedes mantener acotada la longitud máxima de los LinearMaps, {\tt
-  LinearMap.get} es de tiempo constante.  Todo lo que tienes que haces es hacer un seguimiento
+  LinearMap.get} es de tiempo constante.  Todo lo que tienes que hacer es un seguimiento
 del número de ítems y cuando el número de
 ítems por cada LinearMap exceda un límite, cambia el tamaño de la tabla hash
 añadiendo más LinearMaps.
@@ -17026,7 +17026,7 @@ tamaño del problema, al menos para tamaños de problema grandes.
 $n^2$, donde $n$ es la medida del tamaño del problema.
 \index{cuadrático}
 
-\item[búsqueda:] El problema de encontrar localizar un elemento de una colección
+\item[búsqueda:] El problema de localizar un elemento de una colección
 (como una lista o diccionario) o determinar que este no está presente.
 \index{búsqueda}
 
