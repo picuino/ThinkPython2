@@ -6902,7 +6902,7 @@ palabras con más de 20 caracteres (sin contar espacios en blanco).
 
 \begin{exercise}
 
-En 1939, Ernest Vincent Wright publicó una novela de 50,000 palabras llamada
+En 1939, Ernest Vincent Wright publicó una novela de 50.000 palabras llamada
 {\em Gadsby}, la cual no contiene la letra ``e''.  Dado que la ``e'' es
 la letra más común en el idioma inglés, eso no es fácil de hacer.
 
@@ -7262,7 +7262,7 @@ Aquí hay otro Puzzler de {\em Car Talk}
 \begin{quote}
 ``Estaba conduciendo en la carretera el otro día y me fijé en
 mi odómetro. Al igual que la mayoría de los odómetros, muestra seis dígitos,
-solo en millas enteras. Entonces, si mi automóvil tenía 300,000
+solo en millas enteras. Entonces, si mi automóvil tenía 300.000
 millas, por ejemplo, veía 3-0-0-0-0-0.
 
 ``Ahora, lo que vi ese día fue muy interesante. Me di cuenta de que los
@@ -16384,18 +16384,18 @@ depender de características del hardware, por lo cual un algoritmo
 podría ser más rápido en la Máquina A y otra en la Máquina B.
 La solución general a este problema es especificar un
 {\bf modelo de máquina} y analizar el número de pasos, u
-operaciones, que un algoritmo requiere según una máquina modelo dada.
-\index{máquina modelo}
+operaciones, que un algoritmo requiere según un modelo de máquina dada.
+\index{modelo de máquina}
 
 \item El rendimiento relativo podría depender de los detalles del
 conjunto de datos.  Por ejemplo, algunos algoritmos
 de ordenamiento se ejecutan de manera más rápida si los datos ya están parcialmente ordenados;
 otros algoritmos se ejecutan de manera más lenta en este caso.
 Una manera común de evitar este problema es analizar el
-escenario del {\bf peor caso}.  A veces es útil
+escenario del {\bf peor de los casos}.  A veces es útil
 analizar el rendimiento del caso promedio, pero eso usualmente es más difícil,
 y podría no ser obvio sobre qué conjunto de casos establecer el promedio.
-\index{peor caso}
+\index{peor de los casos}
 \index{caso promedio}
 
 \item El rendimiento relativo depende también del tamaño del
@@ -16658,9 +16658,9 @@ hay algunas excepciones:
 
 \end{itemize}
 
-The performance of dictionaries is one of the minor miracles of
-computer science.  We will see how they work in
-Section~\ref{hashtable}.
+El rendimiento de los diccionarios es uno de los milagros menores de
+las ciencias de la computación.  Veremos cómo funcionan en la
+Sección~\ref{hashtable}.
 
 
 \begin{exercise}
@@ -16673,8 +16673,8 @@ las siguientes preguntas:
 \begin{enumerate}
 
 \item ¿Qué es un ``ordenamiento de comparación?'' ¿Cuál es el mejor orden de crecimiento
-  del peor caso para un ordenamiento de comparación?  ¿Cuál es el orden de crecimiento
-  del peor caso para cualquier algoritmo de ordenamiento?
+  del peor de los casos para un ordenamiento de comparación?  ¿Cuál es el orden de crecimiento
+  del peor de los casos para cualquier algoritmo de ordenamiento?
 \index{ordenamiento de comparación}
 
 \item ¿Cuál es el orden de crecimiento del ordenamiento de burbuja, y por qué Barack
@@ -16700,79 +16700,79 @@ las siguientes preguntas:
 \end{exercise}
 
 
-\section{Analysis of search algorithms}
+\section{Análisis de algoritmos de búsqueda}
 
-A {\bf search} is an algorithm that takes a collection and a target
-item and determines whether the target is in the collection, often
-returning the index of the target.
-\index{search}
+Una {\bf búsqueda} es un algoritmo que toma una colección y un ítem objetivo
+y determina si el objetivo está en la colección, a menudo
+devolviendo el índice del objetivo.
+\index{búsqueda}
 
-The simplest search algorithm is a ``linear search'', which traverses
-the items of the collection in order, stopping if it finds the target.
-In the worst case it has to traverse the entire collection, so the run
-time is linear.
-\index{linear search}
+El algoritmo de búsqueda más simple es una ``búsqueda lineal'', que recorre
+los ítems de la colección en orden, deteniéndose si encuentra al objetivo.
+En el peor de los casos tiene que recorrer toda la colección, por lo cual el tiempo
+de ejecución es lineal.
+\index{búsqueda lineal}
 
-The {\tt in} operator for sequences uses a linear search; so do string
-methods like {\tt find} and {\tt count}.
-\index{in@{\tt in} operator}
+El operador {\tt in} para secuencias usa una búsqueda lineal; los métodos
+de cadena como {\tt find} y {\tt count} también la usan.
+\index{operador in@{\tt in}}
 
-If the elements of the sequence are in order, you can use a {\bf
-  bisection search}, which is $O(\log n)$.  Bisection search is
-similar to the algorithm you might use to look a word up in a
-dictionary (a paper dictionary, not the data structure).  Instead of
-starting at the beginning and checking each item in order, you start
-with the item in the middle and check whether the word you are looking
-for comes before or after.  If it comes before, then you search the
-first half of the sequence.  Otherwise you search the second half.
-Either way, you cut the number of remaining items in half.
-\index{bisection search}
+Si los elementos de la secuencia están en orden, puedes usar una {\bf
+  búsqueda de bisección}, que es $O(\log n)$.  La búsqueda de bisección es
+similar al algoritmo que podrías usar para buscar una palabra en un
+diccionario (un diccionario de papel, no la estructura de datos).  En lugar de
+comenzar del principio y revisar cada ítem en orden, comienzas
+con el ítem en el medio y verificas si la palabra que buscas
+viene antes o después.  Si viene antes, entonces buscas en la
+primera mitad de la secuencia.  De lo contrario, buscas la segunda mitad.
+De cualquier manera, disminuyes el número de ítems restantes a la mitad.
+\index{búsqueda de bisección}
 
-If the sequence has 1,000,000 items, it will take about 20 steps to
-find the word or conclude that it's not there.  So that's about 50,000
-times faster than a linear search.
+Si la secuencia tiene 1.000.000 ítems, tomará cerca de 20 pasos
+encontrar la palabra o concluir que no está.  Entonces eso es cerca de 50.000
+veces más rápido que una búsqueda lineal.
 
-Bisection search can be much faster than linear search, but
-it requires the sequence to be in order, which might require
-extra work.
+La búsqueda de bisección puede ser mucho más rápida que una búsqueda lineal, pero
+requiere que la secuencia esté en orden, lo cual podría requerir
+trabajo extra.
 
-There is another data structure, called a {\bf hashtable} that
-is even faster---it can do a search in constant time---and it
-doesn't require the items to be sorted.  Python dictionaries
-are implemented using hashtables, which is why most dictionary
-operations, including the {\tt in} operator, are constant time.
+Hay otraa estructura de datos, llamada {\bf tabla hash} (en inglés, {\em hashtable}) que
+es incluso más rápida---puede hacer una búsqueda en tiempo constante---y
+no requiere que los ítems estén ordenados.  Los diccionarios de Python
+se implementan usando tablas hash, por lo cual la mayoría de las operaciones
+de diccionario, incluyendo el operador {\tt in}, son de tiempo constante.
 
 
-\section{Hashtables}
+\section{Tablas hash}
 \label{hashtable}
 
-To explain how hashtables work and why their performance is so
-good, I start with a simple implementation of a map and
-gradually improve it until it's a hashtable.
-\index{hashtable}
+Para explicar cómo funcionan las tablas hash y por qué su rendimiento es tan
+bueno, comienzo con una implementación simple de un mapa y
+gradualmente mejorarlo hasta que sea una tabla hash.
+\index{tabla hash}\index{hashtable}
 
-I use Python to demonstrate these implementations, but in real
-life you wouldn't write code like this in Python; you would just use a
-dictionary!  So for the rest of this chapter, you have to imagine that
-dictionaries don't exist and you want to implement a data structure
-that maps from keys to values.  The operations you have to
-implement are:
+Yo uso Python para demostrar estas implementaciones, pero en la vida
+real no escribirías código como este en Python: ¡solo usarías un
+diccionario!  Para el resto de este capítulo, tienes que imaginas que
+los diccionarios no existen y quieres implementar una estructura de datos
+que mapee de claves a valores.  Las operaciones que tienes que
+implementar son:
 
 \begin{description}
 
-\item[{\tt add(k, v)}:] Add a new item that maps from key {\tt k}
-to value {\tt v}.  With a Python dictionary, {\tt d}, this operation
-is written {\tt d[k] = v}.
+\item[{\tt add(k, v)}:] Agrega un nuevo ítem que mapea de una clave {\tt k}
+a un valor {\tt v}.  Con un diccionario de Python, {\tt d}, esta operación
+se escribe {\tt d[k] = v}.
 
-\item[{\tt get(k)}:] Look up and return the value that corresponds
-to key {\tt k}.  With a Python dictionary, {\tt d}, this operation
-is written {\tt d[k]} or {\tt d.get(k)}.
+\item[{\tt get(k)}:] Busca y devuelve el valor que corresponde
+a la clave {\tt k}.  Con un diccionario de Python, {\tt d}, esta operación
+se escribe {\tt d[k]} o {\tt d.get(k)}.
 
 \end{description}
 
-For now, I assume that each key only appears once.
-The simplest implementation of this interface uses a list of
-tuples, where each tuple is a key-value pair.
+Por ahora, supongo que cada clave aparece una sola vez.
+La implementación más simple de esta interfaz usa una lista de
+tuplas, donde cada tupla es un par clave-valor.
 \index{LinearMap@{\tt LinearMap}}
 
 \begin{verbatim}
@@ -16791,28 +16791,28 @@ class LinearMap:
         raise KeyError
 \end{verbatim}
 
-{\tt add} appends a key-value tuple to the list of items, which
-takes constant time.
+{\tt add} anexa una tupla clave-valor a la lista de ítems, lo cual
+toma tiempo constante.
 
-{\tt get} uses a {\tt for} loop to search the list:
-if it finds the target key it returns the corresponding value;
-otherwise it raises a {\tt KeyError}.
-So {\tt get} is linear.
+{\tt get} usa un bucle {\tt for} para buscar la lista:
+encuentra la clave objetivo y devuelve el valor correspondiente;
+de lo contrario, ocurre un {\tt KeyError}.
+Entonces {\tt get} es lineal.
 \index{KeyError@{\tt KeyError}}
 
-An alternative is to keep the list sorted by key.  Then {\tt get}
-could use a bisection search, which is $O(\log n)$.  But inserting a
-new item in the middle of a list is linear, so this might not be the
-best option.  There are other data structures that can implement {\tt
-  add} and {\tt get} in log time, but that's still not as good as
-constant time, so let's move on.
+Una alternativa es mantener la lista ordenada por clave.  Entonces {\tt get}
+podría usar una búsqueda de bisección, que es $O(\log n)$.  Pero insertar un
+nuevo ítem en el medio de una lista es lineal, por lo cual podría no ser la
+mejor opción.  Hay otras estructuras de datos que pueden implementar {\tt
+  add} y {\tt get} en tiempo logarítmico, pero eso aún no es tan bueno como
+el tiempo constante, así que vamos a lo siguiente.
 \index{red-black tree}
 
-One way to improve {\tt LinearMap} is to break the list of key-value
-pairs into smaller lists.  Here's an implementation called
-{\tt BetterMap}, which is a list of 100 LinearMaps.  As we'll see
-in a second, the order of growth for {\tt get} is still linear,
-but {\tt BetterMap} is a step on the path toward hashtables:
+Una manera de mejorar {\tt LinearMap} es separar la lista de pares clave-valor
+es listas más pequeñas.  Aquí hay una implementación llamada
+{\tt BetterMap}, que es una lista de 100 LinearMaps.  Tal como veremos
+en un segundo, el orden de crecimiento para {\tt get} aún es lineal,
+pero {\tt BetterMap} es un paso en el camino hacia las tablas hash:
 \index{BetterMap@{\tt BetterMap}}
 
 \begin{verbatim}
@@ -16836,45 +16836,45 @@ class BetterMap:
         return m.get(k)
 \end{verbatim}
 
-\verb"__init__" makes a list of {\tt n} {\tt LinearMap}s.
+\verb"__init__" crea una lista de {\tt n} {\tt LinearMap}s.
 
-\verb"find_map" is used by
-{\tt add} and {\tt get}
-to figure out which map to put the
-new item in, or which map to search.
+\verb"find_map" es usado por
+{\tt add} y {\tt get}
+para averiguar cuál mapa poner en el
+nuevo ítem, o cuál mapa buscar.
 
-\verb"find_map" uses the built-in function {\tt hash}, which takes
-almost any Python object and returns an integer.  A limitation of this
-implementation is that it only works with hashable keys.  Mutable
-types like lists and dictionaries are unhashable.
-\index{hash function}
+\verb"find_map" usa la función incorporada {\tt hash}, que toma
+casi cualquier objeto de Python y devuelve un entero.  Una limitación de esta
+implementación es que solo funciona con claves hashables.  Los tipos
+mutablese como las listas y diccionarios no son hashables.
+\index{función hash}
 
-Hashable objects that are considered equivalent return the same hash
-value, but the converse is not necessarily true: two objects with
-different values can return the same hash value.
+Los objetos hashables que se consideran equivalentes devuelven el mismo valor
+hash, pero lo inverso no es necesariamente verdadero: dos objetos con
+valores diferentes pueden devolver el mismo valor hash.
 
-\verb"find_map" uses the modulus operator to wrap the hash values
-into the range from 0 to {\tt len(self.maps)}, so the result is a legal
-index into the list.  Of course, this means that many different
-hash values will wrap onto the same index.  But if the hash function
-spreads things out pretty evenly (which is what hash functions
-are designed to do), then we expect $n/100$ items per LinearMap.
+\verb"find_map" usa el operador de módulo para ajustar los valores hash
+en el rango entre 0 y {\tt len(self.maps)}, por lo cual el resultado es un índice
+legal en la lista.  Por supuesto, esto significa que muchos valores
+hash diferentes se ajustarán al mismo índices.  Pero si la función hash
+distribuye las cosas de manera muy uniforme (que es para lo que están diseñadas
+las funciones hash), entonces esperamos $n/100$ ítems por cada LinearMap.
 
-Since the run time of {\tt LinearMap.get} is proportional to the
-number of items, we expect BetterMap to be about 100 times faster
-than LinearMap.  The order of growth is still linear, but the
-leading coefficient is smaller.  That's nice, but still not
-as good as a hashtable.
+Dado que el tiempo de ejecución de {\tt LinearMap.get} es proporcional al
+número de ítems, esperamos que BetterMap sea cerca de 100 veces más rápido
+que LinearMap.  El orden de crecimiento es aún lineal, pero el
+coeficiente principal es más pequeño.  Eso es bueno, pero aún no es
+tan bueno como una tabla hash.
 
-Here (finally) is the crucial idea that makes hashtables fast: if you
-can keep the maximum length of the LinearMaps bounded, {\tt
-  LinearMap.get} is constant time.  All you have to do is keep track
-of the number of items and when the number of
-items per LinearMap exceeds a threshold, resize the hashtable by
-adding more LinearMaps.
-\index{bounded}
+Aquí (finalmente) esá la idea clave que hace rápidas a las tablas hash: si
+puedes mantener acotada la longitud máxima de los LinearMaps, {\tt
+  LinearMap.get} es de tiempo constante.  Todo lo que tienes que haces es hacer un seguimiento
+del número de ítems y cuando el número de
+ítems por cada LinearMap exceda un límite, cambia el tamaño de la tabla hash
+añadiendo más LinearMaps.
+\index{acotado}
 
-Here is an implementation of a hashtable:
+Aquí hay una implementación de una tabla hash:
 \index{HashMap}
 
 \begin{verbatim}
@@ -16904,135 +16904,135 @@ class HashMap:
         self.maps = new_maps
 \end{verbatim}
 
-\verb"__init__" creates a {\tt BetterMap} and initializes {\tt num}, which keeps track of the number of items.
+\verb"__init__" crea un {\tt BetterMap} e inicializa a {\tt num}, que hace un seguimiento del número de ítems.
 
-{\tt get} just dispatches to {\tt BetterMap}.  The real work happens
-in {\tt add}, which checks the number of items and the size of the
-{\tt BetterMap}: if they are equal, the average number of items per
-LinearMap is 1, so it calls {\tt resize}.
+{\tt get} solo despacha a {\tt BetterMap}.  El trabajo real ocurre
+en {\tt add}, que verifica el número de ítems y el tamaño del
+{\tt BetterMap}: si son iguales, el número promedio de ítems por cada
+LinearMap es 1, entonces llama a {\tt resize}.
 
-{\tt resize} make a new {\tt BetterMap}, twice as big as the previous
-one, and then ``rehashes'' the items from the old map to the new.
+{\tt resize} crea un nuevo {\tt BetterMap}, dos veces más grande que el
+anterior, y luego ``rehashea'' los ítems desde el mapa antiguo hacia el nuevo.
 
-Rehashing is necessary because changing the number of LinearMaps
-changes the denominator of the modulus operator in
-\verb"find_map".  That means that some objects that used
-to hash into the same LinearMap will get split up (which is
-what we wanted, right?).
-\index{rehashing}
+Rehashear es necesario porque al cambiar el número de LinearMaps
+cambia el denominador del operador de módulo en
+\verb"find_map".  Eso significa que algunos objetos que solían
+hacer hash en el mismo LinearMap se dividirán (que es
+lo que queríamos, ¿verdad?).
+\index{rehasheo}
 
-Rehashing is linear, so
-{\tt resize} is linear, which might seem bad, since I promised
-that {\tt add} would be constant time.  But remember that
-we don't have to resize every time, so {\tt add} is usually
-constant time and only occasionally linear.  The total amount
-of work to run {\tt add} $n$ times is proportional to $n$,
-so the average time of each {\tt add} is constant time!
-\index{constant time}
+El rehasheo es lineal, entonces
+{\tt resize} es lineal, que podría parecer mal, dado que prometí
+que {\tt add} sería de tiempo constante.  Pero recuerda que
+no tenemos que cambiar de tamaño cada vez, entonces {\tt add} es generalmente
+de tiempo constante y solo ocasionalmente lineal.  La cantidad total
+de trabajo al ejecutar {\tt add} $n$ veces es proporcional a $n$,
+¡entonces el tiempo promedio de cada {\tt add} es de tiempo constante!
+\index{tiempo constante}
 
-To see how this works, think about starting with an empty
-HashTable and adding a sequence of items.  We start with 2 LinearMaps,
-so the first 2 adds are fast (no resizing required).  Let's
-say that they take one unit of work each.  The next add
-requires a resize, so we have to rehash the first two
-items (let's call that 2 more units of work) and then
-add the third item (one more unit).  Adding the next item
-costs 1 unit, so the total so far is
-6 units of work for 4 items.
+Para ver cómo funciona esto, piensa en comenzar con un
+HashTable vacío y agregar una secuencia de ítems.  Comenzamos con 2 LinearMaps,
+entonces los 2 primeros añadidos son rápidos (no se requiere cambiar tamaño).  Digamos
+que estos toman una unidad de trabajo cada uno.  El siguiente añadido
+requiere un cambio de tamaño, por lo cual tenemos que rehashear los primeros dos
+ítems (digamos que 2 unidades más de trabajo) y luego
+añadir el tercer ítem (una unidad más).  Añadir el siguiente ítem
+cuesta 1 unidad, entonces el total hasta ahora es
+de 6 unidades de trabajo para 4 ítems.
 
-The next {\tt add} costs 5 units, but the next three
-are only one unit each, so the total is 14 units for the
-first 8 adds.
+El siguiente {\tt add} cuesta 5 unidades, pero los siguientes tres
+son solo una unidad cada uno, entonces el total es de 14 unidades para los
+primeros 8 añadidos.
 
-The next {\tt add} costs 9 units, but then we can add 7 more
-before the next resize, so the total is 30 units for the
-first 16 adds.
+El siguiente {\tt add} cuesta 9 unidades, pero luego podemos añadir 7 más
+antes del siguiente cambio de tamaño, entonces el total es de 30 unidades para los
+primeros 16 añadidos.
 
-After 32 adds, the total cost is 62 units, and I hope you are starting
-to see a pattern.  After $n$ adds, where $n$ is a power of two, the
-total cost is $2n-2$ units, so the average work per add is
-a little less than 2 units.  When $n$ is a power of two, that's
-the best case; for other values of $n$ the average work is a little
-higher, but that's not important.  The important thing is that it
-is $O(1)$.
-\index{average cost}
+Después de 32 añadidos, el costo total es de 62 unidades, y espero que comiences
+a ver el patrón.  Después de $n$ añadidos, donde $n$ es potencia de dos, el
+costo total es de $2n-2$ unidades, entonces el trabajo promedio por cada añadido es
+un poco menos que dos unidades.  Cuando $n$ es una potencia de dos, ese es
+el mejor caso; para los otros valores de $n$  el trabajo promedio es un poco
+más alto, pero eso no es importante.  Lo importante es que
+es $O(1)$.
+\index{costo promedio}
 
-Figure~\ref{fig.hash} shows how this works graphically.  Each
-block represents a unit of work.  The columns show the total
-work for each add in order from left to right: the first two
-{\tt adds} cost 1 unit each, the third costs 3 units, etc.
+La Figura~\ref{fig.hash} muestra cómo funciona esto de manera gráfica.  Cada
+bloque representa una unidad de trabajo.  Las columnas muestran el trabajo
+total para cada añadido en orden de izquierda a derecha: los primeros dos
+{\tt adds} cuestan 1 unidad cada uno, el tercero cuesta 3 unidades, etc.
 
 \begin{figure}
 \centerline{\includegraphics[width=5.5in]{figs/towers.pdf}}
 \caption{The cost of a hashtable add.\label{fig.hash}}
 \end{figure}
 
-The extra work of rehashing appears as a sequence of increasingly
-tall towers with increasing space between them.  Now if you knock
-over the towers, spreading the cost of resizing over all
-adds, you can see graphically that the total cost after $n$
-adds is $2n - 2$.
+El trabajo extra de rehashear aparece como una secuencia de torres
+cada vez más altas cuyo espacio entre ellas es cada vez mayor.  Ahora si derribas
+las torres, repartiendo el costo de cambiar de tamaño sobre todos los
+añadidos, puedes ver gráficamente que el costo total después de $n$
+añadidos es $2n - 2$.
 
-An important feature of this algorithm is that when we resize the
-HashTable it grows geometrically; that is, we multiply the size by a
-constant.  If you increase the size
-arithmetically---adding a fixed number each time---the average time
-per {\tt add} is linear.
-\index{geometric resizing}
+Una característica importante de este algoritmo es que, cuando cambiamos el tamaño del
+HashTable, este crece de manera geométrica; es decir, multiplicamos el tamaño por una
+constante.  Si aumentas el tamaño de manera
+aritmética---añadiendo un número fijo cada vez---el tiempo promedio
+por cada {\tt add} es lineal.
+\index{cambio de tamaño geométrico}
 
-You can download my implementation of HashMap from
-\url{http://thinkpython2.com/code/Map.py}, but remember that there
-is no reason to use it; if you want a map, just use a Python dictionary.
+Puedes descargar mi implementación de HashMap en
+\url{http://thinkpython2.com/code/Map.py}, pero recuerda que no hay
+razón para usarla; si quieres un mapa, solo usa un diccionario de Python.
 
-\section{Glossary}
+\section{Glosario}
 
 \begin{description}
 
-\item[analysis of algorithms:] A way to compare algorithms in terms of
-their run time and/or space requirements.
-\index{analysis of algorithms}
+\item[análisis de algoritmos:] Una manera de comparar algoritmos en términos de
+su tiempo de ejecución y/o requerimientos de espacio.
+\index{análisis de algoritmos}
 
-\item[machine model:] A simplified representation of a computer used
-to describe algorithms.
-\index{machine model}
+\item[modelo de máquina:] Una representación simplificada de un computador usada
+para describir algoritmos.
+\index{modelo de máquina}
 
-\item[worst case:] The input that makes a given algorithm run slowest (or
-require the most space).
-\index{worst case}
+\item[peor de los casos:] La entrada que hace que un algoritmo dado se ejecute de la manera más lenta (o
+requiera el mayor espacio).
+\index{peor de los casos}
 
-\item[leading term:] In a polynomial, the term with the highest exponent.
-\index{leading term}
+\item[término principal:] En un polinomio, el término con el exponente más alto.
+\index{término principal}
 
-\item[crossover point:] The problem size where two algorithms require
-the same run time or space.
-\index{crossover point}
+\item[punto de cruce:] El tamaño de un problema donde dos algoritmos requieren
+el mismo tiempo de ejecución o espacio.
+\index{punto de cruce}
 
-\item[order of growth:] A set of functions that all grow in a way
-considered equivalent for purposes of analysis of algorithms.
-For example, all functions that grow linearly belong to the same
-order of growth.
-\index{order of growth}
+\item[orden de crecimiento:] Un conjunto de funciones que crecen todas de una manera
+considerada equivalente para propósitos del análisis de algoritmos.
+Por ejemplo, todas las funciones que crecen linealmente pertenecen al mismo
+orden de crecimiento.
+\index{orden de crecimiento}
 
-\item[Big-Oh notation:] Notation for representing an order of growth;
-for example, $O(n)$ represents the set of functions that grow
-linearly.
-\index{Big-Oh notation}
+\item[notación O grande:] Notación para representar un orden de crecimiento;
+por ejemplo, $O(n)$ representa el conjunto de funciones que crecen
+linealmente.
+\index{notación O grande}
 
-\item[linear:] An algorithm whose run time is proportional to
-problem size, at least for large problem sizes.
-\index{linear}
+\item[lineal:] Un algoritmo cuyo tiempo de ejecución es proporcional al
+tamaño del problema, al menos para tamaños de problema grandes.
+\index{lineal}
 
-\item[quadratic:] An algorithm whose run time is proportional to
-$n^2$, where $n$ is a measure of problem size.
-\index{quadratic}
+\item[cuadrático:] Un algoritmo cuyo tiempo de ejecución es proporcional a
+$n^2$, donde $n$ es la medida del tamaño del problema.
+\index{cuadrático}
 
-\item[search:] The problem of locating an element of a collection
-(like a list or dictionary) or determining that it is not present.
-\index{search}
+\item[búsqueda:] El problema de encontrar localizar un elemento de una colección
+(como una lista o diccionario) o determinar que este no está presente.
+\index{búsqueda}
 
-\item[hashtable:] A data structure that represents a collection of
-key-value pairs and performs search in constant time.
-\index{hashtable}
+\item[tabla hash:] Una estructura de datos que representa una colección de
+pares clave-valor y realiza una búsqueda en tiempo constante.
+\index{tabla hash}
 
 \end{description}
 
