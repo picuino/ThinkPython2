@@ -12076,310 +12076,310 @@ Solución: \url{http://thinkpython2.com/code/find_duplicates.py}.
 
 
 
-\chapter{Classes and objects}
+\chapter{Clases y objetos}
 \label{clobjects}
 
-At this point you know how to use
-functions to organize code and
-built-in types to organize data.  The next step is to learn
-``object-oriented programming'', which uses programmer-defined types
-to organize both code and data.  Object-oriented programming is
-a big topic; it will take a few chapters to get there.
-\index{object-oriented programming}
+En este punto sabes cómo utilizar
+funciones para organizar código y
+tipos incorporados para organizar datos.  El siguiente paso es aprender
+``programación orientada a objetos'', que utiliza tipos definidos por el programador
+para organizar tanto código como datos.  La programación orientada a objetos es
+un gran tema; tomará un par de capítulos para llegar allí.
+\index{programación orientada a objetos}
 
-Code examples from this chapter are available from
-\url{http://thinkpython2.com/code/Point1.py}; solutions
-to the exercises are available from
+Loe ejemplos de código de este capítulo están disponibles en
+\url{http://thinkpython2.com/code/Point1.py}; las soluciones
+a los ejercicios están disponibles en
 \url{http://thinkpython2.com/code/Point1_soln.py}.
 
 
-\section{Programmer-defined types}
+\section{Tipos definidos por el programador}
 \label{point}
-\index{programmer-defined type}
-\index{type!programmer-defined}
+\index{tipo definido por el programador}
+\index{definido por el programador!tipo}
 
-We have used many of Python's built-in types; now we are going
-to define a new type.  As an example, we will create a type
-called {\tt Point} that represents a point in two-dimensional
-space.
-\index{point, mathematical}
+Hemos utilizado muchos tipos incorporados de Python; ahora vamos
+a definir un tipo nuevo.  Como ejemplo, crearemos un tipo
+llamado {\tt Punto} que representa un punto en el espacio
+bidimensional.
+\index{punto matemático}
 
-In mathematical notation, points are often written in
-parentheses with a comma separating the coordinates. For example,
-$(0,0)$ represents the origin, and $(x,y)$ represents the
-point $x$ units to the right and $y$ units up from the origin.
+En notación matemática, los puntos son a menudo escritos en
+paréntesis con una coma que separa las coordenadas.  Por ejemplo,
+$(0,0)$ representa el origen, y $(x,y)$ representa el
+punto $x$ unidades hacia la derecha e $y$ unidades hacia arriba desde el origen.
 
-There are several ways we might represent points in Python:
+Hay muchas maneras en las cuales podríamos representar puntos en Python:
 
 \begin{itemize}
 
-\item We could store the coordinates separately in two
-variables, {\tt x} and {\tt y}.
+\item Podríamos almacenar las coordenadas de manera separada en dos
+variables, {\tt x} e {\tt y}.
 
-\item We could store the coordinates as elements in a list
-or tuple.
+\item Podríamos almacenar las coordenadas como elementos en una lista
+o tupla.
 
-\item We could create a new type to represent points as
-objects.
+\item Podríamos crear un tipo nuevo para representar puntos como
+objetos.
 
 \end{itemize}
-\index{representation}
+\index{representación}
 
-Creating a new type
-is more complicated than the other options, but
-it has advantages that will be apparent soon.
+Crear un tipo nuevo
+es más complicado que las otras opciones, pero
+tiene ventajas que pronto serán aparentes.
 
-A programmer-defined type is also called a {\bf class}.
-A class definition looks like this:
-\index{class}
-\index{object!class}
-\index{class definition}
-\index{definition!class}
+Un tipo definido por el programados también se llama {\bf clase}.
+Una definición de clase se ve así:
+\index{clase}
+\index{objeto de clase}
+\index{definición de clase}
+\index{clase!definición}
 
 \begin{verbatim}
-class Point:
-    """Represents a point in 2-D space."""
+class Punto:
+    """Representa un punto en un espacio 2-D."""
 \end{verbatim}
 %
-The header indicates that the new class is called {\tt Point}.
-The body is a docstring that explains what the class is for.
-You can define variables and methods inside a class definition,
-but we will get back to that later.
-\index{Point class}
-\index{class!Point}
+El encabezado indica que la clase nueva se llama {\tt Punto}.
+El cuerpo es un docstring que explica para qué es la clase.
+Puedes definir variables y métodos dentro de una definición de clase,
+pero volveremos a eso más adelante.
+\index{clase Punto}
+\index{Punto!clase}
 \index{docstring}
 
-Defining a class named {\tt Point} creates a {\bf class object}.
+Definir una clase con nombre {\tt Punto} crea un {\bf objeto de clase}.
 
 \begin{verbatim}
->>> Point
-<class '__main__.Point'>
+>>> Punto
+<class '__main__.Punto'>
 \end{verbatim}
 %
-Because {\tt Point} is defined at the top level, its ``full
-name'' is \verb"__main__.Point".
-\index{object!class}
-\index{class object}
+Dado que {\tt Punto} se define en el nivel más alto, su ``nombre
+completo'' es \verb"__main__.Punto".
+\index{objeto de clase}
+\index{clase!objeto}
 
-The class object is like a factory for creating objects.  To create a
-Point, you call {\tt Point} as if it were a function.
+El objeto de clase es como una fábrica para crear objetos.  Para crear un
+Punto, llamas a {\tt Punto} como si fuera una función.
 
 \begin{verbatim}
->>> blank = Point()
->>> blank
-<__main__.Point object at 0xb7e9d3ac>
+>>> vacio = Punto()
+>>> vacio
+<__main__.Punto object at 0xb7e9d3ac>
 \end{verbatim}
 %
-The return value is a reference to a Point object, which we
-assign to {\tt blank}.
+El valor de retorno es una referencia a un objeto Punto, que
+asignamos a {\tt vacio}.
 
-Creating a new object is called
-{\bf instantiation}, and the object is an {\bf instance} of
-the class.
-\index{instance}
-\index{instantiation}
+El acto de crear un objeto nuevo se llama
+{\bf instanciación}, y el objeto es una {\bf instancia} de
+la clase.
+\index{instancia}
+\index{instanciación}
 
-When you print an instance, Python tells you what class it
-belongs to and where it is stored in memory (the prefix
-{\tt 0x} means that the following number is in hexadecimal).
+Cuando imprimes una instancia, Python te dice a qué clase
+pertenece y dónde se almacena en la memoria (el prefijo
+{\tt 0x} significa que el siguiente número es un hexadecimal).
 \index{hexadecimal}
 
-Every object is an instance of some class, so ``object'' and
-``instance'' are interchangeable.  But in this chapter I use
-``instance'' to indicate that I am talking about a programmer-defined
-type.
+Cada objeto es una instancia de alguna clase, por tanto ``objeto'' e
+``instancia'' son intercambiables.  Sin embargo, en este capítulo utilizo
+``instancia'' para indicar que estoy hablando de un tipo definido por el
+programador.
 
 
-\section{Attributes}
+\section{Atributos}
 \label{attributes}
-\index{instance attribute}
-\index{attribute!instance}
-\index{dot notation}
+\index{atributo de instancia}
+\index{instancia!atributo de}
+\index{notación de punto}
 
-You can assign values to an instance using dot notation:
+Puedes asignar valores a una instancia utilizando notacíon de punto:
 
 \begin{verbatim}
->>> blank.x = 3.0
->>> blank.y = 4.0
+>>> vacio.x = 3.0
+>>> vacio.y = 4.0
 \end{verbatim}
 %
-This syntax is similar to the syntax for selecting a variable from a
-module, such as {\tt math.pi} or {\tt string.whitespace}.  In this case,
-though, we are assigning values to named elements of an object.
-These elements are called {\bf attributes}.
+Esta sintaxis es similar a la sintaxis para seleccionar una variable de un
+módulo, tal como {\tt math.pi} o {\tt string.whitespace}.  En este caso,
+sin embargo, estamos asignando valores a elementos con nombre que pertenecen a un objeto.
+Estos elementos se llaman {\bf atributos}.
 
-As a noun, ``AT-trib-ute'' is pronounced with emphasis on the first
-syllable, as opposed to ``a-TRIB-ute'', which is a verb.
+%As a noun, ``AT-trib-ute'' is pronounced with emphasis on the first
+%syllable, as opposed to ``a-TRIB-ute'', which is a verb.
 
-Figure~\ref{fig.point} is a state diagram that shows the result of these assignments.
-A state diagram that shows an object and its attributes is
-called an {\bf object diagram}.
-\index{state diagram}
-\index{diagram!state}
-\index{object diagram}
-\index{diagram!object}
+La Figura~\ref{fig.point} es un diagrama de estado que muestra el resultado de estas asignaciones.
+Un diagrama de estado que muestra un objeto y sus atributos se
+llama {\bf diagrama de objeto}.
+\index{diagrama de estado}
+\index{estado!diagrama de}
+\index{diagrama de objeto}
+\index{objeto!diagrama de}
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/point.pdf}}
-\caption{Object diagram.}
+\caption{Diagrama de objeto.}
 \label{fig.point}
 \end{figure}
 
-The variable {\tt blank} refers to a Point object, which
-contains two attributes.  Each attribute refers to a
-floating-point number.
+La variable {\tt vacio} se refiere a un objeto Punto, que
+contiene dos atributos.  Cada atributo se refiere a un
+número de coma flotante.
 
-You can read the value of an attribute using the same syntax:
+Puedes leer el valor de un atributo utilizando la misma sintaxis:
 
 \begin{verbatim}
->>> blank.y
+>>> vacio.y
 4.0
->>> x = blank.x
+>>> x = vacio.x
 >>> x
 3.0
 \end{verbatim}
 %
-The expression {\tt blank.x} means, ``Go to the object {\tt blank}
-refers to and get the value of {\tt x}.''  In the example, we assign that
-value to a variable named {\tt x}.  There is no conflict between
-the variable {\tt x} and the attribute {\tt x}.
+La expresión {\tt vacio.x} significa, ``Ve al objeto al cual {\tt vacio}
+se refiere y obten el valor de {\tt x}.''  En este ejemplo, asignamos ese
+valor a una variable con nombre {\tt x}.  No hay conflicto entre
+la variable {\tt x} y el atributo {\tt x}.
 
-You can use dot notation as part of any expression.  For example:
+Puedes usar la notación de punto como parte de una expresión.  Por ejemplo:
 
 \begin{verbatim}
->>> '(%g, %g)' % (blank.x, blank.y)
+>>> '(%g, %g)' % (vacio.x, vacio.y)
 '(3.0, 4.0)'
->>> distance = math.sqrt(blank.x**2 + blank.y**2)
->>> distance
+>>> distancia = math.sqrt(vacio.x**2 + vacio.y**2)
+>>> distancia
 5.0
 \end{verbatim}
 %
-You can pass an instance as an argument in the usual way.
-For example:
-\index{instance!as argument}
+Puedes pasar una instancia como argumento en la manera usual.
+Por ejemplo:
+\index{instancia!como argumento}
 
 \begin{verbatim}
-def print_point(p):
+def imprimir_punto(p):
     print('(%g, %g)' % (p.x, p.y))
 \end{verbatim}
 %
-\verb"print_point" takes a point as an argument and displays it in
-mathematical notation.  To invoke it, you can pass {\tt blank} as
-an argument:
+\verb"imprimir_punto" toma un punto como argumento y lo muestra en
+notación matemática.  Para invocarla, puedes pasar a {\tt vacio} como
+argumento:
 
 \begin{verbatim}
->>> print_point(blank)
+>>> imprimir_punto(vacio)
 (3.0, 4.0)
 \end{verbatim}
 %
-Inside the function, {\tt p} is an alias for {\tt blank}, so if
-the function modifies {\tt p}, {\tt blank} changes.
-\index{aliasing}
+Dentro de la función, {\tt p} es un alias para {\tt vacio}, por tanto si
+la función modifica a {\tt p}, {\tt vacio} cambia.
+\index{alias}
 
-As an exercise, write a function called \verb"distance_between_points"
-that takes two Points as arguments and returns the distance between
-them.
+Como ejercicio, escribe una función llamada \verb"distancia_entre_puntos"
+que tome dos Puntos como argumentos y devuelva la destancia entre
+ellos.
 
 
-\section{Rectangles}
+\section{Rectángulos}
 \label{rectangles}
 
-Sometimes it is obvious what the attributes of an object should be,
-but other times you have to make decisions.  For example, imagine you
-are designing a class to represent rectangles.  What attributes would
-you use to specify the location and size of a rectangle?  You can
-ignore angle; to keep things simple, assume that the rectangle is
-either vertical or horizontal.
-\index{representation}
+A veces es obvio lo que deberían ser los atributos de un objeto,
+pero otras veces tienes que tomar decisiones.  Por ejemplo, imagina que
+estás diseñando una clase para representar rectángulos. ¿Qué atributos
+utilizarías para especificar la ubicación y tamaño de un rectángulo?  Puedes
+ignorar el ángulo; para mantener las cosas simples, supongamos que el rectángulo es
+vertical u horizontal.
+\index{representación}
 
-There are at least two possibilities:
+Hay al menos dos posibilidades:
 
 \begin{itemize}
 
-\item You could specify one corner of the rectangle
-(or the center), the width, and the height.
+\item Podrías especificar una esquina del rectángulo
+(o el centro), la anchura y la altura.
 
-\item You could specify two opposing corners.
+\item Podrías especificar dos esquinas opuestas.
 
 \end{itemize}
 
-At this point it is hard to say whether either is better than
-the other, so we'll implement the first one, just as an example.
-\index{Rectangle class}
-\index{class!Rectangle}
+En este punto es difícil decir si una alternativa es mejor que
+la otra, así que implementaremos la primera, solo como ejemplo.
+\index{clase Rectángulo}
+\index{Rectángulo!clase}
 
-Here is the class definition:
+Aquí está la definición de la clase:
 
 \begin{verbatim}
-class Rectangle:
-    """Represents a rectangle.
+class Rectangulo:
+    """Representa un rectángulo.
 
-    attributes: width, height, corner.
+    atributos: anchura, altura, esquina.
     """
 \end{verbatim}
 %
-The docstring lists the attributes:  {\tt width} and
-{\tt height} are numbers; {\tt corner} is a Point object that
-specifies the lower-left corner.
+El docstring contiene una lista de los atributos:  {\tt anchura} y
+{\tt altura} con números; {\tt esquina} es un objeto Punto que
+especifica la esquina inferior izquierda.
 
-To represent a rectangle, you have to instantiate a Rectangle
-object and assign values to the attributes:
+Para representar un rectángulo, tienes que instanciar un objeto Rectángulo
+y asignar valores a los atributos:
 
 \begin{verbatim}
-box = Rectangle()
-box.width = 100.0
-box.height = 200.0
-box.corner = Point()
-box.corner.x = 0.0
-box.corner.y = 0.0
+caja = Rectangulo()
+caja.anchura = 100.0
+caja.altura = 200.0
+caja.esquina = Punto()
+caja.esquina.x = 0.0
+caja.esquina.y = 0.0
 \end{verbatim}
 %
-The expression {\tt box.corner.x} means,
-``Go to the object {\tt box} refers to and select the attribute named
-{\tt corner}; then go to that object and select the attribute named
+La expresión {\tt caja.esquina.x} significa,
+``Ve al objeto al cual {\tt caja} se refiere y seleccionea el atributo con nombre
+{\tt esquina}; luego ve a ese objeto y selecciona el atributo con nombre
 {\tt x}.''
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/rectangle.pdf}}
-\caption{Object diagram.}
+\caption{Diagrama de objeto.}
 \label{fig.rectangle}
 \end{figure}
 
 
-Figure~\ref{fig.rectangle} shows the state of this object.
-An object that is an attribute of another object is {\bf embedded}.
-\index{state diagram}
-\index{diagram!state}
-\index{object diagram}
-\index{diagram!object}
-\index{embedded object}
-\index{object!embedded}
+La Figura~\ref{fig.rectangle} muestra el estado de este objeto.
+Un objeto que es un atributo de otro objeto está {\bf incrustado}.
+\index{diagrama de estado}
+\index{estado!diagrama de}
+\index{diagrama de objeto}
+\index{objeto!diagrama de}
+\index{objeto incrustado}
+\index{incrustado!objeto}
 
 
-\section{Instances as return values}
-\index{instance!as return value}
-\index{return value}
+\section{Instancias como valores de retorno}
+\index{instancia!como valor de retorno}
+\index{valor de retorno}
 
-Functions can return instances.  For example, \verb"find_center"
-takes a {\tt Rectangle} as an argument and returns a {\tt Point}
-that contains the coordinates of the center of the {\tt Rectangle}:
+Las funciones pueden devolver instancias.  Por ejemplo, \verb"encontrar_centro"
+toma un {\tt Rectangulo} como argumento y devuelve un {\tt Punto}
+que contiene las coordenadas del centro del {\tt Rectangulo}:
 
 \begin{verbatim}
-def find_center(rect):
-    p = Point()
-    p.x = rect.corner.x + rect.width/2
-    p.y = rect.corner.y + rect.height/2
+def encontrar_centro(rect):
+    p = Punto()
+    p.x = rect.esquina.x + rect.anchura/2
+    p.y = rect.esquina.y + rect.altura/2
     return p
 \end{verbatim}
 %
-Here is an example that passes {\tt box} as an argument and assigns
-the resulting Point to {\tt center}:
+Aquí hay un ejemplo que pasa a {\tt caja} como argumento y asigna
+el Punto resultante a {\tt centro}:
 
 \begin{verbatim}
->>> center = find_center(box)
->>> print_point(center)
+>>> centro = entontrar_centro(caja)
+>>> imprimir_punto(centro)
 (50, 100)
 \end{verbatim}
 %
