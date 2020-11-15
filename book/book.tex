@@ -15236,14 +15236,14 @@ def tiene_duplicados(t):
     return False
 \end{verbatim}
 
-When an element appears for the first time, it is added to the
-dictionary.  If the same element appears again, the function returns
+Cuando un elemento aparece por primera vez, se agrega al
+diccionario.  Si el mismo elemento aparece otra vez, la función devuelve
 {\tt True}.
 
-Using sets, we can write the same function like this:
+Utilizando conjuntos, podemos escribir la misma función así:
 
 \begin{verbatim}
-def has_duplicates(t):
+def tiene_duplicados(t):
     return len(set(t)) < len(t)
 \end{verbatim}
 %
@@ -15344,54 +15344,54 @@ a 1
 
 \section{defaultdict}
 
-The {\tt collections} module also provides {\tt defaultdict}, which is
-like a dictionary except that if you access a key that doesn't exist,
-it can generate a new value on the fly.
+El módulo {\tt collections} también proporciona a {\tt defaultdict}, que es
+como un diccionario excepto que si accedes a una clave que no existe,
+este puede generar un valor nuevo sobre la marcha.
 \index{defaultdict}
-\index{object!defaultdict}
+\index{objeto defaultdict}
 \index{collections}
-\index{module!collections}
+\index{módulo collections}
 
-When you create a defaultdict, you provide a function that's used to
-create new values.  A function used to create objects is sometimes
-called a {\bf factory}.  The built-in functions that create lists, sets,
-and other types can be used as factories:
-\index{factory function}
+Cuando creas un defaultdict, proporcionas una función que se utiliza para
+crear valores nuevos.  Una función utilizada para crear oobjetos a veces es
+llamada una {\bf fábrica}.  Las funciones incorporadas que crean listas, conjuntos
+y otros tipos se pueden utilizar como fábricas:
+\index{fábrica!función}
 
 \begin{verbatim}
 >>> from collections import defaultdict
 >>> d = defaultdict(list)
 \end{verbatim}
 
-Notice that the argument is {\tt list}, which is a class object,
-not {\tt list()}, which is a new list.  The function you provide
-doesn't get called unless you access a key that doesn't exist.
+Notar que el arguento es {\tt list}, que es un objeto de clase,
+no {\tt list()}, que es una lista nueva.  La función que proporcionas
+no es llamada a menos que accedas a una clave que no existe.
 
 \begin{verbatim}
->>> t = d['new key']
+>>> t = d['clave nueva']
 >>> t
 []
 \end{verbatim}
 
-The new list, which we're calling {\tt t}, is also added to the
-dictionary.  So if we modify {\tt t}, the change appears in {\tt d}:
+La lista nueva, a la cual llamamos {\tt t}, también es añadida al
+diccionario.  Por lo tanto, si modificamos {\tt t}, el cambio aparece en {\tt d}:
 
 \begin{verbatim}
->>> t.append('new value')
+>>> t.append('valor nuevo')
 >>> d
-defaultdict(<class 'list'>, {'new key': ['new value']})
+defaultdict(<class 'list'>, {'clave nueva': ['valor nuevo']})
 \end{verbatim}
 
-If you are making a dictionary of lists, you can often write simpler
-code using {\tt defaultdict}.  In my solution to
-Exercise~\ref{anagrams}, which you can get from
-\url{http://thinkpython2.com/code/anagram_sets.py}, I make a
-dictionary that maps from a sorted string of letters to the list of
-words that can be spelled with those letters.  For example, {\tt
-  'opst'} maps to the list {\tt ['opts', 'post', 'pots', 'spot',
+Si estás creando un diccionario de listas, a menudo puedes escribir código
+más simple utilizando {\tt defaultdict}.  En mi solución al
+Ejercicio~\ref{anagrams}, que puedes obtener en
+\url{http://thinkpython2.com/code/anagram_sets.py}, creo un
+diccioinario que mapea de una cadena de letras ordenada a la lista de
+palabras que se pueden escribir con esas letras.  Por ejemplo, {\tt
+  'opst'} mapea a la lista {\tt ['opts', 'post', 'pots', 'spot',
     'stop', 'tops']}.
 
-Here's the original code:
+Aquí está el código original:
 
 \begin{verbatim}
 def all_anagrams(filename):
@@ -15406,8 +15406,8 @@ def all_anagrams(filename):
     return d
 \end{verbatim}
 
-This can be simplified using {\tt setdefault}, which you might
-have used in Exercise~\ref{setdefault}:
+Esto se puede simplificar utilizando {\tt setdefault}, que tal vez
+utilizaste en el Ejercicio~\ref{setdefault}:
 \index{setdefault}
 
 \begin{verbatim}
@@ -15420,14 +15420,14 @@ def all_anagrams(filename):
     return d
 \end{verbatim}
 
-This solution has the drawback that it makes a new list
-every time, regardless of whether it is needed.  For lists,
-that's no big deal, but if the factory
-function is complicated, it might be.
-\index{factory function}
+Esta solución tiene el inconveniente de que crea una nueva lista
+cada vez, independiente de si es necesaria.  Para las listas,
+eso no es un gran problema, pero si la función
+fábrica es complicada, podría serlo.
+\index{fábrica!función}
 
-We can avoid this problem and
-simplify the code using a {\tt defaultdict}:
+Podemos evitar este problema y
+simplificar el código utilizando un {\tt defaultdict}:
 
 \begin{verbatim}
 def all_anagrams(filename):
@@ -15439,24 +15439,24 @@ def all_anagrams(filename):
     return d
 \end{verbatim}
 
-My solution to Exercise~\ref{poker}, which you can download from
+Mi solución al Ejercicio~\ref{poker}, que puedes descargar en
 \url{http://thinkpython2.com/code/PokerHandSoln.py},
-uses {\tt setdefault} in the function
-\verb"has_straightflush".  This solution has the drawback
-of creating a {\tt Hand} object every time through the loop, whether
-it is needed or not.  As an exercise, rewrite it using
-a defaultdict.
+utiliza {\tt setdefault} en la función
+\verb"has_straightflush".  Esta solución tiene el inconveniente de
+crear un objeto {\tt Hand} en cada paso del bucle, cuando
+es necesaria y cuando no.  Como ejercicio, reescríbela utilizando
+un defaultdict.
 
 
-\section{Named tuples}
+\section{Tuplas nombradas}
 
-Many simple objects are basically collections of related values.
-For example, the Point object defined in Chapter~\ref{clobjects} contains
-two numbers, {\tt x} and {\tt y}.  When you define a class like
-this, you usually start with an init method and a str method:
+Muchos objetos simples son básicamente colecciones de valores relacionados.
+Por ejemplo, el objeto Punto definido en el Capítulo~\ref{clobjects} contiene
+dos números, {\tt x} e {\tt y}.  Cuando defines una clase como
+esta, generalmente comienzas con un método init y un método str:
 
 \begin{verbatim}
-class Point:
+class Punto:
 
     def __init__(self, x=0, y=0):
         self.x = x
@@ -15466,52 +15466,52 @@ class Point:
         return '(%g, %g)' % (self.x, self.y)
 \end{verbatim}
 
-This is a lot of code to convey a small amount of information.
-Python provides a more concise way to say the same thing:
+Esto es mucho código para transmitir una cantidad pequeña de información.
+Python proporciona una manera más concisa de decir lo mismo:
 
 \begin{verbatim}
 from collections import namedtuple
-Point = namedtuple('Point', ['x', 'y'])
+Punto = namedtuple('Punto', ['x', 'y'])
 \end{verbatim}
 
-The first argument is the name of the class you want to create.
-The second is a list of the attributes Point objects should have,
-as strings.  The return value from {\tt namedtuple} is a class object:
+El primer argumento es el nombre de la clase que quieres crear.
+El segundo es una lista de atributos que los objetos Punto debieran tener,
+como cadenas.  El valor de retorno de {\tt namedtuple} es un objeto de clase:
 \index{namedtuple}
-\index{object!namedtuple}
+\index{objeto namedtuple}
 \index{collections}
-\index{module!collections}
+\index{módulo collections}
 
 \begin{verbatim}
->>> Point
-<class '__main__.Point'>
+>>> Punto
+<class '__main__.Punto'>
 \end{verbatim}
 
-{\tt Point} automatically provides methods like \verb"__init__" and
-\verb"__str__" so you don't have to write them.
-\index{class object}
-\index{object!class}
+{\tt Punto} automáticamente proporciona métodos como \verb"__init__" y
+\verb"__str__", así qque no tienes que escribirlos.
+\index{objeto de clase}
+\index{clase!objeto}
 
-To create a Point object, you use the Point class as a function:
+Para crear un objeto Punto, utilizas la clase Punto como una función:
 
 \begin{verbatim}
->>> p = Point(1, 2)
+>>> p = Punto(1, 2)
 >>> p
-Point(x=1, y=2)
+Punto(x=1, y=2)
 \end{verbatim}
 
-The init method assigns the arguments to attributes using the names
-you provided.  The str method prints a representation of the Point
-object and its attributes.
+El método init asigna argumentos a atributos utilizando nombres
+que proporcionas.  El método str imprime una representación del objeto Punto
+y sus atributos.
 
-You can access the elements of the named tuple by name:
+Puedes acceder a los elementos de la tupla nombrada por sus nombres:
 
 \begin{verbatim}
 >>> p.x, p.y
 (1, 2)
 \end{verbatim}
 
-But you can also treat a named tuple as a tuple:
+Sin embargo, puedes también tratar una tupla nombrada como una tupla:
 
 \begin{verbatim}
 >>> p[0], p[1]
@@ -15522,156 +15522,156 @@ But you can also treat a named tuple as a tuple:
 (1, 2)
 \end{verbatim}
 
-Named tuples provide a quick way to define simple classes.
-The drawback is that simple classes don't always stay simple.
-You might decide later that you want to add methods to a named tuple.
-In that case, you could define a new class that inherits from
-the named tuple:
-\index{inheritance}
+Las tuplas nombradas proporcionan una manera rápida de definir clases simples.
+El inconveniente es que las clases simples no siempre peranecen simples.
+Tal vez decidas más tarde que quieres agregar métodos a una tupla nombrada.
+En ese caso, podrías definir una clase nueva que tome herencia de
+la tupla nombrada:
+\index{herencia}
 
 \begin{verbatim}
-class Pointier(Point):
-    # add more methods here
+class SuperPunto(Punto):
+    # agregar más métodos aquí
 \end{verbatim}
 
-Or you could switch to a conventional class definition.
+O bien podrías cambiar a una definición de clase convencional.
 
 
-\section{Gathering keyword args}
+\section{Reunir argumentos de palabra clave}
 
-In Section~\ref{gather}, we saw how to write a function that
-gathers its arguments into a tuple:
-\index{gather}
+En la Sección~\ref{gather}, vimos cómo escribir una función que
+reúne sus argumentos en una tupla:
+\index{reunir}
 
 \begin{verbatim}
-def printall(*args):
+def imprimir_todo(*args):
     print(args)
 \end{verbatim}
 %
-You can call this function with any number of positional arguments
-(that is, arguments that don't have keywords):
-\index{positional argument}
-\index{argument!positional}
+Puedes llamar a esta función con cualquier número de argumentos posicionales
+(es decir, argumentos que no tienen palabras clave):
+\index{argumento posicional}
+\index{posicional!argumento}
 
 \begin{verbatim}
->>> printall(1, 2.0, '3')
+>>> imprimir_todo(1, 2.0, '3')
 (1, 2.0, '3')
 \end{verbatim}
 %
-But the {\tt *} operator doesn't gather keyword arguments:
-\index{keyword argument}
-\index{argument!keyword}
+Sin embargo, el operador {\tt *} no reúne a los argumentos de palabra clave:
+\index{argumento de palabra clave}
+\index{palabra clave!argumento de}
 
 \begin{verbatim}
->>> printall(1, 2.0, third='3')
-TypeError: printall() got an unexpected keyword argument 'third'
+>>> imprimir_todo(1, 2.0, tercero='3')
+TypeError: imprimir_todo() got an unexpected keyword argument 'tercero'
 \end{verbatim}
 %
-To gather keyword arguments, you can use the {\tt **} operator:
+Para reunir argumentos de palabra clave, puedes utilizar el operador {\tt **}:
 
 \begin{verbatim}
-def printall(*args, **kwargs):
+def imprimir_todo(*args, **kwargs):
     print(args, kwargs)
 \end{verbatim}
 %
-You can call the keyword gathering parameter anything you want, but
-{\tt kwargs} is a common choice.  The result is a dictionary that maps
-keywords to values:
+Puedes llamar al parámetro de reunión de palabras clave como quieras, pero
+{\tt kwargs} es una elección común (del inglés, {\em keyword arguments}).  El resultado es un diccionario que mapea
+palabras clave a valores:
 
 \begin{verbatim}
->>> printall(1, 2.0, third='3')
-(1, 2.0) {'third': '3'}
+>>> imprimir_todo(1, 2.0, tercero='3')
+(1, 2.0) {'tercero': '3'}
 \end{verbatim}
 %
-If you have a dictionary of keywords and values, you can use the
-scatter operator, {\tt **} to call a function:
-\index{scatter}
+Si tienes un diccionario de palabras clave y valores, puedes usasr el
+operador de dispersión {\tt **} para llamar a una función:
+\index{dispersión}
 
 \begin{verbatim}
 >>> d = dict(x=1, y=2)
->>> Point(**d)
-Point(x=1, y=2)
+>>> Punto(**d)
+Punto(x=1, y=2)
 \end{verbatim}
 %
-Without the scatter operator, the function would treat {\tt d} as
-a single positional argument, so it would assign {\tt d} to
-{\tt x} and complain because there's nothing to assign to {\tt y}:
+Sin el operador de dispersión, la función trataría a {\tt d} como
+un argumento posicional único, por lo cual asignaría {\tt d} a
+{\tt x} y reclamaría porque no hay nada para asignar a {\tt y}:
 
 \begin{verbatim}
 >>> d = dict(x=1, y=2)
->>> Point(d)
+>>> Punto(d)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: __new__() missing 1 required positional argument: 'y'
 \end{verbatim}
 %
-When you are working with functions that have a large number of
-parameters, it is often useful to create and pass around dictionaries
-that specify frequently used options.
+Cuando estás trabajando con funciones que tienen un número grande de
+parámetros, a menudo es útil crear y pasar diccionarios
+que especifiquen las opciones utilizadas frecuentemente.
 
 
-\section{Glossary}
+\section{Glosario}
 
 \begin{description}
 
-\item[conditional expression:] An expression that has one of two
-values, depending on a condition.
-\index{conditional expression}
-\index{expression!conditional}
+\item[expresión condicional:] Una expresión que tiene uno de dos
+valores, dependieno de una condición.
+\index{expresión condicional}
+\index{condicional!expresión}
 
-\item[list comprehension:] An expression with a {\tt for} loop in square
-brackets that yields a new list.
-\index{list comprehension}
+\item[comprensión de lista:] Una expresión con un bucle {\tt for} en
+corchetes que produce una lista nueva.
+\index{comprensión de lista}
 
-\item[generator expression:] An expression with a {\tt for} loop in parentheses
-that yields a generator object.
-\index{generator expression}
-\index{expression!generator}
+\item[expresión generadora:] Una expresión con un bucle {\tt for} en paréntesis
+que produce un objeto generador.
+\index{expresión generadora}
+\index{generadora!expresión}
 
-\item[multiset:] A mathematical entity that represents a mapping
-between the elements of a set and the number of times they appear.
+\item[multiconjunto:] Una entidad matemática que representa un mapeo
+entre los elementos de un conjunto y el número de veces que estos aparecen.
 
-\item[factory:] A function, usually passed as a parameter, used to
-create objects.
-\index{factory}
+\item[fábrica:] Una función, generalmente pasada como parámetro, utilizada para
+crear objetos.
+\index{fábrica}
 
 \end{description}
 
 
 
 
-\section{Exercises}
+\section{Ejercicios}
 
 \begin{exercise}
 
-The following is a function computes the binomial
-coefficient recursively.
+Lo siguiente es una función que calcula el
+coeficiente binomial de manera recursiva.
 
 \begin{verbatim}
-def binomial_coeff(n, k):
-    """Compute the binomial coefficient "n choose k".
+def coeficiente_binomial(n, k):
+    """Calcula el coeficiente binomial "n sobre k".
 
-    n: number of trials
-    k: number of successes
+    n: número de ensayos
+    k: número de éxitos
 
-    returns: int
+    devuelve: int
     """
     if k == 0:
         return 1
     if n == 0:
         return 0
 
-    res = binomial_coeff(n-1, k) + binomial_coeff(n-1, k-1)
+    res = coeficiente_binomial(n-1, k) + coeficiente_binomial(n-1, k-1)
     return res
 \end{verbatim}
 
-Rewrite the body of the function using nested conditional
-expressions.
+Reescribe el cuerpo de la función usando expresiones condicionales
+anidadas.
 
-One note: this function is not very efficient because it ends up computing
-the same values over and over.  You could make it more efficient by
-memoizing (see Section~\ref{memoize}).  But you will find that it's harder to
-memoize if you write it using conditional expressions.
+Nota: esta función no es muy eficiente porque termina calculando
+los mismos valores una y otra vez.  Podrías hacerla más eficiente
+memoizando (ver Sección~\ref{memoize}).  Sin embargo, encontrarás que es más difícil
+memoizar si la escribes utilizando expresiones condicionales.
 
 \end{exercise}
 
