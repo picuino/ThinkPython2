@@ -11564,8 +11564,8 @@ indicación, hay al menos 21 cosas que pueden salir mal).
 \index{sentencia try}
 \index{try!sentencia}
 
-Es mejor continuar y avanzar---y lidiar con los problemas, si
-ocurren---que es exactamente lo que hace la sentencia {\tt try}.  La
+Es mejor continuar y avanzar ---y lidiar con los problemas, si
+ocurren--- que es exactamente lo que hace la sentencia {\tt try}.  La
 sintaxis es similar a una sentencia {\tt if...else}:
 
 \begin{verbatim}
@@ -14905,13 +14905,13 @@ Solution: \url{http://thinkpython2.com/code/PokerHandSoln.py}.
 \chapter{Trucos extra}
 
 Uno de mis objetivos para este libro ha sido enseñarte la menor cantidad de Python
-posible.  Cuando hubo dos maneras de hacer algo, escogí
+posible.  Cuando había dos maneras de hacer algo, escogí
 una y evité mencionar la otra.  O a veces puse la segunda
 dentro de un ejercicio.
 
-Ahora quiero volver por algunas de estas cosas buenas que dejé atrás.
-Python proporciona un número de características que no son realmente necesarias---puedes
-escribir buen código sin estas---pero con estas a veces pudes
+Ahora quiero volver a ver algunas de estas cosas buenas que dejé atrás.
+Python proporciona un número de características que no son realmente necesarias ---puedes
+escribir buen código sin estas--- pero con estas a veces pudes
 escribir código más conciso, legible o eficiente, y a veces
 las tres cosas a la vez.
 
@@ -14946,7 +14946,7 @@ condicional}:
 y = math.log(x) if x > 0 else float('nan')
 \end{verbatim}
 
-Puedes casi leer esta línea como si estuviera en inglés: ``{\tt y} es log-{\tt x}
+Puedes leer esta línea casi como si estuviera en inglés: ``{\tt y} es log-{\tt x}
 si {\tt x} es mayor que 0; de lo contrario es NaN''.
 
 Las funciones recursivas a veces se pueden reescribir usando expresiones
@@ -15006,7 +15006,7 @@ ejemplo, esta función toma una lista de cadenas, mapea el método de cadena
 {\tt capitalize} a los elementos y devuelve una nueva lista de cadenas:
 
 \begin{verbatim}
-def capitalize_all(t):
+def todas_con_mayuscula(t):
     res = []
     for s in t:
         res.append(s.capitalize())
@@ -15017,7 +15017,7 @@ Podemos escribir esto de manera más concisa usando una {\bf comprensión de lis
 \index{comprensión de lista}
 
 \begin{verbatim}
-def capitalize_all(t):
+def todas_con_mayuscula(t):
     return [s.capitalize() for s in t]
 \end{verbatim}
 
@@ -15033,14 +15033,14 @@ la variable del bucle, {\tt s} en este ejemplo, aparece en la expresión
 antes de llegar a la definición.
 \index{varlable del bucle}
 
-Las comprensiones de lista también pueden ser utilizadas para filtrar.  Por ejemplo,
+Las comprensiones de lista también se pueden utilizar para filtrar.  Por ejemplo,
 esta función selecciona solo los elementos de {\tt t} que están
 en mayúsculas y devuelve una lista nueva:
 \index{patrón de filtro}
 \index{filtro!patrón}
 
 \begin{verbatim}
-def only_upper(t):
+def solo_mayusculas(t):
     res = []
     for s in t:
         if s.isupper():
@@ -15051,26 +15051,26 @@ def only_upper(t):
 Podemos reescribirla utilizando una lista por comprensión
 
 \begin{verbatim}
-def only_upper(t):
+def solo_mayusculas(t):
     return [s for s in t if s.isupper()]
 \end{verbatim}
 
 Las comprensiones de lista son concisas y fáciles de leer, al menos para expresiones
 simples.  Y generalmente son más rápidas que el equivalente para
-bucles, a veces mucho más rápidas.  Así que si estás molesto conmigo por no
+bucles, a veces mucho más rápidas.  Así que si sientes molestia conmigo por no
 mencionarlos antes, lo entiendo.
 
 Sin embargo, en mi defensa, las comprensiones de lista son difíciles de depurar porque
 no puedes poner una sentencia print dentro del bucle.  Sugiero que los
 utilices solo si el cálculo es lo suficientemente simple para que sea probable
-que lo hagas bien la primera vez.  Y para principianes eso significa nunca.
+que lo hagas bien al primer intento.  Y para principiantes eso significa nunca.
 \index{depurar}
 
 
 
 \section{Expresiones generadoras}
 
-Las {\bf expresiones generadoras} con similares a las comprensiones de lista, pero
+Las {\bf expresiones generadoras} son similares a las comprensiones de lista, pero
 con paréntesis en lugar de corchetes:
 \index{expresión generadora}
 \index{generadora!expresión}
@@ -15082,8 +15082,8 @@ con paréntesis en lugar de corchetes:
 \end{verbatim}
 %
 El resultado en un objeto generador que sabe cómo iterar a través de
-una secuencia de valores.  Pero a diferencia de una comprensión de lista, esta no
-calcula todos los valores de una vez; espera hasta ser consultado.  La función
+una secuencia de valores.  Sin embargo, a diferencia de una comprensión de lista, esta no
+calcula todos los valores de una vez; espera hasta ser consultada.  La función
 incorporada {\tt next} obtiene el siguiente valor del generador:
 \index{objeto generador}
 \index{generador!objeto}
@@ -15132,7 +15132,7 @@ Las expresiones generadoras son a menudo utilizadas con funciones como {\tt sum}
 \section{{\tt any} y {\tt all}}
 
 Python proporciona una función incorporada, {\tt any}, que toma una secuencia
-de valores booleanos y devuelve {\tt True} if alguno de los valores es {\tt
+de valores booleanos y devuelve {\tt True} si alguno de los valores es {\tt
   True}.  Funciona en las listas:
 \index{any}
 \index{función incorporada!any}
@@ -15178,7 +15178,7 @@ Sección~\ref{search}.
 \index{función incorporada any}
 
 
-\section{Conjuntos}
+\section{Conjuntos (set)}
 \label{sets}
 
 En la Sección~\ref{dictsub} utilizo diccionarios para encontrar las palabras
@@ -15197,19 +15197,19 @@ def diferencia(d1, d2):
     return res
 \end{verbatim}
 %
-En todos estos diccinarios, los valores son {\tt None} porque
+En todos estos diccionarios, los valores son {\tt None} porque
 nunca los utilizamos.  Como resultado, desperdiciamos algo de espacio de almacenamiento.
 \index{diferencia de diccionarios}
 
-Python proporciona otro tipo incorporado, llamado {\tt set} ({\em conjunto}), que
+Python proporciona otro tipo incorporado, llamado {\tt set} (conjunto), que
 se comporta como una colección de claves de diccionario sin valores.  Añadir
-elementos a un conjunto es rápido; por lo tanto lo es la verificación de pertenencia.  Y los conjuntos
+elementos a un conjunto es rápido; en consecuencia, lo es la verificación de pertenencia.  Además, los conjuntos
 proporcionan métodos y operadores para calcular operaciones de conjunto comunes.
 \index{conjunto}
 \index{objeto de conjunto}
 
 Por ejemplo, la resta de conjuntos está disponible como método llamado
-{\em diferencia} o como operador, {\tt -}.  Entonces podemos reescribir
+{\em diferencia} o como operador, {\tt -}.  Entonces, podemos reescribir
 la función {\tt diferencia} así:
 \index{diferencia de conjuntos}
 
@@ -15221,7 +15221,7 @@ def diferencia(d1, d2):
 El resultado es un conjunto en lugar de un diccionario, pero para operaciones como
 la iteración, el comportamiento es el mismo.
 
-Algunos de los ejercicios en este libro se pueden hacer de manera concisa y
+Algunos de los ejercicios de este libro se pueden hacer de manera concisa y
 eficiente con conjuntos.  Por ejemplo, aquí hay una solución a
 \verb"tiene_duplicados", del
 Ejercicio~\ref{duplicate}, que utiliza un diccionario:
@@ -15252,7 +15252,7 @@ aparece más de una vez, el conjunto será más pequeño que {\tt t}.  Si no
 hay duplicados, el conjunto será del mismo tamaño que {\tt t}.
 \index{duplicados}
 
-Podemos también utilizar conjunto para hacer algunos de los ejercicios del
+Podemos también utilizar conjuntos para hacer algunos de los ejercicios del
 Capítulo~\ref{wordplay}.  Por ejemplo, aquí hay una versión de
 \verb"usa_solo" con un bucle:
 
@@ -15280,7 +15280,7 @@ las letras en {\tt palabra} aparecen en {\tt disponibles}.
 Como ejercicio, reescribe \verb"evita" utilizando conjuntos.
 
 
-\section{Contadores}
+\section{Contadores (Counter)}
 
 Un contador ({\tt Counter}) es como un conjunto, excepto que si un elemento aparece más
 de una vez, el contador hace un seguimiento de cuántas veces aparece.
@@ -15315,7 +15315,7 @@ un elemento que no aparece.  En su lugar, devuelven 0:
 0
 \end{verbatim}
 
-Podemos usar contadores para reescribir \verb"es_anagrama" del
+Podemos utilizar contadores para reescribir \verb"es_anagrama" del
 Ejercicio~\ref{anagram}:
 
 \begin{verbatim}
@@ -15353,7 +15353,7 @@ este puede generar un valor nuevo sobre la marcha.
 \index{módulo collections}
 
 Cuando creas un defaultdict, proporcionas una función que se utiliza para
-crear valores nuevos.  Una función utilizada para crear oobjetos a veces es
+crear valores nuevos.  Una función utilizada para crear objetos a veces es
 llamada una {\bf fábrica}.  Las funciones incorporadas que crean listas, conjuntos
 y otros tipos se pueden utilizar como fábricas:
 \index{fábrica!función}
@@ -15448,7 +15448,7 @@ es necesaria y cuando no.  Como ejercicio, reescríbela utilizando
 un defaultdict.
 
 
-\section{Tuplas nombradas}
+\section{Tuplas con nombre (namedtuple)}
 
 Muchos objetos simples son básicamente colecciones de valores relacionados.
 Por ejemplo, el objeto Punto definido en el Capítulo~\ref{clobjects} contiene
@@ -15476,7 +15476,7 @@ Punto = namedtuple('Punto', ['x', 'y'])
 
 El primer argumento es el nombre de la clase que quieres crear.
 El segundo es una lista de atributos que los objetos Punto debieran tener,
-como cadenas.  El valor de retorno de {\tt namedtuple} es un objeto de clase:
+en forma de cadenas.  El valor de retorno de {\tt namedtuple} es un objeto de clase:
 \index{namedtuple}
 \index{objeto namedtuple}
 \index{collections}
@@ -15488,7 +15488,7 @@ como cadenas.  El valor de retorno de {\tt namedtuple} es un objeto de clase:
 \end{verbatim}
 
 {\tt Punto} automáticamente proporciona métodos como \verb"__init__" y
-\verb"__str__", así qque no tienes que escribirlos.
+\verb"__str__", así que no tienes que escribirlos.
 \index{objeto de clase}
 \index{clase!objeto}
 
@@ -15504,14 +15504,14 @@ El método init asigna argumentos a atributos utilizando nombres
 que proporcionas.  El método str imprime una representación del objeto Punto
 y sus atributos.
 
-Puedes acceder a los elementos de la tupla nombrada por sus nombres:
+Puedes acceder a los elementos de la tupla con nombre por sus nombres:
 
 \begin{verbatim}
 >>> p.x, p.y
 (1, 2)
 \end{verbatim}
 
-Sin embargo, puedes también tratar una tupla nombrada como una tupla:
+Sin embargo, puedes también tratar a una tupla con nombre como una tupla:
 
 \begin{verbatim}
 >>> p[0], p[1]
@@ -15522,11 +15522,11 @@ Sin embargo, puedes también tratar una tupla nombrada como una tupla:
 (1, 2)
 \end{verbatim}
 
-Las tuplas nombradas proporcionan una manera rápida de definir clases simples.
-El inconveniente es que las clases simples no siempre peranecen simples.
-Tal vez decidas más tarde que quieres agregar métodos a una tupla nombrada.
+Las tuplas con nombre proporcionan una manera rápida de definir clases simples.
+El inconveniente es que las clases simples no siempre permanecen simples.
+Tal vez decidas más tarde que quieres agregar métodos a una tupla con nombre.
 En ese caso, podrías definir una clase nueva que tome herencia de
-la tupla nombrada:
+la tupla con nombre:
 \index{herencia}
 
 \begin{verbatim}
@@ -15583,7 +15583,7 @@ palabras clave a valores:
 (1, 2.0) {'tercero': '3'}
 \end{verbatim}
 %
-Si tienes un diccionario de palabras clave y valores, puedes usasr el
+Si tienes un diccionario de palabras clave y valores, puedes utilizar el
 operador de dispersión {\tt **} para llamar a una función:
 \index{dispersión}
 
@@ -15615,7 +15615,7 @@ que especifiquen las opciones utilizadas frecuentemente.
 \begin{description}
 
 \item[expresión condicional:] Una expresión que tiene uno de dos
-valores, dependieno de una condición.
+valores, dependiendo de una condición.
 \index{expresión condicional}
 \index{condicional!expresión}
 
@@ -15665,7 +15665,7 @@ def coeficiente_binomial(n, k):
     return res
 \end{verbatim}
 
-Reescribe el cuerpo de la función usando expresiones condicionales
+Reescribe el cuerpo de la función utilizando expresiones condicionales
 anidadas.
 
 Nota: esta función no es muy eficiente porque termina calculando
@@ -16573,8 +16573,8 @@ magnitud de los operandos.  Los enteros muy grandes son una excepción; en
 ese caso el tiempo de ejecución aumenta con el número de dígitos.
 \index{analysis of primitives}
 
-Las operaciones de indexado---leer o escribir elementos en una secuencia
-o diccionario---también son de tiempo constante, independiente del tamaño
+Las operaciones de indexado ---leer o escribir elementos en una secuencia
+o diccionario--- también son de tiempo constante, independiente del tamaño
 de la estructura de datos.
 \index{indexar}
 
@@ -16617,8 +16617,8 @@ de las longitudes de los operandos.
 \index{concatenacióin de cadenas}
 
 Todos los métodos de cadena son lineales, pero si las longitudes de las
-cadenas están acotadas por una constante---por ejemplo, operaciones en caracteres
-individuales---se consideran de tiempo constante.
+cadenas están acotadas por una constante ---por ejemplo, operaciones en caracteres
+individuales--- se consideran de tiempo constante.
 El método de cadena {\tt join} es lineal: el tiempo de ejecución depende de
 la longitud total de las cadenas.
 \index{join@{\tt join}}
@@ -16737,7 +16737,7 @@ requiere que la secuencia esté en orden, lo cual podría requerir
 trabajo extra.
 
 Hay otra estructura de datos, llamada {\bf tabla hash} (en inglés, {\em hashtable}) que
-es incluso más rápida---puede hacer una búsqueda en tiempo constante---y
+es incluso más rápida ---puede hacer una búsqueda en tiempo constante--- y
 no requiere que los ítems estén ordenados.  Los diccionarios de Python
 se implementan usando tablas hash, por lo cual la mayoría de las operaciones
 de diccionario, incluyendo el operador {\tt in}, son de tiempo constante.
@@ -16976,7 +16976,7 @@ añadidos es $2n - 2$.
 Una característica importante de este algoritmo es que, cuando cambiamos el tamaño del
 HashTable, este crece de manera geométrica; es decir, multiplicamos el tamaño por una
 constante.  Si aumentas el tamaño de manera
-aritmética---añadiendo un número fijo cada vez---el tiempo promedio
+aritmética ---añadiendo un número fijo cada vez--- el tiempo promedio
 por cada {\tt add} es lineal.
 \index{cambio de tamaño geométrico}
 
