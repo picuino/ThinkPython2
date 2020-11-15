@@ -1,7 +1,7 @@
 ThinkPython2-spanish
 ====================
 
-`79% [#######################################...........]`
+`81% [########################################..........]`
 
 Código LaTeX de *Piensa en Python*, la traducción al español de Think Python (2nd Edition).  La vesión original se puede encontrar en su propio [repositorio](https://github.com/AllenDowney/ThinkPython2) o descargar desde su [sitio web](http://greenteapress.com/wp/think-python-2e/).
 

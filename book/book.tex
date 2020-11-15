@@ -836,7 +836,7 @@ mismo tiempo.
 \index{Python!ejecutar}
 
 Para evitar ese problema, recomiendo que comiences ejecutando Python
-en un navegador.  Después, cuando te familiarices con Python, haré
+en un navegador.  Después, cuando te acostumbres a Python, haré
 sugerencias para instalar Python en tu computador.
 \index{Python en un navegador}
 
@@ -3653,7 +3653,7 @@ otros son:
       x <= y               # x es menor o igual que y
 \end{verbatim}
 %
-Aunque estas operaciones probablemente sean familiares para ti, los símbolos de Python
+Aunque estas operaciones probablemente sean comunes para ti, los símbolos de Python
 son diferentes a los símbolos matemáticos.  Un error común
 es usar el signo igual simple ({\tt =}) en lugar de un signo igual doble
 ({\tt ==}).  Recuerda que {\tt =} es un operador de asignación y
@@ -14902,28 +14902,28 @@ Solution: \url{http://thinkpython2.com/code/PokerHandSoln.py}.
 \end{exercise}
 
 
-\chapter{The Goodies}
+\chapter{Trucos extra}
 
-One of my goals for this book has been to teach you as little Python
-as possible.  When there were two ways to do something, I picked
-one and avoided mentioning the other.  Or sometimes I put the second
-one into an exercise.
+Uno de mis objetivos para este libro ha sido enseñarte la menor cantidad de Python
+posible.  Cuando hubo dos maneras de hacer algo, escogí
+una y evité mencionar la otra.  O a veces puse la segunda
+dentro de un ejercicio.
 
-Now I want to go back for some of the good bits that got left behind.
-Python provides a number of features that are not really necessary---you
-can write good code without them---but with them you can sometimes
-write code that's more concise, readable or efficient, and sometimes
-all three.
+Ahora quiero volver por algunas de estas cosas buenas que dejé atrás.
+Python proporciona un número de características que no son realmente necesarias---puedes
+escribir buen código sin estas---pero con estas a veces pudes
+escribir código más conciso, legible o eficiente, y a veces
+las tres cosas a la vez.
 
 % TODO: add the with statement
 
-\section{Conditional expressions}
+\section{Expresiones condicionales}
 
-We saw conditional statements in Section~\ref{conditional.execution}.
-Conditional statements are often used to choose one of two values;
-for example:
-\index{conditional expression}
-\index{expression!conditional}
+Vimos las sentencias condicionales en la Sección~\ref{conditional.execution}.
+Las sentencias condicionales se usan a menudo para escoger uno de dos valores;
+por ejemplo:
+\index{expresión condicional}
+\index{condicional!expresión}
 
 \begin{verbatim}
 if x > 0:
@@ -14932,27 +14932,27 @@ else:
     y = float('nan')
 \end{verbatim}
 
-This statement checks whether {\tt x} is positive.  If so, it computes
-{\tt math.log}.  If not, {\tt math.log} would raise a ValueError.  To
-avoid stopping the program, we generate a ``NaN'', which is a special
-floating-point value that represents ``Not a Number''.
+Esta sentencia verifica si {\tt x} es positivo.  Si lo es, calcula
+{\tt math.log}.  Si no, {\tt math.log} levantaría un ValueError.  Para
+evitar detener el programa, generamos un ``NaN'', que es un valor
+de coma flotante especial que representa ``Not a Number''.
 \index{NaN}
-\index{floating-point}
+\index{coma flotante}
 
-We can write this statement more concisely using a {\bf conditional
-expression}:
+Podemos escribir esta sentencia de manera más concisa usando una {\bf expresión
+condicional}:
 
 \begin{verbatim}
 y = math.log(x) if x > 0 else float('nan')
 \end{verbatim}
 
-You can almost read this line like English: ``{\tt y} gets log-{\tt x}
-if {\tt x} is greater than 0; otherwise it gets NaN''.
+Puedes casi leer esta línea como si estuviera en inglés: ``{\tt y} es log-{\tt x}
+si {\tt x} es mayor que 0; de lo contrario es NaN''.
 
-Recursive functions can sometimes be rewritten using conditional
-expressions.  For example, here is a recursive version of {\tt factorial}:
+Las funciones recursivas a veces se pueden reescribir usando expresiones
+condicionales.  Por ejemplo, aquí hay una versión recursiva de {\tt factorial}:
 \index{factorial}
-\index{function!factorial}
+\index{función!factorial}
 
 \begin{verbatim}
 def factorial(n):
@@ -14962,18 +14962,18 @@ def factorial(n):
         return n * factorial(n-1)
 \end{verbatim}
 
-We can rewrite it like this:
+Podemos reescribirla así:
 
 \begin{verbatim}
 def factorial(n):
     return 1 if n == 0 else n * factorial(n-1)
 \end{verbatim}
 
-Another use of conditional expressions is handling optional
-arguments.  For example, here is the init method from
-{\tt GoodKangaroo} (see Exercise~\ref{kangaroo}):
-\index{optional argument}
-\index{argument!optional}
+Otro uso de las expresiones condicionales es al manejar argumentos
+opcionales.  Por ejemplo, aquí está el método init de
+{\tt GoodKangaroo} (ver Ejercicio~\ref{kangaroo}):
+\index{argumento opcional}
+\index{opcional!argumento}
 
 \begin{verbatim}
     def __init__(self, name, contents=None):
@@ -14983,7 +14983,7 @@ arguments.  For example, here is the init method from
         self.pouch_contents = contents
 \end{verbatim}
 
-We can rewrite this one like this:
+Podemos reescribirla así:
 
 \begin{verbatim}
     def __init__(self, name, contents=None):
@@ -14991,19 +14991,19 @@ We can rewrite this one like this:
         self.pouch_contents = [] if contents == None else contents
 \end{verbatim}
 
-In general, you can replace a conditional statement with a conditional
-expression if both branches contain simple expressions that are
-either returned or assigned to the same variable.
-\index{conditional statement}
-\index{statement!conditional}
+En general, puedes reemplazar una sentencia condicional con una expresión
+condicional si ambas ramas contienen expresiones simples que se
+devuelven o asignan a la misma variable.
+\index{sentencia condicional}
+\index{condicional!sentencia}
 
 
 
-\section{List comprehensions}
+\section{Comprensiones de lista}
 
-In Section~\ref{filter} we saw the map and filter patterns.  For
-example, this function takes a list of strings, maps the string method
-{\tt capitalize} to the elements, and returns a new list of strings:
+En la Sección~\ref{filter} vimos los patrones de mapa y filtro.  Por
+ejemplo, esta función toma una lista de cadenas, mapea el método de cadena
+{\tt capitalize} a los elementos y devuelve una nueva lista de cadenas:
 
 \begin{verbatim}
 def capitalize_all(t):
@@ -15013,31 +15013,31 @@ def capitalize_all(t):
     return res
 \end{verbatim}
 
-We can write this more concisely using a {\bf list comprehension}:
-\index{list comprehension}
+Podemos escribir esto de manera más concisa usando una {\bf comprensión de lista}:
+\index{comprensión de lista}
 
 \begin{verbatim}
 def capitalize_all(t):
     return [s.capitalize() for s in t]
 \end{verbatim}
 
-The bracket operators indicate that we are constructing a new
-list.  The expression inside the brackets specifies the elements
-of the list, and the {\tt for} clause indicates what sequence
-we are traversing.
-\index{list}
-\index{for loop}
+Los operadores de corchetes indican que estamos construyendo una lista
+nueva.  La expresión dentro de los corchetes especifica los elementos
+de la lista, y la cláusula {\tt for} indica qué secuencia
+estamos recorriendo.
+\index{lista}
+\index{for!bucle}
 
-The syntax of a list comprehension is a little awkward because
-the loop variable, {\tt s} in this example, appears in the expression
-before we get to the definition.
-\index{loop variable}
+La sintaxis de una comprensión de lista es un poco incómoda porque
+la variable del bucle, {\tt s} en este ejemplo, aparece en la expresión
+antes de llegar a la definición.
+\index{varlable del bucle}
 
-List comprehensions can also be used for filtering.  For example,
-this function selects only the elements of {\tt t} that are
-upper case, and returns a new list:
-\index{filter pattern}
-\index{pattern!filter}
+Las comprensiones de lista también pueden ser utilizadas para filtrar.  Por ejemplo,
+esta función selecciona solo los elementos de {\tt t} que están
+en mayúsculas y devuelve una lista nueva:
+\index{patrón de filtro}
+\index{filtro!patrón}
 
 \begin{verbatim}
 def only_upper(t):
@@ -15048,32 +15048,32 @@ def only_upper(t):
     return res
 \end{verbatim}
 
-We can rewrite it using a list comprehension
+Podemos reescribirla utilizando una lista por comprensión
 
 \begin{verbatim}
 def only_upper(t):
     return [s for s in t if s.isupper()]
 \end{verbatim}
 
-List comprehensions are concise and easy to read, at least for simple
-expressions.  And they are usually faster than the equivalent for
-loops, sometimes much faster.  So if you are mad at me for not
-mentioning them earlier, I understand.
+Las comprensiones de lista son concisas y fáciles de leer, al menos para expresiones
+simples.  Y generalmente son más rápidas que el equivalente para
+bucles, a veces mucho más rápidas.  Así que si estás molesto conmigo por no
+mencionarlos antes, lo entiendo.
 
-But, in my defense, list comprehensions are harder to debug because
-you can't put a print statement inside the loop.  I suggest that you
-use them only if the computation is simple enough that you are likely
-to get it right the first time.  And for beginners that means never.
-\index{debugging}
+Sin embargo, en mi defensa, las comprensiones de lista son difíciles de depurar porque
+no puedes poner una sentencia print dentro del bucle.  Sugiero que los
+utilices solo si el cálculo es lo suficientemente simple para que sea probable
+que lo hagas bien la primera vez.  Y para principianes eso significa nunca.
+\index{depurar}
 
 
 
-\section{Generator expressions}
+\section{Expresiones generadoras}
 
-{\bf Generator expressions} are similar to list comprehensions, but
-with parentheses instead of square brackets:
-\index{generator expression}
-\index{expression!generator}
+Las {\bf expresiones generadoras} con similares a las comprensiones de lista, pero
+con paréntesis en lugar de corchetes:
+\index{expresión generadora}
+\index{generadora!expresión}
 
 \begin{verbatim}
 >>> g = (x**2 for x in range(5))
@@ -15081,12 +15081,12 @@ with parentheses instead of square brackets:
 <generator object <genexpr> at 0x7f4c45a786c0>
 \end{verbatim}
 %
-The result is a generator object that knows how to iterate through
-a sequence of values.  But unlike a list comprehension, it does not
-compute the values all at once; it waits to be asked.  The built-in
-function {\tt next} gets the next value from the generator:
-\index{generator object}
-\index{object!generator}
+El resultado en un objeto generador que sabe cómo iterar a través de
+una secuencia de valores.  Pero a diferencia de una comprensión de lista, esta no
+calcula todos los valores de una vez; espera hasta ser consultado.  La función
+incorporada {\tt next} obtiene el siguiente valor del generador:
+\index{objeto generador}
+\index{generador!objeto}
 
 \begin{verbatim}
 >>> next(g)
@@ -15095,11 +15095,11 @@ function {\tt next} gets the next value from the generator:
 1
 \end{verbatim}
 %
-When you get to the end of the sequence, {\tt next} raises a
-StopIteration exception.  You can also use a {\tt for} loop to iterate
-through the values:
+Cuando llegas al final de la secuencia, {\tt next} levanta una
+excepción StopIteration.  Puedes también utilizar un bucle {\tt for} para iterar
+a través de los valores:
 \index{StopIteration}
-\index{exception!StopIteration}
+\index{excepción!StopIteration}
 
 \begin{verbatim}
 >>> for val in g:
@@ -15109,19 +15109,19 @@ through the values:
 16
 \end{verbatim}
 %
-The generator object keeps track of where it is in the sequence,
-so the {\tt for} loop picks up where {\tt next} left off.  Once the
-generator is exhausted, it continues to raise {\tt StopIteration}:
+El objeto generador hace un seguimiento de dónde está en la secuencia,
+por lo cual el bucle {\tt for} retoma donde {\tt next} lo dejó.  Una vez que el
+generador se agota, continúa para levantar {\tt StopIteration}:
 
 \begin{verbatim}
 >>> next(g)
 StopIteration
 \end{verbatim}
 
-Generator expressions are often used with functions like {\tt sum},
-{\tt max}, and {\tt min}:
+Las expresiones generadoras son a menudo utilizadas con funciones como {\tt sum},
+{\tt max} y {\tt min}:
 \index{sum}
-\index{function!sum}
+\index{función sum}
 
 \begin{verbatim}
 >>> sum(x**2 for x in range(5))
@@ -15129,105 +15129,105 @@ Generator expressions are often used with functions like {\tt sum},
 \end{verbatim}
 
 
-\section{{\tt any} and {\tt all}}
+\section{{\tt any} y {\tt all}}
 
-Python provides a built-in function, {\tt any}, that takes a sequence
-of boolean values and returns {\tt True} if any of the values are {\tt
-  True}.  It works on lists:
+Python proporciona una función incorporada, {\tt any}, que toma una secuencia
+de valores booleanos y devuelve {\tt True} if alguno de los valores es {\tt
+  True}.  Funciona en las listas:
 \index{any}
-\index{built-in function!any}
+\index{función incorporada!any}
 
 \begin{verbatim}
 >>> any([False, False, True])
 True
 \end{verbatim}
 %
-But it is often used with generator expressions:
-\index{generator expression}
-\index{expression!generator}
+Pero se utiliza a menudo con expresiones generadoras:
+\index{expresión generadora}
+\index{generadora!expresión}
 
 \begin{verbatim}
 >>> any(letter == 't' for letter in 'monty')
 True
 \end{verbatim}
 %
-That example isn't very useful because it does the same thing
-as the {\tt in} operator.  But we could use {\tt any} to rewrite
-some of the search functions we wrote in Section~\ref{search}.  For
-example, we could write {\tt avoids} like this:
-\index{search pattern}
-\index{pattern!search}
+Ese ejemplo no es muy útil porque hace lo mismo que
+el operador {\tt in}.  Sin embargo, podríamos utilizar {\tt any} para reescribir
+alguna de las funciones de búsqueda que escribimos en la Sección~\ref{search}.  Por
+ejemplo, podríamos escribir {\tt evita} así:
+\index{patrón de búsqueda}
+\index{búsqueda!patrón de}
 
 \begin{verbatim}
-def avoids(word, forbidden):
-    return not any(letter in forbidden for letter in word)
+def evita(palabra, prohibidas):
+    return not any(letra in prohibidas for letra in palabra)
 \end{verbatim}
 %
-The function almost reads like English, ``{\tt word} avoids
-{\tt forbidden} if there are not any forbidden letters in {\tt word}.''
+La función se lee casi como en inglés, ``{\tt palabra} evita
+{\tt prohibidas} si no hay alguna letra prohibida en {\tt palabra}.''
 
-Using {\tt any} with a generator expression is efficient because
-it stops immediately if it finds a {\tt True} value,
-so it doesn't have to evaluate the whole sequence.
+Utilizar {\tt any} con una expresión generadora es eficiente porque
+se detiene inmediatamente si encuentra un valor {\tt True},
+por lo cual no tiene que evaluar la secuencia completa.
 
-Python provides another built-in function, {\tt all}, that returns
-{\tt True} if every element of the sequence is {\tt True}.  As
-an exercise, use {\tt all} to re-write \verb"uses_all" from
-Section~\ref{search}.
+Python proporciona otra función incorporada, {\tt all}, que devuelve
+{\tt True} si cada elemento de la secuencia es {\tt True}.  Como
+ejercicio, utiliza {\tt all} para reescribir \verb"usa_todas" de la
+Sección~\ref{search}.
 \index{all}
-\index{built-in function!any}
+\index{función incorporada any}
 
 
-\section{Sets}
+\section{Conjuntos}
 \label{sets}
 
-In Section~\ref{dictsub} I use dictionaries to find the words
-that appear in a document but not in a word list.  The function
-I wrote takes {\tt d1}, which contains the words from the document
-as keys, and {\tt d2}, which contains the list of words.  It
-returns a dictionary that contains the keys from {\tt d1} that
-are not in {\tt d2}.
+En la Sección~\ref{dictsub} utilizo diccionarios para encontrar las palabras
+que aparecen en un documento pero no en una lista de palabras.  La función
+que escribí toma a {\tt d1}, que contiene las palabras del documento
+como claves, y a {\tt d2}, que contiene la lista de palabras.  Este
+devuelve un diccionario que contiene las claves de {\tt d1} que
+no están en {\tt d2}.
 
 \begin{verbatim}
-def subtract(d1, d2):
+def diferencia(d1, d2):
     res = dict()
-    for key in d1:
-        if key not in d2:
-            res[key] = None
+    for clave in d1:
+        if clave not in d2:
+            res[clave] = None
     return res
 \end{verbatim}
 %
-In all of these dictionaries, the values are {\tt None} because
-we never use them.  As a result, we waste some storage space.
-\index{dictionary subtraction}
+En todos estos diccinarios, los valores son {\tt None} porque
+nunca los utilizamos.  Como resultado, desperdiciamos algo de espacio de almacenamiento.
+\index{diferencia de diccionarios}
 
-Python provides another built-in type, called a {\tt set}, that
-behaves like a collection of dictionary keys with no values.  Adding
-elements to a set is fast; so is checking membership.  And sets
-provide methods and operators to compute common set operations.
-\index{set}
-\index{object!set}
+Python proporciona otro tipo incorporado, llamado {\tt set} ({\em conjunto}), que
+se comporta como una colección de claves de diccionario sin valores.  Añadir
+elementos a un conjunto es rápido; por lo tanto lo es la verificación de pertenencia.  Y los conjuntos
+proporcionan métodos y operadores para calcular operaciones de conjunto comunes.
+\index{conjunto}
+\index{objeto de conjunto}
 
-For example, set subtraction is available as a method called
-{\tt difference} or as an operator, {\tt -}.  So we can rewrite
-{\tt subtract} like this:
-\index{set subtraction}
+Por ejemplo, la resta de conjuntos está disponible como método llamado
+{\em diferencia} o como operador, {\tt -}.  Entonces podemos reescribir
+la función {\tt diferencia} así:
+\index{diferencia de conjuntos}
 
 \begin{verbatim}
-def subtract(d1, d2):
+def diferencia(d1, d2):
     return set(d1) - set(d2)
 \end{verbatim}
 %
-The result is a set instead of a dictionary, but for operations like
-iteration, the behavior is the same.
+El resultado es un conjunto en lugar de un diccionario, pero para operaciones como
+la iteración, el comportamiento es el mismo.
 
-Some of the exercises in this book can be done concisely and
-efficiently with sets.  For example, here is a solution to
-\verb"has_duplicates", from
-Exercise~\ref{duplicate}, that uses a dictionary:
+Algunos de los ejercicios en este libro se pueden hacer de manera concisa y
+eficiente con conjuntos.  Por ejemplo, aquí hay una solución a
+\verb"tiene_duplicados", del
+Ejercicio~\ref{duplicate}, que utiliza un diccionario:
 
 \begin{verbatim}
-def has_duplicates(t):
+def tiene_duplicados(t):
     d = {}
     for x in t:
         if x in d:
@@ -15247,95 +15247,95 @@ def has_duplicates(t):
     return len(set(t)) < len(t)
 \end{verbatim}
 %
-An element can only appear in a set once, so if an element in {\tt t}
-appears more than once, the set will be smaller than {\tt t}.  If there
-are no duplicates, the set will be the same size as {\tt t}.
-\index{duplicate}
+Un elemento puede aparecer en un conjunto una sola vez, por lo cual si un elemento en {\tt t}
+aparece más de una vez, el conjunto será más pequeño que {\tt t}.  Si no
+hay duplicados, el conjunto será del mismo tamaño que {\tt t}.
+\index{duplicados}
 
-We can also use sets to do some of the exercises in
-Chapter~\ref{wordplay}.  For example, here's a version of
-\verb"uses_only" with a loop:
+Podemos también utilizar conjunto para hacer algunos de los ejercicios del
+Capítulo~\ref{wordplay}.  Por ejemplo, aquí hay una versión de
+\verb"usa_solo" con un bucle:
 
 \begin{verbatim}
-def uses_only(word, available):
-    for letter in word:
-        if letter not in available:
+def usa_solo(palabra, disponibles):
+    for letra in palabra:
+        if letra not in disponibles:
             return False
     return True
 \end{verbatim}
 %
-\verb"uses_only" checks whether all letters in {\tt word} are
-in {\tt available}.  We can rewrite it like this:
+\verb"usa_solo" verifica si todas las letras en {\tt palabra} están
+en {\tt disponibles}.  Podemos reescribirla así:
 
 \begin{verbatim}
-def uses_only(word, available):
-    return set(word) <= set(available)
+def usa_solo(palabra, disponibles):
+    return set(palabra) <= set(disponibles)
 \end{verbatim}
 %
-The \verb"<=" operator checks whether one set is a subset of another,
-including the possibility that they are equal, which is true if all
-the letters in {\tt word} appear in {\tt available}.
-\index{subset}
+El opereador \verb"<=" verifica si un conjunto es subconjunto de otro,
+incluyendo la posibilidad de que sean iguales, lo cual es verdadero si todas
+las letras en {\tt palabra} aparecen en {\tt disponibles}.
+\index{subconjunto}
 
-As an exercise, rewrite \verb"avoids" using sets.
+Como ejercicio, reescribe \verb"evita" utilizando conjuntos.
 
 
-\section{Counters}
+\section{Contadores}
 
-A Counter is like a set, except that if an element appears more
-than once, the Counter keeps track of how many times it appears.
-If you are familiar with the mathematical idea of a {\bf multiset},
-a Counter is a natural way to represent a multiset.
+Un contador ({\tt Counter}) es como un conjunto, excepto que si un elemento aparece más
+de una vez, el contador hace un seguimiento de cuántas veces aparece.
+Si la idea matemática de {\bf multiconjunto} se te hace familiar,
+un contador es una manera natural de representar un multiconjunto.
 \index{Counter}
-\index{object!Counter}
-\index{multiset}
+\index{objeto Counter}
+\index{multiconjunto}
 
-Counter is defined in a standard module called {\tt collections},
-so you have to import it.  You can initialize a Counter with a string,
-list, or anything else that supports iteration:
+{\tt Counter} está definido en un módulo estándar llamado {\tt collections},
+por lo cual tienes que importarlo.  Puedes inicializar un contador con una cadena,
+lista, o cualquier otra cosa que soporte iteraciones:
 \index{collections}
-\index{module!collections}
+\index{módulo collections}
 
 \begin{verbatim}
 >>> from collections import Counter
->>> count = Counter('parrot')
->>> count
+>>> contar = Counter('parrot')
+>>> contar
 Counter({'r': 2, 't': 1, 'o': 1, 'p': 1, 'a': 1})
 \end{verbatim}
 
-Counters behave like dictionaries in many ways; they map from each
-key to the number of times it appears.  As in dictionaries,
-the keys have to be hashable.
+Los contadores se comportan como diccionarios en muchas maneras; mapean de cada
+clave al número de veces que este aparece.  Al igual que en los diccionarios,
+las claves tienen que ser hashables.
 
-Unlike dictionaries, Counters don't raise an exception if you access
-an element that doesn't appear.  Instead, they return 0:
+A diferencia de los diccionarios, los contadores no elevan una excepción si accedes a
+un elemento que no aparece.  En su lugar, devuelven 0:
 
 \begin{verbatim}
->>> count['d']
+>>> contar['d']
 0
 \end{verbatim}
 
-We can use Counters to rewrite \verb"is_anagram" from
-Exercise~\ref{anagram}:
+Podemos usar contadores para reescribir \verb"es_anagrama" del
+Ejercicio~\ref{anagram}:
 
 \begin{verbatim}
-def is_anagram(word1, word2):
-    return Counter(word1) == Counter(word2)
+def es_anagrama(palabra1, palabra2):
+    return Counter(palabra1) == Counter(palabra2)
 \end{verbatim}
 
-If two words are anagrams, they contain the same letters with the same
-counts, so their Counters are equivalent.
+Si dos palabras son anagramas, contienen la misma cantidad de letras con la mismas
+cuentas, por tanto son equivalentes.
 
-Counters provide methods and operators to perform set-like operations,
-including addition, subtraction, union and intersection.  And
-they provide an often-useful method, \verb"most_common", which
-returns a list of value-frequency pairs, sorted from most common to
-least:
+Los contadores proporcionan métodos y operadores para realizar operaciones como las de los conjuntos,
+incluyendo la suma, resta, unión e intersección.  Además,
+proporcionan un método que a menudo es útil, \verb"most_common", que
+devuelve una lista de pares valor-frecuencia, ordenados desde el más común al
+menos común:
 
 \begin{verbatim}
->>> count = Counter('parrot')
->>> for val, freq in count.most_common(3):
-...     print(val, freq)
+>>> contar = Counter('parrot')
+>>> for valor, frecuencia in contar.most_common(3):
+...     print(valor, frecuencia)
 r 2
 p 1
 a 1
