@@ -12384,71 +12384,71 @@ el Punto resultante a {\tt centro}:
 \end{verbatim}
 %
 
-\section{Objects are mutable}
-\index{object!mutable}
-\index{mutability}
+\section{Los objetos son mutables}
+\index{objeto!mutable}
+\index{mutabilidad}
 
-You can change the state of an object by making an assignment to one of
-its attributes.  For example, to change the size of a rectangle
-without changing its position, you can modify the values of {\tt
-width} and {\tt height}:
+Puedes cambiar el estado de un objeto haciendo una asignación a uno de
+sus atritubos.  Por ejemplo, para cambiar el tamaño de un rectángulo
+sin cambiar su posición, puedes modificar los valores de {\tt
+anchura} y {\tt altura}:
 
 \begin{verbatim}
-box.width = box.width + 50
-box.height = box.height + 100
+caja.anchura = caja.anchura + 50
+caja.altura = caja.altura + 100
 \end{verbatim}
 %
-You can also write functions that modify objects.  For example,
-\verb"grow_rectangle" takes a Rectangle object and two numbers,
-{\tt dwidth} and {\tt dheight}, and adds the numbers to the
-width and height of the rectangle:
+Puedes también escribir funciones que modifiquen objetos.  Por ejemplo,
+\verb"crecer_rectangulo" toma un objeto Rectángulo y dos números,
+{\tt d\_anchura} and {\tt d\_altura}, and adds the numbers to the
+width and altura of the rectangle:
 
 \begin{verbatim}
-def grow_rectangle(rect, dwidth, dheight):
-    rect.width += dwidth
-    rect.height += dheight
+def crecer_rectangulo(rect, d_anchura, d_altura):
+    rect.anchura += d_anchura
+    rect.altura += d_altura
 \end{verbatim}
 %
 Here is an example that demonstrates the effect:
 
 \begin{verbatim}
->>> box.width, box.height
+>>> caja.anchura, caja.altura
 (150.0, 300.0)
->>> grow_rectangle(box, 50, 100)
->>> box.width, box.height
+>>> crecer_rectangulo(box, 50, 100)
+>>> caja.anchura, caja.altura
 (200.0, 400.0)
 \end{verbatim}
 %
-Inside the function, {\tt rect} is an
-alias for {\tt box}, so when the function modifies {\tt rect},
-{\tt box} changes.
+Dento de la función, {\tt rect} es un
+alias para {\tt caja}, por tanto cuando la función modifica a {\tt rect},
+{\tt caja} cambia.
 
-As an exercise, write a function named \verb"move_rectangle" that takes
-a Rectangle and two numbers named {\tt dx} and {\tt dy}.  It
-should change the location of the rectangle by adding {\tt dx}
-to the {\tt x} coordinate of {\tt corner} and adding {\tt dy}
-to the {\tt y} coordinate of {\tt corner}.
+Como ejercicio, escribe una función con nombre \verb"mover_rectangulo" que tome
+un Rectángulo y dos números con nombre {\tt dx} y {\tt dy}.  Debería
+cambiar la ubicación del rectángulo sumando {\tt dx}
+a la coordenada {\tt x} de {\tt esquina} y sumando {\tt dy}
+a la coordenada {\tt y} de {\tt esquina}.
 
 
-\section{Copying}
+\section{Copiar}
 \label{copying}
-\index{aliasing}
+\index{alias}
 
-Aliasing can make a program difficult to read because changes
-in one place might have unexpected effects in another place.
-It is hard to keep track of all the variables that might refer
-to a given object.
-\index{copying objects}
-\index{object!copying}
-\index{copy module}
-\index{module!copy}
+Los alias puedes hacer que un programa sea difícil de leer porque los cambios
+en un lugar podrían tener efectos inesperados en otro lugar.
+Es difícil hacer un seguimiento de todas las variables que podrían referirse
+a un objeto dado.
+\index{copiar objetos}
+\index{objetos!copiar}
+\index{módulo copy}
+\index{copy!módulo}
 
-Copying an object is often an alternative to aliasing.
-The {\tt copy} module contains a function called {\tt copy} that
-can duplicate any object:
+Copiar un objeto es a menudo una alternativa a los alias.
+El módulo {\tt copy} contiene una función llamada {\tt copy} que
+puede duplicar cualquier objeto:
 
 \begin{verbatim}
->>> p1 = Point()
+>>> p1 = Punto()
 >>> p1.x = 3.0
 >>> p1.y = 4.0
 
@@ -12456,13 +12456,13 @@ can duplicate any object:
 >>> p2 = copy.copy(p1)
 \end{verbatim}
 %
-{\tt p1} and {\tt p2} contain the same data, but they are
-not the same Point.
+{\tt p1} y {\tt p2} contienen los mismos datos, pero no son
+el mismo Punto.
 
 \begin{verbatim}
->>> print_point(p1)
+>>> imprimir_punto(p1)
 (3, 4)
->>> print_point(p2)
+>>> imprimir_punto(p2)
 (3, 4)
 >>> p1 is p2
 False
@@ -12470,76 +12470,76 @@ False
 False
 \end{verbatim}
 %
-The {\tt is} operator indicates that {\tt p1} and {\tt p2} are not the
-same object, which is what we expected.  But you might have expected
-{\tt ==} to yield {\tt True} because these points contain the same
-data.  In that case, you will be disappointed to learn that for
-instances, the default behavior of the {\tt ==} operator is the same
-as the {\tt is} operator; it checks object identity, not object
-equivalence.  That's because for programmer-defined types, Python doesn't
-know what should be considered equivalent.  At least, not yet.
-\index{is operator}
-\index{operator!is}
-\index{identity}
-\index{equivalence}
+El operados {\tt is} indica que {\tt p1} y {\tt p2} no son el
+mismo objeto, que es lo que esperábamos.  Sin embargo, tal vez hayas esperado
+que {\tt ==} entregue {\tt True} porque estos pountos contienen los mismos
+datos.  En ese caso, te decepcionará aprender que para
+instancias, el comportamiento por defecto del operador {\tt ==} es el mismo
+que el operador {\tt is}; verifica identidad de objeto, no equivalencia
+de objeto.  Eso ocurre debido a que para tipos definidos por el programados, Python no
+sabe qué debería considerarse equivalente.  Al menos, no todavía.
+\index{is!operador}
+\index{operador is}
+\index{identidad}
+\index{equivalencia}
 
-If you use {\tt copy.copy} to duplicate a Rectangle, you will find
-that it copies the Rectangle object but not the embedded Point.
-\index{embedded object!copying}
+Si usas {\tt copy.copy} para duplicar un Rectángulo, encontrarás
+que copia el objeto Rectángulo pero no el Punto incrustado.
+\index{objeto incrustado!copiar}
 
 \begin{verbatim}
->>> box2 = copy.copy(box)
->>> box2 is box
+>>> caja2 = copy.copy(caja)
+>>> caja2 is caja
 False
->>> box2.corner is box.corner
+>>> caja2.esquina is caja.esquina
 True
 \end{verbatim}
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/rectangle2.pdf}}
-\caption{Object diagram.}
+\caption{Diagrama de objeto.}
 \label{fig.rectangle2}
 \end{figure}
 
-Figure~\ref{fig.rectangle2} shows what the object diagram looks like.
-\index{state diagram}
-\index{diagram!state}
-\index{object diagram}
-\index{diagram!object}
-This operation is called a {\bf shallow copy} because it copies the
-object and any references it contains, but not the embedded objects.
-\index{shallow copy}
-\index{copy!shallow}
+La Figura~\ref{fig.rectangle2} muestra cómo se ve el diagrama de objeto.
+\index{diagrama de estado}
+\index{estado!diagrama de}
+\index{diagrama de objeto}
+\index{objeto!diagrama de}
+Esta operación se llama {\bf copia superficial} porque copia al
+objeto y cualquier referencia que contenga, pero no los objetos incrustados.
+\index{copia superficial}
+\index{superficial!copia}
 
-For most applications, this is not what you want.  In this example,
-invoking \verb"grow_rectangle" on one of the Rectangles would not
-affect the other, but invoking \verb"move_rectangle" on either would
-affect both!  This behavior is confusing and error-prone.
-\index{deep copy}
-\index{copy!deep}
+Para la mayoría de las aplicaciones, esto no es lo que quieres.  En este ejemplo,
+invocar a \verb"crecer_rectangulo" en uno de los Rectángulos no
+afectaría al otro, ¡pero invocar a \verb"mover_rectangulo" en cualquiera
+afectaría a ambos!  Este comportamiento es confuso y propenso a errores.
+\index{copia profunda}
+\index{profunda!copia}
 
-Fortunately, the {\tt copy} module provides a method named {\tt
-deepcopy} that copies not only the object but also
-the objects it refers to, and the objects {\em they} refer to,
-and so on.
-You will not be surprised to learn that this operation is
-called a {\bf deep copy}.
-\index{deepcopy function}
-\index{function!deepcopy}
+Afortunadamente, el módulo {\tt copy} proporciona un método con nombre {\tt
+deepcopy} que copia no solo el objeto sino también
+los objetos a los cuales este se refiere, y los objetos a los cuales {\em estos} se refieren,
+y así sucesivamente.
+No te sorporenderá aprender que esta operación se
+llama {\bf copia profunda}.
+\index{función deepcopy}
+\index{deepcopy!función}
 
 \begin{verbatim}
->>> box3 = copy.deepcopy(box)
->>> box3 is box
+>>> caja3 = copy.deepcopy(caja)
+>>> caja3 is caja
 False
->>> box3.corner is box.corner
+>>> caja3.esquina is caja.esquina
 False
 \end{verbatim}
 %
-{\tt box3} and {\tt box} are completely separate objects.
+{\tt caja3} y {\tt caja} son objetos completamente separados.
 
-As an exercise, write a version of \verb"move_rectangle" that creates and
-returns a new Rectangle instead of modifying the old one.
+Como ejercicio, escribe una versión de \verb"mover_rectangulo" que cree y
+devuelva un Rectángulo nuevo en lugar de modificar el antiguo.
 
 
 \section{Debugging}
