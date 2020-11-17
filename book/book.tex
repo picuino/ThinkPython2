@@ -12409,7 +12409,7 @@ def crecer_rectangulo(rect, d_anchura, d_altura):
     rect.altura += d_altura
 \end{verbatim}
 %
-Here is an example that demonstrates the effect:
+Aquí hay un ejemplo que demuestra el efecto:
 
 \begin{verbatim}
 >>> caja.anchura, caja.altura
@@ -12542,47 +12542,47 @@ Como ejercicio, escribe una versión de \verb"mover_rectangulo" que cree y
 devuelva un Rectángulo nuevo en lugar de modificar el antiguo.
 
 
-\section{Debugging}
+\section{Depuración}
 \label{hasattr}
-\index{debugging}
+\index{depuración}
 
-When you start working with objects, you are likely to encounter
-some new exceptions.  If you try to access an attribute
-that doesn't exist, you get an {\tt AttributeError}:
-\index{exception!AttributeError}
+Cuando comienzas a trabajar con objetos, es probable que te encuentres
+algunas excepciones nuevas.  Si intentas acceder a un atributo
+que no existe, obtienes un {\tt AttributeError}:
+\index{excepción AttributeError}
 \index{AttributeError}
 
 \begin{verbatim}
->>> p = Point()
+>>> p = Punto()
 >>> p.x = 3
 >>> p.y = 4
 >>> p.z
 AttributeError: Point instance has no attribute 'z'
 \end{verbatim}
 %
-If you are not sure what type an object is, you can ask:
-\index{type function}
-\index{function!type}
+Si no estás seguro de qué tipo es un objeto, puedes consultar:
+\index{función type}
+\index{type!función}
 
 \begin{verbatim}
 >>> type(p)
-<class '__main__.Point'>
+<class '__main__.Punto'>
 \end{verbatim}
 %
-You can also use {\tt isinstance} to check whether an object
-is an instance of a class:
-\index{isinstance function}
-\index{function!isinstance}
+Puedes también utilizar {\tt isinstance} para verificar si un objeto
+es una instancia de una clase:
+\index{función isinstance}
+\index{isinstance!función}
 
 \begin{verbatim}
->>> isinstance(p, Point)
+>>> isinstance(p, Punto)
 True
 \end{verbatim}
 %
-If you are not sure whether an object has a particular attribute,
-you can use the built-in function {\tt hasattr}:
-\index{hasattr function}
-\index{function!hasattr}
+Si no estás seguro de si un objeto tiene un atributo particular,
+puedes utilizar la función incorporada {\tt hasattr}:
+\index{función hasattr}
+\index{hasattr!función}
 
 \begin{verbatim}
 >>> hasattr(p, 'x')
@@ -12591,14 +12591,14 @@ True
 False
 \end{verbatim}
 %
-The first argument can be any object; the second argument is a {\em
-string} that contains the name of the attribute.
-\index{attribute}
+El primer argumento puede ser cualquier objeto; el segundo argumento es una {\em
+cadena} que contiene el nombre del atributo.
+\index{atributo}
 
-You can also use a {\tt try} statement to see if the object has the
-attributes you need:
-\index{try statement}
-\index{statement!try}
+Puedes también utilizar una sentencia {\tt try} para ver si el objeto tiene los
+atributos que necesitas:
+\index{sentencia try}
+\index{try!sentencia}
 
 \begin{verbatim}
 try:
@@ -12607,99 +12607,99 @@ except AttributeError:
     x = 0
 \end{verbatim}
 
-This approach can make it easier to write functions that work with
-different types; more on that topic is
-coming up in Section~\ref{polymorphism}.
+Este enfoque puede hacer más fácil escribir funciones que trabajen con
+tipos diferentes; se verá más sobre este tema
+en la Sección~\ref{polymorphism}.
 
 
-\section{Glossary}
+\section{Glosario}
 
 \begin{description}
 
-\item[class:] A programmer-defined type.  A class definition creates a new
-class object.
-\index{class}
-\index{programmer-defined type}
-\index{type!programmer-defined}
+\item[clase:] Un tipo definido por el programador.  Una definición de clase crea un nuevo
+objeto de clase.
+\index{clase}
+\index{tipo definido por el programador}
+\index{definido por el programador!tipo}
 
-\item[class object:] An object that contains information about a
-programmer-defined type.  The class object can be used to create instances
-of the type.
-\index{class object}
-\index{object!class}
+\item[class object:] Un objeto que contiene información acerca del
+tipo definido por el programador.  El objeto de clase se puede utilizar para crear instancias
+del tipo.
+\index{objeto de clase}
+\index{clase!objeto}
 
-\item[instance:] An object that belongs to a class.
-\index{instance}
+\item[instancia:] Un objeto que pertenece a una clase.
+\index{instancia}
 
-\item[instantiate:] To create a new object.
-\index{instantiate}
+\item[instanciar:] Crear un nuevo objeto.
+\index{instanciar}
 
-\item[attribute:] One of the named values associated with an object.
-\index{attribute!instance}
-\index{instance attribute}
+\item[atributo:] Uno de los valores con nombre asociados a un objeto.
+\index{instancia!atributo}
+\index{atributo de instancia}
 
-\item[embedded object:] An object that is stored as an attribute
-of another object.
-\index{embedded object}
-\index{object!embedded}
+\item[objeto incrustado:] Uno objeto que se almacena como atributo
+de otro objeto.
+\index{objeto incrustado}
+\index{incrustado!objeto}
 
-\item[shallow copy:] To copy the contents of an object, including
-any references to embedded objects;
-implemented by the {\tt copy} function in the {\tt copy} module.
-\index{shallow copy}
+\item[copia superficial:] Copiar los contenidos de un objeto, incluyendo
+cualquier referencia a objetos incrustados;
+implementada por la función {\tt copy} del módulo {\tt copy}.
+\index{copia superficial}
 
-\item[deep copy:] To copy the contents of an object as well as any
-embedded objects, and any objects embedded in them, and so on;
-implemented by the {\tt deepcopy} function in the {\tt copy} module.
-\index{deep copy}
+\item[copia profunda:] Copiar los contenidos de un objeto así como cualquier
+objeto incrustado, y cualquier objeto incrustado en estos, y así sucesivamente;
+implementado por la función {\tt deepcopy} del módulo {\tt copy}.
+\index{copia profunda}
 
-\item[object diagram:] A diagram that shows objects, their
-attributes, and the values of the attributes.
-\index{object diagram}
-\index{diagram!object}
+\item[diagrama de objeto:] Un diagrama que muestra objetos, sus
+atributos y los valores de los atributos.
+\index{diagrama de objeto}
+\index{objeto!diagrama de}
 
 \end{description}
 
 
-\section{Exercises}
+\section{Ejercicios}
 
 \begin{exercise}
 
-Write a definition for a class named {\tt Circle} with attributes
-{\tt center} and {\tt radius}, where {\tt center} is a Point object
-and radius is a number.
+Escribe una definición de una clase con nombre {\tt Circulo} con atributos
+{\tt centro} y {\tt radio}, donde {\tt centro} es un objeto Punto
+y {\tt radio} es un número.
 
-Instantiate a Circle object that represents a circle with its center
-at $(150, 100)$ and radius 75.
+Instancia un objeto Círculo que represente un círculo con su centro
+en $(150, 100)$ y radio 75.
 
-Write a function named \verb"point_in_circle" that takes a Circle and
-a Point and returns True if the Point lies in or on the boundary of
-the circle.
+Escribe una función con nombre \verb"punto_en_circulo" que tome un Círculo y
+un Punto y devuelva True si el Punto está dentro o en el borde del
+círculo.
 
-Write a function named \verb"rect_in_circle" that takes a Circle and a
-Rectangle and returns True if the Rectangle lies entirely in or on the boundary
-of the circle.
+Escribe una función con nombre \verb"rectangulo_en_circulo" que tome un Círculo y un
+Rectángulo y devuelva True si el Rectángulo está completamente dentro o en el borde
+del círculo.
 
-Write a function named \verb"rect_circle_overlap" that takes a Circle
-and a Rectangle and returns True if any of the corners of the Rectangle fall
-inside the circle.  Or as a more challenging version, return True if
-any part of the Rectangle falls inside the circle.
+Escribe una función con nombre \verb"rectangulo_circulo_traslapan" que tome un Círculo
+y un Rectángulo y devuelva True si alguna de las esquinas del Rectángulo cae
+dentro del círculo.  O como versión más desafiante, que devuelva True si
+cualquier parte del Rectángulo cae dentro del círculo.
 
-Solution: \url{http://thinkpython2.com/code/Circle.py}.
+Solución: \url{http://thinkpython2.com/code/Circle.py}.
 
 \end{exercise}
 
 
 \begin{exercise}
 
-Write a function called \verb"draw_rect" that takes a Turtle object
-and a Rectangle and uses the Turtle to draw the Rectangle.  See
-Chapter~\ref{turtlechap} for examples using Turtle objects.
+Escribe una función llamada \verb"dibujar_rectangulo" que tome un objeto Turtle
+y un Rectángulo y utilice al Turtle para dibujar el Rectángulo.  Ver
+Capítulo~\ref{turtlechap} para ejemplos que utilizan objetos Turtle.
 
-Write a function called \verb"draw_circle" that takes a Turtle and
-a Circle and draws the Circle.
+Escribe una función llamada \verb"dibujar_circulo" que tome un Turtle y
+un Círculo y dibuje el Círculo.
 
-Solution: \url{http://thinkpython2.com/code/draw.py}.
+Solución: \url{http://thinkpython2.com/code/draw.py}.
 
 \end{exercise}
 
