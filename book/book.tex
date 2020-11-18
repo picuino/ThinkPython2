@@ -12705,155 +12705,155 @@ Solución: \url{http://thinkpython2.com/code/draw.py}.
 
 
 
-\chapter{Classes and functions}
+\chapter{Clases y funciones}
 \label{time}
 
-Now that we know how to create new types, the next
-step is to write functions that take programmer-defined objects
-as parameters and return them as results.  In this chapter I
-also present ``functional programming style'' and two new
-program development plans.
+Ahora que sabemos cómo crear tipos nuevos, el siguiente
+paso es escribir funciones que tomen objetos definidos por el programador
+como parámetros y los devuelvan como resultados.  En este capítulo
+presento también el ``estilo de programación funcional'' y dos nuevos
+planes de desarrollo de programas.
 
-Code examples from this chapter are available from
+Los ejemplos de código de este capítulo están disponibles en
 \url{http://thinkpython2.com/code/Time1.py}.
-Solutions to the exercises are at
+Las soluciones a los ejercicios están en
 \url{http://thinkpython2.com/code/Time1_soln.py}.
 
 
-\section{Time}
+\section{Tiempo}
 \label{isafter}
 
-As another example of a programmer-defined type, we'll define a class
-called {\tt Time} that records the time of day.  The class definition
-looks like this: \index{programmer-defined type}
-\index{type!programmer-defined} \index{Time class} \index{class!Time}
+Como otro ejemplo de tipo definido por el programador, definiremos una clase
+llamada {\tt Tiempo} que registre la hora del día.  La definición de clase
+se ve así: \index{tipo definido por el programador}
+\index{definido por el programador!tipo} \index{clase Tiempo} \index{Tiempo!clase}
 
 \begin{verbatim}
-class Time:
-    """Represents the time of day.
+class Tiempo:
+    """Representa la hora del día.
 
-    attributes: hour, minute, second
+    atributos: hora, minuto, segundo
     """
 \end{verbatim}
 %
-We can create a new {\tt Time} object and assign
-attributes for hours, minutes, and seconds:
+Podemos crear un nuevo objeto {\tt Tiempo} y asignar
+atributos para horas, minutos y segundos:
 
 \begin{verbatim}
-time = Time()
-time.hour = 11
-time.minute = 59
-time.second = 30
+tiempo = Tiempo()
+tiempo.hora = 11
+tiempo.minuto = 59
+tiempo.segundo = 30
 \end{verbatim}
 %
-The state diagram for the {\tt Time} object looks like Figure~\ref{fig.time}.
-\index{state diagram}
-\index{diagram!state}
-\index{object diagram}
-\index{diagram!object}
+El diagrama de estado para el objeto {\tt Tiempo} se ve como en la Figura~\ref{fig.time}.
+\index{diagrama de estado}
+\index{estado!diagrama}
+\index{diagrama de objeto}
+\index{objeto!diagrama}
 
-As an exercise, write a function called \verb"print_time" that takes a
-Time object and prints it in the form {\tt hour:minute:second}.
-Hint: the format sequence \verb"'%.2d'" prints an integer using
-at least two digits, including a leading zero if necessary.
+Como ejercicio, escribe una función llamada \verb"imprimir_tiempo" que tome un
+objeto Tiempo y lo imrpima en la forma {\tt hora:minuto:segundo}.
+Pista: la secuencia de formato \verb"'%.2d'" imprime un entero utilizando
+al menos dos dígitos, incluyendo un cero a la izquierda si es necesario.
 
-Write a boolean function called \verb"is_after" that
-takes two Time objects, {\tt t1} and {\tt t2}, and
-returns {\tt True} if {\tt t1} follows {\tt t2} chronologically and
-{\tt False} otherwise.  Challenge: don't use an {\tt if} statement.
+Escribe una función booleana llamada \verb"es_despues" que
+tome dos objetos Tiempo, {\tt t1} y {\tt t2}, y
+devuelva {\tt True} si {\tt t1} va cronológicamente después de {\tt t2} y
+{\tt False} en caso contrario.  Desafío: no utilices una sentencia {\tt if}.
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/time.pdf}}
-\caption{Object diagram.}
+\caption{Diagrama de objeto.}
 \label{fig.time}
 \end{figure}
 
 
-\section{Pure functions}
-\index{prototype and patch}
-\index{development plan!prototype and patch}
+\section{Funciones puras}
+\index{prototipo y parche}
+\index{plan de desarrollo!prototipo y parche}
 
-In the next few sections, we'll write two functions that add time
-values.  They demonstrate two kinds of functions: pure functions and
-modifiers.  They also demonstrate a development plan I'll call {\bf
-  prototype and patch}, which is a way of tackling a complex problem
-by starting with a simple prototype and incrementally dealing with the
-complications.
+En las siguientes secciones, escribiremos dos funciones que suman valores de
+tiempo.  Estas demuestran dos tipos de funciones: funciones puras y
+modificadores.  Demuestran también un plan de desarrollo que yo llamo {\bf
+  prototipo y parche}, el cual es una manera de abordar un problema complejo
+comenzando con un prototipo simple y lidiando con las complicaciones
+de manera incremental.
 
-Here is a simple prototype of \verb"add_time":
+Aquí hay un prototipo simple de \verb"sumar_tiempo":
 
 \begin{verbatim}
-def add_time(t1, t2):
-    sum = Time()
-    sum.hour = t1.hour + t2.hour
-    sum.minute = t1.minute + t2.minute
-    sum.second = t1.second + t2.second
+def sumar_tiempo(t1, t2):
+    suma = Tiempo()
+    suma.hora = t1.hora + t2.hora
+    suma.minuto = t1.minuto + t2.minuto
+    suma.segundo = t1.segundo + t2.segundo
     return sum
 \end{verbatim}
 %
-The function creates a new {\tt Time} object, initializes its
-attributes, and returns a reference to the new object.  This is called
-a {\bf pure function} because it does not modify any of the objects
-passed to it as arguments and it has no effect,
-like displaying a value or getting user input,
-other than returning a value.
-\index{pure function}
-\index{function type!pure}
+La función crea un nuevo objeto {\tt Tiempo}, inicializa sus
+atributos y devuelve una referencia al nuevo objeto.  Esto se llama
+una {\bf función pura} porque no modifica ninguno de los objetos
+que se le pasan como argumentos y no tiene efecto,
+como mostrar un valor u obtener entrada del usuario,
+además de devolver un valor.
+\index{función pura}
+\index{pura!tipo de función}
 
-To test this function, I'll create two Time objects: {\tt start}
-contains the start time of a movie, like {\em Monty Python and the
-Holy Grail}, and {\tt duration} contains the run time of the movie,
-which is one hour 35 minutes.
+Para probar esta función, crearé dos objetos Tiempo: {\tt comienzo}
+contiene el tiempo de inicio de una película, como {\em Monty Python and the
+Holy Grail}, y {\tt duracion} contiene el tiempo de duración de la película,
+que es una hora 35 minutos.
 \index{Monty Python and the Holy Grail}
 
-\verb"add_time" figures out when the movie will be done.
+\verb"sumar_tiempo" averigua cuándo terminará la película.
 
 \begin{verbatim}
->>> start = Time()
->>> start.hour = 9
->>> start.minute = 45
->>> start.second =  0
+>>> comienzo = Tiempo()
+>>> comienzo.hora = 9
+>>> comienzo.minuto = 45
+>>> comienzo.segundo =  0
 
->>> duration = Time()
->>> duration.hour = 1
->>> duration.minute = 35
->>> duration.second = 0
+>>> duracion = Tiempo()
+>>> duracion.hora = 1
+>>> duracion.minuto = 35
+>>> duracion.segundo = 0
 
->>> done = add_time(start, duration)
->>> print_time(done)
+>>> termino = sumar_tiempo(comienzo, duracion)
+>>> imprimir_tiempo(termino)
 10:80:00
 \end{verbatim}
 %
-The result, {\tt 10:80:00} might not be what you were hoping
-for.  The problem is that this function does not deal with cases where the
-number of seconds or minutes adds up to more than sixty.  When that
-happens, we have to ``carry'' the extra seconds into the minute column
-or the extra minutes into the hour column.
-\index{carrying, addition with}
+El resultado, {\tt 10:80:00}, tal vez no sea lo que
+esperas.  El problema es que esta función no lidia con los casos donde el
+número de segundos o minutos suma más de sesenta.  Cuando eso
+ocurre, tenemos que ``acarrear'' los segundos extra a la columna de minutos
+o los minutos extra a la columna de horas.
+\index{acarreo, suma con}
 
-Here's an improved version:
+Aquí hay una versión mejorada:
 
 \begin{verbatim}
-def add_time(t1, t2):
-    sum = Time()
-    sum.hour = t1.hour + t2.hour
-    sum.minute = t1.minute + t2.minute
-    sum.second = t1.second + t2.second
+def sumar_tiempo(t1, t2):
+    suma = Time()
+    suma.hora = t1.hora + t2.hora
+    suma.minuto = t1.minuto + t2.minuto
+    suma.segundo = t1.segundo + t2.segundo
 
-    if sum.second >= 60:
-        sum.second -= 60
-        sum.minute += 1
+    if suma.segundo >= 60:
+        suma.segundo -= 60
+        suma.minuto += 1
 
-    if sum.minute >= 60:
-        sum.minute -= 60
-        sum.hour += 1
+    if suma.minuto >= 60:
+        suma.minuto -= 60
+        suma.hora += 1
 
-    return sum
+    return suma
 \end{verbatim}
 %
-Although this function is correct, it is starting to get big.
-We will see a shorter alternative later.
+Aunque esta función es correcta, está comenzando a ponerse grande.
+Veremos una alternativa más corta más adelante.
 
 
 \section{Modifiers}
