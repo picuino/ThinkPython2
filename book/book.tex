@@ -12082,7 +12082,7 @@ Solución: \url{http://thinkpython2.com/code/find_duplicates.py}.
 En este punto sabes cómo utilizar
 funciones para organizar código y
 tipos incorporados para organizar datos.  El siguiente paso es aprender
-``programación orientada a objetos'', que utiliza tipos definidos por el programador
+``programación orientada a objetos'', el cual utiliza tipos definidos por el programador
 para organizar tanto código como datos.  La programación orientada a objetos es
 un gran tema; tomará un par de capítulos para llegar allí.
 \index{programación orientada a objetos}
@@ -12129,7 +12129,7 @@ Crear un tipo nuevo
 es más complicado que las otras opciones, pero
 tiene ventajas que pronto serán aparentes.
 
-Un tipo definido por el programados también se llama {\bf clase}.
+Un tipo definido por el programador también se llama {\bf clase}.
 Una definición de clase se ve así:
 \index{clase}
 \index{objeto de clase}
@@ -12196,7 +12196,7 @@ programador.
 \index{instancia!atributo de}
 \index{notación de punto}
 
-Puedes asignar valores a una instancia utilizando notacíon de punto:
+Puedes asignar valores a una instancia utilizando notación de punto:
 
 \begin{verbatim}
 >>> vacio.x = 3.0
@@ -12212,7 +12212,7 @@ Estos elementos se llaman {\bf atributos}.
 %syllable, as opposed to ``a-TRIB-ute'', which is a verb.
 
 La Figura~\ref{fig.point} es un diagrama de estado que muestra el resultado de estas asignaciones.
-Un diagrama de estado que muestra un objeto y sus atributos se
+Un diagrama de estado que muestra un objeto con sus atributos se
 llama {\bf diagrama de objeto}.
 \index{diagrama de estado}
 \index{estado!diagrama de}
@@ -12320,7 +12320,7 @@ class Rectangulo:
 \end{verbatim}
 %
 El docstring contiene una lista de los atributos:  {\tt anchura} y
-{\tt altura} con números; {\tt esquina} es un objeto Punto que
+{\tt altura} son números; {\tt esquina} es un objeto Punto que
 especifica la esquina inferior izquierda.
 
 Para representar un rectángulo, tienes que instanciar un objeto Rectángulo
@@ -12389,7 +12389,7 @@ el Punto resultante a {\tt centro}:
 \index{mutabilidad}
 
 Puedes cambiar el estado de un objeto haciendo una asignación a uno de
-sus atritubos.  Por ejemplo, para cambiar el tamaño de un rectángulo
+sus atributos.  Por ejemplo, para cambiar el tamaño de un rectángulo
 sin cambiar su posición, puedes modificar los valores de {\tt
 anchura} y {\tt altura}:
 
@@ -12400,8 +12400,8 @@ caja.altura = caja.altura + 100
 %
 Puedes también escribir funciones que modifiquen objetos.  Por ejemplo,
 \verb"crecer_rectangulo" toma un objeto Rectángulo y dos números,
-{\tt d\_anchura} and {\tt d\_altura}, and adds the numbers to the
-width and altura of the rectangle:
+{\tt d\_anchura} y {\tt d\_altura}, y suma los números a la
+anchura y altura del rectángulo:
 
 \begin{verbatim}
 def crecer_rectangulo(rect, d_anchura, d_altura):
@@ -12419,7 +12419,7 @@ Aquí hay un ejemplo que demuestra el efecto:
 (200.0, 400.0)
 \end{verbatim}
 %
-Dento de la función, {\tt rect} es un
+Dentro de la función, {\tt rect} es un
 alias para {\tt caja}, por tanto cuando la función modifica a {\tt rect},
 {\tt caja} cambia.
 
@@ -12434,7 +12434,7 @@ a la coordenada {\tt y} de {\tt esquina}.
 \label{copying}
 \index{alias}
 
-Los alias puedes hacer que un programa sea difícil de leer porque los cambios
+Los alias pueden hacer que un programa sea difícil de leer porque los cambios
 en un lugar podrían tener efectos inesperados en otro lugar.
 Es difícil hacer un seguimiento de todas las variables que podrían referirse
 a un objeto dado.
@@ -12470,13 +12470,13 @@ False
 False
 \end{verbatim}
 %
-El operados {\tt is} indica que {\tt p1} y {\tt p2} no son el
+El operador {\tt is} indica que {\tt p1} y {\tt p2} no son el
 mismo objeto, que es lo que esperábamos.  Sin embargo, tal vez hayas esperado
-que {\tt ==} entregue {\tt True} porque estos pountos contienen los mismos
+que {\tt ==} entregue {\tt True} porque estos puntos contienen los mismos
 datos.  En ese caso, te decepcionará aprender que para
 instancias, el comportamiento por defecto del operador {\tt ==} es el mismo
 que el operador {\tt is}; verifica identidad de objeto, no equivalencia
-de objeto.  Eso ocurre debido a que para tipos definidos por el programados, Python no
+de objeto.  Eso ocurre debido a que para tipos definidos por el programador, Python no
 sabe qué debería considerarse equivalente.  Al menos, no todavía.
 \index{is!operador}
 \index{operador is}
@@ -12523,7 +12523,7 @@ Afortunadamente, el módulo {\tt copy} proporciona un método con nombre {\tt
 deepcopy} que copia no solo el objeto sino también
 los objetos a los cuales este se refiere, y los objetos a los cuales {\em estos} se refieren,
 y así sucesivamente.
-No te sorporenderá aprender que esta operación se
+No te sorprenderá saber que esta operación se
 llama {\bf copia profunda}.
 \index{función deepcopy}
 \index{deepcopy!función}
@@ -12622,7 +12622,7 @@ objeto de clase.
 \index{tipo definido por el programador}
 \index{definido por el programador!tipo}
 
-\item[class object:] Un objeto que contiene información acerca del
+\item[objeto de clase:] Un objeto que contiene información acerca del
 tipo definido por el programador.  El objeto de clase se puede utilizar para crear instancias
 del tipo.
 \index{objeto de clase}
@@ -12638,13 +12638,13 @@ del tipo.
 \index{instancia!atributo}
 \index{atributo de instancia}
 
-\item[objeto incrustado:] Uno objeto que se almacena como atributo
+\item[objeto incrustado:] Un objeto que se almacena como atributo
 de otro objeto.
 \index{objeto incrustado}
 \index{incrustado!objeto}
 
 \item[copia superficial:] Copiar los contenidos de un objeto, incluyendo
-cualquier referencia a objetos incrustados;
+cualquier referencia a los objetos incrustados;
 implementada por la función {\tt copy} del módulo {\tt copy}.
 \index{copia superficial}
 
