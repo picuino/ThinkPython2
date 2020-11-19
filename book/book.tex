@@ -12856,221 +12856,221 @@ Aunque esta función es correcta, está comenzando a ponerse grande.
 Veremos una alternativa más corta más adelante.
 
 
-\section{Modifiers}
+\section{Modificadores}
 \label{increment}
-\index{modifier}
-\index{function type!modifier}
+\index{modificador}
+\index{tipo de función!modificador}
 
-Sometimes it is useful for a function to modify the objects it gets as
-parameters.  In that case, the changes are visible to the caller.
-Functions that work this way are called {\bf modifiers}.
+A veces es útil para una función modificar los objetos que obtiene como
+parámetros.  En ese caso, los cambios son visibles para la llamadora.
+Las funciones que trabajan de esta manera se llaman {\bf modificadores}.
 \index{increment}
 
-{\tt increment}, which adds a given number of seconds to a {\tt Time}
-object, can be written naturally as a
-modifier.  Here is a rough draft:
+{\tt aumentar}, el cual agrega un número dado de segundos al objeto {\tt Tiempo},
+se puede escribir de manera natural como un
+modificador.  Aquí hay un borrador:
 
 \begin{verbatim}
-def increment(time, seconds):
-    time.second += seconds
+def aumentar(tiempo, segundos):
+    tiempo.second += segundos
 
-    if time.second >= 60:
-        time.second -= 60
-        time.minute += 1
+    if tiempo.segundo >= 60:
+        tiempo.segundo -= 60
+        tiempo.minuto += 1
 
-    if time.minute >= 60:
-        time.minute -= 60
-        time.hour += 1
+    if tiempo.minuto >= 60:
+        tiempo.minuto -= 60
+        tiempo.hora += 1
 \end{verbatim}
 %
-The first line performs the basic operation; the remainder deals
-with the special cases we saw before.
-\index{special case}
+La primera línea realiza la operación básica; el resto se ocupa
+de los casos especiales que vimos antes.
+\index{caso especial}
 
-Is this function correct?  What happens if {\tt seconds}
-is much greater than sixty?
+¿Esta función es correcta?  ¿Qué ocurre si {\tt segundos}
+es mucho más grande que sesenta?
 
-In that case, it is not enough to carry once; we have to keep doing it
-until {\tt time.second} is less than sixty.  One solution is to
-replace the {\tt if} statements with {\tt while} statements.  That
-would make the function correct, but not very efficient.  As an
-exercise, write a correct version of {\tt increment} that doesn't
-contain any loops.
+En ese caso, no es suficiente acarrear una vez; tenemos que seguir haciéndolo
+hasta que {\tt tiempo.segundo} sea menor que sesenta.  Una solución es
+reemplazar las sentencias {\tt if} con sentencias {\tt while}.  Eso
+haría que la función sea correcta, pero no muy eficiente.  Como
+ejercicio, escribe una versión correcta de {\tt aumentar} que no
+contenga ningún ciclo.
 
-Anything that can be done with modifiers can also be done with pure
-functions.  In fact, some programming languages only allow pure
-functions.  There is some evidence that programs that use pure
-functions are faster to develop and less error-prone than programs
-that use modifiers.  But modifiers are convenient at times,
-and functional programs tend to be less efficient.
+Cualquier cosa que se pueda hacer con modificadores también se puede hacer con funciones
+puras.  De hecho, algunos lenguages de programación solo permiten funciones
+puras.  Existe evidencia de que los programas que usan funciones puras
+son más rápidas de desarrollar y menos propensas a errores que los programas
+que utilizan modificadores.  Sin embargo, los modificadores con convenientes en ocasiones,
+y los programas funcionales tienden a ser menos eficientes.
 
-In general, I recommend that you write pure functions whenever it is
-reasonable and resort to modifiers only if there is a compelling
-advantage.  This approach might be called a {\bf functional
-programming style}.
-\index{functional programming style}
+En general, recomiendo que escribas funciones puras siempre que sea
+razonable y recurras a los modificadores solo si hay una ventaja
+convincente.  Este enfoque podría ser llamado {\bf estilo de
+programación funcional}.
+\index{estilo de programación funcional}
 
-As an exercise, write a ``pure'' version of {\tt increment} that
-creates and returns a new Time object rather than modifying the
-parameter.
+Como ejercicio, escribe una versióin ``pura'' de {\tt aumentar} que
+cree y devuelva un nuevo objeto Tiempo en lugar de modificar el
+parámetro.
 
 
-\section{Prototyping versus planning}
+\section{Prototipos versus planificación}
 \label{prototype}
-\index{prototype and patch}
-\index{development plan!prototype and patch}
-\index{planned development}
-\index{development plan!designed}
+\index{prototipo y parche}
+\index{plan de desarrollo!prototipo y parche}
+\index{desarrollo planificado}
+\index{plan de desarrollo!diseñado}
 
-The development plan I am demonstrating is called ``prototype and
-patch''.  For each function, I wrote a prototype that performed the
-basic calculation and then tested it, patching errors along the
-way.
+El plan de desarrollo que estoy demostrando se llama ``prototipo y
+parche''.  Para cada función, escribí un prototipo que realiza los
+cálculos básicos y luego lo probé, parchando errores en el
+camino.
 
-This approach can be effective, especially if you don't yet have a
-deep understanding of the problem.  But incremental corrections can
-generate code that is unnecessarily complicated---since it deals with
-many special cases---and unreliable---since it is hard to know if you
-have found all the errors.
+Este enfoque puede ser efectivo, especialmente si todavía no tienes
+un entendimiento profundo del problema.  Sin embargo, las correcciones incrementales pueden
+generar código innecesariamente complicado ---dado que lidia con muchos
+casos especiales--- y no confiable ---dado que es difícil saber si
+has encontrado todos los errores.
 
-An alternative is {\bf designed development}, in which high-level
-insight into the problem can make the programming much easier.  In
-this case, the insight is that a Time object is really a three-digit
-number in base 60 (see \url{http://en.wikipedia.org/wiki/Sexagesimal}.)!  The
-{\tt second} attribute is the ``ones column'', the {\tt minute}
-attribute is the ``sixties column'', and the {\tt hour} attribute is
-the ``thirty-six hundreds column''.
+Una alternativa es el {\bf desarrollo diseñado}, en el cual la visión
+de alto nivel en el problema puede hacer mucho más fácil la programación.  En
+este caso, la visión es que un objeto Tiempo es en realidad un número
+de tres dígitos en base 60 (ver \url{http://en.wikipedia.org/wiki/Sexagesimal}.)!  El
+atributo {\tt segundo} es la ``columna de unidades'', el atributo {\tt minuto}
+es la ``columna de sesentenas'' y el atributo {\tt hora} es
+la ``columna de treinta y seis centenas''.
 \index{sexagesimal}
 
-When we wrote \verb"add_time" and {\tt increment}, we were effectively
-doing addition in base 60, which is why we had to carry from one
-column to the next.
-\index{carrying, addition with}
+Cuando escribimos \verb"sumar_tiempo" y {\tt aumentar}, efectivamente estábamos
+haciendo suma en base 60, motivo por el cual tuvimos que acarrear de una
+columna a la siguiente.
+\index{acarreo, suma con}
 
-This observation suggests another approach to the whole problem---we
-can convert Time objects to integers and take advantage of the fact
-that the computer knows how to do integer arithmetic.
+Esta observación sugiere otro enfoque al problema completo ---podemos
+convertir objetos Tiempo a enteros y tomar ventaja del hecho de
+que el computador sabe cómo hacer aritmética con enteros.
 
-Here is a function that converts Times to integers:
+Aquí hay una función que convierte Tiempos a enteros:
 
 \begin{verbatim}
-def time_to_int(time):
-    minutes = time.hour * 60 + time.minute
-    seconds = minutes * 60 + time.second
-    return seconds
+def tiempo_a_int(tiempo):
+    minutos = tiempo.hora * 60 + tiempo.minuto
+    segundos = minutos * 60 + tiempo.segundo
+    return segundos
 \end{verbatim}
 %
-And here is a function that converts an integer to a Time
-(recall that {\tt divmod} divides the first argument by the second
-and returns the quotient and remainder as a tuple).
+Y aquí hay una función que convierte un entero a un Tiempo
+(recuerda que {\tt divmod} divide el primer argumento por el segundo
+y devuelve el cociente y el resto como una tupla).
 \index{divmod}
 
 \begin{verbatim}
-def int_to_time(seconds):
-    time = Time()
-    minutes, time.second = divmod(seconds, 60)
-    time.hour, time.minute = divmod(minutes, 60)
-    return time
+def int_a_tiempo(segundos):
+    tiempo = Tiempo()
+    minutos, tiempo.segundo = divmod(segundos, 60)
+    tiempo.hora, tiempo.minuto = divmod(minutos, 60)
+    return tiempo
 \end{verbatim}
 %
-You might have to think a bit, and run some tests, to convince
-yourself that these functions are correct.  One way to test them is to
-check that \verb"time_to_int(int_to_time(x)) == x" for many values of
-{\tt x}.  This is an example of a consistency check.
-\index{consistency check}
+Quizás tengas que pensar un poco, y ejecutar algunas pruebas, para convencerte
+de que estas funciones están correctas.  Una manera de probarlas es
+verificar que \verb"tiempo_a_int(int_a_tiempo(x)) == x" para muchos valores de
+{\tt x}.  Este es un ejemplo de prueba de consistencia.
+\index{prueba de consistencia}
 
-Once you are convinced they are correct, you can use them to
-rewrite \verb"add_time":
+Una vez que estés convencido de que están correctas, puedes utilizarlas para
+reescribir \verb"sumar_tiempo":
 
 \begin{verbatim}
-def add_time(t1, t2):
-    seconds = time_to_int(t1) + time_to_int(t2)
-    return int_to_time(seconds)
+def sumar_tiempo(t1, t2):
+    segundos = tiempo_a_int(t1) + tiempo_a_int(t2)
+    return int_a_tiempo(segundos)
 \end{verbatim}
 %
-This version is shorter than the original, and easier to verify.  As
-an exercise, rewrite {\tt increment} using \verb"time_to_int" and
-\verb"int_to_time".
+Esta versión es más corta que la original, y más fácil de verificar.  Como
+ejercicio, reescribe {\tt aumentar} utilizando \verb"tiempo_a_int" y
+\verb"int_a_tiempo".
 
-In some ways, converting from base 60 to base 10 and back is harder
-than just dealing with times.  Base conversion is more abstract; our
-intuition for dealing with time values is better.
+En algunas formas, convertir de base 10 a base 10 y viceversa es más difícil
+que solo tratar con tiempos.  La conversión de base es más abstracta; nuestra
+intuición para lidiar con valores de tiempo es mejor.
 
-But if we have the insight to treat times as base 60 numbers and make
-the investment of writing the conversion functions (\verb"time_to_int"
-and \verb"int_to_time"), we get a program that is shorter, easier to
-read and debug, and more reliable.
+Sin embargo, si tenemos la visión para tratar tiempos como números en base 60 y nos
+dedicamos a escribir las funciones de conversión (\verb"tiempo_a_int"
+e \verb"int_a_tiempo"), obtenemos un programa más corto, más fácil de
+leer y depurar, y más confiable.
 
-It is also easier to add features later.  For example, imagine
-subtracting two Times to find the duration between them.  The
-naive approach would be to implement subtraction with borrowing.
-Using the conversion functions would be easier and more likely to be
-correct.
-\index{subtraction with borrowing}
-\index{borrowing, subtraction with}
-\index{generalization}
+Es más fácil también añadir características más adelante.  Por ejemplo, imagina
+restar dos Tiempos para encontrar la duración entre ellos.  El
+enfoque ingenuo sería implementar resta con préstamo.
+Utilizando funciones de conversión sería más fácil y con más probabilidades de ser
+correcto.
+\index{resta con préstamo}
+\index{préstamo, resta con}
+\index{generalización}
 
-Ironically, sometimes making a problem harder (or more general) makes it
-easier (because there are fewer special cases and fewer opportunities
-for error).
+Irónicamente, a veces hacer que un programa sea más difícil (o más general) lo hace
+más fácil (porque hay menos casos especiales y menos oportunidades
+de error).
 
 
-\section{Debugging}
-\index{debugging}
+\section{Depuración}
+\index{depuración}
 
-A Time object is well-formed if the values of {\tt minute} and {\tt
-second} are between 0 and 60 (including 0 but not 60) and if
-{\tt hour} is positive.  {\tt hour} and {\tt minute} should be
-integral values, but we might allow {\tt second} to have a
-fraction part.
-\index{invariant}
+Un objeto Tiempo está bien formado si los valores de {\tt minuto} y {\tt
+segundo} están entre 0 y 60 (incluyendo a 0 pero no a 60) y si
+{\tt hora} es positivo.  {\tt hora} y {\tt minuto} deberían ser
+valores enteros, pero podríamos permitir que {\tt segundo} tenga una
+parte de fracción.
+\index{invariante}
 
-Requirements like these are called {\bf invariants} because
-they should always be true.  To put it a different way, if they
-are not true, something has gone wrong.
+Requisitos como estos se llaman {\bf invariantes} porque
+deberían ser siempre verdaderos.  Visto de manera diferente, si no
+son verdaderos, algo salió mal.
 
-Writing code to check invariants can help detect errors
-and find their causes.  For example, you might have a function
-like \verb"valid_time" that takes a Time object and returns
-{\tt False} if it violates an invariant:
+Escribir código para verificar invariantes puede ayudar a detectar errores
+y encontrar sus causas.  Por ejemplo, quizás tengas una función
+como \verb"tiempo_valido" que tome un objeto Tiempo y devuelva
+{\tt False} si viola un invariante:
 
 \begin{verbatim}
-def valid_time(time):
-    if time.hour < 0 or time.minute < 0 or time.second < 0:
+def tiempo_valido(tiempo):
+    if tiempo.hora < 0 or tiempo.minuto < 0 or tiempo.segundo < 0:
         return False
-    if time.minute >= 60 or time.second >= 60:
+    if tiempo.minuto >= 60 or tiempo.segundo >= 60:
         return False
     return True
 \end{verbatim}
 %
-At the beginning of each function you could check the
-arguments to make sure they are valid:
-\index{raise statement}
-\index{statement!raise}
+Al principio de cada función podrías verificar los
+argumentos para asegurarte de que son válidos:
+\index{sentencia raise}
+\index{raise!sentencia}
 
 \begin{verbatim}
-def add_time(t1, t2):
-    if not valid_time(t1) or not valid_time(t2):
-        raise ValueError('invalid Time object in add_time')
-    seconds = time_to_int(t1) + time_to_int(t2)
-    return int_to_time(seconds)
+def sumar_tiempo(t1, t2):
+    if not tiempo_valido(t1) or not tiempo_valido(t2):
+        raise ValueError('objeto Tiempo no válido en sumar_tiempo')
+    segundos = tiempo_a_int(t1) + tiempo_a_int(t2)
+    return int_a_tiempo(segundos)
 \end{verbatim}
 %
-Or you could use an {\bf assert statement}, which checks a given invariant
-and raises an exception if it fails:
-\index{assert statement}
-\index{statement!assert}
+O bien podrías utilizar una {\bf sentencia assert}, que verifica un invariante dado
+y levanta una excepción si este falla:
+\index{sentencia assert}
+\index{assert!sentencia}
 
 \begin{verbatim}
-def add_time(t1, t2):
-    assert valid_time(t1) and valid_time(t2)
-    seconds = time_to_int(t1) + time_to_int(t2)
-    return int_to_time(seconds)
+def sumar_tiempo(t1, t2):
+    assert tiempo_valido(t1) and tiempo_valido(t2)
+    segundos = tiempo_a_int(t1) + tiempo_a_int(t2)
+    return int_a_tiempo(segundos)
 \end{verbatim}
 %
-{\tt assert} statements are useful because they distinguish
-code that deals with normal conditions from code
-that checks for errors.
+Las sentencias {\tt assert} son útiles porque distinguen
+código que trabaja en condiciones normales de código
+que verifica errores.
 
 
 \section{Glossary}
