@@ -1369,7 +1369,7 @@ Inicia el intérprete de Python y úsalo como una calculadora.
   kilómetros en una milla.
 
 \item Si corres una carrera de 10 kilómetros en 42 minutos con 42 segundos,
-  ¿Cuál es tu ritmo promedio (tiempo por milla en minutos y segundos)?  ¿Cuál
+  ¿Cuál es tu ritmo promedio (tiempo por cada milla en minutos y segundos)?  ¿Cuál
   es tu rapidez promedio en millas por hora?
 
 \index{calculadora}
@@ -13073,95 +13073,95 @@ código que trabaja en condiciones normales de código
 que verifica errores.
 
 
-\section{Glossary}
+\section{Glosario}
 
 \begin{description}
 
-\item[prototype and patch:] A development plan that involves
-writing a rough draft of a program, testing, and correcting errors as
-they are found.
-\index{prototype and patch}
+\item[prototipo y parche:] Un plan de desarrollo que involucra
+escribir un borrador de un programa, probarlo y corregir errores a medida que
+se encuentran.
+\index{prototipo y parche}
 
-\item[designed development:] A development plan that involves
-high-level insight into the problem and more planning than incremental
-development or prototype development.
-\index{designed development}
+\item[desarrollo diseñado:] Un plan de desarrollo que involucra una
+visión de alto nivel del problema y más planificación que el desarrollo
+incremental o el desarrollo de proototipo.
+\index{desarrollo diseñado}
 
-\item[pure function:] A function that does not modify any of the objects it
-receives as arguments.  Most pure functions are fruitful.
-\index{pure function}
+\item[función pura:] Una función que no modifica ninguno de los objetos que
+recibe como argumentos.  La mayoría de las funciones puras son productivas.
+\index{función pura}
 
-\item[modifier:] A function that changes one or more of the objects it
-  receives as arguments.  Most modifiers are void; that is, they
-  return {\tt None}.  \index{modifier}
+\item[modificador:] Una función que cambia uno o más de los objetos que
+  recibe como argumentos.  La mayoría de los modificadores son funciones nulas, es decir,
+  devuelven {\tt None}.  \index{modificador}
 
-\item[functional programming style:] A style of program design in which the
-majority of functions are pure.
-\index{functional programming style}
+\item[estilo de programación funcional:] Un estilo de diseño de programa en el cual la
+mayoría de las funciones son puras.
+\index{estilo de programación funcional}
 
-\item[invariant:] A condition that should always be true during the
-execution of a program.
-\index{invariant}
+\item[invariante:] Una condición que debería ser siempre verdadera durante la
+ejecución del un programa.
+\index{invariante}
 
-\item[assert statement:] A statement that check a condition and raises
-an exception if it fails.
-\index{assert statement}
-\index{statement!assert}
+\item[sentencia assert:] Una sentencia que verifica una condición y levanta
+una excepción si falla.
+\index{sentencia assert}
+\index{assert!sentencia}
 
 \end{description}
 
 
-\section{Exercises}
+\section{Ejercicios}
 
-Code examples from this chapter are available from
-\url{http://thinkpython2.com/code/Time1.py}; solutions to the
-exercises are available from \url{http://thinkpython2.com/code/Time1_soln.py}.
+Los ejemplos de código de este capítulo están disponibles en
+\url{http://thinkpython2.com/code/Time1.py}; las soluciones a los
+ejercicios están disponibles en \url{http://thinkpython2.com/code/Time1_soln.py}.
 
 \begin{exercise}
 
-Write a function called \verb"mul_time" that takes a Time object
-and a number and returns a new Time object that contains
-the product of the original Time and the number.
+Escribe una función llamada \verb"mul_tiempo" que tome un objeto Tiempo
+y un número y devuelva un nuevo objeto Tiempo que contenga
+el producto del Tiempo original y el número.
 
-Then use \verb"mul_time" to write a function that takes a Time
-object that represents the finishing time in a race, and a number
-that represents the distance, and returns a Time object that represents
-the average pace (time per mile).
-\index{running pace}
+Luego utiliza \verb"mul_tiempo" para escribir una función que tome un objeto
+Tiempo que represente el tiempo de término en una carrera, y un número
+que represente la distancia, y devuelva un objeto Tiempo que represente
+el ritmo promedio (tiempo por cada milla).
+\index{ritmo de carrera}
 
 \end{exercise}
 
 
 \begin{exercise}
-\index{datetime module}
-\index{module!datetime}
+\index{módulo datetime}
+\index{datetime!módulo}
 
-The {\tt datetime} module provides {\tt time} objects
-that are similar to the Time objects in this chapter, but
-they provide a rich set of methods and operators.  Read the
-documentation at \url{http://docs.python.org/3/library/datetime.html}.
+El módulo {\tt datetime} proporciona objetos {\tt time}
+que son similares a los objetos Tiempo de este capítulo, pero
+proporcionan un rico conjunto de métodos y operadores.  Lee la
+documentación en \url{http://docs.python.org/3/library/datetime.html}.
 
 \begin{enumerate}
 
-\item Use the {\tt datetime} module to write a program that gets the
-  current date and prints the day of the week.
+\item Utiliza el módulo {\tt datetime} para escribir un programa que obtenga la
+  fecha actual e imprima el día de la semana.
 
-\item Write a program that takes a birthday as input and prints the
-  user's age and the number of days, hours, minutes and seconds until
-  their next birthday.
-\index{birthday}
+\item Escribe un programa que tome un día de nacimiento como entrada e imprima la
+  edad del usuario y el número de días, horas y segundos que faltan para
+  el siguiente cumpleaños.
+\index{cumpleaños}
 
-\item For two people born on different days, there is a day when one
-  is twice as old as the other.  That's their Double Day.  Write a
-  program that takes two birth dates and computes their Double Day.
+\item Para dos personas nacidas en días diferentes, hay un día en que una
+  tiene el doble de edad que la otra.  Ese es su Día Doble.  Escribe un
+  programa que tome dos días de nacimiento y calcule su Día Doble.
 
-\item For a little more challenge, write the more general version that
-  computes the day when one person is $n$ times older than the other.
-\index{Double Day}
+\item Para ponerlo un poco más desafiante, escribe una versión más general que
+  calcule el día en que una persona es $n$ veces mayor que la otra.
+\index{Día Doble}
 
 \end{enumerate}
 
-Solution: \url{http://thinkpython2.com/code/double.py}
+Solución: \url{http://thinkpython2.com/code/double.py}
 
 \end{exercise}
 
