@@ -4,7 +4,6 @@ ThinkPython2-spanish
 `90% [#############################################.....]`
 
 Capítulos no traducidos:
-* Capítulo 16
 * Capítulo 17
 * Capítulo 18
 

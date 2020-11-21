@@ -12789,7 +12789,7 @@ def sumar_tiempo(t1, t2):
     suma.hora = t1.hora + t2.hora
     suma.minuto = t1.minuto + t2.minuto
     suma.segundo = t1.segundo + t2.segundo
-    return sum
+    return suma
 \end{verbatim}
 %
 La función crea un nuevo objeto {\tt Tiempo}, inicializa sus
@@ -12836,7 +12836,7 @@ Aquí hay una versión mejorada:
 
 \begin{verbatim}
 def sumar_tiempo(t1, t2):
-    suma = Time()
+    suma = Tiempo()
     suma.hora = t1.hora + t2.hora
     suma.minuto = t1.minuto + t2.minuto
     suma.segundo = t1.segundo + t2.segundo
@@ -12866,13 +12866,13 @@ parámetros.  En ese caso, los cambios son visibles para la llamadora.
 Las funciones que trabajan de esta manera se llaman {\bf modificadores}.
 \index{increment}
 
-{\tt aumentar}, el cual agrega un número dado de segundos al objeto {\tt Tiempo},
-se puede escribir de manera natural como un
+{\tt aumentar}, que agrega un número dado de segundos al objeto {\tt Tiempo},
+se puede escribir de manera natural como
 modificador.  Aquí hay un borrador:
 
 \begin{verbatim}
 def aumentar(tiempo, segundos):
-    tiempo.second += segundos
+    tiempo.segundo += segundos
 
     if tiempo.segundo >= 60:
         tiempo.segundo -= 60
@@ -12898,10 +12898,10 @@ ejercicio, escribe una versión correcta de {\tt aumentar} que no
 contenga ningún ciclo.
 
 Cualquier cosa que se pueda hacer con modificadores también se puede hacer con funciones
-puras.  De hecho, algunos lenguages de programación solo permiten funciones
-puras.  Existe evidencia de que los programas que usan funciones puras
+puras.  De hecho, algunos lenguajes de programación solo permiten funciones
+puras.  Existe evidencia de que los programas que utilizan funciones puras
 son más rápidas de desarrollar y menos propensas a errores que los programas
-que utilizan modificadores.  Sin embargo, los modificadores con convenientes en ocasiones,
+que utilizan modificadores.  Sin embargo, los modificadores son convenientes en ocasiones,
 y los programas funcionales tienden a ser menos eficientes.
 
 En general, recomiendo que escribas funciones puras siempre que sea
@@ -12910,7 +12910,7 @@ convincente.  Este enfoque podría ser llamado {\bf estilo de
 programación funcional}.
 \index{estilo de programación funcional}
 
-Como ejercicio, escribe una versióin ``pura'' de {\tt aumentar} que
+Como ejercicio, escribe una versión ``pura'' de {\tt aumentar} que
 cree y devuelva un nuevo objeto Tiempo en lugar de modificar el
 parámetro.
 
@@ -12936,10 +12936,10 @@ has encontrado todos los errores.
 Una alternativa es el {\bf desarrollo diseñado}, en el cual la visión
 de alto nivel en el problema puede hacer mucho más fácil la programación.  En
 este caso, la visión es que un objeto Tiempo es en realidad un número
-de tres dígitos en base 60 (ver \url{http://en.wikipedia.org/wiki/Sexagesimal}.)!  El
+de tres dígitos en base 60 (ver \url{http://en.wikipedia.org/wiki/Sexagesimal}).  El
 atributo {\tt segundo} es la ``columna de unidades'', el atributo {\tt minuto}
 es la ``columna de sesentenas'' y el atributo {\tt hora} es
-la ``columna de treinta y seis centenas''.
+la ``columna de centenas de treinta y seis''.
 \index{sexagesimal}
 
 Cuando escribimos \verb"sumar_tiempo" y {\tt aumentar}, efectivamente estábamos
@@ -12947,7 +12947,7 @@ haciendo suma en base 60, motivo por el cual tuvimos que acarrear de una
 columna a la siguiente.
 \index{acarreo, suma con}
 
-Esta observación sugiere otro enfoque al problema completo ---podemos
+Esta observación sugiere otro enfoque al problema completo: podemos
 convertir objetos Tiempo a enteros y tomar ventaja del hecho de
 que el computador sabe cómo hacer aritmética con enteros.
 
@@ -12989,10 +12989,10 @@ def sumar_tiempo(t1, t2):
 \end{verbatim}
 %
 Esta versión es más corta que la original, y más fácil de verificar.  Como
-ejercicio, reescribe {\tt aumentar} utilizando \verb"tiempo_a_int" y
+ejercicio, reescribe {\tt aumentar} utilizando \verb"tiempo_a_int" e
 \verb"int_a_tiempo".
 
-En algunas formas, convertir de base 10 a base 10 y viceversa es más difícil
+En algunas formas, convertir de base 60 a base 10 y viceversa es más difícil
 que solo tratar con tiempos.  La conversión de base es más abstracta; nuestra
 intuición para lidiar con valores de tiempo es mejor.
 
@@ -13084,7 +13084,7 @@ se encuentran.
 
 \item[desarrollo diseñado:] Un plan de desarrollo que involucra una
 visión de alto nivel del problema y más planificación que el desarrollo
-incremental o el desarrollo de proototipo.
+incremental o el desarrollo de prototipo.
 \index{desarrollo diseñado}
 
 \item[función pura:] Una función que no modifica ninguno de los objetos que
@@ -13104,7 +13104,7 @@ ejecución del un programa.
 \index{invariante}
 
 \item[sentencia assert:] Una sentencia que verifica una condición y levanta
-una excepción si falla.
+una excepción si esta falla.
 \index{sentencia assert}
 \index{assert!sentencia}
 
@@ -13123,7 +13123,7 @@ Escribe una función llamada \verb"mul_tiempo" que tome un objeto Tiempo
 y un número y devuelva un nuevo objeto Tiempo que contenga
 el producto del Tiempo original y el número.
 
-Luego utiliza \verb"mul_tiempo" para escribir una función que tome un objeto
+Luego, utiliza \verb"mul_tiempo" para escribir una función que tome un objeto
 Tiempo que represente el tiempo de término en una carrera, y un número
 que represente la distancia, y devuelva un objeto Tiempo que represente
 el ritmo promedio (tiempo por cada milla).
@@ -13138,7 +13138,7 @@ el ritmo promedio (tiempo por cada milla).
 
 El módulo {\tt datetime} proporciona objetos {\tt time}
 que son similares a los objetos Tiempo de este capítulo, pero
-proporcionan un rico conjunto de métodos y operadores.  Lee la
+proporcionan un abundante conjunto de métodos y operadores.  Lee la
 documentación en \url{http://docs.python.org/3/library/datetime.html}.
 
 \begin{enumerate}
