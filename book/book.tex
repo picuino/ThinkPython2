@@ -13553,130 +13553,130 @@ Como ejercicio, escribe un método {\tt str} para la clase {\tt Punto}.
 Crea un objeto Punto e imprímelo.
 
 
-\section{Operator overloading}
+\section{Sobrecarga de operador}
 \label{operator.overloading}
 
-By defining other special methods, you can specify the behavior
-of operators on programmer-defined types.  For example, if you define
-a method named \verb"__add__" for the {\tt Time} class, you can use the
-{\tt +} operator on Time objects.
-\index{programmer-defined type}
-\index{type!programmer-defined}
+Definiendo otros métodos especiales, puedes especificar el comportamiento
+de operadores en tipos definidos por el programador.  Por ejemplo, si defines
+un método con nombre \verb"__add__" para la clase {\tt Tiempo}, puedes utilizar el
+operador {\tt +} en objetos Tiempo.
+\index{tipo definido por el programador}
+\index{definido por el programador!tipo}
 
-Here is what the definition might look like:
-\index{add method}
-\index{method!add}
+Así es como podría verse la definición:
+\index{método add}
+\index{add!método}
 
 \begin{verbatim}
-# inside class Tiempo:
+# dentro de class Tiempo:
 
     def __add__(self, other):
-        seconds = self.time_to_int() + other.time_to_int()
-        return int_to_time(seconds)
+        segundos = self.tiempo_a_int() + other.tiempo_a_int()
+        return int_a_tiempo(segundos)
 \end{verbatim}
 %
-And here is how you could use it:
+Y así es como podrías utilizarlo:
 
 \begin{verbatim}
 >>> comienzo = Tiempo(9, 45)
->>> duration = Tiempo(1, 35)
->>> print(comienzo + duration)
+>>> duracion = Tiempo(1, 35)
+>>> print(comienzo + duracion)
 11:20:00
 \end{verbatim}
 %
-When you apply the {\tt +} operator to Time objects, Python invokes
-\verb"__add__".  When you print the result, Python invokes
-\verb"__str__".  So there is a lot happening behind the scenes!
-\index{operator overloading}
+Cuando aplicas el operador {\tt +} a objetos Tiempo, Python invoca a
+\verb"__add__".  Cuando imprimes el resultado, Python invoca a
+\verb"__str__".  ¡Entonces están ocurriendo muchas cosas entre bastidores!
+\index{sobrecarga de operador}
 
-Changing the behavior of an operator so that it works with
-programmer-defined types is called {\bf operator overloading}.  For every
-operator in Python there is a corresponding special method, like
-\verb"__add__".  For more details, see
+Cambiar el comportamiento de un operador para que funcione con
+tipos definidos por el programador se llama {\bf sobrecarga de operador}.  Para cada
+operador en Python hay un método especial que le corresponde, como
+\verb"__add__".  Para más detalles, ver
 \url{http://docs.python.org/3/reference/datamodel.html#specialnames}.
 
-As an exercise, write an {\tt add} method for the Point class.
+Como ejercicio, escribe un método {\tt add} para la clase Punto.
 
 
-\section{Type-based dispatch}
+\section{Despacho basado en tipo}
 
-In the previous section we added two Time objects, but you
-also might want to add an integer to a Time object.  The
-following is a version of \verb"__add__"
-that checks the type of {\tt other} and invokes either
-\verb"add_time" or {\tt increment}:
+En la sección anterior sumamos dos objetos Tiempo, pero quizás
+quieras también sumar un entero a un objeto Tiempo.  Lo
+siguiente es una versión de \verb"__add__"
+que verifica el tipo de {\tt other} e invoca a
+\verb"sumar_tiempo" o {\tt aumentar}:
 
 \begin{verbatim}
-# inside class Tiempo:
+# dentro de class Tiempo:
 
     def __add__(self, other):
         if isinstance(other, Tiempo):
-            return self.add_time(other)
+            return self.sumar_tiempo(other)
         else:
-            return self.increment(other)
+            return self.aumentar(other)
 
-    def add_time(self, other):
-        seconds = self.time_to_int() + other.time_to_int()
-        return int_to_time(seconds)
+    def sumar_tiempo(self, other):
+        segundos = self.tiempo_a_int() + other.tiempo_a_int()
+        return int_a_tiempo(segundos)
 
-    def increment(self, seconds):
-        seconds += self.time_to_int()
-        return int_to_time(seconds)
+    def aumentar(self, seconds):
+        segundos += self.tiempo_a_int()
+        return int_a_tiempo(segundos)
 \end{verbatim}
 %
-The built-in function {\tt isinstance} takes a value and a
-class object, and returns {\tt True} if the value is an instance
-of the class.
-\index{isinstance function}
-\index{function!isinstance}
+La función incorporada {\tt isinstance} toma un valor y un
+objeto de clase, y devuelve {\tt True} si el valor es una instancia
+de la clase.
+\index{función isinstance}
+\index{isinstance!función}
 
-If {\tt other} is a Time object, \verb"__add__" invokes
-\verb"add_time".  Otherwise it assumes that the parameter
-is a number and invokes {\tt increment}.  This operation is
-called a {\bf type-based dispatch} because it dispatches the
-computation to different methods based on the type of the
-arguments.
-\index{type-based dispatch}
-\index{dispatch, type-based}
+Si {\tt other} es un objeto Tiempo, \verb"__add__" invoca a
+\verb"sumar_tiempo".  En caso contrario, supone que el parámetro
+es un número e invoca a {\tt aumentar}.  Esta operación se
+llama {\bf despacho basado en tipo} porque despacha el
+cálculo a diferentes métodos basándose en el tipo de los
+argumentos.
+\index{despacho basado en tipo}
+\index{basado en tipo, despacho}
 
-Here are examples that use the {\tt +} operator with different
-types:
+Aquí hay ejemplos que utilizan el operador {\tt +} con tipos
+diferentes:
 
 \begin{verbatim}
 >>> comienzo = Tiempo(9, 45)
->>> duration = Tiempo(1, 35)
->>> print(comienzo + duration)
+>>> duracion = Tiempo(1, 35)
+>>> print(comienzo + duracion)
 11:20:00
 >>> print(comienzo + 1337)
 10:07:17
 \end{verbatim}
 %
-Unfortunately, this implementation of addition is not commutative.
-If the integer is the first operand, you get
-\index{commutativity}
+Desafortunadamente, esta implemencaión de la suma no es conmutativa.
+Si el entero es el primer operando, obtienes
+\index{conmutatividad}
 
 \begin{verbatim}
 >>> print(1337 + comienzo)
 TypeError: unsupported operand type(s) for +: 'int' and 'instance'
 \end{verbatim}
 %
-The problem is, instead of asking the Time object to add an integer,
-Python is asking an integer to add a Time object, and it doesn't know
-how.  But there is a clever solution for this problem: the
-special method \verb"__radd__", which stands for ``right-side add''.
-This method is invoked when a Time object appears on the right side of
-the {\tt +} operator.  Here's the definition:
-\index{radd method}
-\index{method!radd}
+El problema es que, en lugar de pedirle al objeto Tiempo que sume un entero,
+Python le está pidiendo a un entero que sume un objeto Tiempo, y no sabe
+cómo hacerlo.  Sin embargo, hay una solución ingeniosa para este problema: el
+método especial \verb"__radd__", que significa ``right-side add''.
+Este método se invoca cuando un objeto Tiempo aparece en el lado derecho del
+operador {\tt +}.  Aquí está la definición:
+\index{método radd}
+\index{radd!método}
 
 \begin{verbatim}
-# inside class Tiempo:
+# dentro de class Tiempo:
 
     def __radd__(self, other):
         return self.__add__(other)
 \end{verbatim}
 %
-And here's how it's used:
+Y así es como se utiliza:
 
 \begin{verbatim}
 >>> print(1337 + comienzo)
@@ -13684,41 +13684,41 @@ And here's how it's used:
 \end{verbatim}
 %
 
-As an exercise, write an {\tt add} method for Points that works with
-either a Point object or a tuple:
+Como ejercicio, escribe un método {\tt add} para Puntos que funcione tanto con
+un objeto Punto como con una tupla:
 
 \begin{itemize}
 
-\item If the second operand is a Point, the method should return a new
-Point whose $x$ coordinate is the sum of the $x$ coordinates of the
-operands, and likewise for the $y$ coordinates.
+\item Si el segundo operando es un Punto, el método debería devolver un
+Punto nuevo cuya coordenada $x$ es la suma de las coordenadas $x$ de los
+operandos, y lo mismo para las coordenadas $y$.
 
-\item If the second operand is a tuple, the method should add the
-first element of the tuple to the $x$ coordinate and the second
-element to the $y$ coordinate, and return a new Point with the result.
+\item Si el segundo operando es una tupla, el método debería sumar el
+primer elemento de la tupla a la coordenada $x$ y el segundo
+elemento a la coordenada $y$, y devolver un Punto nuevo con el resultado.
 
 \end{itemize}
 
 
 
 
-\section{Polymorphism}
+\section{Polimorfismo}
 \label{polymorphism}
 
-Type-based dispatch is useful when it is necessary, but (fortunately)
-it is not always necessary.  Often you can avoid it by writing functions
-that work correctly for arguments with different types.
-\index{type-based dispatch}
-\index{dispatch!type-based}
+El despacho basado en tipo es útil si es necesario, pero (afortunadamente)
+no siempre es necesario.  A menudo puedes evitarlo escribiendo funciones
+que trabajen de manera correcta con argumentos de tipo diferente.
+\index{despacho basado en tipo}
+\index{basado en tipo!despacho}
 
-Many of the functions we wrote for strings also
-work for other sequence types.
-For example, in Section~\ref{histogram}
-we used {\tt histogram} to count the number of times each letter
-appears in a word.
+Muchas de las funciones que escribimos para cadenas también
+funcionan para otros tipos de secuencia.
+Por ejemplo, en la Sección~\ref{histogram}
+utilizamos {\tt histograma} para contar el número de veces que aparece cada letra
+en una palabra.
 
 \begin{verbatim}
-def histogram(s):
+def histograma(s):
     d = dict()
     for c in s:
         if c not in d:
@@ -13728,9 +13728,9 @@ def histogram(s):
     return d
 \end{verbatim}
 %
-This function also works for lists, tuples, and even dictionaries,
-as long as the elements of {\tt s} are hashable, so they can be used
-as keys in {\tt d}.
+Esta función también se puede utilizar con listas, tuplas e incluso diccionarios,
+siempre que los elementos de {\tt s} sean hashables, por lo cual se pueden utilizar
+como claves en {\tt d}.
 
 \begin{verbatim}
 >>> t = ['spam', 'egg', 'spam', 'spam', 'bacon', 'spam']
@@ -13738,14 +13738,14 @@ as keys in {\tt d}.
 {'bacon': 1, 'egg': 1, 'spam': 4}
 \end{verbatim}
 %
-Functions that work with several types are called {\bf polymorphic}.
-Polymorphism can facilitate code reuse.  For example, the built-in
-function {\tt sum}, which adds the elements of a sequence, works
-as long as the elements of the sequence support addition.
-\index{polymorphism}
+Las funciones que se pueden utilizar con varios tipos se llaman {\bf polimórficas}.
+Los polimorfismos pueden facilitar la reutilización de código.  Por ejemplo, la función
+incorporada {\tt sum}, que suma los elementos de una secuencia, funciona
+siempre que los elementos de la secuencia admitan la suma.
+\index{polimorfismo}
 
-Since Time objects provide an {\tt add} method, they work
-with {\tt sum}:
+Dado que los objetos Tiempo proporcionan un método {\tt add}, funcionan
+con {\tt sum}:
 
 \begin{verbatim}
 >>> t1 = Tiempo(7, 43)
@@ -13756,157 +13756,157 @@ with {\tt sum}:
 23:01:00
 \end{verbatim}
 %
-In general, if all of the operations inside a function
-work with a given type, the function works with that type.
+En general, si todas las operaciones dentro de una función
+se pueden utilizar con un tipo dado, la función se puede utilizar con ese tipo.
 
-The best kind of polymorphism is the unintentional kind, where
-you discover that a function you already wrote can be
-applied to a type you never planned for.
+Los mejores polimorfismos son los involuntarios, donde
+descubres que una función que ya escribiste se puede
+aplicar a un tipo para el cual nunca planeaste.
 
 
-\section{Debugging}
-\index{debugging}
+\section{Depuración}
+\index{depuración}
 
-It is legal to add attributes to objects at any point in the execution
-of a program, but if you have objects with the same type that don't
-have the same attributes, it is easy to make mistakes.
-It is considered a good idea to
-initialize all of an object's attributes in the init method.
-\index{init method}
-\index{attribute!initializing}
+Es legal añadir atributos a los objetos en cualquier punto de la ejecución
+de un programa, pero si tienes objetos con el mismo tipo que no
+tienen los mismos atributos, es fácil cometer errores.
+Se considera una buena idea
+inicializar todo lo de un atributo de un objeto en el método init.
+\index{método init}
+\index{inicializar!atributo}
 
-If you are not sure whether an object has a particular attribute, you
-can use the built-in function {\tt hasattr} (see Section~\ref{hasattr}).
-\index{hasattr function}
-\index{function!hasattr}
-\index{dict attribute@\_\_dict\_\_ attribute}
-\index{attribute!\_\_dict\_\_}
+Si no estás seguro de si un objeto tiene un atributo en particular,
+puedes utilizar la función incorporada {\tt hasattr} (ver Sección~\ref{hasattr}).
+\index{función hasattr}
+\index{hasattr!función}
+\index{atributo dict@atributo \_\_dict\_\_}
+\index{\_\_dict\_\_!atributo}
 
-Another way to access attributes is the built-in function {\tt vars},
-which takes an object and returns a dictionary that maps from
-attribute names (as strings) to their values:
+Otra manera de acceder a los atributos es la función incorporada {\tt vars},
+que toma un objeto y devuelve un diccionario que mapea de los nombres
+de atributos (como cadenas) a sus valores:
 
 \begin{verbatim}
->>> p = Point(3, 4)
+>>> p = Punto(3, 4)
 >>> vars(p)
 {'y': 4, 'x': 3}
 \end{verbatim}
 %
-For purposes of debugging, you might find it useful to keep this
-function handy:
+Para fines de depuración, quizás encuentres útil tener esta
+función a mano:
 
 \begin{verbatim}
-def print_attributes(obj):
+def imprimir_atiributos(obj):
     for attr in vars(obj):
         print(attr, getattr(obj, attr))
 \end{verbatim}
 %
-\verb"print_attributes" traverses the dictionary
-and prints each attribute name and its corresponding value.
-\index{traversal!dictionary}
-\index{dictionary!traversal}
+\verb"imprimir_atributos" recorre el diccionario
+e imprime cada nombre de atributo y su valor correspondiente.
+\index{recorrer!diccionario}
+\index{diccionario!recorrer}
 
-The built-in function {\tt getattr} takes an object and an attribute
-name (as a string) and returns the attribute's value.
-\index{getattr function}
-\index{function!getattr}
+La función incorporada {\tt getattr} toma un objeto y un nombre
+de atributo (como cadena) y devuelve el valor del atributo.
+\index{función getattr}
+\index{getattr!función}
 
 
-\section{Interface and implementation}
+\section{Interfaz e implementación}
 
-One of the goals of object-oriented design is to make software more
-maintainable, which means that you can keep the program working when
-other parts of the system change, and modify the program to meet new
-requirements.
-\index{interface}
-\index{implementation}
-\index{maintainable}
-\index{object-oriented design}
+Uno de los objetivos del diseño orientado a objetos es hacer que el software sea más
+mantenible, lo cual significa que puedes mantener el programa funcionando cuando
+otras partes del sistema cambian, y modificar el programa para cumplir con nuevos
+requisitos.
+\index{interfaz}
+\index{implementación}
+\index{mantenible}
+\index{diseño orientado a objetos}
 
-A design principle that helps achieve that goal is to keep
-interfaces separate from implementations.  For objects, that means
-that the methods a class provides should not depend on how the
-attributes are represented.
-\index{attribute}
+Un principio de diseño que ayuda a alcanzar ese objetivo es mantener
+interfaces separadas de las implementaciones.  Para objetos, eso significa
+que los métodos que proporciona una clase no deberían depender de la manera en que los
+atributos estén representados.
+\index{atributo}
 
-For example, in this chapter we developed a class that represents
-a time of day.  Methods provided by this class include
-\verb"time_to_int", \verb"is_after", and \verb"add_time".
+Por ejemplo, en este capítulo desarrollamos una clase que representa
+una hora del día.  Los métodos proporcionados por esta clase incluyen a
+\verb"tiempo_a_int", \verb"esta_despues" y \verb"sumar_tiempo".
 
-We could implement those methods in several ways.  The details of the
-implementation depend on how we represent time.  In this chapter, the
-attributes of a {\tt Time} object are {\tt hora}, {\tt minuto}, and
-{\tt second}.
+Podríamos implementar esos métodos en muchas maneras.  Los detalles de la
+implementación dependen de cómo representemos al tiempo.  En este capítulo, los
+atributos de un objeto {\tt Tiempo} son {\tt hora}, {\tt minuto} y
+{\tt segundo}.
 
-As an alternative, we could replace these attributes with
-a single integer representing the number of seconds
-since midnight.  This implementation would make some methods,
-like \verb"is_after", easier to write, but it makes other methods
-harder.
+Como alternativa, podíamos reemplazar estos atributos con
+un único entero que represente al número de segundos
+desde la medianoche.  Esta implementación haría que algunos métodos,
+como \verb"esta_despues", sean más fáciles de escribir, pero haría que otros métodos sean
+más difíciles.
 
-After you deploy a new class, you might discover a better
-implementation.  If other parts of the program are using your
-class, it might be time-consuming and error-prone to change the
-interface.
+Después de que implementes una clase nueva, quizás descubras una mejor
+implementación.  Si otras partes del programa están utilizando tu
+clase, cambiar la interfaz podría consumir tiempo y ser propenso a
+errores.
 
-But if you designed the interface carefully, you can
-change the implementation without changing the interface, which
-means that other parts of the program don't have to change.
+Sin embargo, si diseñaste la interfaz concuidado, puedes
+cambiar la implementación sin cambiar la interfaz, lo cual
+significa que otras partes del programa no tienen que cambiar.
 
 
 \section{Glossary}
 
 \begin{description}
 
-\item[object-oriented language:] A language that provides features,
-  such as programmer-defined types and methods, that facilitate
-  object-oriented programming.
-\index{object-oriented language}
+\item[lenguaje orientado a objetos:] Un lenguaje que proporciona características,
+  tales como métodos y tipos definidos por el programador, que facilitan
+  la programación orientada a objetos.
+\index{lenguage orientado a objetos}
 
-\item[object-oriented programming:] A style of programming in which
-data and the operations that manipulate it are organized into classes
-and methods.
-\index{object-oriented programming}
+\item[programación orientada a objetos:] Un estilo de programación en el cual
+los datos y las operaciones que los manipulan se organizan en clases
+y métodos.
+\index{programación orientada a objetos}
 
-\item[method:] A function that is defined inside a class definition and
-is invoked on instances of that class.
-\index{method}
+\item[método:] Una función que se define dentro de una definición de clase y
+se invoca en instancias de esa clase.
+\index{método}
 
-\item[subject:] The object a method is invoked on.
-\index{subject}
+\item[sujeto:] El objeto en el cual se invoca un método.
+\index{sujeto}
 
-\item[positional argument:]  An argument that does not include
-a parameter name, so it is not a keyword argument.
-\index{positional argument}
-\index{argument!positional}
+\item[argumento posicional:]  Un argumento que no incluye
+un nombre de parámetro, por tanto no es un argumento de palabra clave.
+\index{argumento posicional}
+\index{posicional!argumento}
 
-\item[operator overloading:] Changing the behavior of an operator like
-{\tt +} so it works with a programmer-defined type.
-\index{overloading}
-\index{operator!overloading}
+\item[sobrecarga de operador:] Cambiar el comportamiento de un operador como
+{\tt +} para que funcione con un tipo definido por el programador.
+\index{sobrecarga}
+\index{operador!sobrecarga}
 
-\item[type-based dispatch:] A programming pattern that checks the type
-of an operand and invokes different functions for different types.
-\index{type-based dispatch}
+\item[despacho basado en tipo:] Un patrón de programación que verifica el tipo
+de un operando e invoca funciones diferentes para tipos diferentes.
+\index{despacho basado en tipo}
 
-\item[polymorphic:] Pertaining to a function that can work with more
-  than one type.
-\index{polymorphism}
+\item[polimórfico:] Dicho de una función que puede trabajar con más de
+  un tipo.
+\index{polimorfismo}
 
 \end{description}
 
 
-\section{Exercises}
+\section{Ejercicios}
 
 \begin{exercise}
 
-Download the code from this chapter from
-\url{http://thinkpython2.com/code/Time2.py}.  Change the attributes of
-    {\tt Time} to be a single integer representing seconds since
-    midnight.  Then modify the methods (and the function
-    \verb"int_to_time") to work with the new implementation.  You
-    should not have to modify the test code in {\tt main}.  When you
-    are done, the output should be the same as before.  Solution:
+Descarga el código de este capítulo en
+\url{http://thinkpython2.com/code/Time2.py}.  Cambia los atributos de
+    {\tt Time} para que sea un único entero que represente los segundos desde
+    la media noche.  Luego modifica los métodos (y la función
+    \verb"int_to_time") para que funcionen con la nueva implementación.  No
+    deberías tener que modificar el código de prueba en {\tt main}.  Cuando
+    termines, la salida debería ser la misma que antes.  Solución:
     \url{http://thinkpython2.com/code/Time2_soln.py}.
 
 \end{exercise}
@@ -13914,46 +13914,46 @@ Download the code from this chapter from
 
 \begin{exercise}
 \label{kangaroo}
-\index{default value!avoiding mutable}
-\index{mutable object, as default value}
-\index{worst bug}
-\index{bug!worst}
-\index{Kangaroo class}
-\index{class!Kangaroo}
+\index{valor por defecto!evitar mutable}
+\index{objeto mutable, como valor por defecto}
+\index{el peor error de programación}
+\index{error de programación!el peor}
+\index{clase Canguro}
+\index{Canguro!clase}
 
-This exercise is a cautionary tale about one of the most
-common, and difficult to find, errors in Python.
-Write a definition for a class named {\tt Kangaroo} with the following
-methods:
+Este ejercicio es un cuento con moraleja acerca de uno de los errores
+más comunes, y más difíciles de encontrar, en Python.
+Escribe una definición de una clase con nombre {\tt Canguro} con los siguientes
+métodos:
 
 \begin{enumerate}
 
-\item An \verb"__init__" method that initializes an attribute named
-\verb"pouch_contents" to an empty list.
+\item Un método \verb"__init__" que inicialice un atributo con nombre
+\verb"pouch_contents" a una lista vacía.
 
-\item A method named \verb"put_in_pouch" that takes an object
-of any type and adds it to \verb"pouch_contents".
+\item Un método con nombre \verb"put_in_pouch" que tome un objeto
+de cualquier tipo y lo añada a \verb"pouch_contents".
 
-\item A \verb"__str__" method that returns a string representation
-of the Kangaroo object and the contents of the pouch.
+\item Un método \verb"__str__" que devuelva una representación de cadena
+del objeto Canguro y los contenidos de la bolsa.
 
 \end{enumerate}
 %
-Test your code
-by creating two {\tt Kangaroo} objects, assigning them to variables
-named {\tt kanga} and {\tt roo}, and then adding {\tt roo} to the
-contents of {\tt kanga}'s pouch.
+Prueba tu código
+creando dos objetos {\tt Kangaroo}, asignándolos a variables
+con nombres {\tt kanga} y {\tt roo}, y luego añadiendo {\tt roo} al
+contenido de la bolsa de {\tt kanga}.
 
-Download \url{http://thinkpython2.com/code/BadKangaroo.py}.  It contains
-a solution to the previous problem with one big, nasty bug.
-Find and fix the bug.
+Descarga \url{http://thinkpython2.com/code/BadKangaroo.py}.  Contiene
+una solución al problema anterior con un gran y horrible error.
+Encuentra y corrije el error.
 
-If you get stuck, you can download
-\url{http://thinkpython2.com/code/GoodKangaroo.py}, which explains the
-problem and demonstrates a solution.
-\index{aliasing}
-\index{embedded object}
-\index{object!embedded}
+Si te estancas, puedes descargar
+\url{http://thinkpython2.com/code/GoodKangaroo.py}, el cual explica el
+problema y demuestra una solución.
+\index{alias}
+\index{objeto incrustado}
+\index{incrustado!objeto}
 
 \end{exercise}
 
