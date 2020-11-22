@@ -6752,8 +6752,8 @@ def contiene_minuscula5(s):
 
 
 \begin{exercise}
-\index{letter rotation}
-\index{rotation, letter}
+\index{rotación de letras}
+\index{letras, rotación de}
 
 \label{exrotate}
 Un cifrado César es una forma débil de encriptación que implica la ``rotación'' de cada
@@ -13959,335 +13959,335 @@ problema y demuestra una solución.
 
 
 
-\chapter{Inheritance}
+\chapter{Herencia}
 
-The language feature most often associated with object-oriented
-programming is {\bf inheritance}.  Inheritance is the ability to
-define a new class that is a modified version of an existing class.
-In this chapter I demonstrate inheritance using classes that represent
-playing cards, decks of cards, and poker hands.
-\index{deck}
-\index{card, playing}
-\index{poker}
+La característica de un lenguaje que más frecuentemente se asocia a la programación
+orientada a objetos es la {\bf herencia}.  La herencia es la posibilidad de
+definir una clase nuevo que sea una verión modificada de una clase existente.
+En este capítulo demuestro la herencia utilizando clases que representan
+cartas de juego, barajas de cartas y manos de póquer.
+\index{baraja}
+\index{carta de juego}
+\index{póquer}
 
-If you don't play
-poker, you can read about it at
-\url{http://en.wikipedia.org/wiki/Poker}, but you don't have to; I'll
-tell you what you need to know for the exercises.
+Si no juegas
+póquer, puedes leer sobre este en
+\url{http://en.wikipedia.org/wiki/Poker}, pero no tienes que hacerlo; 
+Te diré lo que necesitas saber para los ejercicios.
 
-Code examples from
-this chapter are available from
+Los ejemplos de código de
+este capítulo están disponibles en
 \url{http://thinkpython2.com/code/Card.py}.
 
 
-\section{Card objects}
+\section{Objetos Carta}
 
-There are fifty-two cards in a deck, each of which belongs to one of
-four suits and one of thirteen ranks.  The suits are Spades, Hearts,
-Diamonds, and Clubs (in descending order in bridge).  The ranks are
-Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, and King.  Depending on
-the game that you are playing, an Ace may be higher than King
-or lower than 2.
-\index{rank}
-\index{suit}
+Hay cincuenta y dos cartas en una baraja, cada una perteneciente a uno de
+los cuatro palos y uno de los trece rangos.  Los palos son Picas, Corazones,
+Diamantes y Tréboles (en orden descendiente en el bridge).  Los rangos son
+As, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jota, Reina y Rey.  Dependiendo del
+juego que estés jugando, un As puede tener más valor que un Rey
+o menor que 2.
+\index{rango}
+\index{palo}
 
-If we want to define a new object to represent a playing card, it is
-obvious what the attributes should be: {\tt rank} and
-{\tt suit}.  It is not as obvious what type the attributes
-should be.  One possibility is to use strings containing words like
-\verb"'Spade'" for suits and \verb"'Queen'" for ranks.  One problem with
-this implementation is that it would not be easy to compare cards to
-see which had a higher rank or suit.
-\index{encode}
-\index{encrypt}
-\index{map to}
-\index{representation}
+Si queremos definir un objeto nuevo que represente una carta, es
+obvio cuáles deberían ser los atributos: {\tt rango} y
+{\tt palo}.  No es obvio qué tipo de atributos
+deberían ser.  Una posibilidad es utilizar cadenas que contengan palabras como
+\verb"'Picas'" para palos y \verb"'Reinga'" para rangos.  Un problema con
+esta implementación es que no sería fácil comparar cartas para
+ver cuál tiene un rango o palo con más valor.
+\index{codificar}
+\index{cifrar}
+\index{mapear}
+\index{representación}
 
-An alternative is to use integers to {\bf encode} the ranks and suits.
-In this context, ``encode'' means that we are going to define a mapping
-between numbers and suits, or between numbers and ranks.  This
-kind of encoding is not meant to be a secret (that
-would be ``encryption'').
+Una alternativa es utilizar enteros para {\bf codificar} los rangos y palos.
+En este contexto, ``codificar'' significa que vamos a definir un mapeo
+entre números y palos, o entre números y rangos.  Este
+tipo de codificación no está destinado a ser secreto (eso
+sería ``cifrado'').
 
 \newcommand{\mymapsto}{$\mapsto$}
 
-For example, this table shows the suits and the corresponding integer
-codes:
+Por ejemplo, esta tabla muestra los palos y los códigos enteros
+correspondientes:
 
 \begin{tabular}{l c l}
-Spades & \mymapsto & 3 \\
-Hearts & \mymapsto & 2 \\
-Diamonds & \mymapsto & 1 \\
-Clubs & \mymapsto & 0
+Picas & \mymapsto & 3 \\
+Corazones & \mymapsto & 2 \\
+Diamantes & \mymapsto & 1 \\
+Tréboles & \mymapsto & 0
 \end{tabular}
 
-This code makes it easy to compare cards; because higher suits map to
-higher numbers, we can compare suits by comparing their codes.
+Este código facilita la comparación entre cartas: dado que palos con mayor valor mapean a
+números mayores, podemos comparar palos comparando sus códigos.
 
-The mapping for ranks is fairly obvious; each of the numerical ranks
-maps to the corresponding integer, and for face cards:
+El mapeo para los rangos es bastante obvio: cada uno de los rangos de número
+mapean al entero correspondiente, y para cartas de figura:
 
 \begin{tabular}{l c l}
-Jack & \mymapsto & 11 \\
-Queen & \mymapsto & 12 \\
-King & \mymapsto & 13 \\
+Jota & \mymapsto & 11 \\
+Reina & \mymapsto & 12 \\
+Rey & \mymapsto & 13 \\
 \end{tabular}
 
-I am using the \mymapsto~symbol to make it clear that these mappings
-are not part of the Python program.  They are part of the program
-design, but they don't appear explicitly in the code.
-\index{Card class}
-\index{class!Card}
+Utilizo el símbolo \mymapsto para que quede claro que estos mapeos
+no son parte del programa en Python.  Son parte del diseño del
+programa, pero no aparecen explícitamente en el código.
+\index{clase Carta}
+\index{Carta!clase}
 
-The class definition for {\tt Card} looks like this:
+La definición de clase para {\tt Carta} se ve así:
 
 \begin{verbatim}
-class Card:
-    """Represents a standard playing card."""
+class Carta:
+    """Representa una carta de juego estándar."""
 
-    def __init__(self, suit=0, rank=2):
-        self.suit = suit
-        self.rank = rank
+    def __init__(self, palo=0, rango=2):
+        self.palo = palo
+        self.rango = rango
 \end{verbatim}
 %
-As usual, the init method takes an optional
-parameter for each attribute.  The default card is
-the 2 of Clubs.
+Como siempre, el método init toma un parámetro
+opcional para cada atributo.  La carta por defecto es
+el 2 de Tréboles.
 \index{init method}
 \index{method!init}
 
-To create a Card, you call {\tt Card} with the
-suit and rank of the card you want.
+Para crear una Carta, llamas a {\tt Carta} con el
+palo y el rango de la carta que quieres.
 
 \begin{verbatim}
-queen_of_diamonds = Card(1, 12)
+reina_de_diamantes = Carta(1, 12)
 \end{verbatim}
 %
 
 
-\section{Class attributes}
+\section{Atributos de clase}
 \label{class.attribute}
-\index{class attribute}
-\index{attribute!class}
+\index{atributo de clase}
+\index{clase!atributo de}
 
-In order to print Card objects in a way that people can easily
-read, we need a mapping from the integer codes to the corresponding
-ranks and suits.  A natural way to
-do that is with lists of strings.  We assign these lists to {\bf class
-attributes}:
+Para imprimir objetos Carta de una manera que las personas puedan leer
+fácilmente, necesitamos un mapeo de códigos enteros a los rangos y palos
+correspondientes.  Una manera natural de
+hacer eso es con listas de cadenas.  Podemos asignar estas listas a {\bf atributos
+de clase}:
 
 \begin{verbatim}
-# inside class Card:
+# dentro de class Carta:
 
-    suit_names = ['Clubs', 'Diamonds', 'Hearts', 'Spades']
-    rank_names = [None, 'Ace', '2', '3', '4', '5', '6', '7',
-              '8', '9', '10', 'Jack', 'Queen', 'King']
+    nombres_de_palo = ['Tréboles', 'Diamantes', 'Corazones', 'Picas']
+    nombres_de_rango = [None, 'As', '2', '3', '4', '5', '6', '7',
+              '8', '9', '10', 'Jota', 'Reina', 'Rey']
 
     def __str__(self):
-        return '%s of %s' % (Card.rank_names[self.rank],
-                             Card.suit_names[self.suit])
+        return '%s de %s' % (Carta.nombres_de_rango[self.rango],
+                             Carta.nombres_de_palo[self.palo])
 \end{verbatim}
 %
-Variables like \verb"suit_names" and \verb"rank_names", which are
-defined inside a class but outside of any method, are called
-class attributes because they are associated with the class object
-{\tt Card}.
-\index{instance attribute}
-\index{attribute!instance}
+Variables como \verb"nombres_de_palo" y \verb"nombres_de_rango", que se
+definen dentro de una clase pero fuera de cualquier método, se llaman
+atributos de clase porque están asociados al objeto de clase
+{\tt Carta}.
+\index{atributo de instancia}
+\index{instancia!atributo de}
 
-This term distinguishes them from variables like {\tt suit} and {\tt
-  rank}, which are called {\bf instance attributes} because they are
-associated with a particular instance.
-\index{dot notation}
+Este término los distingue de variables como {\tt palo} y {\tt
+  rango}, los cuales se llaman {\bf atributos de instancia} porque están
+asociados a una instancia particular.
+\index{notación de punto}
 
-Both kinds of attribute are accessed using dot notation.  For
-example, in \verb"__str__", {\tt self} is a Card object,
-and {\tt self.rank} is its rank.  Similarly, {\tt Card}
-is a class object, and \verb"Card.rank_names" is a
-list of strings associated with the class.
+A ambos tipos de atributo se accede utilizando notación de punto.  Por
+ejemplo, en \verb"__str__", {\tt self} es un objeto Carta,
+y {\tt self.rango} es su rango.  De manera similar, {\tt Carta}
+es un objeto de clase, y \verb"Carta.nombres_de_rango" es una
+lista de cadenas asociadas a la clase.
 
-Every card has its own {\tt suit} and {\tt rank}, but there
-is only one copy of \verb"suit_names" and \verb"rank_names".
+Cada carta tiene su propio {\tt palo} y {\tt rango}, pero hay
+solo una copia de \verb"nombres_de_palo" y \verb"nombres_de_rango".
 
-Putting it all together, the expression
-\verb"Card.rank_names[self.rank]" means ``use the attribute {\tt rank}
-from the object {\tt self} as an index into the list \verb"rank_names"
-from the class {\tt Card}, and select the appropriate string.''
+Poniéndolos todos juntos, la expresión
+\verb"Carta.nombres_de_rango[self.rango]" significa ``utiliza el atributo {\tt rango}
+del objeto {\tt self} como índice dentro de la lista \verb"nombres_de_rango"
+de la clase {\tt Carta}, y selecciona la cadena apropiada.''
 
-The first element of \verb"rank_names" is {\tt None} because there
-is no card with rank zero.  By including {\tt None} as a place-keeper,
-we get a mapping with the nice property that the index 2 maps to the
-string \verb"'2'", and so on.  To avoid this tweak, we could have
-used a dictionary instead of a list.
+El primer elemento de \verb"nombres_de_rango" es {\tt None} porque no
+hay carta con rango cero.  Incluyendo a {\tt None} como guardián de lugar,
+obtenemos un mapeo con la genial propiedad de que el índice 2 mapea a la
+cadena \verb"'2'", y así sucesivamente.  Para evitar este ajuste, podríamos haber
+utilizado un diccionario en lugar de una lista.
 
-With the methods we have so far, we can create and print cards:
+Con los métodos que hemos visto hasta ahora, podemos crear e imprimir cartas:
 
 \begin{verbatim}
->>> card1 = Card(2, 11)
->>> print(card1)
-Jack of Hearts
+>>> carta1 = Carta(2, 11)
+>>> print(carta1)
+Jota de Corazones
 \end{verbatim}
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/card1.pdf}}
-\caption{Object diagram.}
+\caption{Diagrama de objeto.}
 \label{fig.card1}
 \end{figure}
 
-Figure~\ref{fig.card1} is a diagram of the {\tt Card} class object and
-one Card instance.  {\tt Card} is a class object; its type is {\tt
-  type}.  {\tt card1} is an instance of {\tt Card}, so its type is
-{\tt Card}.  To save space, I didn't draw the contents of
-\verb"suit_names" and \verb"rank_names".  \index{state diagram}
-\index{diagram!state} \index{object diagram} \index{diagram!object}
+La Figura~\ref{fig.card1} es un diagrama del objeto de clase {\tt Carta} y
+una instancia de Carta.  {\tt Carta} es un objeto de clase; su tipo es {\tt
+  type}.  {\tt carta1} es una instancia de {\tt Carta}, por lo cual su tipo es
+{\tt Carta}.  Para ahorrar espacio, no dibujé los contenidos de
+\verb"nombres_de_palo" y \verb"nombres_de_rango".  \index{diagrama de estado}
+\index{estado!diagrama de} \index{diagrama de objeto} \index{objeto!diagrama de}
 
 
-\section{Comparing cards}
+\section{Comparar cartas}
 \label{comparecard}
-\index{operator!relational}
-\index{relational operator}
+\index{relacional!operador}
+\index{operador relacional}
 
-For built-in types, there are relational operators
+Para tipos incorporados, hay operadores relacionales
 ({\tt <}, {\tt >}, {\tt ==}, etc.)
-that compare
-values and determine when one is greater than, less than, or equal to
-another.  For programmer-defined types, we can override the behavior of
-the built-in operators by providing a method named
-\verb"__lt__", which stands for ``less than''.
-\index{programmer-defined type}
-\index{type!programmer-defined}
+que comparan
+valores y determinan si uno es mayor, menor o igual al
+otro.  Para tipos definidos por el programador, podemos anular el comportamiento de
+los operadores incorporados con un método cuyo nombre es
+\verb"__lt__", que significa ``less than'' ({\em menor que}).
+\index{tipo definido por el programador}
+\index{definido por el programador!tipo}
 
-\verb"__lt__" takes two parameters, {\tt self} and {\tt other},
-and returns {\tt True} if {\tt self} is strictly less than {\tt other}.
-\index{override}
-\index{operator overloading}
+\verb"__lt__" toma dos parámetros, {\tt self} y {\tt other},
+y devuelve {\tt True} si {\tt self} es estrictamente menor que {\tt other}.
+\index{anular}
+\index{sobrecarga de operador}
 
-The correct ordering for cards is not obvious.
-For example, which
-is better, the 3 of Clubs or the 2 of Diamonds?  One has a higher
-rank, but the other has a higher suit.  In order to compare
-cards, you have to decide whether rank or suit is more important.
+El orden correcto para las cartas no es obvio.
+Por ejemplo, ¿cuál
+es mejor, el 3 de Tréboles o el 2 de Diamantes?  Uno tiene un rango
+mayor, pero el otro tiene un palo con más valor.  Para comparar
+cartas, tienes que decidir si el rango o el palo es más importante.
 
-The answer might depend on what game you are playing, but to keep
-things simple, we'll make the arbitrary choice that suit is more
-important, so all of the Spades outrank all of the Diamonds,
-and so on.
-\index{cmp method@\_\_cmp\_\_ method}
-\index{method!\_\_cmp\_\_}
+La respuesta podría depender del juego que estás jugando, pero para mantener
+las cosas simples, haremos la elección arbitraria de que el palo es más
+importante, así que todas las Picas superan a todos los Diamantes,
+y así sucesivamente.
+\index{método cmp@método \_\_cmp\_\_}
+\index{\_\_cmp\_\_!método}
 
-With that decided, we can write \verb"__lt__":
+Con eso decidido, podemos escribir \verb"__lt__":
 
 \begin{verbatim}
-# inside class Card:
+# dentro de class Carta:
 
     def __lt__(self, other):
-        # check the suits
-        if self.suit < other.suit: return True
-        if self.suit > other.suit: return False
+        # verifica los palos
+        if self.palo < other.palo: return True
+        if self.palo > other.palo: return False
 
-        # suits are the same... check ranks
-        return self.rank < other.rank
+        # los palos son iguales... verifica los rangos
+        return self.rango < other.rango
 \end{verbatim}
 %
-You can write this more concisely using tuple comparison:
-\index{tuple!comparison}
-\index{comparison!tuple}
+Puedes escribir esto de manera más concisa utilizando comparación de tuplas:
+\index{tupla!comparación}
+\index{comparación!tupla}
 
 \begin{verbatim}
-# inside class Card:
+# dentro de class Carta:
 
     def __lt__(self, other):
-        t1 = self.suit, self.rank
-        t2 = other.suit, other.rank
+        t1 = self.palo, self.rango
+        t2 = other.palo, other.rango
         return t1 < t2
 \end{verbatim}
 %
-As an exercise, write an \verb"__lt__" method for Time objects.  You
-can use tuple comparison, but you also might consider
-comparing integers.
+Como ejercicio, escribe un método \verb"__lt__" para objetos Tiempo.  Puedes
+utilizar comparación de tuplas, pero quizás también consideres
+comparar enteros.
 
 
-\section{Decks}
-\index{list!of objects}
-\index{deck, playing cards}
+\section{Barajas}
+\index{lista!de objetos}
+\index{baraja de cartas}
 
-Now that we have Cards, the next step is to define Decks.  Since a
-deck is made up of cards, it is natural for each Deck to contain a
-list of cards as an attribute.
-\index{init method}
-\index{method!init}
+Ahora que tenemos Cartas, el siguiente paso es definir Barajas.  Dado que una
+baraja está compuesta de cartas, es natural que cada Baraja contenga una
+lista de cartas como atributo.
+\index{método init}
+\index{init!método}
 
-The following is a class definition for {\tt Deck}.  The
-init method creates the attribute {\tt cards} and generates
-the standard set of fifty-two cards:
-\index{composition}
-\index{loop!nested}
-\index{Deck class}
-\index{class!Deck}
+Lo siguiente es una definición de clase para {\tt Baraja}.  El
+método init crea el atributo {\tt cartas} y genera
+el conjunto estándar de cincuenta y dos cartas:
+\index{composición}
+\index{bucle!anidado}
+\index{clase Deck}
+\index{Deck!clase}
 
 \begin{verbatim}
-class Deck:
+class Baraja:
 
     def __init__(self):
-        self.cards = []
-        for suit in range(4):
-            for rank in range(1, 14):
-                card = Card(suit, rank)
-                self.cards.append(card)
+        self.carta = []
+        for palo in range(4):
+            for rango in range(1, 14):
+                carta = Carta(palo, rango)
+                self.cartas.append(carta)
 \end{verbatim}
 %
-The easiest way to populate the deck is with a nested loop.  The outer
-loop enumerates the suits from 0 to 3.  The inner loop enumerates the
-ranks from 1 to 13.  Each iteration
-creates a new Card with the current suit and rank,
-and appends it to {\tt self.cards}.
-\index{append method}
-\index{method!append}
+La manera más fácil de llenar la baraja es con un bucle anidado.  El bucle externo
+enumera los palos de 0 a 3.  El bucle interior enumera los
+rangos de 1 a 13.  Cada iteración
+crea una Carta nueva con el palo y el rango actuales,
+y la anexa a {\tt self.cartas}.
+\index{método append}
+\index{append!método}
 
 
-\section{Printing the deck}
+\section{Imprimir la baraja}
 \label{printdeck}
-\index{str method@\_\_str\_\_ method}
-\index{method!\_\_str\_\_}
+\index{método str@método \_\_str\_\_}
+\index{\_\_str\_\_!método}
 
-Here is a \verb"__str__" method for {\tt Deck}:
+Aquí hay un método \verb"__str__" para {\tt Baraja}:
 
 \begin{verbatim}
-#inside class Deck:
+# dentro de class Baraja:
 
     def __str__(self):
         res = []
-        for card in self.cards:
-            res.append(str(card))
+        for carta in self.cartas:
+            res.append(str(carta))
         return '\n'.join(res)
 \end{verbatim}
 %
-This method demonstrates an efficient way to accumulate a large
-string: building a list of strings and then using the string method
-{\tt join}.  The built-in function {\tt str} invokes the
-\verb"__str__" method on each card and returns the string
-representation.  \index{accumulator!string} \index{string!accumulator}
-\index{join method} \index{method!join} \index{newline}
+Este método demuestra una manera eficiente de acumular una cadena
+grande: construir una lista de cadenas y luego utilizar el método de cadena
+{\tt join}.  La función incorporada {\tt str} invoca el método
+\verb"__str__" en cada carta y devuelve la representación
+de cadena.  \index{acumulador!cadena} \index{cadena!acumulador}
+\index{método join} \index{join!método} \index{nueva línea}
 
-Since we invoke {\tt join} on a newline character, the cards
-are separated by newlines.  Here's what the result looks like:
+Dado que invocamos a {\tt join} en un carácter de nueva línea, las cartas
+están separadas por nuevas líneas.  Así es como se ve el resultado:
 
 \begin{verbatim}
->>> deck = Deck()
->>> print(deck)
-Ace of Clubs
-2 of Clubs
-3 of Clubs
+>>> baraja = Baraja()
+>>> print(baraja)
+As de Tréboles
+2 de Tréboles
+3 de Tréboles
 ...
-10 of Spades
-Jack of Spades
-Queen of Spades
-King of Spades
+10 de Picas
+Jota de Picas
+Reina de Picas
+Rey de Picas
 \end{verbatim}
 %
-Even though the result appears on 52 lines, it is
-one long string that contains newlines.
+Si bien el resultado aparece en 52 líneas, es una única
+cadena larga que contiene nuevas líneas.
 
 
 \section{Add, remove, shuffle and sort}
