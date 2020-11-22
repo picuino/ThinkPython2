@@ -13169,11 +13169,11 @@ Solución: \url{http://thinkpython2.com/code/double.py}
 \chapter{Clases y métodos}
 
 Aunque estamos utilizando algunas de las características orientadas a objetos de Python,
-los programas de los últimos dos capítulos no son realmente
+los programas de los últimos dos capítulos no están realmente
 orientados a objetos debido a que no representan las relaciones
-entre los tipos definidos por el programados y las funciones que operan
+entre los tipos definidos por el programador y las funciones que operan
 en estos.  El siguiente paso es transformar esas funciones en
-métodos que hagan explícitas a las relaciones.
+métodos que hagan explícitas las relaciones.
 
 Los ejemplos de código de este capítulo están disponibles en
 \url{http://thinkpython2.com/code/Time2.py}, y las soluciones
@@ -13202,21 +13202,21 @@ corresponden a las maneras en las cuales interactúan las cosas del mundo real.
 
 Por ejemplo, la clase {\tt Tiempo} definida en el Capítulo~\ref{time}
 corresponde a la manera en que las personas registran la hora del día, y las
-funciones que definimos a los tipos de cosas que las personas hacen con
-los tiempos.  De manera similar, las clases {\tt Punto} y {\tt Rectángulo}
-en el capítulo~\ref{clobjects}
+funciones que definimos corresponden a los tipos de cosas que las personas hacen con
+las horas del día.  De manera similar, las clases {\tt Punto} y {\tt Rectángulo}
+en el Capítulo~\ref{clobjects}
 corresponden a los conceptos matemáticos de punto y rectángulo.
 
 Hasta aquí, no hemos tomado ventaja de las características que Python proporciona para
 admitir programación orientada a objetos.  Estas características
-no son estrictamente necesarias; la mayoría de estas proporcionan
+no son estrictamente necesarias: la mayoría de estas proporciona
 una sintaxis alternativa para cosas que ya hemos hecho.  Sin embargo, en muchos casos,
-la alternativa es más concisa y comunica de manera más precisa
-la estruvtura del programa.
+la alternativa es más concisa y comunica la estructura del programa
+de manera más precisa.
 
 Por ejemplo, en {\tt Time1.py} no hay conexión
 obvia entre la definición de clase y las definiciones de función
-que siguen.  Con algo de revisión, es aparente que cada función
+que siguen.  Con algo de revisión, es evidente que cada función
 toma al menos un objeto {\tt Tiempo} como argumento.
 \index{method}
 \index{function}
@@ -13238,8 +13238,8 @@ dos diferencias sintácticas:
 \item Los métodos se definen dentro de una definición de clase para
 hacer explícita la relación entre la clase y el método.
 
-\item La sintaxis para invocar un método es diferente a la
-sintaxis para llamar una función.
+\item La sintaxis para invocar a un método es diferente a la
+sintaxis para llamar a una función.
 
 \end{itemize}
 
@@ -13261,7 +13261,7 @@ una función con nombre \verb"imprimir_tiempo":
 class Tiempo:
     """Representa la hora del día."""
 
-def imprimir_tiempo(time):
+def imprimir_tiempo(tiempo):
     print('%.2d:%.2d:%.2d' % (tiempo.hora, tiempo.minuto, tiempo.segundo))
 \end{verbatim}
 %
@@ -13278,7 +13278,7 @@ argumento:
 \end{verbatim}
 %
 Para convertir \verb"imprimir_tiempo" a método, todo lo que tenemos que hacer es
-mover la definición de funcióin al interior de la definición de clase.  Notar
+mover la definición de función al interior de la definición de clase.  Notar
 el cambio en la sangría.
 \index{sangría}
 
@@ -13299,8 +13299,8 @@ Ahora hay dos maneras de llamar a \verb"imprimir_tiempo".  La primera manera
 \end{verbatim}
 %
 En este uso de notación de punto, {\tt Tiempo} es el nombre de la clase
-e \verb"imprimir_tiempo" es el nombre del método.  {\tt comienzo} es
-pasado como parámetro.
+e \verb"imprimir_tiempo" es el nombre del método.  {\tt comienzo} se
+pasa como parámetro.
 
 La segunda manera (y más concisa) es utilizar la sintaxis de método:
 \index{sintaxis de método}
@@ -13312,7 +13312,7 @@ La segunda manera (y más concisa) es utilizar la sintaxis de método:
 %
 En este uso de notación de punto, \verb"imprimir_tiempo" es el nombre del
 método (nuevamente), y {\tt comienzo} es el objeto en el cual se invoca
-el método, el cual se llama {\bf sujeto}.  Tal como el
+al método, el cual se llama {\bf sujeto}.  Tal como el
 sujeto de una oración es de lo que trata la oración, el sujeto
 de una invocación a un método es de lo que trata el método.
 \index{sujeto}
@@ -13351,8 +13351,8 @@ La razón para esta convención es una metáfora implícita:
 Este cambio de perspectiva quizás sea más cortés, pero su utilidad
 no es obvia.  En los ejemplos que hemos visto hasta ahora, podría no
 serlo.  Sin embargo, a veces cambiar de funciones a objetos de manera
-responsable hace posible escribir funciones más versátiles (o
-métodos), y hace más fácil mantener y reutilizar código.
+responsable hace posible escribir funciones (o métodos) más versátiles,
+y hace más fácil mantener y reutilizar código.
 
 Como ejercicio, reescribe \verb"tiempo_a_int" (de la
 Sección~\ref{prototype}) como método.  Quizás te tientes a
@@ -13376,7 +13376,7 @@ reescrita como método:
 \end{verbatim}
 %
 Esta versión supone que \verb"tiempo_a_int" está escrito
-cómo método.  Además, notar que
+como método.  Además, notar que
 esta es una función pura, no un modificador.
 
 Así es como invocarías a {\tt aumentar}:
@@ -13426,7 +13426,7 @@ un argumento de palabra clave.
 
 Reescribir \verb"esta_despues" (de la Sección~\ref{isafter}) es un poco
 más complicado porque toma dos objetos Tiempo como parámetros.  En
-este caso es convencional ponerle el nombre {\tt self} al primer parámetro
+este caso lo convencional es ponerle el nombre {\tt self} al primer parámetro
 y {\tt other} al segundo parámetro: \index{other (nombre de parámetro)}
 \index{parámetro!other}
 
@@ -13454,7 +13454,7 @@ casi textual: ``¿término está después de comienzo?''
 \index{init!método}
 
 El método init (abreviatura de ``initialization'') es
-un método especial que es invocado cuando se instancia un objeto.
+un método especial que se invoca cuando se instancia un objeto.
 Su nombre completo es \verb"__init__" (dos caracteres de guión bajo,
 seguido de {\tt init}, y luego dos guiones bajos más).  Un
 método init para la clase {\tt Tiempo} se vería así:
@@ -13591,8 +13591,8 @@ Cuando aplicas el operador {\tt +} a objetos Tiempo, Python invoca a
 
 Cambiar el comportamiento de un operador para que funcione con
 tipos definidos por el programador se llama {\bf sobrecarga de operador}.  Para cada
-operador en Python hay un método especial que le corresponde, como
-\verb"__add__".  Para más detalles, ver
+operador en Python hay un método especial, como
+\verb"__add__", que le corresponde.  Para más detalles, ver
 \url{http://docs.python.org/3/reference/datamodel.html#specialnames}.
 
 Como ejercicio, escribe un método {\tt add} para la clase Punto.
@@ -13619,7 +13619,7 @@ que verifica el tipo de {\tt other} e invoca a
         segundos = self.tiempo_a_int() + other.tiempo_a_int()
         return int_a_tiempo(segundos)
 
-    def aumentar(self, seconds):
+    def aumentar(self, segundos):
         segundos += self.tiempo_a_int()
         return int_a_tiempo(segundos)
 \end{verbatim}
@@ -13734,7 +13734,7 @@ como claves en {\tt d}.
 
 \begin{verbatim}
 >>> t = ['spam', 'egg', 'spam', 'spam', 'bacon', 'spam']
->>> histogram(t)
+>>> histograma(t)
 {'bacon': 1, 'egg': 1, 'spam': 4}
 \end{verbatim}
 %
@@ -13824,7 +13824,7 @@ requisitos.
 \index{diseño orientado a objetos}
 
 Un principio de diseño que ayuda a alcanzar ese objetivo es mantener
-interfaces separadas de las implementaciones.  Para objetos, eso significa
+las interfaces separadas de las implementaciones.  Para objetos, eso significa
 que los métodos que proporciona una clase no deberían depender de la manera en que los
 atributos estén representados.
 \index{atributo}
@@ -13849,7 +13849,7 @@ implementación.  Si otras partes del programa están utilizando tu
 clase, cambiar la interfaz podría consumir tiempo y ser propenso a
 errores.
 
-Sin embargo, si diseñaste la interfaz concuidado, puedes
+Sin embargo, si diseñaste la interfaz con cuidado, puedes
 cambiar la implementación sin cambiar la interfaz, lo cual
 significa que otras partes del programa no tienen que cambiar.
 
@@ -13872,7 +13872,7 @@ y métodos.
 se invoca en instancias de esa clase.
 \index{método}
 
-\item[sujeto:] El objeto en el cual se invoca un método.
+\item[sujeto:] El objeto en el cual se invoca a un método.
 \index{sujeto}
 
 \item[argumento posicional:]  Un argumento que no incluye
@@ -13886,7 +13886,7 @@ un nombre de parámetro, por tanto no es un argumento de palabra clave.
 \index{operador!sobrecarga}
 
 \item[despacho basado en tipo:] Un patrón de programación que verifica el tipo
-de un operando e invoca funciones diferentes para tipos diferentes.
+de un operando e invoca a funciones diferentes para tipos diferentes.
 \index{despacho basado en tipo}
 
 \item[polimórfico:] Dicho de una función que puede trabajar con más de
@@ -13922,20 +13922,20 @@ Descarga el código de este capítulo en
 \index{Canguro!clase}
 
 Este ejercicio es un cuento con moraleja acerca de uno de los errores
-más comunes, y más difíciles de encontrar, en Python.
-Escribe una definición de una clase con nombre {\tt Canguro} con los siguientes
+en Python más comunes y más difíciles de encontrar.
+Escribe una definición de una clase con nombre {\tt Kangaroo} con los siguientes
 métodos:
 
 \begin{enumerate}
 
 \item Un método \verb"__init__" que inicialice un atributo con nombre
-\verb"pouch_contents" a una lista vacía.
+\verb"pouch_contents" ({\em contenido de la bolsa}) a una lista vacía.
 
-\item Un método con nombre \verb"put_in_pouch" que tome un objeto
+\item Un método con nombre \verb"put_in_pouch" ({\em poner en la bolsa}) que tome un objeto
 de cualquier tipo y lo añada a \verb"pouch_contents".
 
 \item Un método \verb"__str__" que devuelva una representación de cadena
-del objeto Canguro y los contenidos de la bolsa.
+del objeto Kangaroo y los contenidos de la bolsa.
 
 \end{enumerate}
 %
@@ -13949,7 +13949,7 @@ una solución al problema anterior con un gran y horrible error.
 Encuentra y corrije el error.
 
 Si te estancas, puedes descargar
-\url{http://thinkpython2.com/code/GoodKangaroo.py}, el cual explica el
+\url{http://thinkpython2.com/code/GoodKangaroo.py}, que explica el
 problema y demuestra una solución.
 \index{alias}
 \index{objeto incrustado}
