@@ -12757,7 +12757,7 @@ objeto Tiempo y lo imrpima en la forma {\tt hora:minuto:segundo}.
 Pista: la secuencia de formato \verb"'%.2d'" imprime un entero utilizando
 al menos dos dígitos, incluyendo un cero a la izquierda si es necesario.
 
-Escribe una función booleana llamada \verb"es_despues" que
+Escribe una función booleana llamada \verb"esta_despues" que
 tome dos objetos Tiempo, {\tt t1} y {\tt t2}, y
 devuelva {\tt True} si {\tt t1} va cronológicamente después de {\tt t2} y
 {\tt False} en caso contrario.  Desafío: no utilices una sentencia {\tt if}.
@@ -13166,391 +13166,391 @@ Solución: \url{http://thinkpython2.com/code/double.py}
 \end{exercise}
 
 
-\chapter{Classes and methods}
+\chapter{Clases y métodos}
 
-Although we are using some of Python's object-oriented features,
-the programs from the last two chapters are not really
-object-oriented because they don't represent the relationships
-between programmer-defined types and the functions that operate
-on them.  The next step is to transform those functions into
-methods that make the relationships explicit.
+Aunque estamos utilizando algunas de las características orientadas a objetos de Python,
+los programas de los últimos dos capítulos no son realmente
+orientados a objetos debido a que no representan las relaciones
+entre los tipos definidos por el programados y las funciones que operan
+en estos.  El siguiente paso es transformar esas funciones en
+métodos que hagan explícitas a las relaciones.
 
-Code examples from this chapter are available from
-\url{http://thinkpython2.com/code/Time2.py}, and solutions
-to the exercises are in \url{http://thinkpython2.com/code/Point2_soln.py}.
+Los ejemplos de código de este capítulo están disponibles en
+\url{http://thinkpython2.com/code/Time2.py}, y las soluciones
+a los ejercicios están en \url{http://thinkpython2.com/code/Point2_soln.py}.
 
 
-\section{Object-oriented features}
-\index{object-oriented programming}
+\section{Características orientadas a objetos}
+\index{programación orientada a objetos}
 
-Python is an {\bf object-oriented programming language}, which means
-that it provides features that support object-oriented
-programming, which has these defining characteristics:
+Python es un {\bf lenguaje de programación orientado a objetos}, lo cual significa
+que proporciona características que admiten programación
+orientada a objetos, que tiene las siguientes características que la definen:
 
 \begin{itemize}
 
-\item Programs include class and method definitions.
+\item Los programas incluyen definiciones de clases y métodos.
 
-\item Most of the computation is expressed in terms of operations on
-  objects.
+\item La mayoría de los cálculos están expresados en términos de operaciones sobre
+  obtetos.
 
-\item Objects often represent things
-in the real world, and methods often
-correspond to the ways things in the real world interact.
+\item Los objetos a menudo representan cosas
+del mundo real, y los métodos a menudo
+corresponden a las maneras en las cuales interactúan las cosas del mundo real.
 
 \end{itemize}
 
-For example, the {\tt Time} class defined in Chapter~\ref{time}
-corresponds to the way people record the time of day, and the
-functions we defined correspond to the kinds of things people do with
-times.  Similarly, the {\tt Point} and {\tt Rectangle} classes
-in Chapter~\ref{clobjects}
-correspond to the mathematical concepts of a point and a rectangle.
+Por ejemplo, la clase {\tt Tiempo} definida en el Capítulo~\ref{time}
+corresponde a la manera en que las personas registran la hora del día, y las
+funciones que definimos a los tipos de cosas que las personas hacen con
+los tiempos.  De manera similar, las clases {\tt Punto} y {\tt Rectángulo}
+en el capítulo~\ref{clobjects}
+corresponden a los conceptos matemáticos de punto y rectángulo.
 
-So far, we have not taken advantage of the features Python provides to
-support object-oriented programming.  These
-features are not strictly necessary; most of them provide
-alternative syntax for things we have already done.  But in many cases,
-the alternative is more concise and more accurately conveys the
-structure of the program.
+Hasta aquí, no hemos tomado ventaja de las características que Python proporciona para
+admitir programación orientada a objetos.  Estas características
+no son estrictamente necesarias; la mayoría de estas proporcionan
+una sintaxis alternativa para cosas que ya hemos hecho.  Sin embargo, en muchos casos,
+la alternativa es más concisa y comunica de manera más precisa
+la estruvtura del programa.
 
-For example, in {\tt Time1.py} there is no obvious
-connection between the class definition and the function definitions
-that follow.  With some examination, it is apparent that every function
-takes at least one {\tt Time} object as an argument.
+Por ejemplo, en {\tt Time1.py} no hay conexión
+obvia entre la definición de clase y las definiciones de función
+que siguen.  Con algo de revisión, es aparente que cada función
+toma al menos un objeto {\tt Tiempo} como argumento.
 \index{method}
 \index{function}
 
-This observation is the motivation for {\bf methods}; a method is
-a function that is associated with a particular class.
-We have seen methods for strings, lists, dictionaries and tuples.
-In this chapter, we will define methods for programmer-defined types.
-\index{syntax}
-\index{semantics}
-\index{programmer-defined type}
-\index{type!programmer-defined}
+Esta observación es la motivación para los {\bf métodos}; un método es
+una función que está asociada a una clase en particular.
+Hemos visto métodos para cadenas, listas, diccionarios y tuplas.
+En este capítulo, definiremos métodos para tipos definidos por el programador.
+\index{sintaxis}
+\index{semántica}
+\index{tipo definido por el programador}
+\index{definido por el programador!tipo}
 
-Methods are semantically the same as functions, but there are
-two syntactic differences:
-
-\begin{itemize}
-
-\item Methods are defined inside a class definition in order
-to make the relationship between the class and the method explicit.
-
-\item The syntax for invoking a method is different from the
-syntax for calling a function.
-
-\end{itemize}
-
-In the next few sections, we will take the functions from the previous
-two chapters and transform them into methods.  This transformation is
-purely mechanical; you can do it by following a sequence of
-steps.  If you are comfortable converting from one form to another,
-you will be able to choose the best form for whatever you are doing.
-
-
-\section{Printing objects}
-\index{object!printing}
-
-In Chapter~\ref{time}, we defined a class named
-{\tt Time} and in Section~\ref{isafter}, you
-wrote a function named \verb"print_time":
-
-\begin{verbatim}
-class Time:
-    """Represents the time of day."""
-
-def print_time(time):
-    print('%.2d:%.2d:%.2d' % (time.hour, time.minute, time.second))
-\end{verbatim}
-%
-To call this function, you have to pass a {\tt Time} object as an
-argument:
-
-\begin{verbatim}
->>> start = Time()
->>> start.hour = 9
->>> start.minute = 45
->>> start.second = 00
->>> print_time(start)
-09:45:00
-\end{verbatim}
-%
-To make \verb"print_time" a method, all we have to do is
-move the function definition inside the class definition.  Notice
-the change in indentation.
-\index{indentation}
-
-\begin{verbatim}
-class Time:
-    def print_time(time):
-        print('%.2d:%.2d:%.2d' % (time.hour, time.minute, time.second))
-\end{verbatim}
-%
-Now there are two ways to call \verb"print_time".  The first
-(and less common) way is to use function syntax:
-\index{function syntax}
-\index{dot notation}
-
-\begin{verbatim}
->>> Time.print_time(start)
-09:45:00
-\end{verbatim}
-%
-In this use of dot notation, {\tt Time} is the name of the class,
-and \verb"print_time" is the name of the method.  {\tt start} is
-passed as a parameter.
-
-The second (and more concise) way is to use method syntax:
-\index{method syntax}
-
-\begin{verbatim}
->>> start.print_time()
-09:45:00
-\end{verbatim}
-%
-In this use of dot notation, \verb"print_time" is the name of the
-method (again), and {\tt start} is the object the method is
-invoked on, which is called the {\bf subject}.  Just as the
-subject of a sentence is what the sentence is about, the subject
-of a method invocation is what the method is about.
-\index{subject}
-
-Inside the method, the subject is assigned to the first
-parameter, so in this case {\tt start} is assigned
-to {\tt time}.
-\index{self (parameter name)}
-\index{parameter!self}
-
-By convention, the first parameter of a method is
-called {\tt self}, so it would be more common to write
-\verb"print_time" like this:
-
-\begin{verbatim}
-class Time:
-    def print_time(self):
-        print('%.2d:%.2d:%.2d' % (self.hour, self.minute, self.second))
-\end{verbatim}
-%
-The reason for this convention is an implicit metaphor:
-\index{metaphor, method invocation}
+Los métodos son semánticamente lo mismo que las funciones, pero hay
+dos diferencias sintácticas:
 
 \begin{itemize}
 
-\item The syntax for a function call, \verb"print_time(start)",
-  suggests that the function is the active agent.  It says something
-  like, ``Hey \verb"print_time"!  Here's an object for you to print.''
+\item Los métodos se definen dentro de una definición de clase para
+hacer explícita la relación entre la clase y el método.
 
-\item In object-oriented programming, the objects are the active
-  agents.  A method invocation like \verb"start.print_time()" says
-  ``Hey {\tt start}!  Please print yourself.''
+\item La sintaxis para invocar un método es diferente a la
+sintaxis para llamar una función.
 
 \end{itemize}
 
-This change in perspective might be more polite, but it is not obvious
-that it is useful.  In the examples we have seen so far, it may not
-be.  But sometimes shifting responsibility from the functions onto the
-objects makes it possible to write more versatile functions (or
-methods), and makes it easier to maintain and reuse code.
-
-As an exercise, rewrite \verb"time_to_int" (from
-Section~\ref{prototype}) as a method.  You might be tempted to
-rewrite \verb"int_to_time" as a method, too, but that doesn't
-really make sense because there would be no object to invoke
-it on.
+En las siguientes secciones, tomaremos las funciones de los dos
+capítulos anteriores y los transformaremos en métodos.  Esta transformación es
+puramente mecánica: puedes hacerla siguiendo una secuencia de
+pasos.  Si te acostumbras a convertir de una forma a la otra,
+podrás escoger la mejor forma para lo que sea que estés haciendo.
 
 
-\section{Another example}
-\index{increment}
+\section{Imprimir objetos}
+\index{objero!imprimir}
 
-Here's a version of {\tt increment} (from Section~\ref{increment})
-rewritten as a method:
+En el Capítulo~\ref{time}, definimos una clase con nombre
+{\tt Tiempo} y en la Sección~\ref{isafter}, escribiste
+una función con nombre \verb"imprimir_tiempo":
 
 \begin{verbatim}
-# inside class Time:
+class Tiempo:
+    """Representa la hora del día."""
 
-    def increment(self, seconds):
-        seconds += self.time_to_int()
-        return int_to_time(seconds)
+def imprimir_tiempo(time):
+    print('%.2d:%.2d:%.2d' % (tiempo.hora, tiempo.minuto, tiempo.segundo))
 \end{verbatim}
 %
-This version assumes that \verb"time_to_int" is written
-as a method.  Also, note that
-it is a pure function, not a modifier.
-
-Here's how you would invoke {\tt increment}:
+Para llamar a esta función, tienes que pasar el objeto {\tt Tiempo} como
+argumento:
 
 \begin{verbatim}
->>> start.print_time()
+>>> comienzo = Tiempo()
+>>> comienzo.hora = 9
+>>> comienzo.minuto = 45
+>>> comienzo.segundo = 00
+>>> imprimir_tiempo(comienzo)
 09:45:00
->>> end = start.increment(1337)
->>> end.print_time()
+\end{verbatim}
+%
+Para convertir \verb"imprimir_tiempo" a método, todo lo que tenemos que hacer es
+mover la definición de funcióin al interior de la definición de clase.  Notar
+el cambio en la sangría.
+\index{sangría}
+
+\begin{verbatim}
+class Tiempo:
+    def imprimir_tiempo(tiempo):
+        print('%.2d:%.2d:%.2d' % (tiempo.hora, tiempo.minuto, tiempo.segundo))
+\end{verbatim}
+%
+Ahora hay dos maneras de llamar a \verb"imprimir_tiempo".  La primera manera
+(y menos común) es utilizar sintaxis de función:
+\index{sintaxis de función}
+\index{notación de punto}
+
+\begin{verbatim}
+>>> Tiempo.imprimir_tiempo(comienzo)
+09:45:00
+\end{verbatim}
+%
+En este uso de notación de punto, {\tt Tiempo} es el nombre de la clase
+e \verb"imprimir_tiempo" es el nombre del método.  {\tt comienzo} es
+pasado como parámetro.
+
+La segunda manera (y más concisa) es utilizar la sintaxis de método:
+\index{sintaxis de método}
+
+\begin{verbatim}
+>>> comienzo.imprimir_tiempo()
+09:45:00
+\end{verbatim}
+%
+En este uso de notación de punto, \verb"imprimir_tiempo" es el nombre del
+método (nuevamente), y {\tt comienzo} es el objeto en el cual se invoca
+el método, el cual se llama {\bf sujeto}.  Tal como el
+sujeto de una oración es de lo que trata la oración, el sujeto
+de una invocación a un método es de lo que trata el método.
+\index{sujeto}
+
+Dentro del método, el sujeto se asigna al primer
+parámetro, por tanto en este caso {\tt comienzo} se asigna
+a {\tt tiempo}.
+\index{self (nombre de parámetro)}
+\index{parámetro!self}
+
+Por convención, el primer parámetro de un método se
+llama {\tt self}, por lo cual sería más común escribir
+\verb"imprimir_tiempo" así:
+
+\begin{verbatim}
+class Tiempo:
+    def imprimir_tiempo(self):
+        print('%.2d:%.2d:%.2d' % (self.hora, self.minuto, self.segundo))
+\end{verbatim}
+%
+La razón para esta convención es una metáfora implícita:
+\index{metáfora, invocación a método}
+
+\begin{itemize}
+
+\item La sintaxis para una llamada a función, \verb"imprimir_tiempo(comienzo)",
+  sugiere que la función es el agente activo.  Dice algo
+  como, ``¡Oye \verb"imprimir_tiempo"!  Aquí hay un objeto para que imprimas.''
+
+\item En la programación orientada a objetos, los objetos son los agentes
+  activos.  Una invocación a método como \verb"comienzo.imprimir_tiempo()" dice
+  ``¡Oye {\tt comienzo}!  Por favor imprímete.''
+
+\end{itemize}
+
+Este cambio de perspectiva quizás sea más cortés, pero su utilidad
+no es obvia.  En los ejemplos que hemos visto hasta ahora, podría no
+serlo.  Sin embargo, a veces cambiar de funciones a objetos de manera
+responsable hace posible escribir funciones más versátiles (o
+métodos), y hace más fácil mantener y reutilizar código.
+
+Como ejercicio, reescribe \verb"tiempo_a_int" (de la
+Sección~\ref{prototype}) como método.  Quizás te tientes a
+reescribir \verb"int_a_tiempo" como método también, pero eso realmente
+no tiene sentido porque no habría objeto donde
+invocarlo.
+
+
+\section{Otro ejemplo}
+\index{aumentar}
+
+Aquí hay una versión de {\tt aumentar} (de la Sección~\ref{increment})
+reescrita como método:
+
+\begin{verbatim}
+# dentro de class Tiempo:
+
+    def aumento(self, segundos):
+        segundos += self.tiempo_a_int()
+        return int_a_tiempo(segundos)
+\end{verbatim}
+%
+Esta versión supone que \verb"tiempo_a_int" está escrito
+cómo método.  Además, notar que
+esta es una función pura, no un modificador.
+
+Así es como invocarías a {\tt aumentar}:
+
+\begin{verbatim}
+>>> comienzo.imprimir_tiempo()
+09:45:00
+>>> termino = comienzo.aumentar(1337)
+>>> termino.imprimir_tiempo()
 10:07:17
 \end{verbatim}
 %
-The subject, {\tt start}, gets assigned to the first parameter,
-{\tt self}.  The argument, {\tt 1337}, gets assigned to the
-second parameter, {\tt seconds}.
+El sujeto, {\tt comienzo}, se asigna al primer parámetro,
+{\tt self}.  El argumento, {\tt 1337}, se asigna al
+segundo parámetro, {\tt segundos}.
 
-This mechanism can be confusing, especially if you make an error.
-For example, if you invoke {\tt increment} with two arguments, you
-get:
-\index{exception!TypeError}
+Este mecanismo puede ser confuso, especialmente si cometes un error.
+Por ejemplo, si invocas a {\tt aumentar} con dos argumentos,
+obtienes:
+\index{excepción TypeError}
 \index{TypeError}
 
 \begin{verbatim}
->>> end = start.increment(1337, 460)
-TypeError: increment() takes 2 positional arguments but 3 were given
+>>> termino = comienzo.aumentar(1337, 460)
+TypeError: aumentar() takes 2 positional arguments but 3 were given
 \end{verbatim}
 %
-The error message is initially confusing, because there are
-only two arguments in parentheses.  But the subject is also
-considered an argument, so all together that's three.
+El mensaje de error es confuso al inicio, debido a que hay
+solo dos argumentos en paréntesis.  Sin embargo, el sujeto también
+se considera como argumento, por lo cual todos juntos son tres.
 
-By the way, a {\bf positional argument} is an argument that
-doesn't have a parameter name; that is, it is not a keyword
-argument.  In this function call:
-\index{positional argument}
-\index{argument!positional}
+Por cierto, un {\bf argumento posicional} es un argumento que
+no tiene un nombre de parámetro, es decir, no es un argumento de
+palabra clave.  En esta llamada a función:
+\index{argumento posicional}
+\index{posicional!argumento}
 
 \begin{verbatim}
-sketch(parrot, cage, dead=True)
+dibujar(loro, jaula, muerto=True)
 \end{verbatim}
 
-{\tt parrot} and {\tt cage} are positional, and {\tt dead} is
-a keyword argument.
+{\tt loro} y {\tt jaula} son posicionales, y {\tt muerto} es
+un argumento de palabra clave.
 
 
-\section{A more complicated example}
+\section{Un ejemplo más complicado}
 
-Rewriting \verb"is_after" (from Section~\ref{isafter}) is slightly
-more complicated because it takes two Time objects as parameters.  In
-this case it is conventional to name the first parameter {\tt self}
-and the second parameter {\tt other}: \index{other (parameter name)}
-\index{parameter!other}
+Reescribir \verb"esta_despues" (de la Sección~\ref{isafter}) es un poco
+más complicado porque toma dos objetos Tiempo como parámetros.  En
+este caso es convencional ponerle el nombre {\tt self} al primer parámetro
+y {\tt other} al segundo parámetro: \index{other (nombre de parámetro)}
+\index{parámetro!other}
 
 \begin{verbatim}
-# inside class Time:
+# dentro de class Tiempo:
 
-    def is_after(self, other):
-        return self.time_to_int() > other.time_to_int()
+    def esta_despues(self, other):
+        return self.tiempo_a_int() > other.tiempo_a_int()
 \end{verbatim}
 %
-To use this method, you have to invoke it on one object and pass
-the other as an argument:
+Para utilizar este método, tienes que invocarlo en un objeto y pasar
+el otro como argumento:
 
 \begin{verbatim}
->>> end.is_after(start)
+>>> termino.esta_despues(comienzo)
 True
 \end{verbatim}
 %
-One nice thing about this syntax is that it almost reads
-like English: ``end is after start?''
+Lo bonito de esta sintaxis es que se lee
+casi textual: ``¿término está después de comienzo?''
 
 
-\section{The init method}
-\index{init method}
-\index{method!init}
+\section{El método init}
+\index{método init}
+\index{init!método}
 
-The init method (short for ``initialization'') is
-a special method that gets invoked when an object is instantiated.
-Its full name is \verb"__init__" (two underscore characters,
-followed by {\tt init}, and then two more underscores).  An
-init method for the {\tt Time} class might look like this:
+El método init (abreviatura de ``initialization'') es
+un método especial que es invocado cuando se instancia un objeto.
+Su nombre completo es \verb"__init__" (dos caracteres de guión bajo,
+seguido de {\tt init}, y luego dos guiones bajos más).  Un
+método init para la clase {\tt Tiempo} se vería así:
 
 \begin{verbatim}
-# inside class Time:
+# dentro de class Tiempo:
 
-    def __init__(self, hour=0, minute=0, second=0):
-        self.hour = hour
-        self.minute = minute
-        self.second = second
+    def __init__(self, hora=0, minuto=0, segundo=0):
+        self.hora = hora
+        self.minuto = minuto
+        self.segundo = segundo
 \end{verbatim}
 %
-It is common for the parameters of \verb"__init__"
-to have the same names as the attributes.  The statement
+Es común que los parámetros de \verb"__init__"
+tengan los mismos nombres que los atributos.  La sentencia
 
 \begin{verbatim}
-        self.hour = hour
+        self.hora = hora
 \end{verbatim}
 %
-stores the value of the parameter {\tt hour} as an attribute
-of {\tt self}.
-\index{optional parameter}
-\index{parameter!optional}
-\index{default value}
-\index{override}
+almacena el valor del parámetro {\tt hora} como un atributo
+de {\tt self}.
+\index{parámetro opcional}
+\index{optional!parámetro}
+\index{valor por defecto}
+\index{anular}
 
-The parameters are optional, so if you call {\tt Time} with
-no arguments, you get the default values.
+Los parámetros son opcionales, por lo cual si llamas a {\tt Tiempo} sin
+argumentos, obtienes los valores por defecto.
 
 \begin{verbatim}
->>> time = Time()
->>> time.print_time()
+>>> tiempo = Tiempo()
+>>> tiempo.imprimir_tiempo()
 00:00:00
 \end{verbatim}
 %
-If you provide one argument, it overrides {\tt hour}:
+Si entregas un argumento, anula a {\tt hora}:
 
 \begin{verbatim}
->>> time = Time (9)
->>> time.print_time()
+>>> tiempo = Tiempo(9)
+>>> tiempo.imprimir_tiempo()
 09:00:00
 \end{verbatim}
 %
-If you provide two arguments, they override {\tt hour} and
-{\tt minute}.
+Si entregas dos argumentos, anulan a {\tt hora} y
+{\tt minuto}.
 
 \begin{verbatim}
->>> time = Time(9, 45)
->>> time.print_time()
+>>> tiempo = Tiempo(9, 45)
+>>> tiempo.imprimir_tiempo()
 09:45:00
 \end{verbatim}
 %
-And if you provide three arguments, they override all three
-default values.
+Y si entregas tres argumentos, anulan a los tres
+valores por defecto.
 
-As an exercise, write an init method for the {\tt Point} class that takes
-{\tt x} and {\tt y} as optional parameters and assigns
-them to the corresponding attributes.
-\index{Point class}
-\index{class!Point}
+Como ejercicio, escribe un método init para la clase {\tt Punto} que tome a
+{\tt x} e {\tt y} como argumentos opcionales y los asigne
+a los atributos correspondientes.
+\index{clase Punto}
+\index{Punto!clase}
 
 
-\section{The {\tt \_\_str\_\_} method}
-\index{str method@\_\_str\_\_ method}
-\index{method!\_\_str\_\_}
+\section{El método {\tt \_\_str\_\_}}
+\index{método str@método \_\_str\_\_}
+\index{\_\_str\_\_!método}
 
-\verb"__str__" is a special method, like \verb"__init__",
-that is supposed to return a string representation of an object.
-\index{string representation}
+\verb"__str__" es un método especial, al igual que \verb"__init__",
+que se supone que devuelve una representación de un objeto en forma de cadena.
+\index{representación de cadena}
 
-For example, here is a {\tt str} method for Time objects:
+Por ejemplo, aquí hay un método {\tt str} para los objetos Tiempo:
 
 \begin{verbatim}
-# inside class Time:
+# dentro de class Tiempo:
 
     def __str__(self):
-        return '%.2d:%.2d:%.2d' % (self.hour, self.minute, self.second)
+        return '%.2d:%.2d:%.2d' % (self.hora, self.minuto, self.segundo)
 \end{verbatim}
 %
-When you {\tt print} an object, Python invokes the {\tt str} method:
-\index{print statement}
-\index{statement!print}
+Cuando utilizas {\tt print} en un objeto, Python invoca al método {\tt str}:
+\index{sentencia print}
+\index{print!sentencia}
 
 \begin{verbatim}
->>> time = Time(9, 45)
->>> print(time)
+>>> tiempo = Tiempo(9, 45)
+>>> print(tiempo)
 09:45:00
 \end{verbatim}
 %
-When I write a new class, I almost always start by writing
-\verb"__init__", which makes it easier to instantiate objects, and
-\verb"__str__", which is useful for debugging.
+Cuando escribo una clase nueva, casi siempre comienzo escribiendo a
+\verb"__init__", que hace más fácil instanciar objetos, y
+\verb"__str__", que es útil para depurar.
 
-As an exercise, write a {\tt str} method for the {\tt Point} class.
-Create a Point object and print it.
+Como ejercicio, escribe un método {\tt str} para la clase {\tt Punto}.
+Crea un objeto Punto e imprímelo.
 
 
 \section{Operator overloading}
@@ -13568,7 +13568,7 @@ Here is what the definition might look like:
 \index{method!add}
 
 \begin{verbatim}
-# inside class Time:
+# inside class Tiempo:
 
     def __add__(self, other):
         seconds = self.time_to_int() + other.time_to_int()
@@ -13578,9 +13578,9 @@ Here is what the definition might look like:
 And here is how you could use it:
 
 \begin{verbatim}
->>> start = Time(9, 45)
->>> duration = Time(1, 35)
->>> print(start + duration)
+>>> comienzo = Tiempo(9, 45)
+>>> duration = Tiempo(1, 35)
+>>> print(comienzo + duration)
 11:20:00
 \end{verbatim}
 %
@@ -13607,10 +13607,10 @@ that checks the type of {\tt other} and invokes either
 \verb"add_time" or {\tt increment}:
 
 \begin{verbatim}
-# inside class Time:
+# inside class Tiempo:
 
     def __add__(self, other):
-        if isinstance(other, Time):
+        if isinstance(other, Tiempo):
             return self.add_time(other)
         else:
             return self.increment(other)
@@ -13643,11 +13643,11 @@ Here are examples that use the {\tt +} operator with different
 types:
 
 \begin{verbatim}
->>> start = Time(9, 45)
->>> duration = Time(1, 35)
->>> print(start + duration)
+>>> comienzo = Tiempo(9, 45)
+>>> duration = Tiempo(1, 35)
+>>> print(comienzo + duration)
 11:20:00
->>> print(start + 1337)
+>>> print(comienzo + 1337)
 10:07:17
 \end{verbatim}
 %
@@ -13656,7 +13656,7 @@ If the integer is the first operand, you get
 \index{commutativity}
 
 \begin{verbatim}
->>> print(1337 + start)
+>>> print(1337 + comienzo)
 TypeError: unsupported operand type(s) for +: 'int' and 'instance'
 \end{verbatim}
 %
@@ -13670,7 +13670,7 @@ the {\tt +} operator.  Here's the definition:
 \index{method!radd}
 
 \begin{verbatim}
-# inside class Time:
+# inside class Tiempo:
 
     def __radd__(self, other):
         return self.__add__(other)
@@ -13679,7 +13679,7 @@ the {\tt +} operator.  Here's the definition:
 And here's how it's used:
 
 \begin{verbatim}
->>> print(1337 + start)
+>>> print(1337 + comienzo)
 10:07:17
 \end{verbatim}
 %
@@ -13748,9 +13748,9 @@ Since Time objects provide an {\tt add} method, they work
 with {\tt sum}:
 
 \begin{verbatim}
->>> t1 = Time(7, 43)
->>> t2 = Time(7, 41)
->>> t3 = Time(7, 37)
+>>> t1 = Tiempo(7, 43)
+>>> t2 = Tiempo(7, 41)
+>>> t3 = Tiempo(7, 37)
 >>> total = sum([t1, t2, t3])
 >>> print(total)
 23:01:00
@@ -13835,7 +13835,7 @@ a time of day.  Methods provided by this class include
 
 We could implement those methods in several ways.  The details of the
 implementation depend on how we represent time.  In this chapter, the
-attributes of a {\tt Time} object are {\tt hour}, {\tt minute}, and
+attributes of a {\tt Time} object are {\tt hora}, {\tt minuto}, and
 {\tt second}.
 
 As an alternative, we could replace these attributes with
@@ -16018,7 +16018,7 @@ de ítems no coincide o si se pidió una conversión no válida.
 \item Estás pasando el número equivocado de argumentos a una función.
 Para los métodos, mira la definición del método y
 verifica que el primer parámetro es {\tt self}.  Luego, mira la
-invocación del método; asegúrate de que estás invocando al método en un
+invocación al método; asegúrate de que estás invocando al método en un
 objeto con el tipo correcto y proporcionando los otros argumentos
 de manera correcta.
 
