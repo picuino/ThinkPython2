@@ -14290,257 +14290,257 @@ Si bien el resultado aparece en 52 líneas, es una única
 cadena larga que contiene nuevas líneas.
 
 
-\section{Add, remove, shuffle and sort}
+\section{Agregar, quitar, barajar y ordenar}
 
-To deal cards, we would like a method that
-removes a card from the deck and returns it.
-The list method {\tt pop} provides a convenient way to do that:
-\index{pop method}
-\index{method!pop}
+Para repartir cartas, nos gustaría un método que
+quite una carta de la baraja y la devuelva.
+El método de lista {\tt pop} proporciona una manera conveniente de hacer eso:
+\index{método pop}
+\index{pop!método}
 
 \begin{verbatim}
-#inside class Deck:
+# dentro de class Baraja:
 
-    def pop_card(self):
-        return self.cards.pop()
+    def pop_carta(self):
+        return self.cartas.pop()
 \end{verbatim}
 %
-Since {\tt pop} removes the {\em last} card in the list, we are
-dealing from the bottom of the deck.
-\index{append method}
-\index{method!append}
+Dado que {\tt pop} quita la {\em última} carta en la lista, estamos
+repartiendo desde el fondo de la baraja.
+\index{método append}
+\index{append!método}
 
-To add a card, we can use the list method {\tt append}:
+Para agregar una carta, podemos utilizar el método de lista {\tt append}:
 
 \begin{verbatim}
-#inside class Deck:
+# dentro de class Baraja:
 
-    def add_card(self, card):
-        self.cards.append(card)
+    def agregar_carta(self, carta):
+        self.cartas.append(carta)
 \end{verbatim}
 %
-A method like this that uses another method without doing
-much work is sometimes called a {\bf veneer}.  The metaphor
-comes from woodworking, where a veneer is a thin
-layer of good quality wood glued to the surface of a cheaper piece of
-wood to improve the appearance.
-\index{veneer}
+Un método como este que utiliza otro método sin hacer
+mucho trabajo a veces se llama {\bf enchapado} (en inglés, {\em veneer}).  La metáfora
+viene de la carpintería, donde un enchapado es una capa
+delgada de madera de buena calidad pegada a la superficie de un pedazo de madera
+más barato para mejorar la apariencia.
+\index{enchapado}
 
-In this case \verb"add_card" is a ``thin'' method that expresses
-a list operation in terms appropriate for decks.  It
-improves the appearance, or interface, of the
-implementation.
+En este caso \verb"agregar_carta" es un método ``delgado'' que expresa
+una operación de lista en términos apropiados para barajas.  Este
+mejora la apariencia, o interfaz, de la
+implementación.
 
-As another example, we can write a Deck method named {\tt shuffle}
-using the function {\tt shuffle} from the {\tt random} module:
-\index{random module}
-\index{module!random}
-\index{shuffle function}
-\index{function!shuffle}
+Como otro ejemplo, podemos escribir un método de Baraja con nombre {\tt barajar} (en inglés, {\em shuffle})
+utilizando la función {\tt shuffle} del módulo {\tt random}:
+\index{módulo random}
+\index{random!módulo}
+\index{función shuffle}
+\index{shuffle!función}
 
 \begin{verbatim}
-# inside class Deck:
+# dentro de class Baraja:
 
-    def shuffle(self):
-        random.shuffle(self.cards)
+    def barajar(self):
+        random.shuffle(self.cartas)
 \end{verbatim}
 %
-Don't forget to import {\tt random}.
+No olvides importar a {\tt random}.
 
-As an exercise, write a Deck method named {\tt sort} that uses the
-list method {\tt sort} to sort the cards in a {\tt Deck}.  {\tt sort}
-uses the \verb"__lt__" method we defined to determine the order.
-\index{sort method} \index{method!sort}
+Como ejercicio, escribe un método de Baraja con nombre {\tt ordenar} que utilice el
+método de lista {\tt sort} para ordenar las cartas en una {\tt Baraja}.  {\tt sort}
+utiliza el método \verb"__lt__" que definimos para determinar el orden.
+\index{método sort} \index{sort!método}
 
 
 
-\section{Inheritance}
-\index{inheritance}
-\index{object-oriented programming}
+\section{Herencia}
+\index{herencia}
+\index{programación orientada a objetos}
 
-Inheritance is the ability to define a new class that is a modified
-version of an existing class.  As an example, let's say we want a
-class to represent a ``hand'', that is, the cards held by one player.
-A hand is similar to a deck: both are made up of a collection of
-cards, and both require operations like adding and removing cards.
+La herencia es la habilidad de definir una clase nueva que es una versión
+modificada de una clase existente.  Como ejemplo, digamos que queremos una
+clase que represente una ``mano'', es decir, las cartas sostenidas por un jugador.
+Una mano es similar a una baraja: ambas están compuestas de una colección de
+cartas, y ambas requieren operaciones como agregar y quitar cartas.
 
-A hand is also different from a deck; there are operations we want for
-hands that don't make sense for a deck.  For example, in poker we
-might compare two hands to see which one wins.  In bridge, we might
-compute a score for a hand in order to make a bid.
+Una mano es también diferente de una baraja: hay operaciones para
+manos que no tienen sentido para una baraja.  Por ejemplo, en el póquer
+podríamos comparar dos manos para ver cuál gana.  En el bridge, podríamos
+calcular el puntaje de una mano para hacer un canto.
 
-This relationship between classes---similar, but different---lends
-itself to inheritance.
-To define a new class that inherits from an existing class,
-you put the name of the existing class in parentheses:
-\index{parentheses!parent class in}
-\index{parent class}
-\index{class!parent}
-\index{Hand class}
-\index{class!Hand}
+Estas relaciones entre clases ---similares, pero diferentes--- dan lugar
+a la herencia.
+Para definir una clase nueva que herede de una clase existente,
+pones el nombre de la clase existente en paréntesis:
+\index{paréntesis!clase padre en}
+\index{clase padre}
+\index{padre!clase}
+\index{clase Mano}
+\index{Mano!clase}
 
 \begin{verbatim}
-class Hand(Deck):
-    """Represents a hand of playing cards."""
+class Mano(Baraja):
+    """Representa una mano de cartas de juego."""
 \end{verbatim}
 %
-This definition indicates that {\tt Hand} inherits from {\tt Deck};
-that means we can use methods like \verb"pop_card" and \verb"add_card"
-for Hands as well as Decks.
+Esta definición indica que {\tt Mano} herede de {\tt Baraja};
+eso significa que podemos utilizar métodos como \verb"pop_carta" y \verb"agregar_carta"
+en Manos de igual manera que en Barajas.
 
-When a new class inherits from an existing one, the existing
-one is called the {\bf parent} and the new class is
-called the {\bf child}.
-\index{parent class}
-\index{child class}
-\index{class!child}
+Cuando una clase nueva hereda de una existente, la existente
+se llama {\bf padre} y la clase nueva se
+llama {\bf hija}.
+\index{clase padre}
+\index{clase hija}
+\index{hija!clase}
 
-In this example, {\tt Hand} inherits \verb"__init__" from {\tt Deck},
-but it doesn't really do what we want: instead of populating the hand
-with 52 new cards, the init method for Hands should initialize {\tt
-  cards} with an empty list.  \index{override} \index{init method}
-\index{method!init}
+En este ejemplo, {\tt Mano} hereda a \verb"__init__" de {\tt Baraja},
+pero en realidad no hace lo que queremos: en lugar de llenar la mano
+con 52 cartas nuevas, el método init para Manos debería inicializar {\tt
+  cartas} con una lista vacía.  \index{anular} \index{método init}
+\index{init!método}
 
-If we provide an init method in the {\tt Hand} class, it overrides the
-one in the {\tt Deck} class:
+Si proporcionamos un método init en la clase {\tt Mano}, este lo anula
+en la clase {\tt Baraja}:
 
 \begin{verbatim}
-# inside class Hand:
+# dentro de class Mano:
 
-    def __init__(self, label=''):
-        self.cards = []
-        self.label = label
+    def __init__(self, etiqueta=''):
+        self.cartas = []
+        self.etiqueta = etiqueta
 \end{verbatim}
 %
-When you create a Hand, Python invokes this init method, not the
-one in {\tt Deck}.
+Cuando creas una Mano, Python invoca este método init, no el
+de {\tt Baraja}.
 
 \begin{verbatim}
->>> hand = Hand('new hand')
->>> hand.cards
+>>> mano = Mano('nueva mano')
+>>> mano.cartas
 []
->>> hand.label
-'new hand'
+>>> mano.etiqueta
+'nueva mano'
 \end{verbatim}
 %
-The other methods are inherited from {\tt Deck}, so we can use
-\verb"pop_card" and \verb"add_card" to deal a card:
+Los otros métodos se heredan de {\tt Baraja}, así que podemos utilizar a
+\verb"pop_carta" y \verb"agregar_carta" para repartir una carta:
 
 \begin{verbatim}
->>> deck = Deck()
->>> card = deck.pop_card()
->>> hand.add_card(card)
->>> print(hand)
-King of Spades
+>>> baraja = Baraja()
+>>> carta = baraja.pop_carta()
+>>> mano.agregar_carta(carta)
+>>> print(mano)
+Rey de Picas
 \end{verbatim}
 %
-A natural next step is to encapsulate this code in a method
-called \verb"move_cards":
-\index{encapsulation}
+Un siguiente paso natural es encapsular este código en un método
+llamado \verb"mover_cartas":
+\index{encapsulamiento}
 
 \begin{verbatim}
-#inside class Deck:
+# dentro de class Baraja:
 
-    def move_cards(self, hand, num):
+    def mover_cartas(self, mano, num):
         for i in range(num):
-            hand.add_card(self.pop_card())
+            mano.agregar_carta(self.pop_carta())
 \end{verbatim}
 %
-\verb"move_cards" takes two arguments, a Hand object and the number of
-cards to deal.  It modifies both {\tt self} and {\tt hand}, and
-returns {\tt None}.
+\verb"mover_cartas" toma dos argumentos, un objeto Mano y el número de
+cartas a repartir.  Modifica tanto a {\tt self} como a {\tt mano}, y
+devuelve {\tt None}.
 
-In some games, cards are moved from one hand to another,
-or from a hand back to the deck.  You can use \verb"move_cards"
-for any of these operations: {\tt self} can be either a Deck
-or a Hand, and {\tt hand}, despite the name, can also be a {\tt Deck}.
+En algunos juegos, las cartas de mueven de una mano a otra,
+o de una mano de vuelta a la baraja.  Puedes utilizar a \verb"mover_cartas"
+para cualquiera de estas operaciones: {\tt self} puede ser una Baraja
+o una Mano, y {\tt mano}, a pesar del nombre, puede ser también una {\tt Baraja}.
 
-Inheritance is a useful feature.  Some programs that would be
-repetitive without inheritance can be written more elegantly
-with it.  Inheritance can facilitate code reuse, since you can
-customize the behavior of parent classes without having to modify
-them.  In some cases, the inheritance structure reflects the natural
-structure of the problem, which makes the design easier to
-understand.
+La herencia es una característica útil.  Algunos programas que serían
+repetitivos sin la herencia se pueden reescribir de manera más elegante
+con esta.  La herencia puede facilitar la reutilización de código, dado que puedes
+personalizar el comportamiento de las clases padres sin tener que
+modificarlas.  En algunos casos, la estructura de la herencia refleja la estructura
+natural del problema, lo cual hace al diseño más fácil
+de entender.
 
-On the other hand, inheritance can make programs difficult to read.
-When a method is invoked, it is sometimes not clear where to find its
-definition.  The relevant code may be spread across several modules.
-Also, many of the things that can be done using inheritance can be
-done as well or better without it.
+Por otra parte, la herencia puede hacer a los programas difíciles de leer.
+Cuando se invoca a un método, a veces no está claro dónde encontrar su
+definición.  El código relevante puede estar distribuido en varios módulos.
+Además, muchas de las cosas que se pueden hacer utilizando herencia se pueden
+hacer tan bien o mejor sin esta.
 
 
-\section{Class diagrams}
+\section{Diagramas de clase}
 \label{class.diagram}
 
-So far we have seen stack diagrams, which show the state of
-a program, and object diagrams, which show the attributes
-of an object and their values.  These diagrams represent a snapshot
-in the execution of a program, so they change as the program
-runs.
+Hasta ahora hemos visto diagramas de pila, que muestran el estado de
+un programa, y diagramas de objeto, que muestran los atributos
+de un objeto y sus valores.  Estos diagramas representan un instante
+en la ejecución de un programa, por tanto cambian a medida que el programa
+avanza.
 
-They are also highly detailed; for some purposes, too
-detailed.  A class diagram is a more abstract representation
-of the structure of a program.  Instead of showing individual
-objects, it shows classes and the relationships between them.
+Además, son altamente detallados; para algunos propósitos, muy
+detallados.  Un diagrama de clase es una representación más abstracta
+de la estructura de un programa.  En lugar de mostrar objetos
+individuales, muestra clases y las relaciones entre estas.
 
-There are several kinds of relationship between classes:
+Hay varios tipos de relaciones entre clases:
 
 \begin{itemize}
 
-\item Objects in one class might contain references to objects
-in another class.  For example, each Rectangle contains a reference
-to a Point, and each Deck contains references to many Cards.
-This kind of relationship is called {\bf HAS-A}, as in, ``a Rectangle
-has a Point.''
+\item Los objetos en una clase podrían contener referencias a objetos
+en otra clase.  Por ejemplo, cada Rectángulo contiene una referencia
+a un Punto, y cada Baraja contiene referencias a muchas Cartas.
+Este tipo de relaciones se llama {\bf HAS-A} ({\em tiene un}), como en ``un Rectángulo
+tiene un Punto.''
 
-\item One class might inherit from another.  This relationship
-is called {\bf IS-A}, as in, ``a Hand is a kind of a Deck.''
+\item Una clase podría heredar de otra.  Esta relación
+se llama {\bf IS-A} ({\em es un}), como en ``una Mano es un tipo de Baraja.''
 
-\item One class might depend on another in the sense that objects
-in one class take objects in the second class as parameters, or
-use objects in the second class as part of a computation.  This
-kind of relationship is called a {\bf dependency}.
+\item Una clase podría depender de otra en el sentido de que objetos
+en una clase tome objetos en la segunda clase como parámetros, o
+utilizar objetos en la segunda clase como parte de una computación.  Este
+tipo de relación se llama {\bf dependencia}.
 
 \end{itemize}
-\index{IS-A relationship}
-\index{HAS-A relationship}
-\index{class diagram}
-\index{diagram!class}
+\index{relación IS-A}
+\index{relación HAS-A}
+\index{diagrama de clase}
+\index{clase!diagrama de}
 
-A {\bf class diagram} is a graphical representation of these
-relationships.  For example, Figure~\ref{fig.class1} shows the
-relationships between {\tt Card}, {\tt Deck} and {\tt Hand}.
+Un {\bf diagrama de clase} es una representación gráfica de estas
+relaciones.  Por ejemplo, la Figura~\ref{fig.class1} muestra las
+relaciones entre {\tt Carta}, {\tt Baraja} y {\tt Mano}.
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/class1.pdf}}
-\caption{Class diagram.}
+\caption{Diagrama de clase.}
 \label{fig.class1}
 \end{figure}
 
-The arrow with a hollow triangle head represents an IS-A
-relationship; in this case it indicates that Hand inherits
-from Deck.
+La flecha con una cabeza triangular hueca representa una relación IS-A;
+en este caso indica que Mano hereda
+de Baraja.
 
-The standard arrow head represents a HAS-A
-relationship; in this case a Deck has references to Card
-objects.
+La fecha con una cabeza estándar representa una relación HAS-A;
+en este caso una Baraja tiene referencias a objetos
+Carta.
 \index{multiplicity (in class diagram)}
 
-The star ({\tt *}) near the arrow head is a
-{\bf multiplicity}; it indicates how many Cards a Deck has.
-A multiplicity can be a simple number, like {\tt 52}, a range,
-like {\tt 5..7} or a star, which indicates that a Deck can
-have any number of Cards.
+El asterisco ({\tt *}) cerca de la cabeza de la flecha tiene una
+{\bf multiplicidad}; esto indica cuántas Cartas tiene una Baraja.
+Una multiplicidad puede ser un número simple, como {\tt 52}, un rango,
+como {\tt 5..7} o un asterisco, que indica que una Baraja puede
+tener cualquier número de Cartas.
 
-There are no dependencies in this diagram.  They would normally
-be shown with a dashed arrow.  Or if there are a lot of
-dependencies, they are sometimes omitted.
+No hay dependencias en este diagrama.  Normalmente se
+mostrarían con una flecha punteada.  O bien si hay muchas
+dependencias, a veces se omiten.
 
-A more detailed diagram might show that a Deck actually
-contains a {\em list} of Cards, but built-in types
-like list and dict are usually not included in class diagrams.
+Un diagrama más detallado podría mostrar que una Baraja contiene
+en realidad una {\em lista} de Cartas, pero los tipos incorporados
+como list y dict generalmente no se incluyen en los diagramas de clase.
 
 
 \section{Debugging}
