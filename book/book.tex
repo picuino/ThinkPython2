@@ -2887,9 +2887,9 @@ haga algo, aunque en este caso no hay mucho que pueda hacer
 el usuario excepto cerrar la ventana.
 
 Una vez que creas una tortuga, puedes llamar a un {\bf método} para moverla
-alrededor de la ventana.  Un método es similar a una función, pero
-usa una sintaxis un poco diferente.  Por ejemplo, para mover la tortuga
-adelante:
+dentro de la ventana.  Un método es similar a una función, pero
+utiliza una sintaxis un poco diferente.  Por ejemplo, para mover la tortuga
+hacia adelante:
 
 \begin{verbatim}
 bob.fd(100)
@@ -2999,7 +2999,7 @@ la dirección inicial.
 
 \section{Ejercicios}
 
-Lo siguiente es una serie de ejercicios que usan el módulo {\tt turtle}.  Pretenden
+Lo siguiente es una serie de ejercicios que utilizan el módulo {\tt turtle}.  Pretenden
 ser divertidos, pero también tienen un punto.  Mientras trabajes en
 ellos, piensa cuál es el punto.
 \index{módulo turtle}\index{turtle!módulo}
@@ -3010,7 +3010,7 @@ no las mires hasta que hayas terminado (o al menos intentado).
 \begin{enumerate}
 
 \item Escribe una función llamada {\tt cuadrado} que tome un parámetro
-con nombre {\tt t}, que es una tortuga.  Debería usar la tortuga para dibujar
+con nombre {\tt t}, que es una tortuga.  Debería utilizar la tortuga para dibujar
 un cuadrado.
 
 Escribe una llamada a función que pase a {\tt bob} como argumento de 
@@ -3154,7 +3154,7 @@ argumentos son asignados a los parámetros.
 \section{Diseño de interfaz}
 
 El siguiente paso es escribir {\tt circulo}, el cual toma un radio,
-{\tt r}, como parámetro.  Aquí hay una solución simple que usa a
+{\tt r}, como parámetro.  Aquí hay una solución simple que utiliza a
 {\tt poligono} para dibujar un polígono de 50 lados:
 
 \begin{verbatim}
@@ -3167,10 +3167,10 @@ def circulo(t, r):
     poligono(t, n, longitud)
 \end{verbatim}
 %
-La primera linea calcula el perímetro de un círculo con radio
-{\tt r} usando la fórmula $2 \pi r$.  Dado que usamos {\tt math.pi},
+La primera línea calcula el perímetro de un círculo con radio
+{\tt r} utilizando la fórmula $2 \pi r$.  Dado que utilizamos {\tt math.pi},
 tenemos que importar {\tt math}.  Por convención, las sentencias {\tt import}
-usualmente están al comienzo del script.
+generalmente están al comienzo del script.
 
 {\tt n} es el número de segmentos de línea en tu aproximación de un círculo,
 por lo que {\tt longitud} es la longitud de cada segmento.  Así, {\tt poligono}
@@ -3184,7 +3184,7 @@ parámetro.  Esto le daría al usuario (quien llame a {\tt circulo})
 más control, pero la interfaz sería menos limpia.
 \index{interfaz}
 
-La {\bf interfaz} de una función es un resumen de cómo se usa: ¿cuáles
+La {\bf interfaz} de una función es un resumen de cómo esta se utiliza: ¿cuáles
 son los parámetros?  ¿Qué hace la función?  ¿Y cuál es el valor de
 retorno?  Una interfaz es ``limpia'' si permite a la sentencia llamadora hacer
 lo que quiere sin lidiar con detalles innecesarios.
@@ -3220,7 +3220,7 @@ Sumar 3 a {\tt n} garantiza que el polígono tenga al menos 3 lados.
 
 Cuando escribí {\tt circulo}, fui capaz de reutilizar {\tt poligono}
 porque un polígono de muchos lados es una buena aproximación de un círculo.
-Pero {\tt arco} no es tan cooperativo; no podemos usar {\tt poligono}
+Pero {\tt arco} no es tan cooperativo; no podemos utilizar {\tt poligono}
 o {\tt circulo} para dibujar un arco.
 
 Una alternativa es comenzar con una copia
@@ -3252,7 +3252,7 @@ def polilinea(t, n, longitud, angulo):
         t.lt(angulo)
 \end{verbatim}
 %
-Ahora podemos reescribir {\tt poligono} y {\tt arco} para que use a {\tt polilinea}:
+Ahora podemos reescribir {\tt poligono} y {\tt arco} para que utilice a {\tt polilinea}:
 
 \begin{verbatim}
 def poligono(t, n, longitud):
@@ -3267,7 +3267,7 @@ def arco(t, r, angulo):
     polilinea(t, n, longitud_paso, angulo_paso)
 \end{verbatim}
 %
-Finalmente, podemos reescribir {\tt circulo} para que use a {\tt arco}:
+Finalmente, podemos reescribir {\tt circulo} para que utilice a {\tt arco}:
 
 \begin{verbatim}
 def circulo(t, r):
@@ -3281,8 +3281,8 @@ En este caso, notamos que había código similar en {\tt arco} y
 \index{refactorización}
 
 Si hubiéramos planificado con anticipación, podríamos haber escrito {\tt polilinea} primero
-y evitar la refactorización, pero a menudo no sabes lo suficiente al
-comienzo de un proyecto para diseñar todas las interfaces.  Una vez que comienzas
+y haber evitado la refactorización, pero a menudo no sabes lo suficiente al
+comienzo de un proyecto como para diseñar todas las interfaces.  Una vez que comienzas
 a escribir código, entiendes mejor el problema.  A veces la refactorización es una
 señal de que has aprendido algo.
 
@@ -3291,14 +3291,14 @@ señal de que has aprendido algo.
 \index{plan de desarrollo!encapsulamiento y generalización}
 
 Un {\bf plan de desarrollo} es un proceso para escribir programas.  El
-proceso que usamos en este estudio de caso es ``encapsulamiento y
+proceso que utilizamos en este estudio de caso es ``encapsulamiento y
 generalización''.  Los pasos de este proceso son:
 
 \begin{enumerate}
 
 \item Comenzar escribiendo un programa pequeño sin definiciones de función.
 
-\item Una vez que funciona el programa, identifica una parte
+\item Una vez que el programa funciona, identifica una parte
   coherente, encapsula la parte en una función y dale un nombre.
 
 \item Generaliza la función agregando parámetros apropiados.
@@ -3346,7 +3346,7 @@ la cadena a más de una línea.
 \index{multilínea!cadena}
 
 Es breve, pero contiene la información escencial
-que alguien necesitaría para usar esta función.  Explica de manera concisa lo que
+que alguien necesitaría para utilizar esta función.  Explica de manera concisa lo que
 hace la función (sin entrar en detalles sobre cómo lo
 hace).  Explica qué efecto tiene cada parámetro en el comportamiento de
 la función y de qué tipo debería ser cada parámetro (si no es
@@ -3394,7 +3394,7 @@ están claras, pueden ayudar con la depuración.
 \begin{description}
 
 \item[método:] Una función que se asocia a un objeto y se llama
-usando notación de punto.
+utilizando notación de punto.
 \index{método}
 
 \item[bucle:] Una parte de un programa que puede ejecutarse de forma repetida.
@@ -3414,7 +3414,7 @@ parámetro tratándolo como ``palabra clave''.
 \index{argumento de palabra clave}
 \index{palabra clave!argumento de}
 
-\item[interfaz:] Una descripción de cómo usar una función, incluyendo
+\item[interfaz:] Una descripción de cómo utilizar una función, incluyendo
 el nombre y descripciones de los argumentos y el valor de retorno.
 \index{interfaz}
 
@@ -3557,7 +3557,7 @@ devuelve un número de coma flotante:
 1.75
 \end{verbatim}
 
-Pero normalmente no escribimos las horas con decimales.  La división
+Sin embargo, normalmente no escribimos las horas con decimales.  La división
 entera devuelve el número entero de horas, redondeando:
 
 \begin{verbatim}
@@ -3582,7 +3582,7 @@ Para obtener el resto, podrías restar una hora en minutos:
 \index{operador de módulo}
 \index{módulo!operador}
 
-Una alternativa es usar el {\bf operador de módulo}, \verb"%", el cual
+Una alternativa es usar el {\bf operador de módulo}, \verb"%", que
 divide dos números y devuelve el resto.
 
 \begin{verbatim}
@@ -3684,7 +3684,7 @@ condiciones son verdaderas, es decir, si el número es divisible por 2 {\em o}
 3.
 
 Finalmente, el operador {\tt not} niega una expresión
-booleana, por lo que {\tt not (x > y)} es verdadera si {\tt x > y} es falsa,
+booleana, así que {\tt not (x > y)} es verdadera si {\tt x > y} es falsa,
 es decir, si {\tt x} es menor o igual que {\tt y}.
 
 Estrictamente hablando, los operandos de los operadores lógicos deberían ser
@@ -3711,7 +3711,7 @@ sepas lo que estás haciendo).
 \index{ejecución condicional}
 Para escribir programas útiles, casi siempre necesitamos la capacidad
 de verificar las condiciones y cambiar el comportamiento del programa
-como corresponde.  Las {\bf sentencias condicionales} nos dan esta capacidad.  La
+según corresponda.  Las {\bf sentencias condicionales} nos dan esta capacidad.  La
 forma más simple es la sentencia {\tt if}:
 
 \begin{verbatim}
@@ -3732,7 +3732,7 @@ llaman {\bf sentencias compuestas}.
 
 No hay límite en el número de sentencias que pueden aparecer en
 el cuerpo, pero tiene que haber al menos una.
-A veces, es útil tener un cuerpo sin sentencias (usualmente
+A veces, es útil tener un cuerpo sin sentencias (generalmente
 para reservar lugar a código que no has escrito todavía).  En ese
 caso, puedes usar la sentencia {\tt pass}, la cual no hace nada.
 \index{sentencia pass}
@@ -3791,7 +3791,7 @@ else:
 {\tt elif} es una abreviación de ``else if''.  De nuevo, se ejecutará exactamente
 una rama.  No hay límite en el número de sentencias {\tt
 elif}.  Si hay una cláusula {\tt else}, tiene que estar
-al final, pero no tiene que haber una.
+al final, pero no necesariamente tiene que haber una.
 \index{palabra clave elif}
 \index{elif!palabra clave}
 
@@ -3839,7 +3839,7 @@ estructura, los {\bf condicionales anidados} se vuelven difíciles de leer
 rápidamente.  Es una buena idea evitarlos cuando puedas.
 
 Los operadores lógicos a menudo proporcionan una manera de simplificar las sentencias condicionales
-anidadas.  Por ejemplo, podemos reescribir el siguiente código usando un
+anidadas.  Por ejemplo, podemos reescribir el siguiente código utilizando un
 único condicional:
 
 \begin{verbatim}
@@ -3868,9 +3868,9 @@ if 0 < x < 10:
 \label{recursion}
 \index{recursividad}
 
-Es legal para una función llamar a otra;
-es legal también para una función llamarse a sí misma.  Puede que no sea obvio
-por qué eso es una buena idea, pero resulta ser una de las cosas más
+Es legal para una función llamar a otra función;
+es legal también para una función llamarse a sí misma.  Puede que no sea obvia
+la razón por la cual eso es una buena idea, pero resulta ser una de las cosas más
 mágicas que puede hacer un programa.
 Por ejemplo, mira la siguiente función:
 
@@ -3945,7 +3945,7 @@ def imprimir_n(s, n):
     imprimir_n(s, n-1)
 \end{verbatim}
 %
-Si {\tt n <= 0} la {\bf sentencia return} hace que se salga de la función.  El
+Si {\tt n <= 0}, la {\bf sentencia return} hace que se salga de la función.  El
 flujo de ejecución vuelve inmediatamente a la sentencia llamadora y las líneas restantes
 de la función no se ejecutan.
 \index{sentencia return}
@@ -3956,8 +3956,8 @@ El resto de la función es similar a {\tt cuenta\_reg}: muestra a
 veces.  Entonces, el número de líneas de salida es {\tt 1 + (n - 1)}, lo cual
 suma {\tt n}.
 
-Para ejemplos simples como este, probablemente es más fácil usar un bucle {\tt
-for}.  Pero más adelante veremos ejemplos que son difíciles de escribir
+Para ejemplos simples como este, probablemente es más fácil utilizar un bucle {\tt
+for}.  Sin embargo, más adelante veremos ejemplos que son difíciles de escribir
 con un bucle {\tt for} y fáciles de escribir con recursividad, así que es
 bueno comenzar pronto.
 \index{bucle for}
@@ -3970,7 +3970,7 @@ bueno comenzar pronto.
 \index{función!marco de}
 \index{marco}
 
-En la Sección~\ref{stackdiagram}, usamos un diagrama de pila para representar
+En la Sección~\ref{stackdiagram}, utilizamos un diagrama de pila para representar
 el estado de un programa durante una llamada a función.  El mismo tipo de
 diagrama puede ayudar a interpretar una función recursiva.
 
@@ -3998,7 +3998,7 @@ Está vacío porque no creamos variables en
 
 Los cuatro marcos de {\tt cuenta\_reg} tienen valores diferentes para el
 parámetro {\tt n}.  La parte de abajo de la pila, donde {\tt n=0}, se
-llama {\bf caso base}.  No hace una llamada recursiva, por lo que
+llama {\bf caso base}.  No hace una llamada recursiva, así que
 no hay más marcos.
 
 Como ejercicio, dibuja un diagrama de pila para \verb"imprimir_n" llamada con
@@ -4187,8 +4187,8 @@ ValueError: math domain error
 %
 El mensaje de error indica la línea 5, pero no hay nada
 malo con esa línea.  Para encontrar el error real, podría ser
-útil imprimir el valor de {\tt relacion}, el cual resulta
-ser 0.  El problema está en la línea 4, que usa división entera
+útil imprimir el valor de {\tt relacion}, que resulta
+ser 0.  El problema está en la línea 4, que utiliza división entera
 en lugar de división de coma flotante.
 \index{división entera}
 \index{entera!división}
@@ -4207,7 +4207,7 @@ supongas que todo lo que dice es correcto.
   \index{entera!división}
 
 \item[operador de módulo:]  Un operador, denotado con un signo de porcentaje
-({\tt \%}), que trabaja con enteros y revuelve el resto de
+({\tt \%}), que trabaja con enteros y devuelve el resto de
 dividir un número por otro.
 \index{operador de módulo}
 \index{módulo!operador}
@@ -4274,7 +4274,7 @@ provoca un error de tiempo de ejecución.
 \begin{exercise}
 
 El módulo {\tt time} proporciona una función, con el mismo nombre {\tt time}, que
-devuelve el tiempo transcurrido desde la Hora Media de Greenwich (GMT) en ``la época'' ({\em epoch}), la cual es
+devuelve el tiempo transcurrido desde la Hora Media de Greenwich (GMT) en ``la época'' ({\em epoch}), que es
 un momento arbitrario usado como punto de referencia.  En sistemas UNIX, la
 época es el 1 de enero de 1970.
 
@@ -4315,7 +4315,7 @@ De lo contrario, el programa debería imprimir ``No, eso no funciona.''
 
 \item Escribe una función que permita al usuario ingresar valores
 para {\tt a}, {\tt b}, {\tt c} y {\tt n}, los convierta a
-enteros y use a la función \verb"comprobar_fermat" para comprobar si
+enteros y utilice la función \verb"comprobar_fermat" para comprobar si
 violan el teorema de Fermat.
 
 \end{enumerate}
@@ -4348,7 +4348,7 @@ Si cualquiera de las tres longitudes es mayor que la suma de las otras
   los enteros dados.
 
 \item Escribe una función que permita al usuario ingresar tres longitudes de
-  palos, los convierta a enteros y use a la función \verb"es_triangulo" para
+  palos, los convierta a enteros y utilice la función \verb"es_triangulo" para
   comprobar si los palos con las longitudes dadas pueden formar un triángulo.
 
 \end{enumerate}
@@ -4376,14 +4376,14 @@ recursivo(3, 0)
   recursivo(-1, 0)}?
 
 \item Escribe un docstring que explique todo lo que alguien necesitaría
-  saber para usar esta función (y nada más).
+  saber para utilizar esta función (y nada más).
 
 \end{enumerate}
 
 \end{exercise}
 
 
-Los siguientes ejercicios usan el módulo {\tt turtle}, descrito en el
+Los siguientes ejercicios utilizan el módulo {\tt turtle}, descrito en el
 Capítulo~\ref{turtlechap}:
 %\index{Turtle}
 
@@ -4420,7 +4420,7 @@ def dibujar(t, longitud, n):
 \begin{exercise}
 \index{Koch!curva de}\index{curva de Koch}
 
-La curva de Koch es un fractal que se ve algo como la
+La curva de Koch es un fractal que se ve más o menos como en la
 Figura~\ref{fig.koch}.  Para dibujar una curva de Koch con longitud $x$, todo lo que
 tienes que hacer es
 
