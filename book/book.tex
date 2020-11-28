@@ -1430,12 +1430,12 @@ La Figura~\ref{fig.state2} muestra el resultado del ejemplo anterior.
 \index{variable}
 
 Los programadores generalmente escogen nombres para sus variables que
-sean significativos: documentan para qué se usa la variable.
+sean significativos: documentan para qué se utiliza la variable.
 
 Los nombres de variable pueden ser tan largos como quieras.  Pueden contener
 tanto letras como números, pero no pueden comenzar con un número.
-Es legal usar letras mayúsculas, pero es convencional
-usar solo minúsculas para los nombres de variables.
+Es legal utilizar letras mayúsculas, pero es convencional
+utilizar solo minúsculas para los nombres de variables.
 
 El guión bajo, \verb"_", puede aparecer en un nombre.
 A menudo se usa en nombres con varias palabras, tales como
@@ -1458,8 +1458,8 @@ SyntaxError: invalid syntax
 @}.  Sin embargo, ¿qué tiene de malo {\tt class}?
 
 Resulta que {\tt class} es una de las {\bf palabras clave} de Python.  El
-intérprete usa las palabras clave para reconocer la estructura del programa
-y no se pueden usar como nombres de variable.
+intérprete utiliza las palabras clave para reconocer la estructura del programa
+y no se pueden utilizar como nombres de variable.
 \index{keyword}
 
 Python 3 tiene estas palabras clave:
@@ -1475,14 +1475,14 @@ break      except     in         raise
 \end{verbatim}
 %
 No tienes que memorizar esta lista.  En la mayoría de los entornos de desarrollo,
-las palabras clave se muestran con un color diferente; si intentas usar una
-como un nombre de variable, lo sabrás.
+las palabras clave se muestran con un color diferente; si intentas utilizar una
+como nombre de variable, lo sabrás.
 
 
 \section{Expresiones y sentencias}
 
 Una {\bf expresión} es una combinación de valores, variables y operadores.
-Un valor por sí mismo es considerado una expresión, y por consigiuente es
+Un valor por sí mismo es considerado una expresión, y por consigiuente lo es
 una variable, así que las siguientes son todas expresiones legales:
 \index{expression}
 
@@ -1531,14 +1531,14 @@ algo torpe.
 \index{modo interactivo}
 
 La alternativa es guardar código en un archivo llamado {\bf script} y
-entonces usar el intérprete en {\bf modo script} para ejecutar el script.  Por
+entonces utilizar el intérprete en {\bf modo script} para ejecutar el script.  Por
 convención, los scripts de Python tienen nombres que terminan con {\tt .py}.
 \index{script}
 \index{modo script}
 
 Si sabes cómo crear y ejecutar un script en tu computador, estás
-listo para seguir.  De lo contrario, recomiendo de nuevo usar PythonAnywhere.
-He publicado instrucciones para usarlo en modo script en
+listo para seguir.  De lo contrario, recomiendo de nuevo utilizar PythonAnywhere.
+He publicado instrucciones para utilizarlo en modo script en
 \url{http://tinyurl.com/thinkpython2e}.
 
 Debido a que Python proporciona ambos modos,
@@ -1548,7 +1548,7 @@ y el modo script que pueden confundir.
 \index{modo interactivo}
 \index{modo script}
 
-Por ejemplo, si usas Python como una calculadora, puedes escribir
+Por ejemplo, si utilizas Python como una calculadora, puedes escribir
 
 \begin{verbatim}
 >>> millas = 26.2
@@ -1557,13 +1557,13 @@ Por ejemplo, si usas Python como una calculadora, puedes escribir
 \end{verbatim}
 
 La primera línea asigna un valor a {\tt millas}, pero no tiene un efecto
-visible.  La segunda línea es una expresión, por lo que el
+visible.  La segunda línea es una expresión, por lo cual el
 intérprete la evalúa y muestra el resultado.  Resulta que una
 maratón es de unos 42 kilómetros.
 
 Sin embargo, si escribes el mismo código dentro de un script y lo ejecutas, no obtienes
 ninguna salida.
-En modo script una expresión, por sí misma, no tiene
+En modo script, una expresión por sí misma no tiene
 efecto visible.  Python evalúa la expresión, pero no
 muestra el resultado.
 Para mostrar el resultado, necesitas una sentencia {\tt print} como esta:
@@ -1599,10 +1599,10 @@ recordar las reglas:
 
 \begin{itemize}
 
-\item Los {\bf P}aréntesis tienen la mayor prioridad y se pueden usar 
-para forzar una expresión a evaluar en el orden que tú quieras. Ya que
+\item Los {\bf P}aréntesis tienen la mayor prioridad y se pueden utilizar 
+para forzar una expresión a evaluar en el orden que tú quieras. Dado que
 las expresiones en paréntesis se evalúan primero, {\tt 2 * (3-1)} es 4,
-y {\tt (1+1)**(5-2)} es 8. También puedes usar paréntesis para hacer una
+y {\tt (1+1)**(5-2)} es 8. También puedes utilizar paréntesis para hacer una
 expresión más fácil de leer, como en {\tt (minuto * 100) / 60}, incluso
 si no cambia el resultado.
 
@@ -1616,13 +1616,13 @@ si no cambia el resultado.
 \item Los operadores con la misma prioridad se evalúan de izquierda a
   derecha (excepto la potenciación).  Así que en la expresión {\tt grados /
     2 * pi}, la división ocurre primero y el resultado se multiplica
-  por {\tt pi}.  Para dividir por $2 \pi$, puedes usar paréntesis o escribir
+  por {\tt pi}.  Para dividir por $2 \pi$, puedes utilizar paréntesis o escribir
   {\tt grados / 2 / pi}.
 
 \end{itemize}
 
 Yo no me esfuerzo mucho en recordar la prioridad de los
-operadores. Si no puedo saber mirando la expresión, uso
+operadores. Si no puedo saber mirando la expresión, utilizo
 paréntesis para hacerlo obvio.
 
 
@@ -1631,13 +1631,13 @@ paréntesis para hacerlo obvio.
 \index{cadena!operación con}
 
 En general, no puedes realizar operaciones matemáticas con cadenas, incluso
-si las cadenas parecen números, por lo que las siguientes son ilegales:
+si las cadenas parecen números, así que las siguientes expresiones son ilegales:
 
 \begin{verbatim}
 'comida'-'china'    'huevos'/'fácil'    'tercero'*'un encanto'
 \end{verbatim}
 %
-Pero hay dos excepciones, {\tt +} y {\tt *}.
+Sin embargo, hay dos excepciones: {\tt +} y {\tt *}.
 
 El operador {\tt +} realiza una {\bf concatenación}, lo cual significa que
 une las cadenas enlazándolas de extremo a extremo.  Por ejemplo:
@@ -1650,7 +1650,7 @@ une las cadenas enlazándolas de extremo a extremo.  Por ejemplo:
 throatwarbler
 \end{verbatim}
 %
-El operador {\tt *} también funciona en cadenas; hace repetición.
+El operador {\tt *} también funciona en cadenas: hace repetición.
 Por ejemplo, \verb"'Spam'*3" es \verb"'SpamSpamSpam'".  Si uno de los
 valores es una cadena, el otro tiene que ser un entero.
 
@@ -1670,7 +1670,7 @@ que la concatenación no tiene?
 
 A medida que los programas se hacen más grandes y complicados, se vuelven más difíciles
 de leer.  Los lenguajes formales son densos y a menudo es difícil
-mirar un pedazo de código y descifrar lo que hace, o por qué.
+mirar un pedazo de código y descifrar lo que hace, o por qué lo hace.
 
 Por esta razón, es una buena idea añadir notas a tus programas para explicar
 en lenguaje natural lo que hace el programa.  Estas notas se llaman
@@ -1692,7 +1692,7 @@ Todo desde el {\tt \#} hasta el final de la línea es ignorado: no
 tiene efecto en la ejecución del programa.
 
 Los comentarios son más útiles cuando documentan características del
-código que no son obvias.  Es razonable asumir que el lector puede descifrar
+código que no son obvias.  Es razonable suponer que el lector puede descifrar
 {\em qué} hace el código; es más útil explicar {\em por qué}.
 
 Este comentario es redundante con el código e inútil:
@@ -1738,7 +1738,7 @@ cometerás menos errores y los encontrarás más rápido.
 
 
 \item[Error de tiempo de ejecución:] El segundo tipo de error es un error de tiempo de ejecución,
-  llamado así porque el error no aparece hasta después que el programa ha
+  llamado así porque el error no aparece hasta después de que el programa ha
   comenzado a ejecutarse.  Estos errores también se llaman {\bf excepciones}
   porque usualmente indican que algo excepcional (y malo)
   ha ocurrido.  \index{error de tiempo de ejecución} \index{tiempo de ejecución!error de}
@@ -1776,8 +1776,8 @@ lo que hace.
 valores a los cuales se refieren.
 \index{diagrama de estado}
 
-\item[palabra clave:]  Una palabra reservada que se usa como parte de la sintaxis
-de un programa; no puedes usar palabras claves tales como {\tt if}, {\tt  def} y {\tt while} como
+\item[palabra clave:]  Una palabra reservada que se utiliza como parte de la sintaxis
+de un programa; no puedes utilizar palabras claves tales como {\tt if}, {\tt  def} y {\tt while} como
 nombres de variables.
 \index{palabra clave}
 
@@ -1798,11 +1798,11 @@ aquí, las sentencias que hemos visto son asignaciones y sentencias print.
 \item[ejecutar:]  Llevar a efecto una sentencia y hacer lo que dice.
 \index{ejecutar}
 
-\item[modo interactivo:] Una manera de usar el intérprete de Python
+\item[modo interactivo:] Una manera de utilizar el intérprete de Python
 escribiendo código en el prompt.
 \index{modo interactivo}
 
-\item[modo script:] Una manera de usar el intérprete de Python para leer
+\item[modo script:] Una manera de utilizar el intérprete de Python para leer
 código de un script y ejecutarlo.
 \index{modo script}
 
@@ -1867,7 +1867,7 @@ errores a propósito para ver qué sale mal.
 
 \begin{exercise}
 
-Practica usando el intérprete de Python como una calculadora:
+Practica utilizando el intérprete de Python como una calculadora:
 \index{calculadora}
 
 \begin{enumerate}
