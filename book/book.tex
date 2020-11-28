@@ -185,7 +185,7 @@ bajo los términos de la Creative Commons Attribution-NonCommercial
 
 La forma original de este libro está en código fuente de \LaTeX.  La compilación
 de esta fuente de \LaTeX\ tiene el efecto de generar una representación de un libro
-de texto independiente del dispositivo, la cual se puede convertir a otros formatos
+de texto que es independiente del dispositivo, la cual se puede convertir a otros formatos
 e imprimir.
 
 La fuente de \LaTeX\ para este libro está disponible en
@@ -237,7 +237,7 @@ Uno de los problemas que vi tenía relación con los libros.
 Eran muy grandes, con demasiados detalles innecesarios sobre Java, y
 no tenían suficiente orientación de alto nivel acerca de cómo programar.  Y todos
 sufrían el efecto trampilla: comenzaban con facilidad,
-seguían gradualmente y luego, en algún lugar alrededor del Capítulo 5,
+avanzaban de manera gradual y luego, en algún lugar alrededor del Capítulo 5,
 se caían.  Los estudiantes conseguían demasiado material nuevo,
 muy rápido, y yo ocupaba el resto del semestre recogiendo los pedazos.
 
@@ -250,7 +250,7 @@ Mis objetivos eran:
 no leer 50 páginas.
 
 \item Tener cuidado con el vocabulario.  Intenté minimizar la jerga y
-definir cada término en el primer uso.
+definir cada término en su primer uso.
 
 \item Construir de manera gradual. Para evitar trampillas, tomé los temas más difíciles
 y los dividí en series de pasos pequeños.
@@ -269,18 +269,18 @@ de la clase en los temas difíciles, los temas interesantes y (más importante)
 dejar a los estudiantes practicar.
 
 Publiqué el libro bajo la Licencia de documentación libre de GNU,
-la cual permite a los usuarios copiar, modificar y distribuir el libro.
+permitiendo a los usuarios copiar, modificar y distribuir el libro.
 \index{GNU Free Documentation License}
 \index{Free Documentation License, GNU}
 
 Lo que ocurrió después es la parte genial.  Jeff Elkner, un profesor
 de escuela secundaria en Virginia, adoptó mi libro y lo tradujo a Python.
-Él me envió una copia de su traducción y yo tuve la experiencia inusual de
+Me envió una copia de su traducción y tuve la experiencia inusual de
 aprender Python leyendo mi propio libro. Como Green Tea Press,
 publiqué la primera versión en Python en 2001.
 \index{Elkner, Jeff}
 
-En 2003 empecé a enseñar en el Olin College y tuve que enseñar Python
+En 2003 comencé a enseñar en el Olin College y tuve que enseñar Python
 por primera vez.  El contraste con Java fue notable.
 Los estudiantes se esforzaban menos, aprendían más, trabajaban en más
 proyectos interesantes y generalmente se divertían mucho.
@@ -327,7 +327,7 @@ tienes que lidiar con la instalación de Python hasta que quieras hacerlo.
   tortuga, llamado Swampy, por un módulo de Python más estándar, {\tt
     turtle}, que es más fácil de instalar y más poderoso.
 
-\item Agregué un nuevo capítulo llamado ``Trucos extra'', el cual introduce
+\item Agregué un nuevo capítulo llamado ``Trucos extra'', que introduce
 algunas características adicionales de Python que no son estrictamente
 necesarias, pero a veces son prácticas.
 
@@ -388,7 +388,7 @@ retroalimentación, te agregaré a la lista de colaboradores
 
 Si incluyes al menos una parte de la oración en donde
 aparece el error, eso me facilita la búsqueda.  Los números de página
-y de sección también están bien, pero no es tan fácil trabajar estos.
+y de sección también me ayudan, pero no es tan fácil trabajar con estos.
 ¡Gracias!
 
 \begin{itemize}
@@ -793,7 +793,7 @@ buscar y reemplazar texto en un documento, o algo gráfico, como procesar
 una imagen o reproducir un video.
 \index{programa}
 
-Los detalles se ven diferentes en diferentes lenguajes, pero unas pocas
+Los detalles se ven diferentes en lenguajes diferentes, pero unas pocas
 instrucciones básicas aparecen en casi todos los lenguajes:
 
 \begin{description}
@@ -840,7 +840,7 @@ en un navegador.  Después, cuando te acostumbres a Python, haré
 sugerencias para instalar Python en tu computador.
 \index{Python en un navegador}
 
-Hay una serie de páginas web que puedes usar para ejecutar Python.  Si ya
+Hay una serie de páginas web que puedes utilizar para ejecutar Python.  Si ya
 tienes una favorita, ve y úsala.  De otra manera, recomiendo
 PythonAnywhere.  En \url{http://tinyurl.com/thinkpython2e}
 proporciono instrucciones detalladas para comenzar.
@@ -871,7 +871,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 Las primeras tres líneas contienen información acerca del intérprete
 y el sistema operativo en el cual se está ejecutando, así que puede ser
 diferente para ti.  Sin emgargo, deberías verificar que el número de versión, que
-en este ejemplo es {\tt 3.4.0}, comience con 3, el cual indica que estás
+en este ejemplo es {\tt 3.4.0}, comience con 3, lo cual indica que estás
 ejecutando Python 3.  Si comienza con 2, estás ejecutando
 (lo adivinaste) Python 2.
 
@@ -912,7 +912,7 @@ Hola, mundo
 \end{verbatim}
 %
 Las comillas en el programa marcan el principio y el final
-del texto a visualizar; estas no aparecen en el resultado.
+del texto a visualizar: estas no aparecen en el resultado.
 \index{comillas}
 \index{sentencia print}
 \index{print!sentencia}
@@ -929,7 +929,7 @@ una función, así que no usa paréntesis.
 >>> print 'Hola, mundo'
 \end{verbatim}
 %
-Esta distinción tendrá más sentido pronto, pero eso es suficiente para
+Esta distinción pronto tendrá más sentido, pero eso es suficiente para
 comenzar.
 
 
@@ -971,7 +971,7 @@ eleva un número a una potencia:
 42
 \end{verbatim}
 %
-En algunos otros lenguajes, \verb"^" se usa para potenciación, pero
+En algunos otros lenguajes, \verb"^" se utiliza para potenciación, pero
 en Python es un operador bit a bit llamado XOR.  Si no conoces
 los operadores bit a bit, el resultado te sorprenderá:
 
@@ -1003,7 +1003,7 @@ cadena} (en inglés, {\em string}), llamada así porque las letras que contiene 
 \index{entero}
 \index{coma flotante}
 
-Si no estás seguro de qué tipo tiene un valor, el intérprete te lo
+Si no sabes bien qué tipo tiene algún valor, el intérprete te lo
 puede decir:
 
 \begin{verbatim}
@@ -1015,8 +1015,8 @@ puede decir:
 <class 'str'>
 \end{verbatim}
 %
-En estos resultados, la palabra ``class'' se usa en el sentido de
-una categoría; un tipo es una categoría de valores.
+En estos resultados, la palabra ``class'' se utiliza en el sentido de
+una categoría: un tipo es una categoría de valores.
 \index{class}
 
 Evidentemente, los enteros pertenecen al tipo {\tt int},
@@ -1045,7 +1045,7 @@ cadenas.
 %
 Son cadenas.
 
-Cuando escribas un entero grande, tal vez sientas la tentación de usar comas
+Cuando escribas un entero grande, tal vez sientas la tentación de utilizar comas
 entre grupos de dígitos, como en {\tt 1,000,000}.  No es un
 {\em entero} legal en Python, pero es legal:
 
@@ -1077,13 +1077,13 @@ más sobre este tipo de secuencia más adelante.
 
 Los {\bf lenguajes naturales} son los lenguajes que hablan las personas,
 tales como el inglés, el español y el francés.  No fueron diseñados
-por las personas (aunque las personas traten de imponerles algo de orden);
+por las personas (aunque las personas traten de imponerles algo de orden):
 evolucionan de manera natural.
 
 Los {\bf lenguajes formales} son lenguajes que están diseñados por personas
-para aplicaciones específicas.  Por ejemplo, la notación que usan los
+para aplicaciones específicas.  Por ejemplo, la notación que utilizan los
 matemáticos es un lenguaje formal que es particularmente bueno al denotar
-relaciones entre números y símbolos.  Los químicos usan un lenguaje formal
+relaciones entre números y símbolos.  Los químicos utilizan un lenguaje formal
 para representar la estructura química de las moléculas.  Y
 más importante:
 
@@ -1112,7 +1112,7 @@ no hay ningún elemento con la abreviatura $Zz$.
 El segundo tipo de regla de sintaxis tiene relación con la manera en que los
 tokens están combinados.  La ecuación $3 +/ 3$ es ilegal porque aunque $+$
 y $/$ son tokens legales, no puedes tener uno justo después del otro.
-Del mismo modo, en una fórmula químca el subíndice viene después del nombre
+Del mismo modo, en una fórmula química el subíndice viene después del nombre
 del elemento, no antes.
 
 Esta es un@ oración en e\$paño$/$ bien estructurada
@@ -1137,7 +1137,7 @@ diferencias:
 \item[ambigüedad:] Los lenguajes naturales están llenos de ambigüedad, con la cual
 las personas lidian mediante el uso de pistas contextuales y otra información.
 Los lenguajes formales están diseñados para ser casi o completamente inequívocos,
-lo cual significa que cualquier sentencia tiene exactamente un significado,
+lo cual significa que cualquier sentencia tiene exactamente un solo significado,
 sin importar el contexto.
 
 \item[redundancia:] Para compensar la ambigüedad y reducir
