@@ -4467,8 +4467,8 @@ implementa tu favorito.
 \chapter{Funciones productivas}
 \label{fruitchap}
 
-Muchas de las funciones de Python que hemos usado, tales como las funciones
-matemáticas, producen valores de retorno. Pero las funciones que hemos escrito
+Muchas de las funciones de Python que hemos utilizado, tales como las funciones
+matemáticas, producen valores de retorno. Sin embargo, las funciones que hemos escrito
 son todas nulas: tienen un efecto, como imprimir un valor
 o mover una tortuga, pero no tienen un valor de retorno.  En
 este capítulo aprenderás a escribir funciones productivas.
@@ -4478,7 +4478,7 @@ este capítulo aprenderás a escribir funciones productivas.
 \index{valor de retorno}
 
 Al llamar a una función se genera un valor de
-retorno, que usualmente asignamos a una variable o usamos como parte de una
+retorno, que usualmente asignamos a una variable o utilizamos como parte de una
 expresión.
 
 \begin{verbatim}
@@ -4604,7 +4604,7 @@ en Python.  En otras palabras, ¿cuáles son las entradas (parámetros)
 y cuál es la salida (valor de retorno)?
 
 En este caso, las entradas son dos puntos, que puedes representar
-usando cuatro números.  El valor de retorno es la distancia representada por
+utilizando cuatro números.  El valor de retorno es la distancia representada por
 un valor de coma flotante.
 
 Inmediatamente puedes escribir un esbozo de la función:
@@ -4702,7 +4702,7 @@ Los aspectos clave del proceso son:
 En cualquier punto, si hay un error, deberías tener una buena idea de
 dónde está.
 
-\item Usa variables que guarden valores intermedios de tal manera que puedas
+\item Utiliza variables que guarden valores intermedios de tal manera que puedas
 mostrarlos y verificarlos.
 
 \item Una vez que el programa funciona, tal vez quieras borrar algo del
@@ -4712,10 +4712,10 @@ leer.
 
 \end{enumerate}
 
-Como ejercicio, usa desarrollo incremental para escribir una función
+Como ejercicio, utiliza desarrollo incremental para escribir una función
 llamada {\tt hipotenusa} que devuelva el largo de la hipotenusa de un
-triángulo rectánculo dadas las longitudes de los otros dos lados como argumentos.
-Graba cada etapa del proceso de desarrollo a medida que avances.
+triángulo rectánculo, dadas las longitudes de los otros dos lados como argumentos.
+Guarda cada etapa del proceso de desarrollo a medida que avances.
 \index{hipotenusa}
 
 
@@ -4794,7 +4794,7 @@ False
 True
 \end{verbatim}
 %
-El resultado del operador {\tt ==} es un booleano, por lo que podemos escribir la
+El resultado del operador {\tt ==} es un booleano, así que podemos escribir la
 función de manera más concisa devolviéndolo directamente:
 
 \begin{verbatim}
@@ -4802,7 +4802,7 @@ def es_divisible(x, y):
     return x % y == 0
 \end{verbatim}
 %
-Las funciones booleanas se usan a menudo en las sentencias condicionales:
+Las funciones booleanas se utilizan a menudo en las sentencias condicionales:
 \index{sentencia condicional}
 \index{condicional!sentencia}
 
@@ -4836,9 +4836,9 @@ Hemos cubierto solo un pequeño subconjunto de Python, pero tal vez
 te interese saber que este subconjunto es un lenguaje de programación {\em completo},
 lo cual significa que cualquier cosa que pueda ser
 calculada se puede expresar en este lenguaje.  Cualquier programa alguna vez escrito
-puede ser reescrito usando solo las características del lenguaje que has aprendido
+puede ser reescrito utilizando solo las características del lenguaje que has aprendido
 hasta ahora (en realidad, necesitarías unos pocos comandos para controlar dispositivos
-como el mouse, discos, etc., pero eso eso todo).
+como el mouse, discos, etc., pero eso es todo).
 
 Probar ese aserto es un ejercicio no trivial realizado por primera vez por Alan
 Turing, uno de los primeros informáticos (algunos discuten que
@@ -4857,7 +4857,7 @@ se está definiendo.  Una definición verdaderamente circular no es muy
 
 \begin{description}
 
-\item[vorpal:] Un adjetivo usado para describir algo que es vorpal.
+\item[vorpal:] Un adjetivo utilizado para describir algo que es vorpal.
 \index{vorpal}
 \index{definición circular}
 \index{circular!definición}
@@ -4886,7 +4886,7 @@ lo cual es 6.
 
 Si puedes escribir una definición recursiva de algo, puedes
 escribir un programa en Python para evaluarla.  El primer paso es decidir
-cuáles deberían ser los parámetros.  En este caso debería estar claro
+cuáles deberían ser los parámetros.  En este caso, debería estar claro
 que {\tt factorial} toma un entero:
 
 \begin{verbatim}
@@ -4980,12 +4980,12 @@ la rama que las crea no se ejecuta.
 
 Seguir el flujo de ejecución es una manera de leer programas, pero
 puede volverse abrumador rápidamente.  Una
-alternativa es lo que yo llamo el ``salto de fe''.  Cuando llegas a una
+alternativa es lo que yo llamo ``salto de fe''.  Cuando llegas a una
 llamada a función, en lugar de seguir el flujo de ejecución, {\em
-supones} que la función funciona correctamente y que devuelve el resultado
+supones} que la función es correcta y que devuelve el resultado
 correcto.
 
-De hecho, ya estás practicando este salto de fe cuando usas
+De hecho, ya estás practicando este salto de fe cuando utilizas
 funciones incorporadas.  Cuando llamas a {\tt math.cos} o {\tt math.exp},
 no examinas los cuerpos de esas funciones.  Sólo
 supones que funcionan porque las personas que escribieron las funciones
@@ -4995,7 +4995,7 @@ Lo mismo es verdad cuando llamas a una de tus propias funciones.  Por
 ejemplo, en la Sección~\ref{boolean}, escribimos una función llamada
 \verb"es_divisible" que determina si un número es divisible por
 otro.  Una vez que nos hemos convencido de que esta función es
-correcta ---examinando el código y probándolo--- podemos usar la función
+correcta ---examinando el código y probándolo--- podemos utilizar la función
 sin mirar el cuerpo otra vez.
 \index{prueba de salto de fe}
 
@@ -5040,7 +5040,7 @@ def fibonacci(n):
 \end{verbatim}
 %
 Si intentas seguir el flujo de ejecución aquí, incluso para valores
-de $n$ bastante pequeños, tu cabeza estalla.  Pero de acuerdo al
+de $n$ bastante pequeños, tu cabeza estalla.  Sin embargo, de acuerdo al
 salto de fe, si supones que las dos llamadas recursivas
 funcionan correctamente, entonces está claro que obtienes
 el resultado correcto al sumarlas.
@@ -5078,7 +5078,7 @@ llama la función gamma y está
 un poco más allá del alcance de este libro.  Entonces iremos por la segunda.
 \index{función gamma}
 
-Podemos usar la función incorporada {\tt isinstance} para verificar el tipo
+Podemos utilizar la función incorporada {\tt isinstance} para verificar el tipo
 del argumento.  Mientras estemos en ello, podemos también asegurarnos de que el
 argumento sea positivo:
 \index{función isinstance}
@@ -5142,7 +5142,7 @@ la función; se viola una precondición.
 postcondición.
 
 \item Hay algo mal en el valor de retorno o la
-manera en que se usa.
+manera en que se utiliza.
 
 \end{itemize}
 
@@ -5160,8 +5160,8 @@ función con valores que faciliten la verificación del resultado
 (como en la Sección~\ref{incremental.development}).
 
 Si la función parece funcionar, mira la llamada a función
-para asegurarte de que el valor de retorno se está usando correctamente (¡o si al
-menos se está usando!).
+para asegurarte de que el valor de retorno se esté utilizando correctamente (¡o si al
+menos se está utilizando!).
 \index{flujo de ejecución}
 
 Agregar sentencias print al comienzo y al final de una función
@@ -5208,7 +5208,7 @@ tiempo, pero un poco de andamiaje puede ahorrar mucha depuración.
 
 \begin{description}
 
-\item[variable temporal:]  Una variable usada para almacenar un valor intermedio en
+\item[variable temporal:]  Una variable utilizada para almacenar un valor intermedio en
 una computación compleja.
 \index{variable temporal}
 \index{temporal!variable}
@@ -5222,11 +5222,11 @@ evitar la depuración agregando y probando solo
 un pedazo de código a la vez.
 \index{desarrollo incremental}
 
-\item[andamiaje:]  Código que se usa durante el desarrollo de un programa pero
+\item[andamiaje:]  Código que se utiliza durante el desarrollo de un programa pero
 no es parte de la versión final.
 \index{scaffolding}\index{andamiaje}
 
-\item[guardián:]  Un patrón de programación que usa una sentencia
+\item[guardián:]  Un patrón de programación que utiliza una sentencia
 condicional para verificar y encargarse de circunstancias que
 podrían provocar un error.
 \index{patrón guardián}
@@ -5280,7 +5280,7 @@ A(m-1, A(m, n-1)) & \mbox{si } m > 0 \mbox{ y } n > 0.
 %
 Ver \url{http://en.wikipedia.org/wiki/Ackermann_function}.
 Escribe una función con nombre {\tt ack} que evalúe la función de Ackermann.
-Usa tu función para evaluar {\tt ack(3, 4)}, que debería ser 125.
+Utiliza tu función para evaluar {\tt ack(3, 4)}, que debería ser 125.
 ¿Que ocurre para valores más grandes de {\tt m} y {\tt n}?
 Solución: \url{http://thinkpython2.com/code/ackermann.py}.
 \index{Ackermann!función de}
@@ -5323,7 +5323,7 @@ vacía, la cual se escribe \verb"''" y no contiene letras?
 
 \item Escribe una función llamada \verb"es_palindromo" que tome
 una cadena como argumento y devuelva {\tt True} si es un palíndromo
-y {\tt False} si no.  Recuerda que puedes usar la
+y {\tt False} si no.  Recuerda que puedes utilizar la
 función incorporada {\tt len} para verificar la longitud de una cadena.
 
 \end{enumerate}
@@ -5352,7 +5352,7 @@ que divide a ambos sin obtener resto.
 
 Una manera de encontrar el MCD de dos números está basada en la observación
 de que si $r$ es el resto de dividir $a$ por $b$, entonces $mcd(a,
-b) = mcd(b, r)$.  Como caso base, podemos usar $mcd(a, 0) = a$.
+b) = mcd(b, r)$.  Como caso base, podemos utilizar $mcd(a, 0) = a$.
 
 Escribe una función llamada
 \verb"mcd" que tome parámetros {\tt a} y {\tt b}
