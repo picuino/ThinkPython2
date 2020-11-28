@@ -13963,7 +13963,7 @@ problema y demuestra una solución.
 
 La característica de un lenguaje que más frecuentemente se asocia a la programación
 orientada a objetos es la {\bf herencia}.  La herencia es la posibilidad de
-definir una clase nuevo que sea una verión modificada de una clase existente.
+definir una clase nueva que sea una versión modificada de una clase existente.
 En este capítulo demuestro la herencia utilizando clases que representan
 cartas de juego, barajas de cartas y manos de póker.
 \index{baraja}
@@ -13973,7 +13973,7 @@ cartas de juego, barajas de cartas y manos de póker.
 Si no juegas
 póker, puedes leer sobre este en
 \url{http://en.wikipedia.org/wiki/Poker}, pero no tienes que hacerlo; 
-Te diré lo que necesitas saber para los ejercicios.
+te diré lo que necesitas saber para los ejercicios.
 
 Los ejemplos de código de
 este capítulo están disponibles en
@@ -13986,17 +13986,17 @@ Hay cincuenta y dos cartas en una baraja, cada una perteneciente a uno de
 los cuatro palos y uno de los trece rangos.  Los palos son Picas, Corazones,
 Diamantes y Tréboles (en orden descendiente en el bridge).  Los rangos son
 As, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jota, Reina y Rey.  Dependiendo del
-juego que estés jugando, un As puede tener más valor que un Rey
+juego que estés jugando, el valor de un As puede ser mayor al de un Rey
 o menor que 2.
 \index{rango}
 \index{palo}
 
-Si queremos definir un objeto nuevo que represente una carta, es
-obvio cuáles deberían ser los atributos: {\tt rango} y
-{\tt palo}.  No es obvio qué tipo de atributos
+Si queremos definir un objeto nuevo que represente una carta, los
+atributos que debería tener son obvios: {\tt rango} y
+{\tt palo}.  Lo que no es obvio es qué tipo de atributos
 deberían ser.  Una posibilidad es utilizar cadenas que contengan palabras como
-\verb"'Picas'" para palos y \verb"'Reinga'" para rangos.  Un problema con
-esta implementación es que no sería fácil comparar cartas para
+\verb"'Picas'" para palos y \verb"'Reina'" para rangos.  Un problema que
+tiene esta implementación es que no sería fácil comparar cartas para
 ver cuál tiene un rango o palo con más valor.
 \index{codificar}
 \index{cifrar}
@@ -14070,7 +14070,7 @@ reina_de_diamantes = Carta(1, 12)
 \index{atributo de clase}
 \index{clase!atributo de}
 
-Para imprimir objetos Carta de una manera que las personas puedan leer
+Para imprimir objetos Carta de una manera en la que las personas puedan leer
 fácilmente, necesitamos un mapeo de códigos enteros a los rangos y palos
 correspondientes.  Una manera natural de
 hacer eso es con listas de cadenas.  Podemos asignar estas listas a {\bf atributos
@@ -14100,7 +14100,7 @@ Este término los distingue de variables como {\tt palo} y {\tt
 asociados a una instancia particular.
 \index{notación de punto}
 
-A ambos tipos de atributo se accede utilizando notación de punto.  Por
+Para ambos tipos de atributo, se accede utilizando notación de punto.  Por
 ejemplo, en \verb"__str__", {\tt self} es un objeto Carta,
 y {\tt self.rango} es su rango.  De manera similar, {\tt Carta}
 es un objeto de clase, y \verb"Carta.nombres_de_rango" es una
@@ -14109,10 +14109,10 @@ lista de cadenas asociadas a la clase.
 Cada carta tiene su propio {\tt palo} y {\tt rango}, pero hay
 solo una copia de \verb"nombres_de_palo" y \verb"nombres_de_rango".
 
-Poniéndolos todos juntos, la expresión
+Poniendo todos los elementos juntos, la expresión
 \verb"Carta.nombres_de_rango[self.rango]" significa ``utiliza el atributo {\tt rango}
 del objeto {\tt self} como índice dentro de la lista \verb"nombres_de_rango"
-de la clase {\tt Carta}, y selecciona la cadena apropiada.''
+de la clase {\tt Carta}, y selecciona la cadena correspondiente.''
 
 El primer elemento de \verb"nombres_de_rango" es {\tt None} porque no
 hay carta con rango cero.  Incluyendo a {\tt None} como guardián de lugar,
@@ -14230,7 +14230,7 @@ el conjunto estándar de cincuenta y dos cartas:
 class Baraja:
 
     def __init__(self):
-        self.carta = []
+        self.cartas = []
         for palo in range(4):
             for rango in range(1, 14):
                 carta = Carta(palo, rango)
@@ -14401,7 +14401,7 @@ con 52 cartas nuevas, el método init para Manos debería inicializar {\tt
   cartas} con una lista vacía.  \index{anular} \index{método init}
 \index{init!método}
 
-Si proporcionamos un método init en la clase {\tt Mano}, este lo anula
+Si proporcionamos un método init en la clase {\tt Mano}, este queda anulado
 en la clase {\tt Baraja}:
 
 \begin{verbatim}
@@ -14450,7 +14450,7 @@ llamado \verb"mover_cartas":
 cartas a repartir.  Modifica tanto a {\tt self} como a {\tt mano}, y
 devuelve {\tt None}.
 
-En algunos juegos, las cartas de mueven de una mano a otra,
+En algunos juegos, las cartas se mueven de una mano a otra,
 o de una mano de vuelta a la baraja.  Puedes utilizar a \verb"mover_cartas"
 para cualquiera de estas operaciones: {\tt self} puede ser una Baraja
 o una Mano, y {\tt mano}, a pesar del nombre, puede ser también una {\tt Baraja}.
@@ -14467,7 +14467,7 @@ Por otra parte, la herencia puede hacer a los programas difíciles de leer.
 Cuando se invoca a un método, a veces no está claro dónde encontrar su
 definición.  El código relevante puede estar distribuido en varios módulos.
 Además, muchas de las cosas que se pueden hacer utilizando herencia se pueden
-hacer tan bien o mejor sin esta.
+hacer igual de bien o mejor sin esta.
 
 
 \section{Diagramas de clase}
@@ -14551,7 +14551,7 @@ método en un objeto, podría ser difícil averiguar qué método
 será invocado.
 \index{herencia}
 
-Supongamos que estás escribiendo una función que trabaje con objetos Mano.
+Supongamos que estás escribiendo una función que trabaja con objetos Mano.
 Te gustaría trabajar con todos los tipos de Mano, como
 ManoPóker, ManoBridge, etc.  Si invocas a un método como
 {\tt barajar}, quizás obtengas el que se definió en {\tt Baraja},
@@ -14618,7 +14618,7 @@ Los capítulos anteriores demuestran un plan de desarrollo que podríamos llamar
 ``diseño orientado a objetos''.  Identificamos objetos que necesitábamos ---como
 {\tt Punto}, {\tt Rectángulo} y {\tt Tiempo}--- y clases definidas para
 representarlos.  En cada caso, hay una correspondencia obvia
-entre el objeto y alguna entidad del mundo real (o al menos un
+entre el objeto y alguna entidad del mundo real (o al menos de un
 mundo matemático).
 \index{plan de desarrollo!encapsulamiento de datos}
 
@@ -14629,7 +14629,7 @@ de función encapsulando y generalizando, podemos descubrir
 interfaces de clase a través del {\bf encapsulamiento de datos}.
 \index{encapsulamiento de datos}
 
-En análisis de Markov, de la Sección~\ref{markov}, proporciona un buen ejemplo.
+El análisis de Markov, de la Sección~\ref{markov}, proporciona un buen ejemplo.
 Si descargas mi código en \url{http://thinkpython2.com/code/markov.py},
 verás que utiliza dos variables globales ---\verb"suffix_map" and
 \verb"prefix"--- que se leen y escriben desde varias funciones.
@@ -14690,7 +14690,7 @@ globales (cuando sea necesario).
 \item Una vez que hagas funcionar el programa, busca asociaciones
 entre variables globales y las funciones que las utilizan.
 
-\item En capsula variables relacionadas como atributos de un objeto.
+\item Encapsula variables relacionadas como atributos de un objeto.
 
 \item Transforma las funciones asociadas en métodos de una nueva
 clase.
@@ -14728,7 +14728,7 @@ diferente a otra función sin hacer muchas computaciones.
 \index{enchapado}
 
 \item[herencia:] La posibilidad de definir una clase nueva que sea una
-versión odificada de una clase definida anteriormente.
+versión modificada de una clase definida anteriormente.
 \index{herencia}
 
 \item[clase padre:] La clase desde la cual una clase hija hereda.
@@ -14743,9 +14743,9 @@ clase existente; también llamada ``subclase''.
 y su clase padre.
 \index{relación IS-A}
 
-\item[relación HAS-A:] A relationship between two classes
-where instances of one class contain references to instances of
-the other.
+\item[relación HAS-A:] Una relación entre dos clases
+donde instancias de una clase contienen referencias a instancias de
+la otra.
 \index{relación HAS-A}
 
 \item[dependencia:] Una relación entre dos clases
@@ -14891,7 +14891,7 @@ cartas.  Escribe una función en {\tt PokerHand.py} que baraje una baraja de
 cartas, la divida en manos, clasifique las manos y cuente el
 número de veces que aparecen varias clasificaciones.
 
-\item Imprime una tabla de las clasificaciones y sus probabilidades.
+\item Imprime una tabla con las clasificaciones y sus probabilidades.
 Ejecuta tu programa con números más y más grandes de manos hasta que los
 valores de salida converjan a un grado de exactitud razonable.  Compara
 tus resultado con los valores en \url{http://en.wikipedia.org/wiki/Hand_rankings}.
