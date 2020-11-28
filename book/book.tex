@@ -12979,7 +12979,7 @@ verificar que \verb"tiempo_a_int(int_a_tiempo(x)) == x" para muchos valores de
 {\tt x}.  Este es un ejemplo de prueba de consistencia.
 \index{prueba de consistencia}
 
-Una vez que estés convencido de que están correctas, puedes utilizarlas para
+Una vez que te convenzas de que están correctas, puedes utilizarlas para
 reescribir \verb"sumar_tiempo":
 
 \begin{verbatim}
@@ -13854,7 +13854,7 @@ cambiar la implementación sin cambiar la interfaz, lo cual
 significa que otras partes del programa no tienen que cambiar.
 
 
-\section{Glossary}
+\section{Glosario}
 
 \begin{description}
 
@@ -13965,13 +13965,13 @@ La característica de un lenguaje que más frecuentemente se asocia a la program
 orientada a objetos es la {\bf herencia}.  La herencia es la posibilidad de
 definir una clase nuevo que sea una verión modificada de una clase existente.
 En este capítulo demuestro la herencia utilizando clases que representan
-cartas de juego, barajas de cartas y manos de póquer.
+cartas de juego, barajas de cartas y manos de póker.
 \index{baraja}
 \index{carta de juego}
-\index{póquer}
+\index{póker}
 
 Si no juegas
-póquer, puedes leer sobre este en
+póker, puedes leer sobre este en
 \url{http://en.wikipedia.org/wiki/Poker}, pero no tienes que hacerlo; 
 Te diré lo que necesitas saber para los ejercicios.
 
@@ -14223,8 +14223,8 @@ método init crea el atributo {\tt cartas} y genera
 el conjunto estándar de cincuenta y dos cartas:
 \index{composición}
 \index{bucle!anidado}
-\index{clase Deck}
-\index{Deck!clase}
+\index{clase Baraja}
+\index{Baraja!clase}
 
 \begin{verbatim}
 class Baraja:
@@ -14358,14 +14358,14 @@ utiliza el método \verb"__lt__" que definimos para determinar el orden.
 \index{herencia}
 \index{programación orientada a objetos}
 
-La herencia es la habilidad de definir una clase nueva que es una versión
+La herencia es la posibilidad de definir una clase nueva que es una versión
 modificada de una clase existente.  Como ejemplo, digamos que queremos una
 clase que represente una ``mano'', es decir, las cartas sostenidas por un jugador.
 Una mano es similar a una baraja: ambas están compuestas de una colección de
 cartas, y ambas requieren operaciones como agregar y quitar cartas.
 
 Una mano es también diferente de una baraja: hay operaciones para
-manos que no tienen sentido para una baraja.  Por ejemplo, en el póquer
+manos que no tienen sentido para una baraja.  Por ejemplo, en el póker
 podríamos comparar dos manos para ver cuál gana.  En el bridge, podríamos
 calcular el puntaje de una mano para hacer un canto.
 
@@ -14526,7 +14526,7 @@ de Baraja.
 La fecha con una cabeza estándar representa una relación HAS-A;
 en este caso una Baraja tiene referencias a objetos
 Carta.
-\index{multiplicity (in class diagram)}
+\index{multiplicidad (en diagrama de clase)}
 
 El asterisco ({\tt *}) cerca de la cabeza de la flecha tiene una
 {\bf multiplicidad}; esto indica cuántas Cartas tiene una Baraja.
@@ -14543,110 +14543,110 @@ en realidad una {\em lista} de Cartas, pero los tipos incorporados
 como list y dict generalmente no se incluyen en los diagramas de clase.
 
 
-\section{Debugging}
-\index{debugging}
+\section{Depuración}
+\index{depuración}
 
-Inheritance can make debugging difficult because when you invoke a
-method on an object, it might be hard to figure out which method will
-be invoked.
-\index{inheritance}
+La herencia puede dificultar la depuración porque cuando invocas a un
+método en un objeto, podría ser difícil averiguar qué método
+será invocado.
+\index{herencia}
 
-Suppose you are writing a function that works with Hand objects.
-You would like it to work with all kinds of Hands, like
-PokerHands, BridgeHands, etc.  If you invoke a method like
-{\tt shuffle}, you might get the one defined in {\tt Deck},
-but if any of the subclasses override this method, you'll
-get that version instead.  This behavior is usually a good
-thing, but it can be confusing.
+Supongamos que estás escribiendo una función que trabaje con objetos Mano.
+Te gustaría trabajar con todos los tipos de Mano, como
+ManoPóker, ManoBridge, etc.  Si invocas a un método como
+{\tt barajar}, quizás obtengas el que se definió en {\tt Baraja},
+pero si alguna de las subclases anula este método,
+obtendrás esa versión en su lugar.  Este comportamiento es generalmente algo
+bueno, pero puede ser confuso.
 
-Any time you are unsure about the flow of execution through your
-program, the simplest solution is to add print statements at the
-beginning of the relevant methods.  If {\tt Deck.shuffle} prints a
-message that says something like {\tt Running Deck.shuffle}, then as
-the program runs it traces the flow of execution.
-\index{flow of execution}
+Cada vez que tengas insegurdad acerca del flujo de ejecución a través de tu
+programa, la solución más simple es agregar sentencias print al
+principio de métodos relevantes.  Si {\tt Baraja.barajar} imprime un
+mensaje que diga algo como {\tt Ejecutando Baraja.barajar}, entonces
+se sigue el flujo de ejecución a medida que el programa avanza.
+\index{flujo de ejecución}
 
-As an alternative, you could use this function, which takes an
-object and a method name (as a string) and returns the class that
-provides the definition of the method:
-
-\begin{verbatim}
-def find_defining_class(obj, meth_name):
-    for ty in type(obj).mro():
-        if meth_name in ty.__dict__:
-            return ty
-\end{verbatim}
-%
-Here's an example:
+Como alternativa, podrías utilizar esta función, que toma un
+objeto y un nombre de método (como cadena) y devuelve la clase que
+proporciona la definición del método:
 
 \begin{verbatim}
->>> hand = Hand()
->>> find_defining_class(hand, 'shuffle')
-<class '__main__.Deck'>
+def encontrar_clase_definitoria(obj, nombre_metodo):
+    for tipo in type(obj).mro():
+        if nombre_metodo in tipo.__dict__:
+            return tipo
 \end{verbatim}
 %
-So the {\tt shuffle} method for this Hand is the one in {\tt Deck}.
-\index{mro method}
-\index{method!mro}
-\index{method resolution order}
+Aquí hay un ejemplo:
 
-\verb"find_defining_class" uses the {\tt mro} method to get the list
-of class objects (types) that will be searched for methods.  ``MRO''
-stands for ``method resolution order'', which is the sequence of
-classes Python searches to ``resolve'' a method name.
+\begin{verbatim}
+>>> mano = Mano()
+>>> encontrar_clase_definitoria(mano, 'barajar')
+<class '__main__.Baraja'>
+\end{verbatim}
+%
+Entonces el método {\tt barajar} para esta Mano es la que está en {\tt Baraja}.
+\index{método mro}
+\index{mro!método}
+\index{orden de resolución del método}
 
-Here's a design suggestion: when you override a method,
-the interface of the new method should be the same as the old.  It
-should take the same parameters, return the same type, and obey the
-same preconditions and postconditions.  If you follow this rule, you
-will find that any function designed to work with an instance of a
-parent class, like a Deck, will also work with instances of child
-classes like a Hand and PokerHand.
-\index{override}
-\index{interface}
-\index{precondition}
-\index{postcondition}
+\verb"encontrar_clase_definitoria" utiliza el método {\tt mro} para obtener la lista de
+objetos de clase (tipos) que serán buscados por métodos.  ``MRO''
+significa ``method resolution order'' ({\em orden de resolución de método}), que es la secuencia de
+clases que Python busca para ``resolver'' un nombre de método.
 
-If you violate this rule, which is called the ``Liskov substitution
-principle'', your code will collapse like (sorry) a house of cards.
-\index{Liskov substitution principle}
+Aquí hay una sugerencia de diseño: cuando anulas un método,
+la interfaz del nuevo método debería ser la misma que el antiguo.  Debería
+tomar los mismos parámetros, devolver el mismo tipo y cumplir las
+mismas precondiciones y postcondiciones.  Si sigues esta regla,
+encontrarás que cualquier función diseñada para trabajar con una instancia de una
+clase padre, como Baraja, funcionará también con instancias de
+clases hijas como Mano y ManoPóker.
+\index{anular}
+\index{interfaz}
+\index{precondición}
+\index{postcondición}
+
+Si violas esta regla, que se llama ``principio de sustitución
+de Liskov'', tu código colapsará como (lo siento) un castillo de cartas.
+\index{Liskov, principio de sustitución}
 
 
-\section{Data encapsulation}
+\section{Encapsulamiento de datos}
 
-The previous chapters demonstrate a development plan we might call
-``object-oriented design''.  We identified objects we needed---like
-{\tt Point}, {\tt Rectangle} and {\tt Time}---and defined classes to
-represent them.  In each case there is an obvious correspondence
-between the object and some entity in the real world (or at least a
-mathematical world).
-\index{development plan!data encapsulation}
+Los capítulos anteriores demuestran un plan de desarrollo que podríamos llamar
+``diseño orientado a objetos''.  Identificamos objetos que necesitábamos ---como
+{\tt Punto}, {\tt Rectángulo} y {\tt Tiempo}--- y clases definidas para
+representarlos.  En cada caso, hay una correspondencia obvia
+entre el objeto y alguna entidad del mundo real (o al menos un
+mundo matemático).
+\index{plan de desarrollo!encapsulamiento de datos}
 
-But sometimes it is less obvious what objects you need
-and how they should interact.  In that case you need a different
-development plan.  In the same way that we discovered function
-interfaces by encapsulation and generalization, we can discover
-class interfaces by {\bf data encapsulation}.
-\index{data encapsulation}
+Sin embargo, a veces es menos obvio qué objetos necesitas
+y cómo deberían interactuar.  En ese caso, necesitas un plan de desarrollo
+diferente.  De la misma manera en que descubrimos interfaces
+de función encapsulando y generalizando, podemos descubrir
+interfaces de clase a través del {\bf encapsulamiento de datos}.
+\index{encapsulamiento de datos}
 
-Markov analysis, from Section~\ref{markov}, provides a good example.
-If you download my code from \url{http://thinkpython2.com/code/markov.py},
-you'll see that it uses two global variables---\verb"suffix_map" and
-\verb"prefix"---that are read and written from several functions.
+En análisis de Markov, de la Sección~\ref{markov}, proporciona un buen ejemplo.
+Si descargas mi código en \url{http://thinkpython2.com/code/markov.py},
+verás que utiliza dos variables globales ---\verb"suffix_map" and
+\verb"prefix"--- que se leen y escriben desde varias funciones.
 
 \begin{verbatim}
 suffix_map = {}
 prefix = ()
 \end{verbatim}
 
-Because these variables are global, we can only run one analysis at a
-time.  If we read two texts, their prefixes and suffixes would be
-added to the same data structures (which makes for some interesting
-generated text).
+Dado que estas variables son globales, solo podemos ejecutar un análisis a la
+vez.  Si leemos dos textos, sus prefijos y sufijos se
+agregarían a la misma estructura de datos (lo que lo convierte en un interesante
+texto generado).
 
-To run multiple analyses, and keep them separate, we can encapsulate
-the state of each analysis in an object.
-Here's what that looks like:
+Para ejecutar múltiples análisis, y mantenerlos separados, podemos encapsular
+el estado de cada análisis en un objeto.
+Así es como se ve eso:
 
 \begin{verbatim}
 class Markov:
@@ -14656,8 +14656,8 @@ class Markov:
         self.prefix = ()
 \end{verbatim}
 
-Next, we transform the functions into methods.  For example,
-here's \verb"process_word":
+Luego, transforamos las funciones en métodos.  Por ejemplo,
+aquí está \verb"process_word":
 
 \begin{verbatim}
     def process_word(self, word, order=2):
@@ -14674,132 +14674,132 @@ here's \verb"process_word":
         self.prefix = shift(self.prefix, word)
 \end{verbatim}
 
-Transforming a program like this---changing the design without
-changing the behavior---is another example of refactoring
-(see Section~\ref{refactoring}).
-\index{refactoring}
+Transformar un programa como este ---cambiar el diseño sin
+cambiar el comportamiento--- es otro ejemplo de refactorización
+(ver Sección~\ref{refactoring}).
+\index{refactorización}
 
-This example suggests a development plan for designing objects and
-methods:
+Este ejemplo sugiere un plan de desarrollo para diseñar objetos y
+métodos:
 
 \begin{enumerate}
 
-\item Start by writing functions that read and write global
-variables (when necessary).
+\item Comienza escribiendo funciones que lean y escriban variables
+globales (cuando sea necesario).
 
-\item Once you get the program working, look for associations
-between global variables and the functions that use them.
+\item Una vez que hagas funcionar el programa, busca asociaciones
+entre variables globales y las funciones que las utilizan.
 
-\item Encapsulate related variables as attributes of an object.
+\item En capsula variables relacionadas como atributos de un objeto.
 
-\item Transform the associated functions into methods of the new
-class.
+\item Transforma las funciones asociadas en métodos de una nueva
+clase.
 
 \end{enumerate}
 
-As an exercise, download my Markov code from
-\url{http://thinkpython2.com/code/markov.py}, and follow the steps
-described above to encapsulate the global variables as attributes of a
-new class called {\tt Markov}.  Solution:
+Como ejercicio, descarga mi código de Markov en
+\url{http://thinkpython2.com/code/markov.py}, y sigue los pasos
+descritos anteriormente para encapsular las variables globales como atributos de una clase
+nueva llamada {\tt Markov}.  Solución:
 \url{http://thinkpython2.com/code/markov2.py}.
 
 
-\section{Glossary}
+\section{Glosario}
 
 \begin{description}
 
-\item[encode:]  To represent one set of values using another
-set of values by constructing a mapping between them.
-\index{encode}
+\item[codificar:]  Representar un conjunto de valores utilizando otro
+conjunto de valores, construyendo un mapeo entre ambos.
+\index{codificar}
 
-\item[class attribute:] An attribute associated with a class
-object.  Class attributes are defined inside
-a class definition but outside any method.
-\index{class attribute}
-\index{attribute!class}
+\item[atributo de clase:] Un atributo asociado a un objeto
+de clase.  Los atributos de clase se definen dentro de una
+definición de clase pero afuera de cualquier método.
+\index{atributo de clase}
+\index{clase!atributo de}
 
-\item[instance attribute:] An attribute associated with an
-instance of a class.
-\index{instance attribute}
-\index{attribute!instance}
+\item[atributo de instancia:] Un atributo asociado a
+una instancia de una clase.
+\index{atributo de instancia}
+\index{instancia!atributo de}
 
-\item[veneer:] A method or function that provides a different
-interface to another function without doing much computation.
-\index{veneer}
+\item[enchapado:] Un método o función que proporciona una interfaz
+diferente a otra función sin hacer muchas computaciones.
+\index{enchapado}
 
-\item[inheritance:] The ability to define a new class that is a
-modified version of a previously defined class.
-\index{inheritance}
+\item[herencia:] La posibilidad de definir una clase nueva que sea una
+versión odificada de una clase definida anteriormente.
+\index{herencia}
 
-\item[parent class:] The class from which a child class inherits.
-\index{parent class}
+\item[clase padre:] La clase desde la cual una clase hija hereda.
+\index{clase padre}
 
-\item[child class:] A new class created by inheriting from an
-existing class; also called a ``subclass''.
-\index{child class}
-\index{class!child}
+\item[clase hija:] Una clase nueva creada a través de herencia de una
+clase existente; también llamada ``subclase''.
+\index{clase hija}
+\index{hija!clase!child}
 
-\item[IS-A relationship:] A relationship between a child class
-and its parent class.
-\index{IS-A relationship}
+\item[relación IS-A:] Una relación entre una clase hija
+y su clase padre.
+\index{relación IS-A}
 
-\item[HAS-A relationship:] A relationship between two classes
+\item[relación HAS-A:] A relationship between two classes
 where instances of one class contain references to instances of
 the other.
-\index{HAS-A relationship}
+\index{relación HAS-A}
 
-\item[dependency:] A relationship between two classes
-where instances of one class use instances of the other class,
-but do not store them as attributes.
-\index{HAS-A relationship}
+\item[dependencia:] Una relación entre dos clases
+donde instancias de una clase utilizan instancias de otra clase,
+pero no las almacenan como atributos.
+\index{dependencia}
 
-\item[class diagram:] A diagram that shows the classes in a program
-and the relationships between them.
-\index{class diagram}
-\index{diagram!class}
+\item[diagrama de clase:] Un diagrama que muestra las clases en un programa
+y las relaciones entre estas.
+\index{diagrama de clase}
+\index{clase!diagrama}
 
-\item[multiplicity:] A notation in a class diagram that shows, for
-a HAS-A relationship, how many references there are to instances
-of another class.
-\index{multiplicity (in class diagram)}
+\item[multiplicidad:] Una notación en un diagrama de clase que muestra, para
+una relación HAS-A, cuántas referencias a instancias
+de otra clase hay.
+\index{multiplicidad (en diagrama de clase)}
 
-\item[data encapsulation:]  A program development plan that
-involves a prototype using global variables and a final version
-that makes the global variables into instance attributes.
-\index{data encapsulation}
-\index{development plan!data encapsulation}
+\item[encapsulamiento de datos:]  Un plan de desarrollo de programa que
+involucra a un prototipo que utiliza variables globales y una versión final
+que convierte las variables globales en atributos de instancia.
+\index{encapsulamiento de datos}
+\index{plan de desarrollo!encapsulamiento de datos}
 
 \end{description}
 
 
-\section{Exercises}
+\section{Ejercicios}
 
 \begin{exercise}
-For the following program, draw a UML class diagram that shows
-these classes and the relationships among them.
+Para el siguiente programa, dibuja un diagrama de clase UML que muestre
+estas clases y las relaciones entre estas.
 
 \begin{verbatim}
-class PingPongParent:
+class PingPongPadre:
     pass
 
-class Ping(PingPongParent):
+class Ping(PingPongPadre):
     def __init__(self, pong):
         self.pong = pong
 
 
-class Pong(PingPongParent):
+class Pong(PingPongPadre):
     def __init__(self, pings=None):
         if pings is None:
             self.pings = []
         else:
             self.pings = pings
 
-    def add_ping(self, ping):
+    def agregar_ping(self, ping):
         self.pings.append(ping)
 
 pong = Pong()
 ping = Ping(pong)
-pong.add_ping(ping)
+pong.agregar_ping(ping)
 \end{verbatim}
 
 
@@ -14808,97 +14808,97 @@ pong.add_ping(ping)
 
 
 \begin{exercise}
-Write a Deck method called \verb"deal_hands" that
-takes two parameters, the number of hands and the number of cards per
-hand.  It should create the appropriate number of Hand objects, deal
-the appropriate number of cards per hand, and return a list of Hands.
+Escribe un método de Baraja llamado \verb"repartir_manos" que
+tome dos parámetros, el número de manos y el número de cartas por
+cada mano.  Debería crear el número apropiado de objetos Mano, repartir
+el número apropiado de cartas por cada Mano y devolver una lista de Manos.
 \end{exercise}
 
 
 \begin{exercise}
 \label{poker}
 
-The following are the possible hands in poker, in increasing order
-of value and decreasing order of probability:
-\index{poker}
+Lo siguiente son las posibles manos en el póker, en orden creciente
+de valor y decreciente de probabilidad:
+\index{póker}
 
 \begin{description}
 
-\item[pair:] two cards with the same rank
+\item[pareja:] dos cartas con el mismo rango
 \vspace{-0.05in}
 
-\item[two pair:] two pairs of cards with the same rank
+\item[doble pareja:] dos pares de cartas con el mismo rango
 \vspace{-0.05in}
 
-\item[three of a kind:] three cards with the same rank
+\item[trío:] tres cartas con el mismo rango
 \vspace{-0.05in}
 
-\item[straight:] five cards with ranks in sequence (aces can
-be high or low, so {\tt Ace-2-3-4-5} is a straight and so is {\tt
-10-Jack-Queen-King-Ace}, but {\tt Queen-King-Ace-2-3} is not.)
+\item[escalera:] cinco cartas con rangos en secuencia (los ases pueden
+ser altos o bajos, por lo cual {\tt As-2-3-4-5} es una escalera y {\tt
+10-Jota-Reina-Rey-As} también lo es, pero {\tt Reina-Rey-As-2-3} no lo es.)
 \vspace{-0.05in}
 
-\item[flush:] five cards with the same suit
+\item[color:] cinco cartas con el mismo palo
 \vspace{-0.05in}
 
-\item[full house:] three cards with one rank, two cards with another
+\item[full:] tres cartas con un rango, dos cartas con otro
 \vspace{-0.05in}
 
-\item[four of a kind:] four cards with the same rank
+\item[póker:] cuatro cartas con el mismo rango
 \vspace{-0.05in}
 
-\item[straight flush:] five cards in sequence (as defined above) and
-with the same suit
+\item[escalera de color:] cinco cartas en secuencia (como ya se definió) y
+con el mismo palo
 \vspace{-0.05in}
 
 \end{description}
 %
-The goal of these exercises is to estimate
-the probability of drawing these various hands.
+El objetivo de estos ejercicios es estimar
+la probabilidad de extraer estas diferentes manos.
 
 \begin{enumerate}
 
-\item Download the following files from \url{http://thinkpython2.com/code}:
+\item Descarga los siguientes archivos en \url{http://thinkpython2.com/code}:
 
 \begin{description}
 
-\item[{\tt Card.py}]: A complete version of the {\tt Card},
-{\tt Deck} and {\tt Hand} classes in this chapter.
+\item[{\tt Card.py}]: Una versión completa de las clases {\tt Carta} (Card),
+{\tt Baraja} (Deck) y {\tt Mano} (Hand) de este capítulo.
 
-\item[{\tt PokerHand.py}]: An incomplete implementation of a class
-that represents a poker hand, and some code that tests it.
+\item[{\tt PokerHand.py}]: Una implementación incompleta de una clase
+que representa una mano de póker, y algo de código que la prueba.
 
 \end{description}
 %
-\item If you run {\tt PokerHand.py}, it deals seven 7-card poker hands
-and checks to see if any of them contains a flush.  Read this
-code carefully before you go on.
+\item Si ejecutas {\tt PokerHand.py}, reparte siete manos de póker de 7 cartas
+y verifica si alguna de estas contiene una jugada ``color''.  Lee este
+código con cuidado antes de continuar.
 
-\item Add methods to {\tt PokerHand.py} named \verb"has_pair",
-\verb"has_twopair", etc. that return True or False according to
-whether or not the hand meets the relevant criteria.  Your code should
-work correctly for ``hands'' that contain any number of cards
-(although 5 and 7 are the most common sizes).
+\item Agrega métodos a {\tt PokerHand.py} con nombre \verb"tiene_pareja",
+\verb"tiene_doblepareja", etc. que devuelva True o False según si
+la mano cumple o no los criterios relevantes.  Tú código debería
+funcionar de manera correcta para ``manos'' que contengan cualquier número de cartas
+(aunque 5 y 7 son los tamaños más comunes).
 
-\item Write a method named {\tt classify} that figures out
-the highest-value classification for a hand and sets the
-{\tt label} attribute accordingly.  For example, a 7-card hand
-might contain a flush and a pair; it should be labeled ``flush''.
+\item Escribe un método con nombre {\tt clasificar} que averigüe
+la clasificación de mayor valor para una mano y ponga el atributo
+{\tt etiqueta} según corresponda.  Por ejemplo, una mano de 7 cartas
+podría contener un ``color'' y una ``pareja''; debería etiquetarse ``color''.
 
-\item When you are convinced that your classification methods are
-working, the next step is to estimate the probabilities of the various
-hands.  Write a function in {\tt PokerHand.py} that shuffles a deck of
-cards, divides it into hands, classifies the hands, and counts the
-number of times various classifications appear.
+\item Cuando te convenzas de que tus métodos de clasificación
+funcionan, el siguiente paso es estimar las probabilidades de varias
+cartas.  Escribe una función en {\tt PokerHand.py} que baraje una baraja de
+cartas, la divida en manos, clasifique las manos y cuente el
+número de veces que aparecen varias clasificaciones.
 
-\item Print a table of the classifications and their probabilities.
-Run your program with larger and larger numbers of hands until the
-output values converge to a reasonable degree of accuracy.  Compare
-your results to the values at \url{http://en.wikipedia.org/wiki/Hand_rankings}.
+\item Imprime una tabla de las clasificaciones y sus probabilidades.
+Ejecuta tu programa con números más y más grandes de manos hasta que los
+valores de salida converjan a un grado de exactitud razonable.  Compara
+tus resultado con los valores en \url{http://en.wikipedia.org/wiki/Hand_rankings}.
 
 \end{enumerate}
 
-Solution: \url{http://thinkpython2.com/code/PokerHandSoln.py}.
+Solución: \url{http://thinkpython2.com/code/PokerHandSoln.py}.
 \end{exercise}
 
 
