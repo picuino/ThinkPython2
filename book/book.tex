@@ -6802,7 +6802,7 @@ Este capítulo presenta el segundo estudio de caso, el cual involucra
 resolver puzles de palabras buscando palabras que tengan ciertas
 propiedades.  Por ejemplo, encontraremos los palíndromos más largos
 en inglés y buscaremos palabras cuyas letras aparezcan en
-orden alfabético.  Y presentaré otro plan de desarrollo de
+orden alfabético.  Además, presentaré otro plan de desarrollo de
 programa: reducción a un problema previamente resuelto.
 
 
@@ -6822,10 +6822,10 @@ una copia, con el nombre más simple {\tt words.txt}, en
 \index{Moby Project}
 \index{crosswords}
 
-Este archivo está en texto plano, por lo que puedes abrirlo con un editor
+Este archivo está en texto plano, así que puedes abrirlo con un editor
 de texto, pero también puedes leerlo desde Python.  La función incorporada
 {\tt open} toma el nombre del archivo como parámetro
-y devuelve un {\bf objeto de archivo} que puedes usar para leer el archivo.
+y devuelve un {\bf objeto de archivo} que puedes utilizar para leer el archivo.
 \index{función open}
 \index{open!función}
 \index{texto plano}
@@ -6837,7 +6837,7 @@ y devuelve un {\bf objeto de archivo} que puedes usar para leer el archivo.
 >>> fin = open('words.txt')
 \end{verbatim}
 %
-{\tt fin} es un nombre común para un objeto de archivo usado para la entrada ({\em file input}).  El objeto
+{\tt fin} es un nombre común para un objeto de archivo utilizado para la entrada ({\em file input}).  El objeto
 de archivo proporciona varios métodos para la lectura, incluyendo {\tt readline},
 que lee caracteres desde un archivo hasta que llega a una nueva línea y
 devuelve el resultado como una cadena: \index{método readline}
@@ -6848,11 +6848,11 @@ devuelve el resultado como una cadena: \index{método readline}
 'aa\n'
 \end{verbatim}
 %
-La primera palabra en esta lista particular es ``aa'', que es un tipo de
+La primera palabra en esta particular lista es ``aa'', que es un tipo de
 lava.  La secuencia \verb"\n" representa el carácter nueva línea que
 separa esta palabra de la siguiente.
 
-El objeto de archivo hace un seguimiento de dónde está en el archivo, por lo que
+El objeto de archivo hace un seguimiento del lugar en el archivo en donde se encuentra, así que
 si llamas a {\tt readline} de nuevo, obtienes la palabra siguiente:
 
 \begin{verbatim}
@@ -6904,9 +6904,9 @@ palabras con más de 20 caracteres (sin contar espacios en blanco).
 
 En 1939, Ernest Vincent Wright publicó una novela de 50.000 palabras llamada
 {\em Gadsby}, la cual no contiene la letra ``e''.  Dado que la ``e'' es
-la letra más común en el idioma inglés, eso no es fácil de hacer.
+la letra más común en el idioma inglés, no es una tarea fácil.
 
-Sin duda, solo imaginar una oración sin usar dicho símbolo más común
+Sin duda, solo imaginar una oración sin utilizar dicho símbolo tan común
 implica una actividad difícil.  Si tardas mucho al principio, hazlo con cuidado
 y trabaja horas para adquirir la habilidad poco a poco.
 
@@ -6927,7 +6927,7 @@ que no tienen ``e''.
 
 Escribe una función con nombre {\tt evita}
 que tome una palabra y una cadena de letras prohibidas y
-devuelva {\tt True} si la palabra no usa ninguna de las letras
+devuelva {\tt True} si la palabra no utiliza ninguna de las letras
 prohibidas.
 
 Escribe un programa que solicite al usuario ingresar una cadena
@@ -6954,7 +6954,7 @@ letras {\tt acefhlo}?  ¿Una distinta a ``Hoe alfalfa''?
 
 Escribe una función con nombre \verb"usa_todas" que tome una palabra y una
 cadena de letras requeridas y devuelva {\tt True} si la palabra
-usa todas las letras requeridas al menos una vez.  ¿Cuántas palabras
+utiliza todas las letras requeridas al menos una vez.  ¿Cuántas palabras
 que utilizan todas las vocales {\tt aeiou} existen?  ¿Qué pasa con {\tt aeiouy}?
 
 \end{exercise}
@@ -6979,7 +6979,7 @@ Escribe una función llamada \verb"es_abecedario" que devuelva
 \index{búsqueda!patrón de}
 
 Todos los ejercicios de la sección anterior tienen algo en
-común; pueden ser resueltos con el patrón de búsqueda que vimos
+común: pueden ser resueltos con el patrón de búsqueda que vimos
 en la Sección~\ref{find}.  El ejemplo más simple es:
 
 \begin{verbatim}
@@ -6991,7 +6991,7 @@ def no_tiene_e(palabra):
 \end{verbatim}
 %
 El bucle {\tt for} recorre los caracteres en {\tt palabra}.  Si encontramos
-la letra ``e'', podemos devolver {\tt False} inmediatamente; de lo contrario
+la letra ``e'', podemos devolver {\tt False} inmediatamente; de lo contrario,
 tenemos que ir a la siguiente letra.  Si terminamos el bucle de manera normal,
 significa que no encontramos una ``e'', por lo cual devolvemos {\tt True}.
 \index{recorrido}
@@ -7069,7 +7069,7 @@ problema resuelto y aplicas una solución existente.  \index{reducción a un
 \index{índice!bucle con}
 
 Escribí las funciones de la sección anterior con bucles {\tt for}
-porque solo necesitaba los caracteres en las cadenas; No
+porque solo necesitaba los caracteres en las cadenas; no
 tenía que hacer nada con los índices.
 
 Para \verb"es_abecedario" tenemos que comparar letras adyacentes,
@@ -7128,8 +7128,8 @@ lo que queremos.
 \index{palíndromo}
 
 Aquí hay una versión de \verb"es_palindromo" (ver
-Ejercicio~\ref{palindrome}) que usa dos índices; uno comienza al
-principio y aumenta; el otro comienza al final y disminuye.
+Ejercicio~\ref{palindrome}) que utiliza dos índices: uno comienza al
+principio y aumenta, el otro comienza al final y disminuye.
 
 \begin{verbatim}
 def es_palindromo(palabra):
@@ -7266,7 +7266,7 @@ solo en millas enteras. Entonces, si mi automóvil tenía 300.000
 millas, por ejemplo, veía 3-0-0-0-0-0.
 
 ``Ahora, lo que vi ese día fue muy interesante. Me di cuenta de que los
-últimos 4 dígitos eran palíndromo; es decir, se leían igual hacia adelante
+últimos 4 dígitos eran palíndromo, es decir, se leían igual hacia adelante
 y hacia atrás. Por ejemplo, 5-4-4-5 es un palíndromo, por lo que mi odómetro
 podría haber leído 3-1-5-4-4-5.
 
@@ -7319,7 +7319,7 @@ Solución: \url{http://thinkpython2.com/code/cartalk3.py}.
 \chapter{Listas}
 
 Este capítulo presenta uno de los tipos incorporados más útiles de Python: las listas.
-También aprenderás más sobre objetos y lo que puede ocurrir cuando tienes
+Además, aprenderás más sobre objetos y lo que puede ocurrir cuando tienes
 más de un nombre para el mismo objeto.
 
 
@@ -7335,7 +7335,7 @@ una lista se llaman {\bf elementos} o a veces {\bf ítems}.
 \index{secuencia}
 \index{ítem}
 
-Hay varias maneras de crear una nueva lista; la más simple es
+Hay varias maneras de crear una lista nueva; la más simple es
 encerrar los elementos en corchetes (\verb"[" y \verb"]"):
 
 \begin{verbatim}
@@ -7437,7 +7437,7 @@ Los índices de las listas funcionan de la misma manera que los índices de las 
 
 \begin{itemize}
 
-\item Cualquier expresión entera puede usarse como índice.
+\item Cualquier expresión entera se puede utilizar como índice.
 
 \item Si intentas leer o escribir un elemento que no existe,
 obtienes un {\tt IndexError}.
@@ -7584,7 +7584,7 @@ omites ambos, el corte es una copia de la lista completa.
 \end{verbatim}
 %
 Dado que las listas son mutables, a menudo es útil crear una copia
-antes de realizar operacioines que modifiquen listas.
+antes de realizar operaciones que modifiquen listas.
 \index{mutabilidad}
 
 Un operador de corte en el lado izquierdo de una asignación
@@ -7680,7 +7680,7 @@ el resultado.
 \section{Mapa, filtro y reducción}
 \label{filter}
 
-Para sumar todos los números de una lista, puedes usar un bucle como este:
+Para sumar todos los números de una lista, puedes utilizar un bucle como este:
 
 % see add.py
 
@@ -7712,7 +7712,7 @@ es equivalente a
 \end{verbatim}
 %
 A medida que el bucle se ejecuta, {\tt total} acumula la suma de los
-elementos; una variable que se usa de esta manera a veces es llamada
+elementos; una variable que se utiliza de esta manera a veces se llama
 {\bf acumulador}.
 \index{acumulador de suma}
 
@@ -7726,7 +7726,7 @@ que Python la facilita como función incorporada, {\tt sum}:
 \end{verbatim}
 %
 Una operación como esta que combina una secuencia de elementos en
-un solo valor a veces es llamada {\bf reducción}.
+un solo valor a veces se llama {\bf reducción}.
 \index{patrón de reducción}
 \index{reducción!patrón de}
 \index{recorrido}
@@ -7785,7 +7785,7 @@ de mapa, filtro y reducción.
 \index{elemento!eliminación}
 
 Hay varias maneras de eliminar elementos de una lista.  Si conoces
-el índice del elemento que quieres, puedes usar
+el índice del elemento que quieres, puedes utilizar
 {\tt pop}:
 \index{método pop}
 \index{pop!método}
@@ -7803,7 +7803,7 @@ el índice del elemento que quieres, puedes usar
 Si no entregas un índice, elimina y devuelve el
 último elemento.
 
-Si no necesitas el valor eliminado, puedes usar el
+Si no necesitas el valor eliminado, puedes utilizar el
 operador {\tt del}:
 \index{operador del}
 \index{del!operador}
@@ -7816,7 +7816,7 @@ operador {\tt del}:
 \end{verbatim}
 %
 Si conoces el elemento que quieres eliminar (pero no el índice),
-puedes usar {\tt remove}:
+puedes utilizar {\tt remove}:
 \index{método remove}
 \index{remove!método}
 
@@ -7831,7 +7831,7 @@ El valor de retorno de {\tt remove} es {\tt None}.
 \index{valor especial None}
 \index{None!valor especial}
 
-Para eliminar más de un elemento, puedes usar {\tt del} con
+Para eliminar más de un elemento, puedes utilizar {\tt del} con
 índices de corte:
 
 \begin{verbatim}
@@ -7854,7 +7854,7 @@ pero sin incluirlo.
 Una cadena es una secuencia de caracteres y una lista es una secuencia
 de valores, pero una lista de caracteres no es lo mismo que una
 cadena.  Para convertir una cadena en una lista de caracteres,
-puedes usar {\tt list}:
+puedes utilizar {\tt list}:
 \index{list!función}
 \index{función!list}
 
@@ -7866,11 +7866,11 @@ puedes usar {\tt list}:
 \end{verbatim}
 %
 Dado que {\tt list} es el nombre de una función incorporada, deberías
-evitar usarlo como nombre de variable.  Yo además evito {\tt l} porque
+evitar utilizarlo como nombre de variable.  Yo además evito {\tt l} porque
 se parece mucho a {\tt 1}.  Entonces por eso uso {\tt t}.
 
 La función {\tt list} separa la cadena en letras individuales.  Si
-quieres separar una cadena en palabras, puedes usar
+quieres separar una cadena en palabras, puedes utilizar
 el método {\tt split}:
 \index{método split}
 \index{split!método}
@@ -8082,7 +8082,7 @@ def sin_cabeza(t):
     del t[0]
 \end{verbatim}
 %
-Se usa de la siguiente manera:
+Se utiliza de la siguiente manera:
 
 \begin{verbatim}
 >>> letras = ['a', 'b', 'c']
@@ -8116,7 +8116,7 @@ operador {\tt +} crea una nueva lista.
 \index{lista!concatenación}
 \index{concatenación!lista}
 
-Aquí hay un ejemplo que usa {\tt append}:
+Aquí hay un ejemplo que utiliza {\tt append}:
 %
 \begin{verbatim}
 >>> t1 = [1, 2]
@@ -8129,7 +8129,7 @@ None
 %
 El valor de retorno de {\tt append} es {\tt None}.
 
-Aquí hay un ejemplo que usa el operador {\tt +}:
+Aquí hay un ejemplo que utiliza el operador {\tt +}:
 %
 \begin{verbatim}
 >>> t3 = t1 + [4]
@@ -8139,7 +8139,7 @@ Aquí hay un ejemplo que usa el operador {\tt +}:
 [1, 2, 3, 4]
 \end{verbatim}
 %
-El resultado del operador es una nueva lista y la lista original no ha
+El resultado del operador es una lista nueva y la lista original no ha
 cambiado.
 
 Esta diferencia es importante cuando escribes funciones que
@@ -8178,7 +8178,7 @@ def cola(t):
 \end{verbatim}
 %
 Esta función deja a la lista original sin modificar.
-Se usa de la siguiente manera:
+Se utiliza de la siguiente manera:
 
 \begin{verbatim}
 >>> letra = ['a', 'b', 'c']
@@ -8219,17 +8219,17 @@ t = t.sort()           # ¡INCORRECTO!
 Dado que {\tt sort} devuelve {\tt None}, es probable que la
 siguiente operación que realices con {\tt t} falle.
 
-Antes de usar métodos y operadores de lista, deberías leer la
+Antes de utilizar métodos y operadores de lista, deberías leer la
 documentación cuidadosamente y luego probarlos en modo interactivo.
 
 \item Escoge una forma y quédate con esa.
 
 Parte del problema con las listas es que hay muchas
 maneras de hacer las cosas.  Por ejemplo, para eliminar un elemento de
-una lista, puedes usar {\tt pop}, {\tt remove}, {\tt del},
+una lista, puedes utilizar {\tt pop}, {\tt remove}, {\tt del},
 o incluso una asignación de corte.
 
-Para agregar un elemento, puedes usar el método {\tt append} o
+Para agregar un elemento, puedes utilizar el método {\tt append} o
 el operador {\tt +}.  Suponiendo que {\tt t} es una lista y
 {\tt x} es un elemento de lista, estas líneas son correctas:
 
@@ -8258,7 +8258,7 @@ hacen lo incorrecto.
 \index{alias!copiar para evitar}
 \index{copia!para evitar alias}
 
-Si quieres usar un método como {\tt sort} que modifique
+Si quieres utilizar un método como {\tt sort} que modifique
 el argumento, pero necesitas mantener la lista original
 también, puedes crear una copia.
 
@@ -8272,7 +8272,7 @@ también, puedes crear una copia.
 [1, 2, 3]
 \end{verbatim}
 
-En este ejemplo podrías usar también la función incorporada {\tt sorted},
+En este ejemplo podrías utilizar también la función incorporada {\tt sorted},
 que devuelve una nueva lista ordenada y deja sola a la original.
 \index{sorted!función}
 \index{función!sorted}
@@ -8303,12 +8303,12 @@ también llamados ítems.
 \item[lista anidada:] Una lista que es un elemento de otra lista.
 \index{lista anidada}
 
-\item[acumulador:] Una variable usada en un bucle para sumar o
+\item[acumulador:] Una variable utilizada en un bucle para sumar o
 acumular un resultado.
 \index{acumulador}
 
 \item[asignación aumentada:] Una sentencia que actualiza el valor
-de una variable usando un operador como \verb"+=".
+de una variable utilizando un operador como \verb"+=".
 \index{aumentada!asignación}
 \index{asignación aumentada}
 \index{recorrido}
@@ -8345,7 +8345,7 @@ tiene un tipo y un valor.
 objeto.
 \index{alias}
 
-\item[delimitador:] Un carácter o cadena usado para indicar dónde
+\item[delimitador:] Un carácter o cadena utilizado para indicar dónde
 debería separarse una cadena.
 \index{delimitador}
 
@@ -8376,7 +8376,7 @@ Por ejemplo:
 \index{suma acumulativa}
 
 Escribe una función llamada {\tt cumsum} que tome una lista de números y
-devuelva la suma acumulativa; es decir, una nueva lista donde el $i$-ésimo
+devuelva la suma acumulativa, es decir, una lista nueva donde el $i$-ésimo
 elemento es la suma de los primeros $i+1$ elementos de la lista original.
 Por ejemplo:
 
@@ -8466,7 +8466,7 @@ puedes leer en \url{http://en.wikipedia.org/wiki/Birthday_paradox}.
 Si hay 23 estudiantes en tu clase, ¿cuáles son las posibilidades
 de que dos de ustedes estén de cumpleaños el mismo día?  Puedes estimar esta
 probabilidad generando muestras al azar de 23 cumpleaños
-y verificar coincidencias.  Pista: puedes generar cumpleaños aleatorio
+y verificar coincidencias.  Pista: puedes generar cumpleaños aleatorios
 con la función {\tt randint} del módulo {\tt random}.
 \index{módulo random}
 \index{random!módulo}
@@ -8488,8 +8488,8 @@ solución en \url{http://thinkpython2.com/code/birthday.py}.
 
 Escribe una función que lea el archivo {\tt words.txt} y construya
 una lista con un elemento por palabra.  Escribe dos versiones de
-esta función, una usando el método {\tt append} y la
-otra usando la notación {\tt t = t + [x]}.  ¿Cuál toma más
+esta función, una utilizando el método {\tt append} y la
+otra utilizando la notación {\tt t = t + [x]}.  ¿Cuál toma más
 tiempo en ejecutar?  ¿Por qué?
 
 Solución: \url{http://thinkpython2.com/code/wordlist.py}.
@@ -8509,7 +8509,7 @@ Solución: \url{http://thinkpython2.com/code/wordlist.py}.
 \index{búsqueda binaria}
 \index{binaria, búsqueda}
 
-Para verificar si una palabra está en la lista de palabras, podrías usar
+Para verificar si una palabra está en la lista de palabras, podrías utilizar
 el operador {\tt in}, pero sería lento porque busca
 en orden a través de las palabras.
 
@@ -8532,7 +8532,7 @@ en la lista y {\tt False} si no está.
 \index{bisect!módulo}
 
 ¡O bien podrías leer la documentación del módulo {\tt bisect}
-y usar eso!  Solución: \url{http://thinkpython2.com/code/inlist.py}.
+y utilizarlo!  Solución: \url{http://thinkpython2.com/code/inlist.py}.
 
 \end{exercise}
 
@@ -8559,7 +8559,7 @@ Crédito: Este ejercicio está inspirado en un ejemplo de \url{http://puzzlers.o
 \item Escribe un programa que encuentre todos los pares de palabras que se entrelazan.
   Pista: ¡no revises todos los pares!
 
-\item ¿Puedes encontrar alguna palabra que sea un triple entrelazado; es decir,
+\item ¿Puedes encontrar alguna palabra que sea un triple entrelazado, es decir,
   leyendo cada tres letras se forma una palabra, comenzando con la primera, la segunda o
   la tercera letra?
 
