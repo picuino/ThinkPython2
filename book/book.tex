@@ -5937,7 +5937,7 @@ Solución: \url{http://thinkpython2.com/code/pi.py}.
 \chapter{Cadenas}
 \label{strings}
 
-Las cadenas no son como los enteros, números de coma flotante y booleanos.  Una cadena
+Las cadenas no son como los enteros, los números de coma flotante y los booleanos.  Una cadena
 es una {\bf secuencia}, lo cual significa que es
 una colección ordenada de valores.  En este capítulo verás
 cómo acceder a los caracteres que forman una cadena y
@@ -5968,7 +5968,7 @@ La expresión en los corchetes se llama {\bf índice}.
 El índice indica cuál carácter en la secuencia
 quieres (de ahí el nombre).
 
-Pero podrías no obtener lo que esperas:
+Sin embargo, lo que obtienes podría no ser lo que esperas:
 
 \begin{verbatim}
 >>> letra
@@ -5990,7 +5990,7 @@ Entonces {\tt b} es la 0-ésima letra  (``cero-ésima'') de \verb"'banana'", {\t
 (``dos-ésima'').  \index{índice!a partir de cero} \index{cero, índice
   a partir de}
 
-Como índice, puedes usar una expresión que contenga variables y
+Como índice, puedes utilizar una expresión que contenga variables y
 operadores:
 \index{index}
 
@@ -6049,7 +6049,7 @@ que restar 1 a {\tt longitud}:
 'a'
 \end{verbatim}
 %
-O bien puedes usar índices negativos, que cuentan hacia atrás desde
+O bien puedes utilizar índices negativos, que cuentan hacia atrás desde
 el final de la cadena.  La expresión {\tt fruta[-1]} entrega la última
 letra, {\tt fruta[-2]} entrega la penúltima, y así sucesivamente.
 \index{índice negativo}
@@ -6066,7 +6066,7 @@ letra, {\tt fruta[-2]} entrega la penúltima, y así sucesivamente.
 \index{recorrido}
 
 Muchas computaciones implican procesar una cadena trabajando un carácter a la
-vez.  A menudo parten al comienzo, seleccionan cada carácter en
+vez.  Generalmente parten al comienzo, seleccionan cada carácter en
 turno, le hacen algo, y continúan hasta el final.  Este patrón de
 procesamiento se llama {\bf recorrido}.  Una manera de escribir un recorrido
 es con un bucle {\tt while}:
@@ -6082,7 +6082,7 @@ while indice < len(fruta):
 Este bucle recorre la cadena y muestra cada letra en una
 línea.  La condición del bucle es {\tt indice < len(fruta)}, entonces
 cuando {\tt indice} es igual a la longitud de la cadena, la
-condición es falsa, y el cuerpo del bucle no se ejecuta.  El
+condición es falsa y el cuerpo del bucle no se ejecuta.  El
 último carácter accedido es el que tiene índice {\tt len(fruta)-1},
 que es el último carácter en la cadena.
 
@@ -6097,13 +6097,13 @@ for letra in fruta:
 \end{verbatim}
 %
 En cada paso por el bucle, el siguiente carácter en la cadena se asigna
-a la variable {\tt letra}.  El bucle continúa hasta que no quedan
+a la variable {\tt letra}.  El bucle continúa hasta que no queden
 caracteres.
 \index{concatenación}
 \index{abecedario}
 \index{McCloskey, Robert}
 
-El siguiente ejemplo muestra cómo usar la concatenación (suma de cadenas)
+El siguiente ejemplo muestra cómo utilizar la concatenación (suma de cadenas)
 y un bucle {\tt for} para generar una serie abecedaria (es decir, en
 orden alfabético).  En el libro de Robert McCloskey {\em Abran
 paso a los patitos}, los nombres de los patitos son Jack, Kack, Lack,
@@ -6202,7 +6202,7 @@ Continuando con este ejemplo, ¿qué crees que significa
 \index{inmutabilidad}
 \index{cadena inmutable}
 
-Es tentador usar el operador {\tt []} en el lado izquierdo de una
+Es tentador utilizar el operador {\tt []} en el lado izquierdo de una
 asignación, con la intención de cambiar un carácter en una cadena.
 Por ejemplo:
 \index{TypeError}
@@ -6250,7 +6250,7 @@ la cadena original.
 \index{find!función}
 
 \begin{verbatim}
-def find(palabra, letra):
+def buscar(palabra, letra):
     indice = 0
     while indice < len(palabra):
         if palabra[indice] == letra:
@@ -6259,7 +6259,7 @@ def find(palabra, letra):
     return -1
 \end{verbatim}
 %
-En un sentido, {\tt find} es la inversa del operador {\tt []}.
+En un sentido, {\tt buscar} es la inversa del operador {\tt []}.
 En lugar de tomar un índice y extraer el carácter correspondiente,
 toma un carácter y encuentra el índice donde aparece ese
 carácter.  Si el carácter no se encuentra, la función devuelve {\tt
@@ -6278,9 +6278,9 @@ cuando encontramos lo que buscamos--- se llama {\bf búsqueda}.
 \index{patrón búsqueda}
 \index{búsqueda!patrón}
 
-Como ejercicio, modifica {\tt find} para que tenga un
-tercer parámetro, el índice en {\tt palabra} donde debería comenzar a
-buscar.
+Como ejercicio, modifica {\tt buscar} para que tenga un
+tercer parámetro: el índice en {\tt palabra} donde debería comenzar la
+búsqueda.
 
 
 \section{Bucles y conteo}
@@ -6314,8 +6314,8 @@ contar} y generalízalo para que acepte la cadena y la
 letra como argumentos.
 
 Luego reescribe la función de modo que, en lugar de
-recorrer la cadena, use la versión de tres parámetros de {\tt
-find} de la sección anterior.
+recorrer la cadena, utilice la versión de tres parámetros de {\tt
+buscar} de la sección anterior.
 
 
 \section{Métodos de cadena}
@@ -6329,7 +6329,7 @@ todas las letras mayúsculas.
 \index{método}
 \index{cadena!método de}
 
-En lugar de la sintaxis de función {\tt upper(palabra)}, usa
+En lugar de la sintaxis de función {\tt upper(palabra)}, utiliza
 la sintaxis de método {\tt palabra.upper()}.
 
 \begin{verbatim}
@@ -6351,7 +6351,7 @@ diríamos que estamos invocando a {\tt upper} en {\tt palabra}.
 \index{invocación}
 
 Resulta que hay un método de cadena con nombre {\tt find} que
-es notablemente similar a la función que escribimos:
+es notablemente similar a la función {\tt buscar} que escribimos:
 
 \begin{verbatim}
 >>> palabra = 'banana'
@@ -6361,7 +6361,7 @@ es notablemente similar a la función que escribimos:
 \end{verbatim}
 %
 En este ejemplo, invocamos a {\tt find} en {\tt palabra} y pasamos
-como parámetro la letra que buscamos.
+la letra que buscamos como parámetro.
 
 En realidad, el método {\tt find} es más general que nuestra función;
 puede encontrar subcadenas, no solo caracteres:
@@ -6481,7 +6481,7 @@ de un hombre armado con una Piña.
 \index{depuración}
 \index{recorrido}
 
-Cuando usas índices para recorrer los valores en una secuencia,
+Cuando utilizas índices para recorrer los valores en una secuencia,
 es difícil obtener el comienzo y final de un recorrido
 de manera correcta.  Aquí hay una función que se supone que compara dos
 palabras y devuelve {\tt True} si una de las palabras es el reverso
@@ -6598,7 +6598,7 @@ segundo error en esta función.
 \begin{description}
 
 \item[objeto:] Algo a lo cual una variable puede referirse.  Por ahora,
-puedes usar ``objeto'' y ``valor'' indistintamente.
+puedes utilizar ``objeto'' y ``valor'' indistintamente.
 \index{objeto}
 
 \item[secuencia:] Una colección ordenada de
@@ -6608,7 +6608,7 @@ valores donde cada valor se identifica por un índice entero.
 \item[ítem:] Uno de los valores en una secuencia.
 \index{ítem}
 
-\item[índice:] Un valor entero usado para seleccionar un ítem en
+\item[índice:] Un valor entero utilizado para seleccionar un ítem en
 una secuencia, tal como un carácter en una cadena.  En Python,
 los índices parten desde 0.
 \index{índice}
@@ -6633,7 +6633,7 @@ cuando encuentra lo que busca.
 \index{patrón búsqueda}
 \index{búsqueda!patrón}
 
-\item[contador:] Una variable usada para contar algo, usualmente inicializada
+\item[contador:] Una variable utilizada para contar algo, generalmente inicializada
 en cero y luego incrementada.
 \index{contador}
 
@@ -6660,7 +6660,7 @@ Tal vez quieras experimentar con algunos para asegurarte de que
 entiendes cómo funcionan.  {\tt strip} y {\tt replace} son
 particularmente útiles.
 
-La documentación usa una sintaxis que podría confundir.
+La documentación utiliza una sintaxis que podría confundir.
 Por ejemplo, en \verb"find(sub[, start[, end]])", los corchetes
 indican argumentos opcionales.  Entonces {\tt sub} es obligatorio, pero
 {\tt start} es opcional, y si incluyes {\tt start},
@@ -6703,7 +6703,7 @@ Un tamaño de paso de -1 pasa a través de la palabra hacia atrás, por lo que
 el corte \verb"[::-1]" genera una cadena invertida.
 \index{palíndromo}
 
-Usa esta notación para escribir una versión de una línea de \verb"es_palindromo"
+Utiliza esta notación para escribir una versión de una línea de \verb"es_palindromo"
 del Ejercicio~\ref{palindrome}.
 \end{exercise}
 
@@ -6711,8 +6711,8 @@ del Ejercicio~\ref{palindrome}.
 \begin{exercise}
 
 Las siguientes funciones tienen la {\em intención} de verificar si una
-cadena contiene al menos una letra minúscula, pero algunas están
-equivocadas.  Para cada función, describe qué hace realmente la función
+cadena contiene al menos una letra minúscula, pero algunas son
+incorrectas.  Para cada función, describe qué hace realmente la función
 (suponiendo que el parámetro es una cadena).
 
 \begin{verbatim}
@@ -6771,10 +6771,10 @@ computador de la nave se llama HAL, que es IBM rotada en -1.
 
 Escribe una función llamada \verb"rotar_palabra"
 que tome una cadena y un entero como parámetros y devuelva
-una nueva cadena que contenga las letras de la cadena original
+una cadena nueva que contenga las letras de la cadena original
 rotadas en la cantidad entregada.
 
-Tal vez quieras usasr la función incorporada {\tt ord}, que convierte
+Tal vez quieras utilizar la función incorporada {\tt ord}, que convierte
 un carácter en un código numérico, y {\tt chr}, que convierte códigos
 numéricos en caracteres.  Las letras del alfabeto están codificadas en orden alfabético,
 así por ejemplo:
