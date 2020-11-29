@@ -5368,11 +5368,11 @@ Crédito: Este ejercicio está basado en un ejemplo de
 
 Este capítulo trata sobre la iteración, que es la capacidad de ejecutar
 un bloque de sentencias de forma repetida.  Vimos un tipo de iteración,
-usando recursividad, en la Sección~\ref{recursion}.
-Vimos otro tipo, usando un blucle {\tt for},
+utilizando recursividad, en la Sección~\ref{recursion}.
+Vimos otro tipo, utilizando un blucle {\tt for},
 en la Sección~\ref{repetition}.  Es este capítulo veremos otro
-tipo, usando una sentencia {\tt while}.
-Pero primero quiero decir un poco más sobre la asignación de variables.
+tipo, utilizando una sentencia {\tt while}.
+Pero primero quiero contar un poco más sobre la asignación de variables.
 
 
 \section{Reasignación}
@@ -5402,11 +5402,11 @@ en un diagrama de estado. \index{diagrama de estado} \index{estado!diagrama de}
 
 En este punto quiero abordar un origen común de
 confusión.
-Debido a que Python usa el signo igual ({\tt =}) para la asignación, es
+Debido a que Python utiliza el signo igual ({\tt =}) para la asignación, es
 tentador interpretar una sentencia del tipo {\tt a = b} como una
 proposición
-matemática de igualdad; es decir, la afirmación de que {\tt a} y
-{\tt b} son iguales.  Pero esta interpretación es incorrecta.
+matemática de igualdad, es decir, la afirmación de que {\tt a} y
+{\tt b} son iguales.  Sin embargo, esta interpretación es incorrecta.
 \index{igualdad y asignación}
 
 Primero, la igualdad es una relación simétrica y la asignación no lo es.  Por
@@ -5429,7 +5429,7 @@ no tienen que permanecer iguales:
 La tercera línea cambia el valor de {\tt a} pero no cambia el
 valor de {\tt b}, por lo que ya no son iguales.
 
-La reasignación de variables es a menudo útil, pero deberías usarla
+La reasignación de variables es a menudo útil, pero deberías utilizarla
 con precaución.  Si los valores de las variables cambian frecuentemente, puede
 hacer que el código sea difícil de leer y depurar.
 
@@ -5456,7 +5456,7 @@ donde el nuevo valor de la variable depende del antiguo.
 \end{verbatim}
 %
 Esto significa ``obten el valor actual de {\tt x}, suma uno, y luego
-actualiza {\tt x} con el nuevo valor.''
+actualiza a {\tt x} con el nuevo valor.''
 
 Si intentas actualizar una variable que no existe, obtienes un
 error, debido a que Python evalúa el lado derecho antes de asignar
@@ -5468,7 +5468,7 @@ NameError: name 'x' is not defined
 \end{verbatim}
 %
 Antes de que puedas actualizar una variable, la tienes que {\bf inicializar},
-usualmente con una simple asignación:
+generalmente con una asignación simple:
 \index{inicialización (antes de actualizar)}
 
 \begin{verbatim}
@@ -5477,7 +5477,7 @@ usualmente con una simple asignación:
 \end{verbatim}
 %
 Actualizar una variable sumando 1 se llama {\bf incremento};
-restando 1 se llama {\bf decremento}.
+resta 1 se llama {\bf decremento}.
 \index{incremento}
 \index{decremento}
 
@@ -5490,19 +5490,19 @@ restando 1 se llama {\bf decremento}.
 \index{while!bucle}
 \index{iteración}
 
-Los computadores a menudo se usan para automatizar tareas repetitivas.  Repetir
+Los computadores a menudo se utilizan para automatizar tareas repetitivas.  Repetir
 tareas idénticas o similares sin cometer errores es algo que
 los computadores hacen bien y las personas hacen mal.  En un programa de computador,
 la repetición también se llama {\bf iteración}.
 
 Ya hemos visto dos funciones, {\tt cuenta\_reg} e
-\verb"imprimir_n", que iteran usando recursividad.  Debido a que la iteración es tan
+\verb"imprimir_n", que iteran utilizando recursividad.  Debido a que la iteración es tan
 común, Python proporciona características del lenguaje que la hacen más fácil.
 Una es la sentencia {\tt for} que vimos en la Sección~\ref{repetition}.
 Volveremos a eso más adelante.
 
 Otra es la sentencia {\tt while}.  Aquí hay una versión de {\tt
-cuenta\_reg} que usa una sentencia {\tt while}:
+cuenta\_reg} que utiliza una sentencia {\tt while}:
 
 \begin{verbatim}
 def cuenta_reg(n):
@@ -5564,8 +5564,8 @@ def sucesion(n):
             n = n*3 + 1
 \end{verbatim}
 %
-La condición para este bucle es {\tt n != 1}, por lo que el bucle continuará
-hasta que {\tt n} sea {\tt 1}, que hace que la condición sea falsa.
+La condición para este bucle es {\tt n != 1}, así que el bucle continuará
+hasta que {\tt n} sea {\tt 1}, lo cual hace que la condición sea falsa.
 
 En cada paso por el bucle, el programa muestra el valor de {\tt n}
 y luego verifica si es par o impar.  Si es par, {\tt n} se
@@ -5574,7 +5574,7 @@ divide por 2.  Si es impar, el valor de {\tt n} se reemplaza por
 es 3, los valores resultantes de {\tt n} son 3, 10, 5, 16, 8, 4, 2, 1.
 
 Dado que {\tt n} a veces aumenta y a veces disminuye, no hay
-demostración obvia de que {\tt n} alcanzará el 1 alguna vez, o que el programa
+demostración obvia de que {\tt n} alcanzará el 1 alguna vez, o de que el programa
 termina.  Para algunos valores particulares de {\tt n}, podemos probar que
 termina.  Por ejemplo, si el valor inicial es una potencia de dos,
 {\tt n} será par cada vez que se pase por el bucle
@@ -5588,7 +5588,7 @@ sido capaz de probarlo {\em o} refutarlo!  (Ver
   \url{http://en.wikipedia.org/wiki/Collatz_conjecture}.)
 
 Como ejercicio, reescribe la función \verb"print_n" de la
-Sección~\ref{recursion} usando iteración en lugar de recursividad.
+Sección~\ref{recursion} utilizando iteración en lugar de recursividad.
 
 
 \section{{\tt break}}
@@ -5596,7 +5596,7 @@ Sección~\ref{recursion} usando iteración en lugar de recursividad.
 \index{break!sentencia}
 
 A veces no sabes que es momento de terminar un bucle hasta que llegas a la mitad
-del cuerpo.  En ese caso puedes usar la sentencia {\tt break}
+del cuerpo.  En ese caso puedes utilizar la sentencia {\tt break}
 para saltar hacia afuera del bucle.
 
 Por ejemplo, supongamos que quieres tomar la entrada del usuario hasta que
@@ -5628,7 +5628,7 @@ no listo
 \end{verbatim}
 %
 Esta forma de escribir bucles {\tt while} es común porque puedes
-v the type of a value.erificar la condición en cualquier lugar del bucle (no solo en la
+verificar la condición en cualquier lugar del bucle (no solo en la
 parte superior) y puedes expresar la condición de detención de manera afirmativa
 (``detente cuando esto ocurra'') en lugar de negativa (``sigue haciendo
 hasta que eso ocurra'').
@@ -5638,7 +5638,7 @@ hasta que eso ocurra'').
 \label{squareroot}
 \index{raíz cuadrada}
 
-Los bucles se usan a menudo en programas que calculan
+Los bucles se utilizan a menudo en programas que calculan
 resultados numéricos iniciando con una respuesta aproximada y
 mejorándola iterativamente.
 \index{método de Newton}
@@ -5684,7 +5684,7 @@ Después de algunas actualizaciones más, la estimación es casi exacta:
 2.00000000003
 \end{verbatim}
 %
-En general no sabemos de antemano cuántos pasos toma
+En general, no sabemos de antemano cuántos pasos toma
 llegar a la respuesta correcta, pero sabemos cuándo la obtenemos
 porque la estimación
 deja de cambiar:
@@ -5722,7 +5722,7 @@ $\sqrt{2}$, no se pueden representar de manera exacta con un {\tt float}.
 \index{epsilon}
 
 En lugar de verificar si {\tt x} e {\tt y} son exactamente iguales, es
-más seguro usar la función {\tt abs} para calcular el
+más seguro utilizar la función {\tt abs} para calcular el
 valor absoluto, o magnitud, de la diferencia entre estos:
 
 \begin{verbatim}
@@ -5777,7 +5777,7 @@ no en la forma de un algoritmo.
 \label{bisectbug}
 
 A medida que comiences a escribir programas más grandes, podrías encontrarte
-pasando más tiempo depurando.  Más código significa más posibilidades de
+ocupando más tiempo en la depuración.  Más código significa más posibilidades de
 cometer un error y más lugares para esconder errores de programación.
 \index{depuración!por bisección}
 \index{bisección!depuración por}
@@ -5797,9 +5797,9 @@ en la segunda mitad.
 
 Cada vez que hagas una verificación como esta, reduces a la mitad el número
 de líneas que tienes que buscar.  Después de seis pasos (lo cual es menos que 100),
-estarías con una o dos líneas de código, al menos en teoría.
+estarías revisando una o dos líneas de código, al menos en teoría.
 
-En la práctica no siempre está claro cuál es
+En la práctica, no siempre está claro cuál es
 la ``mitad del programa'' y no siempre es posible
 verificarla.  No tiene sentido contar líneas y encontrar el
 punto medio exacto.  En cambio, piensa en lugares
@@ -5828,13 +5828,13 @@ una variable que será actualizada.
 \index{inicialización de variable}
 
 \item[incremento:] Una actualización que aumenta el valor de una variable
-(a menudo en uno).
+(generalmente en una unidad).
 \index{incremento}
 
 \item[decremento:] Una actualización que disminuye el valor de una variable.
 \index{decremento}
 
-\item[iteración:] Ejecución repetida de un conjunto de sentencias usando
+\item[iteración:] Ejecución repetida de un conjunto de sentencias utilizando
 una llamada a función recursiva o un bucle.
 \index{iteración}
 
@@ -5889,7 +5889,7 @@ valor absoluto de la diferencia entre las dos estimaciones.
 \index{eval!función}
 
 La función incorporada {\tt eval} toma una cadena y la evalúa
-usando el intérprete de Python.  Por ejemplo:
+utilizando el intérprete de Python.  Por ejemplo:
 
 \begin{verbatim}
 >>> eval('1 + 2 * 3')
@@ -5903,7 +5903,7 @@ usando el intérprete de Python.  Por ejemplo:
 %
 Escribe una función llamada \verb"bucle_eval" que, de manera iterativa,
 solicite la entrada del usuario, tome la entrada resultante y la evalúe
-usando {\tt eval}, e imprima el resultado.
+utilizando {\tt eval}, e imprima el resultado.
 
 Debería continuar hasta que el usuario ingrese \verb"'listo'" y luego
 devuelva el valor de la última expresión que evaluó.
@@ -5916,15 +5916,15 @@ devuelva el valor de la última expresión que evaluó.
 
 El matemático Srinivasa Ramanujan encontró una
 serie infinita
-que se puede usar para generar una aproximación
+que se puede utilizar para generar una aproximación
 numérica de $1 / \pi$:
 \index{pi}
 
 \[ \frac{1}{\pi} = \frac{2\sqrt{2}}{9801}
 \sum^\infty_{k=0} \frac{(4k)!(1103+26390k)}{(k!)^4 396^{4k}} \]
 
-Escribe una función llamada \verb"estimacion_pi" que use esta fórmula
-para calcular y devolver una estimación de $\pi$.  Debería usar un bucle {\tt while}
+Escribe una función llamada \verb"estimacion_pi" que utilice esta fórmula
+para calcular y devolver una estimación de $\pi$.  Debería utilizar un bucle {\tt while}
 para calcular términos de la sumatoria hasta que el último término sea
 más pequeño que {\tt 1e-15} (que es la notación de Python para $10^{-15}$).
 Puedes verificar el resultado comparándolo con {\tt math.pi}.
@@ -6944,7 +6944,7 @@ excluya al menor número de palabras?
 
 Escribe una función con nombre \verb"usa_solo" que tome una palabra y una
 cadena de letras y devuelva {\tt True} si la palabra contiene
-solo letras de la lista.  ¿Puedes crear una oración en inglés usando solo las
+solo letras de la lista.  ¿Puedes crear una oración en inglés utilizando solo las
 letras {\tt acefhlo}?  ¿Una distinta a ``Hoe alfalfa''?
 
 \end{exercise}
@@ -6955,7 +6955,7 @@ letras {\tt acefhlo}?  ¿Una distinta a ``Hoe alfalfa''?
 Escribe una función con nombre \verb"usa_todas" que tome una palabra y una
 cadena de letras requeridas y devuelva {\tt True} si la palabra
 usa todas las letras requeridas al menos una vez.  ¿Cuántas palabras
-que usan todas las vocales {\tt aeiou} existen?  ¿Qué pasa con {\tt aeiouy}?
+que utilizan todas las vocales {\tt aeiou} existen?  ¿Qué pasa con {\tt aeiouy}?
 
 \end{exercise}
 
@@ -6998,7 +6998,7 @@ significa que no encontramos una ``e'', por lo cual devolvemos {\tt True}.
 
 \index{operador in}
 \index{in!operador}
-Podrías haber escrito esta función de manera más concisa usando el operador {\tt in},
+Podrías haber escrito esta función de manera más concisa utilizando el operador {\tt in},
 pero comencé con esta versión porque
 demuestra la lógica del patrón de búsqueda.
 
@@ -7994,7 +7994,7 @@ idénticos.
 \index{equivalencia}
 \index{identidad}
 
-Hasta ahora, hemos estado usando ``objeto'' y ``valor''
+Hasta ahora, hemos estado utilizando ``objeto'' y ``valor''
 indistintamente, pero es más preciso decir que un objeto tiene un
 valor.  Si evalúas {\tt [1, 2, 3]}, obtienes un objeto de
 lista cuyo valor es una secuencia de enteros.  Si otra
