@@ -8570,7 +8570,7 @@ Crédito: Este ejercicio está inspirado en un ejemplo de \url{http://puzzlers.o
 \chapter{Diccionarios}
 
 Este capítulo presenta otro tipo incorporado llamado diccionario.
-Los diccionarios son una de las mejores características de Python; son los
+Los diccionarios son una de las mejores características de Python: son los
 bloques de construcción de muchos algoritmos eficientes y elegantes.
 
 
@@ -8598,7 +8598,7 @@ a palabras en español, así las claves y los valores son todas cadenas.
 
 La función {\tt dict} crea un nuevo diccionario sin ítems.
 Como {\tt dict} es el nombre de una función incorporada,
-deberías evitar usarla como nombre de variable.
+deberías evitar utilizarla como nombre de variable.
 \index{función dict}
 \index{dict!función}
 
@@ -8609,7 +8609,7 @@ deberías evitar usarla como nombre de variable.
 \end{verbatim}
 
 Las llaves, \verb"{}", representan un diccionario vacío.
-Para agregar ítems al diccionario, puedes usar los corchetes:
+Para agregar ítems al diccionario, puedes utilizar corchetes:
 \index{llaves}
 %\index{bracket!squiggly}
 
@@ -8634,7 +8634,7 @@ puedes crear un nuevo diccionario con tres ítems:
 >>> ing_esp = {'one': 'uno', 'two': 'dos', 'three': 'tres'}
 \end{verbatim}
 %
-Pero si imprimes {\tt ing\_esp}, podrías sorprenderte:
+Pero si imprimes {\tt ing\_esp}, quizás te sorprendas:
 
 \begin{verbatim}
 >>> ing_esp
@@ -8646,9 +8646,9 @@ escribiste el mismo ejemplo en tu computador, podrías obtener un
 resultado diferente.  En general, el orden de los ítems en
 un diccionario es impredecible.
 
-Pero eso no es un problema porque
+Sin embargo, eso no es un problema porque
 los elementos de un diccionario nunca se indexan con índices enteros.
-En cambio, usas las claves para buscar los valores correspondientes:
+En cambio, utilizas las claves para buscar los valores correspondientes:
 
 \begin{verbatim}
 >>> ing_esp['two']
@@ -8667,8 +8667,8 @@ Si la clave no está en el diccionario, obtienes una excepción:
 KeyError: 'four'
 \end{verbatim}
 %
-La función {\tt len} funciona en diccionarios; devuelve el
-número de pares clave-valor:
+La función {\tt len} funciona con diccionarios: devuelve el
+número de pares clave-valor.
 \index{función len}
 \index{len!función}
 
@@ -8677,7 +8677,7 @@ número de pares clave-valor:
 3
 \end{verbatim}
 %
-El operador {\tt in} también funciona en diccionarios; te dice si
+El operador {\tt in} también funciona con diccionarios: te dice si
 algo aparece como una {\em clave} en el diccionario (aparecer
 como un valor no basta).
 \index{pertenencia!diccionario}
@@ -8692,8 +8692,8 @@ False
 \end{verbatim}
 %
 Para ver si algo aparece como un valor en un diccionario,
-puedes usar el método {\tt values}, el cual devuelve una colección de
-valores, y entonces usar el operador {\tt in}:
+puedes utilizar el método {\tt values}, el cual devuelve una colección de
+valores, y entonces utilizar el operador {\tt in}:
 \index{método values}
 \index{values!método}
 
@@ -8703,12 +8703,12 @@ valores, y entonces usar el operador {\tt in}:
 True
 \end{verbatim}
 %
-El operador {\tt in} usa diferentes algoritmos para las listas y los
+El operador {\tt in} utiliza diferentes algoritmos para las listas y los
 diccionarios.  Para las listas, busca los elementos de la lista en
 orden, como en la Sección~\ref{find}.  A medida que la lista se vuelve más larga,
 el tiempo de búsqueda se hace más largo en proporción directa.
 
-Los diccionarios de Python usan una estructura de datos
+Los diccionarios de Python utilizan una estructura de datos
 llamada {\bf tabla hash} que tiene una propiedad notable: el
 operador {\tt in} toma casi la misma cantidad de tiempo sin importar
 cuántos ítems hay en el diccionario.  Explico cómo es eso posible
@@ -8727,12 +8727,12 @@ veces aparece cada letra.  Hay varias maneras en que podrías hacerlo:
 
 \item Podrías crear 26 variables, una para cada letra del
 alfabeto.  Luego podrías recorrer la cadena y, para cada
-carácter, incrementar el contador correspondiente, probablemente usando
+carácter, incrementar el contador correspondiente, probablemente utilizando
 un condicional encadenado.
 
 \item Podrías crear una lista de 26 elementos.  Luego podrías
 convertir cada carácter a un número (usando la función incorporada
-{\tt ord}), usar el número como un índice dentro de la lista e incrementar
+{\tt ord}), utilizar el número como un índice dentro de la lista e incrementar
 el contador apropiado.
 
 \item Podrías crear un diccionario con caracteres como claves
@@ -8765,7 +8765,7 @@ def histograma(s):
     return d
 \end{verbatim}
 %
-El nombre de la función es {\tt histograma}, el cual es un término
+El nombre de la función es {\tt histograma}, que es un término
 estadístico para una colección de contadores (o frecuencias).
 \index{histograma}
 \index{frecuencia}
@@ -8817,7 +8817,7 @@ Deberías ser capaz de eliminar la sentencia {\tt if}.
 \index{bucle!con diccionarios}
 \index{recorrido}
 
-Si usas un diccionario en una sentencia {\tt for}, recorre
+Si utilizas un diccionario en una sentencia {\tt for}, este recorre
 las claves del diccionario.  Por ejemplo, \verb"imprimir_hist"
 imprime cada clave y el valor correspondiente:
 
@@ -8840,7 +8840,7 @@ o 1
 \end{verbatim}
 %
 Nuevamente, las claves no estan en un orden particular.  Para recorrer las claves
-en orden, puedes usar la función incorporada {\tt sorted}:
+en orden, puedes utilizar la función incorporada {\tt sorted}:
 \index{sorted!función}
 \index{función!sorted}
 
@@ -8873,7 +8873,7 @@ Tienes dos problemas: primero, podría haber más de una
 clave que mapee al valor {\tt v}.  Dependiendo de la aplicación,
 quizás puedas elegir una o tengas que hacer
 una lista que las contenga a todas.  Segundo, no hay
-una sintaxis sencilla para hacer una {\bf consulta inversa}; tienes que buscar.
+una sintaxis sencilla para hacer una {\bf consulta inversa}: tienes que buscar.
 
 Aquí hay una función que toma un valor y devuelve la primera
 clave que mapea a ese valor:
@@ -8886,10 +8886,10 @@ def consulta_inversa(d, v):
     raise LookupError()
 \end{verbatim}
 %
-Esta función es otro ejemplo del patrón de búsqueda pero que
-usa una característica que no hemos visto antes, {\tt raise}.  La
+Esta función es otro ejemplo de patrón de búsqueda pero que
+utiliza una característica que no hemos visto antes, {\tt raise}.  La
 {\bf sentencia raise} causa una excepción; en este caso causa un
-{\tt LookupError}, que es una excepción incorporada que se usa para indicar
+{\tt LookupError}, que es una excepción incorporada que se utiliza para indicar
 que falló una operación de consulta.
 \index{búsqueda}
 \index{búsqueda!patrón} \index{sentencia raise} \index{raise!sentencia}
@@ -8943,7 +8943,7 @@ de tu progama se verá afectado.
 
 Las listas pueden aparecer como valores en un diccionario.  Por ejemplo, si
 te dan un diccionario que mapea de letras a frecuencias,
-quizás quieras invertirlo; es decir, crear un diccionario que mapee
+quizás quieras invertirlo, es decir, crear un diccionario que mapee
 de frecuencias a letras.  Dado que podría haber muchas letras
 con la misma frecuencia, cada valor en el diccionario invertido
 debería ser una lista de letras.
@@ -9012,13 +9012,13 @@ Traceback (most recent call last):
 TypeError: list objects are unhashable
 \end{verbatim}
 %
-Anteriormente mencioné que un diccionario se implementa usando
+Anteriormente mencioné que un diccionario se implementa utilizando
 una tabla hash y eso significa que las claves tienen que ser {\bf hashables}.
 \index{función hash}
 \index{hashable}
 
 Un {\bf hash} es una función que toma un valor (de cualquier tipo)
-y devuelve un entero.  Los diccionarios usan estos enteros,
+y devuelve un entero.  Los diccionarios utilizan estos enteros,
 llamados valores hash, para almacenar y consultar pares clave-valor.
 \index{inmutabilidad}
 
@@ -9033,10 +9033,10 @@ diccionario no funcionaría de manera correcta.
 
 Por eso es que las claves tienen que ser hashables y, por la misma razón, los tipos mutables como
 las listas no lo son.  La manera más simple de evitar esta limitación es
-usar tuplas, las cuales veremos en el capítulo siguiente.
+utilizar tuplas, las cuales veremos en el capítulo siguiente.
 
-Dado que los diccionarios son mutables, estos no pueden usarse como claves,
-pero {\em pueden} usarse como valores.
+Dado que los diccionarios son mutables, estos no pueden utilizarse como claves,
+pero {\em pueden} utilizarse como valores.
 
 
 \section{Memos}
@@ -9049,7 +9049,7 @@ Además, el tiempo de ejecución aumenta rápidamente.
 \index{fibonacci function}
 \index{function!fibonacci}
 
-Para entender el por qué, considera la Figura~\ref{fig.fibonacci}, la cual muestra
+Para entender el por qué, considera la Figura~\ref{fig.fibonacci}, que muestra
 el {\bf gráfico de llamadas} para {\tt fibonacci} con {\tt n=4}.
 
 \begin{figure}
@@ -9060,7 +9060,7 @@ el {\bf gráfico de llamadas} para {\tt fibonacci} con {\tt n=4}.
 \end{figure}
 
 Un gráfico de llamadas muestra un conjunto de marcos de funciones, con líneas que conectan cada
-marco a los marcos de las funciones llamadas.  En la parte de arriba del
+marco a los marcos de las funciones que están siendo llamadas.  En la parte de arriba del
 gráfico, {\tt fibonacci} con {\tt n=4} llama {\tt fibonacci} con {\tt
 n=3} y {\tt n=2}.  A su vez, {\tt fibonacci} con {\tt n=3} llama a
 {\tt fibonacci} con {\tt n=2} y {\tt n=1}.  Y así sucesivamente.
@@ -9117,9 +9117,9 @@ persisten de una llamada a función a la siguiente.
 \index{flag}\index{bandera}
 \index{main}
 
-Es común usar variables globales para las {\bf banderas} (en inglés, {\em flags}); es decir,
+Es común utilizar variables globales para las {\bf banderas} (en inglés, {\em flags}), es decir,
 variables booleanas que indican si una condición
-es verdadera.  Por ejemplo, algunos programas usan
+es verdadera.  Por ejemplo, algunos programas utilizan
 una bandera llamada {\tt verbose} para controlar el nivel de detalle en la
 salida:
 
@@ -9152,7 +9152,7 @@ la función termina y no tiene efecto en la variable global.
 \index{declaración}
 
 Para reasignar una variable global dentro de una función tienes que
-{\bf declarar} la variable global antes de usarla:
+{\bf declarar} la variable global antes de utilizarla:
 
 \begin{verbatim}
 fue_llamada = False
@@ -9164,7 +9164,7 @@ def ejemplo2():
 %
 La {\bf sentencia global} le dice al intérprete
 algo como ``En esta función, cuando digo \verb"fue_llamada",
-quiero decir la variable global; no crees una local.''
+me refiero a la variable global; no crees una local.''
 \index{actualizar!variable global}
 \index{variable global!actializar}
 
@@ -9252,7 +9252,7 @@ el tipo del valor.
 \item[Escribe verificaciones automáticas:]  A veces puedes escribir código para verificar
 errores de manera automática. Por ejemplo, si estás calculando el
 promedio de una lista de números, podrías verificar que el resultado no
-es mayor que el elemento más grande de la lista ni menor que
+sea mayor que el elemento más grande de la lista ni menor que
 el más pequeño. A esto se le llama ``prueba de cordura'' (en inglés, {\em sanity check})
 porque detecta resultados que son ``locos''.
 \index{sanity check}\index{prueba de cordura}
@@ -9311,11 +9311,11 @@ nuestro uso anterior de la palabra ``valor''.
 \item[implementación:] Una manera de realizar una computación.
 \index{implementación}
 
-\item[tabla hash:] El algoritmo usado para implementar los
+\item[tabla hash:] El algoritmo utilizado para implementar los
 diccionarios de Python.
 \index{tabla hash}
 
-\item[función hash:] Una función usada por una tabla hash para calcular
+\item[función hash:] Una función utilizada por una tabla hash para calcular
 la ubicación de una clave.
 \index{función hash}
 
@@ -9359,7 +9359,7 @@ de variable.
 \index{sentencia global}
 \index{global!sentencia}
 
-\item[bandera:] Una variable booleana que se usa para indicar si una condición
+\item[bandera:] Una variable booleana que se utiliza para indicar si una condición
 es verdadera.
 \index{bandera}
 
@@ -9379,7 +9379,7 @@ intérprete algo sobre una variable.
 
 Escribe una función que lea las palabras en {\tt words.txt} y
 las almacene como claves en un diccionario.  No importa cuáles sean
-los valores.  Luego puedes usar el operador {\tt in}
+los valores.  Luego puedes utilizar el operador {\tt in}
 como una manera rápida de verificar si una cadena está en
 el diccionario.
 
@@ -9394,7 +9394,7 @@ búsqueda de bisección.
 \label{setdefault}
 
 Lee la documentación del método de diccionario {\tt setdefault}
-y úsalo para escribir una versión más concisa de \verb"invertir_dict".
+y utilízalo para escribir una versión más concisa de \verb"invertir_dict".
 Solución: \url{http://thinkpython2.com/code/invert_dict.py}.
 \index{setdefault!método}
 \index{método setdefault}
@@ -9422,7 +9422,7 @@ una función con nombre \verb"tiene_duplicados" que toma una lista
 como parámetro y devuelve {\tt True} si hay algún objeto
 que aparece más de una vez en la lista.
 
-Usa un diccionario para escribir una versión más rápida y simple de
+Utiliza un diccionario para escribir una versión más rápida y simple de
 \verb"tiene_duplicados".
 Solución: \url{http://thinkpython2.com/code/has_duplicates.py}.
 
@@ -9477,10 +9477,10 @@ es la palabra?
 \index{palabra reducible}
 \index{reducible, palabra}
 
-Puedes usar el diccionario del Ejercicio~\ref{wordlist2} para verificar
+Puedes utilizar el diccionario del Ejercicio~\ref{wordlist2} para verificar
 si una cadena está en la lista de palabras.
 
-Para verificar si dos palabras son homófonas, puedes usar el
+Para verificar si dos palabras son homófonas, puedes utilizar el
 Diccionario de Pronunciación de la CMU.  Lo puedes descargar en
 \url{http://www.speech.cs.cmu.edu/cgi-bin/cmudict} o en
 \url{http://thinkpython2.com/code/c06d} y también puedes descargar
