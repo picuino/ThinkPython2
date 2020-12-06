@@ -9499,9 +9499,9 @@ Solución: \url{http://thinkpython2.com/code/homophone.py}.
 \chapter{Tuplas}
 \label{tuplechap}
 
-Este capítulo presenta un tipo incorporado más, la tupla, y luego
-muestra cómo las listas, los diccionarios y las tuplas trabajan juntos.
-Además, presento una característica útil para listas de argumento de longitud variable:
+Este capítulo presenta otro un tipo incorporado, la tupla, y luego
+muestra la manera en que las listas, los diccionarios y las tuplas trabajan juntos.
+Además, presento una característica útil para listas de argumentos de longitud variable:
 los operadores de reunión y dispersión.
 
 % One note: there is no consensus on how to pronounce ``tuple''.
@@ -9599,7 +9599,7 @@ Y el operador de corte selecciona un rango de elementos.
 ('b', 'c')
 \end{verbatim}
 %
-Pero si intentas modificar uno de los elementos de la tupla, obtienes
+Sin embargo, si intentas modificar uno de los elementos de la tupla, obtienes
 un error:
 \index{excepción!TypeError}
 \index{TypeError}
@@ -9611,7 +9611,7 @@ un error:
 TypeError: object doesn't support item assignment
 \end{verbatim}
 %
-Dado que las tuplas son inmutables, no puedes modificar los elementos.  Sin embargo,
+Dado que las tuplas son inmutables, no puedes modificar sus elementos.  Pero
 puedes reemplazar una tupla con otra:
 
 \begin{verbatim}
@@ -9647,7 +9647,7 @@ True
 \index{pattern!swap}
 
 A menudo es útil intercambiar los valores de dos variables.
-Con asignaciones convencionales, tienes que usar una variable
+Con asignaciones convencionales, tienes que utilizar una variable
 temporal.  Por ejemplo, para intercambiar {\tt a} y {\tt b}:
 
 \begin{verbatim}
@@ -9667,8 +9667,8 @@ expresiones.  Cada valor es asignado a su respectiva variable.
 Todas las expresiones en el lado derecho son evaluadas antes de cualquiera
 de las asignaciones.
 
-El número de variables en el lazo izquierdo y el número de valores del
-lado derecho tienen que ser el mismo:
+La cantidad de variables en el lado izquierdo y la cantidad de valores del
+lado derecho tienen que ser la misma:
 \index{excepción!ValueError}
 \index{ValueError}
 
@@ -9707,7 +9707,7 @@ el primer elemento se asigna a {\tt nombre\_usuario}, el segundo a
 \index{valor de retorno!tupla}
 \index{función, tupla como valor de retorno}
 
-Estrictamente hablando, una función solo puede devolver un valor de retorno, pero
+Estrictamente hablando, una función puede devolver solo un valor de retorno, pero
 si el valor es una tupla, el efecto es el mismo que devolver
 múltiples valores.  Por ejemplo, si quieres dividir dos enteros
 y calcular el cociente y el resto, es ineficiente
@@ -9716,7 +9716,7 @@ ambos al mismo tiempo.
 \index{divmod}
 
 La función incorporada {\tt divmod} toma dos argumentos y
-devuelve una tupla de dos valores, el cociente y el resto.
+devuelve una tupla de dos valores: el cociente y el resto.
 Puedes almacenar el resultado como una tupla:
 
 \begin{verbatim}
@@ -9725,7 +9725,7 @@ Puedes almacenar el resultado como una tupla:
 (2, 1)
 \end{verbatim}
 %
-O bien usar asignación de tupla para almacenar los elementos por separado:
+O bien utilizar asignación de tupla para almacenar los elementos por separado:
 \index{asignación de tupla}
 \index{tupla!asignación de}
 
@@ -9745,7 +9745,7 @@ def min_max(t):
 \end{verbatim}
 %
 {\tt max} y {\tt min} son funciones incorporadas que encuentran
-los elementos más grande y más pequeño de una secuencia.  \verb"min_max"
+los elementos más grande y más pequeño en una secuencia.  \verb"min_max"
 calcula ambos y devuelve una tupla de dos valores.
 \index{max!función}
 \index{función!max}
@@ -9761,17 +9761,17 @@ calcula ambos y devuelve una tupla de dos valores.
 \index{parámetro de reunión}
 \index{argumento!reunión}
 
-Las funciones pueden tomar un número variable de argumentos.  Un nombre de parámetro
+Las funciones pueden tomar una cantidad variable de argumentos.  Un nombre de parámetro
 que comienza con {\tt *} hace una {\bf reunión} de argumentos en
 una tupla.  Por ejemplo, {\tt printall}
-toma cualquier número de argumentos y los imprime:
+toma cualquier cantidad de argumentos y los imprime:
 
 \begin{verbatim}
 def printall(*args):
     print(args)
 \end{verbatim}
 %
-El parámetro de reunión puede tener cualquier nombre que te guste, pero {\tt args} es
+El parámetro de reunión puede tener cualquier nombre que quieras, pero {\tt args} es
 convencional.  Aquí se muestra cómo opera la función:
 
 \begin{verbatim}
@@ -9781,7 +9781,7 @@ convencional.  Aquí se muestra cómo opera la función:
 %
 El complemento de la reunión es la {\bf dispersión}.  Si tienes una
 secuencia de valores y quieres pasarlo a una función
-como multiples argumentos, puedes usar el operador {\tt *}.
+como multiples argumentos, puedes utilizar el operador {\tt *}.
 Por ejemplo, {\tt divmod} toma exactamente dos argumentos;
 no funciona con una tupla:
 \index{dispersión}
@@ -9795,16 +9795,16 @@ no funciona con una tupla:
 TypeError: divmod expected 2 arguments, got 1
 \end{verbatim}
 %
-Pero si dispersas la tupla, funciona:
+Sin embargo, si dispersas la tupla, funciona:
 
 \begin{verbatim}
 >>> divmod(*t)
 (2, 1)
 \end{verbatim}
 %
-Muchas de las funciones incorporadas usan
-tuplas de argumento de longitud variable.  Por ejemplo, {\tt max}
-y {\tt min} pueden tomar cualquier número de argumentos:
+Muchas de las funciones incorporadas utilizan
+tuplas de argumentos de longitud variable.  Por ejemplo, {\tt max}
+y {\tt min} pueden tomar cualquier cantidad de argumentos:
 \index{max función}
 \index{función!max}
 \index{min función}
@@ -9824,7 +9824,7 @@ Pero {\tt sum} no puede.
 TypeError: sum expected at most 2 arguments, got 3
 \end{verbatim}
 %
-Como ejercicio, escribe una función llamada \verb"sumar_todos" que tome cualquier número
+Como ejercicio, escribe una función llamada \verb"sumar_todos" que tome cualquier cantidad
 de argumentos y devuelva su suma.
 
 
@@ -9859,12 +9859,12 @@ de los pares.  El uso más común de {\tt zip} es en un bucle {\tt for}:
 %
 Un objeto zip es una especie de {\bf iterador}, que es cualquier objeto
 que itera a través de una secuencia.  Los iteradores son similares a las listas de alguna
-manera, pero a diferencia de las listas, no puedes usar un índice para seleccionar un elemento de
+manera, pero a diferencia de las listas, no puedes utilizar un índice para seleccionar un elemento de
 un iterador.
 \index{iterador}
 
-Si quieres usar operadores de lista y métodos, puedes
-usar un objeto zip para hacer una lista:
+Si quieres utilizar operadores de lista y métodos, puedes
+utilizar un objeto zip para crear una lista:
 
 \begin{verbatim}
 >>> list(zip(s, t))
@@ -9884,7 +9884,7 @@ longitud de la secuencia más corta.
 [('A', 'E'), ('n', 'l'), ('n', 'k')]
 \end{verbatim}
 %
-Puedes usar asignación de tupla en un bucle {\tt for} para recorrer una lista de
+Puedes utilizar asignación de tupla en un bucle {\tt for} para recorrer una lista de
 tuplas:
 \index{recorrido}
 \index{asignación de tupla}
@@ -9923,7 +9923,7 @@ def tiene_coincidencia(t1, t2):
 \end{verbatim}
 %
 Si necesitas recorrer los elementos de una secuencia y sus
-índices, puedes usar la función incorporada {\tt enumerate}:
+índices, puedes utilizar la función incorporada {\tt enumerate}:
 \index{recorrido}
 \index{función enumerate}
 \index{enumerate!función}
@@ -9944,7 +9944,7 @@ En este ejemplo, la salida es
 2 c
 \end{verbatim}
 %
-Nuevamente.
+De nuevo.
 \index{iterador}
 \index{objeto enumerate}
 \index{enumerate!objeto}
@@ -9967,8 +9967,8 @@ tuplas, donde cada tupla es un par clave-valor.
 dict_items([('c', 2), ('a', 0), ('b', 1)])
 \end{verbatim}
 %
-El resultado es un objeto \verb"dict_items", el cual es un iterador que
-itera los pares clave-valor.  Puedes usarlo en un bucle {\tt for}
+El resultado es un objeto \verb"dict_items", que es un iterador que
+itera los pares clave-valor.  Puedes utilizarlo en un bucle {\tt for}
 así:
 \index{iterador}
 
@@ -9984,7 +9984,7 @@ b 1
 Tal como esperarías de un diccionario, los ítems no están en un
 orden particular.
 
-En sentido contrario, puedes usar una lista de tuplas para
+En sentido contrario, puedes utilizar una lista de tuplas para
 inicializar un nuevo diccionario: \index{diccionario!inicializar}
 
 \begin{verbatim}
@@ -10011,9 +10011,9 @@ y las agrega, como pares clave-valor, a un diccionario existente.
 \index{recorrido!diccionario}
 \index{diccionario!recorrido}
 
-Es común usar tuplas como claves en diccionarios (principalmente porque
-no puedes usar listas).  Por ejemplo, un directorio telefónico podría mapear
-de pares apellido, nombre a números telefónicos.  Suponiendo
+Es común utilizar tuplas como claves en diccionarios (principalmente porque
+no puedes utilizar listas).  Por ejemplo, un directorio telefónico podría mapear
+de pares apellido-nombre a números telefónicos.  Suponiendo
 que hemos definido {\tt apellido}, {\tt nombre} y {\tt numero},
 podríamos escribir:
 \index{tupla!como clave en diccionario}
@@ -10023,7 +10023,7 @@ podríamos escribir:
 directorio[apellido, nombre] = numero
 \end{verbatim}
 %
-La expresión en corchetes es una tupla.  Podríamos usar asignación
+La expresión en corchetes es una tupla.  Podríamos utilizar asignación
 de tupla para recorrer este diccionario.
 \index{tupla!en corchetes}
 
@@ -10036,7 +10036,7 @@ Este bucle recorre las claves en {\tt directorio}, que son tuplas.  Asigna
 los elementos de cada tupla a {\tt apellido} y {\tt nombre}, luego
 imprime el nombre completo y el número telefónico correspondiente.
 
-Hay dos maneras de representar tuplas en diagrama de estado.  La versión
+Hay dos maneras de representar tuplas en un diagrama de estado.  La versión
 más detallada muestra los índices y elementos tal como aparecen en
 una lista.  Por ejemplo, la tupla \verb"('Cleese', 'John')" se mostraría
 como en la Figura~\ref{fig.tuple1}.
@@ -10061,9 +10061,9 @@ mostrarse como en la Figura~\ref{fig.dict2}.
 \label{fig.dict2}
 \end{figure}
 
-Aquí las tuplas se muestran usando la notación de la sintáxis de Python.
+Aquí, las tuplas se muestran utilizando la notación de la sintáxis de Python.
 El número de teléfono del diagrama es la línea de reclamos
-de la BBC, así que por favor no lo llames.
+de la BBC, así que por favor no llames.
 
 
 \section{Secuencias de secuencias}
@@ -10075,7 +10075,7 @@ tuplas de listas.  Para evitar enumerar las posibles combinaciones, a veces
 es más fácil hablar de secuencias de secuencias.
 
 En muchos contextos, los diferentes tipos de secuencias (cadenas, listas y
-tuplas) se pueden usar indistintamente.  Entonces, ¿cómo deberías escoger uno
+tuplas) se pueden utilizar indistintamente.  Entonces, ¿cómo deberías escoger uno
 por sobre los otros?
 \index{cadena}
 \index{lista}
@@ -10087,7 +10087,7 @@ Para comenzar con lo obvio, las cadenas son más limitadas que otras
 secuencias porque los elementos tienen que ser caracteres.  Además,
 son inmutables.  Si necesitas la posibilidad de cambiar los caracteres
 en una cadena (en contraposición a crear una nueva cadena), quizás quieras
-usar una lista de caracteres en su lugar.
+utilizar una lista de caracteres en su lugar.
 
 Las listas son más comunes que las tuplas, principalmente porque son mutables.
 Sin embargo, hay algunos casos donde podrías preferir tuplas:
@@ -10097,19 +10097,19 @@ Sin embargo, hay algunos casos donde podrías preferir tuplas:
 \item En algunos contextos, como una sentencia {\tt return}, es
 sintácticamente más simple crear una tupla que una lista.
 
-\item Si quieres usar una secuencia como clave de diccionario,
-tienes que usar un tipo inmutable como una tupla o una cadena.
+\item Si quieres utilizar una secuencia como clave de diccionario,
+tienes que utilizar un tipo inmutable como una tupla o una cadena.
 
 \item Si pasas una secuencia como argumento a una función,
-usar tuplas reduce las posibilidades de comportamiento inesperado
+utilizar tuplas reduce las posibilidades de comportamiento inesperado
 debido a los alias.
 
 \end{enumerate}
 
 Dado que las tuplas son inmutables, no proporcionan métodos como {\tt
   sort} y {\tt reverse}, los cuales modifican listas existentes.  Sin embargo, Python
-proporciona la función incorporada {\tt sorted}, la cual toma cualquier secuencia
-y devuelve una nueva lista con los mismos elementos en orden, y
+proporciona la función incorporada {\tt sorted}, que toma cualquier secuencia
+y devuelve una lista nueva con los mismos elementos en orden, y
 {\tt reversed}, que toma una secuencia y devuelve un iterador que
 recorre la lista en orden invertido.
 \index{función sorted}
@@ -10128,7 +10128,7 @@ Las listas, diccionarios y tuplas son ejemplos de {\bf estructuras
   de datos}; en este capítulo comenzamos a ver estructuras de datos
 combinadas, como listas de tuplas, o diccionarios que contienen tuplas
 como claves y listas como valores.  Las estructuras de datos combinadas son útiles,
-pero son propensas a lo que yo llamo {\bf errores de forma}; es decir, errores
+pero son propensas a lo que yo llamo {\bf errores de forma}, es decir, errores
 causados cuando una estructura de datos tiene el tipo, tamaño o estructura
 incorrecta. Por ejemplo, si estás esperando una lista que contiene un entero y yo
 te doy un simple y viejo entero (no en una lista), no funcionará.
@@ -10222,8 +10222,8 @@ que no proporciona operadores ni métodos de lista.
 organizada en listas, diccionarios, tuplas, etc.
 \index{estructura de datos}
 
-\item[error de forma:] Un error causado porque un valor tiene la forma
-incorrecta; es decir, el tipo o tamaño incorrecto.
+\item[error de forma:] Un error causado debido a que un valor tiene la forma
+incorrecta, es decir, el tipo o tamaño incorrecto.
 \index{forma}
 
 \end{description}
@@ -10267,9 +10267,9 @@ Aquí hay un ejemplo de cómo se vería la salida:
 \end{verbatim}
 %
 Pista: quizás quieras construir un diccionario que mapee de una
-colección de letras a una lista de palabras que puedan escribir con esas
+colección de letras a una lista de palabras que se puedan escribir con esas
 letras.  La pregunta es, ¿cómo puedes representar la colección de
-letras de manera que se pueda usar como clave?
+letras de manera que se pueda utilizar como clave?
 
 \item Modifica el programa anterior para que imprima la lista de anagramas
 más grande primero, seguido de la segunda más grande, y así sucesivamente.
@@ -10333,7 +10333,7 @@ quedamos con pit, it, y por último I.
 Escribe un programa que encuentre todas las palabras que se pueden reducir de
 esta manera, y luego encuentra la más larga.
 
-Este ejercicio es más desafiante que la mayoría, así que aquí hay
+Este ejercicio es uno de los más desafiantes, así que aquí hay
 algunas sugerencias:
 
 \begin{enumerate}
