@@ -10374,14 +10374,14 @@ Solución: \url{http://thinkpython2.com/code/reducible.py}.
 \chapter{Estudio de caso: selección de estructura de datos}
 
 En este punto has aprendido sobre las estructuras de datos de Python esenciales,
-y has visto algunos de los algoritmos que los usan.
+y has visto algunos de los algoritmos que los utilizan.
 Si te gustaría saber más sobre algoritmos, este podría ser un buen
 momento para leer el Apéndice~\ref{algorithms}.
 Sin embargo, no tienes que leerlo antes de continuar; puedes leerlo
 cuando te interese.
 
 Este capítulo presenta un estudio de caso con ejercicios que te hacen
-pensar sobre escoger estructuras de datos y practicar usándolos.
+pensar sobre la elección de estructuras de datos y practicar su uso.
 
 
 \section{Análisis de frecuencia de palabras}
@@ -10400,7 +10400,7 @@ y las convierta minúsculas.
 
 Pista: El módulo {\tt string} proporciona una cadena con nombre {\tt whitespace},
 que contiene los caracteres de espacio, tabulación, nueva línea, etc.,
-y {\tt puntuación} que contiene los caracteres de puntuación.  Veamos
+y {\tt punctuation} que contiene los caracteres de puntuación.  Veamos
 si podemos hacer que Python diga groserías:
 
 \begin{verbatim}
@@ -10433,21 +10433,21 @@ Modifica tu programa del ejercicio anterior para que lea el libro
 que descargaste, se salte la información del encabezado al principio
 del archivo y procese el resto de las palabras como antes.
 
-Luego, modifica el programa para que cuente el número total de palabras en
-el libro y el número de veces que se usa cada palabra.
+Luego, modifica el programa para que cuente la cantidad total de palabras en
+el libro y el número de veces que se utiliza cada palabra.
 \index{frecuencia de palabras}
 \index{palabras!frecuencia de}
 
-Imprime el número de palabras diferentes usadas en el libro.  Compara
-libros diferentes de autores diferentes, escritos en épocas diferentes..
-¿Qué autor usa el vocabulario más extenso?
+Imprime el número de palabras diferentes utilizadas en el libro.  Compara
+libros diferentes de autores diferentes, escritos en épocas diferentes.
+¿Qué autor utiliza el vocabulario más extenso?
 \end{exercise}
 
 
 \begin{exercise}
 
 Modifica el programa del ejercicio anterior para que imprima las
-20 palabras usadas con mayor frecuencia en el libro.
+20 palabras utilizadas con mayor frecuencia en el libro.
 
 \end{exercise}
 
@@ -10478,9 +10478,9 @@ obvio, pero hay más.
 
 Hacer un programa verdaderamente no determinista resulta difícil,
 pero hay maneras de hacer que al menos parezca no determinista.  Una de
-ellas es usar algoritmos que generen números {\bf pseudoaleatorios}.
+ellas es utilizar algoritmos que generen números {\bf pseudoaleatorios}.
 Los números pseudoaleatorios no son verdaderamente aleatorios porque se generan
-por una computación determinista, pero solo mirando a los números
+por una computación determinista, pero solo mirando a dichos números
 es casi imposible distinguirlos de los aleatorios.
 \index{módulo random}
 \index{random!módulo}
@@ -10586,19 +10586,19 @@ def procesar_linea(linea, hist):
 hist = procesar_archivo('emma.txt')
 \end{verbatim}
 %
-Este programa lee {\tt emma.txt}, el cual contiene el texto de {\em
+Este programa lee a {\tt emma.txt}, que contiene el texto de {\em
   Emma} de Jane Austen.
 \index{Austen, Jane}
 
 \verb"procesar_archivo" recorre las líneas del archivo,
 pasándolas una a la vez a \verb"procesar_linea".  El histograma
-{\tt hist} se usa como acumulador.
+{\tt hist} se utiliza como acumulador.
 \index{acumulador!histograma}
 \index{recorrido}
 
-\verb"procesar_linea" usa el método de cadena {\tt replace} para reemplazar
-los guiones con espacios antes de usar {\tt split} para separar la línea en una
-lista de cadenas.  Recorre la lista de palabras y usa {\tt strip}
+\verb"procesar_linea" utiliza el método de cadena {\tt replace} para reemplazar
+los guiones con espacios antes de utilizar {\tt split} para separar la línea en una
+lista de cadenas.  Recorre la lista de palabras y utiliza {\tt strip}
 y {\tt lower} para eliminar la puntuación y convertir a minúsculas.  (Es
 una abreviatura decir que las cadenas se ``convierten''; recuerda que
 las cadenas son inmutables, por lo que los métodos como {\tt strip} y {\tt lower}
@@ -10641,7 +10641,7 @@ Número de palabras diferentes: 7214
 
 \section{Palabras más comunes}
 
-Para encontrar las palabras más comunes, podemos hacer una lista de tuplas,
+Para encontrar las palabras más comunes, podemos crear una lista de tuplas,
 donde cada tupla contenga una palabra y su frecuencia,
 y ordenarla.
 
@@ -10658,7 +10658,7 @@ def mas_comunes(hist):
     return t
 \end{verbatim}
 
-En cada tupla, la frecuencia aparece primero, por lo que la lista resultante es
+En cada tupla, la frecuencia aparece primero, por lo que la lista resultante está
 ordenada por frecuencia.  Aquí hay un bucle que imprime las diez palabras más
 comunes:
 
@@ -10669,7 +10669,7 @@ for frec, palabra in t[:10]:
     print(palabra, frec, sep='\t')
 \end{verbatim}
 %
-Yo uso el argumento de palabra clave {\tt sep} para decirle a {\tt print} que use un
+Utilizo el argumento de palabra clave {\tt sep} para decirle a {\tt print} que utilice un
 carácter de tabulación como ``separador'', en lugar de un espacio, así la segunda
 columna está alineada.  Aquí están los resultados de {\em Emma}:
 
@@ -10687,8 +10687,8 @@ was     2400
 she     2364
 \end{verbatim}
 %
-Este código se puede simplificar usando el parámetro {\tt key} de
-la función {\tt sort}.  Si tienes curiosidad, puedes leer sobre este
+Este código se puede simplificar utilizando el parámetro {\tt key} de
+la función {\tt sort}.  Si sientes curiosidad, puedes leer sobre este
 en \url{https://wiki.python.org/moin/HowTo/Sorting}.
 
 
@@ -10699,7 +10699,7 @@ en \url{https://wiki.python.org/moin/HowTo/Sorting}.
 Hemos visto funciones y métodos que toman argumentos
 opcionales.  Es posible, además, escribir funciones definidas por el programador
 con argumentos opcionales.  Por ejemplo, aquí hay una función que
-imprime las palabras más comunes en un histograma:
+imprime las palabras más comunes de un histograma:
 \index{programmer-defined function}
 \index{function!programmer defined}
 
@@ -10711,7 +10711,7 @@ def imprime_mas_comunes(hist, num=10):
         print(palabra, frec, sep='\t')
 \end{verbatim}
 
-El primer parámetro es obligatorio; el segundo es opcional.
+El primer parámetro es obligatorio, el segundo es opcional.
 El {\bf valor por defecto} de {\tt num} es 10.
 \index{valor por defecto}
 \index{por defecto!valor}
@@ -10744,7 +10744,7 @@ opcionales.
 
 Encontrar las palabras del libro que no están en la lista de palabras
 de {\tt words.txt} es un problema que podrías reconocer como diferencia
-de conjuntos; es decir, queremos encontrar todas las palabras de un
+de conjuntos, es decir, queremos encontrar todas las palabras de un
 conjunto (las palabras en el libro) que no están en el otro (las
 palabras en la lista).
 
@@ -10763,7 +10763,7 @@ def diferencia(d1, d2):
 \end{verbatim}
 %
 Para encontrar las palabras en el libro que no están en {\tt words.txt},
-podemos usar \verb"procesar_archivo" para construir un histograma para
+podemos utlizar \verb"procesar_archivo" para construir un histograma para
 {\tt words.txt}, y luego obtener la diferencia:
 
 \begin{verbatim}
@@ -10796,7 +10796,7 @@ operaciones de conjunto comunes.  Puedes leer sobre estas en la Sección~\ref{se
 o leer la documentación en
 \url{http://docs.python.org/3/library/stdtypes.html#types-set}.
 
-Escribe un programa que use diferencia de conjuntos para encontrar palabras en el libro
+Escribe un programa que utilice la diferencia de conjuntos para encontrar palabras en el libro
 que no están en la lista.  Solución:
 \url{http://thinkpython2.com/code/analyze_book2.py}.
 
@@ -10834,17 +10834,17 @@ Una alternativa es:
 
 \begin{enumerate}
 
-\item Usar {\tt keys} para obtener una lista de las palabras del libro.
+\item Utilizar {\tt keys} para obtener una lista de las palabras del libro.
 
 \item Construir una lista que contenga la suma acumulativa de las frecuencias
   de las palabras (ver Ejercicio~\ref{cumulative}).  El último ítem
   en esta lista es el número total de palabras en el libro: $n$.
 
-\item Escoger un número de 1 a $n$.  Usar búsqueda de bisección
+\item Escoger un número de 1 a $n$.  Utilizar búsqueda de bisección
   (ver Ejercicio~\ref{bisection}) para encontrar el índice donde el número
   aleatorio sería insertado en la suma acumulativa.
 
-\item Usar el índice para encontrar la palabra correspondiente en la lista de palabras.
+\item Utilizar el índice para encontrar la palabra correspondiente en la lista de palabras.
 
 \end{enumerate}
 
@@ -10852,7 +10852,7 @@ Una alternativa es:
 \label{randhist}
 \index{algoritmo}
 
-Escribe un programa que use este algoritmo para escoger una palabra aleatoria del
+Escribe un programa que utilice este algoritmo para escoger una palabra aleatoria del
 libro.  Solución:
 \url{http://thinkpython2.com/code/analyze_book3.py}.
 
@@ -10975,7 +10975,7 @@ Además, necesitarás \url{http://thinkpython2.com/code/emma.txt}.
 \section{Estructuras de datos}
 \index{estructuras de datos}
 
-Usar análisis de Markov para generar texto aleatorio es divertido, pero también
+Utilizar análisis de Markov para generar texto aleatorio es divertido, pero también
 hay un punto en este ejercicio: la selección de la estructura de datos.  En tu
 solución al ejercicio anterior, tuviste que escoger:
 
@@ -11009,9 +11009,9 @@ poder formar el siguiente prefijo, ``a bee''.
 \index{tupla!como clave en diccionario}
 
 Tu primera elección podría ser una lista, dado que es fácil agregar y
-eliminar elementos, pero también necesitamos poder usar los
+eliminar elementos, pero también necesitamos poder utilizar los
 prefijos y claves en un diccionario, así que eso descarta las listas.
-Con las tuplas, no puedes anexar o eliminar, pero puedes usar
+Con las tuplas, no puedes anexar o eliminar, pero puedes utilizar
 el operador suma para formar una nueva tupla:
 
 \begin{verbatim}
@@ -11028,8 +11028,8 @@ Para la colección de sufijos, las operaciones que necesitamos
 realizar incluyen agregar un nuevo sufijo (o aumentar la frecuencia
 de uno existente) y escoger un sufijo aleatorio.
 
-Agregar un nuevo sufijo es igual de fácil para la implementación de lista
-o el histograma.  Escoger un elemento aleatorio de una lista
+Agregar un nuevo sufijo es igual de fácil con lista o histograma
+en cuanto a implementación.  Escoger un elemento aleatorio de una lista
 es fácil; escoger del histograma es más díficil de hacer 
 de manera eficiente (ver Ejercicio~\ref{randhist}).
 
@@ -11052,7 +11052,7 @@ los lugares en un programa que toman la mayor parte del tiempo.
 \index{módulo profile}
 \index{profile!módulo}
 
-El otro factor a considerar es el espacio de almacenamiento.  Por ejemplo, usar un
+El otro factor a considerar es el espacio de almacenamiento.  Por ejemplo, utilizar un
 histograma para la colección de sufijos podría ocupar menos espacio porque
 solo tienes que almacenar cada palabra una vez, sin importar cuántas veces
 aparezca en el texto.  En algunos casos, ahorrar espacio puede también hacer que tu
@@ -11061,8 +11061,8 @@ en absoluto si te quedas sin memoria.  Sin embargo, para muchas aplicaciones el 
 una consideración secundaria después del tiempo de ejecución.
 
 Una útlima reflexión: en esta discusión, he insinuado que
-deberíamos usar una estructura de datos tanto para el análisis como para la generación.
-Pero dado que estas son fases separadas, sería posible también usar una
+deberíamos utilizar una estructura de datos tanto para el análisis como para la generación.
+Pero dado que estas son fases separadas, sería posible también utilizar una
 estructura para el análisis y luego convertirla a otra estructura para
 la generación.  Esto sería una ganancia neta si el tiempo ahorrado durante
 la generación excediera al tiempo ocupado en la conversión.
@@ -11211,7 +11211,7 @@ una línea recta con pendiente $-s$ e intercepto log $c$.
 Escribe un programa que lea un texto de un archivo, cuente
 las frecuencias de palabras e imprima una línea
 para cada palabra, en orden de frecuencia descendiente, con
-log $f$ y log $r$.  Usa el progmara de gráficos de tu
+log $f$ y log $r$.  Utiliza el progmara de gráficos de tu
 elección para graficar los resultados y verificar si forman
 una línea recta.  ¿Puedes estimar el valor de $s$?
 
