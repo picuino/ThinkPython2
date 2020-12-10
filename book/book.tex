@@ -11228,8 +11228,8 @@ de lo contrario, quizás tengas que instalarlo.
 \chapter{Archivos}
 
 Este capítulo presenta la idea de programas ``persistentes'' que
-mantienen los datos en almacenamiento permanente y muestra cómo usar diferentes
-tipos de almacenamiento permanente, como archivos y bases de datos.
+mantienen los datos en almacenamiento permanente y muestra cómo utilizar diferentes
+tipos de almacenamiento permanente, tales como archivos y bases de datos.
 
 
 \section{Persistencia}
@@ -11239,17 +11239,17 @@ tipos de almacenamiento permanente, como archivos y bases de datos.
 
 La mayoría de los programas que hemos visto hasta ahora son transitorios en el
 sentido de que se ejecutan por un tiempo corto y producen alguna salida,
-pero cuando terminan, sus datos desaparecen.  Si ejecutas el programa
-de nuevo, comienza con una pizarra limpia.
+pero cuando terminan sus datos desaparecen.  Si ejecutas el programa
+de nuevo, comienza con una pizarra en blanco.
 
 Otros programas son {\bf persistentes}: se ejecutan por un tiempo largo
-(o todo el tiempo); mantienen al menos algunos de sus datos
-en almacenamiento permanente (un disco duro, por ejemplo); y
-si se apagan y reinician, retoman donde lo dejaron.
+(o todo el tiempo), mantienen al menos algunos de sus datos
+en almacenamiento permanente (un disco duro, por ejemplo) y,
+si se apagan y reinician, continúan donde estaban.
 
 Ejemplos de programas persistentes son los sistemas operativos, que se
 se ejecutan casi siempre que un computador está encendido, y los servidores web,
-que se ejecutan todo el tiempo, esperando por solicitudes para entrar en
+que se ejecutan todo el tiempo, esperando solicitudes para entrar en
 la red.
 
 Una de las maneras más simples que tienen los programas para mantener sus datos 
@@ -11273,7 +11273,7 @@ abrir y leer un archivo en la Sección~\ref{wordlist}.
 \index{función open}
 \index{open!función}
 
-Para escribir un archivo, tienese que abrirlo con el modo \verb"'w'" como segundo
+Para escribir un archivo, tienes que abrirlo con el modo \verb"'w'" como segundo
 parámetro:
 
 \begin{verbatim}
@@ -11294,7 +11294,7 @@ El método {\tt write} pone datos en el archivo.
 18
 \end{verbatim}
 %
-El valor de retorno es el número de caracteres que fueron escritos.
+El valor de retorno es la cantidad de caracteres que se escribieron.
 El objeto de archivo hace un seguimiento de dónde está, por lo cual si
 llamas a {\tt write} de nuevo, agrega los nuevos datos al final del
 archivo.
@@ -11331,14 +11331,14 @@ cadenas.  La manera más fácil de hacer eso es con {\tt str}:
 >>> fout.write(str(x))
 \end{verbatim}
 %
-Una alternativa es usar el {\bf operador de formato}, {\tt \%}.  Cuando
+Una alternativa es utilizar el {\bf operador de formato}: {\tt \%}.  Cuando
 se aplica a enteros, {\tt \%} es el operador de módulo.  Pero
 cuando el primer operando es una cadena, {\tt \%} es el operador de formato.
 \index{format string}
 
-El primer operando es la {\bf cadena de formato}, la cual contiene
+El primer operando es la {\bf cadena de formato}, que contiene
 una o más {\bf secuencias de formato}, las cuales
-especifican cómo
+especifican la manera en que
 se da formato al segundo operando.  El resultado es una cadena.
 \index{secuencia de formato}
 
@@ -11367,12 +11367,12 @@ Si hay más de una secuencia de formato en la cadena,
 el segundo argumento tiene que ser una tupla.  Cada secuencia de formato es
 emparejada con un elemento de la tupla, en orden.
 
-El siguiente ejemplo usa \verb"'%d'" para dar formato a un entero,
+El siguiente ejemplo utiliza \verb"'%d'" para dar formato a un entero,
 \verb"'%g'" para dar formato a un número de coma flotante y
 \verb"'%s'" para dar formato a una cadena:
 
 \begin{verbatim}
->>> 'En %d años I he visto %g %s.' % (3, 0.1, 'camellos')
+>>> 'En %d años he visto %g %s.' % (3, 0.1, 'camellos')
 'En 3 años he visto 0.1 camellos.'
 \end{verbatim}
 %
@@ -11441,7 +11441,7 @@ devuelve el nombre del directorio actual:
 \end{verbatim}
 %
 {\tt cwd} significa ``current working directory''.  El resultado en
-este ejemplo es {\tt /home/dinsdale}, lo cual es el directorio principal de un
+este ejemplo es {\tt /home/dinsdale}, que es el directorio principal de un
 usuario con nombre {\tt dinsdale}.
 \index{directorio de trabajo}
 \index{trabajo!directorio de}
@@ -11457,7 +11457,7 @@ nombre de archivo {\tt memo.txt} haría referencia a {\tt /home/dinsdale/memo.tx
 \index{ruta absoluta} \index{absoluta!ruta}
 
 Una ruta que comienza con {\tt /} no depende del directorio
-actual; se llama {\bf ruta absoluta}.  Para encontrar la ruta
+actual: se llama {\bf ruta absoluta}.  Para encontrar la ruta
 absoluta de un archivo, puedes usar {\tt os.path.abspath}:
 
 \begin{verbatim}
@@ -11519,7 +11519,7 @@ en una ruta completa.
 
 El módulo {\tt os} proporciona una función llamada {\tt walk} que es
 similar a esta pero más versátil.  Como ejercicio, lee la
-documentación y úsala para imprimir los nombres de los archivos
+documentación y utiliza esta función para imprimir los nombres de los archivos
 en un directorio dado y sus subdirectorios.  Puedes descargar mi solución desde
 \url{http://thinkpython2.com/code/walk.py}.
 
@@ -11556,10 +11556,10 @@ Y si intentas abrir un directorio para lectura, obtienes
 IsADirectoryError: [Errno 21] Is a directory: '/home'
 \end{verbatim}
 %
-Para evitar estos errores, podrías usar funciones como {\tt os.path.exists}
+Para evitar estos errores, podrías utilizar funciones como {\tt os.path.exists}
 y {\tt os.path.isfile}, pero tomaría mucho tiempo y código
-verificar todas las posibilidades (si ``{\tt Errno 21}'' es alguna
-indicación, hay al menos 21 cosas que pueden salir mal).
+verificar todas las posibilidades (si ``{\tt Errno 21}'' indica
+algo, hay al menos 21 cosas que pueden salir mal).
 \index{excepción, detectar}
 \index{sentencia try}
 \index{try!sentencia}
@@ -11577,7 +11577,7 @@ except:
 %
 Python comienza ejecutando la cláusula {\tt try}.  Si todo sale
 bien, se salta la cláusula {\tt except} y continúa.  Si ocurre
-una excepción, salta fuera de la cláusula {\tt try} y
+una excepción, salta hacia afuera de la cláusula {\tt try} y
 ejecuta la cláusula {\tt except}.
 
 Manejar una excepción con una sentencia {\tt try} se llama {\bf
@@ -11613,7 +11613,7 @@ Abrir una base de datos es similar a abrir otros archivos:
 %
 El modo \verb"'c'" significa que la base de datos debería ser creada si
 no existe ya.  El resultado es un objeto de base de datos
-que puede ser usado (para la mayoría de las operaciones) como un diccionario.
+que puede ser utilizado (para la mayoría de las operaciones) como un diccionario.
 \index{objeto de base de datos}
 \index{base de datos!objeto}
 
@@ -11632,8 +11632,7 @@ b'Foto de John Cleese.'
 \end{verbatim}
 %
 El resultado es un {\bf objeto de bytes}, que es la razón por la cual comienza con {\tt
-  b}.  Un objeto de bytes es similar a una cadena en muchos sentidos.  Cuando
-te adentras más en Python, la diferencia se vuelve importante, pero por ahora
+  b}.  Un objeto de bytes es similar a una cadena en muchos sentidos.  A medida que llegas más lejos en Python, la diferencia se vuelve importante, pero por ahora
 podemos ignorarla.
 \index{objeto de bytes}
 \index{bytes!objeto}
@@ -11673,7 +11672,7 @@ termines:
 \index{pickle}
 
 Una limitación de {\tt dbm} es que las claves y valores tienen que ser
-cadenas o bytes.  Si intentas usar cualquier otro tipo, obtienes un error.
+cadenas o bytes.  Si intentas utilizar cualquier otro tipo, obtienes un error.
 \index{módulo pickle} \index{pickle!módulo}
 
 El módulo {\tt pickle} puede ayudar.  Este módulo traduce
@@ -11690,8 +11689,8 @@ una representación de cadena ({\tt dumps} es una abreviatura de ``dump string''
 b'\x80\x03]q\x00(K\x01K\x02K\x03e.'
 \end{verbatim}
 %
-El formato no es obvio para lectores humanos; está destinado a ser
-fácil para que {\tt pickle} lo interprete.  {\tt pickle.loads}
+El formato no es obvio para lectores humanos; está hecho para que
+{\tt pickle} lo encuentre fácil de interpretar.  {\tt pickle.loads}
 (``load string'') reconstituye el objeto:
 
 \begin{verbatim}
@@ -11715,7 +11714,7 @@ False
 En otras palabras, ``picklear'' y luego ``despicklear'' tiene el mismo efecto
 que copiar el objeto.
 
-Puedes usar {\tt pickle} para almacenar objetos que no sean cadena en una base de datos.
+Puedes utilizar {\tt pickle} para almacenar objetos que no sean cadena en una base de datos.
 De hecho, esta combinación es tan común que ha sido
 encapsulada en un módulo llamado {\tt shelve}.
 \index{módulo shelve}
@@ -11736,16 +11735,16 @@ un navegador web escribiendo (por ejemplo) {\tt firefox}.
 \index{comando Unix!ls}
 
 Cualquier programa que puedes iniciar desde la shell puede también
-iniciarse desde Python usando un {\bf objeto de tubería} (en inglés, {\em pipe}), que
+iniciarse desde Python utilizando un {\bf objeto de tubería} (en inglés, {\em pipe}), que
 representa un programa en ejecución.
 
 Por ejemplo, el comando Unix {\tt ls -l} normalmente muestra los
 contenidos del directorio actual en formato largo.  Puedes
 ejecutar {\tt ls} con {\tt os.popen}\footnote{{\tt popen} ahora está
-obsoleto, lo cual significa que se supone que debemos dejar de usarla y comenzar a usar
+obsoleto, lo cual significa que se supone que debemos dejar de utilizarla y comenzar a utilizar
 el módulo {\tt subprocess}.  Pero para casos simples, encuentro a
 {\tt subprocess} más complicado que necesario.  Entonces voy a
-seguir usando {\tt popen} hasta que lo quiten.}:
+seguir utilizando {\tt popen} hasta que lo quiten.}:
 \index{función popen}
 \index{popen!función}
 
@@ -11791,7 +11790,7 @@ antes de que el universo colapse).
 \index{md5}
 \index{suma de verificación}
 
-Puedes usar una tubería para ejecutar {\tt md5sum} desde Python y obtener el resultado:
+Puedes utilizar una tubería para ejecutar {\tt md5sum} desde Python y obtener el resultado:
 
 \begin{verbatim}
 >>> nombre_archivo = 'book.tex'
@@ -11889,7 +11888,7 @@ cambiado.
 \index{función reload}
 \index{reload!función}
 
-Si quieres volver a cargar un módulo, puedes usar la función incorporada
+Si quieres volver a cargar un módulo, puedes utilizar la función incorporada
 {\tt reload}, pero puede ser complicada, por lo cual lo más seguro es
 reiniciar el intérprete y luego importar el módulo de nuevo.
 
@@ -11925,9 +11924,9 @@ espacio en blanco con secuencias de barras invertidas:
 Esto puede ser útil para depurar.
 
 Otro problema que podrías encontrar es que sistemas diferentes
-usan caracteres diferentes para indicar el fin de una línea.  Algunos
-sistemas usan una nueva línea, representada por \verb"\n".  Otros usan
-un caracter ``return'', representado por \verb"\r".  Algunos usan ambos.
+utilizan caracteres diferentes para indicar el fin de una línea.  Algunos
+sistemas utilizan una nueva línea, representada por \verb"\n".  Otros utilizan
+un caracter ``return'', representado por \verb"\r".  Algunos utilizan ambos.
 Si mueves archivos entre sistemas diferentes, estas inconsistencias
 pueden causar problemas.
 \index{carácter de fin de línea}
@@ -11952,7 +11951,7 @@ los elementos de la tupla con el formato especificado por la cadena de formato.
 \index{operador de formato}
 \index{formato!operador de}
 
-\item[cadena de formato:] Una cadena, usada con el operador de formato, que
+\item[cadena de formato:] Una cadena, utilizada con el operador de formato, que
 contiene secuencias de formato.
 \index{cadena de formato}
 
@@ -11983,7 +11982,7 @@ y {\tt except}.
 \index{capturar}
 
 \item[base de datos:] Un archivo cuyo contenido está organizado como un diccionario
-con claves que corresponden a valores.
+con claves y sus correspondientes valores.
 \index{base de datos}
 
 \item[objeto de bytes:] Un objeto similar a una cadena.
