@@ -12776,7 +12776,7 @@ devuelva {\tt True} si {\tt t1} va cronológicamente después de {\tt t2} y
 En las siguientes secciones, escribiremos dos funciones que suman valores de
 tiempo.  Estas demuestran dos tipos de funciones: funciones puras y
 modificadores.  Demuestran también un plan de desarrollo que yo llamo {\bf
-  prototipo y parche}, el cual es una manera de abordar un problema complejo
+  prototipo y parche}, que es una manera de abordar un problema complejo
 comenzando con un prototipo simple y lidiando con las complicaciones
 de manera incremental.
 
@@ -12899,7 +12899,7 @@ contenga ningún ciclo.
 Cualquier cosa que se pueda hacer con modificadores también se puede hacer con funciones
 puras.  De hecho, algunos lenguajes de programación solo permiten funciones
 puras.  Existe evidencia de que los programas que utilizan funciones puras
-son más rápidas de desarrollar y menos propensas a errores que los programas
+son más rápidos de desarrollar y menos propensos a errores que los programas
 que utilizan modificadores.  Sin embargo, los modificadores son convenientes en ocasiones,
 y los programas funcionales tienden a ser menos eficientes.
 
@@ -12933,7 +12933,7 @@ casos especiales--- y no confiable ---dado que es difícil saber si
 has encontrado todos los errores.
 
 Una alternativa es el {\bf desarrollo diseñado}, en el cual la visión
-de alto nivel en el problema puede hacer mucho más fácil la programación.  En
+de alto nivel del problema puede hacer mucho más fácil la programación.  En
 este caso, la visión es que un objeto Tiempo es en realidad un número
 de tres dígitos en base 60 (ver \url{http://en.wikipedia.org/wiki/Sexagesimal}).  El
 atributo {\tt segundo} es la ``columna de unidades'', el atributo {\tt minuto}
@@ -12973,12 +12973,12 @@ def int_a_tiempo(segundos):
 \end{verbatim}
 %
 Quizás tengas que pensar un poco, y ejecutar algunas pruebas, para convencerte
-de que estas funciones están correctas.  Una manera de probarlas es
+de que estas funciones son correctas.  Una manera de probarlas es
 verificar que \verb"tiempo_a_int(int_a_tiempo(x)) == x" para muchos valores de
 {\tt x}.  Este es un ejemplo de prueba de consistencia.
 \index{prueba de consistencia}
 
-Una vez que te convenzas de que están correctas, puedes utilizarlas para
+Una vez que te convenzas de que son correctas, puedes utilizarlas para
 reescribir \verb"sumar_tiempo":
 
 \begin{verbatim}
@@ -13026,7 +13026,7 @@ parte de fracción.
 
 Requisitos como estos se llaman {\bf invariantes} porque
 deberían ser siempre verdaderos.  Visto de manera diferente, si no
-son verdaderos, algo salió mal.
+son verdaderos es porque algo salió mal.
 
 Escribir código para verificar invariantes puede ayudar a detectar errores
 y encontrar sus causas.  Por ejemplo, quizás tengas una función
@@ -13099,7 +13099,7 @@ mayoría de las funciones son puras.
 \index{estilo de programación funcional}
 
 \item[invariante:] Una condición que debería ser siempre verdadera durante la
-ejecución del un programa.
+ejecución de un programa.
 \index{invariante}
 
 \item[sentencia assert:] Una sentencia que verifica una condición y levanta
@@ -13125,7 +13125,7 @@ el producto del Tiempo original y el número.
 Luego, utiliza \verb"mul_tiempo" para escribir una función que tome un objeto
 Tiempo que represente el tiempo de término en una carrera, y un número
 que represente la distancia, y devuelva un objeto Tiempo que represente
-el ritmo promedio (tiempo por cada milla).
+el ritmo de carrera promedio (tiempo por cada milla).
 \index{ritmo de carrera}
 
 \end{exercise}
