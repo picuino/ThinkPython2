@@ -2,7 +2,7 @@ ThinkPython2-spanish
 ====================
 
 `Traducción... 100% [##################################################]`  
-`Revisión...... 70% [###################################...............]`
+`Revisión...... 74% [#####################################.............]`
 
 Código LaTeX de *Piensa en Python*, la traducción al español del libro [Think Python (2nd Edition)](http://greenteapress.com/wp/think-python-2e/) de [Allen Downey](https://github.com/AllenDowney).  Traducción de Jorge Espinoza.
 

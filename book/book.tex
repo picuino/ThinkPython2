@@ -12081,12 +12081,12 @@ Solución: \url{http://thinkpython2.com/code/find_duplicates.py}.
 En este punto sabes cómo utilizar
 funciones para organizar código y
 tipos incorporados para organizar datos.  El siguiente paso es aprender
-``programación orientada a objetos'', el cual utiliza tipos definidos por el programador
+``programación orientada a objetos'', que utiliza tipos definidos por el programador
 para organizar tanto código como datos.  La programación orientada a objetos es
 un gran tema; tomará un par de capítulos para llegar allí.
 \index{programación orientada a objetos}
 
-Loe ejemplos de código de este capítulo están disponibles en
+Los ejemplos de código de este capítulo están disponibles en
 \url{http://thinkpython2.com/code/Point1.py}; las soluciones
 a los ejercicios están disponibles en
 \url{http://thinkpython2.com/code/Point1_soln.py}.
@@ -12239,12 +12239,12 @@ Puedes leer el valor de un atributo utilizando la misma sintaxis:
 3.0
 \end{verbatim}
 %
-La expresión {\tt vacio.x} significa, ``Ve al objeto al cual {\tt vacio}
+La expresión {\tt vacio.x} significa ``Ve al objeto al cual {\tt vacio}
 se refiere y obten el valor de {\tt x}.''  En este ejemplo, asignamos ese
 valor a una variable con nombre {\tt x}.  No hay conflicto entre
 la variable {\tt x} y el atributo {\tt x}.
 
-Puedes usar la notación de punto como parte de una expresión.  Por ejemplo:
+Puedes utilizar la notación de punto como parte de una expresión.  Por ejemplo:
 
 \begin{verbatim}
 >>> '(%g, %g)' % (vacio.x, vacio.y)
@@ -12277,7 +12277,7 @@ la función modifica a {\tt p}, {\tt vacio} cambia.
 \index{alias}
 
 Como ejercicio, escribe una función llamada \verb"distancia_entre_puntos"
-que tome dos Puntos como argumentos y devuelva la destancia entre
+que tome dos Puntos como argumentos y devuelva la distancia entre
 ellos.
 
 
@@ -12334,7 +12334,7 @@ caja.esquina.x = 0.0
 caja.esquina.y = 0.0
 \end{verbatim}
 %
-La expresión {\tt caja.esquina.x} significa,
+La expresión {\tt caja.esquina.x} significa
 ``Ve al objeto al cual {\tt caja} se refiere y seleccionea el atributo con nombre
 {\tt esquina}; luego ve a ese objeto y selecciona el atributo con nombre
 {\tt x}.''
@@ -12413,7 +12413,7 @@ Aquí hay un ejemplo que demuestra el efecto:
 \begin{verbatim}
 >>> caja.anchura, caja.altura
 (150.0, 300.0)
->>> crecer_rectangulo(box, 50, 100)
+>>> crecer_rectangulo(caja, 50, 100)
 >>> caja.anchura, caja.altura
 (200.0, 400.0)
 \end{verbatim}
@@ -12472,9 +12472,9 @@ False
 El operador {\tt is} indica que {\tt p1} y {\tt p2} no son el
 mismo objeto, que es lo que esperábamos.  Sin embargo, tal vez hayas esperado
 que {\tt ==} entregue {\tt True} porque estos puntos contienen los mismos
-datos.  En ese caso, te decepcionará aprender que para
+datos.  En ese caso, te decepcionará aprender que, para
 instancias, el comportamiento por defecto del operador {\tt ==} es el mismo
-que el operador {\tt is}; verifica identidad de objeto, no equivalencia
+que el operador {\tt is}: verifica identidad de objeto, no equivalencia
 de objeto.  Eso ocurre debido a que para tipos definidos por el programador, Python no
 sabe qué debería considerarse equivalente.  Al menos, no todavía.
 \index{is!operador}
@@ -12545,7 +12545,7 @@ devuelva un Rectángulo nuevo en lugar de modificar el antiguo.
 \label{hasattr}
 \index{depuración}
 
-Cuando comienzas a trabajar con objetos, es probable que te encuentres
+Cuando comienzas a trabajar con objetos, es probable que encuentres
 algunas excepciones nuevas.  Si intentas acceder a un atributo
 que no existe, obtienes un {\tt AttributeError}:
 \index{excepción AttributeError}
@@ -12559,7 +12559,7 @@ que no existe, obtienes un {\tt AttributeError}:
 AttributeError: Point instance has no attribute 'z'
 \end{verbatim}
 %
-Si no sabes bien qué tipo es un objeto, puedes consultar:
+Si no sabes bien de qué tipo es un objeto, puedes consultar:
 \index{función type}
 \index{type!función}
 
@@ -12578,7 +12578,7 @@ es una instancia de una clase:
 True
 \end{verbatim}
 %
-Si no sabes bien si un objeto tiene un atributo particular,
+Si no sabes bien si un objeto tiene un atributo en particular,
 puedes utilizar la función incorporada {\tt hasattr}:
 \index{función hasattr}
 \index{hasattr!función}
