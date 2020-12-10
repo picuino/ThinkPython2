@@ -13214,7 +13214,7 @@ la alternativa es más concisa y comunica la estructura del programa
 de manera más precisa.
 
 Por ejemplo, en {\tt Time1.py} no hay conexión
-obvia entre la definición de clase y las definiciones de función
+obvia entre la definición de clase y las definiciones de funciones
 que siguen.  Con algo de revisión, es evidente que cada función
 toma al menos un objeto {\tt Tiempo} como argumento.
 \index{method}
@@ -13369,7 +13369,7 @@ reescrita como método:
 \begin{verbatim}
 # dentro de class Tiempo:
 
-    def aumento(self, segundos):
+    def aumentar(self, segundos):
         segundos += self.tiempo_a_int()
         return int_a_tiempo(segundos)
 \end{verbatim}
@@ -13723,7 +13723,7 @@ def histograma(s):
         if c not in d:
             d[c] = 1
         else:
-            d[c] = d[c]+1
+            d[c] = d[c] + 1
     return d
 \end{verbatim}
 %
