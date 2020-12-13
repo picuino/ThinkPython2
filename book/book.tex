@@ -13960,7 +13960,7 @@ problema y demuestra una solución.
 
 \chapter{Herencia}
 
-La característica de un lenguaje que más frecuentemente se asocia a la programación
+La característica de un lenguaje que se asocia con más frecuencia a la programación
 orientada a objetos es la {\bf herencia}.  La herencia es la posibilidad de
 definir una clase nueva que sea una versión modificada de una clase existente.
 En este capítulo demuestro la herencia utilizando clases que representan
@@ -14010,8 +14010,8 @@ sería ``cifrado'').
 
 \newcommand{\mymapsto}{$\mapsto$}
 
-Por ejemplo, esta tabla muestra los palos y los códigos enteros
-correspondientes:
+Por ejemplo, esta tabla muestra los palos y sus correspondientes
+códigos enteros:
 
 \begin{tabular}{l c l}
 Picas & \mymapsto & 3 \\
@@ -14020,7 +14020,7 @@ Diamantes & \mymapsto & 1 \\
 Tréboles & \mymapsto & 0
 \end{tabular}
 
-Este código facilita la comparación entre cartas: dado que palos con mayor valor mapean a
+Este código facilita la comparación entre cartas: dado que los palos con mayor valor mapean a
 números mayores, podemos comparar palos comparando sus códigos.
 
 El mapeo para los rangos es bastante obvio: cada uno de los rangos de número
@@ -14069,7 +14069,7 @@ reina_de_diamantes = Carta(1, 12)
 \index{atributo de clase}
 \index{clase!atributo de}
 
-Para imprimir objetos Carta de una manera en la que las personas puedan leer
+Para imprimir objetos Carta de una manera que las personas puedan leer
 fácilmente, necesitamos un mapeo de códigos enteros a los rangos y palos
 correspondientes.  Una manera natural de
 hacer eso es con listas de cadenas.  Podemos asignar estas listas a {\bf atributos
@@ -14095,7 +14095,7 @@ atributos de clase porque están asociados al objeto de clase
 \index{instancia!atributo de}
 
 Este término los distingue de variables como {\tt palo} y {\tt
-  rango}, los cuales se llaman {\bf atributos de instancia} porque están
+  rango}, que se llaman {\bf atributos de instancia} porque están
 asociados a una instancia particular.
 \index{notación de punto}
 
@@ -14292,7 +14292,7 @@ cadena larga que contiene nuevas líneas.
 \section{Agregar, quitar, barajar y ordenar}
 
 Para repartir cartas, nos gustaría un método que
-quite una carta de la baraja y la devuelva.
+quite una carta de la baraja y la entregue como valor de retorno.
 El método de lista {\tt pop} proporciona una manera conveniente de hacer eso:
 \index{método pop}
 \index{pop!método}
@@ -14357,7 +14357,7 @@ utiliza el método \verb"__lt__" que definimos para determinar el orden.
 \index{herencia}
 \index{programación orientada a objetos}
 
-La herencia es la posibilidad de definir una clase nueva que es una versión
+La herencia es la posibilidad de definir una clase nueva que sea una versión
 modificada de una clase existente.  Como ejemplo, digamos que queremos una
 clase que represente una ``mano'', es decir, las cartas sostenidas por un jugador.
 Una mano es similar a una baraja: ambas están compuestas de una colección de
@@ -14383,7 +14383,7 @@ class Mano(Baraja):
     """Representa una mano de cartas de juego."""
 \end{verbatim}
 %
-Esta definición indica que {\tt Mano} herede de {\tt Baraja};
+Esta definición indica que {\tt Mano} hereda de {\tt Baraja};
 eso significa que podemos utilizar métodos como \verb"pop_carta" y \verb"agregar_carta"
 en Manos de igual manera que en Barajas.
 
@@ -14400,8 +14400,8 @@ con 52 cartas nuevas, el método init para Manos debería inicializar {\tt
   cartas} con una lista vacía.  \index{anular} \index{método init}
 \index{init!método}
 
-Si proporcionamos un método init en la clase {\tt Mano}, este queda anulado
-en la clase {\tt Baraja}:
+Si proporcionamos un método init en la clase {\tt Mano}, este anula el
+de la clase {\tt Baraja}:
 
 \begin{verbatim}
 # dentro de class Mano:
@@ -14497,8 +14497,8 @@ tiene un Punto.''
 se llama {\bf IS-A} ({\em es un}), como en ``una Mano es un tipo de Baraja.''
 
 \item Una clase podría depender de otra en el sentido de que objetos
-en una clase tome objetos en la segunda clase como parámetros, o
-utilizar objetos en la segunda clase como parte de una computación.  Este
+de una clase tome objetos de la segunda clase como parámetros, o
+utilizar objetos de la segunda clase como parte de una computación.  Este
 tipo de relación se llama {\bf dependencia}.
 
 \end{itemize}
@@ -14600,7 +14600,7 @@ tomar los mismos parámetros, devolver el mismo tipo y cumplir las
 mismas precondiciones y postcondiciones.  Si sigues esta regla,
 encontrarás que cualquier función diseñada para trabajar con una instancia de una
 clase padre, como Baraja, funcionará también con instancias de
-clases hijas como Mano y ManoPóker.
+clases hijas, como Mano y ManoPóker.
 \index{anular}
 \index{interfaz}
 \index{precondición}
@@ -14630,7 +14630,7 @@ interfaces de clase a través del {\bf encapsulamiento de datos}.
 
 El análisis de Markov, de la Sección~\ref{markov}, proporciona un buen ejemplo.
 Si descargas mi código en \url{http://thinkpython2.com/code/markov.py},
-verás que utiliza dos variables globales ---\verb"suffix_map" and
+verás que utiliza dos variables globales ---\verb"suffix_map" y
 \verb"prefix"--- que se leen y escriben desde varias funciones.
 
 \begin{verbatim}
@@ -14667,7 +14667,7 @@ aquí está \verb"process_word":
         try:
             self.suffix_map[self.prefix].append(word)
         except KeyError:
-            # if there is no entry for this prefix, make one
+            # si no hay entrada para este prefijo, crear una
             self.suffix_map[self.prefix] = [word]
 
         self.prefix = shift(self.prefix, word)
@@ -14691,8 +14691,8 @@ entre variables globales y las funciones que las utilizan.
 
 \item Encapsula variables relacionadas como atributos de un objeto.
 
-\item Transforma las funciones asociadas en métodos de una nueva
-clase.
+\item Transforma las funciones asociadas en métodos de una clase
+nueva.
 
 \end{enumerate}
 
@@ -14875,7 +14875,7 @@ código con cuidado antes de continuar.
 
 \item Agrega métodos a {\tt PokerHand.py} con nombre \verb"tiene_pareja",
 \verb"tiene_doblepareja", etc. que devuelva True o False según si
-la mano cumple o no los criterios relevantes.  Tú código debería
+la mano cumple o no los criterios relevantes.  Tu código debería
 funcionar de manera correcta para ``manos'' que contengan cualquier número de cartas
 (aunque 5 y 7 son los tamaños más comunes).
 
