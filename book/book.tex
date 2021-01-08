@@ -14910,7 +14910,7 @@ dentro de un ejercicio.
 
 Ahora quiero volver a ver algunas de estas cosas buenas que dejé atrás.
 Python proporciona un número de características que no son realmente necesarias ---puedes
-escribir buen código sin estas--- pero con estas a veces pudes
+escribir buen código sin estas--- pero con estas a veces puedes
 escribir código más conciso, legible o eficiente, y a veces
 las tres cosas a la vez.
 
@@ -14919,7 +14919,7 @@ las tres cosas a la vez.
 \section{Expresiones condicionales}
 
 Vimos las sentencias condicionales en la Sección~\ref{conditional.execution}.
-Las sentencias condicionales se usan a menudo para escoger uno de dos valores;
+Las sentencias condicionales se utilizan a menudo para escoger uno de dos valores;
 por ejemplo:
 \index{expresión condicional}
 \index{condicional!expresión}
@@ -14938,7 +14938,7 @@ de coma flotante especial que representa ``Not a Number''.
 \index{NaN}
 \index{coma flotante}
 
-Podemos escribir esta sentencia de manera más concisa usando una {\bf expresión
+Podemos escribir esta sentencia de manera más concisa utilizando una {\bf expresión
 condicional}:
 
 \begin{verbatim}
@@ -14948,7 +14948,7 @@ y = math.log(x) if x > 0 else float('nan')
 Puedes leer esta línea casi como si estuviera en inglés: ``{\tt y} es log-{\tt x}
 si {\tt x} es mayor que 0; de lo contrario es NaN''.
 
-Las funciones recursivas a veces se pueden reescribir usando expresiones
+Las funciones recursivas a veces se pueden reescribir utilizando expresiones
 condicionales.  Por ejemplo, aquí hay una versión recursiva de {\tt factorial}:
 \index{factorial}
 \index{función!factorial}
@@ -15012,7 +15012,7 @@ def todas_con_mayuscula(t):
     return res
 \end{verbatim}
 
-Podemos escribir esto de manera más concisa usando una {\bf comprensión de lista}:
+Podemos escribir esto de manera más concisa utilizando una {\bf comprensión de lista}:
 \index{comprensión de lista}
 
 \begin{verbatim}
@@ -15047,7 +15047,7 @@ def solo_mayusculas(t):
     return res
 \end{verbatim}
 
-Podemos reescribirla utilizando una lista por comprensión
+Podemos reescribirla utilizando una comprensión de lista
 
 \begin{verbatim}
 def solo_mayusculas(t):
@@ -15081,8 +15081,8 @@ con paréntesis en lugar de corchetes:
 \end{verbatim}
 %
 El resultado en un objeto generador que sabe cómo iterar a través de
-una secuencia de valores.  Sin embargo, a diferencia de una comprensión de lista, esta no
-calcula todos los valores de una vez; espera hasta ser consultada.  La función
+una secuencia de valores.  Sin embargo, a diferencia de una comprensión de lista, este no
+calcula todos los valores de una vez: espera hasta ser consultado.  La función
 incorporada {\tt next} obtiene el siguiente valor del generador:
 \index{objeto generador}
 \index{generador!objeto}
@@ -15110,7 +15110,7 @@ a través de los valores:
 %
 El objeto generador hace un seguimiento de dónde está en la secuencia,
 por lo cual el bucle {\tt for} retoma donde {\tt next} lo dejó.  Una vez que el
-generador se agota, continúa para levantar {\tt StopIteration}:
+generador se acaba, continúa para levantar {\tt StopIteration}:
 
 \begin{verbatim}
 >>> next(g)
@@ -15302,8 +15302,8 @@ lista, o cualquier otra cosa que soporte iteraciones:
 Counter({'r': 2, 't': 1, 'o': 1, 'p': 1, 'a': 1})
 \end{verbatim}
 
-Los contadores se comportan como diccionarios en muchas maneras; mapean de cada
-clave al número de veces que este aparece.  Al igual que en los diccionarios,
+Los contadores se comportan como diccionarios en muchas maneras: mapean de cada
+clave al número de veces que esta aparece.  Al igual que en los diccionarios,
 las claves tienen que ser hashables.
 
 A diferencia de los diccionarios, los contadores no elevan una excepción si accedes a
@@ -15503,7 +15503,7 @@ El método init asigna argumentos a atributos utilizando nombres
 que proporcionas.  El método str imprime una representación del objeto Punto
 y sus atributos.
 
-Puedes acceder a los elementos de la tupla con nombre por sus nombres:
+Puedes acceder a los elementos de la tupla con nombre, escribiendo sus nombres:
 
 \begin{verbatim}
 >>> p.x, p.y
@@ -15749,7 +15749,7 @@ Aquí hay algunas maneras de evitar los errores de sintaxis más comunes:
 
 \begin{enumerate}
 
-\item Asegúrate de que no estás usando una palabra clave de Python para un nombre de variable.
+\item Asegúrate de que no estás utilizando una palabra clave de Python para un nombre de variable.
 \index{palabra clave}
 
 \item Verifica que tienes un signo de dos puntos al final del encabezado de cada
@@ -15784,7 +15784,7 @@ de un condicional.
 \item Revisa la sangría para asegurarte de que esté alineada como se
 supone que debe.  Python puede manejar el espacio y la tabulación, pero si los mezclas
 puede causar problemas.  La mejor manera de evitar este problema
-es usar un editor de texto que sepa sobre Python y genere
+es utilizar un editor de texto que sepa sobre Python y genere
 sangría consistente.
 \index{sangría}
 \index{espacio en blanco}
@@ -15825,12 +15825,12 @@ el nombre antiguo.
 \item Algo en tu entorno de desarrollo está configurado
 de manera incorrecta.
 
-\item Si estás escribiendo un módulo y usando {\tt import},
+\item Si estás escribiendo un módulo y utilizando {\tt import},
 asegúrate de que no le das a tu módulo el mismo nombre que uno
 de los módulos estándar de Python.
 
-\item Si estás usando {\tt import} para leer un módulo, recuerda
-que tienes que reiniciar el intérprete o usar {\tt reload}
+\item Si estás utilizando {\tt import} para leer un módulo, recuerda
+que tienes que reiniciar el intérprete o utilizar {\tt reload}
 para leer un archivo modificado.  Si importas el módulo de nuevo,
 no hace nada.
 \index{módulo!reload}
@@ -15890,7 +15890,7 @@ recursion depth exceeded''.  Si eso ocurre, ve a la sección
 ``Recursividad infinita'' de más adelante.
 
 Si no obtienes este error pero sospechas que hay un problema
-con una función recursiva o método recursivo, todavía puedes usar las térnicas
+con una función recursiva o método recursivo, todavía puedes utilizar las térnicas
 de la sección ``Recursividad infinita''.
 
 \item Si ninguno de esos pasos funciona, comienza a probar otros
@@ -15990,7 +15990,7 @@ Estos son algunos de los errores de tiempo de ejecución más comunes:
 
 \begin{description}
 
-\item[NameError:]  Estás intentando usar una variable que no
+\item[NameError:]  Estás intentando utilizar una variable que no
 existe en el entorno actual.  Revisa si el nombre
 está bien escrito, o al menos de manera consistente.
 Y recuerda que las variables locales son locales; 
@@ -16004,7 +16004,7 @@ no puedes referirte a estas desde afuera de la función donde se definieron.
 
 \begin{itemize}
 
-\item  Estás intentando usar un valor de manera inapropiada.  Ejemplo: indexar
+\item  Estás intentando utilizar un valor de manera inapropiada.  Ejemplo: indexar
 una cadena, lista o tupla con algo que no es un entero.
 \index{índice}
 
@@ -16024,14 +16024,14 @@ de manera correcta.
 \end{itemize}
 
 \item[KeyError:]  Estás intentando acceder a un elemento de un diccionario
-usando una clave que el diccionario no contiene.  Si las claves
+utilizando una clave que el diccionario no contiene.  Si las claves
 son cadenas, recuerda que las mayúsculas importan.
 \index{KeyError}
 \index{excepción!KeyError}
 \index{diccionario}
 
 \item[AttributeError:] Estás intentando acceder a un atributo o método
-  que no existe.  ¡Revisa la ortografía!  Puedes usar la función
+  que no existe.  ¡Revisa la ortografía!  Puedes utilizar la función
   incorporada {\tt vars} para hacer una lista de los atributos que sí existen.
 \index{dir function}
 \index{function!dir}
@@ -16043,12 +16043,12 @@ nombre de atributo, sino el objeto.
 La razón por la cual el objeto es {\tt None} podría ser que olvidaste
 devolver un valor desde una función; si llegas al final de
 una función poniendo una sentencia {\tt return}, devuelve
-{\tt None}.  Otra causa común es usar el resultado de
+{\tt None}.  Otra causa común es utilizar el resultado de
 un método de lista, como {\tt sort}, que devuelve {\tt None}.
 \index{AttributeError}
 \index{excepción!AttributeError}
 
-\item[IndexError:] El índice que estás usando
+\item[IndexError:] El índice que estás utilizando
 para acceder a una lista, cadena o tupla es mayor que
 su longitud menos uno.  Inmediatamente antes del lugar del error,
 agrega una sentencia {\tt print} para mostrar en pantalla
@@ -16072,7 +16072,7 @@ la salida.}
 \index{sentencia print}
 \index{print!sentencia}
 
-Uno de los problemas al usar sentencias {\tt print} para depurar
+Uno de los problemas al utilizar sentencias {\tt print} para depurar
 es que puedes terminar enterrándote en la salida.  Hay dos maneras
 de proceder: simplificar la salida o simplificar el programa.
 
@@ -16220,7 +16220,7 @@ que el orden de evaluación sea explícito:
  y = x / (2 * math.pi)
 \end{verbatim}
 %
-Siempre que no sepas bien del orden de evaluación, usa
+Siempre que no sepas bien del orden de evaluación, utiliza
 paréntesis.  No solo estará correcto el programa (en el sentido
 de hacer lo que pretendías), también será más legible para
 otras personas que no han memorizado el orden de las operaciones.
@@ -16233,7 +16233,7 @@ yo espero.}
 
 Si tienes una sentencia {\tt return} con una expresión compleja,
 no tienes la posibilidad de imprimir el resultado antes de
-devolverlo.  De nuevo, puedes usar una variable temporal.  Por
+devolverlo.  De nuevo, puedes utilizar una variable temporal.  Por
 ejemplo, en lugar de:
 
 \begin{verbatim}
@@ -16363,10 +16363,10 @@ para bases de datos grandes.  La respuesta que Schmidt probablemente estaba busc
 ``ordenamiento radix'' (\url{http://en.wikipedia.org/wiki/Radix_sort})\footnote{
 Pero si tienes una pregunta como esta en una entrevista, pienso que
 una mejor respuesta es, ``La manera más rápida de ordenar un millón de enteros
-es usar cualquier función de ordenamiento que sea proporcionada por el lenguaje
-que estoy usando.  Su rendimiento es suficientemente bueno para la gran mayoría
+es utilizar cualquier función de ordenamiento que sea proporcionada por el lenguaje
+que estoy utilizando.  Su rendimiento es suficientemente bueno para la gran mayoría
 de las aplicaciones, pero si resulta que mi aplicación fue muy
-lenta, usaría un analizador de rendimiento para ver dónde fue utilizado
+lenta, utilizaría un analizador de rendimiento para ver dónde fue utilizado
 el tiempo.  Si pareciera que un algoritmo de ordenamiento más rápido tendría
 un efecto importante en el rendimiento, entonces buscaría
 una buena implementación del ordenamiento radix.''}.
@@ -16680,19 +16680,19 @@ las siguientes preguntas:
   Obama piensa que es ``la manera incorrecta de proceder''?
 
 \item ¿Cuál es el orden de crecimiento del ordenamiento radix?  ¿Qué precondiciones
-  necesitamos para usarlo?
+  necesitamos para utilizarlo?
 
 \item ¿Qué es un ordenamiento estable y por qué podría importar en la práctica?
 \index{ordenamiento estable}
 
 \item ¿Cuál es el peor algoritmo de ordenamiento (y cuál es su nombre)?
 
-\item ¿Qué algoritmo de ordenamiento usa la librería de C?  ¿Qué algoritmo de ordenamiento
-  usa Python?  ¿Son estos algorimos estables?  Quizás tengas que
-  usar Google para encontrar estas respuestas.
+\item ¿Qué algoritmo de ordenamiento utiliza la librería de C?  ¿Qué algoritmo de ordenamiento
+  utiliza Python?  ¿Son estos algorimos estables?  Quizás tengas que
+  utilizar Google para encontrar estas respuestas.
 
 \item Muchos de los algoritmos de ordenamiento diferentes al de comparación son lineales, entonces ¿por qué
-  Python usa un algoritmo de comparación $O(n \log n)$?
+  Python utiliza un algoritmo de comparación $O(n \log n)$?
 
 \end{enumerate}
 
@@ -16712,13 +16712,13 @@ En el peor de los casos tiene que recorrer toda la colección, por lo cual el ti
 de ejecución es lineal.
 \index{búsqueda lineal}
 
-El operador {\tt in} para secuencias usa una búsqueda lineal; los métodos
+El operador {\tt in} para secuencias utiliza una búsqueda lineal; los métodos
 de cadena como {\tt find} y {\tt count} también.
 \index{operador in@{\tt in}}
 
-Si los elementos de la secuencia están en orden, puedes usar una {\bf
+Si los elementos de la secuencia están en orden, puedes utilizar una {\bf
   búsqueda de bisección}, que es $O(\log n)$.  La búsqueda de bisección es
-similar al algoritmo que podrías usar para buscar una palabra en un
+similar al algoritmo que podrías utilizar para buscar una palabra en un
 diccionario (un diccionario de papel, no la estructura de datos).  En lugar de
 comenzar del principio y revisar cada ítem en orden, comienzas
 con el ítem en el medio y verificas si la palabra que buscas
@@ -16738,7 +16738,7 @@ trabajo extra.
 Hay otra estructura de datos, llamada {\bf tabla hash} (en inglés, {\em hashtable}) que
 es incluso más rápida ---puede hacer una búsqueda en tiempo constante--- y
 no requiere que los ítems estén ordenados.  Los diccionarios de Python
-se implementan usando tablas hash, por lo cual la mayoría de las operaciones
+se implementan utilizando tablas hash, por lo cual la mayoría de las operaciones
 de diccionario, incluyendo el operador {\tt in}, son de tiempo constante.
 
 
@@ -16751,7 +16751,7 @@ gradualmente lo mejoro hasta que sea una tabla hash.
 \index{tabla hash}\index{hashtable}
 
 Yo uso Python para demostrar estas implementaciones, pero en la vida
-real no escribirías código como este en Python: ¡solo usarías un
+real no escribirías código como este en Python: ¡solo utilizarías un
 diccionario!  Para el resto de este capítulo, tienes que imaginar que
 los diccionarios no existen y quieres implementar una estructura de datos
 que mapee de claves a valores.  Las operaciones que tienes que
@@ -16770,7 +16770,7 @@ se escribe {\tt d[k]} o {\tt d.get(k)}.
 \end{description}
 
 Por ahora, supongo que cada clave aparece una sola vez.
-La implementación más simple de esta interfaz usa una lista de
+La implementación más simple de esta interfaz utiliza una lista de
 tuplas, donde cada tupla es un par clave-valor.
 \index{LinearMap@{\tt LinearMap}}
 
@@ -16793,14 +16793,14 @@ class LinearMap:
 {\tt add} anexa una tupla clave-valor a la lista de ítems, lo cual
 toma tiempo constante.
 
-{\tt get} usa un bucle {\tt for} para buscar la lista:
+{\tt get} utiliza un bucle {\tt for} para buscar la lista:
 encuentra la clave objetivo y devuelve el valor correspondiente;
 de lo contrario, ocurre un {\tt KeyError}.
 Entonces, {\tt get} es lineal.
 \index{KeyError@{\tt KeyError}}
 
 Una alternativa es mantener la lista ordenada por clave.  Entonces {\tt get}
-podría usar una búsqueda de bisección, que es $O(\log n)$.  Pero insertar un
+podría utilizar una búsqueda de bisección, que es $O(\log n)$.  Pero insertar un
 nuevo ítem en el medio de una lista es lineal, por lo cual podría no ser la
 mejor opción.  Hay otras estructuras de datos que pueden implementar {\tt
   add} y {\tt get} en tiempo logarítmico, pero eso aún no es tan bueno como
@@ -16837,12 +16837,12 @@ class BetterMap:
 
 \verb"__init__" crea una lista de {\tt n} {\tt LinearMap}s.
 
-\verb"find_map" es usado por
+\verb"find_map" es utilizado por
 {\tt add} y {\tt get}
 para averiguar en cuál mapa poner el
 nuevo ítem, o en cuál mapa buscar.
 
-\verb"find_map" usa la función incorporada {\tt hash}, que toma
+\verb"find_map" utiliza la función incorporada {\tt hash}, que toma
 casi cualquier objeto de Python y devuelve un entero.  Una limitación de esta
 implementación es que solo funciona con claves hashables.  Los tipos
 mutables como las listas y los diccionarios no son hashables.
@@ -16852,7 +16852,7 @@ Los objetos hashables que se consideran equivalentes devuelven el mismo valor
 hash, pero lo inverso no es necesariamente verdadero: dos objetos con
 valores diferentes pueden devolver el mismo valor hash.
 
-\verb"find_map" usa el operador de módulo para ajustar los valores hash
+\verb"find_map" utiliza el operador de módulo para ajustar los valores hash
 en el rango entre 0 y {\tt len(self.maps)}, por lo cual el resultado es un índice
 legal en la lista.  Por supuesto, esto significa que muchos valores
 hash diferentes se ajustarán al mismo índice.  Pero si la función hash
@@ -16981,7 +16981,7 @@ por cada {\tt add} es lineal.
 
 Puedes descargar mi implementación de HashMap en
 \url{http://thinkpython2.com/code/Map.py}, pero recuerda que no hay
-razón para usarla; si quieres un mapa, solo usa un diccionario de Python.
+razón para utilizarla; si quieres un mapa, solo utiliza un diccionario de Python.
 
 \section{Glosario}
 
@@ -16991,7 +16991,7 @@ razón para usarla; si quieres un mapa, solo usa un diccionario de Python.
 su tiempo de ejecución y/o requerimientos de espacio.
 \index{análisis de algoritmos}
 
-\item[modelo de máquina:] Una representación simplificada de un computador usada
+\item[modelo de máquina:] Una representación simplificada de un computador utilizada
 para describir algoritmos.
 \index{modelo de máquina}
 
