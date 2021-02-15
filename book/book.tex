@@ -833,7 +833,7 @@ problemas instalando Python.  Sin embargo, puede ser doloroso para
 los principiantes aprender sobre administración del sistema y programación al
 mismo tiempo.
 \index{ejecutar Python}
-\index{Python!ejecutar}
+\index{Python, ejecutar}
 
 Para evitar ese problema, recomiendo que comiences ejecutando Python
 en un navegador.  Después, cuando te acostumbres a Python, haré
@@ -914,12 +914,12 @@ Hola, mundo
 Las comillas en el programa marcan el principio y el final
 del texto a visualizar: estas no aparecen en el resultado.
 \index{comillas}
-\index{sentencia print}
-\index{print!sentencia}
+\index{sentencia!print}
+\index{print, sentencia}
 
 Los paréntesis indican que {\tt print} es una función.  Llegaremos
 a las funciones en el Capítulo~\ref{funcchap}.
-\index{función} \index{función print}
+\index{función} \index{función!print}
 
 En Python 2, la sentencia print es un poco diferente; no es
 una función, así que no utiliza paréntesis.
@@ -934,8 +934,8 @@ comenzar.
 
 
 \section{Operadores aritméticos}
-\index{aritmético!operador}
-\index{operador aritmético}
+\index{aritmético, operador}
+\index{operador!aritmético}
 
 Después de ``Hola, mundo'', el siguiente paso es la aritmética.  Python
 proporciona {\bf operadores}, los cuales son símbolos especiales que
@@ -983,8 +983,8 @@ los operadores bit a bit, el resultado te sorprenderá:
 No cubriré
 operadores bit a bit en este libro, pero puedes leer sobre
 estos en \url{http://wiki.python.org/moin/BitwiseOperators}.
-\index{operador bit a bit}
-\index{bit a bit!operador}
+\index{operador!bit a bit}
+\index{bit a bit, operador}
 
 
 \section{Valores y tipos}
@@ -1023,13 +1023,13 @@ Evidentemente, los enteros pertenecen al tipo {\tt int},
 las cadenas pertenecen al tipo {\tt str} y los números de
 coma flotante pertenecen al tipo {\tt float}.
 \index{tipo}
-\index{tipo string}
-\index{tipo cadena}
+\index{tipo!string}
+\index{tipo!cadena}
 \index{str!tipo}
-\index{tipo int}
+\index{tipo!int}
 \index{int!tipo}
-\index{tipo float}
-\index{float!tipo}
+\index{tipo!float}
+\index{float, tipo}
 
 ¿Qué pasa con los valores como \verb"'2'" y \verb"'42.0'"?
 Se ven como números, pero están en comillas como
@@ -1070,10 +1070,10 @@ más sobre este tipo de secuencia más adelante.
 
 
 \section{Lenguajes formales y lenguajes naturales}
-\index{lenguaje formal}
-\index{lenguaje natural}
-\index{formal!lenguaje}
-\index{natural!lenguaje}
+\index{lenguaje!formal}
+\index{lenguaje!natural}
+\index{formal, lenguaje}
+\index{natural, lenguaje}
 
 Los {\bf lenguajes naturales} son los lenguajes que hablan las personas,
 tales como el inglés, el español y el francés.  No fueron diseñados
@@ -1193,7 +1193,7 @@ Los programadores cometen errores.  Por razones caprichosas, los {\bf errores
 de programación} se llaman {\em bugs} y el proceso de localizarlos se llama
 {\bf depuración} (en inglés, {\em debugging}).
 \index{depuración}\index{debugging}
-\index{bug}\index{error de programación}
+\index{bug}\index{error!de programación}
 
 La programación, y especialmente la depuración, a veces provoca emociones
 fuertes.  Si estás luchando con un error de programación difícil, podrías
@@ -1237,12 +1237,12 @@ una solución y expresarla.
 
 \item[lenguaje de alto nivel:]  Un lenguaje de programación como Python que
 está diseñado para que los humanos puedan leer y escribir fácilmente.
-\index{lenguaje de alto nivel}
+\index{lenguaje!de alto nivel}
 
 \item[lenguaje de bajo nivel:]  Un lenguaje de programación que está diseñado
 para que sea fácil de ejecutar por un computador; también llamado ``lenguaje de máquina'' o
 ``lenguaje ensamblador''.
-\index{lenguaje de bajo nivel}
+\index{lenguaje!de bajo nivel}
 
 \item[portabilidad:]  Una propiedad de un programa que puede ejecutarse en más
 de un tipo de computador.
@@ -1261,7 +1261,7 @@ que está listo para recibir la entrada del usuario.
 
 \item[sentencia print:]  Una instrucción que hace que el intérprete de Python
 muestre un valor en la pantalla.
-\index{sentencia print}
+\index{print, sentencia}
 \index{sentencia!print}
 
 \item[operador:]  Un símbolo especial que representa una computación simple
@@ -1289,12 +1289,12 @@ fraccionarias.
 
 \item[lenguaje natural:]  Cualquiera de los lenguajes que hablan las personas y
 que evolucionaron de manera natural.
-\index{lenguaje natural}
+\index{lenguaje!natural}
 
 \item[lenguaje formal:]  Cualquiera de los lenguajes que las personas han diseñado
 para propósitos específicos, tales como representar ideas matemáticas o
 programas de computador; todos los lenguajes de programación son lenguajes formales.
-\index{lenguaje formal}
+\index{lenguaje!formal}
 
 \item[token:]  Uno de los elementos básicos de la estructura sintáctica de
 un programa, análogo a una palabra en un lenguaje natural.
@@ -1307,7 +1307,7 @@ un programa, análogo a una palabra en un lenguaje natural.
 estructura sintáctica.\index{parse}\index{análisis sintáctico}
 
 \item[error de programación ({\em bug}):] Un error en un programa.
-\index{bug}\index{error de programación}
+\index{bug}\index{error!de programación}
 
 \item[depuración ({\em debugging}):] El proceso de encontrar y corregir
 errores de programación.\index{depuración}\index{debugging}
@@ -1392,7 +1392,7 @@ se refiere a un valor.
 
 \section{Sentencias de asignación}
 \label{variables}
-\index{sentencia de asignación}
+\index{sentencia!de asignación}
 \index{asignación!sentencia de}
 
 Una {\bf sentencia de asignación} crea una nueva variable y le da
@@ -1408,8 +1408,8 @@ Este ejemplo hace tres asignaciones.  La primera asigna una cadena
 a una nueva variable llamada {\tt mensaje};
 la segunda pone al entero {\tt 17} en {\tt n}; la tercera
 asigna el valor (aproximado) de $\pi$ a {\tt pi}.
-\index{diagrama de estado}
-\index{estado!diagrama de}
+\index{diagrama!de estado}
+\index{estado, diagrama de}
 
 Una forma común de representar en papel las variables es escribir el nombre con
 una flecha apuntando a su valor.  Este tipo de figura se
@@ -1484,7 +1484,7 @@ como nombre de variable, lo sabrás.
 Una {\bf expresión} es una combinación de valores, variables y operadores.
 Un valor por sí mismo es considerado una expresión, y por consigiuente lo es
 una variable, así que las siguientes son todas expresiones legales:
-\index{expression}
+\index{expresión}
 
 \begin{verbatim}
 >>> 42
@@ -1725,7 +1725,7 @@ distinguir entre ellos para rastrearlos de manera más rápida.
 \item[Error de sintaxis:] La ``sintaxis'' se refiere a la estructura de un programa
   y las reglas sobre esa estructura.  Por ejemplo, los paréntesis tienen
   que venir en pares que coincidan, por lo que {\tt (1 + 2)} es legal, pero {\tt 8)}
-  es un {\bf error de sintaxis}.  \index{error de sintaxis} \index{sintaxis!error de}
+  es un {\bf error de sintaxis}.  \index{error!de sintaxis} \index{sintaxis!error de}
   \index{mensaje de error}
 \index{sintaxis}
 
@@ -1741,8 +1741,8 @@ cometerás menos errores y los encontrarás más rápido.
   llamado así porque el error no aparece hasta después de que el programa ha
   comenzado a ejecutarse.  Estos errores también se llaman {\bf excepciones}
   porque usualmente indican que algo excepcional (y malo)
-  ha ocurrido.  \index{error de tiempo de ejecución} \index{tiempo de ejecución!error de}
-  \index{excepción} \index{lenguaje seguro} \index{seguro!lenguaje}
+  ha ocurrido.  \index{error!de tiempo de ejecución} \index{tiempo de ejecución, error de}
+  \index{excepción} \index{lenguaje!seguro} \index{seguro, lenguaje}
 
 Los errores de tiempo de ejecución son poco comunes en programas simples que verás en los
 primeros capítulos, así que puede pasar un tiempo antes de que encuentres uno.
@@ -1752,8 +1752,8 @@ primeros capítulos, así que puede pasar un tiempo antes de que encuentres uno.
   significa que se relaciona con el significado.  Si hay un error semántico en tu
   programa, se ejecutará sin generar mensajes de error, pero
   no hará lo correcto.  Hará otra cosa.  Específicamente,
-  hará lo que le dijiste que hiciera.  \index{error semántico}
-  \index{semántico!error} \index{mensaje de error}
+  hará lo que le dijiste que hiciera.  \index{error!semántico}
+  \index{semántico, error} \index{mensaje de error}
 
 Identificar errores semánticos puede ser complicado porque requiere que trabajes
 hacia atrás mirando la salida del programa e intentando averiguar
@@ -1774,7 +1774,7 @@ lo que hace.
 
 \item[diagrama de estado:]  Una representación gráfica de un conjunto de variables y los
 valores a los cuales se refieren.
-\index{diagrama de estado}
+\index{diagrama!de estado}
 
 \item[palabra clave:]  Una palabra reservada que se utiliza como parte de la sintaxis
 de un programa; no puedes utilizar palabras claves tales como {\tt if}, {\tt  def} y {\tt while} como
@@ -1811,7 +1811,7 @@ código de un script y ejecutarlo.
 
 \item[orden de operaciones:]  Reglas que gobiernan el orden en el cual
 se evalúan las expresiones que involucran múltiples operadores y operandos.
-\index{order of operations}
+\index{orden de operaciones}
 
 \item[concatenar:]  Unir dos operandos de extremo a extremo.
 \index{concatenación}
@@ -1823,7 +1823,7 @@ ejecución del programa.
 
 \item[error de sintaxis:]  Un error en un programa que hace imposible reconocer
 la estructura sintáctica (y por lo tanto imposible de interpretar).
-\index{error de sintaxis}
+\index{error!de sintaxis}
 
 \item[excepción:]  Un error que es detectado mientras el programa se ejecuta.
 \index{excepción}
@@ -1833,7 +1833,7 @@ la estructura sintáctica (y por lo tanto imposible de interpretar).
 
 \item[error semántico:]   Un error en un programa que supone hacer algo
 distinto a lo que el programador pretendía.
-\index{error semántico}
+\index{error!semántico}
 
 \end{description}
 
@@ -1924,7 +1924,7 @@ de un tipo a otro.  La función {\tt int} toma cualquier valor y
 lo convierte en un entero, si puede, o de lo contrario reclama:
 \index{tipo!conversión de}
 \index{conversión de tipo}
-\index{función int}
+\index{función!int}
 \index{int!función}
 
 \begin{verbatim}
@@ -1946,8 +1946,8 @@ no redondea; corta la parte de fracción:
 %
 {\tt float} convierte enteros y cadenas en números coma
 flotante:
-\index{función float}
-\index{float!función}
+\index{función!float}
+\index{float, función}
 
 \begin{verbatim}
 >>> float(32)
@@ -1957,8 +1957,8 @@ flotante:
 \end{verbatim}
 %
 Por último, {\tt str} convierte su argumento en una cadena:
-\index{str!function}
-\index{función str}
+\index{str!función}
+\index{función!str}
 
 \begin{verbatim}
 >>> str(32)
@@ -1969,14 +1969,14 @@ Por último, {\tt str} convierte su argumento en una cadena:
 %
 
 \section{Funciones matemáticas}
-\index{función matemática}
-\index{matemática!función}
+\index{función!matemática}
+\index{matemática, función}
 
 Python tiene un módulo matemático que proporciona la mayor parte de las
 funciones matemáticas conocidas.  Un {\bf módulo} es un archivo que contiene una
 colección de funciones relacionadas entre sí.
-\index{module}
-\index{module object}
+\index{módulo}
+\index{objeto!de módulo}
 
 Antes de que podamos utilizar las funciones de un módulo, tenemos que importarlo con
 una {\bf sentencia import}:
@@ -2011,12 +2011,12 @@ El primer ejemplo utiliza \verb"math.log10" para calcular
 una relación señal/ruido en decibeles (suponiendo que \verb"potencia_senal" y
 \verb"potencia_ruido" están definidas).  El módulo math también proporciona a {\tt log},
 que calcula logaritmos en base {\tt e}.
-\index{función log}
-\index{log!función}
-\index{función seno}
+\index{función!log}
+\index{log, función}
+\index{función!seno}
 \index{radián}
-\index{función trigonométrica}
-\index{trigonométrica!función}
+\index{función!trigonométrica}
+\index{trigonométrica, función}
 
 El segundo ejemplo encuentra el seno de {\tt radianes}.  El nombre de la variable {\tt radianes} es un indicio de que {\tt sin} y las otras funciones
 trigonométricas ({\tt cos}, {\tt tan}, etc.)  toman argumentos en radianes. Para
@@ -2038,8 +2038,8 @@ de $\pi$, con precisión de alrededor de 15 digitos.
 Si sabes
 trigonometría, puedes verificar los resultados anteriores comparándolos con
 la raíz cuadrada de dos, dividida por dos:
-\index{función sqrt}
-\index{sqrt!función}
+\index{función!sqrt}
+\index{sqrt, función}
 
 \begin{verbatim}
 >>> math.sqrt(2) / 2.0
@@ -2081,7 +2081,7 @@ más tarde).
 SyntaxError: can't assign to operator
 \end{verbatim}
 %
-\index{SyntaxError}\index{error de sintaxis}\index{sintaxis!error de}
+\index{SyntaxError}\index{error!de sintaxis}\index{sintaxis!error de}
 \index{excepción!SyntaxError}
 
 
@@ -2110,13 +2110,13 @@ los números y el guión bajo son legales, pero el primer carácter
 no puede ser un número.  No puedes utilizar una palabra clave como nombre de una función,
 y deberías evitar tener una variable y una función con el mismo
 nombre.
-\index{palabra clave def}
-\index{def!palabra clave}
+\index{palabra clave!def}
+\index{def, palabra clave}
 \index{argumento}
 
 Los paréntesis vacíos después del nombre indican que esta función
 no toma ningún argumento.
-\index{paréntesis vacíos}
+\index{paréntesis!vacíos}
 \index{encabezado}\index{header}
 \index{cuerpo}\index{body}
 \index{sangría}
@@ -2154,8 +2154,8 @@ Para terminar una función, tienes que insertar una línea vacía.
 
 Al definir una función, se crea un {\bf objeto de función} que tiene
 tipo \verb"function":
-\index{tipo function}
-\index{function!tipo}
+\index{tipo!function}
+\index{function, tipo}
 
 \begin{verbatim}
 >>> print(imprimir_letra)
@@ -2315,8 +2315,8 @@ Las mismas reglas de composición que se aplican a las funciones incorporadas ta
 se aplican a las funciones definidas por el programador, así que podemos utilizar cualquier tipo de expresión
 como un argumento para \verb"impr_2veces":
 \index{composición}
-\index{función definida por el programador}
-\index{programador!función definida por el}
+\index{función!definida por el programador}
+\index{programador, función definida por el}
 
 \begin{verbatim}
 >>> impr_2veces('Spam '*4)
@@ -2349,7 +2349,7 @@ aquí en \verb"impr_2veces", a todos les llamamos {\tt bruce}.
 
 \section{Las variables y los parámetros son locales}
 \index{variable local}
-\index{local!variable}
+\index{local, variable}
 
 Cuando creas una variable dentro de una función, esta es {\bf local},
 lo cual significa que existe
@@ -2377,7 +2377,7 @@ Bing tiddle tiddle bang.
 Cuando \verb"cat_2veces" termina, la variable {\tt cat}
 se destruye.  Si intentamos imprimirla, obtenemos una excepción:
 \index{NameError}
-\index{excepción NameError}
+\index{excepción!NameError}
 
 \begin{verbatim}
 >>> print(cat)
@@ -2392,7 +2392,7 @@ tal cosa como {\tt bruce}.
 
 \section{Diagramas de pila}
 \label{stackdiagram}
-\index{stack diagram}\index{diagrama de pila}
+\index{stack diagram}\index{diagrama!de pila}
 \index{marco de una función}
 \index{frame}\index{marco}
 
@@ -2400,8 +2400,8 @@ Para hacer un seguimiento de qué variables se pueden utilizar en qué lugar, a 
 útil dibujar un {\bf diagrama de pila} (en inglés, {\em stack diagram}).  Al igual que los diagramas de estado,
 los diagramas de pila muestran el valor de cada variable, pero también muestran la
 función a la cual pertenece cada variable.
-\index{diagrama de pila}
-\index{pila!diagrama de}
+\index{diagrama!de pila}
+\index{pila, diagrama de}
 
 Cada función se representa por un {\bf marco} (en inglés, {\em frame}).  Un marco es un recuadro que tiene
 el nombre de una función al lado y los parámetros y variables de
@@ -2461,10 +2461,10 @@ ejecutando actualmente está al final.
 
 
 \section{Funciones productivas y funciones nulas}
-\index{función productiva}
-\index{función nula}
-\index{productiva!función}
-\index{nula!función}
+\index{función!productiva}
+\index{función!nula}
+\index{productiva, función}
+\index{nula, función}
 
 Algunas de las funciones que hemos utilizado, tales como las funciones matemáticas, devuelven
 resultados; por falta de un mejor nombre, las llamo {\bf funciones
@@ -2505,8 +2505,8 @@ Las funciones nulas podrían mostrar algo en la pantalla o tener algún
 otro efecto, pero no tienen un valor de retorno.  Si
 asignas el resultado a una variable, obtienes un valor especial llamado
 {\tt None}.
-\index{valor especial None}
-\index{None!valor especial}
+\index{valor especial!None}
+\index{None, valor especial}
 
 \begin{verbatim}
 >>> resultado = impr_2veces('Bing')
@@ -2526,8 +2526,8 @@ Es un valor especial que tiene su propio tipo:
 %
 Las funciones que hemos escrito hasta ahora son todas nulas.  Comenzaremos
 a escribir funciones productivas en unos capítulos más adelante.
-\index{tipo NoneType}
-\index{NoneType!tipo}
+\index{tipo!NoneType}
+\index{NoneType, tipo}
 
 
 \section{¿Por qué funciones?}
@@ -2561,7 +2561,7 @@ Aunque puede ser frustrante, la depuración es una de las partes más
 intelectualmente ricas, desafiantes e interesantes de
 la programación.
 \index{depuración experimental}
-\index{experimental!depuración}
+\index{experimental, depuración}
 
 En algunas formas la depuración es como un trabajo de detective.  Te enfrentas
 a pistas y tienes que inferir los procesos y eventos que te guían
@@ -2600,7 +2600,7 @@ entre imprimir AAAA y BBBB.  Esto evolucionó más tarde a Linux.''
 \item[función:] Una secuencia de sentencias que tiene nombre y realiza alguna
 operación útil.  Las funciones pueden o no tomar argumentos y pueden o no
 producir un resultado.
-\index{function}
+\index{función}
 
 \item[definición de función:]  Una sentencia que crea una nueva función,
 especificando su nombre, parámetros y las sentencias que contiene.
@@ -2609,7 +2609,7 @@ especificando su nombre, parámetros y las sentencias que contiene.
 \item[objeto de función:]  Un valor creado por una definición de función.
 El nombre de la función es una variable que se refiere a un objeto
 de función.
-\index{objeto de función}
+\index{objeto!de función}
 
 \item[encabezado:] La primera línea de una definición de función.
 \index{encabezado}
@@ -2640,14 +2640,14 @@ la expresión.
 \index{valor de retorno}
 
 \item[función productiva:] Una función que devuelve un valor.
-\index{función productiva}
+\index{función!productiva}
 
 \item[función nula:] Una función que siempre devuelve {\tt None}.
-\index{función nula}
+\index{función!nula}
 
 \item[{\tt None}:]  Un valor especial devuelto por funciones nulas.
-\index{valor especial None}
-\index{None!valor especial}
+\index{valor especial!None}
+\index{None, valor especial}
 
 \item[módulo:] Un archivo que contiene una
 colección de funciones relacionadas entre sí y otras definiciones.
@@ -2655,12 +2655,12 @@ colección de funciones relacionadas entre sí y otras definiciones.
 
 \item[sentencia import:] Una sentencia que lee un archivo de módulo y crea
 un objeto de módulo.
-\index{sentencia import}
-\index{import!sentencia}
+\index{sentencia!import}
+\index{import, sentencia}
 
 \item[objeto de módulo:] Un valor creado por una sentencia {\tt import}
 que proporciona acceso a los valores definidos en el módulo.
-\index{objeto de módulo}
+\index{objeto!de módulo}
 
 \item[notación de punto:]  La sintaxis para llamar a una función de otro
 módulo especificando el nombre del módulo, seguido de un punto y
@@ -2694,8 +2694,8 @@ impresas cuando ocurre una excepción.
 \section{Ejercicios}
 
 \begin{exercise}
-\index{función len}
-\index{len!función}
+\index{función!len}
+\index{len, función}
 
 Escribe una función con nombre \verb"justificar_derecha" que tome una cadena
 con nombre {\tt s} como parámetro e imprima la cadena con suficientes
@@ -2715,7 +2715,7 @@ devuelve la longitud de una cadena, por lo que el valor de \verb"len('monty')" e
 
 
 \begin{exercise}
-\index{objeto de función}
+\index{objeto!de función}
 \index{función!objeto de}
 
 Un objeto de función es un valor que puedes asignar a una variable o
@@ -2950,9 +2950,9 @@ bob.fd(100)
 %
 Podemos hacer lo mismo de manera más concisa con una sentencia {\tt for}.
 Agrega este ejemplo a {\tt mipoligono.py} y ejecútalo de nuevo:
-\index{bucle for}
-\index{for!bucle}
-\index{sentencia for}
+\index{bucle!for}
+\index{for, bucle}
+\index{sentencia!for}
 
 \begin{verbatim}
 for i in range(4):
@@ -3002,7 +3002,7 @@ la dirección inicial.
 Lo siguiente es una serie de ejercicios que utilizan el módulo {\tt turtle}.  Pretenden
 ser divertidos, pero también tienen un punto.  Mientras trabajes en
 ellos, piensa cuál es el punto.
-\index{módulo turtle}\index{turtle!módulo}
+\index{módulo!turtle}\index{turtle, módulo}
 
 Las siguientes secciones tienen soluciones a los ejercicios, así que
 no las mires hasta que hayas terminado (o al menos intentado).
@@ -3025,14 +3025,14 @@ longitud}.
 \item Haz una copia de {\tt cuadrado} y cambia el nombre a {\tt
   poligono}.  Agrega otro parámetro con nombre {\tt n} y modifica el cuerpo
   para que dibuje un polígono regular con n lados.  Pista: los ángulos exteriores
-  de un polígono regular con n lados son de $360/n$ grados.  \index{función
-    polígono} \index{polígono!función}
+  de un polígono regular con n lados son de $360/n$ grados.  \index{función!polígono}
+    \index{polígono, función}
 
 \item Escribe una función llamada {\tt circulo} que tome una tortuga,
 {\tt t}, y radio, {\tt r}, como parámetros y dibuje un círculo
 aproximado llamando a {\tt poligono} con una longitud y
 número de lados apropiado.  Prueba tu función con un rango de valores
-de {\tt r}.  \index{función círculo} \index{círculo!función}
+de {\tt r}.  \index{función!círculo} \index{círculo, función}
 
 Pista: averigua cuál es el perímetro del círculo y asegúrate de que
 se cumpla que {\tt longitud * n = perimetro}.
@@ -3042,8 +3042,8 @@ que tome un parámetro adicional {\tt angulo}, que determine
 qué fracción de un círculo dibujar.  {\tt angulo} está en
 grados, así que cuando {\tt angulo=360}, {\tt arco} debería dibujar un círculo
 completo.
-\index{función arco}
-\index{arco!función}
+\index{función!arco}
+\index{arco, función}
 
 \end{enumerate}
 
@@ -3340,10 +3340,10 @@ Por convención, todos los docstrings son cadenas entre triple comillas, tambié
 como cadenas multilínea porque las triple comillas permiten expandir
 la cadena a más de una línea.
 \index{comillas}
-\index{cadena entre triple comillas}
-\index{triple comillas!cadena entre}
-\index{cadena multilínea}
-\index{multilínea!cadena}
+\index{cadena!entre triple comillas}
+\index{triple comillas, cadena entre}
+\index{cadena!multilínea}
+\index{multilínea, cadena}
 
 Es breve, pero contiene la información escencial
 que alguien necesitaría para utilizar esta función.  Explica de manera concisa lo que
@@ -3452,7 +3452,7 @@ Descarga el código de este capítulo en
 \item Dibuja un diagrama de pila que muestre el estado del programa
 al ejecutar {\tt circulo(bob, radio)}.  Puedes hacer la
 aritmética a mano o agregar sentencias {\tt print} al código.
-\index{diagrama de pila}
+\index{diagrama!de pila}
 
 \item La versión de {\tt arco} en la Sección~\ref{refactoring} no es
 muy precisa debido a que la aproximación lineal del
@@ -3504,7 +3504,7 @@ Solución: \url{http://thinkpython2.com/code/pie.py}.
 
 \begin{exercise}
 \index{alfabeto}
-\index{tortuga!máquina de escribir}
+\index{tortuga, máquina de escribir}
 \index{máquina de escribir tortuga}
 
 Las letras del alfabeto se pueden construir desde un número moderado
@@ -3530,7 +3530,7 @@ Lee sobre espirales en \url{http://en.wikipedia.org/wiki/Spiral}; luego
 escribe un programa que dibuje una espiral arquimediana (o uno de los otros
 tipos).  Solución: \url{http://thinkpython2.com/code/spiral.py}.
 \index{espiral}
-\index{arquimediana!espiral}
+\index{arquimediana, espiral}
 
 \end{exercise}
 
@@ -3577,9 +3577,9 @@ Para obtener el resto, podrías restar una hora en minutos:
 
 \index{división entera}
 \index{división de coma flotante}
-\index{entera!división}
-\index{coma flotante!división}
-\index{operador de módulo}
+\index{entera, división}
+\index{coma flotante!división de}
+\index{operador!de módulo}
 \index{módulo!operador}
 
 Una alternativa es usar el {\bf operador de módulo}, \verb"%", que
@@ -3609,10 +3609,10 @@ los dos operandos es un {\tt float}.
 
 
 \section{Expresión booleana}
-\index{expresión booleana}
-\index{booleana!expresión}
-\index{operador lógico}
-\index{lógico!operador}
+\index{expresión!booleana}
+\index{booleana, expresión}
+\index{operador!lógico}
+\index{lógico, operador}
 
 Una {\bf expresión booleana} es una expresión que es verdadera
 o falsa.  Los siguientes ejemplos usan el
@@ -3628,12 +3628,12 @@ False
 %
 {\tt True} y {\tt False} son valores
 especiales que pertenecen al tipo {\tt bool}; no son cadenas:
-\index{valor especial True}
-\index{valor especial False}
-\index{True!valor especial}
-\index{False!valor especial}
-\index{tipo bool}
-\index{bool!tipo}
+\index{valor especial!True}
+\index{valor especial!False}
+\index{True, valor especial}
+\index{False, valor especial}
+\index{tipo!bool}
+\index{bool, tipo}
 
 \begin{verbatim}
 >>> type(True)
@@ -3659,25 +3659,25 @@ es usar el signo igual simple ({\tt =}) en lugar de un signo igual doble
 ({\tt ==}).  Recuerda que {\tt =} es un operador de asignación y
 {\tt ==} es un operador relacional.   No hay tal cosa como
 {\tt =<} o {\tt =>}.
-\index{operador relacional}
-\index{relacional!operador}
+\index{operador!relacional}
+\index{relacional, operador}
 
 
 \section {Operadores lógicos}
-\index{operador lógico}
-\index{lógico!operador}
+\index{operador!lógico}
+\index{lógico, operador}
 
 Existen tres {\bf operadores lógicos}: {\tt and}, {\tt
 or} y {\tt not}.  La semántica (significado) de estos operadores es
 similar a su significado en inglés.  Por ejemplo,
 {\tt x > 0 and x < 10} es verdadera solo si {\tt x} es mayor que 0
 {\em y} menor que 10.
-\index{operador and}
-\index{operador or}
-\index{operador not}
-\index{and!operador}
-\index{or!operador}
-\index{not!operador}
+\index{operador!and}
+\index{operador!or}
+\index{operador!not}
+\index{and, operador}
+\index{or, operador}
+\index{not, operador}
 
 {\tt n\%2 == 0 or n\%3 == 0} es verdadera si {\em cualquiera o ambas}
 condiciones son verdaderas, es decir, si el número es divisible por 2 {\em o}
@@ -3704,10 +3704,10 @@ sepas lo que estás haciendo).
 \section{Ejecución condicional}
 \label{conditional.execution}
 
-\index{sentencia condicional}
+\index{sentencia!condicional}
 \index{condicional!sentencia}
-\index{sentencia if}
-\index{if!sentencia}
+\index{sentencia!if}
+\index{if, sentencia}
 \index{ejecución condicional}
 Para escribir programas útiles, casi siempre necesitamos la capacidad
 de verificar las condiciones y cambiar el comportamiento del programa
@@ -3723,8 +3723,8 @@ La expresión booleana después de {\tt if} se
 llama {\bf condición}.  Si es verdadera, se ejecutan las sentencias
 con sangría.  Si no, no pasa nada.
 \index{condición}
-\index{sentencia compuesta}
-\index{compuesta!sentencia}
+\index{sentencia!compuesta}
+\index{compuesta, sentencia}
 
 Las sentencias {\tt if} tienen la misma estructura que las definiciones de función:
 un encabezado seguido de un cuerpo con sangrías.  Las sentencias como esta se
@@ -3735,8 +3735,8 @@ el cuerpo, pero tiene que haber al menos una.
 A veces, es útil tener un cuerpo sin sentencias (generalmente
 para reservar lugar a código que no has escrito todavía).  En ese
 caso, puedes usar la sentencia {\tt pass}, la cual no hace nada.
-\index{sentencia pass}
-\index{pass!sentencia}
+\index{sentencia!pass}
+\index{pass, sentencia}
 
 \begin{verbatim}
 if x < 0:
@@ -3747,8 +3747,8 @@ if x < 0:
 \section{Ejecución alternativa}
 \label{alternative.execution}
 \index{ejecución alternativa}
-\index{palabra clave else}
-\index{else!palabra clave}
+\index{palabra clave!else}
+\index{else, palabra clave}
 
 Una segunda forma de la sentencia {\tt if} es la ``ejecución alternativa'',
 en la cual hay dos posibilidades y la condición determina
@@ -3773,7 +3773,7 @@ una de las alternativas.  Las alternativas se llaman {\bf
 
 \section{Condicionales encadenados}
 \index{condicional encadenado}
-\index{encadenado!condicional}
+\index{encadenado, condicional}
 
 A veces hay más de dos posibilidades y necesitamos más de
 dos ramas.  Una manera de expresar una computación como esa es un {\bf
@@ -3792,8 +3792,8 @@ else:
 una rama.  No hay límite en el número de sentencias {\tt
 elif}.  Si hay una cláusula {\tt else}, tiene que estar
 al final, pero no necesariamente tiene que haber una.
-\index{palabra clave elif}
-\index{elif!palabra clave}
+\index{palabra clave!elif}
+\index{elif, palabra clave}
 
 \begin{verbatim}
 if opcion == 'a':
@@ -3813,7 +3813,7 @@ la primera rama verdadera.
 
 \section{Condicionales anidados}
 \index{condicional anidado}
-\index{anidado!condicional}
+\index{anidado, condicional}
 
 Un condicional puede también estar anidado dentro de otro.  Podríamos haber
 escrito el ejemplo de la sección anterior de esta forma:
@@ -3932,7 +3932,7 @@ salida completa se ve así:
 Una función que se llama a sí misma es {\bf recursiva}; el proceso de
 ejecutarla se llama {\bf recursividad}.
 \index{recursividad}
-\index{función recursiva}
+\index{función!recursiva}
 
 Como ejemplo adicional, podemos escribir una función que imprima una
 cadena {\tt n} veces.
@@ -3948,8 +3948,8 @@ def imprimir_n(s, n):
 Si {\tt n <= 0}, la {\bf sentencia return} hace que se salga de la función.  El
 flujo de ejecución vuelve inmediatamente a la sentencia llamadora y las líneas restantes
 de la función no se ejecutan.
-\index{sentencia return}
-\index{return!sentencia}
+\index{sentencia!return}
+\index{return, sentencia}
 
 El resto de la función es similar a {\tt cuenta\_reg}: muestra a
 {\tt s} y luego se llama a sí misma para mostrar a {\tt s} otras $n-1$
@@ -3960,13 +3960,13 @@ Para ejemplos simples como este, probablemente es más fácil utilizar un bucle 
 for}.  Sin embargo, más adelante veremos ejemplos que son difíciles de escribir
 con un bucle {\tt for} y fáciles de escribir con recursividad, así que es
 bueno comenzar pronto.
-\index{bucle for}
-\index{for!bucle}
+\index{bucle!for}
+\index{for, bucle}
 
 
 \section{Diagramas de pila para funciones recursivas}
 \label{recursive.stack}
-\index{diagrama de pila}
+\index{diagrama!de pila}
 \index{función!marco de}
 \index{marco}
 
@@ -4009,10 +4009,10 @@ a dicha función {\tt n} veces.
 
 
 \section{Recursividad infinita}
-\index{recursividad infinita}
-\index{infinita!recursividad}
-\index{error de tiempo de ejecución}
-\index{tiempo de ejecución!error de}
+\index{recursividad!infinita}
+\index{infinita, recursividad}
+\index{error!de tiempo de ejecución}
+\index{tiempo de ejecución, error de}
 \index{rastreo}
 
 Si una recursividad nunca llega a un caso base, sigue haciendo
@@ -4028,7 +4028,7 @@ def recursivo():
 En la mayoría de los entornos de programación, un programa con recursividad infinita
 no se ejecuta realmente por siempre.  Python entrega un
 mensaje de error cuando la recursividad alcanza la profundidad máxima:
-\index{excepción RuntimeError}
+\index{excepción!RuntimeError}
 \index{RuntimeError}
 
 \begin{verbatim}
@@ -4065,8 +4065,8 @@ espera a que el usuario escriba algo.  Cuando el usuario presiona {\sf
 devuelve lo que el usuario escribió como una cadena.  En Python 2, la misma
 función se llama \verb"raw_input".
 \index{Python 2}
-\index{función input}
-\index{input!función}
+\index{función!input}
+\index{input, función}
 
 \begin{verbatim}
 >>> texto = input()
@@ -4117,7 +4117,7 @@ ValueError: invalid literal for int() with base 10
 %
 Más adelante veremos cómo tratar este tipo de error.
 \index{ValueError}
-\index{excepción ValueError}
+\index{excepción!ValueError}
 
 
 \section{Depuración}
@@ -4156,8 +4156,8 @@ un espacio.  Pero el mensaje de error señala a {\tt y}, lo cual es
 engañoso.  En general, los mensajes de error indican dónde fue descubierto
 el problema, pero el error real podría estar antes en el código,
 a veces en una línea anterior. Lo mismo ocurre con los errores de tiempo de ejecución. 
-\index{tiempo de ejecución!error de}
-\index{error de tiempo de ejecución}
+\index{tiempo de ejecución, error de}
+\index{error!de tiempo de ejecución}
 
 Supongamos que estás intentando
 calcular una relación señal/ruido en decibeles.  La fórmula
@@ -4175,7 +4175,7 @@ print(decibeles)
 %
 Cuando ejecutas este programa, obtienes una excepción:
 %
-\index{excepción OverflowError}
+\index{excepción!OverflowError}
 \index{OverflowError}
 
 \begin{verbatim}
@@ -4191,7 +4191,7 @@ malo con esa línea.  Para encontrar el error real, podría ser
 ser 0.  El problema está en la línea 4, que utiliza división entera
 en lugar de división de coma flotante.
 \index{división entera}
-\index{entera!división}
+\index{entera, división}
 
 Deberías tomarte el tiempo de leer cuidadosamente los mensajes de error, pero no
 supongas que todo lo que dice es correcto.
@@ -4209,13 +4209,13 @@ supongas que todo lo que dice es correcto.
 \item[operador de módulo:]  Un operador, denotado con un signo de porcentaje
 ({\tt \%}), que trabaja con enteros y devuelve el resto de
 dividir un número por otro.
-\index{operador de módulo}
+\index{operador!de módulo}
 \index{módulo!operador}
 
 \item[expresión booleana:]  Una expresión cuyo valor es
 {\tt True} o {\tt False}.
-\index{expresión booleana}
-\index{booleana!expresión}
+\index{expresión!booleana}
+\index{booleana, expresión}
 
 \item[operador relacional:] Uno de los operadores que comprara
 sus operandos: {\tt ==}, {\tt !=}, {\tt >}, {\tt <}, {\tt >=} y {\tt <=}.
@@ -4225,7 +4225,7 @@ booleanas: {\tt and}, {\tt or} y {\tt not}.
 
 \item[sentencia condicional:]  Una sentencia que controla el flujo de
 ejecución dependiendo de una condición.
-\index{sentencia condicional}
+\index{sentencia!condicional}
 \index{condicional!sentencia}
 
 \item[condición:] La expresión booleana en una sentencia condicional
@@ -4235,7 +4235,7 @@ que determina cuál rama se ejecuta.
 \item[sentencia compuesta:]  Una sentencia que consiste en un encabezado
 y un cuerpo.  El encabezado termina con un signo de dos puntos (:).  El cuerpo tiene sangrías
 relativas al encabezado.
-\index{sentencia compuesta}
+\index{sentencia!compuesta}
 
 \item[rama:] Una de las secuencias de sentencias alternativas en
 una sentencia condicional.
@@ -4244,12 +4244,12 @@ una sentencia condicional.
 \item[condicional encadenado:]  Una sentencia condicional con una serie
 de ramas alternativas.
 \index{condicional encadenado}
-\index{encadenado!condicional}
+\index{encadenado, condicional}
 
 \item[condicional anidado:]  Una sentencia condicional que aparece
 en una de las ramas de otra sentencia condicional.
 \index{condicional anidado}
-\index{anidado!condicional}
+\index{anidado, condicional}
 
 \item[sentencia return:] Una sentencia que provoca que una función
 termine inmediatamente y vuelva a la sentencia llamadora.
@@ -4265,7 +4265,7 @@ función recursiva que no hace una llamada recursiva.
 \item[recursividad infinita:]  Una recursividad que no tiene un
 caso base, o nunca lo alcanza.  Eventualmente, una recursividad infinita
 provoca un error de tiempo de ejecución.
-\index{recursividad infinita}
+\index{recursividad!infinita}
 
 \end{description}
 
@@ -4418,7 +4418,7 @@ def dibujar(t, longitud, n):
 \end{figure}
 
 \begin{exercise}
-\index{Koch!curva de}\index{curva de Koch}
+\index{Koch, curva de}\index{curva de Koch}
 
 La curva de Koch es un fractal que se ve más o menos como en la
 Figura~\ref{fig.koch}.  Para dibujar una curva de Koch con longitud $x$, todo lo que
@@ -4506,8 +4506,8 @@ una expresión.  Esta sentencia significa: ``Sal inmediatamente de
 esta función y usa la siguiente expresión como valor de retorno.''
 La expresión puede ser arbitrariamente complicada, por lo que podríamos
 haber escrito esta función de manera más concisa:
-\index{sentencia return}
-\index{return!sentencia}
+\index{sentencia!return}
+\index{return, sentencia}
 
 \begin{verbatim}
 def area(radio):
@@ -4517,7 +4517,7 @@ def area(radio):
 Por otra parte, las {\bf variables temporales} como {\tt a} pueden hacer
 más fácil la depuración.
 \index{variable temporal}
-\index{temporal!variable}
+\index{temporal, variable}
 
 A veces es útil tener múltiples sentencias return, una en cada
 rama de un condicional:
@@ -4556,8 +4556,8 @@ ninguna condición es verdadera, y la función termina sin llegar a una
 sentencia {\tt return}.  Si el flujo de ejecución llega al final
 de una función, el valor de retorno es {\tt None}, lo cual no es
 el valor absoluto de 0.
-\index{valor especial None}
-\index{None!valor especial}
+\index{valor especial!None}
+\index{None, valor especial}
 
 \begin{verbatim}
 >>> print(valor_absoluto(0))
@@ -4566,19 +4566,19 @@ None
 %
 Por cierto, Python proporciona una función incorporada llamada
 {\tt abs} que calcula valores absolutos.
-\index{función abs}
-\index{abs!función}
+\index{función!abs}
+\index{abs, función}
 
 Como ejercicio, escribe una función {\tt comparar} que
 tome dos valores, {\tt x} e {\tt y}, y devuelva {\tt 1} si {\tt x > y},
 devuelva {\tt 0} si {\tt x == y} o devuelva {\tt -1} si {\tt x < y}.
-\index{función comparar}
-\index{comparar!función}
+\index{función!comparar}
+\index{comparar, función}
 
 
 \section{Desarrollo incremental}
 \label{incremental.development}
-\index{plan de desarrollo incremental}
+\index{plan de desarrollo!incremental}
 
 A medida vayas escribiendo funciones más grandes, podrías encontrarte
 pasando más tiempo depurando.
@@ -4666,7 +4666,7 @@ De nuevo, tendrías que ejecutar el programa en este punto y verificar la salida
 (que debería ser 25).
 Finalmente, puedes usar {\tt math.sqrt} para calcular y devolver el resultado:
 \index{sqrt}
-\index{función sqrt}
+\index{función!sqrt}
 
 \begin{verbatim}
 def distancia(x1, y1, x2, y2):
@@ -4770,7 +4770,7 @@ def area_circulo(xc, yc, xp, yp):
 \label{boolean}
 
 Las funciones pueden devolver booleanos, lo cual es a menudo conveniente para ocultar
-pruebas complicadas dentro de las funciones.  \index{función booleana}
+pruebas complicadas dentro de las funciones.  \index{función!booleana}
 Por ejemplo:
 
 \begin{verbatim}
@@ -4803,7 +4803,7 @@ def es_divisible(x, y):
 \end{verbatim}
 %
 Las funciones booleanas se utilizan a menudo en las sentencias condicionales:
-\index{sentencia condicional}
+\index{sentencia!condicional}
 \index{condicional!sentencia}
 
 \begin{verbatim}
@@ -4827,8 +4827,8 @@ devuelva {\tt True} si $x \le y \le z$ o {\tt False} si no.
 \section{Más recursividad}
 \label{more.recursion}
 \index{recursividad}
-\index{lenguaje Turing completo}
-\index{Turing completo!lenguaje}
+\index{lenguaje!Turing completo}
+\index{Turing completo, lenguaje}
 \index{Turing, Alan}
 \index{Tesis de Turing}
 
@@ -4860,7 +4860,7 @@ se está definiendo.  Una definición verdaderamente circular no es muy
 \item[vorpal:] Un adjetivo utilizado para describir algo que es vorpal.
 \index{vorpal}
 \index{definición circular}
-\index{circular!definición}
+\index{circular, definición}
 
 \end{description}
 
@@ -4880,9 +4880,9 @@ cualquier otro valor, $n$, es $n$ multiplicado por el factorial de $n-1$.
 Así que $3!$ es 3 por $2!$, lo cual es 2 por $1!$, lo cual es 1 por
 $0!$. Poniéndolo todo junto, $3!$ es igual a 3 por 2 por 1 por 1,
 lo cual es 6.
-\index{función factorial}
+\index{función!factorial}
 \index{factorial!función}
-\index{recursiva!definición}
+\index{recursiva, definición}
 
 Si puedes escribir una definición recursiva de algo, puedes
 escribir un programa en Python para evaluarla.  El primer paso es decidir
@@ -4951,7 +4951,7 @@ devuelve el resultado.
 El valor de retorno (2) se multiplica por $n$, que es 3, y el resultado, 6,
 se convierte en el valor de retorno de la llamada a función que comenzó todo
 el proceso.
-\index{diagrama de pila}
+\index{diagrama!de pila}
 
 La Figura~\ref{fig.stack3} muestra cómo se ve el diagrama de pila
 para esta sucesión de llamadas a función.
@@ -4997,7 +4997,7 @@ ejemplo, en la Sección~\ref{boolean}, escribimos una función llamada
 otro.  Una vez que nos hemos convencido de que esta función es
 correcta ---examinando el código y probándolo--- podemos utilizar la función
 sin mirar el cuerpo otra vez.
-\index{prueba de salto de fe}
+\index{prueba!de salto de fe}
 
 Lo mismo es verdad para las funciones recursivas.  Cuando llegues a la llamada
 recursiva, en lugar de seguir el flujo de ejecución, deberías suponer
@@ -5014,8 +5014,8 @@ que se llama salto de fe!
 \section{Un ejemplo más}
 \label{one.more.example}
 
-\index{función de fibonacci}
-\index{fibonacci!función de}
+\index{función!de fibonacci}
+\index{fibonacci, función de}
 Después de {\tt factorial}, el ejemplo más común de una función
 matemática definida de manera recursiva es {\tt fibonacci}, que tiene la
 siguiente definición (ver
@@ -5052,8 +5052,8 @@ el resultado correcto al sumarlas.
 
 ¿Qué ocurre si llamamos a {\tt factorial} y le entregamos 1.5 como argumento?
 \index{verificación de tipos}
-\index{errores!verificación de}\index{verificación de errores}
-\index{factorial!función}\index{función factorial}
+\index{error!verificación de}\index{verificación de errores}
+\index{factorial!función}\index{función!factorial}
 \index{RuntimeError}
 
 \begin{verbatim}
@@ -5064,8 +5064,8 @@ RuntimeError: Maximum recursion depth exceeded
 Se ve como una recursividad infinita.  ¿Cómo puede ser?  La función
 tiene un caso base: cuando {\tt n == 0}.  Pero si {\tt n} no es un entero,
 podemos {\em perder} el caso base y seguir con la recursividad sin parar.
-\index{recursividad infinita}
-\index{infinita!recursividad}
+\index{recursividad!infinita}
+\index{infinita, recursividad}
 
 En la primera llamada recursiva, el valor de {\tt n} es 0.5.
 En la siguiente, es -0.5.  Desde allí, se hace menor
@@ -5076,13 +5076,13 @@ para que funcione con números de coma flotante o podemos hacer que {\tt
   factorial} verifique el tipo de sus argumentos.  La primera opción se
 llama la función gamma y está
 un poco más allá del alcance de este libro.  Entonces iremos por la segunda.
-\index{función gamma}
+\index{función!gamma}
 
 Podemos utilizar la función incorporada {\tt isinstance} para verificar el tipo
 del argumento.  Mientras estemos en ello, podemos también asegurarnos de que el
 argumento sea positivo:
-\index{función isinstance}
-\index{isinstance!función}
+\index{función!isinstance}
+\index{isinstance, función}
 
 \begin{verbatim}
 def factorial(n):
@@ -5113,8 +5113,8 @@ None
 \end{verbatim}
 %
 Si pasamos ambas verificaciones, sabemos que $n$ es un entero no negativo, por lo que podemos probar que la recursividad termina.
-\index{patrón guardián}
-\index{guardián!patrón}
+\index{patrón!guardián}
+\index{guardián, patrón}
 
 Este programa demuestra un patrón a veces llamado {\bf guardián}.
 Los primeros dos condicionales actúan como guardianes, protegiendo el código que
@@ -5211,7 +5211,7 @@ tiempo, pero un poco de andamiaje puede ahorrar mucha depuración.
 \item[variable temporal:]  Una variable utilizada para almacenar un valor intermedio en
 una computación compleja.
 \index{variable temporal}
-\index{temporal!variable}
+\index{temporal, variable}
 
 \item[código muerto:]  Parte de un programa que nunca se ejecuta, a menudo debido a que
 aparece después de una sentencia {\tt return}.
@@ -5229,8 +5229,8 @@ no es parte de la versión final.
 \item[guardián:]  Un patrón de programación que utiliza una sentencia
 condicional para verificar y encargarse de circunstancias que
 podrían provocar un error.
-\index{patrón guardián}
-\index{guardián!patrón}
+\index{patrón!guardián}
+\index{guardián, patrón}
 
 \end{description}
 
@@ -5240,7 +5240,7 @@ podrían provocar un error.
 \begin{exercise}
 
 Dibuja un diagrama de pila para el siguiente programa.  ¿Qué imprime el programa?
-\index{diagrama de pila}
+\index{diagrama!de pila}
 
 \begin{verbatim}
 def b(z):
@@ -5283,8 +5283,8 @@ Escribe una función con nombre {\tt ack} que evalúe la función de Ackermann.
 Utiliza tu función para evaluar {\tt ack(3, 4)}, que debería ser 125.
 ¿Que ocurre para valores más grandes de {\tt m} y {\tt n}?
 Solución: \url{http://thinkpython2.com/code/ackermann.py}.
-\index{Ackermann!función de}
-\index{función ack}
+\index{Ackermann, función de}
+\index{función!ack}
 
 \end{exercise}
 
@@ -5377,7 +5377,7 @@ Pero primero quiero contar un poco más sobre la asignación de variables.
 
 \section{Reasignación}
 \index{asignación}
-\index{sentencia de asignación}
+\index{sentencia!de asignación}
 \index{reasignación}
 
 Como habrás descubierto, es legal hacer más de una
@@ -5398,7 +5398,7 @@ La primera vez que mostramos
 valor es 7.
 
 La Figura~\ref{fig.assign2} muestra cómo se ve una {\bf reasignación}
-en un diagrama de estado. \index{diagrama de estado} \index{estado!diagrama de}
+en un diagrama de estado. \index{diagrama!de estado} \index{estado, diagrama de}
 
 En este punto quiero abordar un origen común de
 confusión.
@@ -5485,9 +5485,9 @@ resta 1 se llama {\bf decremento}.
 
 
 \section{La sentencia {\tt while}}
-\index{sentencia while}
+\index{sentencia!while}
 \index{bucle while}
-\index{while!bucle}
+\index{while, bucle}
 \index{iteración}
 
 Los computadores a menudo se utilizan para automatizar tareas repetitivas.  Repetir
@@ -5544,8 +5544,8 @@ termine.  De lo contrario, el bucle se repetirá por siempre, lo cual se llama
 {\bf bucle infinito}.  Una fuente interminable de diversión para
 informáticos es la observación de que las instrucciones en un champú,
 ``Enjabonar, enjuagar, repetir'', son un bucle infinito.
-\index{bucle infinito}
-\index{infinito!bucle}
+\index{bucle!infinito}
+\index{infinito, bucle}
 
 En el caso de {\tt cuenta\_reg}, podemos probar que el bucle
 termina: si {\tt n} es cero o negativo, el bucle nunca se ejecuta.
@@ -5592,8 +5592,8 @@ Sección~\ref{recursion} utilizando iteración en lugar de recursividad.
 
 
 \section{{\tt break}}
-\index{sentencia break}
-\index{break!sentencia}
+\index{sentencia!break}
+\index{break, sentencia}
 
 A veces no sabes que es momento de terminar un bucle hasta que llegas a la mitad
 del cuerpo.  En ese caso puedes utilizar la sentencia {\tt break}
@@ -5641,7 +5641,7 @@ hasta que eso ocurra'').
 Los bucles se utilizan a menudo en programas que calculan
 resultados numéricos iniciando con una respuesta aproximada y
 mejorándola iterativamente.
-\index{método de Newton}
+\index{método!de Newton}
 
 Por ejemplo, una manera de calcular raíces cuadradas es el método de Newton.
 Supongamos que quieres saber la raíz cuadrada de $a$.  Si comienzas
@@ -5780,7 +5780,7 @@ A medida que comiences a escribir programas más grandes, podrías encontrarte
 ocupando más tiempo en la depuración.  Más código significa más posibilidades de
 cometer un error y más lugares para esconder errores de programación.
 \index{depuración!por bisección}
-\index{bisección!depuración por}
+\index{bisección, depuración por}
 
 Una manera de acortar tu tiempo de depuración es la ``depuración por bisección''.
 Por ejemplo, si hay 100 líneas en tu programa y las
@@ -5840,7 +5840,7 @@ una llamada a función recursiva o un bucle.
 
 \item[bucle infinito:] Un bucle cuya condición para terminar nunca
 se satisface.
-\index{bucle infinito}
+\index{bucle!infinito}
 
 \item[algoritmo:]  Un proceso general para resolver una categoría de
 problemas.
@@ -5885,8 +5885,8 @@ valor absoluto de la diferencia entre las dos estimaciones.
 
 
 \begin{exercise}
-\index{función eval}
-\index{eval!función}
+\index{función!eval}
+\index{eval, función}
 
 La función incorporada {\tt eval} toma una cadena y la evalúa
 utilizando el intérprete de Python.  Por ejemplo:
@@ -5949,8 +5949,8 @@ aprenderás sobre algunos de los métodos que proporcionan las cadenas.
 
 \index{secuencia}
 \index{carácter}
-\index{operador de corchetes}
-\index{corchetes!operador}
+\index{operador!de corchetes}
+\index{corchetes!operador de}
 Una cadena es una secuencia de caracteres.
 Puedes acceder a los caracteres uno a la vez con el
 operador de corchetes:
@@ -6005,7 +6005,7 @@ operadores:
 
 Pero el valor del índice tiene que ser un entero.  De lo contrario,
 obtienes:
-\index{excepción TypeError}
+\index{excepción!TypeError}
 \index{TypeError}
 
 \begin{verbatim}
@@ -6015,8 +6015,8 @@ TypeError: string indices must be integers
 %
 
 \section{{\tt len}}
-\index{función len}
-\index{len!función}
+\index{función!len}
+\index{len, función}
 
 {\tt len} es una función incorporada que devuelve el número de caracteres
 en una cadena:
@@ -6029,7 +6029,7 @@ en una cadena:
 %
 Para obtener la última letra de una cadena, quizás te tientes a intentar algo
 así:
-\index{excepción IndexError}
+\index{excepción!IndexError}
 \index{IndexError}
 
 \begin{verbatim}
@@ -6052,18 +6052,18 @@ que restar 1 a {\tt longitud}:
 O bien puedes utilizar índices negativos, que cuentan hacia atrás desde
 el final de la cadena.  La expresión {\tt fruta[-1]} entrega la última
 letra, {\tt fruta[-2]} entrega la penúltima, y así sucesivamente.
-\index{índice negativo}
-\index{negativo!índice}
+\index{índice!negativo}
+\index{negativo, índice}
 
 
 \section{Recorrido con un bucle {\tt for}}
 \label{for}
-\index{recorrido}
+\index{recorrer}
 \index{bucle!recorrido en}
-\index{bucle for}
-\index{for!bucle}
-\index{sentencia for}
-\index{recorrido}
+\index{bucle!for}
+\index{for, bucle}
+\index{sentencia!for}
+\index{recorrer}
 
 Muchas computaciones implican procesar una cadena trabajando un carácter a la
 vez.  Generalmente parten al comienzo, seleccionan cada carácter en
@@ -6138,7 +6138,7 @@ mal escritos.  Como ejercicio, modifica el programa para arreglar este error.
 
 \section{Cortes de cadena}
 \label{slice}
-\index{operador de corte} \index{corte!operador} \index{índice de corte}
+\index{operador!de corte} \index{corte!operador} \index{índice!de corte}
 \index{cadena!corte de} \index{corte de cadena} \index{slice}
 
 Un segmento de una cadena se llama {\bf corte} (en inglés, {\em slice}).  Seleccionar un corte es
@@ -6192,21 +6192,21 @@ de eso, es lo mismo que cualquier otra cadena.
 
 Continuando con este ejemplo, ¿qué crees que significa
 {\tt fruta[:]}?  Pruébalo y mira.
-\index{corte!copia}
-\index{copia!corte}
+\index{corte!copia de}
+\index{copia!de corte}
 
 
 
 \section{Las cadenas son inmutables}
 \index{mutabilidad}
 \index{inmutabilidad}
-\index{cadena inmutable}
+\index{cadena!inmutable}
 
 Es tentador utilizar el operador {\tt []} en el lado izquierdo de una
 asignación, con la intención de cambiar un carácter en una cadena.
 Por ejemplo:
 \index{TypeError}
-\index{excepción TypeError}
+\index{excepción!TypeError}
 
 \begin{verbatim}
 >>> saludo = 'Hola, mundo'
@@ -6246,8 +6246,8 @@ la cadena original.
 \label{find}
 
 ¿Qué hace la siguiente función?
-\index{función find}
-\index{find!función}
+\index{función!find}
+\index{find, función}
 
 \begin{verbatim}
 def buscar(palabra, letra):
@@ -6274,9 +6274,9 @@ termina el bucle de manera normal y devuelve {\tt -1}.
 
 Este patrón de computación ---recorrer una secuencia y devolver
 cuando encontramos lo que buscamos--- se llama {\bf búsqueda}.
-\index{recorrido}
-\index{patrón búsqueda}
-\index{búsqueda!patrón}
+\index{recorrer}
+\index{patrón!de búsqueda}
+\index{búsqueda!patrón de}
 
 Como ejercicio, modifica {\tt buscar} para que tenga un
 tercer parámetro: el índice en {\tt palabra} donde debería comenzar la
@@ -6343,7 +6343,7 @@ Esta forma de notación de punto especifica el nombre del método, {\tt
 upper}, y el nombre de la cadena a la cual se le aplica el método, {\tt
 palabra}.  Los paréntesis vacíos indican que este método no toma
 argumentos.
-\index{paréntesis vacíos}
+\index{paréntesis!vacíos}
 \index{notación de punto}
 
 Una llamada a un método se llama {\bf invocación}; en este caso,
@@ -6400,10 +6400,10 @@ aparece en el rango de índices desde {\tt 1} hasta {\tt 2}, sin incluir el {\tt
 
 \section{El operador {\tt in}}
 \label{inboth}
-\index{operador in}
-\index{in!operador}
-\index{operador booleano}
-\index{booleano!operador}
+\index{operador!in}
+\index{in, operador}
+\index{operador!booleano}
+\index{booleano, operador}
 
 La palabra {\tt in} es un operador booleano que toma dos cadenas y
 devuelve {\tt True} si la primera aparece como una subcadena en la segunda:
@@ -6441,7 +6441,7 @@ s
 %
 
 \section{Comparación de cadenas}
-\index{cadenas!comparación de}
+\index{cadenas, comparación de}
 \index{comparación de cadenas}
 
 Los operadores relacionales funcionan en las cadenas.  Para ver si dos cadenas son iguales:
@@ -6479,7 +6479,7 @@ de un hombre armado con una Piña.
 
 \section{Depuración}
 \index{depuración}
-\index{recorrido}
+\index{recorrer}
 
 Cuando utilizas índices para recorrer los valores en una secuencia,
 es difícil obtener el comienzo y final de un recorrido
@@ -6509,8 +6509,8 @@ misma longitud.  Si no, podemos devolver {\tt False} inmediatamente.
 De lo contrario, para el resto de la función, podemos suponer que las palabras
 tienen la misma longitud.  Este es un ejemplo del patrón guardián
 de la Sección~\ref{guardian}.
-\index{patrón guardián}
-\index{guardián!patrón}
+\index{patrón!guardián}
+\index{guardián, patrón}
 \index{índice}
 
 {\tt i} y {\tt j} son índices: {\tt i} recorre a {\tt palabra1}
@@ -6522,7 +6522,7 @@ devolvemos {\tt True}.
 Si probamos esta función con las palabras ``pots'' y ``stop'',
 esperamos el valor de retorno {\tt True}, pero obtenemos un IndexError:
 \index{IndexError}
-\index{excepción IndexError}
+\index{excepción!IndexError}
 
 \begin{verbatim}
 >>> es_reverso('pots', 'stop')
@@ -6574,7 +6574,7 @@ Esta vez obtenemos la respuesta correcta, pero se ve como si el bucle solo se ej
 tres veces, lo cual es sospechoso.  Para obtener una mejor idea de lo que está
 ocurriendo, es útil dibujar un diagrama de estado.  Durante la primera
 iteración, el marco para \verb"es_reverso" se muestra en la
-Figura~\ref{fig.state4}.  \index{diagrama se estado} \index{estado!diagrama de}
+Figura~\ref{fig.state4}.  \index{diagrama!se estado} \index{estado, diagrama de}
 
 \begin{figure}
 \centerline
@@ -6618,7 +6618,7 @@ los índices parten desde 0.
 
 \item[cadena vacía:] Una cadena sin caracteres y con longitud 0, representada
 por dos comillas.
-\index{cadena vacía}
+\index{cadena!vacía}
 
 \item[inmutable:] La propiedad de una secuencia cuyos ítems no pueden
 cambiarse.
@@ -6626,12 +6626,12 @@ cambiarse.
 
 \item[recorrer:] Iterar a través de los ítems en una secuencia,
 realizando una operación similar en cada uno de estos.
-\index{recorrido}
+\index{recorrer}
 
 \item[búsqueda:] Un patrón de un recorrido que se detiene
 cuando encuentra lo que busca.
-\index{patrón búsqueda}
-\index{búsqueda!patrón}
+\index{patrón!de búsqueda}
+\index{búsqueda!patrón de}
 
 \item[contador:] Una variable utilizada para contar algo, generalmente inicializada
 en cero y luego incrementada.
@@ -6651,7 +6651,7 @@ obligatorio.
 \section{Ejercicios}
 
 \begin{exercise}
-\index{método de cadena}
+\index{método!de cadena}
 \index{cadena!método de}
 
 Lee la documentación de los métodos de cadena en
@@ -6672,8 +6672,8 @@ entonces {\tt end} es opcional.
 
 
 \begin{exercise}
-\index{método count}
-\index{count!método}
+\index{método!count}
+\index{count, método}
 
 Hay un método de cadena llamado {\tt count} que es similar
 a la función de la Sección~\ref{counter}.  Lee la documentación
@@ -6685,7 +6685,7 @@ en \verb"'banana'".
 
 \begin{exercise}
 \index{tamaño de paso}
-\index{operador de corte}
+\index{operador!de corte}
 \index{corte!operador}
 
 Un corte de cadena puede tomar un tercer índice que especifique el ``tamaño
@@ -6826,11 +6826,11 @@ Este archivo está en texto plano, así que puedes abrirlo con un editor
 de texto, pero también puedes leerlo desde Python.  La función incorporada
 {\tt open} toma el nombre del archivo como parámetro
 y devuelve un {\bf objeto de archivo} que puedes utilizar para leer el archivo.
-\index{función open}
-\index{open!función}
+\index{función!open}
+\index{open, función}
 \index{texto plano}
-\index{plano!texto}
-\index{objeto de archivo}
+\index{plano, texto}
+\index{objeto!de archivo}
 \index{archivo!objeto de}
 
 \begin{verbatim}
@@ -6840,8 +6840,8 @@ y devuelve un {\bf objeto de archivo} que puedes utilizar para leer el archivo.
 {\tt fin} es un nombre común para un objeto de archivo utilizado para la entrada ({\em file input}).  El objeto
 de archivo proporciona varios métodos para la lectura, incluyendo {\tt readline},
 que lee caracteres desde un archivo hasta que llega a una nueva línea y
-devuelve el resultado como una cadena: \index{método readline}
-\index{readline!método}
+devuelve el resultado como una cadena: \index{método!readline}
+\index{readline, método}
 
 \begin{verbatim}
 >>> fin.readline()
@@ -6864,8 +6864,8 @@ La palabra siguiente es ``aah'', que es una palabra perfectamente legítima,
 así que deja de mirarme así.
 O bien, si es el carácter nueva línea lo que te molesta,
 podemos deshacernos de este con el método de cadena {\tt strip}:
-\index{método strip}
-\index{strip!método}
+\index{método!strip}
+\index{strip, método}
 
 \begin{verbatim}
 >>> linea = fin.readline()
@@ -6877,8 +6877,8 @@ podemos deshacernos de este con el método de cadena {\tt strip}:
 Puedes usar también un objeto de archivo como parte de un bucle {\tt for}.
 Este programa lee {\tt words.txt} e imprime cada palabra, una
 por línea:
-\index{función open}
-\index{open!función}
+\index{función!open}
+\index{open, función}
 
 \begin{verbatim}
 fin = open('words.txt')
@@ -6975,7 +6975,7 @@ Escribe una función llamada \verb"es_abecedario" que devuelva
 
 \section{Búsqueda}
 \label{search}
-\index{patrón de búsqueda}
+\index{patrón!de búsqueda}
 \index{búsqueda!patrón de}
 
 Todos los ejercicios de la sección anterior tienen algo en
@@ -6994,10 +6994,10 @@ El bucle {\tt for} recorre los caracteres en {\tt palabra}.  Si encontramos
 la letra ``e'', podemos devolver {\tt False} inmediatamente; de lo contrario,
 tenemos que ir a la siguiente letra.  Si terminamos el bucle de manera normal,
 significa que no encontramos una ``e'', por lo cual devolvemos {\tt True}.
-\index{recorrido}
+\index{recorrer}
 
-\index{operador in}
-\index{in!operador}
+\index{operador!in}
+\index{in, operador}
 Podrías haber escrito esta función de manera más concisa utilizando el operador {\tt in},
 pero comencé con esta versión porque
 demuestra la lógica del patrón de búsqueda.
@@ -7046,7 +7046,7 @@ def usa_todas(palabra, requeridas):
 En lugar de recorrer las letras en {\tt palabra}, el bucle
 recorre las letras requeridas.  Si alguna de las letras requeridas
 no aparece en la palabra, podemos devolver {\tt False}.
-\index{recorrido}
+\index{recorrer}
 
 Si realmente estuvieras pensando como un informático,
 habrías reconocido que \verb"usa_todas" era una instancia de un
@@ -7060,8 +7060,8 @@ def usa_todas(palabra, requeridas):
 Este es un ejemplo de un plan de desarrollo de programa llamado {\bf
   reducción a un problema previamente resuelto}, lo cual significa que
 reconoces el problema en el que estás trabajando como una instancia de un
-problema resuelto y aplicas una solución existente.  \index{reducción a un
-  problema previamente resuelto} \index{plan de desarrollo!reducción}
+problema resuelto y aplicas una solución existente.
+\index{reducción a un problema previamente resuelto} \index{plan de desarrollo!reducción}
 
 
 \section{Bucles con índices}
@@ -7161,7 +7161,7 @@ Usando \verb"es_reverso" de la Sección~\ref{isreverse}.
 \section{Depuración}
 \index{depuración}
 \index{prueba!es difícil}
-\index{prueba de programa}
+\index{prueba!de programa}
 
 Probar programas es difícil.  Las funciones de este capítulo son
 relativamente fáciles de probar porque puedes verificar los resultados a mano.
@@ -7208,7 +7208,7 @@ mostrar su ausencia!
 \begin{description}
 
 \item[objeto de archivo:] Un valor que representa un archivo abierto.
-\index{objeto de archivo}
+\index{objeto!de archivo}
 \index{archivo!objeto de}
 
 \item[reducción a un problema previamente resuelto:] Una manera de resolver un
@@ -7353,13 +7353,13 @@ La siguiente lista contiene una cadena, un número de coma flotante, un entero y
 \end{verbatim}
 %
 Una lista dentro de otra lista está {\bf anidada}.
-\index{lista anidada}
-\index{anidada!lista}
+\index{lista!anidada}
+\index{anidada, lista}
 
 Una lista que no contiene elementos se
 llama lista vacía; puedes crear una con corchetes
 vacíos, \verb"[]".
-\index{lista vacía}
+\index{lista!vacía}
 \index{vacía!lista}
 
 Como podrías esperar, puedes asignar valores de lista a variables:
@@ -7380,8 +7380,8 @@ Como podrías esperar, puedes asignar valores de lista a variables:
 \index{lista!elemento}
 \index{acceso}
 \index{índice}
-\index{operador de corchetes}
-\index{corchetes!operador}
+\index{operador!de corchetes}
+\index{corchetes!operador de}
 
 La sintaxis para acceder a los elementos de una lista es la misma que para
 acceder a los caracteres de una cadena: el operador de corchetes.  La
@@ -7413,8 +7413,8 @@ solía ser 123, ahora es 5.
 La Figura~\ref{fig.liststate} muestra
 el diagrama de estado para {\tt
 quesos}, {\tt numeros} y {\tt vacio}.
-\index{diagrama de estado}
-\index{estado!diagrama de}
+\index{diagrama!de estado}
+\index{estado, diagrama de}
 
 \begin{figure}
 \centerline
@@ -7441,19 +7441,19 @@ Los índices de las listas funcionan de la misma manera que los índices de las 
 
 \item Si intentas leer o escribir un elemento que no existe,
 obtienes un {\tt IndexError}.
-\index{excepción IndexError}
+\index{excepción!IndexError}
 \index{IndexError}
 
 \item Si un índice tiene un valor negativo, se cuenta hacia atrás desde el
 final de la lista.
 
 \end{itemize}
-\index{lista!índice}
+\index{lista!índice de}
 
 \index{lista!pertenencia}
 \index{pertenencia!lista}
-\index{operador in}
-\index{in!operador}
+\index{operador!in}
+\index{in, operador}
 
 El operador {\tt in} también funciona en las listas.
 
@@ -7467,11 +7467,11 @@ False
 
 
 \section{Recorrer una lista}
-\index{recorrido!lista}
-\index{lista!recorrido}
-\index{bucle for}
-\index{for!bucle}
-\index{sentencia for}
+\index{recorrer!lista}
+\index{lista!recorrer}
+\index{bucle!for}
+\index{for, bucle}
+\index{sentencia!for}
 
 La manera más común de recorrer los elementos de una lista es
 con un ciclo {\tt for}.  La sintaxis es la misma que para las cadenas:
@@ -7513,8 +7513,8 @@ for x in []:
 A pesar de que una lista puede contener otra lista, la lista
 anidada aún cuenta como un solo elemento.  La longitud de esta lista es
 cuatro:
-\index{lista anidada}
-\index{anidada!lista}
+\index{lista!anidada}
+\index{anidada, lista}
 
 \begin{verbatim}
 ['spam', 1, ['Brie', 'Roquefort', 'Pol le Veq'], [1, 2, 3]]
@@ -7553,9 +7553,9 @@ repite la lista {\tt [1, 2, 3]} tres veces.
 
 
 \section{Cortes de lista}
-\index{operador de corte}
+\index{operador!de corte}
 \index{corte!operador}
-\index{índice de corte}
+\index{índice!de corte}
 \index{lista!corte}
 \index{corte!lista}\index{slice}
 
@@ -7575,8 +7575,8 @@ Si omites el primer índice, el corte comienza al principio.
 Si omites el segundo, el corte llega al final.  Entonces, si
 omites ambos, el corte es una copia de la lista completa.
 \index{lista!copia}
-\index{corte!copia}
-\index{copia!corte}
+\index{corte!copia de}
+\index{copia!de corte}
 
 \begin{verbatim}
 >>> t[:]
@@ -7628,12 +7628,12 @@ puede actualizar múltiples elementos:
 
 \section{Métodos de lista}
 \index{lista!método de}
-\index{método de lista}
+\index{método!de lista}
 
 Python proporciona métodos que operan en listas.  Por ejemplo,
 {\tt append} agrega un nuevo elemento al final de la lista:
-\index{método append}
-\index{append!método}
+\index{método!append}
+\index{append, método}
 
 \begin{verbatim}
 >>> t = ['a', 'b', 'c']
@@ -7644,8 +7644,8 @@ Python proporciona métodos que operan en listas.  Por ejemplo,
 %
 {\tt extend} toma una lista como argumento y anexa todos
 los elementos:
-\index{método extend}
-\index{extend!método}
+\index{método!extend}
+\index{extend, método}
 
 \begin{verbatim}
 >>> t1 = ['a', 'b', 'c']
@@ -7658,8 +7658,8 @@ los elementos:
 Este ejemplo deja a {\tt t2} sin modificar.
 
 {\tt sort} ordena los ejementos de la lista de menor a mayor:
-\index{método sort}
-\index{sort!método}
+\index{método!sort}
+\index{sort, método}
 
 \begin{verbatim}
 >>> t = ['d', 'c', 'e', 'b', 'a']
@@ -7671,10 +7671,10 @@ Este ejemplo deja a {\tt t2} sin modificar.
 La mayoría de los métodos de lista son nulos; modifican la lista y devuelven {\tt None}.
 Si por casualidad escribes {\tt t = t.sort()}, te decepcionará
 el resultado.
-\index{método nulo}
-\index{nulo!método}
-\index{valor especial None}
-\index{None!valor especial}
+\index{método!nulo}
+\index{nulo, método}
+\index{valor especial!None}
+\index{None, valor especial}
 
 
 \section{Mapa, filtro y reducción}
@@ -7696,10 +7696,10 @@ def sumar_todos(t):
 {\tt x} obtiene un elemento de la lista.  El operador {\tt +=}
 proporciona una manera corta de actualizar una variable.  Esta
 {\bf sentencia de asignación aumentada},
-\index{operador de actualización}
-\index{actualización!operador de}
-\index{aumentada!asignación}
-\index{asignación aumentada}
+\index{operador!de actualización}
+\index{actualización, operador de}
+\index{aumentada, asignación}
+\index{asignación!aumentada}
 
 \begin{verbatim}
     total += x
@@ -7727,9 +7727,9 @@ que Python la facilita como función incorporada, {\tt sum}:
 %
 Una operación como esta que combina una secuencia de elementos en
 un solo valor a veces se llama {\bf reducción}.
-\index{patrón de reducción}
-\index{reducción!patrón de}
-\index{recorrido}
+\index{patrón!de reducción}
+\index{reducción, patrón de}
+\index{recorrer}
 
 A veces quieres recorrer una lista mientras construyes
 otra.  Por ejemplo, la siguiente función toma una lista de cadenas
@@ -7751,10 +7751,10 @@ tipo de acumulador.
 Una operación como \verb"todas_con_mayuscula" a veces es llamada {\bf
 mapa} porque ``mapea'' una función (en este caso el método {\tt
 capitalize}) sobre cada uno de los elementos en una secuencia.
-\index{patrón de mapa}
-\index{mapa!patrón de}
-\index{patrón de filtro}
-\index{filtro!patrón de}
+\index{patrón!de mapa}
+\index{mapa, patrón de}
+\index{patrón!de filtro}
+\index{filtro, patrón de}
 
 Otra operación común es seleccionar algunos de los elementos de
 una lista y devolver una sublista.  Por ejemplo, la siguiente
@@ -7787,8 +7787,8 @@ de mapa, filtro y reducción.
 Hay varias maneras de eliminar elementos de una lista.  Si conoces
 el índice del elemento que quieres, puedes utilizar
 {\tt pop}:
-\index{método pop}
-\index{pop!método}
+\index{método!pop}
+\index{pop, método}
 
 \begin{verbatim}
 >>> t = ['a', 'b', 'c']
@@ -7805,8 +7805,8 @@ Si no entregas un índice, elimina y devuelve el
 
 Si no necesitas el valor eliminado, puedes utilizar el
 operador {\tt del}:
-\index{operador del}
-\index{del!operador}
+\index{operador!del}
+\index{del, operador}
 
 \begin{verbatim}
 >>> t = ['a', 'b', 'c']
@@ -7817,8 +7817,8 @@ operador {\tt del}:
 %
 Si conoces el elemento que quieres eliminar (pero no el índice),
 puedes utilizar {\tt remove}:
-\index{método remove}
-\index{remove!método}
+\index{método!remove}
+\index{remove, método}
 
 \begin{verbatim}
 >>> t = ['a', 'b', 'c']
@@ -7828,8 +7828,8 @@ puedes utilizar {\tt remove}:
 \end{verbatim}
 %
 El valor de retorno de {\tt remove} es {\tt None}.
-\index{valor especial None}
-\index{None!valor especial}
+\index{valor especial!None}
+\index{None, valor especial}
 
 Para eliminar más de un elemento, puedes utilizar {\tt del} con
 índices de corte:
@@ -7855,7 +7855,7 @@ Una cadena es una secuencia de caracteres y una lista es una secuencia
 de valores, pero una lista de caracteres no es lo mismo que una
 cadena.  Para convertir una cadena en una lista de caracteres,
 puedes utilizar {\tt list}:
-\index{list!función}
+\index{list, función}
 \index{función!list}
 
 \begin{verbatim}
@@ -7872,8 +7872,8 @@ se parece mucho a {\tt 1}.  Entonces por eso uso {\tt t}.
 La función {\tt list} separa la cadena en letras individuales.  Si
 quieres separar una cadena en palabras, puedes utilizar
 el método {\tt split}:
-\index{método split}
-\index{split!método}
+\index{método!split}
+\index{split, método}
 
 \begin{verbatim}
 >>> s = 'pining for the fjords'
@@ -7903,8 +7903,8 @@ Toma una lista de cadenas y
 concatena los elementos.  {\tt join} es un método de cadena,
 por lo que tienes que invocarlo en el delimitador y pasarle la
 lista como parámetro:
-\index{método join}
-\index{join!método}
+\index{método!join}
+\index{join, método}
 \index{concatenación}
 
 \begin{verbatim}
@@ -7919,7 +7919,7 @@ En este caso el delimitador es un carácter de espacio, por lo que
 {\tt join} pone un espacio entre las palabras.  Para concatenar
 cadenas sin espacios, puedes usar la cadena vacía,
 \verb"''", como delimitador.
-\index{cadena vacía}
+\index{cadena!vacía}
 \index{vacía!cadena}
 
 
@@ -7951,8 +7951,8 @@ Hay dos estados posibles, mostrados en la Figura~\ref{fig.list1}.
 En el primer caso, {\tt a} y {\tt b} se refieren a dos objetos diferentes que
 tienen el mismo valor.  En el segundo caso, se refieren al mismo
 objeto.
-\index{operador is}
-\index{is!operador}
+\index{operador!is}
+\index{is, operador}
 
 Para verificar si dos variables se refieren al mismo objeto, puedes
 usar el operador {\tt is}.
@@ -7976,8 +7976,8 @@ False
 \end{verbatim}
 %
 Entonces el diagrama de estado se ve como la Figura~\ref{fig.list2}.
-\index{diagrama de estado}
-\index{estado!diagrama de}
+\index{diagrama!de estado}
+\index{estado, diagrama de}
 
 \begin{figure}
 \centerline
@@ -8006,7 +8006,7 @@ no es el mismo objeto.
 
 \section{Alias}
 \index{alias}
-\index{reference!aliasing}
+\index{referencia!alias}
 
 Si {\tt a} se refiere a un objeto y asignas {\tt b = a},
 entonces ambas variables se refieren al mismo objeto:
@@ -8019,8 +8019,8 @@ True
 \end{verbatim}
 %
 El diagrama de estado se ve como la Figura~\ref{fig.list3}.
-\index{diagrama de estado}
-\index{estado!diagrama de}
+\index{diagrama!de estado}
+\index{estado, diagrama de}
 
 \begin{figure}
 \centerline
@@ -8094,8 +8094,8 @@ Se utiliza de la siguiente manera:
 El parámetro {\tt t} y la variable {\tt letras} son
 alias para el mismo objeto.  El diagrama de pila se ve como la
 Figura~\ref{fig.stack5}.
-\index{diagrama de pila}
-\index{pila!diagrama de}
+\index{diagrama!de pila}
+\index{pila, diagrama de}
 
 \begin{figure}
 \centerline
@@ -8111,8 +8111,8 @@ Es importante distinguir entre operaciones que
 modifican listas y operaciones que crean nuevas listas.  Por
 ejemplo, el método {\tt append} modifica una lista, pero el
 operador {\tt +} crea una nueva lista.
-\index{método append}
-\index{append!método}
+\index{método!append}
+\index{append, método}
 \index{lista!concatenación}
 \index{concatenación!lista}
 
@@ -8153,7 +8153,7 @@ def sin_cabeza_mal(t):
 %
 El operador de corte crea una nueva lista y la asignación
 hace que {\tt t} se refiera a esta, pero eso no afecta a la llamadora.
-\index{operador de corte}\index{slice}
+\index{operador!de corte}\index{slice}
 \index{corte!operador}
 %
 \begin{verbatim}
@@ -8213,8 +8213,8 @@ Es tentador escribir código de lista como este:
 \begin{verbatim}
 t = t.sort()           # ¡INCORRECTO!
 \end{verbatim}
-\index{método sort}
-\index{sort!método}
+\index{método!sort}
+\index{sort, método}
 
 Dado que {\tt sort} devuelve {\tt None}, es probable que la
 siguiente operación que realices con {\tt t} falle.
@@ -8274,7 +8274,7 @@ también, puedes crear una copia.
 
 En este ejemplo podrías utilizar también la función incorporada {\tt sorted},
 que devuelve una nueva lista ordenada y deja sola a la original.
-\index{sorted!función}
+\index{sorted, función}
 \index{función!sorted}
 
 \begin{verbatim}
@@ -8301,7 +8301,7 @@ también llamados ítems.
 \index{elemento}
 
 \item[lista anidada:] Una lista que es un elemento de otra lista.
-\index{lista anidada}
+\index{lista!anidada}
 
 \item[acumulador:] Una variable utilizada en un bucle para sumar o
 acumular un resultado.
@@ -8309,24 +8309,24 @@ acumular un resultado.
 
 \item[asignación aumentada:] Una sentencia que actualiza el valor
 de una variable utilizando un operador como \verb"+=".
-\index{aumentada!asignación}
+\index{aumentada, asignación}
 \index{asignación aumentada}
-\index{recorrido}
+\index{recorrer}
 
 \item[reducción:] Un patrón de procesamiento que recorre una secuencia
 y acumula los elementos en un solo resultado.
-\index{patrón de reducción}
-\index{reducción!patrón de}
+\index{patrón!de reducción}
+\index{reducción, patrón de}
 
 \item[mapa:] Un patrón de procesamiento que recorre una secuencia y
 realiza una operación en cada elemento.
-\index{patrón de mapa}
-\index{mapa!patrón de}
+\index{patrón!de mapa}
+\index{mapa, patrón de}
 
 \item[filtro:] Un patrón de procesamiento que recorre una lista y
 selecciona los elementos que satisfacen algún criterio.
-\index{patrón de filtro}
-\index{filtro!patrón de}
+\index{patrón!de filtro}
+\index{filtro, patrón de}
 
 \item[objeto:] Algo a lo cual una variable puede referirse.  Un objeto
 tiene un tipo y un valor.
@@ -8468,10 +8468,10 @@ de que dos de ustedes estén de cumpleaños el mismo día?  Puedes estimar esta
 probabilidad generando muestras al azar de 23 cumpleaños
 y verificar coincidencias.  Pista: puedes generar cumpleaños aleatorios
 con la función {\tt randint} del módulo {\tt random}.
-\index{módulo random}
-\index{random!módulo}
-\index{función randint}
-\index{randint!función}
+\index{módulo!random}
+\index{random, módulo}
+\index{función!randint}
+\index{randint, función}
 
 Puedes descargar mi
 solución en \url{http://thinkpython2.com/code/birthday.py}.
@@ -8481,8 +8481,8 @@ solución en \url{http://thinkpython2.com/code/birthday.py}.
 
 
 \begin{exercise}
-\index{método append}
-\index{append!método}
+\index{método!append}
+\index{append, método}
 \index{lista!concatenación}
 \index{concatenación!lista}
 
@@ -8493,8 +8493,8 @@ otra utilizando la notación {\tt t = t + [x]}.  ¿Cuál toma más
 tiempo en ejecutar?  ¿Por qué?
 
 Solución: \url{http://thinkpython2.com/code/wordlist.py}.
-\index{módulo time}
-\index{time!módulo}
+\index{módulo!time}
+\index{time, módulo}
 
 \end{exercise}
 
@@ -8503,10 +8503,10 @@ Solución: \url{http://thinkpython2.com/code/wordlist.py}.
 \label{wordlist1}
 \label{bisection}
 \index{pertenencia!búsqueda de bisección}
-\index{búsqueda de bisección}
+\index{búsqueda!de bisección}
 \index{bisección, búsqueda de}
 \index{pertenencia!búsqueda binaria}
-\index{búsqueda binaria}
+\index{búsqueda!binaria}
 \index{binaria, búsqueda}
 
 Para verificar si una palabra está en la lista de palabras, podrías utilizar
@@ -8528,8 +8528,8 @@ para encontrar la palabra o concluir que no está.
 Escribe una función llamada \verb"in_bisect" que tome una lista ordenada
 y un valor objetivo, y devuelva {\tt True} si la palabra está
 en la lista y {\tt False} si no está.
-\index{módulo bisect}
-\index{bisect!módulo}
+\index{módulo!bisect}
+\index{bisect, módulo}
 
 ¡O bien podrías leer la documentación del módulo {\tt bisect}
 y utilizarlo!  Solución: \url{http://thinkpython2.com/code/inlist.py}.
@@ -8599,8 +8599,8 @@ a palabras en español, así las claves y los valores son todas cadenas.
 La función {\tt dict} crea un nuevo diccionario sin ítems.
 Como {\tt dict} es el nombre de una función incorporada,
 deberías evitar utilizarla como nombre de variable.
-\index{función dict}
-\index{dict!función}
+\index{función!dict}
+\index{dict, función}
 
 \begin{verbatim}
 >>> ing_esp = dict()
@@ -8669,8 +8669,8 @@ KeyError: 'four'
 %
 La función {\tt len} funciona con diccionarios: devuelve el
 número de pares clave-valor.
-\index{función len}
-\index{len!función}
+\index{función!len}
+\index{len, función}
 
 \begin{verbatim}
 >>> len(ing_esp)
@@ -8681,8 +8681,8 @@ El operador {\tt in} también funciona con diccionarios: te dice si
 algo aparece como una {\em clave} en el diccionario (aparecer
 como un valor no basta).
 \index{pertenencia!diccionario}
-\index{in!operador}
-\index{operator in}
+\index{in, operador}
+\index{operador!in}
 
 \begin{verbatim}
 >>> 'one' in ing_esp
@@ -8694,8 +8694,8 @@ False
 Para ver si algo aparece como un valor en un diccionario,
 puedes utilizar el método {\tt values}, el cual devuelve una colección de
 valores, y entonces utilizar el operador {\tt in}:
-\index{método values}
-\index{values!método}
+\index{método!values}
+\index{values, método}
 
 \begin{verbatim}
 >>> valores = ing_esp.values()
@@ -8769,7 +8769,7 @@ El nombre de la función es {\tt histograma}, que es un término
 estadístico para una colección de contadores (o frecuencias).
 \index{histograma}
 \index{frecuencia}
-\index{recorrido}
+\index{recorrer}
 
 La primera línea de la
 función crea un diccionario vacío.  El bucle {\tt for} recorre
@@ -8791,8 +8791,8 @@ El histograma indica que las letras \verb"'a'" y \verb"'b'"
 aparecen una vez; \verb"'o'" aparece dos veces, y así sucesivamente.
 
 
-\index{método get}
-\index{get!método}
+\index{método!get}
+\index{get, método}
 Los diccionarios tienen un método llamado {\tt get} que toma una clave
 y un valor por defecto.  Si la clave aparece en el diccionario,
 {\tt get} devuelve el valor correspondiente; de lo contrario, devuelve
@@ -8815,7 +8815,7 @@ Deberías ser capaz de eliminar la sentencia {\tt if}.
 \section{Bucles y diccionarios}
 \index{diccionario!bucles con}
 \index{bucle!con diccionarios}
-\index{recorrido}
+\index{recorrer}
 
 Si utilizas un diccionario en una sentencia {\tt for}, este recorre
 las claves del diccionario.  Por ejemplo, \verb"imprimir_hist"
@@ -8841,7 +8841,7 @@ o 1
 %
 Nuevamente, las claves no estan en un orden particular.  Para recorrer las claves
 en orden, puedes utilizar la función incorporada {\tt sorted}:
-\index{sorted!función}
+\index{sorted, función}
 \index{función!sorted}
 
 \begin{verbatim}
@@ -8892,7 +8892,7 @@ utiliza una característica que no hemos visto antes, {\tt raise}.  La
 {\tt LookupError}, que es una excepción incorporada que se utiliza para indicar
 que falló una operación de consulta.
 \index{búsqueda}
-\index{búsqueda!patrón} \index{sentencia raise} \index{raise!sentencia}
+\index{búsqueda!patrón de} \index{sentencia!raise} \index{raise, sentencia}
 \index{excepción!LookupError} \index{LookupError}
 
 Si se llega al final del bucle, significa que {\tt v}
@@ -8994,8 +8994,8 @@ Un diccionario se representa como una caja con el tipo {\tt dict} arriba suyo
 y el par clave-valor adentro.  Si los valores son enteros, números de coma flotante o
 cadenas, los dibujo adentro de la caja, pero usualmente dibujo las listas
 afuera de la caja, solo para mantener simple al diagrama.
-\index{diagrama de estado}
-\index{estado!diagrama de}
+\index{diagrama!de estado}
+\index{estado, diagrama de}
 
 Las listas pueden ser valores en un diccionario, tal como muestra este ejemplo simple, pero
 no pueden ser claves.  Aquí está lo que ocurre si lo intentas:
@@ -9014,7 +9014,7 @@ TypeError: list objects are unhashable
 %
 Anteriormente mencioné que un diccionario se implementa utilizando
 una tabla hash y eso significa que las claves tienen que ser {\bf hashables}.
-\index{función hash}
+\index{función!hash}
 \index{hashable}
 
 Un {\bf hash} es una función que toma un valor (de cualquier tipo)
@@ -9046,8 +9046,8 @@ Si jugaste con la función {\tt fibonacci} de la
 Sección~\ref{one.more.example}, quizás has notado que mientras más grande
 es el argumento que entregues, más tarda la función en ejecutarse.
 Además, el tiempo de ejecución aumenta rápidamente. 
-\index{fibonacci function}
-\index{function!fibonacci}
+\index{fibonacci, función de}
+\index{función!fibonacci}
 
 Para entender el por qué, considera la Figura~\ref{fig.fibonacci}, que muestra
 el {\bf gráfico de llamadas} para {\tt fibonacci} con {\tt n=4}.
@@ -9064,7 +9064,7 @@ marco a los marcos de las funciones que están siendo llamadas.  En la parte de 
 gráfico, {\tt fibonacci} con {\tt n=4} llama {\tt fibonacci} con {\tt
 n=3} y {\tt n=2}.  A su vez, {\tt fibonacci} con {\tt n=3} llama a
 {\tt fibonacci} con {\tt n=2} y {\tt n=1}.  Y así sucesivamente.
-\index{marco de función}
+\index{marco de una función}
 \index{marco}
 \index{gráfico de llamadas}
 
@@ -9106,7 +9106,7 @@ la original, encontrarás que esta es mucho más rápida.
 
 \section{Variables globales}
 \index{variable global}
-\index{global!variable}
+\index{global, variable}
 
 En los ejemplos anteriores, {\tt conocidos} se crea fuera de la función,
 por lo que pertenece al marco especial llamado \verb"__main__".
@@ -9147,8 +9147,8 @@ Pero si lo ejecutas verás que el valor de \verb"fue_llamada"
 no cambia. El problema es que {\tt ejemplo2} crea una nueva variable local
 con nombre \verb"fue_llamada".  La variable local se va cuando 
 la función termina y no tiene efecto en la variable global.
-\index{sentencia global}
-\index{global!sentencia}
+\index{sentencia!global}
+\index{global, sentencia}
 \index{declaración}
 
 Para reasignar una variable global dentro de una función tienes que
@@ -9255,8 +9255,8 @@ promedio de una lista de números, podrías verificar que el resultado no
 sea mayor que el elemento más grande de la lista ni menor que
 el más pequeño. A esto se le llama ``prueba de cordura'' (en inglés, {\em sanity check})
 porque detecta resultados que son ``locos''.
-\index{sanity check}\index{prueba de cordura}
-\index{prueba de consistencia}
+\index{sanity check}\index{prueba!de cordura}
+\index{prueba!de consistencia}
 
 Otro tipo de prueba compara los resultados de dos computaciones
 diferentes para ver si son consistentes. A esto se le llama
@@ -9269,8 +9269,8 @@ el cual proporciona una función {\tt pprint} que muestra tipos incorporados en
 un formato más legible por humanos ({\tt pprint} significa
 ``pretty print'').
 \index{pretty print}
-\index{módulo pprint}
-\index{pprint!módulo}
+\index{módulo!pprint}
+\index{pprint, módulo}
 
 \end{description}
 
@@ -9297,7 +9297,7 @@ una clave a un valor.
 
 \item[ítem:] En un diccionario, otro nombre para un par
 clave-valor.
-\index{ítem de un diccionario}
+\index{ítem!de un diccionario}
 
 \item[clave:] Un objeto que aparece en un diccionario como la
 primera parte de un par clave-valor.
@@ -9317,7 +9317,7 @@ diccionarios de Python.
 
 \item[función hash:] Una función utilizada por una tabla hash para calcular
 la ubicación de una clave.
-\index{función hash}
+\index{función!hash}
 
 \item[hashable:] Un tipo que tiene una función hash.  Los tipos inmutables
 como los enteros, números de
@@ -9334,8 +9334,8 @@ una o más claves que mapean a este.
 \index{consulta inversa}
 
 \item[sentencia raise:]  Una sentencia que (deliberadamente) levanta una excepción.
-\index{sentencia raise}
-\index{raise!sentencia}
+\index{sentencia!raise}
+\index{raise, sentencia}
 
 \item[singleton:] Una lista (u otra secuencia) con un solo elemento.
 \index{singleton}
@@ -9356,8 +9356,8 @@ variables globales pueden ser accesibles desde cualquier función.
 
 \item[sentencia global:]  Una sentencia que declara global a un nombre
 de variable.
-\index{sentencia global}
-\index{global!sentencia}
+\index{sentencia!global}
+\index{global, sentencia}
 
 \item[bandera:] Una variable booleana que se utiliza para indicar si una condición
 es verdadera.
@@ -9374,8 +9374,8 @@ intérprete algo sobre una variable.
 
 \begin{exercise}
 \label{wordlist2}
-\index{pertenencia a conjunto}
-\index{conjunto!pertenencia}
+\index{pertenencia!a conjunto}
+\index{conjunto!pertenencia a}
 
 Escribe una función que lea las palabras en {\tt words.txt} y
 las almacene como claves en un diccionario.  No importa cuáles sean
@@ -9397,7 +9397,7 @@ Lee la documentación del método de diccionario {\tt setdefault}
 y utilízalo para escribir una versión más concisa de \verb"invertir_dict".
 Solución: \url{http://thinkpython2.com/code/invert_dict.py}.
 \index{setdefault!método}
-\index{método setdefault}
+\index{método!setdefault}
 
 \end{exercise}
 
@@ -9407,7 +9407,7 @@ Memoiza la función de Ackermann del Ejercicio~\ref{ackermann} y ve si
 la memoización permite evaluar la función con argumentos
 más grandes.  Pista: no.
 Solución: \url{http://thinkpython2.com/code/ackermann_memo.py}.
-\index{Ackermann!función}
+\index{Ackermann, función}
 \index{función!ack}
 
 \end{exercise}
@@ -9432,7 +9432,7 @@ Solución: \url{http://thinkpython2.com/code/has_duplicates.py}.
 \begin{exercise}
 \label{exrotatepairs}
 \index{rotación de letras}
-\index{letras!rotación de}
+\index{letras, rotación de}
 
 Dos palabras son ``pares rotativos'' si puedes rotar una de ellas
 y obtener la otra (ver \verb"rotar_palabra" en el Ejercicio~\ref{exrotate}).
@@ -9556,8 +9556,8 @@ Un valor en paréntesis no es una tupla:
 %
 Otra manera de crear una tupla es la función incorporada {\tt tuple}.
 Sin argumentos, esta crea una tupla vacía:
-\index{función tuple}
-\index{tuple!función}
+\index{función!tuple}
+\index{tuple, función}
 
 \begin{verbatim}
 >>> t = tuple()
@@ -9579,8 +9579,8 @@ evitar usarlo como nombre de una variable.
 
 La mayoría de los operadores de lista también funcionan en tuplas.  El operador de corchetes
 indexa un elemento:
-\index{operador de corchetes}
-\index{corchetes!operador}
+\index{operador!de corchetes}
+\index{corchetes!operador de}
 
 \begin{verbatim}
 >>> t = ('a', 'b', 'c', 'd', 'e')
@@ -9589,7 +9589,7 @@ indexa un elemento:
 \end{verbatim}
 %
 Y el operador de corte selecciona un rango de elementos.
-\index{operador de corte}\index{slice}
+\index{operador!de corte}\index{slice}
 \index{corte!operador}
 \index{tupla!corte}
 \index{corte!tupla}
@@ -9628,7 +9628,7 @@ secuencia.  Si son iguales, avanza a los siguientes elementos,
 y así sucesivamente, hasta que encuentre elementos que sean diferentes.  Los elementos
 posteriores no se consideran (incluso si son realmente grandes).
 \index{tupla!comparación}
-\index{comparación!tupla}
+\index{comparación de tupla}
 
 \begin{verbatim}
 >>> (0, 1, 2) < (0, 3, 4)
@@ -9642,9 +9642,9 @@ True
 \section{Asignación de tupla}
 \label{tuple.assignment}
 \index{tupla!asignación de}
-\index{asignación de tupla}
-\index{swap pattern}
-\index{pattern!swap}
+\index{asignación!de tupla}
+\index{patrón!de intercambio}
+\index{intercambio, patrón de}
 
 A menudo es útil intercambiar los valores de dos variables.
 Con asignaciones convencionales, tienes que utilizar una variable
@@ -9680,8 +9680,8 @@ ValueError: too many values to unpack
 De manera más general, el lado derecho puede ser cualquier tipo de secuencia
 (cadena, lista o tupla).  Por ejemplo, para separar una direccion de email
 en nombre de usuario y dominio, podrías intentar:
-\index{método split}
-\index{split!método}
+\index{método!split}
+\index{split, método}
 \index{email address}
 
 \begin{verbatim}
@@ -9726,7 +9726,7 @@ Puedes almacenar el resultado como una tupla:
 \end{verbatim}
 %
 O bien utilizar asignación de tupla para almacenar los elementos por separado:
-\index{asignación de tupla}
+\index{asignación!de tupla}
 \index{tupla!asignación de}
 
 \begin{verbatim}
@@ -9747,19 +9747,19 @@ def min_max(t):
 {\tt max} y {\tt min} son funciones incorporadas que encuentran
 los elementos más grande y más pequeño en una secuencia.  \verb"min_max"
 calcula ambos y devuelve una tupla de dos valores.
-\index{max!función}
+\index{max, función}
 \index{función!max}
-\index{min función}
+\index{min, función}
 \index{función!min}
 
 
 \section{Tuplas de argumentos de longitud variable}
 \label{gather}
-\index{tupla de argumentos de longitud variable}
+\index{tupla!de argumentos de longitud variable}
 \index{argumento!tupla de longitud variable}
 \index{reunión}
-\index{parámetro de reunión}
-\index{argumento!reunión}
+\index{parámetro!de reunión}
+\index{argumento!reunión de}
 
 Las funciones pueden tomar una cantidad variable de argumentos.  Un nombre de parámetro
 que comienza con {\tt *} hace una {\bf reunión} de argumentos en
@@ -9785,7 +9785,7 @@ como multiples argumentos, puedes utilizar el operador {\tt *}.
 Por ejemplo, {\tt divmod} toma exactamente dos argumentos;
 no funciona con una tupla:
 \index{dispersión}
-\index{argumento!dispersión}
+\index{argumento!dispersión de}
 \index{TypeError}
 \index{excepción!TypeError}
 
@@ -9805,9 +9805,9 @@ Sin embargo, si dispersas la tupla, funciona:
 Muchas de las funciones incorporadas utilizan
 tuplas de argumentos de longitud variable.  Por ejemplo, {\tt max}
 y {\tt min} pueden tomar cualquier cantidad de argumentos:
-\index{max función}
+\index{max, función}
 \index{función!max}
-\index{min función}
+\index{min, función}
 \index{función!min}
 
 \begin{verbatim}
@@ -9816,8 +9816,8 @@ y {\tt min} pueden tomar cualquier cantidad de argumentos:
 \end{verbatim}
 %
 Pero {\tt sum} no puede.
-\index{sum!función}
-\index{función sum}
+\index{sum, función}
+\index{función!sum}
 
 \begin{verbatim}
 >>> sum(1, 2, 3)
@@ -9830,7 +9830,7 @@ de argumentos y devuelva su suma.
 
 \section{Listas y tuplas}
 \index{zip!función}
-\index{función zip}
+\index{función!zip}
 
 {\tt zip} es una función incorporada que toma dos o más secuencias y
 las intercala.  El nombre de la función se refiere a
@@ -9886,8 +9886,8 @@ longitud de la secuencia más corta.
 %
 Puedes utilizar asignación de tupla en un bucle {\tt for} para recorrer una lista de
 tuplas:
-\index{recorrido}
-\index{asignación de tupla}
+\index{recorrer}
+\index{asignación!de tupla}
 \index{tupla!asignación de}
 
 \begin{verbatim}
@@ -9912,7 +9912,7 @@ manera útil para recorrer dos (o más) secuencias al mismo
 tiempo.  Por ejemplo, \verb"tiene_coincidencia" toma dos secuencias, {\tt t1} y
 {\tt t2}, y devuelve {\tt True} si hay un índice {\tt i}
 tal que {\tt t1[i] == t2[i]}:
-\index{bucle for}
+\index{bucle!for}
 
 \begin{verbatim}
 def tiene_coincidencia(t1, t2):
@@ -9924,8 +9924,8 @@ def tiene_coincidencia(t1, t2):
 %
 Si necesitas recorrer los elementos de una secuencia y sus
 índices, puedes utilizar la función incorporada {\tt enumerate}:
-\index{recorrido}
-\index{función enumerate}
+\index{recorrer}
+\index{función!enumerate}
 \index{enumerate!función}
 
 \begin{verbatim}
@@ -9946,15 +9946,15 @@ En este ejemplo, la salida es
 %
 De nuevo.
 \index{iterador}
-\index{objeto enumerate}
+\index{objeto!enumerate}
 \index{enumerate!objeto}
 
 
 \section{Diccionarios y tuplas}
 \label{dictuple}
 \index{diccionario}
-\index{método items}
-\index{items!método}
+\index{método!items}
+\index{items, método}
 \index{par clave-valor}
 
 Los diccionarios tienen un método llamado {\tt items} que devuelve una secuencia de
@@ -9996,7 +9996,7 @@ inicializar un nuevo diccionario: \index{diccionario!inicializar}
 
 Combinando {\tt dict} con {\tt zip} se produce una manera concisa
 de crear un diccionario:
-\index{función zip!usar con dict}
+\index{zip!usar con dict}
 
 \begin{verbatim}
 >>> d = dict(zip('abc', range(3)))
@@ -10006,10 +10006,10 @@ de crear un diccionario:
 %
 El método de diccionario {\tt update} además toma una lista de tuplas
 y las agrega, como pares clave-valor, a un diccionario existente.
-\index{método update}
-\index{update!método}
-\index{recorrido!diccionario}
-\index{diccionario!recorrido}
+\index{método!update}
+\index{update, método}
+\index{recorrer!diccionario}
+\index{diccionario!recorrer}
 
 Es común utilizar tuplas como claves en diccionarios (principalmente porque
 no puedes utilizar listas).  Por ejemplo, un directorio telefónico podría mapear
@@ -10040,8 +10040,8 @@ Hay dos maneras de representar tuplas en un diagrama de estado.  La versión
 más detallada muestra los índices y elementos tal como aparecen en
 una lista.  Por ejemplo, la tupla \verb"('Cleese', 'John')" se mostraría
 como en la Figura~\ref{fig.tuple1}.
-\index{diagrama de estado}
-\index{estado!diagrama de}
+\index{diagrama!de estado}
+\index{estado, diagrama de}
 
 \begin{figure}
 \centerline
@@ -10112,16 +10112,16 @@ proporciona la función incorporada {\tt sorted}, que toma cualquier secuencia
 y devuelve una lista nueva con los mismos elementos en orden, y
 {\tt reversed}, que toma una secuencia y devuelve un iterador que
 recorre la lista en orden invertido.
-\index{función sorted}
-\index{sorted!función} \index{función reversed}
-\index{reversed!función}
+\index{función!sorted}
+\index{sorted, función} \index{función!reversed}
+\index{reversed, función}
 \index{iterador}
 
 
 \section{Depuración}
 \index{depuración}
 \index{estructura de datos}
-\index{error de forma}
+\index{error!de forma}
 \index{forma!error de}
 
 Las listas, diccionarios y tuplas son ejemplos de {\bf estructuras
@@ -10132,8 +10132,8 @@ pero son propensas a lo que yo llamo {\bf errores de forma}, es decir, errores
 causados cuando una estructura de datos tiene el tipo, tamaño o estructura
 incorrecta. Por ejemplo, si estás esperando una lista que contiene un entero y yo
 te doy un simple y viejo entero (no en una lista), no funcionará.
-\index{módulo structshape}
-\index{structshape!módulo}
+\index{módulo!structshape}
+\index{structshape, módulo}
 
 Para ayudar a depurar esta clase de errores, he escrito un módulo
 llamado {\tt structshape} que proporciona una función, también llamada
@@ -10200,7 +10200,7 @@ Si tienes problemas al hacer seguimiento de tus estructuras de datos,
 lado derecho y una tupla de variables en el lado izquierdo.  El lado
 derecho es evaluado y luego sus elementos son asignados a las
 variables en el lado izquierdo.
-\index{asignación de tupla}
+\index{asignación!de tupla}
 \index{tupla!asignación de}
 
 \item[reunión:] Una operación que junta múltiples argumentos en una tupla.
@@ -10211,7 +10211,7 @@ variables en el lado izquierdo.
 
 \item[objeto zip:] El resultado de llamar a la función incorporada {\tt zip};
 un objeto que itera a través de una secuencia de tuplas.
-\index{objeto zip}
+\index{objeto!zip}
 \index{zip!objeto}
 
 \item[iterador:] Un objeto que itera a través de una secuencia, pero
@@ -10239,7 +10239,7 @@ de texto en varios idiomas diferentes y ve cómo varía la frecuencia de letras
 entre los idiomas.  Compara tus resultados con las tablas en
 \url{http://en.wikipedia.org/wiki/Letter_frequencies}.  Solución:
 \url{http://thinkpython2.com/code/most_frequent.py}.  \index{frecuencia de
-  letras} \index{letras!frecuencia}
+  letras} \index{letras, frecuencia}
 
 \end{exercise}
 
@@ -10247,7 +10247,7 @@ entre los idiomas.  Compara tus resultados con las tablas en
 \begin{exercise}
 \label{anagrams}
 \index{conjunto de anagramas}
-\index{anagramas!conjunto de}
+\index{anagramas, conjunto de}
 
 ¡Más anagramas!
 
@@ -10342,7 +10342,7 @@ algunas sugerencias:
   obtenga una lista de todas las palabras que se pueden formar eliminando una
   letra.  Estas son las ``hijas'' de la palabra.
 \index{definición recursiva}
-\index{recursiva!definición}
+\index{recursiva, definición}
 
 \item De manera recursiva, una palabra es reducible si cualquiera de sus hijas
 son reducibles.  Como caso base, puedes considerar la cadena vacía
@@ -10395,7 +10395,7 @@ antes de que leas mis soluciones.
 Escribe un programa que lea un archivo, separe cada línea en
 palabras, quite los espacios en blanco y la puntuación de las palabras,
 y las convierta minúsculas.
-\index{módulo string}
+\index{módulo!string}
 \index{string!módulo}
 
 Pista: El módulo {\tt string} proporciona una cadena con nombre {\tt whitespace},
@@ -10411,12 +10411,12 @@ si podemos hacer que Python diga groserías:
 %
 Además, podrías considerar el uso de los métodos de cadena {\tt strip},
 {\tt replace} y {\tt translate}.
-\index{método strip}
-\index{strip!método}
-\index{método replace}
-\index{replace!método}
-\index{método translate}
-\index{translate!método}
+\index{método!strip}
+\index{strip, método}
+\index{método!replace}
+\index{replace, método}
+\index{método!translate}
+\index{translate, método}
 
 \end{exercise}
 
@@ -10436,7 +10436,7 @@ del archivo y procese el resto de las palabras como antes.
 Luego, modifica el programa para que cuente la cantidad total de palabras en
 el libro y el número de veces que se utiliza cada palabra.
 \index{frecuencia de palabras}
-\index{palabras!frecuencia de}
+\index{palabras, frecuencia de}
 
 Imprime el número de palabras diferentes utilizadas en el libro.  Compara
 libros diferentes de autores diferentes, escritos en épocas diferentes.
@@ -10465,7 +10465,7 @@ de palabras y cuántas de ellas son realmente oscuras?
 
 \section{Números aleatorios}
 \index{número aleatorio}
-\index{aleatorio, número}
+\index{aleatorio!número}
 \index{determinista}
 \index{pseudoaleatorio}
 
@@ -10482,14 +10482,14 @@ ellas es utilizar algoritmos que generen números {\bf pseudoaleatorios}.
 Los números pseudoaleatorios no son verdaderamente aleatorios porque se generan
 por una computación determinista, pero solo mirando a dichos números
 es casi imposible distinguirlos de los aleatorios.
-\index{módulo random}
-\index{random!módulo}
+\index{módulo!random}
+\index{random, módulo}
 
 El módulo {\tt random} proporciona funciones que generan
 números pseudoaleatorios (que simplemente llamaré ``aleatorios'' desde
 aquí en adelante).
-\index{función random}
-\index{random!función}
+\index{función!random}
+\index{random, función}
 
 La función {\tt random} devuelve un número de coma flotante aleatorio
 entre 0.0 y 1.0 (incluyendo 0.0 pero no 1.0).  Cada vez que
@@ -10507,8 +10507,8 @@ for i in range(10):
 La función {\tt randint} toma los parámetros {\tt low} y
 {\tt high} y devuelve un entero entre {\tt low} y
 {\tt high} (incluyendo a ambos).
-\index{función randint}
-\index{randint!función}
+\index{función!randint}
+\index{randint, función}
 
 \begin{verbatim}
 >>> random.randint(5, 10)
@@ -10519,8 +10519,8 @@ La función {\tt randint} toma los parámetros {\tt low} y
 %
 Para escoger un elemento de una secuencia de manera aleatoria, puedes usar
 {\tt choice}:
-\index{función choice}
-\index{choice!función}
+\index{función!choice}
+\index{choice, función}
 
 \begin{verbatim}
 >>> t = [1, 2, 3]
@@ -10594,7 +10594,7 @@ Este programa lee a {\tt emma.txt}, que contiene el texto de {\em
 pasándolas una a la vez a \verb"procesar_linea".  El histograma
 {\tt hist} se utiliza como acumulador.
 \index{acumulador!histograma}
-\index{recorrido}
+\index{recorrer}
 
 \verb"procesar_linea" utiliza el método de cadena {\tt replace} para reemplazar
 los guiones con espacios antes de utilizar {\tt split} para separar la línea en una
@@ -10693,15 +10693,15 @@ en \url{https://wiki.python.org/moin/HowTo/Sorting}.
 
 
 \section{Parámetros opcionales}
-\index{parámetro opcional}
+\index{parámetro!opcional}
 \index{opcional!parámetro}
 
 Hemos visto funciones y métodos que toman argumentos
 opcionales.  Es posible, además, escribir funciones definidas por el programador
 con argumentos opcionales.  Por ejemplo, aquí hay una función que
 imprime las palabras más comunes de un histograma:
-\index{programmer-defined function}
-\index{function!programmer defined}
+\index{programador, función definida por el}
+\index{función!definida por el programador}
 
 \begin{verbatim}
 def imprime_mas_comunes(hist, num=10):
@@ -10714,7 +10714,7 @@ def imprime_mas_comunes(hist, num=10):
 El primer parámetro es obligatorio, el segundo es opcional.
 El {\bf valor por defecto} de {\tt num} es 10.
 \index{valor por defecto}
-\index{por defecto!valor}
+\index{por defecto, valor}
 
 Si solo entregas un argumento:
 
@@ -10739,8 +10739,8 @@ opcionales.
 
 \section{Diferencia de diccionarios}
 \label{dictsub}
-\index{diccionario!diferencia}
-\index{diferencia!diccionario}
+\index{diccionario!diferencia de}
+\index{diferencia de diccionarios}
 
 Encontrar las palabras del libro que no están en la lista de palabras
 de {\tt words.txt} es un problema que podrías reconocer como diferencia
@@ -10973,7 +10973,7 @@ Además, necesitarás \url{http://thinkpython2.com/code/emma.txt}.
 
 
 \section{Estructuras de datos}
-\index{estructuras de datos}
+\index{estructura de datos}
 
 Utilizar análisis de Markov para generar texto aleatorio es divertido, pero también
 hay un punto en este ejercicio: la selección de la estructura de datos.  En tu
@@ -11049,8 +11049,8 @@ la aplicación en cuestión.  Si es así, no hay necesidad de seguir.  Si no,
 hay herramientas, como el módulo {\tt profile}, que puede identificar
 los lugares en un programa que toman la mayor parte del tiempo.
 \index{evaluación comparativa}\index{benchmarking}
-\index{módulo profile}
-\index{profile!módulo}
+\index{módulo!profile}
+\index{profile, módulo}
 
 El otro factor a considerar es el espacio de almacenamiento.  Por ejemplo, utilizar un
 histograma para la colección de sufijos podría ocupar menos espacio porque
@@ -11106,14 +11106,14 @@ funcione y que entiendas.  Luego puedes comenzar a reconstruir.
 Los programadores principiantes a veces se atascan en una de estas actividades
 y olvidan las otras.  Cada actividad viene con su propio modo
 de fallo.
-\index{error tipográfico}
+\index{error!tipográfico}
 
 Por ejemplo, leer tu código podría ayudar si el problema es un
 error tipográfico, pero no si el problema es un malentendido
 conceptual.  Si no entiendes lo que tu programa hace,
 puedes leerlo 100 veces y nunca ver el error, porque el error está en
 tu cabeza.
-\index{depuración experimental}
+\index{depuración!experimental}\index{experimental, depuración}
 
 Ejecutar experimentos puede ayudar, especialmente si ejecutas pruebas
 pequeñas y simples.  Pero si ejecutas experimentos sin pensar ni leer tu
@@ -11184,7 +11184,7 @@ Python.
 
 \begin{exercise}
 \index{frecuencia de palabras}
-\index{palabras!frecuencia de}
+\index{palabras, frecuencia de}
 \index{Ley de Zipf}
 
 El ``rango'' de una palabra es su posición en una lista de palabras
@@ -11260,7 +11260,7 @@ que los escriban.
 Una alternativa es almacenar el estado del programa en una base de datos.
 En este capítulo presentaré una base de datos simple y un módulo,
 {\tt pickle}, que facilita el almacenamiento de datos del programa.
-\index{módulo pickle}
+\index{módulo!pickle}
 \index{pickle!módulo}
 
 
@@ -11270,8 +11270,8 @@ En este capítulo presentaré una base de datos simple y un módulo,
 Un archivo de texto es una secuencia de caracteres almacenados en un medio
 permanente como un disco duro, memoria flash o CD-ROM.  Vimos cómo
 abrir y leer un archivo en la Sección~\ref{wordlist}.
-\index{función open}
-\index{open!función}
+\index{función!open}
+\index{open, función}
 
 Para escribir un archivo, tienes que abrirlo con el modo \verb"'w'" como segundo
 parámetro:
@@ -11311,16 +11311,16 @@ Cuando hayas terminado de escribir, deberías cerrar el archivo.
 >>> fout.close()
 \end{verbatim}
 %
-\index{método close}
-\index{close!método}
+\index{método!close}
+\index{close, método}
 %
 Si no cierras el archivo, se cierra cuando el
 programa termina.
 
 
 \section{Operador de formato}
-\index{operador de formato}
-\index{formato!operador de}
+\index{operador!de formato}
+\index{formato, operador de}
 
 El argumento de {\tt write} tiene que ser una cadena, por lo cual si queremos
 poner valores en un archivo, tenemos que convertirlos a
@@ -11424,14 +11424,14 @@ Cada programa que se ejecuta tiene un ``directorio actual'', que es el
 directorio por defecto para la mayor parte de las operaciones.
 Por ejemplo, cuando abres un archivo para lectura, Python lo busca en el
 directorio actual.
-\index{módulo os}
-\index{os!módulo}
+\index{módulo!os}
+\index{os, módulo}
 
 El módulo {\tt os} proporciona funciones para trabajar con archivos y
 directorios (``os'' significa ``operating system'').  {\tt os.getcwd}
 devuelve el nombre del directorio actual:
-\index{función getcwd}
-\index{getcwd!función}
+\index{función!getcwd}
+\index{getcwd, función}
 
 \begin{verbatim}
 >>> import os
@@ -11444,7 +11444,7 @@ devuelve el nombre del directorio actual:
 este ejemplo es {\tt /home/dinsdale}, que es el directorio principal de un
 usuario con nombre {\tt dinsdale}.
 \index{directorio de trabajo}
-\index{trabajo!directorio de}
+\index{trabajo, directorio de}
 
 Una cadena como \verb"'/home/dinsdale'" que identifica un archivo o un
 directorio se llama {\bf ruta} (en inglés, {\em path}).
@@ -11453,8 +11453,8 @@ Un nombre de archivo simple, como {\tt memo.txt}, también se considera una ruta
 pero es una {\bf ruta relativa} porque se relaciona con el directorio
 actual.  Si el directorio actual es {\tt /home/dinsdale}, el
 nombre de archivo {\tt memo.txt} haría referencia a {\tt /home/dinsdale/memo.txt}.
-\index{ruta relativa} \index{relativa!ruta}
-\index{ruta absoluta} \index{absoluta!ruta}
+\index{ruta relativa} \index{relativa, ruta}
+\index{ruta absoluta} \index{absoluta, ruta}
 
 Una ruta que comienza con {\tt /} no depende del directorio
 actual: se llama {\bf ruta absoluta}.  Para encontrar la ruta
@@ -11469,8 +11469,8 @@ absoluta de un archivo, puedes usar {\tt os.path.abspath}:
 y rutas.  Por ejemplo,
 {\tt os.path.exists} verifica
 si un archivo o directorio existe:
-\index{función exists}
-\index{exists!función}
+\index{función!exists}
+\index{exists, función}
 
 \begin{verbatim}
 >>> os.path.exists('memo.txt')
@@ -11501,7 +11501,7 @@ Para demostrar estas funciones, el siguiente ejemplo
 los nombres de todos los archivos y se llama a sí mismo de manera recursiva en
 todos los directorios.
 \index{directorio!recorrer}
-\index{recorrer directorio}
+\index{recorrer!directorio}
 
 \begin{verbatim}
 def walk(nombre_dir):
@@ -11530,8 +11530,8 @@ en un directorio dado y sus subdirectorios.  Puedes descargar mi solución desde
 Muchas cosas pueden salir mal cuando intentas leer y escribir
 archivos.  Si intentas abrir un archivo que no existe, obtienes un
 {\tt IOError}:
-\index{función open}
-\index{open!función}
+\index{función!open}
+\index{open, función}
 \index{excepción!IOError}
 \index{IOError}
 
@@ -11561,8 +11561,8 @@ y {\tt os.path.isfile}, pero tomaría mucho tiempo y código
 verificar todas las posibilidades (si ``{\tt Errno 21}'' indica
 algo, hay al menos 21 cosas que pueden salir mal).
 \index{excepción, detectar}
-\index{sentencia try}
-\index{try!sentencia}
+\index{sentencia!try}
+\index{try, sentencia}
 
 Es mejor continuar y avanzar ---y lidiar con los problemas, si
 ocurren--- que es exactamente lo que hace la sentencia {\tt try}.  La
@@ -11594,15 +11594,15 @@ Una {\bf base de datos} es un archivo que está organizado para almacenar datos.
 bases de datos están organizadas como un diccionario en el sentido de que mapean
 de claves a valores.  La diferencia más grande entre una base de datos y un
 diccionario es que la base de datos está en un disco (u otro almacenamiento
-permanente), por lo cual persiste después de que el programa termina.  \index{módulo
-  dbm} \index{dbm!módulo}
+permanente), por lo cual persiste después de que el programa termina.  \index{módulo!dbm}
+\index{dbm, módulo}
 
 El módulo {\tt dbm} proporciona una interfaz para crear
 y actualizar archivos de base de datos.
 Como ejemplo, crearé una base de datos
 que contiene títulos para archivos de imagen.
-\index{función open}
-\index{open!función}
+\index{función!open}
+\index{open, función}
 
 Abrir una base de datos es similar a abrir otros archivos:
 
@@ -11614,8 +11614,8 @@ Abrir una base de datos es similar a abrir otros archivos:
 El modo \verb"'c'" significa que la base de datos debería ser creada si
 no existe ya.  El resultado es un objeto de base de datos
 que puede ser utilizado (para la mayoría de las operaciones) como un diccionario.
-\index{objeto de base de datos}
-\index{base de datos!objeto}
+\index{objeto!de base de datos}
+\index{base de datos!objeto de}
 
 Cuando creas un nuevo ítem, {\tt dbm} actualiza el archivo de base de datos.
 \index{actualizar!base de datos}
@@ -11634,8 +11634,8 @@ b'Foto de John Cleese.'
 El resultado es un {\bf objeto de bytes}, que es la razón por la cual comienza con {\tt
   b}.  Un objeto de bytes es similar a una cadena en muchos sentidos.  A medida que llegas más lejos en Python, la diferencia se vuelve importante, pero por ahora
 podemos ignorarla.
-\index{objeto de bytes}
-\index{bytes!objeto}
+\index{objeto!de bytes}
+\index{bytes, objeto de}
 
 Si haces otra asignación a una clave existente, {\tt dbm} reemplaza
 el valor antiguo:
@@ -11650,7 +11650,7 @@ b'Foto de John Cleese haciendo un tonto paseo.'
 Algunos métodos de diccionario, como {\tt keys} e {\tt items}, no
 funcionan con objetos de base de datos.  Pero la iteración con un bucle {\tt for}
 funciona:
-\index{métodos de diccionario!módulo dbm}
+\index{módulo!dbm}
 
 \begin{verbatim}
 for clave in db:
@@ -11664,8 +11664,8 @@ termines:
 >>> db.close()
 \end{verbatim}
 %
-\index{método close}
-\index{close!método}
+\index{método!close}
+\index{close, método}
 
 
 \section{Uso de pickle}
@@ -11673,7 +11673,7 @@ termines:
 
 Una limitación de {\tt dbm} es que las claves y valores tienen que ser
 cadenas o bytes.  Si intentas utilizar cualquier otro tipo, obtienes un error.
-\index{módulo pickle} \index{pickle!módulo}
+\index{módulo!pickle} \index{pickle!módulo}
 
 El módulo {\tt pickle} puede ayudar.  Este módulo traduce
 casi cualquier tipo de objeto en una cadena adecuada para almacenar
@@ -11717,8 +11717,8 @@ que copiar el objeto.
 Puedes utilizar {\tt pickle} para almacenar objetos que no sean cadena en una base de datos.
 De hecho, esta combinación es tan común que ha sido
 encapsulada en un módulo llamado {\tt shelve}.
-\index{módulo shelve}
-\index{shelve!módulo}
+\index{módulo!shelve}
+\index{shelve, módulo}
 
 
 \section{Tuberías}
@@ -11732,7 +11732,7 @@ ejemplo, en Unix puedes cambiar directorios con {\tt cd},
 mostrar los contenidos de un directorio con {\tt ls} e iniciar
 un navegador web escribiendo (por ejemplo) {\tt firefox}.
 \index{ls (comando Unix)}
-\index{comando Unix!ls}
+\index{comando Unix ls}
 
 Cualquier programa que puedes iniciar desde la shell puede también
 iniciarse desde Python utilizando un {\bf objeto de tubería} (en inglés, {\em pipe}), que
@@ -11745,8 +11745,8 @@ obsoleto, lo cual significa que se supone que debemos dejar de utilizarla y come
 el módulo {\tt subprocess}.  Pero para casos simples, encuentro a
 {\tt subprocess} más complicado que necesario.  Entonces voy a
 seguir utilizando {\tt popen} hasta que lo quiten.}:
-\index{función popen}
-\index{popen!función}
+\index{función!popen}
+\index{popen, función}
 
 \begin{verbatim}
 >>> cmd = 'ls -l'
@@ -11758,18 +11758,18 @@ valor de retorno es un objeto que se comporta como un archivo
 abierto.  Puedes leer la salida del proceso {\tt ls} una
 línea a la vez con {\tt readline} u obtener todo de una vez
 con {\tt read}:
-\index{método readline}
-\index{readline!método}
-\index{método read}
-\index{read!método}
+\index{método!readline}
+\index{readline, método}
+\index{método!read}
+\index{read, método}
 
 \begin{verbatim}
 >>> res = fp.read()
 \end{verbatim}
 %
 Cuando termines, cierras la tubería como un archivo:
-\index{método close}
-\index{close!método}
+\index{método!close}
+\index{close, método}
 
 \begin{verbatim}
 >>> stat = fp.close()
@@ -11835,7 +11835,7 @@ Puedes también importarlo así:
 \end{verbatim}
 %
 Ahora teienes un objeto de módulo {\tt wc}:
-\index{objeto de módulo}
+\index{objeto!de módulo}
 \index{módulo!objeto}
 
 \begin{verbatim}
@@ -11856,8 +11856,8 @@ El único problema con este ejemplo es que, cuando importas
 el módulo, ejecuta el código de prueba de la parte final.  Normalmente,
 cuando importas un módulo, este define nuevas funciones pero
 no las ejecuta.
-\index{sentencia import}
-\index{import!sentencia}
+\index{sentencia!import}
+\index{import, sentencia}
 
 Los programas que serán importados como módulos a menudo
 utilizan la siguiente forma:
@@ -11884,9 +11884,9 @@ cuando el módulo se está importando?
 Advertencia: si importas un módulo que ya ha sido importado,
 Python no hace nada.  No vuelve a leer el archivo, incluso si ha
 cambiado.
-\index{módulo reload}
-\index{función reload}
-\index{reload!función}
+\index{módulo!reload}
+\index{función!reload}
+\index{reload, función}
 
 Si quieres volver a cargar un módulo, puedes utilizar la función incorporada
 {\tt reload}, pero puede ser complicada, por lo cual lo más seguro es
@@ -11907,8 +11907,8 @@ sangrías y nuevas líneas son normalmente invisibles:
 1 2	 3
  4
 \end{verbatim}
-\index{función repr}
-\index{repr!función}
+\index{función!repr}
+\index{repr, función}
 \index{representación de cadena}
 
 La función incorporada {\tt repr} puede ayudar.  Toma cualquier objeto como
@@ -11948,12 +11948,12 @@ y mantiene al menos alguno de sus datos en almacenamiento permanente.
 \item[operador de formato:] Un operador, {\tt \%}, que toma una cadena
 de formato y una tupla y genera una cadena que incluye
 los elementos de la tupla con el formato especificado por la cadena de formato.
-\index{operador de formato}
+\index{operador!de formato}
 \index{formato!operador de}
 
 \item[cadena de formato:] Una cadena, utilizada con el operador de formato, que
 contiene secuencias de formato.
-\index{cadena de formato}
+\index{cadena!de formato}
 
 \item[secuencia de formato:] Una secuencia de caracteres en una cadena de formato,
 como {\tt \%d}, que especifica cómo debería ser el formato de un valor.
@@ -11961,7 +11961,7 @@ como {\tt \%d}, que especifica cómo debería ser el formato de un valor.
 
 \item[archivo de texto:] Una secuencia de caracteres guardada en almacenamiento
 permanente, como en un disco duro.
-\index{archivo de texto}
+\index{archivo!de texto}
 
 \item[directorio:] Una colección de archivos que tiene un nombre, también llamado carpeta.
 \index{directorio}
@@ -11986,8 +11986,8 @@ con claves y sus correspondientes valores.
 \index{base de datos}
 
 \item[objeto de bytes:] Un objeto similar a una cadena.
-\index{objeto de bytes}
-\index{bytes!objeto}
+\index{objeto!de bytes}
+\index{bytes, objeto de}
 
 \item[shell:] Un programa que permite a los usuarios escribir comandos y luego
 ejecutarlos iniciando otros programas.
@@ -11995,7 +11995,7 @@ ejecutarlos iniciando otros programas.
 
 \item[objeto de tubería:] Un objeto que representa un programa en ejecución, permitiendo
 a un programa de Python ejecutar comandos y leer los resultados.
-\index{objeto de tubería}
+\index{objeto!de tubería}
 \index{tubería!objeto}
 
 \end{description}
@@ -12020,7 +12020,7 @@ salir.  Solución: \url{http://thinkpython2.com/code/sed.py}.
 
 \begin{exercise}
 \index{conjunto de anagramas}
-\index{anagramas!conjutno de}
+\index{anagramas, conjunto de}
 
 Si descargas mi solución al Ejercicio~\ref{anagrams} de
 \url{http://thinkpython2.com/code/anagram_sets.py}, verás que crea
@@ -12056,7 +12056,7 @@ Pista: {\tt os.path} proporciona varias funciones útiles para
 manipular nombres de archivo y de rutas.
 \index{duplicado}
 \index{algoritmo MD5}
-\index{MD5!algoritmo}
+\index{MD5, algoritmo}
 \index{suma de verificación}
 
 \item Para reconocer duplicados, puedes utilizar {\tt md5sum}
@@ -12094,8 +12094,8 @@ a los ejercicios están disponibles en
 
 \section{Tipos definidos por el programador}
 \label{point}
-\index{tipo definido por el programador}
-\index{definido por el programador!tipo}
+\index{tipo!definido por el programador}
+\index{programador, tipo definido por el}
 
 Hemos utilizado muchos tipos incorporados de Python; ahora vamos
 a definir un tipo nuevo.  Como ejemplo, crearemos un tipo
@@ -12131,7 +12131,7 @@ tiene ventajas que pronto serán aparentes.
 Un tipo definido por el programador también se llama {\bf clase}.
 Una definición de clase se ve así:
 \index{clase}
-\index{objeto de clase}
+\index{objeto!de clase}
 \index{definición de clase}
 \index{clase!definición}
 
@@ -12144,8 +12144,8 @@ El encabezado indica que la clase nueva se llama {\tt Punto}.
 El cuerpo es un docstring que explica para qué es la clase.
 Puedes definir variables y métodos dentro de una definición de clase,
 pero volveremos a eso más adelante.
-\index{clase Punto}
-\index{Punto!clase}
+\index{clase!Punto}
+\index{Punto, clase}
 \index{docstring}
 
 Definir una clase con nombre {\tt Punto} crea un {\bf objeto de clase}.
@@ -12157,7 +12157,7 @@ Definir una clase con nombre {\tt Punto} crea un {\bf objeto de clase}.
 %
 Dado que {\tt Punto} se define en el nivel más alto, su ``nombre
 completo'' es \verb"__main__.Punto".
-\index{objeto de clase}
+\index{objeto!de clase}
 \index{clase!objeto}
 
 El objeto de clase es como una fábrica para crear objetos.  Para crear un
@@ -12213,9 +12213,9 @@ Estos elementos se llaman {\bf atributos}.
 La Figura~\ref{fig.point} es un diagrama de estado que muestra el resultado de estas asignaciones.
 Un diagrama de estado que muestra un objeto con sus atributos se
 llama {\bf diagrama de objeto}.
-\index{diagrama de estado}
-\index{estado!diagrama de}
-\index{diagrama de objeto}
+\index{diagrama!de estado}
+\index{estado, diagrama de}
+\index{diagrama!de objeto}
 \index{objeto!diagrama de}
 
 \begin{figure}
@@ -12305,8 +12305,8 @@ Hay al menos dos posibilidades:
 
 En este punto es difícil decir si una alternativa es mejor que
 la otra, así que implementaremos la primera, solo como ejemplo.
-\index{clase Rectángulo}
-\index{Rectángulo!clase}
+\index{clase!Rectángulo}
+\index{Rectángulo, clase}
 
 Aquí está la definición de la clase:
 
@@ -12349,12 +12349,12 @@ La expresión {\tt caja.esquina.x} significa
 
 La Figura~\ref{fig.rectangle} muestra el estado de este objeto.
 Un objeto que es un atributo de otro objeto está {\bf incrustado}.
-\index{diagrama de estado}
-\index{estado!diagrama de}
-\index{diagrama de objeto}
+\index{diagrama!de estado}
+\index{estado, diagrama de}
+\index{diagrama!de objeto}
 \index{objeto!diagrama de}
-\index{objeto incrustado}
-\index{incrustado!objeto}
+\index{objeto!incrustado}
+\index{incrustado, objeto}
 
 
 \section{Instancias como valores de retorno}
@@ -12438,9 +12438,9 @@ en un lugar podrían tener efectos inesperados en otro lugar.
 Es difícil hacer un seguimiento de todas las variables que podrían referirse
 a un objeto dado.
 \index{copiar objetos}
-\index{objetos!copiar}
-\index{módulo copy}
-\index{copy!módulo}
+\index{objetos, copiar}
+\index{módulo!copy}
+\index{copy, módulo}
 
 Copiar un objeto es a menudo una alternativa a los alias.
 El módulo {\tt copy} contiene una función llamada {\tt copy} que
@@ -12477,14 +12477,14 @@ instancias, el comportamiento por defecto del operador {\tt ==} es el mismo
 que el operador {\tt is}: verifica identidad de objeto, no equivalencia
 de objeto.  Eso ocurre debido a que para tipos definidos por el programador, Python no
 sabe qué debería considerarse equivalente.  Al menos, no todavía.
-\index{is!operador}
-\index{operador is}
+\index{is, operador}
+\index{operador!is}
 \index{identidad}
 \index{equivalencia}
 
 Si usas {\tt copy.copy} para duplicar un Rectángulo, encontrarás
 que copia el objeto Rectángulo pero no el Punto incrustado.
-\index{objeto incrustado!copiar}
+\index{objeto incrustado, copiar}
 
 \begin{verbatim}
 >>> caja2 = copy.copy(caja)
@@ -12502,21 +12502,21 @@ True
 \end{figure}
 
 La Figura~\ref{fig.rectangle2} muestra cómo se ve el diagrama de objeto.
-\index{diagrama de estado}
-\index{estado!diagrama de}
-\index{diagrama de objeto}
+\index{diagrama!de estado}
+\index{estado, diagrama de}
+\index{diagrama!de objeto}
 \index{objeto!diagrama de}
 Esta operación se llama {\bf copia superficial} porque copia al
 objeto y cualquier referencia que contenga, pero no los objetos incrustados.
-\index{copia superficial}
-\index{superficial!copia}
+\index{copia!superficial}
+\index{superficial, copia}
 
 Para la mayoría de las aplicaciones, esto no es lo que quieres.  En este ejemplo,
 invocar a \verb"crecer_rectangulo" en uno de los Rectángulos no
 afectaría al otro, ¡pero invocar a \verb"mover_rectangulo" en cualquiera
 afectaría a ambos!  Este comportamiento es confuso y propenso a errores.
-\index{copia profunda}
-\index{profunda!copia}
+\index{copia!profunda}
+\index{profunda, copia}
 
 Afortunadamente, el módulo {\tt copy} proporciona un método con nombre {\tt
 deepcopy} que copia no solo el objeto sino también
@@ -12524,8 +12524,8 @@ los objetos a los cuales este se refiere, y los objetos a los cuales {\em estos}
 y así sucesivamente.
 No te sorprenderá saber que esta operación se
 llama {\bf copia profunda}.
-\index{función deepcopy}
-\index{deepcopy!función}
+\index{función!deepcopy}
+\index{deepcopy, función}
 
 \begin{verbatim}
 >>> caja3 = copy.deepcopy(caja)
@@ -12548,7 +12548,7 @@ devuelva un Rectángulo nuevo en lugar de modificar el antiguo.
 Cuando comienzas a trabajar con objetos, es probable que encuentres
 algunas excepciones nuevas.  Si intentas acceder a un atributo
 que no existe, obtienes un {\tt AttributeError}:
-\index{excepción AttributeError}
+\index{excepción!AttributeError}
 \index{AttributeError}
 
 \begin{verbatim}
@@ -12560,8 +12560,8 @@ AttributeError: Point instance has no attribute 'z'
 \end{verbatim}
 %
 Si no sabes bien de qué tipo es un objeto, puedes consultar:
-\index{función type}
-\index{type!función}
+\index{función!type}
+\index{type, función}
 
 \begin{verbatim}
 >>> type(p)
@@ -12570,8 +12570,8 @@ Si no sabes bien de qué tipo es un objeto, puedes consultar:
 %
 Puedes también utilizar {\tt isinstance} para verificar si un objeto
 es una instancia de una clase:
-\index{función isinstance}
-\index{isinstance!función}
+\index{función!isinstance}
+\index{isinstance, función}
 
 \begin{verbatim}
 >>> isinstance(p, Punto)
@@ -12580,8 +12580,8 @@ True
 %
 Si no sabes bien si un objeto tiene un atributo en particular,
 puedes utilizar la función incorporada {\tt hasattr}:
-\index{función hasattr}
-\index{hasattr!función}
+\index{función!hasattr}
+\index{hasattr, función}
 
 \begin{verbatim}
 >>> hasattr(p, 'x')
@@ -12596,8 +12596,8 @@ cadena} que contiene el nombre del atributo.
 
 Puedes también utilizar una sentencia {\tt try} para ver si el objeto tiene los
 atributos que necesitas:
-\index{sentencia try}
-\index{try!sentencia}
+\index{sentencia!try}
+\index{try, sentencia}
 
 \begin{verbatim}
 try:
@@ -12618,13 +12618,13 @@ en la Sección~\ref{polymorphism}.
 \item[clase:] Un tipo definido por el programador.  Una definición de clase crea un nuevo
 objeto de clase.
 \index{clase}
-\index{tipo definido por el programador}
+\index{tipo!definido por el programador}
 \index{definido por el programador!tipo}
 
 \item[objeto de clase:] Un objeto que contiene información acerca del
 tipo definido por el programador.  El objeto de clase se puede utilizar para crear instancias
 del tipo.
-\index{objeto de clase}
+\index{objeto!de clase}
 \index{clase!objeto}
 
 \item[instancia:] Un objeto que pertenece a una clase.
@@ -12639,22 +12639,22 @@ del tipo.
 
 \item[objeto incrustado:] Un objeto que se almacena como atributo
 de otro objeto.
-\index{objeto incrustado}
-\index{incrustado!objeto}
+\index{objeto!incrustado}
+\index{incrustado, objeto}
 
 \item[copia superficial:] Copiar los contenidos de un objeto, incluyendo
 cualquier referencia a los objetos incrustados;
 implementada por la función {\tt copy} del módulo {\tt copy}.
-\index{copia superficial}
+\index{copia!superficial}
 
 \item[copia profunda:] Copiar los contenidos de un objeto así como cualquier
 objeto incrustado, y cualquier objeto incrustado en estos, y así sucesivamente;
 implementado por la función {\tt deepcopy} del módulo {\tt copy}.
-\index{copia profunda}
+\index{copia!profunda}
 
 \item[diagrama de objeto:] Un diagrama que muestra objetos, sus
 atributos y los valores de los atributos.
-\index{diagrama de objeto}
+\index{diagrama!de objeto}
 \index{objeto!diagrama de}
 
 \end{description}
@@ -12724,8 +12724,8 @@ Las soluciones a los ejercicios están en
 
 Como otro ejemplo de tipo definido por el programador, definiremos una clase
 llamada {\tt Tiempo} que registre la hora del día.  La definición de clase
-se ve así: \index{tipo definido por el programador}
-\index{definido por el programador!tipo} \index{clase Tiempo} \index{Tiempo!clase}
+se ve así: \index{tipo!definido por el programador}
+\index{definido por el programador!tipo} \index{clase!Tiempo} \index{Tiempo, clase}
 
 \begin{verbatim}
 class Tiempo:
@@ -12746,9 +12746,9 @@ tiempo.segundo = 30
 \end{verbatim}
 %
 El diagrama de estado para el objeto {\tt Tiempo} se ve como en la Figura~\ref{fig.time}.
-\index{diagrama de estado}
-\index{estado!diagrama}
-\index{diagrama de objeto}
+\index{diagrama!de estado}
+\index{estado, diagrama de}
+\index{diagrama!de objeto}
 \index{objeto!diagrama}
 
 Como ejercicio, escribe una función llamada \verb"imprimir_tiempo" que tome un
@@ -12797,8 +12797,8 @@ una {\bf función pura} porque no modifica ninguno de los objetos
 que se le pasan como argumentos y no tiene efecto,
 como mostrar un valor u obtener entrada del usuario,
 además de devolver un valor.
-\index{función pura}
-\index{pura!tipo de función}
+\index{función!pura}
+\index{pura, tipo de función}
 
 Para probar esta función, crearé dos objetos Tiempo: {\tt comienzo}
 contiene el tiempo de inicio de una película, como {\em Monty Python and the
@@ -12858,7 +12858,7 @@ Veremos una alternativa más corta más adelante.
 \section{Modificadores}
 \label{increment}
 \index{modificador}
-\index{tipo de función!modificador}
+\index{función!modificadora}
 
 A veces es útil para una función modificar los objetos que obtiene como
 parámetros.  En ese caso, los cambios son visibles para la llamadora.
@@ -12976,7 +12976,7 @@ Quizás tengas que pensar un poco, y ejecutar algunas pruebas, para convencerte
 de que estas funciones son correctas.  Una manera de probarlas es
 verificar que \verb"tiempo_a_int(int_a_tiempo(x)) == x" para muchos valores de
 {\tt x}.  Este es un ejemplo de prueba de consistencia.
-\index{prueba de consistencia}
+\index{prueba!de consistencia}
 
 Una vez que te convenzas de que son correctas, puedes utilizarlas para
 reescribir \verb"sumar_tiempo":
@@ -13044,8 +13044,8 @@ def tiempo_valido(tiempo):
 %
 Al principio de cada función podrías verificar los
 argumentos para asegurarte de que son válidos:
-\index{sentencia raise}
-\index{raise!sentencia}
+\index{sentencia!raise}
+\index{raise, sentencia}
 
 \begin{verbatim}
 def sumar_tiempo(t1, t2):
@@ -13057,8 +13057,8 @@ def sumar_tiempo(t1, t2):
 %
 O bien podrías utilizar una {\bf sentencia assert}, que verifica un invariante dado
 y levanta una excepción si este falla:
-\index{sentencia assert}
-\index{assert!sentencia}
+\index{sentencia!assert}
+\index{assert, sentencia}
 
 \begin{verbatim}
 def sumar_tiempo(t1, t2):
@@ -13088,7 +13088,7 @@ incremental o el desarrollo de prototipo.
 
 \item[función pura:] Una función que no modifica ninguno de los objetos que
 recibe como argumentos.  La mayoría de las funciones puras son productivas.
-\index{función pura}
+\index{función!pura}
 
 \item[modificador:] Una función que cambia uno o más de los objetos que
   recibe como argumentos.  La mayoría de los modificadores son funciones nulas, es decir,
@@ -13104,8 +13104,8 @@ ejecución de un programa.
 
 \item[sentencia assert:] Una sentencia que verifica una condición y levanta
 una excepción si esta falla.
-\index{sentencia assert}
-\index{assert!sentencia}
+\index{sentencia!assert}
+\index{assert, sentencia}
 
 \end{description}
 
@@ -13132,8 +13132,8 @@ el ritmo de carrera promedio (tiempo por cada milla).
 
 
 \begin{exercise}
-\index{módulo datetime}
-\index{datetime!módulo}
+\index{módulo!datetime}
+\index{datetime, módulo}
 
 El módulo {\tt datetime} proporciona objetos {\tt time}
 que son similares a los objetos Tiempo de este capítulo, pero
@@ -13217,8 +13217,8 @@ Por ejemplo, en {\tt Time1.py} no hay conexión
 obvia entre la definición de clase y las definiciones de funciones
 que siguen.  Con algo de revisión, es evidente que cada función
 toma al menos un objeto {\tt Tiempo} como argumento.
-\index{method}
-\index{function}
+\index{método}
+\index{función}
 
 Esta observación es la motivación para los {\bf métodos}; un método es
 una función que está asociada a una clase en particular.
@@ -13226,7 +13226,7 @@ Hemos visto métodos para cadenas, listas, diccionarios y tuplas.
 En este capítulo, definiremos métodos para tipos definidos por el programador.
 \index{sintaxis}
 \index{semántica}
-\index{tipo definido por el programador}
+\index{tipo!definido por el programador}
 \index{definido por el programador!tipo}
 
 Los métodos son semánticamente lo mismo que las funciones, pero hay
@@ -13250,7 +13250,7 @@ podrás escoger la mejor forma para lo que sea que estés haciendo.
 
 
 \section{Imprimir objetos}
-\index{objero!imprimir}
+\index{objeto, imprimir}
 
 En el Capítulo~\ref{time}, definimos una clase con nombre
 {\tt Tiempo} y en la Sección~\ref{isafter}, escribiste
@@ -13289,7 +13289,7 @@ class Tiempo:
 %
 Ahora hay dos maneras de llamar a \verb"imprimir_tiempo".  La primera manera
 (y menos común) es utilizar sintaxis de función:
-\index{sintaxis de función}
+\index{sintaxis!de función}
 \index{notación de punto}
 
 \begin{verbatim}
@@ -13302,7 +13302,7 @@ e \verb"imprimir_tiempo" es el nombre del método.  {\tt comienzo} se
 pasa como parámetro.
 
 La segunda manera (y más concisa) es utilizar la sintaxis de método:
-\index{sintaxis de método}
+\index{sintaxis!de método}
 
 \begin{verbatim}
 >>> comienzo.imprimir_tiempo()
@@ -13395,7 +13395,7 @@ segundo parámetro, {\tt segundos}.
 Este mecanismo puede ser confuso, especialmente si cometes un error.
 Por ejemplo, si invocas a {\tt aumentar} con dos argumentos,
 obtienes:
-\index{excepción TypeError}
+\index{excepción!TypeError}
 \index{TypeError}
 
 \begin{verbatim}
@@ -13411,7 +13411,7 @@ Por cierto, un {\bf argumento posicional} es un argumento que
 no tiene un nombre de parámetro, es decir, no es un argumento de
 palabra clave.  En esta llamada a función:
 \index{argumento posicional}
-\index{posicional!argumento}
+\index{posicional, argumento}
 
 \begin{verbatim}
 dibujar(loro, jaula, muerto=True)
@@ -13449,8 +13449,8 @@ casi textual: ``¿término está después de comienzo?''
 
 
 \section{El método init}
-\index{método init}
-\index{init!método}
+\index{método!init}
+\index{init, método}
 
 El método init (abreviatura de ``initialization'') es
 un método especial que se invoca cuando se instancia un objeto.
@@ -13476,8 +13476,8 @@ tengan los mismos nombres que los atributos.  La sentencia
 %
 almacena el valor del parámetro {\tt hora} como un atributo
 de {\tt self}.
-\index{parámetro opcional}
-\index{optional!parámetro}
+\index{parámetro!opcional}
+\index{opcional!parámetro}
 \index{valor por defecto}
 \index{anular}
 
@@ -13513,13 +13513,13 @@ valores por defecto.
 Como ejercicio, escribe un método init para la clase {\tt Punto} que tome a
 {\tt x} e {\tt y} como argumentos opcionales y los asigne
 a los atributos correspondientes.
-\index{clase Punto}
+\index{clase!Punto}
 \index{Punto!clase}
 
 
 \section{El método {\tt \_\_str\_\_}}
-\index{método str@método \_\_str\_\_}
-\index{\_\_str\_\_!método}
+\index{método!str@método \_\_str\_\_}
+\index{\_\_str\_\_, método}
 
 \verb"__str__" es un método especial, al igual que \verb"__init__",
 que se supone que devuelve una representación de un objeto en forma de cadena.
@@ -13535,8 +13535,8 @@ Por ejemplo, aquí hay un método {\tt str} para los objetos Tiempo:
 \end{verbatim}
 %
 Cuando utilizas {\tt print} en un objeto, Python invoca al método {\tt str}:
-\index{sentencia print}
-\index{print!sentencia}
+\index{sentencia!print}
+\index{print, sentencia}
 
 \begin{verbatim}
 >>> tiempo = Tiempo(9, 45)
@@ -13559,12 +13559,12 @@ Definiendo otros métodos especiales, puedes especificar el comportamiento
 de operadores en tipos definidos por el programador.  Por ejemplo, si defines
 un método con nombre \verb"__add__" para la clase {\tt Tiempo}, puedes utilizar el
 operador {\tt +} en objetos Tiempo.
-\index{tipo definido por el programador}
+\index{tipo!definido por el programador}
 \index{definido por el programador!tipo}
 
 Así es como podría verse la definición:
-\index{método add}
-\index{add!método}
+\index{método!add}
+\index{add, método}
 
 \begin{verbatim}
 # dentro de class Tiempo:
@@ -13626,8 +13626,8 @@ que verifica el tipo de {\tt other} e invoca a
 La función incorporada {\tt isinstance} toma un valor y un
 objeto de clase, y devuelve {\tt True} si el valor es una instancia
 de la clase.
-\index{función isinstance}
-\index{isinstance!función}
+\index{función!isinstance}
+\index{isinstance, función}
 
 Si {\tt other} es un objeto Tiempo, \verb"__add__" invoca a
 \verb"sumar_tiempo".  En caso contrario, supone que el parámetro
@@ -13636,7 +13636,7 @@ llama {\bf despacho basado en tipo} porque despacha el
 cálculo a diferentes métodos basándose en el tipo de los
 argumentos.
 \index{despacho basado en tipo}
-\index{basado en tipo, despacho}
+\index{tipo!despacho basado en}
 
 Aquí hay ejemplos que utilizan el operador {\tt +} con tipos
 diferentes:
@@ -13665,8 +13665,8 @@ cómo hacerlo.  Sin embargo, hay una solución ingeniosa para este problema: el
 método especial \verb"__radd__", que significa ``right-side add''.
 Este método se invoca cuando un objeto Tiempo aparece en el lado derecho del
 operador {\tt +}.  Aquí está la definición:
-\index{método radd}
-\index{radd!método}
+\index{método!radd}
+\index{radd, método}
 
 \begin{verbatim}
 # dentro de class Tiempo:
@@ -13708,7 +13708,7 @@ El despacho basado en tipo es útil si es necesario, pero (afortunadamente)
 no siempre es necesario.  A menudo puedes evitarlo escribiendo funciones
 que trabajen de manera correcta con argumentos de tipo diferente.
 \index{despacho basado en tipo}
-\index{basado en tipo!despacho}
+\index{tipo!despacho basado en}
 
 Muchas de las funciones que escribimos para cadenas también
 funcionan para otros tipos de secuencia.
@@ -13771,15 +13771,15 @@ de un programa, pero si tienes objetos con el mismo tipo que no
 tienen los mismos atributos, es fácil cometer errores.
 Se considera una buena idea
 inicializar todo lo de un atributo de un objeto en el método init.
-\index{método init}
-\index{inicializar!atributo}
+\index{método!init}
+\index{inicializar atributo}
 
 Si no sabes bien si un objeto tiene un atributo en particular,
 puedes utilizar la función incorporada {\tt hasattr} (ver Sección~\ref{hasattr}).
-\index{función hasattr}
-\index{hasattr!función}
+\index{función!hasattr}
+\index{hasattr, función}
 \index{atributo dict@atributo \_\_dict\_\_}
-\index{\_\_dict\_\_!atributo}
+\index{\_\_dict\_\_, atributo}
 
 Otra manera de acceder a los atributos es la función incorporada {\tt vars},
 que toma un objeto y devuelve un diccionario que mapea de los nombres
@@ -13807,8 +13807,8 @@ e imprime cada nombre de atributo y su valor correspondiente.
 
 La función incorporada {\tt getattr} toma un objeto y un nombre
 de atributo (como cadena) y devuelve el valor del atributo.
-\index{función getattr}
-\index{getattr!función}
+\index{función!getattr}
+\index{getattr, función}
 
 
 \section{Interfaz e implementación}
@@ -13860,7 +13860,7 @@ significa que otras partes del programa no tienen que cambiar.
 \item[lenguaje orientado a objetos:] Un lenguaje que proporciona características,
   tales como métodos y tipos definidos por el programador, que facilitan
   la programación orientada a objetos.
-\index{lenguage orientado a objetos}
+\index{lenguaje!orientado a objetos}
 
 \item[programación orientada a objetos:] Un estilo de programación en el cual
 los datos y las operaciones que los manipulan se organizan en clases
@@ -13877,16 +13877,16 @@ se invoca en instancias de esa clase.
 \item[argumento posicional:]  Un argumento que no incluye
 un nombre de parámetro, por tanto no es un argumento de palabra clave.
 \index{argumento posicional}
-\index{posicional!argumento}
+\index{posicional, argumento}
 
 \item[sobrecarga de operador:] Cambiar el comportamiento de un operador como
 {\tt +} para que funcione con un tipo definido por el programador.
-\index{sobrecarga}
-\index{operador!sobrecarga}
+\index{sobrecarga de operador}
+\index{operador!sobrecarga de}
 
 \item[despacho basado en tipo:] Un patrón de programación que verifica el tipo
 de un operando e invoca a funciones diferentes para tipos diferentes.
-\index{despacho basado en tipo}
+\index{despacho basado en tipo} \index{tipo!despacho basado en}
 
 \item[polimórfico:] Dicho de una función que puede trabajar con más de
   un tipo.
@@ -13914,11 +13914,11 @@ Descarga el código de este capítulo en
 \begin{exercise}
 \label{kangaroo}
 \index{valor por defecto!evitar mutable}
-\index{objeto mutable, como valor por defecto}
+\index{objeto mutable como valor por defecto}
 \index{el peor error de programación}
-\index{error de programación!el peor}
-\index{clase Canguro}
-\index{Canguro!clase}
+\index{error!de programación, el peor}
+\index{clase!Kangaroo}
+\index{Kangaroo, clase}
 
 Este ejercicio es un cuento con moraleja acerca de uno de los errores
 en Python más comunes y más difíciles de encontrar.
@@ -13951,8 +13951,8 @@ Si te estancas, puedes descargar
 \url{http://thinkpython2.com/code/GoodKangaroo.py}, que explica el
 problema y demuestra una solución.
 \index{alias}
-\index{objeto incrustado}
-\index{incrustado!objeto}
+\index{objeto!incrustado}
+\index{incrustado, objeto}
 
 \end{exercise}
 
@@ -14035,8 +14035,8 @@ Rey & \mymapsto & 13 \\
 Utilizo el símbolo \mymapsto para que quede claro que estos mapeos
 no son parte del programa en Python.  Son parte del diseño del
 programa, pero no aparecen explícitamente en el código.
-\index{clase Carta}
-\index{Carta!clase}
+\index{clase!Carta}
+\index{Carta, clase}
 
 La definición de clase para {\tt Carta} se ve así:
 
@@ -14052,8 +14052,8 @@ class Carta:
 Como siempre, el método init toma un parámetro
 opcional para cada atributo.  La carta por defecto es
 el 2 de Tréboles.
-\index{init method}
-\index{method!init}
+\index{init, método}
+\index{método!init}
 
 Para crear una Carta, llamas a {\tt Carta} con el
 palo y el rango de la carta que quieres.
@@ -14138,14 +14138,14 @@ La Figura~\ref{fig.card1} es un diagrama del objeto de clase {\tt Carta} y
 una instancia de Carta.  {\tt Carta} es un objeto de clase; su tipo es {\tt
   type}.  {\tt carta1} es una instancia de {\tt Carta}, por lo cual su tipo es
 {\tt Carta}.  Para ahorrar espacio, no dibujé los contenidos de
-\verb"nombres_de_palo" y \verb"nombres_de_rango".  \index{diagrama de estado}
-\index{estado!diagrama de} \index{diagrama de objeto} \index{objeto!diagrama de}
+\verb"nombres_de_palo" y \verb"nombres_de_rango".  \index{diagrama!de estado}
+\index{estado, diagrama de} \index{diagrama!de objeto} \index{objeto!diagrama de}
 
 
 \section{Comparar cartas}
 \label{comparecard}
-\index{relacional!operador}
-\index{operador relacional}
+\index{relacional, operador}
+\index{operador!relacional}
 
 Para tipos incorporados, hay operadores relacionales
 ({\tt <}, {\tt >}, {\tt ==}, etc.)
@@ -14154,7 +14154,7 @@ valores y determinan si uno es mayor, menor o igual al
 otro.  Para tipos definidos por el programador, podemos anular el comportamiento de
 los operadores incorporados con un método cuyo nombre es
 \verb"__lt__", que significa ``less than'' ({\em menor que}).
-\index{tipo definido por el programador}
+\index{tipo!definido por el programador}
 \index{definido por el programador!tipo}
 
 \verb"__lt__" toma dos parámetros, {\tt self} y {\tt other},
@@ -14172,8 +14172,8 @@ La respuesta podría depender del juego que estás jugando, pero para mantener
 las cosas simples, haremos la elección arbitraria de que el palo es más
 importante, así que todas las Picas superan a todos los Diamantes,
 y así sucesivamente.
-\index{método cmp@método \_\_cmp\_\_}
-\index{\_\_cmp\_\_!método}
+\index{método!cmp@método \_\_cmp\_\_}
+\index{\_\_cmp\_\_, método}
 
 Con eso decidido, podemos escribir \verb"__lt__":
 
@@ -14190,8 +14190,8 @@ Con eso decidido, podemos escribir \verb"__lt__":
 \end{verbatim}
 %
 Puedes escribir esto de manera más concisa utilizando comparación de tuplas:
-\index{tupla!comparación}
-\index{comparación!tupla}
+\index{tupla!comparación de}
+\index{comparación de tupla}
 
 \begin{verbatim}
 # dentro de class Carta:
@@ -14214,16 +14214,16 @@ comparar enteros.
 Ahora que tenemos Cartas, el siguiente paso es definir Barajas.  Dado que una
 baraja está compuesta de cartas, es natural que cada Baraja contenga una
 lista de cartas como atributo.
-\index{método init}
-\index{init!método}
+\index{método!init}
+\index{init, método}
 
 Lo siguiente es una definición de clase para {\tt Baraja}.  El
 método init crea el atributo {\tt cartas} y genera
 el conjunto estándar de cincuenta y dos cartas:
 \index{composición}
 \index{bucle!anidado}
-\index{clase Baraja}
-\index{Baraja!clase}
+\index{clase!Baraja}
+\index{Baraja, clase}
 
 \begin{verbatim}
 class Baraja:
@@ -14241,14 +14241,14 @@ enumera los palos de 0 a 3.  El bucle interior enumera los
 rangos de 1 a 13.  Cada iteración
 crea una Carta nueva con el palo y el rango actuales,
 y la anexa a {\tt self.cartas}.
-\index{método append}
-\index{append!método}
+\index{método!append}
+\index{append, método}
 
 
 \section{Imprimir la baraja}
 \label{printdeck}
-\index{método str@método \_\_str\_\_}
-\index{\_\_str\_\_!método}
+\index{método!str@método \_\_str\_\_}
+\index{\_\_str\_\_, método}
 
 Aquí hay un método \verb"__str__" para {\tt Baraja}:
 
@@ -14267,7 +14267,7 @@ grande: construir una lista de cadenas y luego utilizar el método de cadena
 {\tt join}.  La función incorporada {\tt str} invoca el método
 \verb"__str__" en cada carta y devuelve la representación
 de cadena.  \index{acumulador!cadena} \index{cadena!acumulador}
-\index{método join} \index{join!método} \index{nueva línea}
+\index{método!join} \index{join, método} \index{nueva línea}
 
 Dado que invocamos a {\tt join} en un carácter de nueva línea, las cartas
 están separadas por nuevas líneas.  Así es como se ve el resultado:
@@ -14294,8 +14294,8 @@ cadena larga que contiene nuevas líneas.
 Para repartir cartas, nos gustaría un método que
 quite una carta de la baraja y la entregue como valor de retorno.
 El método de lista {\tt pop} proporciona una manera conveniente de hacer eso:
-\index{método pop}
-\index{pop!método}
+\index{método!pop}
+\index{pop, método}
 
 \begin{verbatim}
 # dentro de class Baraja:
@@ -14306,8 +14306,8 @@ El método de lista {\tt pop} proporciona una manera conveniente de hacer eso:
 %
 Dado que {\tt pop} quita la {\em última} carta en la lista, estamos
 repartiendo desde el fondo de la baraja.
-\index{método append}
-\index{append!método}
+\index{método!append}
+\index{append, método}
 
 Para agregar una carta, podemos utilizar el método de lista {\tt append}:
 
@@ -14332,10 +14332,10 @@ implementación.
 
 Como otro ejemplo, podemos escribir un método de Baraja con nombre {\tt barajar} (en inglés, {\em shuffle})
 utilizando la función {\tt shuffle} del módulo {\tt random}:
-\index{módulo random}
-\index{random!módulo}
-\index{función shuffle}
-\index{shuffle!función}
+\index{módulo!random}
+\index{random, módulo}
+\index{función!shuffle}
+\index{shuffle, función}
 
 \begin{verbatim}
 # dentro de class Baraja:
@@ -14349,7 +14349,7 @@ No olvides importar a {\tt random}.
 Como ejercicio, escribe un método de Baraja con nombre {\tt ordenar} que utilice el
 método de lista {\tt sort} para ordenar las cartas en una {\tt Baraja}.  {\tt sort}
 utiliza el método \verb"__lt__" que definimos para determinar el orden.
-\index{método sort} \index{sort!método}
+\index{método!sort} \index{sort, método}
 
 
 
@@ -14373,10 +14373,10 @@ a la herencia.
 Para definir una clase nueva que herede de una clase existente,
 pones el nombre de la clase existente en paréntesis:
 \index{paréntesis!clase padre en}
-\index{clase padre}
-\index{padre!clase}
-\index{clase Mano}
-\index{Mano!clase}
+\index{clase!padre}
+\index{padre, clase}
+\index{clase!Mano}
+\index{Mano, clase}
 
 \begin{verbatim}
 class Mano(Baraja):
@@ -14390,15 +14390,15 @@ en Manos de igual manera que en Barajas.
 Cuando una clase nueva hereda de una existente, la existente
 se llama {\bf padre} y la clase nueva se
 llama {\bf hija}.
-\index{clase padre}
-\index{clase hija}
-\index{hija!clase}
+\index{clase!padre}
+\index{clase!hija}
+\index{hija, clase}
 
 En este ejemplo, {\tt Mano} hereda a \verb"__init__" de {\tt Baraja},
 pero en realidad no hace lo que queremos: en lugar de llenar la mano
 con 52 cartas nuevas, el método init para Manos debería inicializar {\tt
-  cartas} con una lista vacía.  \index{anular} \index{método init}
-\index{init!método}
+  cartas} con una lista vacía.  \index{anular} \index{método!init}
+\index{init, método}
 
 Si proporcionamos un método init en la clase {\tt Mano}, este anula el
 de la clase {\tt Baraja}:
@@ -14504,7 +14504,7 @@ tipo de relación se llama {\bf dependencia}.
 \end{itemize}
 \index{relación IS-A}
 \index{relación HAS-A}
-\index{diagrama de clase}
+\index{diagrama!de clase}
 \index{clase!diagrama de}
 
 Un {\bf diagrama de clase} es una representación gráfica de estas
@@ -14585,8 +14585,8 @@ Aquí hay un ejemplo:
 \end{verbatim}
 %
 Entonces el método {\tt barajar} para esta Mano es la que está en {\tt Baraja}.
-\index{método mro}
-\index{mro!método}
+\index{método!mro}
+\index{mro, método}
 \index{orden de resolución del método}
 
 \verb"encontrar_clase_definitoria" utiliza el método {\tt mro} para obtener la lista de
@@ -14626,7 +14626,7 @@ y cómo deberían interactuar.  En ese caso, necesitas un plan de desarrollo
 diferente.  De la misma manera en que descubrimos interfaces
 de función encapsulando y generalizando, podemos descubrir
 interfaces de clase a través del {\bf encapsulamiento de datos}.
-\index{encapsulamiento de datos}
+\index{encapsulamiento!de datos}
 
 El análisis de Markov, de la Sección~\ref{markov}, proporciona un buen ejemplo.
 Si descargas mi código en \url{http://thinkpython2.com/code/markov.py},
@@ -14731,12 +14731,12 @@ versión modificada de una clase definida anteriormente.
 \index{herencia}
 
 \item[clase padre:] La clase desde la cual una clase hija hereda.
-\index{clase padre}
+\index{clase!padre}
 
 \item[clase hija:] Una clase nueva creada a través de herencia de una
 clase existente; también llamada ``subclase''.
-\index{clase hija}
-\index{hija!clase!child}
+\index{clase!hija}
+\index{hija, clase}
 
 \item[relación IS-A:] Una relación entre una clase hija
 y su clase padre.
@@ -14754,7 +14754,7 @@ pero no las almacenan como atributos.
 
 \item[diagrama de clase:] Un diagrama que muestra las clases en un programa
 y las relaciones entre estas.
-\index{diagrama de clase}
+\index{diagrama!de clase}
 \index{clase!diagrama}
 
 \item[multiplicidad:] Una notación en un diagrama de clase que muestra, para
@@ -14765,7 +14765,7 @@ de otra clase hay.
 \item[encapsulamiento de datos:]  Un plan de desarrollo de programa que
 involucra a un prototipo que utiliza variables globales y una versión final
 que convierte las variables globales en atributos de instancia.
-\index{encapsulamiento de datos}
+\index{encapsulamiento!de datos}
 \index{plan de desarrollo!encapsulamiento de datos}
 
 \end{description}
@@ -14921,7 +14921,7 @@ las tres cosas a la vez.
 Vimos las sentencias condicionales en la Sección~\ref{conditional.execution}.
 Las sentencias condicionales se utilizan a menudo para escoger uno de dos valores;
 por ejemplo:
-\index{expresión condicional}
+\index{expresión!condicional}
 \index{condicional!expresión}
 
 \begin{verbatim}
@@ -14993,7 +14993,7 @@ Podemos reescribirla así:
 En general, puedes reemplazar una sentencia condicional con una expresión
 condicional si ambas ramas contienen expresiones simples que se
 devuelven o asignan a la misma variable.
-\index{sentencia condicional}
+\index{sentencia!condicional}
 \index{condicional!sentencia}
 
 
@@ -15025,7 +15025,7 @@ nueva.  La expresión dentro de los corchetes especifica los elementos
 de la lista, y la cláusula {\tt for} indica qué secuencia
 estamos recorriendo.
 \index{lista}
-\index{for!bucle}
+\index{for, bucle}
 
 La sintaxis de una comprensión de lista es un poco incómoda porque
 la variable del bucle, {\tt s} en este ejemplo, aparece en la expresión
@@ -15035,8 +15035,8 @@ antes de llegar a la definición.
 Las comprensiones de lista también se pueden utilizar para filtrar.  Por ejemplo,
 esta función selecciona solo los elementos de {\tt t} que están
 en mayúsculas y devuelve una lista nueva:
-\index{patrón de filtro}
-\index{filtro!patrón}
+\index{patrón!de filtro}
+\index{filtro, patrón de}
 
 \begin{verbatim}
 def solo_mayusculas(t):
@@ -15063,7 +15063,7 @@ Sin embargo, en mi defensa, las comprensiones de lista son difíciles de depurar
 no puedes poner una sentencia print dentro del bucle.  Sugiero que los
 utilices solo si el cálculo es lo suficientemente simple para que sea probable
 que lo hagas bien al primer intento.  Y para principiantes eso significa nunca.
-\index{depurar}
+\index{depuración}
 
 
 
@@ -15071,8 +15071,8 @@ que lo hagas bien al primer intento.  Y para principiantes eso significa nunca.
 
 Las {\bf expresiones generadoras} son similares a las comprensiones de lista, pero
 con paréntesis en lugar de corchetes:
-\index{expresión generadora}
-\index{generadora!expresión}
+\index{expresión!generadora}
+\index{generadora, expresión}
 
 \begin{verbatim}
 >>> g = (x**2 for x in range(5))
@@ -15084,8 +15084,8 @@ El resultado en un objeto generador que sabe cómo iterar a través de
 una secuencia de valores.  Sin embargo, a diferencia de una comprensión de lista, este no
 calcula todos los valores de una vez: espera hasta ser consultado.  La función
 incorporada {\tt next} obtiene el siguiente valor del generador:
-\index{objeto generador}
-\index{generador!objeto}
+\index{objeto!generador}
+\index{generador, objeto}
 
 \begin{verbatim}
 >>> next(g)
@@ -15120,7 +15120,7 @@ StopIteration
 Las expresiones generadoras son a menudo utilizadas con funciones como {\tt sum},
 {\tt max} y {\tt min}:
 \index{sum}
-\index{función sum}
+\index{función!sum}
 
 \begin{verbatim}
 >>> sum(x**2 for x in range(5))
@@ -15133,8 +15133,8 @@ Las expresiones generadoras son a menudo utilizadas con funciones como {\tt sum}
 Python proporciona una función incorporada, {\tt any}, que toma una secuencia
 de valores booleanos y devuelve {\tt True} si alguno de los valores es {\tt
   True}.  Funciona en las listas:
-\index{any}
-\index{función incorporada!any}
+\index{any, función incorporada}
+\index{función!any}
 
 \begin{verbatim}
 >>> any([False, False, True])
@@ -15142,8 +15142,8 @@ True
 \end{verbatim}
 %
 Pero se utiliza a menudo con expresiones generadoras:
-\index{expresión generadora}
-\index{generadora!expresión}
+\index{expresión!generadora}
+\index{generadora, expresión}
 
 \begin{verbatim}
 >>> any(letter == 't' for letter in 'monty')
@@ -15154,7 +15154,7 @@ Ese ejemplo no es muy útil porque hace lo mismo que
 el operador {\tt in}.  Sin embargo, podríamos utilizar {\tt any} para reescribir
 alguna de las funciones de búsqueda que escribimos en la Sección~\ref{search}.  Por
 ejemplo, podríamos escribir {\tt evita} así:
-\index{patrón de búsqueda}
+\index{patrón!de búsqueda}
 \index{búsqueda!patrón de}
 
 \begin{verbatim}
@@ -15173,8 +15173,8 @@ Python proporciona otra función incorporada, {\tt all}, que devuelve
 {\tt True} si cada elemento de la secuencia es {\tt True}.  Como
 ejercicio, utiliza {\tt all} para reescribir \verb"usa_todas" de la
 Sección~\ref{search}.
-\index{all}
-\index{función incorporada any}
+\index{all, función incorporada}
+\index{any, función incorporada}
 
 
 \section{Conjuntos (set)}
@@ -15205,7 +15205,7 @@ se comporta como una colección de claves de diccionario sin valores.  Añadir
 elementos a un conjunto es rápido; en consecuencia, lo es la verificación de pertenencia.  Además, los conjuntos
 proporcionan métodos y operadores para calcular operaciones de conjunto comunes.
 \index{conjunto}
-\index{objeto de conjunto}
+\index{objeto!de conjunto}
 
 Por ejemplo, la resta de conjuntos está disponible como método llamado
 {\em diferencia} o como operador, {\tt -}.  Entonces, podemos reescribir
@@ -15286,14 +15286,14 @@ de una vez, el contador hace un seguimiento de cuántas veces aparece.
 Si la idea matemática de {\bf multiconjunto} se te hace familiar,
 un contador es una manera natural de representar un multiconjunto.
 \index{Counter}
-\index{objeto Counter}
+\index{objeto!Counter}
 \index{multiconjunto}
 
 {\tt Counter} está definido en un módulo estándar llamado {\tt collections},
 por lo cual tienes que importarlo.  Puedes inicializar un contador con una cadena,
 lista, o cualquier otra cosa que soporte iteraciones:
 \index{collections}
-\index{módulo collections}
+\index{módulo!collections}
 
 \begin{verbatim}
 >>> from collections import Counter
@@ -15347,15 +15347,15 @@ El módulo {\tt collections} también proporciona a {\tt defaultdict}, que es
 como un diccionario excepto que si accedes a una clave que no existe,
 este puede generar un valor nuevo sobre la marcha.
 \index{defaultdict}
-\index{objeto defaultdict}
+\index{objeto!defaultdict}
 \index{collections}
-\index{módulo collections}
+\index{módulo!collections}
 
 Cuando creas un defaultdict, proporcionas una función que se utiliza para
 crear valores nuevos.  Una función utilizada para crear objetos a veces es
 llamada una {\bf fábrica}.  Las funciones incorporadas que crean listas, conjuntos
 y otros tipos se pueden utilizar como fábricas:
-\index{fábrica!función}
+\index{fábrica, función}
 
 \begin{verbatim}
 >>> from collections import defaultdict
@@ -15423,7 +15423,7 @@ Esta solución tiene el inconveniente de que crea una nueva lista
 cada vez, independiente de si es necesaria.  Para las listas,
 eso no es un gran problema, pero si la función
 fábrica es complicada, podría serlo.
-\index{fábrica!función}
+\index{fábrica, función}
 
 Podemos evitar este problema y
 simplificar el código utilizando un {\tt defaultdict}:
@@ -15477,9 +15477,9 @@ El primer argumento es el nombre de la clase que quieres crear.
 El segundo es una lista de atributos que los objetos Punto debieran tener,
 en forma de cadenas.  El valor de retorno de {\tt namedtuple} es un objeto de clase:
 \index{namedtuple}
-\index{objeto namedtuple}
+\index{objeto!namedtuple}
 \index{collections}
-\index{módulo collections}
+\index{módulo!collections}
 
 \begin{verbatim}
 >>> Punto
@@ -15488,7 +15488,7 @@ en forma de cadenas.  El valor de retorno de {\tt namedtuple} es un objeto de cl
 
 {\tt Punto} automáticamente proporciona métodos como \verb"__init__" y
 \verb"__str__", así que no tienes que escribirlos.
-\index{objeto de clase}
+\index{objeto!de clase}
 \index{clase!objeto}
 
 Para crear un objeto Punto, utilizas la clase Punto como una función:
@@ -15550,7 +15550,7 @@ def imprimir_todo(*args):
 Puedes llamar a esta función con cualquier número de argumentos posicionales
 (es decir, argumentos que no tienen palabras clave):
 \index{argumento posicional}
-\index{posicional!argumento}
+\index{posicional, argumento}
 
 \begin{verbatim}
 >>> imprimir_todo(1, 2.0, '3')
@@ -15615,7 +15615,7 @@ que especifiquen las opciones utilizadas frecuentemente.
 
 \item[expresión condicional:] Una expresión que tiene uno de dos
 valores, dependiendo de una condición.
-\index{expresión condicional}
+\index{expresión!condicional}
 \index{condicional!expresión}
 
 \item[comprensión de lista:] Una expresión con un bucle {\tt for} en
@@ -15624,8 +15624,8 @@ corchetes que produce una lista nueva.
 
 \item[expresión generadora:] Una expresión con un bucle {\tt for} en paréntesis
 que produce un objeto generador.
-\index{expresión generadora}
-\index{generadora!expresión}
+\index{expresión!generadora}
+\index{generadora, expresión}
 
 \item[multiconjunto:] Una entidad matemática que representa un mapeo
 entre los elementos de un conjunto y el número de veces que estos aparecen.
@@ -15692,7 +15692,7 @@ tipos de errores con el fin de rastrearlos de manera más rápida:
   Ejemplo: omitir el signo de dos puntos al final de una sentencia {\tt def}
   genera el mensaje algo redundante {\tt SyntaxError: invalid
     syntax}.
-\index{error de sintaxis}
+\index{error!de sintaxis}
 \index{sintaxis!error de}
 
 \item Los errores de tiempo de ejecución son producidos por el intérprete si algo va
@@ -15700,15 +15700,15 @@ tipos de errores con el fin de rastrearlos de manera más rápida:
   incluyen información acerca de dónde ocurrió el error y qué
   funciones se estaban ejecutando.  Ejemplo: una recursividad infinita eventualmente
   causa el error de tiempo de ejecución ``maximum recursion depth exceeded''.
-\index{error de tiempo de ejecución}
-\index{tiempo de ejecución!error de}
+\index{error!de tiempo de ejecución}
+\index{tiempo de ejecución, error de}
 \index{excepción}
 
 \item Los errores semánticos son problemas que tiene un programa que se ejecuta sin
   producir mensajes de error pero sin hacer lo correcto.  Ejemplo:
   una expresión puede que no sea evaluada en el orden que esperas, entregando
   un resultado incorrecto.
-\index{error semántico}
+\index{error!semántico}
 \index{semántico!error}
 
 \end{itemize}
@@ -15769,8 +15769,8 @@ puede causar un error {\tt invalid token} al final de tu programa,
 o puede tratar la siguiente parte del programa como una cadena hasta que
 llega a la siguiente cadena.  En el segundo caso, ¡podría no producir ningún mensaje
 de error!
-\index{cadena multilínea}
-\index{multilínea!cadena}
+\index{cadena!multilínea}
+\index{multilínea, cadena}
 
 \item Un operador de apertura no cerrado ---\verb+(+, \verb+{+ o
   \verb+[+--- hace que Python continúe con la línea siguiente como parte de la
@@ -15834,8 +15834,8 @@ que tienes que reiniciar el intérprete o utilizar {\tt reload}
 para leer un archivo modificado.  Si importas el módulo de nuevo,
 no hace nada.
 \index{módulo!reload}
-\index{función reload}
-\index{reload!función}
+\index{función!reload}
+\index{reload, función}
 
 \end{itemize}
 
@@ -15865,8 +15865,8 @@ lo alcanza (ver ``Flujo de ejecución'' más adelante).
 
 
 \subsection{Mi programa se congela.}
-\index{bucle infinito}
-\index{recursividad infinita}
+\index{bucle!infinito}
+\index{recursividad!infinita}
 \index{congelamiento}
 
 Si un programa se detiene y parece estar haciendo nada, está ``congelado''.
@@ -15904,8 +15904,8 @@ Ve a la sección ``Flujo de ejecución'' de más adelante.
 
 
 \subsubsection{Bucle infinito}
-\index{bucle infinito}
-\index{infinito!bucle}
+\index{bucle!infinito}
+\index{infinito, bucle}
 \index{condición}
 \index{bucle!condición}
 
@@ -15934,8 +15934,8 @@ y podrías averiguar por qué no se están actualizando correctamente.
 
 
 \subsubsection{Recursividad infinita}
-\index{recursividad infinita}
-\index{infinita!recursividad}
+\index{recursividad!infinita}
+\index{infinita, recursividad}
 
 La mayor parte del tiempo, la recursividad infinita causa que el programa se
 ejecute por un momento y luego produzca un error
@@ -15970,7 +15970,7 @@ función que se invoque.
 
 \subsection{Cuando ejecuto el programa obtengo una excepción.}
 \index{excepción}
-\index{error de tiempo de ejecución}
+\index{error!de tiempo de ejecución}
 
 Si algo va mal durante el tiempo de ejecución, Python
 imprime un mensaje que incluye el nombre de la
@@ -16011,7 +16011,7 @@ una cadena, lista o tupla con algo que no es un entero.
 \item Hay una discordancia entre los ítems en una cadena de formato y
 los ítems pasados para una conversión.  Eso puede ocurrir si el número
 de ítems no coincide o si se pidió una conversión no válida.
-\index{operador de formato}
+\index{operador!de formato}
 \index{formato!operador de}
 
 \item Estás pasando el número equivocado de argumentos a una función.
@@ -16034,7 +16034,7 @@ son cadenas, recuerda que las mayúsculas importan.
   que no existe.  ¡Revisa la ortografía!  Puedes utilizar la función
   incorporada {\tt vars} para hacer una lista de los atributos que sí existen.
 \index{dir function}
-\index{function!dir}
+\index{función!dir}
 
 Si un AttributeError indica que un objeto tiene {\tt NoneType},
 eso significa que es {\tt None}.  Entonces el problema no es el
@@ -16069,8 +16069,8 @@ sobre {\tt pdb} en \url{https://docs.python.org/3/library/pdb.html}.
 
 \subsection{Agregué tantas sentencias {\tt print} que me inundé con
 la salida.}
-\index{sentencia print}
-\index{print!sentencia}
+\index{sentencia!print}
+\index{print, sentencia}
 
 Uno de los problemas al utilizar sentencias {\tt print} para depurar
 es que puedes terminar enterrándote en la salida.  Hay dos maneras
@@ -16111,7 +16111,7 @@ De alguna manera, los errores semánticos son los más difíciles de depurar,
 porque el intérprete no proporciona información
 sobre qué está mal.  Solo tú sabes lo que se supone que debe hacer el
 programa.
-\index{error semántico}
+\index{error!semántico}
 \index{semántico!error}
 
 El primer paso es hacer una conexión entre el texto del programa
@@ -16196,7 +16196,7 @@ proporcionan documentación adicional, y es más fácil depurar
 porque puedes verificar los tipos de las variables intermedias
 y mostrar sus valores en pantalla.
 \index{variable temporal}
-\index{temporal!variable}
+\index{temporal, variable}
 
 Otro problema que puede ocurrir con las expresiones grandes es que
 el orden de evaluación puede que no sea lo que esperas.
@@ -16228,8 +16228,8 @@ otras personas que no han memorizado el orden de las operaciones.
 
 \subsection{Tengo una función que no devuelve lo que
 yo espero.}
-\index{sentencia return}
-\index{return!sentencia}
+\index{sentencia!return}
+\index{return, sentencia}
 
 Si tienes una sentencia {\tt return} con una expresión compleja,
 no tienes la posibilidad de imprimir el resultado antes de
@@ -16356,7 +16356,7 @@ respondió: ``Pienso que el ordenamiendo de burbuja sería la manera incorrecta 
 Ver \url{http://www.youtube.com/watch?v=k4RRi_ntQc8}.
 \index{Obama, Barack}
 \index{Schmidt, Eric}
-\index{bubble sort}\index{ordenamiento de burbuja}
+\index{bubble sort}\index{ordenamiento!de burbuja}
 
 Esto es verdad: el ordenamiento de burbuja (en inglés, {\em bubble sort}) es conceptualmente simple pero lento
 para bases de datos grandes.  La respuesta que Schmidt probablemente estaba buscando es
@@ -16370,7 +16370,7 @@ lenta, utilizaría un analizador de rendimiento para ver dónde fue utilizado
 el tiempo.  Si pareciera que un algoritmo de ordenamiento más rápido tendría
 un efecto importante en el rendimiento, entonces buscaría
 una buena implementación del ordenamiento radix.''}.
-\index{radix sort}\index{ordenamiento radix}
+\index{radix sort}\index{ordenamiento!radix}
 
 El objetivo del análisis de algoritmos es hacer comparaciones
 significativas entre algoritmos, pero hay algunos problemas:
@@ -16482,11 +16482,11 @@ pertenecen al mismo orden de crecimiento, el cual se escribe $O(n)$ en
 {\bf notación O grande} (en inglés, {\em Big-Oh}) y a menudo llamada {\bf lineal} porque cada función
 de dicho conjunto crece de manera lineal con $n$.
 \index{big-oh} \index{notación O grande}
-\index{crecimiento lineal}
+\index{crecimiento!lineal}
 
 Todas las funciones con el término principal $n^2$ pertenecen a $O(n^2)$: se
 llaman {\bf cuadráticas}.
-\index{crecimiento cuadrático}
+\index{crecimiento!cuadrático}
 
 La siguiente tabla muestra algunos de los órdenes de crecimiento que
 aparecen más comúnmente en el análisis algorítmico,
@@ -16515,8 +16515,8 @@ funciones exponenciales pertenecen al mismo orden de crecimiento, independiente 
 la base del exponente.
 Las funciones exponenciales crecen de manera muy rápida, por lo cual los algoritmos exponenciales
 solo son útiles para problemas pequeños.
-\index{crecimiento logarítmico}
-\index{crecimiento exponencial}
+\index{crecimiento!logarítmico}
+\index{crecimiento!exponencial}
 
 
 \begin{exercise}
@@ -16608,8 +16608,8 @@ La mayoría de las operaciones de cadena y de tupla son lineales, excepto indexa
 {\tt max} son lineales.  El tiempo de ejecución de una operación de corte es
 proporcional a la longitud de la salida, pero independiente del tamaño
 de la entrada.
-\index{métodos de cadena}
-\index{métodos de tupla}
+\index{método!de cadena}
+\index{método!de tupla}
 
 La concatenación de cadenas es lineal: el tiempo de ejecución depende de la suma
 de las longitudes de los operandos.
@@ -16623,7 +16623,7 @@ la longitud total de las cadenas.
 \index{join@{\tt join}}
 
 La mayoría de los métodos de lista son lineales, pero hay algunas excepciones:
-\index{métodos de lista}
+\index{método!de lista}
 
 \begin{itemize}
 
@@ -16642,7 +16642,7 @@ operación es $O(1)$.
 
 La mayoría de las operaciones y métodos de diccionario son de tiempo constante, pero
 hay algunas excepciones:
-\index{métodos de diccionario}
+\index{método!de diccionario}
 
 \begin{itemize}
 
@@ -16674,7 +16674,7 @@ las siguientes preguntas:
 \item ¿Qué es un ``ordenamiento de comparación''? ¿Cuál es el mejor orden de crecimiento
   del peor de los casos para un ordenamiento de comparación?  ¿Cuál es el orden de crecimiento
   del peor de los casos para cualquier algoritmo de ordenamiento?
-\index{ordenamiento de comparación}
+\index{ordenamiento!de comparación}
 
 \item ¿Cuál es el orden de crecimiento del ordenamiento de burbuja, y por qué Barack
   Obama piensa que es ``la manera incorrecta de proceder''?
@@ -16683,7 +16683,7 @@ las siguientes preguntas:
   necesitamos para utilizarlo?
 
 \item ¿Qué es un ordenamiento estable y por qué podría importar en la práctica?
-\index{ordenamiento estable}
+\index{ordenamiento!estable}
 
 \item ¿Cuál es el peor algoritmo de ordenamiento (y cuál es su nombre)?
 
@@ -16710,11 +16710,11 @@ El algoritmo de búsqueda más simple es una ``búsqueda lineal'', que recorre
 los ítems de la colección en orden, deteniéndose si encuentra al objetivo.
 En el peor de los casos tiene que recorrer toda la colección, por lo cual el tiempo
 de ejecución es lineal.
-\index{búsqueda lineal}
+\index{búsqueda!lineal}
 
 El operador {\tt in} para secuencias utiliza una búsqueda lineal; los métodos
 de cadena como {\tt find} y {\tt count} también.
-\index{operador in@{\tt in}}
+\index{operador!in@{\tt in}}
 
 Si los elementos de la secuencia están en orden, puedes utilizar una {\bf
   búsqueda de bisección}, que es $O(\log n)$.  La búsqueda de bisección es
@@ -16725,7 +16725,7 @@ con el ítem en el medio y verificas si la palabra que buscas
 viene antes o después.  Si viene antes, entonces buscas en la
 primera mitad de la secuencia.  De lo contrario, buscas la segunda mitad.
 De cualquier manera, disminuyes el número de ítems restantes a la mitad.
-\index{búsqueda de bisección}
+\index{búsqueda!de bisección}
 
 Si la secuencia tiene 1.000.000 de ítems, tomará cerca de 20 pasos
 encontrar la palabra o concluir que no está.  Entonces, eso es cerca de 50.000
@@ -16846,7 +16846,7 @@ nuevo ítem, o en cuál mapa buscar.
 casi cualquier objeto de Python y devuelve un entero.  Una limitación de esta
 implementación es que solo funciona con claves hashables.  Los tipos
 mutables como las listas y los diccionarios no son hashables.
-\index{función hash}
+\index{función!hash}
 
 Los objetos hashables que se consideran equivalentes devuelven el mismo valor
 hash, pero lo inverso no es necesariamente verdadero: dos objetos con

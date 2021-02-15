@@ -25,3 +25,12 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+# Tex files
+book/book.aux
+book/book.idx
+book/book.ilg
+book/book.ind
+book/book.log
+book/book.out
+book/book.toc
