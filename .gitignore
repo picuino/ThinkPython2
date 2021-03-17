@@ -34,3 +34,6 @@ book/book.ind
 book/book.log
 book/book.out
 book/book.toc
+
+# pdf
+book/thinkpython2-spanish.pdf
