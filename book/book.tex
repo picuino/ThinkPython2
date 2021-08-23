@@ -8464,7 +8464,7 @@ puedes leer en \url{http://en.wikipedia.org/wiki/Birthday_paradox}.
 \index{paradoja del cumpleaños}
 
 Si hay 23 estudiantes en tu clase, ¿cuáles son las posibilidades
-de que dos de ustedes estén de cumpleaños el mismo día?  Puedes estimar esta
+de que dos de ellos estén de cumpleaños el mismo día?  Puedes estimar esta
 probabilidad generando muestras al azar de 23 cumpleaños
 y verificar coincidencias.  Pista: puedes generar cumpleaños aleatorios
 con la función {\tt randint} del módulo {\tt random}.
@@ -11529,15 +11529,15 @@ en un directorio dado y sus subdirectorios.  Puedes descargar mi solución en
 
 Muchas cosas pueden salir mal cuando intentas leer y escribir
 archivos.  Si intentas abrir un archivo que no existe, obtienes un
-{\tt IOError}:
+{\tt FileNotFoundError}:
 \index{función!open}
 \index{open, función}
-\index{excepción!IOError}
-\index{IOError}
+\index{excepción!FileNotFoundError}
+\index{FileNotFoundError}
 
 \begin{verbatim}
 >>> fin = open('archivo_malo')
-IOError: [Errno 2] No such file or directory: 'archivo_malo'
+FileNotFoundError: [Errno 2] No such file or directory: 'archivo_malo'
 \end{verbatim}
 %
 Si no tienes permisos de acceso a un archivo:
@@ -11653,7 +11653,7 @@ funciona:
 \index{modulo@módulo!dbm}
 
 \begin{verbatim}
-for clave in db:
+for clave in db.keys():
     print(clave, db[clave])
 \end{verbatim}
 %
