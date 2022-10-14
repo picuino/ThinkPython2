@@ -1,7 +1,7 @@
 ThinkPython2-spanish
 ====================
 
-Código LaTeX de *Pensar en Python*, la traducción al español del libro [Think Python (2nd Edition)](http://greenteapress.com/wp/think-python-2e/) de Allen Downey.  Traducción de Jorge Espinoza.
+Código LaTeX de la traducción al español del libro [Think Python (2nd Edition)](http://greenteapress.com/wp/think-python-2e/) de Allen Downey.  Traducción de Jorge Espinoza.
 
 Para obtener el libro, escoger una de las siguientes opciones:
 * [Descargar libro traducido.](https://github.com/jorgelespinoza/ThinkPython2-spanish/blob/master/book/thinkpython2-spanish.pdf)
