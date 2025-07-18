@@ -29,12 +29,12 @@ hevea:	book.tex header.html footer.html
 	rm -rf html
 	mkdir html
 	hevea -fix -O -e latexonly htmlonly thinkpython2
-# the following greps are a kludge to prevent imagen from seeing
-# the definitions in latexonly, and to avoid headers on the images
+	# the following greps are a kludge to prevent imagen from seeing
+	# the definitions in latexonly, and to avoid headers on the images
 	grep -v latexonly thinkpython2.image.tex > a; mv a thinkpython2.image.tex
 	sed s/\\\\usepackage{fancyhdr}// < thinkpython2.image.tex > a; mv a thinkpython2.image.tex
-	imagen -png thinkpython2
-	hacha thinkpython2.html
+	# imagen -png thinkpython2
+	# hacha thinkpython2.html
 	cp up.png next.png back.png html
 	mv index.html thinkpython2.css thinkpython2*.html thinkpython2*.png *motif.gif html
 
@@ -51,7 +51,7 @@ epub: 	book.tex
 	sed s/\\\\usepackage{fancyhdr}// < thinkpython2.image.tex > a; mv a thinkpython2.image.tex
 	imagen -png thinkpython2
 	mv thinkpython2.html thinkpython2*.png epub
-	cd epub; ebook-convert thinkpython2.html thinkpython2.epub
+	cd epub; ebook-convert thinkpython2.html thinkpython2-spanish.epub
 
 distrib:
 	rm -rf dist
@@ -84,16 +84,6 @@ xxe:
 
 lint:
 	xmllint -noout book/book.xml
-
-OREILLY = atlas
-
-oreilly:
-	rsync -a book.tex $(OREILLY)
-	rsync -a book/ $(OREILLY)
-	rsync -a figs/* $(OREILLY)/figs
-	cd $(OREILLY); git add .
-	cd $(OREILLY); git commit -m "Automated check in."
-	cd $(OREILLY); git push
 
 clean:
 	rm -f *~ *.aux *.log *.dvi *.idx *.ilg *.ind *.toc

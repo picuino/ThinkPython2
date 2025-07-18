@@ -189,7 +189,7 @@ de texto que es independiente del dispositivo, la cual se puede convertir a otro
 e imprimir.
 
 La fuente de \LaTeX\ para este libro está disponible en
-\url{http://www.thinkpython2.com}
+\url{http://www.thinkpython.com}
 
 Título original: {\em Think Python: How to Think Like a Computer Scientist}
 
@@ -883,7 +883,7 @@ muestra el resultado:
 
 \begin{verbatim}
 >>> 1 + 1
-2
+    2
 \end{verbatim}
 %
 Ahora estás listo para comenzar.
@@ -946,18 +946,18 @@ restas y multiplicaciones, como en los siguientes ejemplos:
 
 \begin{verbatim}
 >>> 40 + 2
-42
+    42
 >>> 43 - 1
-42
+    42
 >>> 6 * 7
-42
+    42
 \end{verbatim}
 %
 El operador {\tt /} realiza divisiones:
 
 \begin{verbatim}
 >>> 84 / 2
-42.0
+    42.0
 \end{verbatim}
 %
 Puedes preguntarte por qué el resultado es {\tt 42.0} en lugar de {\tt 42}.
@@ -968,7 +968,7 @@ eleva un número a una potencia:
 
 \begin{verbatim}
 >>> 6**2 + 6
-42
+    42
 \end{verbatim}
 %
 En algunos otros lenguajes, \verb"^" se utiliza para potenciación, pero
@@ -977,7 +977,7 @@ los operadores bit a bit, el resultado te sorprenderá:
 
 \begin{verbatim}
 >>> 6 ^ 2
-4
+    4
 \end{verbatim}
 %
 No cubriré
@@ -1008,11 +1008,11 @@ puede decir:
 
 \begin{verbatim}
 >>> type(2)
-<class 'int'>
+    <class 'int'>
 >>> type(42.0)
-<class 'float'>
+    <class 'float'>
 >>> type('Hola, mundo')
-<class 'str'>
+    <class 'str'>
 \end{verbatim}
 %
 En estos resultados, la palabra ``class'' se utiliza en el sentido de
@@ -1038,9 +1038,9 @@ cadenas.
 
 \begin{verbatim}
 >>> type('2')
-<class 'str'>
+    <class 'str'>
 >>> type('42.0')
-<class 'str'>
+    <class 'str'>
 \end{verbatim}
 %
 Son cadenas.
@@ -1051,7 +1051,7 @@ entre grupos de dígitos, como en {\tt 1,000,000}.  No es un
 
 \begin{verbatim}
 >>> 1,000,000
-(1, 0, 0)
+    (1, 0, 0)
 \end{verbatim}
 %
 ¡Eso no es lo que esperábamos en absoluto!  Python interpreta {\tt
@@ -1446,11 +1446,11 @@ Si le das un nombre ilegal a una variable, obtendrás un error de sintaxis:
 
 \begin{verbatim}
 >>> 76trombones = 'gran desfile'
-SyntaxError: invalid syntax
+    SyntaxError: invalid syntax
 >>> mas@ = 1000000
-SyntaxError: invalid syntax
+    SyntaxError: invalid syntax
 >>> class = 'Cimología teórica avanzada'
-SyntaxError: invalid syntax
+    SyntaxError: invalid syntax
 \end{verbatim}
 %
 {\tt 76trombones} es ilegal porque comienza con un número.
@@ -1488,11 +1488,11 @@ una variable, así que las siguientes son todas expresiones legales:
 
 \begin{verbatim}
 >>> 42
-42
+    42
 >>> n
-17
+    17
 >>> n + 25
-42
+    42
 \end{verbatim}
 %
 Cuando escribes una expresión en el prompt, el intérprete
@@ -1553,7 +1553,7 @@ Por ejemplo, si utilizas Python como una calculadora, puedes escribir
 \begin{verbatim}
 >>> millas = 26.2
 >>> millas * 1.61
-42.182
+    42.182
 \end{verbatim}
 
 La primera línea asigna un valor a {\tt millas}, pero no tiene un efecto
@@ -1647,7 +1647,7 @@ une las cadenas enlazándolas de extremo a extremo.  Por ejemplo:
 >>> primero = 'curruca'
 >>> segundo = 'garganta'
 >>> primero + segundo
-currucagarganta
+    currucagarganta
 \end{verbatim}
 %
 El operador {\tt *} también funciona en cadenas: hace repetición.
@@ -1906,7 +1906,7 @@ Ya hemos visto un ejemplo de una {\bf llamada a función}:
 
 \begin{verbatim}
 >>> type(42)
-<class 'int'>
+    <class 'int'>
 \end{verbatim}
 %
 El nombre de la función es {\tt type}.  La expresión en paréntesis
@@ -1929,9 +1929,9 @@ lo convierte en un entero, si puede, o de lo contrario reclama:
 
 \begin{verbatim}
 >>> int('32')
-32
+    32
 >>> int('Hola')
-ValueError: invalid literal for int(): Hola
+    ValueError: invalid literal for int(): Hola
 \end{verbatim}
 %
 {\tt int} puede convertir valores de coma flotante en enteros, pero
@@ -1939,9 +1939,9 @@ no redondea; corta la parte de fracción:
 
 \begin{verbatim}
 >>> int(3.99999)
-3
+    3
 >>> int(-2.3)
--2
+    -2
 \end{verbatim}
 %
 {\tt float} convierte enteros y cadenas en números coma
@@ -1951,9 +1951,9 @@ flotante:
 
 \begin{verbatim}
 >>> float(32)
-32.0
+    32.0
 >>> float('3.14159')
-3.14159
+    3.14159
 \end{verbatim}
 %
 Por último, {\tt str} convierte su argumento en una cadena:
@@ -1962,9 +1962,9 @@ Por último, {\tt str} convierte su argumento en una cadena:
 
 \begin{verbatim}
 >>> str(32)
-'32'
+    '32'
 >>> str(3.14159)
-'3.14159'
+    '3.14159'
 \end{verbatim}
 %
 
@@ -1990,7 +1990,7 @@ muestras el objeto de módulo en pantalla, obtienes información sobre este:
 
 \begin{verbatim}
 >>> math
-<module 'math' (built-in)>
+    <module 'math' (built-in)>
 \end{verbatim}
 %
 El objeto de módulo contiene las funciones y variables definidas en el
@@ -2027,7 +2027,7 @@ $\pi$:
 >>> grados = 45
 >>> radianes = grados / 180.0 * math.pi
 >>> math.sin(radianes)
-0.707106781187
+    0.707106781187
 \end{verbatim}
 %
 La expresión {\tt math.pi} obtiene la variable {\tt pi} del módulo
@@ -2043,7 +2043,7 @@ la raíz cuadrada de dos, dividida por dos:
 
 \begin{verbatim}
 >>> math.sqrt(2) / 2.0
-0.707106781187
+    0.707106781187
 \end{verbatim}
 %
 
@@ -2078,7 +2078,7 @@ más tarde).
 \begin{verbatim}
 >>> minutos = horas * 60                 # correcto
 >>> horas * 60 = minutos                 # ¡incorrecto!
-SyntaxError: can't assign to operator
+    SyntaxError: can't assign to operator
 \end{verbatim}
 %
 \index{SyntaxError}\index{error!de sintaxis}\index{sintaxis!error de}
@@ -2159,9 +2159,9 @@ tipo \verb"function":
 
 \begin{verbatim}
 >>> print(imprimir_letra)
-<function imprimir_letra at 0xb7e99e9c>
+    <function imprimir_letra at 0xb7e99e9c>
 >>> type(imprimir_letra)
-<class 'function'>
+    <class 'function'>
 \end{verbatim}
 %
 La sintaxis para llamar a la nueva función es la misma que
@@ -2169,8 +2169,8 @@ para las funciones incorporadas:
 
 \begin{verbatim}
 >>> imprimir_letra()
-I'm a lumberjack, and I'm okay.
-I sleep all night and I work all day.
+    I'm a lumberjack, and I'm okay.
+    I sleep all night and I work all day.
 \end{verbatim}
 %
 Una vez que hayas definido una función, puedes utilizarla dentro de otra
@@ -2187,10 +2187,10 @@ Y luego llamar a \verb"repetir_letra":
 
 \begin{verbatim}
 >>> repetir_letra()
-I'm a lumberjack, and I'm okay.
-I sleep all night and I work all day.
-I'm a lumberjack, and I'm okay.
-I sleep all night and I work all day.
+    I'm a lumberjack, and I'm okay.
+    I sleep all night and I work all day.
+    I'm a lumberjack, and I'm okay.
+    I sleep all night and I work all day.
 \end{verbatim}
 %
 Pero así no es como sigue la canción realmente.
@@ -2301,14 +2301,14 @@ Esta función puede utilizarse con cualquier valor que se pueda imprimir.
 
 \begin{verbatim}
 >>> impr_2veces('Spam')
-Spam
-Spam
+    Spam
+    Spam
 >>> impr_2veces(42)
-42
-42
+    42
+    42
 >>> impr_2veces(math.pi)
-3.14159265359
-3.14159265359
+    3.14159265359
+    3.14159265359
 \end{verbatim}
 %
 Las mismas reglas de composición que se aplican a las funciones incorporadas también
@@ -2320,11 +2320,11 @@ como un argumento para \verb"impr_2veces":
 
 \begin{verbatim}
 >>> impr_2veces('Spam '*4)
-Spam Spam Spam Spam
-Spam Spam Spam Spam
+    Spam Spam Spam Spam
+    Spam Spam Spam Spam
 >>> impr_2veces(math.cos(math.pi))
--1.0
--1.0
+    -1.0
+    -1.0
 \end{verbatim}
 %
 El argumento es evaluado antes de que se llame a la función, por lo que
@@ -2370,8 +2370,8 @@ el resultado dos veces.  Aquí hay un ejemplo que la utiliza:
 >>> linea1 = 'Bing tiddle '
 >>> linea2 = 'tiddle bang.'
 >>> cat_2veces(linea1, linea2)
-Bing tiddle tiddle bang.
-Bing tiddle tiddle bang.
+    Bing tiddle tiddle bang.
+    Bing tiddle tiddle bang.
 \end{verbatim}
 %
 Cuando \verb"cat_2veces" termina, la variable {\tt cat}
@@ -2381,7 +2381,7 @@ se destruye.  Si intentamos imprimirla, obtenemos una excepción:
 
 \begin{verbatim}
 >>> print(cat)
-NameError: name 'cat' is not defined
+    NameError: name 'cat' is not defined
 \end{verbatim}
 %
 Los parámetros también son locales.
@@ -2486,7 +2486,7 @@ el resultado:
 
 \begin{verbatim}
 >>> math.sqrt(5)
-2.2360679774997898
+    2.2360679774997898
 \end{verbatim}
 %
 Pero en un script, si llamas a una función productiva por sí sola,
@@ -2510,10 +2510,10 @@ asignas el resultado a una variable, obtienes un valor especial llamado
 
 \begin{verbatim}
 >>> resultado = impr_2veces('Bing')
-Bing
-Bing
+    Bing
+    Bing
 >>> print(resultado)
-None
+    None
 \end{verbatim}
 %
 El valor {\tt None} no es lo mismo que la cadena \verb"'None'".
@@ -2521,7 +2521,7 @@ Es un valor especial que tiene su propio tipo:
 
 \begin{verbatim}
 >>> type(None)
-<class 'NoneType'>
+    <class 'NoneType'>
 \end{verbatim}
 %
 Las funciones que hemos escrito hasta ahora son todas nulas.  Comenzaremos
@@ -2760,7 +2760,7 @@ dos sentencias en el cuerpo de esta función, no cuatro.
 
 \end{enumerate}
 
-Solution: \url{http://thinkpython2.com/code/do_four.py}.
+Solution: \url{http://thinkpython.com/code/do_four.py}.
 
 \end{exercise}
 
@@ -2814,7 +2814,7 @@ con cuatro filas y cuatro columnas.
 
 \end{enumerate}
 
-Solución: \url{http://thinkpython2.com/code/grid.py}.
+Solución: \url{http://thinkpython.com/code/grid.py}.
 Crédito: este ejercicio está basado en un ejercicio de Oualline, {\em
     Practical C Programming, Third Edition}, O'Reilly Media, 1997.
 
@@ -2842,7 +2842,7 @@ para instalarlo.  He publicado instrucciones en
 \url{http://tinyurl.com/thinkpython2e}.
 
 Los códigos de ejemplo de este capítulo están disponibles en
-\url{http://thinkpython2.com/code/polygon.py}.
+\url{http://thinkpython.com/code/polygon.py}.
 
 
 \section{El módulo turtle}
@@ -3447,7 +3447,7 @@ función antes de que termine.
 \begin{exercise}
 
 Descarga el código de este capítulo en
-\url{http://thinkpython2.com/code/polygon.py}.
+\url{http://thinkpython.com/code/polygon.py}.
 
 \begin{enumerate}
 
@@ -3481,8 +3481,8 @@ tiene sentido para ti.  Si dibujas un diagrama, podrías ver cómo trabaja.
 Escribe un conjunto de funciones apropiadamente generales que
 puedan dibujar flores como en la Figura~\ref{fig.flowers}.
 
-Solución: \url{http://thinkpython2.com/code/flower.py},
-también requiere \url{http://thinkpython2.com/code/polygon.py}.
+Solución: \url{http://thinkpython.com/code/flower.py},
+también requiere \url{http://thinkpython.com/code/polygon.py}.
 
 \end{exercise}
 
@@ -3500,7 +3500,7 @@ también requiere \url{http://thinkpython2.com/code/polygon.py}.
 Escribe un conjunto de funciones apropiadamente generales que
 puedan dibujar formas como en la Figura~\ref{fig.pies}.
 
-Solución: \url{http://thinkpython2.com/code/pie.py}.
+Solución: \url{http://thinkpython.com/code/pie.py}.
 
 \end{exercise}
 
@@ -3517,12 +3517,12 @@ mínimo de elementos básicos y luego escribe funciones que dibujen las letras.
 Deberías escribir una función para cada letra, con nombres
 \verb"dibujar_a", \verb"dibujar_b", etc., y poner tus funciones
 en un archivo con nombre {\tt letras.py}.  Puedes descargar una
-``máquina de escribir tortuga'' desde \url{http://thinkpython2.com/code/typewriter.py}
+``máquina de escribir tortuga'' desde \url{http://thinkpython.com/code/typewriter.py}
 para ayudarte a probar tu código.
 
-Puedes obtener una solución en \url{http://thinkpython2.com/code/letters.py};
+Puedes obtener una solución en \url{http://thinkpython.com/code/letters.py};
 también requiere
-\url{http://thinkpython2.com/code/polygon.py}.
+\url{http://thinkpython.com/code/polygon.py}.
 
 \end{exercise}
 
@@ -3530,7 +3530,7 @@ también requiere
 
 Lee sobre espirales en \url{http://en.wikipedia.org/wiki/Spiral}; luego
 escribe un programa que dibuje una espiral arquimediana (o uno de los otros
-tipos).  Solución: \url{http://thinkpython2.com/code/spiral.py}.
+tipos).  Solución: \url{http://thinkpython.com/code/spiral.py}.
 \index{espiral}
 \index{arquimediana, espiral}
 
@@ -3556,7 +3556,7 @@ devuelve un número de coma flotante:
 \begin{verbatim}
 >>> minutos = 105
 >>> minutos / 60
-1.75
+    1.75
 \end{verbatim}
 
 Sin embargo, normalmente no escribimos las horas con decimales.  La división
@@ -3566,7 +3566,7 @@ entera devuelve el número entero de horas, redondeando:
 >>> minutos = 105
 >>> horas = minutos // 60
 >>> horas
-1
+    1
 \end{verbatim}
 
 Para obtener el resto, podrías restar una hora en minutos:
@@ -3574,7 +3574,7 @@ Para obtener el resto, podrías restar una hora en minutos:
 \begin{verbatim}
 >>> resto = minutos - horas * 60
 >>> resto
-45
+    45
 \end{verbatim}
 
 \index{división entera}
@@ -3590,7 +3590,7 @@ divide dos números y devuelve el resto.
 \begin{verbatim}
 >>> resto = minutos % 60
 >>> resto
-45
+    45
 \end{verbatim}
 %
 El operador de módulo es más útil de lo que parece.  Por
@@ -3623,9 +3623,9 @@ operador {\tt ==}, el cual compara dos operandos y produce
 
 \begin{verbatim}
 >>> 5 == 5
-True
+    True
 >>> 5 == 6
-False
+    False
 \end{verbatim}
 %
 {\tt True} y {\tt False} son valores
@@ -3639,9 +3639,9 @@ especiales que pertenecen al tipo {\tt bool}; no son cadenas:
 
 \begin{verbatim}
 >>> type(True)
-<class 'bool'>
+    <class 'bool'>
 >>> type(False)
-<class 'bool'>
+    <class 'bool'>
 \end{verbatim}
 %
 El operador {\tt ==} es uno de los {\bf operadores relacionales}; los
@@ -3695,7 +3695,7 @@ Cualquier número distinto de cero es interpretado como {\tt True}:
 
 \begin{verbatim}
 >>> 42 and True
-True
+    True
 \end{verbatim}
 %
 Esta flexibilidad puede ser útil, pero hay algunas sutilezas
@@ -4073,9 +4073,9 @@ función se llama \verb"raw_input".
 
 \begin{verbatim}
 >>> texto = input()
-¿Qué estás esperando?
+    ¿Qué estás esperando?
 >>> texto
-'¿Qué estás esperando?'
+    '¿Qué estás esperando?'
 \end{verbatim}
 %
 Antes de obtener la entrada del usuario, es una buena idea imprimir
@@ -4085,10 +4085,10 @@ mensaje como argumento:
 
 \begin{verbatim}
 >>> nombre = input('¿Cuál...es tu nombre?\n')
-¿Cuál...es tu nombre?
-¡Arturo, Rey de los Britones!
+    ¿Cuál...es tu nombre?
+    ¡Arturo, Rey de los Britones!
 >>> nombre
-'¡Arturo, Rey de los Britones!'
+    '¡Arturo, Rey de los Britones!'
 \end{verbatim}
 %
 La secuencia \verb"\n" al final del mensaje representa una {\bf
@@ -4101,10 +4101,10 @@ el valor de retorno a {\tt int}:
 \begin{verbatim}
 >>> mensaje = '¿Cuál...es la velocidad media de una golondrina sin carga?\n'
 >>> velocidad = input(mensaje)
-¿Cuál...es la velocidad media de una golondrina sin carga?
-42
+    ¿Cuál...es la velocidad media de una golondrina sin carga?
+    42
 >>> int(velocidad)
-42
+    42
 \end{verbatim}
 %
 Pero si el usuario escribe algo distinto a una cadena de dígitos,
@@ -4112,10 +4112,10 @@ obtienes un error:
 
 \begin{verbatim}
 >>> velocidad = input(mensaje)
-¿Cuál...es la velocidad media de una golondrina sin carga?
-¿De qué especie, de la africana o de la europea?
+    ¿Cuál...es la velocidad media de una golondrina sin carga?
+    ¿De qué especie, de la africana o de la europea?
 >>> int(velocidad)
-ValueError: invalid literal for int() with base 10
+    ValueError: invalid literal for int() with base 10
 \end{verbatim}
 %
 Más adelante veremos cómo tratar este tipo de error.
@@ -4148,10 +4148,10 @@ las sangrías son invisibles y estamos acostumbrados a ignorarlos.
 \begin{verbatim}
 >>> x = 5
 >>>  y = 6
-  File "<stdin>", line 1
-    y = 6
-    ^
-IndentationError: unexpected indent
+    File "<stdin>", line 1
+       y = 6
+       ^
+    IndentationError: unexpected indent
 \end{verbatim}
 %
 En este ejemplo, el problema es que la segunda línea está desajustada por
@@ -4284,7 +4284,7 @@ un momento arbitrario usado como punto de referencia.  En sistemas UNIX, la
 \begin{verbatim}
 >>> import time
 >>> time.time()
-1437746094.5735958
+    1437746094.5735958
 \end{verbatim}
 
 Escribe un script que lea el tiempo actual y lo convierta a
@@ -4455,7 +4455,7 @@ con la longitud dada.
 \item Escribe una función llamada {\tt copo\_de\_nieve} que dibuje tres
 curvas de Koch que hagan el contorno de un copo de nieve.
 
-Solución: \url{http://thinkpython2.com/code/koch.py}.
+Solución: \url{http://thinkpython.com/code/koch.py}.
 
 \item La curva de Koch se puede generalizar en muchas formas.  Mira
 \url{http://en.wikipedia.org/wiki/Koch_snowflake} para ejemplos e
@@ -4562,7 +4562,7 @@ el valor absoluto de 0.
 
 \begin{verbatim}
 >>> print(valor_absoluto(0))
-None
+    None
 \end{verbatim}
 %
 Por cierto, Python proporciona una función incorporada llamada
@@ -4622,7 +4622,7 @@ Para probar la nueva función, llámala con argumentos de prueba:
 
 \begin{verbatim}
 >>> distancia(1, 2, 4, 6)
-0.0
+    0.0
 \end{verbatim}
 %
 Escojo estos valores para que la distancia horizontal sea 3 y la
@@ -4789,9 +4789,9 @@ Aquí hay un ejemplo:
 
 \begin{verbatim}
 >>> es_divisible(6, 4)
-False
+    False
 >>> es_divisible(6, 3)
-True
+    True
 \end{verbatim}
 %
 El resultado del operador {\tt ==} es un booleano, así que podemos escribir la
@@ -5058,7 +5058,7 @@ el resultado correcto al sumarlas.
 
 \begin{verbatim}
 >>> factorial(1.5)
-RuntimeError: Maximum recursion depth exceeded
+    RuntimeError: Maximum recursion depth exceeded
 \end{verbatim}
 %
 Se ve como una recursividad infinita.  ¿Cómo puede ser?  La función
@@ -5105,11 +5105,11 @@ anduvo mal:
 
 \begin{verbatim}
 >>> print(factorial('fred'))
-El factorial solo está definido para enteros.
-None
+    El factorial solo está definido para enteros.
+    None
 >>> print(factorial(-2))
-El factorial no está definido para enteros negativos.
-None
+    El factorial no está definido para enteros negativos.
+    None
 \end{verbatim}
 %
 Si pasamos ambas verificaciones, sabemos que $n$ es un entero no negativo, por lo que podemos probar que la recursividad termina.
@@ -5281,7 +5281,7 @@ Ver \url{http://en.wikipedia.org/wiki/Ackermann_function}.
 Escribe una función con nombre {\tt ack} que evalúe la función de Ackermann.
 Utiliza tu función para evaluar {\tt ack(3, 4)}, que debería ser 125.
 ¿Qué ocurre para valores más grandes de {\tt m} y {\tt n}?
-Solución: \url{http://thinkpython2.com/code/ackermann.py}.
+Solución: \url{http://thinkpython.com/code/ackermann.py}.
 \index{Ackermann, función de}
 \index{función!ack}
 
@@ -5327,7 +5327,7 @@ función incorporada {\tt len} para verificar la longitud de una cadena.
 
 \end{enumerate}
 
-Solución: \url{http://thinkpython2.com/code/palindrome_soln.py}.
+Solución: \url{http://thinkpython.com/code/palindrome_soln.py}.
 
 \end{exercise}
 
@@ -5386,10 +5386,10 @@ se refiera a un nuevo valor (y deje de referirse al valor antiguo).
 \begin{verbatim}
 >>> x = 5
 >>> x
-5
+    5
 >>> x = 7
 >>> x
-7
+    7
 \end{verbatim}
 %
 La primera vez que mostramos
@@ -5422,7 +5422,7 @@ no tienen que permanecer iguales:
 >>> b = a    # a y b son iguales ahora
 >>> a = 3    # a y b ya no son iguales
 >>> b
-5
+    5
 \end{verbatim}
 %
 La tercera línea cambia el valor de {\tt a} pero no cambia el
@@ -5463,7 +5463,7 @@ un valor a {\tt x}:
 
 \begin{verbatim}
 >>> x = x + 1
-NameError: name 'x' is not defined
+    NameError: name 'x' is not defined
 \end{verbatim}
 %
 Antes de que puedas actualizar una variable, la tienes que {\bf inicializar},
@@ -5656,7 +5656,7 @@ Por ejemplo, si $a$ es 4 y $x$ es 3:
 >>> x = 3
 >>> y = (x + a/x) / 2
 >>> y
-2.16666666667
+    2.16666666667
 \end{verbatim}
 %
 El resultado está más cerca de la respuesta correcta ($\sqrt{4} = 2$).  Si
@@ -5666,7 +5666,7 @@ repetimos el proceso con una nueva estimación, se acerca aún más:
 >>> x = y
 >>> y = (x + a/x) / 2
 >>> y
-2.00641025641
+    2.00641025641
 \end{verbatim}
 %
 Después de algunas actualizaciones más, la estimación es casi exacta:
@@ -5676,11 +5676,11 @@ Después de algunas actualizaciones más, la estimación es casi exacta:
 >>> x = y
 >>> y = (x + a/x) / 2
 >>> y
-2.00001024003
+    2.00001024003
 >>> x = y
 >>> y = (x + a/x) / 2
 >>> y
-2.00000000003
+    2.00000000003
 \end{verbatim}
 %
 En general, no sabemos de antemano cuántos pasos toma
@@ -5692,11 +5692,11 @@ deja de cambiar:
 >>> x = y
 >>> y = (x + a/x) / 2
 >>> y
-2.0
+    2.0
 >>> x = y
 >>> y = (x + a/x) / 2
 >>> y
-2.0
+    2.0
 \end{verbatim}
 %
 Cuando {\tt y == x}, podemos parar.  Aquí hay un bucle que comienza
@@ -5892,12 +5892,12 @@ utilizando el intérprete de Python.  Por ejemplo:
 
 \begin{verbatim}
 >>> eval('1 + 2 * 3')
-7
+    7
 >>> import math
 >>> eval('math.sqrt(5)')
-2.2360679774997898
+    2.2360679774997898
 >>> eval('type(math.pi)')
-<class 'float'>
+    <class 'float'>
 \end{verbatim}
 %
 Escribe una función llamada \verb"bucle_eval" que, de manera iterativa,
@@ -5928,7 +5928,7 @@ para calcular términos de la sumatoria hasta que el último término sea
 más pequeño que {\tt 1e-15} (que es la notación de Python para $10^{-15}$).
 Puedes verificar el resultado comparándolo con {\tt math.pi}.
 
-Solución: \url{http://thinkpython2.com/code/pi.py}.
+Solución: \url{http://thinkpython.com/code/pi.py}.
 
 \end{exercise}
 
@@ -5971,7 +5971,7 @@ Sin embargo, lo que obtienes podría no ser lo que esperas:
 
 \begin{verbatim}
 >>> letra
-'a'
+    'a'
 \end{verbatim}
 %
 Para la mayoría de las personas, la primera letra de \verb"'banana'" es {\tt b}, no
@@ -5981,7 +5981,7 @@ comienzo de la cadena, y el desplazamiento de la primera letra es cero.
 \begin{verbatim}
 >>> letra = fruta[0]
 >>> letra
-'b'
+    'b'
 \end{verbatim}
 %
 Entonces {\tt b} es la 0-ésima letra  (``cero-ésima'') de \verb"'banana'", {\tt
@@ -5996,9 +5996,9 @@ operadores:
 \begin{verbatim}
 >>> i = 1
 >>> fruta[i]
-'a'
+    'a'
 >>> fruta[i+1]
-'n'
+    'n'
 \end{verbatim}
 %
 
@@ -6009,7 +6009,7 @@ obtienes:
 
 \begin{verbatim}
 >>> letra = fruta[1.5]
-TypeError: string indices must be integers
+    TypeError: string indices must be integers
 \end{verbatim}
 %
 
@@ -6023,7 +6023,7 @@ en una cadena:
 \begin{verbatim}
 >>> fruta = 'banana'
 >>> len(fruta)
-6
+    6
 \end{verbatim}
 %
 Para obtener la última letra de una cadena, quizás te tientes a intentar algo
@@ -6034,7 +6034,7 @@ así:
 \begin{verbatim}
 >>> longitud = len(fruta)
 >>> ultima = fruta[longitud]
-IndexError: string index out of range
+    IndexError: string index out of range
 \end{verbatim}
 %
 El motivo del {\tt IndexError} es que no hay letra en {\tt
@@ -6045,7 +6045,7 @@ que restar 1 a {\tt longitud}:
 \begin{verbatim}
 >>> ultima = fruta[longitud-1]
 >>> ultima
-'a'
+    'a'
 \end{verbatim}
 %
 O bien puedes utilizar índices negativos, que cuentan hacia atrás desde
@@ -6146,9 +6146,9 @@ similar a seleccionar un carácter:
 \begin{verbatim}
 >>> s = 'Monty Python'
 >>> s[0:5]
-'Monty'
+    'Monty'
 >>> s[6:12]
-'Python'
+    'Python'
 \end{verbatim}
 %
 El operador {\tt [n:m]} devuelve la parte de la cadena desde el 
@@ -6171,9 +6171,9 @@ llega hasta el final de la cadena:
 \begin{verbatim}
 >>> fruta = 'banana'
 >>> fruta[:3]
-'ban'
+    'ban'
 >>> fruta[3:]
-'ana'
+    'ana'
 \end{verbatim}
 %
 Si el primer índice es mayor o igual al segundo, el resultado
@@ -6183,7 +6183,7 @@ es una {\bf cadena vacía}, representada por dos comillas:
 \begin{verbatim}
 >>> fruta = 'banana'
 >>> fruta[3:3]
-''
+    ''
 \end{verbatim}
 %
 Una cadena vacía no contiene caracteres y tiene longitud 0, pero aparte
@@ -6210,7 +6210,7 @@ Por ejemplo:
 \begin{verbatim}
 >>> saludo = 'Hola, mundo'
 >>> saludo[0] = 'J'
-TypeError: 'str' object does not support item assignment
+    TypeError: 'str' object does not support item assignment
 \end{verbatim}
 %
 El ``objeto'' en este caso es la cadena y el ``ítem'' es
@@ -6232,7 +6232,7 @@ que sea una variación de la original:
 >>> saludo = 'Hola, mundo'
 >>> nuevo_saludo = 'J' + saludo[1:]
 >>> nuevo_saludo
-'Jola, mundo'
+    'Jola, mundo'
 \end{verbatim}
 %
 Este ejemplo concatena una nueva primera letra con
@@ -6335,7 +6335,7 @@ la sintaxis de método {\tt palabra.upper()}.
 >>> palabra = 'banana'
 >>> nueva_palabra = palabra.upper()
 >>> nueva_palabra
-'BANANA'
+    'BANANA'
 \end{verbatim}
 %
 Esta forma de notación de punto especifica el nombre del método, {\tt
@@ -6356,7 +6356,7 @@ es notablemente similar a la función {\tt encontrar} que escribimos:
 >>> palabra = 'banana'
 >>> indice = palabra.find('a')
 >>> indice
-1
+    1
 \end{verbatim}
 %
 En este ejemplo, invocamos a {\tt find} en {\tt palabra} y pasamos
@@ -6367,7 +6367,7 @@ puede encontrar subcadenas, no solo caracteres:
 
 \begin{verbatim}
 >>> palabra.find('na')
-2
+    2
 \end{verbatim}
 %
 Por defecto, {\tt find} comienza al principio de la cadena, pero
@@ -6377,7 +6377,7 @@ puede tomar un segundo argumento, el índice donde debería comenzar:
 
 \begin{verbatim}
 >>> palabra.find('na', 3)
-4
+    4
 \end{verbatim}
 %
 Este es un ejemplo de {\bf argumento opcional};
@@ -6387,7 +6387,7 @@ tomar también un tercer argumento, el índice donde debería detenerse:
 \begin{verbatim}
 >>> nombre = 'bob'
 >>> nombre.find('b', 1, 2)
--1
+    -1
 \end{verbatim}
 %
 Esta búsqueda falla porque {\tt b} no
@@ -6409,9 +6409,9 @@ devuelve {\tt True} si la primera aparece como una subcadena en la segunda:
 
 \begin{verbatim}
 >>> 'a' in 'banana'
-True
+    True
 >>> 'semilla' in 'banana'
-False
+    False
 \end{verbatim}
 %
 Por ejemplo, la siguiente función imprime todas las
@@ -6433,9 +6433,9 @@ Esto es lo que obtienes si comparas uvas y tunas:
 
 \begin{verbatim}
 >>> en_ambas('uvas', 'tunas')
-u
-a
-s
+    u
+    a
+    s
 \end{verbatim}
 %
 
@@ -6525,10 +6525,10 @@ esperamos el valor de retorno {\tt True}, pero obtenemos un IndexError:
 
 \begin{verbatim}
 >>> es_inverso('pots', 'stop')
-...
-  File "inverso.py", line 15, in es_inverso
-    if palabra1[i] != palabra2[j]:
-IndexError: string index out of range
+    ...
+      File "inverso.py", line 15, in es_inverso
+        if palabra1[i] != palabra2[j]:
+    IndexError: string index out of range
 \end{verbatim}
 %
 Para depurar este tipo de error, mi primer movimiento es
@@ -6549,7 +6549,7 @@ Ahora cuando ejecuto el programa de nuevo, obtengo más información:
 
 \begin{verbatim}
 >>> es_inverso('pots', 'stop')
-0 4
+    0 4
 ...
 IndexError: string index out of range
 \end{verbatim}
@@ -6563,10 +6563,10 @@ Si arreglo este error y ejecuto el programa de nuevo, obtengo:
 
 \begin{verbatim}
 >>> es_inverso('pots', 'stop')
-0 3
-1 2
-2 1
-True
+    0 3
+    1 2
+    2 1
+    True
 \end{verbatim}
 %
 Esta vez obtenemos la respuesta correcta, pero se ve como si el bucle solo se ejecutara
@@ -6695,7 +6695,7 @@ etc.
 \begin{verbatim}
 >>> fruta = 'banana'
 >>> fruta[0:5:2]
-'bnn'
+    'bnn'
 \end{verbatim}
 
 Un tamaño de paso de -1 pasa a través de la palabra hacia atrás, por lo que
@@ -6780,7 +6780,7 @@ así por ejemplo:
 
 \begin{verbatim}
 >>> ord('c') - ord('a')
-2
+    2
 \end{verbatim}
 
 Debido a que \verb"'c'" es la dos-ésima letra del alfabeto.  Pero ten
@@ -6789,7 +6789,7 @@ cuidado: los códigos numéricos para las letras mayúsculas son diferentes.
 Los chistes potencialmente ofensivos en internet a veces están codificados en
 ROT13, que es un cifrado César con rotación 13.  Si no te
 ofendes fácilmente, encuentra y decodifica algunos.  Solución:
-\url{http://thinkpython2.com/code/rotate.py}.
+\url{http://thinkpython.com/code/rotate.py}.
 
 \end{exercise}
 
@@ -6817,7 +6817,7 @@ una lista de 113,809 palabras de crucigrama oficiales, es decir, palabras que se
 consideran válidas en crucigramas y otros juegos de palabras.  En la
 colección Moby, el nombre del archivo es {\tt 113809of.fic}; puedes descargar
 una copia, con el nombre más simple {\tt words.txt}, en
-\url{http://thinkpython2.com/code/words.txt}.
+\url{http://thinkpython.com/code/words.txt}.
 \index{Moby Project}
 \index{crucigramas}
 
@@ -6845,7 +6845,7 @@ devuelve el resultado como una cadena: \index{metodo@método!readline}
 
 \begin{verbatim}
 >>> fin.readline()
-'aa\n'
+    'aa\n'
 \end{verbatim}
 %
 La primera palabra de esta particular lista es ``aa'', que es un tipo de
@@ -6857,7 +6857,7 @@ si llamas a {\tt readline} de nuevo, obtienes la palabra siguiente:
 
 \begin{verbatim}
 >>> fin.readline()
-'aah\n'
+    'aah\n'
 \end{verbatim}
 %
 La palabra siguiente es ``aah'', que es una palabra perfectamente legítima,
@@ -6871,7 +6871,7 @@ podemos deshacernos de este con el método de cadena {\tt strip}:
 >>> linea = fin.readline()
 >>> palabra = linea.strip()
 >>> palabra
-'aahed'
+    'aahed'
 \end{verbatim}
 %
 Puedes también utilizar un objeto de archivo como parte de un bucle {\tt for}.
@@ -7246,7 +7246,7 @@ pensar en una. ¿Cuál es la palabra?
 \end{quote}
 
 Escribe un programa que la encuentre.
-Solución: \url{http://thinkpython2.com/code/cartalk1.py}.
+Solución: \url{http://thinkpython.com/code/cartalk1.py}.
 
 \end{exercise}
 
@@ -7280,7 +7280,7 @@ al medio de los 6 eran palíndromo.  ¿Y estás listo para esto? Una milla más 
 
 Escribe un programa en Python que pruebe todos los números de seis dígitos e imprima
 aquellos números que satisfagan estos requisitos.
-Solución: \url{http://thinkpython2.com/code/cartalk2.py}.
+Solución: \url{http://thinkpython.com/code/cartalk2.py}.
 
 \end{exercise}
 
@@ -7310,7 +7310,7 @@ ocurrido 8 veces en total. Entonces la pregunta es, ¿qué edad tengo ahora?''
 Escribe un programa en Python que busque soluciones a este Puzzler.
 Pista: podrías encontrar útil el método de cadena {\tt zfill}.
 
-Solución: \url{http://thinkpython2.com/code/cartalk3.py}.
+Solución: \url{http://thinkpython.com/code/cartalk3.py}.
 
 \end{exercise}
 
@@ -7369,7 +7369,7 @@ Como podrías esperar, puedes asignar valores de lista a variables:
 >>> numeros = [42, 123]
 >>> vacio = []
 >>> print(quesos, numeros, vacio)
-['Cheddar', 'Edam', 'Gouda'] [42, 123] []
+    ['Cheddar', 'Edam', 'Gouda'] [42, 123] []
 \end{verbatim}
 %
 \index{asignación}
@@ -7390,7 +7390,7 @@ expresión dentro de los corchetes especifica el índice.  Recuerda que los
 
 \begin{verbatim}
 >>> quesos[0]
-'Cheddar'
+    'Cheddar'
 \end{verbatim}
 %
 A diferencia de las cadenas, las listas son mutables.  Cuando el operador de corchetes aparece
@@ -7402,7 +7402,7 @@ lista que será asignado.
 >>> numeros = [42, 123]
 >>> numeros[1] = 5
 >>> numeros
-[42, 5]
+    [42, 5]
 \end{verbatim}
 %
 El uno-ésimo elemento de {\tt numeros}, que
@@ -7460,9 +7460,9 @@ El operador {\tt in} también funciona en las listas.
 \begin{verbatim}
 >>> quesos = ['Cheddar', 'Edam', 'Gouda']
 >>> 'Edam' in quesos
-True
+    True
 >>> 'Brie' in quesos
-False
+    False
 \end{verbatim}
 
 
@@ -7534,7 +7534,7 @@ El operador {\tt +} concatena listas:
 >>> b = [4, 5, 6]
 >>> c = a + b
 >>> c
-[1, 2, 3, 4, 5, 6]
+    [1, 2, 3, 4, 5, 6]
 \end{verbatim}
 %
 El operador {\tt *} repite una lista un número dado de veces:
@@ -7543,9 +7543,9 @@ El operador {\tt *} repite una lista un número dado de veces:
 
 \begin{verbatim}
 >>> [0] * 4
-[0, 0, 0, 0]
+    [0, 0, 0, 0]
 >>> [1, 2, 3] * 3
-[1, 2, 3, 1, 2, 3, 1, 2, 3]
+    [1, 2, 3, 1, 2, 3, 1, 2, 3]
 \end{verbatim}
 %
 El primer ejemplo repite {\tt [0]} cuatro veces.  El segundo ejemplo
@@ -7564,11 +7564,11 @@ El operador de trozo también funciona en las listas:
 \begin{verbatim}
 >>> t = ['a', 'b', 'c', 'd', 'e', 'f']
 >>> t[1:3]
-['b', 'c']
+    ['b', 'c']
 >>> t[:4]
-['a', 'b', 'c', 'd']
+    ['a', 'b', 'c', 'd']
 >>> t[3:]
-['d', 'e', 'f']
+    ['d', 'e', 'f']
 \end{verbatim}
 %
 Si omites el primer índice, el trozo comienza al principio.
@@ -7580,7 +7580,7 @@ omites ambos, el trozo es una copia de la lista completa.
 
 \begin{verbatim}
 >>> t[:]
-['a', 'b', 'c', 'd', 'e', 'f']
+    ['a', 'b', 'c', 'd', 'e', 'f']
 \end{verbatim}
 %
 Dado que las listas son mutables, a menudo es útil crear una copia
@@ -7596,7 +7596,7 @@ puede actualizar múltiples elementos:
 >>> t = ['a', 'b', 'c', 'd', 'e', 'f']
 >>> t[1:3] = ['x', 'y']
 >>> t
-['a', 'x', 'y', 'd', 'e', 'f']
+    ['a', 'x', 'y', 'd', 'e', 'f']
 \end{verbatim}
 %
 
@@ -7607,7 +7607,7 @@ puede actualizar múltiples elementos:
 % >>> t = ['a', 'd', 'e', 'f']
 % >>> t[1:1] = ['b', 'c']
 % >>> print t
-% ['a', 'b', 'c', 'd', 'e', 'f']
+%     ['a', 'b', 'c', 'd', 'e', 'f']
 % \end{verbatim}
 % \afterverb
 %
@@ -7618,7 +7618,7 @@ puede actualizar múltiples elementos:
 % >>> t = ['a', 'b', 'c', 'd', 'e', 'f']
 % >>> t[1:3] = []
 % >>> print t
-% ['a', 'd', 'e', 'f']
+%     ['a', 'd', 'e', 'f']
 % \end{verbatim}
 % \afterverb
 %
@@ -7639,7 +7639,7 @@ Python proporciona métodos que operan en listas.  Por ejemplo,
 >>> t = ['a', 'b', 'c']
 >>> t.append('d')
 >>> t
-['a', 'b', 'c', 'd']
+    ['a', 'b', 'c', 'd']
 \end{verbatim}
 %
 {\tt extend} toma una lista como argumento y anexa todos
@@ -7652,7 +7652,7 @@ los elementos:
 >>> t2 = ['d', 'e']
 >>> t1.extend(t2)
 >>> t1
-['a', 'b', 'c', 'd', 'e']
+    ['a', 'b', 'c', 'd', 'e']
 \end{verbatim}
 %
 Este ejemplo deja a {\tt t2} sin modificar.
@@ -7665,7 +7665,7 @@ Este ejemplo deja a {\tt t2} sin modificar.
 >>> t = ['d', 'c', 'e', 'b', 'a']
 >>> t.sort()
 >>> t
-['a', 'b', 'c', 'd', 'e']
+    ['a', 'b', 'c', 'd', 'e']
 \end{verbatim}
 %
 La mayoría de los métodos de lista son nulos: modifican la lista y devuelven {\tt None}.
@@ -7722,7 +7722,7 @@ que Python la facilita como función incorporada, {\tt sum}:
 \begin{verbatim}
 >>> t = [1, 2, 3]
 >>> sum(t)
-6
+    6
 \end{verbatim}
 %
 Una operación como esta que combina una secuencia de elementos en
@@ -7794,9 +7794,9 @@ el índice del elemento que quieres, puedes utilizar
 >>> t = ['a', 'b', 'c']
 >>> x = t.pop(1)
 >>> t
-['a', 'c']
+    ['a', 'c']
 >>> x
-'b'
+    'b'
 \end{verbatim}
 %
 {\tt pop} modifica la lista y devuelve el elemento que se eliminó.
@@ -7812,7 +7812,7 @@ operador {\tt del}:
 >>> t = ['a', 'b', 'c']
 >>> del t[1]
 >>> t
-['a', 'c']
+    ['a', 'c']
 \end{verbatim}
 %
 Si conoces el elemento que quieres eliminar (pero no el índice),
@@ -7824,7 +7824,7 @@ puedes utilizar {\tt remove}:
 >>> t = ['a', 'b', 'c']
 >>> t.remove('b')
 >>> t
-['a', 'c']
+    ['a', 'c']
 \end{verbatim}
 %
 El valor de retorno de {\tt remove} es {\tt None}.
@@ -7838,7 +7838,7 @@ Para eliminar más de un elemento, puedes utilizar {\tt del} con
 >>> t = ['a', 'b', 'c', 'd', 'e', 'f']
 >>> del t[1:5]
 >>> t
-['a', 'f']
+    ['a', 'f']
 \end{verbatim}
 %
 Como siempre, el trozo selecciona todos los elementos hasta el segundo índice
@@ -7862,7 +7862,7 @@ puedes utilizar {\tt list}:
 >>> s = 'spam'
 >>> t = list(s)
 >>> t
-['s', 'p', 'a', 'm']
+    ['s', 'p', 'a', 'm']
 \end{verbatim}
 %
 Dado que {\tt list} es el nombre de una función incorporada, deberías
@@ -7879,7 +7879,7 @@ el método {\tt split}:
 >>> s = 'pining for the fjords'
 >>> t = s.split()
 >>> t
-['pining', 'for', 'the', 'fjords']
+    ['pining', 'for', 'the', 'fjords']
 \end{verbatim}
 %
 Un argumento opcional llamado {\bf delimitador} especifica qué
@@ -7895,7 +7895,7 @@ usa un guión como delimitador:
 >>> delimitador = '-'
 >>> t = s.split(delimitador)
 >>> t
-['spam', 'spam', 'spam']
+    ['spam', 'spam', 'spam']
 \end{verbatim}
 %
 {\tt join} es el inverso de {\tt split}.
@@ -7912,7 +7912,7 @@ lista como parámetro:
 >>> delimitador = ' '
 >>> s = delimitador.join(t)
 >>> s
-'pining for the fjords'
+    'pining for the fjords'
 \end{verbatim}
 %
 En este caso el delimitador es un carácter de espacio, por lo que
@@ -7961,7 +7961,7 @@ usar el operador {\tt is}.
 >>> a = 'banana'
 >>> b = 'banana'
 >>> a is b
-True
+    True
 \end{verbatim}
 %
 En este ejemplo, Python solo crea un objeto de cadena y tanto {\tt
@@ -7972,7 +7972,7 @@ dos objetos:
 >>> a = [1, 2, 3]
 >>> b = [1, 2, 3]
 >>> a is b
-False
+    False
 \end{verbatim}
 %
 Entonces el diagrama de estado se ve como la Figura~\ref{fig.list2}.
@@ -8015,7 +8015,7 @@ entonces ambas variables se refieren al mismo objeto:
 >>> a = [1, 2, 3]
 >>> b = a
 >>> b is a
-True
+    True
 \end{verbatim}
 %
 El diagrama de estado se ve como la Figura~\ref{fig.list3}.
@@ -8044,7 +8044,7 @@ al otro:
 \begin{verbatim}
 >>> b[0] = 42
 >>> a
-[42, 2, 3]
+    [42, 2, 3]
 \end{verbatim}
 %
 Aunque este comportamiento puede ser útil, es propenso a errores.  En general,
@@ -8088,7 +8088,7 @@ Se utiliza de la siguiente manera:
 >>> letras = ['a', 'b', 'c']
 >>> sin_cabeza(letras)
 >>> letras
-['b', 'c']
+    ['b', 'c']
 \end{verbatim}
 %
 El parámetro {\tt t} y la variable {\tt letras} son
@@ -8122,9 +8122,9 @@ Aquí hay un ejemplo que utiliza {\tt append}:
 >>> t1 = [1, 2]
 >>> t2 = t1.append(3)
 >>> t1
-[1, 2, 3]
+    [1, 2, 3]
 >>> t2
-None
+    None
 \end{verbatim}
 %
 El valor de retorno de {\tt append} es {\tt None}.
@@ -8134,9 +8134,9 @@ Aquí hay un ejemplo que utiliza el operador {\tt +}:
 \begin{verbatim}
 >>> t3 = t1 + [4]
 >>> t1
-[1, 2, 3]
+    [1, 2, 3]
 >>> t3
-[1, 2, 3, 4]
+    [1, 2, 3, 4]
 \end{verbatim}
 %
 El resultado del operador es una lista nueva y la lista original no ha
@@ -8160,7 +8160,7 @@ hace que {\tt t} se refiera a esta, pero eso no afecta a la llamadora.
 >>> t4 = [1, 2, 3]
 >>> sin_cabeza_mal(t4)
 >>> t4
-[1, 2, 3]
+    [1, 2, 3]
 \end{verbatim}
 %
 Al principio de \verb"sin_cabeza_mal", {\tt t} y {\tt t4}
@@ -8184,7 +8184,7 @@ Se utiliza de la siguiente manera:
 >>> letra = ['a', 'b', 'c']
 >>> resto = cola(letras)
 >>> resto
-['b', 'c']
+    ['b', 'c']
 \end{verbatim}
 
 
@@ -8267,9 +8267,9 @@ también, puedes crear una copia.
 >>> t2 = t[:]
 >>> t2.sort()
 >>> t
-[3, 1, 2]
+    [3, 1, 2]
 >>> t2
-[1, 2, 3]
+    [1, 2, 3]
 \end{verbatim}
 
 En este ejemplo podrías utilizar también la función incorporada {\tt sorted},
@@ -8280,9 +8280,9 @@ que devuelve una nueva lista ordenada y deja sola a la original.
 \begin{verbatim}
 >>> t2 = sorted(t)
 >>> t
-[3, 1, 2]
+    [3, 1, 2]
 >>> t2
-[1, 2, 3]
+    [1, 2, 3]
 \end{verbatim}
 
 \end{enumerate}
@@ -8355,7 +8355,7 @@ debería separarse una cadena.
 \section{Ejercicios}
 
 Puedes descargar las soluciones a estos ejercicios en
-\url{http://thinkpython2.com/code/list_exercises.py}.
+\url{http://thinkpython.com/code/list_exercises.py}.
 
 \begin{exercise}
 
@@ -8366,7 +8366,7 @@ Por ejemplo:
 \begin{verbatim}
 >>> t = [[1, 2], [3], [4, 5, 6]]
 >>> suma_anidada(t)
-21
+    21
 \end{verbatim}
 
 \end{exercise}
@@ -8383,7 +8383,7 @@ Por ejemplo:
 \begin{verbatim}
 >>> t = [1, 2, 3]
 >>> cumsum(t)
-[1, 3, 6]
+    [1, 3, 6]
 \end{verbatim}
 
 \end{exercise}
@@ -8397,7 +8397,7 @@ y el último.  Por ejemplo:
 \begin{verbatim}
 >>> t = [1, 2, 3, 4]
 >>> medio(t)
-[2, 3]
+    [2, 3]
 \end{verbatim}
 
 \end{exercise}
@@ -8412,7 +8412,7 @@ Por ejemplo:
 >>> t = [1, 2, 3, 4]
 >>> acortar(t)
 >>> t
-[2, 3]
+    [2, 3]
 \end{verbatim}
 
 \end{exercise}
@@ -8425,9 +8425,9 @@ ascendente y {\tt False} si no.  Por ejemplo:
 
 \begin{verbatim}
 >>> esta_ordenada([1, 2, 2])
-True
+    True
 >>> esta_ordenada(['b', 'a'])
-False
+    False
 \end{verbatim}
 
 \end{exercise}
@@ -8474,7 +8474,7 @@ con la función {\tt randint} del módulo {\tt random}.
 \index{randint, función}
 
 Puedes descargar mi
-solución en \url{http://thinkpython2.com/code/birthday.py}.
+solución en \url{http://thinkpython.com/code/birthday.py}.
 
 \end{exercise}
 
@@ -8492,7 +8492,7 @@ esta función, una utilizando el método {\tt append} y la
 otra utilizando la notación {\tt t = t + [x]}.  ¿Cuál toma más
 tiempo en ejecutar?  ¿Por qué?
 
-Solución: \url{http://thinkpython2.com/code/wordlist.py}.
+Solución: \url{http://thinkpython.com/code/wordlist.py}.
 \index{modulo@módulo!time}
 \index{time, módulo}
 
@@ -8532,7 +8532,7 @@ en la lista y {\tt False} si no está.
 \index{bisect, módulo}
 
 ¡O bien podrías leer la documentación del módulo {\tt bisect}
-y utilizarlo!  Solución: \url{http://thinkpython2.com/code/inlist.py}.
+y utilizarlo!  Solución: \url{http://thinkpython.com/code/inlist.py}.
 
 \end{exercise}
 
@@ -8541,7 +8541,7 @@ y utilizarlo!  Solución: \url{http://thinkpython2.com/code/inlist.py}.
 
 Dos palabras son un ``par inverso'' si cada una es el inverso de la
 otra.  Escribe un programa que encuentre todos los pares inversos en la
-lista de palabras.  Solución: \url{http://thinkpython2.com/code/reverse_pair.py}.
+lista de palabras.  Solución: \url{http://thinkpython.com/code/reverse_pair.py}.
 
 \end{exercise}
 
@@ -8551,7 +8551,7 @@ lista de palabras.  Solución: \url{http://thinkpython2.com/code/reverse_pair.py
 Dos palabras se ``entrelazan'' si tomando letras alternas de cada una se forma
 una nueva palabra.  Por ejemplo, ``shoe'' y ``cold''
 se entrelazan para formar ``schooled''.
-Solución: \url{http://thinkpython2.com/code/interlock.py}.
+Solución: \url{http://thinkpython.com/code/interlock.py}.
 Crédito: Este ejercicio está inspirado en un ejemplo de \url{http://puzzlers.org}.
 
 \begin{enumerate}
@@ -8605,7 +8605,7 @@ deberías evitar utilizarla como nombre de variable.
 \begin{verbatim}
 >>> ing_esp = dict()
 >>> ing_esp
-{}
+    {}
 \end{verbatim}
 
 Las llaves, \verb"{}", representan un diccionario vacío.
@@ -8624,7 +8624,7 @@ entre la clave y el valor:
 
 \begin{verbatim}
 >>> ing_esp
-{'one': 'uno'}
+    {'one': 'uno'}
 \end{verbatim}
 %
 Este formato de salida es también un formato de entrada.  Por ejemplo,
@@ -8638,7 +8638,7 @@ Pero si imprimes {\tt ing\_esp}, quizás te sorprendas:
 
 \begin{verbatim}
 >>> ing_esp
-{'one': 'uno', 'three': 'tres', 'two': 'dos'}
+    {'one': 'uno', 'three': 'tres', 'two': 'dos'}
 \end{verbatim}
 %
 El orden de los pares clave-valor podría no ser el mismo.  Si
@@ -8652,7 +8652,7 @@ En cambio, utilizas las claves para buscar los valores correspondientes:
 
 \begin{verbatim}
 >>> ing_esp['two']
-'dos'
+    'dos'
 \end{verbatim}
 %
 La clave \verb"'two'" siempre mapea al valor \verb"'dos'", entonces el orden
@@ -8664,7 +8664,7 @@ Si la clave no está en el diccionario, obtienes una excepción:
 
 \begin{verbatim}
 >>> ing_esp['four']
-KeyError: 'four'
+    KeyError: 'four'
 \end{verbatim}
 %
 La función {\tt len} funciona con diccionarios: devuelve el
@@ -8674,7 +8674,7 @@ número de pares clave-valor.
 
 \begin{verbatim}
 >>> len(ing_esp)
-3
+    3
 \end{verbatim}
 %
 El operador {\tt in} también funciona con diccionarios: te dice si
@@ -8686,9 +8686,9 @@ como un valor no basta).
 
 \begin{verbatim}
 >>> 'one' in ing_esp
-True
+    True
 >>> 'uno' in ing_esp
-False
+    False
 \end{verbatim}
 %
 Para ver si algo aparece como un valor en un diccionario,
@@ -8700,7 +8700,7 @@ valores, y entonces utilizar el operador {\tt in}:
 \begin{verbatim}
 >>> valores = ing_esp.values()
 >>> 'uno' in valores
-True
+    True
 \end{verbatim}
 %
 El operador {\tt in} utiliza diferentes algoritmos para las listas y los
@@ -8784,7 +8784,7 @@ Funciona así:
 \begin{verbatim}
 >>> h = histograma('brontosaurus')
 >>> h
-{'a': 1, 'b': 1, 'o': 2, 'n': 1, 's': 2, 'r': 2, 'u': 2, 't': 1}
+    {'a': 1, 'b': 1, 'o': 2, 'n': 1, 's': 2, 'r': 2, 'u': 2, 't': 1}
 \end{verbatim}
 %
 El histograma indica que las letras \verb"'a'" y \verb"'b'"
@@ -8801,11 +8801,11 @@ el valor por defecto.  Por ejemplo:
 \begin{verbatim}
 >>> h = histograma('a')
 >>> h
-{'a': 1}
+    {'a': 1}
 >>> h.get('a', 0)
-1
+    1
 >>> h.get('c', 0)
-0
+    0
 \end{verbatim}
 %
 Como ejercicio, usa {\tt get} para escribir {\tt histograma} de manera más concisa.
@@ -8832,11 +8832,11 @@ La salida se ve así:
 \begin{verbatim}
 >>> h = histograma('parrot')
 >>> imprimir_hist(h)
-a 1
-p 1
-r 2
-t 1
-o 1
+    a 1
+    p 1
+    r 2
+    t 1
+    o 1
 \end{verbatim}
 %
 Nuevamente, las claves no estan en un orden particular.  Para recorrer las claves
@@ -8847,11 +8847,11 @@ en orden, puedes utilizar la función incorporada {\tt sorted}:
 \begin{verbatim}
 >>> for clave in sorted(h):
 ...     print(clave, h[clave])
-a 1
-o 1
-p 1
-r 2
-t 1
+    a 1
+    o 1
+    p 1
+    r 2
+    t 1
 \end{verbatim}
 
 %TODO: get this on Atlas
@@ -8905,17 +8905,17 @@ Aquí hay un ejemplo de una consulta inversa eficaz:
 >>> h = histograma('parrot')
 >>> clave = consulta_inversa(h, 2)
 >>> clave 
-'r'
+    'r'
 \end{verbatim}
 %
 Y una ineficaz:
 
 \begin{verbatim}
 >>> clave = consulta_inversa(h, 3)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "<stdin>", line 5, in consulta_inversa
-LookupError
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+      File "<stdin>", line 5, in consulta_inversa
+    LookupError
 \end{verbatim}
 %
 El efecto de cuando levantas una excepción mediante {\tt raise} es el mismo que cuando
@@ -8928,9 +8928,9 @@ Cuando levantes una excepción, puedes proporcionar un mensaje de error detallad
 
 \begin{verbatim}
 >>> raise LookupError('el valor no aparece en el diccionario')
-Traceback (most recent call last):
-  File "<stdin>", line 1, in ?
-LookupError: el valor no aparece en el diccionario
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in ?
+    LookupError: el valor no aparece en el diccionario
 \end{verbatim}
 %
 Una consulta inversa es mucho más lenta que una consulta directa; si
@@ -8976,10 +8976,10 @@ Aquí hay un ejemplo:
 \begin{verbatim}
 >>> hist = histograma('parrot')
 >>> hist
-{'a': 1, 'p': 1, 'r': 2, 't': 1, 'o': 1}
+    {'a': 1, 'p': 1, 'r': 2, 't': 1, 'o': 1}
 >>> inv = invertir_dict(hist)
 >>> inv
-{1: ['a', 'p', 't', 'o'], 2: ['r']}
+    {1: ['a', 'p', 't', 'o'], 2: ['r']}
 \end{verbatim}
 
 \begin{figure}
@@ -9007,9 +9007,9 @@ no pueden ser claves.  Esto es lo que ocurre si lo intentas:
 >>> t = [1, 2, 3]
 >>> d = dict()
 >>> d[t] = 'ups'
-Traceback (most recent call last):
-  File "<stdin>", line 1, in ?
-TypeError: list objects are unhashable
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in ?
+    TypeError: list objects are unhashable
 \end{verbatim}
 %
 Anteriormente mencioné que un diccionario se implementa utilizando
@@ -9396,7 +9396,7 @@ búsqueda de bisección.
 
 Lee la documentación del método de diccionario {\tt setdefault}
 y utilízalo para escribir una versión más concisa de \verb"invertir_dict".
-Solución: \url{http://thinkpython2.com/code/invert_dict.py}.
+Solución: \url{http://thinkpython.com/code/invert_dict.py}.
 \index{setdefault!método}
 \index{metodo@método!setdefault}
 
@@ -9407,7 +9407,7 @@ Solución: \url{http://thinkpython2.com/code/invert_dict.py}.
 Memoiza la función de Ackermann del Ejercicio~\ref{ackermann} y ve si
 la memoización permite evaluar la función con argumentos
 más grandes.  Pista: no.
-Solución: \url{http://thinkpython2.com/code/ackermann_memo.py}.
+Solución: \url{http://thinkpython.com/code/ackermann_memo.py}.
 \index{Ackermann, función de}
 \index{función!ack}
 
@@ -9425,7 +9425,7 @@ que aparece más de una vez en la lista.
 
 Utiliza un diccionario para escribir una versión más rápida y simple de
 \verb"tiene_duplicados".
-Solución: \url{http://thinkpython2.com/code/has_duplicates.py}.
+Solución: \url{http://thinkpython.com/code/has_duplicates.py}.
 
 \end{exercise}
 
@@ -9439,7 +9439,7 @@ Dos palabras son ``pares rotativos'' si puedes rotar una de ellas
 y obtener la otra (ver \verb"rotar_palabra" en el Ejercicio~\ref{exrotate}).
 
 Escribe un programa que lea una lista de palabras y encuentre todos los pares
-rotativos.  Solución: \url{http://thinkpython2.com/code/rotate_pairs.py}.
+rotativos.  Solución: \url{http://thinkpython.com/code/rotate_pairs.py}.
 
 \end{exercise}
 
@@ -9484,14 +9484,14 @@ si una cadena está en la lista de palabras.
 Para verificar si dos palabras son homófonas, puedes utilizar el
 Diccionario de Pronunciación de la CMU.  Lo puedes descargar en
 \url{http://www.speech.cs.cmu.edu/cgi-bin/cmudict} o en
-\url{http://thinkpython2.com/code/c06d} y también puedes descargar
-\url{http://thinkpython2.com/code/pronounce.py}, que proporciona una función
+\url{http://thinkpython.com/code/c06d} y también puedes descargar
+\url{http://thinkpython.com/code/pronounce.py}, que proporciona una función
 con nombre \verb"read_dictionary" que lee el diccionario de pronunciación y
 devuelve un diccionario de Python que mapea de cada palabra a una cadena que 
 describe su pronunciación primaria.
 
 Escribe un programa que haga una lista de todas las palabras que resuelven el Puzzler.
-Solución: \url{http://thinkpython2.com/code/homophone.py}.
+Solución: \url{http://thinkpython.com/code/homophone.py}.
 
 \end{exercise}
 
@@ -9544,7 +9544,7 @@ final:
 \begin{verbatim}
 >>> t1 = 'a',
 >>> type(t1)
-<class 'tuple'>
+    <class 'tuple'>
 \end{verbatim}
 %
 Un valor en paréntesis no es una tupla:
@@ -9552,7 +9552,7 @@ Un valor en paréntesis no es una tupla:
 \begin{verbatim}
 >>> t2 = ('a')
 >>> type(t2)
-<class 'str'>
+    <class 'str'>
 \end{verbatim}
 %
 Otra manera de crear una tupla es la función incorporada {\tt tuple}.
@@ -9563,7 +9563,7 @@ Sin argumentos, esta crea una tupla vacía:
 \begin{verbatim}
 >>> t = tuple()
 >>> t
-()
+    ()
 \end{verbatim}
 %
 Si el argumento es una secuencia (cadena, lista o tupla), el resultado
@@ -9572,7 +9572,7 @@ es una tupla con los elementos de la secuencia:
 \begin{verbatim}
 >>> t = tuple('lupins')
 >>> t
-('l', 'u', 'p', 'i', 'n', 's')
+    ('l', 'u', 'p', 'i', 'n', 's')
 \end{verbatim}
 %
 Dado que {\tt tuple} es el nombre de una función incorporada, deberías
@@ -9586,7 +9586,7 @@ indexa un elemento:
 \begin{verbatim}
 >>> t = ('a', 'b', 'c', 'd', 'e')
 >>> t[0]
-'a'
+    'a'
 \end{verbatim}
 %
 Y el operador de trozo selecciona un rango de elementos.
@@ -9597,7 +9597,7 @@ Y el operador de trozo selecciona un rango de elementos.
 
 \begin{verbatim}
 >>> t[1:3]
-('b', 'c')
+    ('b', 'c')
 \end{verbatim}
 %
 Sin embargo, si intentas modificar uno de los elementos de la tupla, obtienes
@@ -9609,7 +9609,7 @@ un error:
 
 \begin{verbatim}
 >>> t[0] = 'A'
-TypeError: object doesn't support item assignment
+    TypeError: object doesn't support item assignment
 \end{verbatim}
 %
 Dado que las tuplas son inmutables, no puedes modificar sus elementos.  Pero
@@ -9618,7 +9618,7 @@ puedes reemplazar una tupla con otra:
 \begin{verbatim}
 >>> t = ('A',) + t[1:]
 >>> t
-('A', 'b', 'c', 'd', 'e')
+    ('A', 'b', 'c', 'd', 'e')
 \end{verbatim}
 %
 Esta sentencia crea una nueva tupla y luego hace que {\tt t} se refiera a esta.
@@ -9633,9 +9633,9 @@ posteriores no se consideran (incluso si son realmente grandes).
 
 \begin{verbatim}
 >>> (0, 1, 2) < (0, 3, 4)
-True
+    True
 >>> (0, 1, 2000000) < (0, 3, 4)
-True
+    True
 \end{verbatim}
 
 
@@ -9675,7 +9675,7 @@ lado derecho tienen que ser la misma:
 
 \begin{verbatim}
 >>> a, b = 1, 2, 3
-ValueError: too many values to unpack
+    ValueError: too many values to unpack
 \end{verbatim}
 %
 De manera más general, el lado derecho puede ser cualquier tipo de secuencia
@@ -9696,9 +9696,9 @@ el primer elemento se asigna a {\tt nombre\_usuario}, el segundo a
 
 \begin{verbatim}
 >>> nombre_usuario
-'monty'
+    'monty'
 >>> dominio
-'python.org'
+    'python.org'
 \end{verbatim}
 %
 
@@ -9723,7 +9723,7 @@ Puedes almacenar el resultado como una tupla:
 \begin{verbatim}
 >>> t = divmod(7, 3)
 >>> t
-(2, 1)
+    (2, 1)
 \end{verbatim}
 %
 O bien, utilizar asignación de tupla para almacenar los elementos por separado:
@@ -9733,9 +9733,9 @@ O bien, utilizar asignación de tupla para almacenar los elementos por separado:
 \begin{verbatim}
 >>> cociente, resto = divmod(7, 3)
 >>> cociente
-2
+    2
 >>> resto
-1
+    1
 \end{verbatim}
 %
 Aquí hay un ejemplo de una función que devuelve una tupla:
@@ -9777,7 +9777,7 @@ convencional.  Aquí se muestra cómo opera la función:
 
 \begin{verbatim}
 >>> printall(1, 2.0, '3')
-(1, 2.0, '3')
+    (1, 2.0, '3')
 \end{verbatim}
 %
 El complemento de la reunión es la {\bf dispersión}.  Si tienes una
@@ -9793,14 +9793,14 @@ no funciona con una tupla:
 \begin{verbatim}
 >>> t = (7, 3)
 >>> divmod(t)
-TypeError: divmod expected 2 arguments, got 1
+    TypeError: divmod expected 2 arguments, got 1
 \end{verbatim}
 %
 Sin embargo, si dispersas la tupla, funciona:
 
 \begin{verbatim}
 >>> divmod(*t)
-(2, 1)
+    (2, 1)
 \end{verbatim}
 %
 Muchas de las funciones incorporadas utilizan
@@ -9813,7 +9813,7 @@ y {\tt min} pueden tomar cualquier cantidad de argumentos:
 
 \begin{verbatim}
 >>> max(1, 2, 3)
-3
+    3
 \end{verbatim}
 %
 Pero {\tt sum} no puede.
@@ -9822,7 +9822,7 @@ Pero {\tt sum} no puede.
 
 \begin{verbatim}
 >>> sum(1, 2, 3)
-TypeError: sum expected at most 2 arguments, got 3
+    TypeError: sum expected at most 2 arguments, got 3
 \end{verbatim}
 %
 Como ejercicio, escribe una función llamada \verb"sumar_todos" que tome cualquier cantidad
@@ -9843,7 +9843,7 @@ Este ejemplo le hace zip a una cadena y una lista:
 >>> s = 'abc'
 >>> t = [0, 1, 2]
 >>> zip(s, t)
-<zip object at 0x7f7d0a9e7c48>
+    <zip object at 0x7f7d0a9e7c48>
 \end{verbatim}
 %
 El resultado es un {\bf objeto zip} que sabe cómo iterar a través
@@ -9853,9 +9853,9 @@ de los pares.  El uso más común de {\tt zip} es en un bucle {\tt for}:
 >>> for par in zip(s, t):
 ...     print(par)
 ...
-('a', 0)
-('b', 1)
-('c', 2)
+    ('a', 0)
+    ('b', 1)
+    ('c', 2)
 \end{verbatim}
 %
 Un objeto zip es una especie de {\bf iterador}, que es cualquier objeto
@@ -9869,7 +9869,7 @@ utilizar un objeto zip para crear una lista:
 
 \begin{verbatim}
 >>> list(zip(s, t))
-[('a', 0), ('b', 1), ('c', 2)]
+    [('a', 0), ('b', 1), ('c', 2)]
 \end{verbatim}
 %
 El resultado es una lista de tuplas; en este ejemplo, cada tupla contiene
@@ -9882,7 +9882,7 @@ longitud de la secuencia más corta.
 
 \begin{verbatim}
 >>> list(zip('Anne', 'Elk'))
-[('A', 'E'), ('n', 'l'), ('n', 'k')]
+    [('A', 'E'), ('n', 'l'), ('n', 'k')]
 \end{verbatim}
 %
 Puedes utilizar asignación de tupla en un bucle {\tt for} para recorrer una lista de
@@ -9965,7 +9965,7 @@ tuplas, donde cada tupla es un par clave-valor.
 >>> d = {'a':0, 'b':1, 'c':2}
 >>> t = d.items()
 >>> t
-dict_items([('c', 2), ('a', 0), ('b', 1)])
+    dict_items([('c', 2), ('a', 0), ('b', 1)])
 \end{verbatim}
 %
 El resultado es un objeto \verb"dict_items", que es un iterador que
@@ -9977,9 +9977,9 @@ así:
 >>> for clave, valor in d.items():
 ...     print(clave, valor)
 ...
-c 2
-a 0
-b 1
+    c 2
+    a 0
+    b 1
 \end{verbatim}
 %
 Tal como esperarías de un diccionario, los ítems no están en un
@@ -9992,7 +9992,7 @@ inicializar un nuevo diccionario: \index{diccionario!inicializar}
 >>> t = [('a', 0), ('c', 2), ('b', 1)]
 >>> d = dict(t)
 >>> d
-{'a': 0, 'c': 2, 'b': 1}
+    {'a': 0, 'c': 2, 'b': 1}
 \end{verbatim}
 
 Combinando {\tt dict} con {\tt zip} se produce una manera concisa
@@ -10002,7 +10002,7 @@ de crear un diccionario:
 \begin{verbatim}
 >>> d = dict(zip('abc', range(3)))
 >>> d
-{'a': 0, 'c': 2, 'b': 1}
+    {'a': 0, 'c': 2, 'b': 1}
 \end{verbatim}
 %
 El método de diccionario {\tt update} además toma una lista de tuplas
@@ -10140,7 +10140,7 @@ Para ayudar a depurar esta clase de errores, he escrito un módulo
 llamado {\tt structshape} que proporciona una función, también llamada
 {\tt structshape}, que toma cualquier tipo de estructura de datos como
 argumento y devuelve una cadena que resume su forma.
-Puedes descargarlo en \url{http://thinkpython2.com/code/structshape.py}
+Puedes descargarlo en \url{http://thinkpython.com/code/structshape.py}
 
 Aquí hay un resultado para una lista simple:
 
@@ -10148,7 +10148,7 @@ Aquí hay un resultado para una lista simple:
 >>> from structshape import structshape
 >>> t = [1, 2, 3]
 >>> structshape(t)
-'list of 3 int'
+    'list of 3 int'
 \end{verbatim}
 %
 Un programa más elegante podría escribir ``list of 3 int{\em s}'', pero
@@ -10157,7 +10157,7 @@ fue más fácil no lidiar con los plurales.  Aquí hay una lista de listas:
 \begin{verbatim}
 >>> t2 = [[1,2], [3,4], [5,6]]
 >>> structshape(t2)
-'list of 3 list of 2 int'
+    'list of 3 list of 2 int'
 \end{verbatim}
 %
 Si los elementos de la lista no son del mismo tipo,
@@ -10166,7 +10166,7 @@ Si los elementos de la lista no son del mismo tipo,
 \begin{verbatim}
 >>> t3 = [1, 2, 3, 4.0, '5', '6', [7], [8], 9]
 >>> structshape(t3)
-'list of (3 int, float, 2 str, 2 list of int, int)'
+    'list of (3 int, float, 2 str, 2 list of int, int)'
 \end{verbatim}
 %
 Aquí hay una lista de tuplas:
@@ -10175,7 +10175,7 @@ Aquí hay una lista de tuplas:
 >>> s = 'abc'
 >>> lt = list(zip(t, s))
 >>> structshape(lt)
-'list of 3 tuple of (int, str)'
+    'list of 3 tuple of (int, str)'
 \end{verbatim}
 %
 Y aquí hay un diccionario con 3 ítems que mapean enteros a cadenas.
@@ -10183,7 +10183,7 @@ Y aquí hay un diccionario con 3 ítems que mapean enteros a cadenas.
 \begin{verbatim}
 >>> d = dict(lt)
 >>> structshape(d)
-'dict of 3 int->str'
+    'dict of 3 int->str'
 \end{verbatim}
 %
 Si tienes problemas al hacer seguimiento de tus estructuras de datos,
@@ -10239,7 +10239,7 @@ imprima las letras en orden de frecuencia descendente.  Encuentra ejemplos
 de texto en varios idiomas diferentes y ve cómo varía la frecuencia de letras
 entre los idiomas.  Compara tus resultados con las tablas en
 \url{http://en.wikipedia.org/wiki/Letter_frequencies}.  Solución:
-\url{http://thinkpython2.com/code/most_frequent.py}.  \index{frecuencia de
+\url{http://thinkpython.com/code/most_frequent.py}.  \index{frecuencia de
   letras} \index{letras, frecuencia}
 
 \end{exercise}
@@ -10284,7 +10284,7 @@ letras.  ¿Qué colección de 8 letras forma la mayor cantidad de bingos posible
 % (7, ['angriest', 'astringe', 'ganister', 'gantries', 'granites',
 % 'ingrates', 'rangiest'])
 
-Solución: \url{http://thinkpython2.com/code/anagram_sets.py}.
+Solución: \url{http://thinkpython.com/code/anagram_sets.py}.
 
 \end{enumerate}
 \end{exercise}
@@ -10297,7 +10297,7 @@ otra intercambiando dos letras; por ejemplo, ``converse'' y
 ``conserve''.  Escribe un programa que encuentre todos los pares de metátesis
 en el diccionario.  Pista: no pruebes todos los pares de palabras ni
 pruebes todos los posibles intercambios.  Solución:
-\url{http://thinkpython2.com/code/metathesis.py}.  Crédito: Este
+\url{http://thinkpython.com/code/metathesis.py}.  Crédito: Este
 ejercicio está inspirado por un ejemplo de \url{http://puzzlers.org}.
 
 \end{exercise}
@@ -10358,7 +10358,7 @@ memoizar las palabras que se sabe que son reducibles.
 
 \end{enumerate}
 
-Solución: \url{http://thinkpython2.com/code/reducible.py}.
+Solución: \url{http://thinkpython.com/code/reducible.py}.
 
 \end{exercise}
 
@@ -10407,7 +10407,7 @@ si podemos hacer que Python diga groserías:
 \begin{verbatim}
 >>> import string
 >>> string.punctuation
-'!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+    '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
 \end{verbatim}
 %
 Además, podrías considerar el uso de los métodos de cadena {\tt strip},
@@ -10513,9 +10513,9 @@ La función {\tt randint} toma los parámetros {\tt low} y
 
 \begin{verbatim}
 >>> random.randint(5, 10)
-5
+    5
 >>> random.randint(5, 10)
-9
+    9
 \end{verbatim}
 %
 Para escoger un elemento de una secuencia de manera aleatoria, puedes usar
@@ -10526,9 +10526,9 @@ Para escoger un elemento de una secuencia de manera aleatoria, puedes usar
 \begin{verbatim}
 >>> t = [1, 2, 3]
 >>> random.choice(t)
-2
+    2
 >>> random.choice(t)
-3
+    3
 \end{verbatim}
 %
 El módulo {\tt random} también proporciona funciones para generar
@@ -10547,7 +10547,7 @@ proporcional a la frecuencia.  Por ejemplo, para este histograma:
 >>> t = ['a', 'a', 'b']
 >>> hist = histograma(t)
 >>> hist
-{'a': 2, 'b': 1}
+    {'a': 2, 'b': 1}
 \end{verbatim}
 %
 Tu función debería devolver \verb"'a'" con probabilidad $2/3$ y \verb"'b'"
@@ -10559,8 +10559,8 @@ con probabilidad $1/3$.
 
 Deberías intentar los ejemplos anteriores antes de continuar.
 Puedes descargar mi solución en
- \url{http://thinkpython2.com/code/analyze_book1.py}.  Además,
-necesitarás \url{http://thinkpython2.com/code/emma.txt}.
+ \url{http://thinkpython.com/code/analyze_book1.py}.  Además,
+necesitarás \url{http://thinkpython.com/code/emma.txt}.
 
 Aquí hay un programa que lee un archivo y construye un histograma de las
 palabras en el archivo:
@@ -10799,7 +10799,7 @@ o leer la documentación en
 
 Escribe un programa que utilice la diferencia de conjuntos para encontrar palabras en el libro
 que no están en la lista.  Solución:
-\url{http://thinkpython2.com/code/analyze_book2.py}.
+\url{http://thinkpython.com/code/analyze_book2.py}.
 
 \end{exercise}
 
@@ -10855,7 +10855,7 @@ Una alternativa es:
 
 Escribe un programa que utilice este algoritmo para escoger una palabra aleatoria del
 libro.  Solución:
-\url{http://thinkpython2.com/code/analyze_book3.py}.
+\url{http://thinkpython.com/code/analyze_book3.py}.
 
 \end{exercise}
 
@@ -10969,8 +10969,8 @@ Pike, {\em The Practice of Programming}, Addison-Wesley, 1999.
 \end{exercise}
 
 Deberías intentar este ejercicio antes de continuar; luego puedes
-descargar mi solución en \url{http://thinkpython2.com/code/markov.py}.
-Además, necesitarás \url{http://thinkpython2.com/code/emma.txt}.
+descargar mi solución en \url{http://thinkpython.com/code/markov.py}.
+Además, necesitarás \url{http://thinkpython.com/code/emma.txt}.
 
 
 \section{Estructuras de datos}
@@ -11215,7 +11215,7 @@ log $f$ y log $r$.  Utiliza el progmara de gráficos de tu
 elección para graficar los resultados y verificar si forman
 una línea recta.  ¿Puedes estimar el valor de $s$?
 
-Solución: \url{http://thinkpython2.com/code/zipf.py}.
+Solución: \url{http://thinkpython.com/code/zipf.py}.
 Para ejecutar mi solución, necesitas el módulo de gráficos {\tt matplotlib}.
 Si instalaste Anaconda, ya tienes {\tt matplotlib};
 de lo contrario, quizás tengas que instalarlo.
@@ -11291,7 +11291,7 @@ El método {\tt write} pone datos en el archivo.
 \begin{verbatim}
 >>> linea1 = "He aquí el junco,\n"
 >>> fout.write(linea1)
-18
+    18
 \end{verbatim}
 %
 El valor de retorno es la cantidad de caracteres que se escribieron.
@@ -11302,7 +11302,7 @@ archivo.
 \begin{verbatim}
 >>> linea2 = "emblema de nuestra tierra.\n"
 >>> fout.write(linea2)
-27
+    27
 \end{verbatim}
 %
 Cuando hayas terminado de escribir, deberías cerrar el archivo.
@@ -11349,7 +11349,7 @@ decimal:
 \begin{verbatim}
 >>> camellos = 42
 >>> '%d' % camellos
-'42'
+    '42'
 \end{verbatim}
 %
 El resultado es la cadena \verb"'42'", que no debe confundirse
@@ -11360,7 +11360,7 @@ así que puedes incrustar un valor en una oración:
 
 \begin{verbatim}
 >>> 'He visto %d camellos.' % camellos
-'He visto 42 camellos.'
+    'He visto 42 camellos.'
 \end{verbatim}
 %
 Si hay más de una secuencia de formato en la cadena,
@@ -11373,7 +11373,7 @@ El siguiente ejemplo utiliza \verb"'%d'" para dar formato a un entero,
 
 \begin{verbatim}
 >>> 'En %d años he visto %g %s.' % (3, 0.1, 'camellos')
-'En 3 años he visto 0.1 camellos.'
+    'En 3 años he visto 0.1 camellos.'
 \end{verbatim}
 %
 El número de elementos en la tupla tiene que coincidir con el número
@@ -11384,9 +11384,9 @@ elementos tienen que coincidir con las secuencias de formato:
 
 \begin{verbatim}
 >>> '%d %d %d' % (1, 2)
-TypeError: not enough arguments for format string
+    TypeError: not enough arguments for format string
 >>> '%d' % 'dólares'
-TypeError: %d format: a number is required, not str
+    TypeError: %d format: a number is required, not str
 \end{verbatim}
 %
 En el primer ejemplo, no hay suficientes elementos; en el
@@ -11404,7 +11404,7 @@ el método de cadena format, del cual puedes leer en
 
 % % \begin{verbatim}
 % >>> '%8.2f' % 3.14159
-% '    3.14'
+%     '    3.14'
 % \end{verbatim}
 % \afterverb
 % %
@@ -11437,7 +11437,7 @@ devuelve el nombre del directorio actual:
 >>> import os
 >>> cwd = os.getcwd()
 >>> cwd
-'/home/dinsdale'
+    '/home/dinsdale'
 \end{verbatim}
 %
 {\tt cwd} significa ``current working directory''.  El resultado en
@@ -11462,7 +11462,7 @@ absoluta de un archivo, puedes utilizar {\tt os.path.abspath}:
 
 \begin{verbatim}
 >>> os.path.abspath('memo.txt')
-'/home/dinsdale/memo.txt'
+    '/home/dinsdale/memo.txt'
 \end{verbatim}
 %
 {\tt os.path} proporciona otras funciones para trabajar con nombres de archivo
@@ -11474,16 +11474,16 @@ si un archivo o directorio existe:
 
 \begin{verbatim}
 >>> os.path.exists('memo.txt')
-True
+    True
 \end{verbatim}
 %
 Si existe, {\tt os.path.isdir} verifica si es un directorio:
 
 \begin{verbatim}
 >>> os.path.isdir('memo.txt')
-False
+    False
 >>> os.path.isdir('/home/dinsdale')
-True
+    True
 \end{verbatim}
 %
 Del mismo modo, {\tt os.path.isfile} verifica si es un archivo.
@@ -11493,7 +11493,7 @@ en el directorio dado:
 
 \begin{verbatim}
 >>> os.listdir(cwd)
-['music', 'photos', 'memo.txt']
+    ['music', 'photos', 'memo.txt']
 \end{verbatim}
 %
 Para demostrar estas funciones, el siguiente ejemplo
@@ -11521,7 +11521,7 @@ El módulo {\tt os} proporciona una función llamada {\tt walk} que es
 similar a esta pero más versátil.  Como ejercicio, lee la
 documentación y utiliza esta función para imprimir los nombres de los archivos
 en un directorio dado y sus subdirectorios.  Puedes descargar mi solución en
-\url{http://thinkpython2.com/code/walk.py}.
+\url{http://thinkpython.com/code/walk.py}.
 
 
 \section{Capturar excepciones}
@@ -11537,7 +11537,7 @@ archivos.  Si intentas abrir un archivo que no existe, obtienes un
 
 \begin{verbatim}
 >>> fin = open('archivo_malo')
-FileNotFoundError: [Errno 2] No such file or directory: 'archivo_malo'
+    FileNotFoundError: [Errno 2] No such file or directory: 'archivo_malo'
 \end{verbatim}
 %
 Si no tienes permisos de acceso a un archivo:
@@ -11546,14 +11546,14 @@ Si no tienes permisos de acceso a un archivo:
 
 \begin{verbatim}
 >>> fout = open('/etc/passwd', 'w')
-PermissionError: [Errno 13] Permission denied: '/etc/passwd'
+    PermissionError: [Errno 13] Permission denied: '/etc/passwd'
 \end{verbatim}
 %
 Y si intentas abrir un directorio para lectura, obtienes
 
 \begin{verbatim}
 >>> fin = open('/home')
-IsADirectoryError: [Errno 21] Is a directory: '/home'
+    IsADirectoryError: [Errno 21] Is a directory: '/home'
 \end{verbatim}
 %
 Para evitar estos errores, podrías utilizar funciones como {\tt os.path.exists}
@@ -11628,7 +11628,7 @@ Cuando accedes a uno de los ítems, {\tt dbm} lee el archivo:
 
 \begin{verbatim}
 >>> db['cleese.png']
-b'Foto de John Cleese.'
+    b'Foto de John Cleese.'
 \end{verbatim}
 %
 El resultado es un {\bf objeto de bytes}, que es la razón por la cual comienza con {\tt
@@ -11643,7 +11643,7 @@ el valor antiguo:
 \begin{verbatim}
 >>> db['cleese.png'] = 'Foto de John Cleese haciendo un tonto paseo.'
 >>> db['cleese.png']
-b'Foto de John Cleese haciendo un tonto paseo.'
+    b'Foto de John Cleese haciendo un tonto paseo.'
 \end{verbatim}
 %
 
@@ -11686,7 +11686,7 @@ una representación de cadena ({\tt dumps} es una abreviatura de ``dump string''
 >>> import pickle
 >>> t = [1, 2, 3]
 >>> pickle.dumps(t)
-b'\x80\x03]q\x00(K\x01K\x02K\x03e.'
+    b'\x80\x03]q\x00(K\x01K\x02K\x03e.'
 \end{verbatim}
 %
 El formato no es obvio para lectores humanos: está hecho para que
@@ -11698,7 +11698,7 @@ El formato no es obvio para lectores humanos: está hecho para que
 >>> s = pickle.dumps(t1)
 >>> t2 = pickle.loads(s)
 >>> t2
-[1, 2, 3]
+    [1, 2, 3]
 \end{verbatim}
 %
 Aunque el nuevo objeto tiene el mismo valor que el antiguo, no es
@@ -11706,9 +11706,9 @@ Aunque el nuevo objeto tiene el mismo valor que el antiguo, no es
 
 \begin{verbatim}
 >>> t1 == t2
-True
+    True
 >>> t1 is t2
-False
+    False
 \end{verbatim}
 %
 En otras palabras, ``picklear'' y luego ``despicklear'' tiene el mismo efecto
@@ -11774,7 +11774,7 @@ Cuando termines, cierras la tubería como un archivo:
 \begin{verbatim}
 >>> stat = fp.close()
 >>> print(stat)
-None
+    None
 \end{verbatim}
 %
 El valor de retorno es el estado final del proceso {\tt ls};
@@ -11799,9 +11799,9 @@ Puedes utilizar una tubería para ejecutar {\tt md5sum} desde Python y obtener e
 >>> res = fp.read()
 >>> stat = fp.close()
 >>> print(res)
-1e0033f0ed0656636de0d75144ba32e0  book.tex
+    1e0033f0ed0656636de0d75144ba32e0  book.tex
 >>> print(stat)
-None
+    None
 \end{verbatim}
 
 
@@ -11831,7 +11831,7 @@ Puedes también importarlo así:
 
 \begin{verbatim}
 >>> import wc
-7
+    7
 \end{verbatim}
 %
 Ahora tienes un objeto de módulo {\tt wc}:
@@ -11840,14 +11840,14 @@ Ahora tienes un objeto de módulo {\tt wc}:
 
 \begin{verbatim}
 >>> wc
-<module 'wc' from 'wc.py'>
+    <module 'wc' from 'wc.py'>
 \end{verbatim}
 %
 El objeto de módulo proporciona \verb"contar_lineas":
 
 \begin{verbatim}
 >>> wc.contar_lineas('wc.py')
-7
+    7
 \end{verbatim}
 %
 Entonces así es como escribes módulos en Python.
@@ -11904,8 +11904,8 @@ sangrías y nuevas líneas son normalmente invisibles:
 \begin{verbatim}
 >>> s = '1 2\t 3\n 4'
 >>> print(s)
-1 2	 3
- 4
+    1 2	 3
+    4
 \end{verbatim}
 \index{función!repr}
 \index{repr, función}
@@ -11918,7 +11918,7 @@ espacio en blanco con secuencias de barras invertidas:
 
 \begin{verbatim}
 >>> print(repr(s))
-'1 2\t 3\n 4'
+    '1 2\t 3\n 4'
 \end{verbatim}
 
 Esto puede ser útil para depurar.
@@ -12014,7 +12014,7 @@ debería reemplazarse con la cadena de reemplazo.
 
 Si ocurre un error mientras se abren, leen, escriben o cierran los archivos,
 tu programa debería capturar la excepción, imprimir un mensaje de error y
-salir.  Solución: \url{http://thinkpython2.com/code/sed.py}.
+salir.  Solución: \url{http://thinkpython.com/code/sed.py}.
 
 \end{exercise}
 
@@ -12024,7 +12024,7 @@ salir.  Solución: \url{http://thinkpython2.com/code/sed.py}.
 \index{anagramas, conjunto de}
 
 Si descargas mi solución al Ejercicio~\ref{anagrams} de
-\url{http://thinkpython2.com/code/anagram_sets.py}, verás que crea
+\url{http://thinkpython.com/code/anagram_sets.py}, verás que crea
 un diccionario que mapea de una cadena ordenada de letras a la lista de
 palabras que se pueden formar con esas letras.  Por ejemplo,
 \verb"'opst'" mapea a la lista
@@ -12034,7 +12034,7 @@ Escribe un módulo que importe \verb"anagram_sets" y proporcione
 dos nuevas funciones: \verb"store_anagrams" debería almacenar el
 diccionario de anagrama en un ``estante'' (ver módulo {\tt shelve}); \verb"read_anagrams" debería
 buscar una palabra y devolver una lista de sus anagramas.
-Solución: \url{http://thinkpython2.com/code/anagram_db.py}.
+Solución: \url{http://thinkpython.com/code/anagram_db.py}.
 
 \end{exercise}
 
@@ -12070,7 +12070,7 @@ la misma suma de verificación, probablemente tienen los mismos contenidos.
 
 \end{enumerate}
 
-Solución: \url{http://thinkpython2.com/code/find_duplicates.py}.
+Solución: \url{http://thinkpython.com/code/find_duplicates.py}.
 
 \end{exercise}
 
@@ -12088,9 +12088,9 @@ un gran tema; tomará un par de capítulos para llegar allí.
 \index{programación orientada a objetos}
 
 Los ejemplos de código de este capítulo están disponibles en
-\url{http://thinkpython2.com/code/Point1.py}; las soluciones
+\url{http://thinkpython.com/code/Point1.py}; las soluciones
 a los ejercicios están disponibles en
-\url{http://thinkpython2.com/code/Point1_soln.py}.
+\url{http://thinkpython.com/code/Point1_soln.py}.
 
 
 \section{Tipos definidos por el programador}
@@ -12153,7 +12153,7 @@ Definir una clase con nombre {\tt Punto} crea un {\bf objeto de clase}.
 
 \begin{verbatim}
 >>> Punto
-<class '__main__.Punto'>
+    <class '__main__.Punto'>
 \end{verbatim}
 %
 Dado que {\tt Punto} se define en el nivel más alto, su ``nombre
@@ -12167,7 +12167,7 @@ Punto, llamas a {\tt Punto} como si fuera una función.
 \begin{verbatim}
 >>> vacio = Punto()
 >>> vacio
-<__main__.Punto object at 0xb7e9d3ac>
+    <__main__.Punto object at 0xb7e9d3ac>
 \end{verbatim}
 %
 El valor de retorno es una referencia a un objeto Punto, que
@@ -12235,10 +12235,10 @@ Puedes leer el valor de un atributo utilizando la misma sintaxis:
 
 \begin{verbatim}
 >>> vacio.y
-4.0
+    4.0
 >>> x = vacio.x
 >>> x
-3.0
+    3.0
 \end{verbatim}
 %
 La expresión {\tt vacio.x} significa ``Ve al objeto al cual {\tt vacio}
@@ -12250,10 +12250,10 @@ Puedes utilizar la notación de punto como parte de una expresión.  Por ejemplo
 
 \begin{verbatim}
 >>> '(%g, %g)' % (vacio.x, vacio.y)
-'(3.0, 4.0)'
+    '(3.0, 4.0)'
 >>> distancia = math.sqrt(vacio.x**2 + vacio.y**2)
 >>> distancia
-5.0
+    5.0
 \end{verbatim}
 %
 Puedes pasar una instancia como argumento en la manera usual.
@@ -12271,7 +12271,7 @@ argumento:
 
 \begin{verbatim}
 >>> imprimir_punto(vacio)
-(3.0, 4.0)
+    (3.0, 4.0)
 \end{verbatim}
 %
 Dentro de la función, {\tt p} es un alias para {\tt vacio}, por tanto si
@@ -12381,7 +12381,7 @@ el Punto resultante a {\tt centro}:
 \begin{verbatim}
 >>> centro = entontrar_centro(caja)
 >>> imprimir_punto(centro)
-(50, 100)
+    (50, 100)
 \end{verbatim}
 %
 
@@ -12414,10 +12414,10 @@ Aquí hay un ejemplo que demuestra el efecto:
 
 \begin{verbatim}
 >>> caja.anchura, caja.altura
-(150.0, 300.0)
+    (150.0, 300.0)
 >>> crecer_rectangulo(caja, 50, 100)
 >>> caja.anchura, caja.altura
-(200.0, 400.0)
+    (200.0, 400.0)
 \end{verbatim}
 %
 Dentro de la función, {\tt rect} es un
@@ -12462,13 +12462,13 @@ el mismo Punto.
 
 \begin{verbatim}
 >>> imprimir_punto(p1)
-(3, 4)
+    (3, 4)
 >>> imprimir_punto(p2)
-(3, 4)
+    (3, 4)
 >>> p1 is p2
-False
+    False
 >>> p1 == p2
-False
+    False
 \end{verbatim}
 %
 El operador {\tt is} indica que {\tt p1} y {\tt p2} no son el
@@ -12492,9 +12492,9 @@ que copia el objeto Rectángulo pero no el Punto incrustado.
 \begin{verbatim}
 >>> caja2 = copy.copy(caja)
 >>> caja2 is caja
-False
+    False
 >>> caja2.esquina is caja.esquina
-True
+    True
 \end{verbatim}
 
 \begin{figure}
@@ -12533,9 +12533,9 @@ llama {\bf copia profunda}.
 \begin{verbatim}
 >>> caja3 = copy.deepcopy(caja)
 >>> caja3 is caja
-False
+    False
 >>> caja3.esquina is caja.esquina
-False
+    False
 \end{verbatim}
 %
 {\tt caja3} y {\tt caja} son objetos completamente separados.
@@ -12559,7 +12559,7 @@ que no existe, obtienes un {\tt AttributeError}:
 >>> p.x = 3
 >>> p.y = 4
 >>> p.z
-AttributeError: Point instance has no attribute 'z'
+    AttributeError: Point instance has no attribute 'z'
 \end{verbatim}
 %
 Si no sabes bien de qué tipo es un objeto, puedes consultar:
@@ -12568,7 +12568,7 @@ Si no sabes bien de qué tipo es un objeto, puedes consultar:
 
 \begin{verbatim}
 >>> type(p)
-<class '__main__.Punto'>
+    <class '__main__.Punto'>
 \end{verbatim}
 %
 Puedes también utilizar {\tt isinstance} para verificar si un objeto
@@ -12578,7 +12578,7 @@ es una instancia de una clase:
 
 \begin{verbatim}
 >>> isinstance(p, Punto)
-True
+    True
 \end{verbatim}
 %
 Si no sabes bien si un objeto tiene un atributo en particular,
@@ -12588,9 +12588,9 @@ puedes utilizar la función incorporada {\tt hasattr}:
 
 \begin{verbatim}
 >>> hasattr(p, 'x')
-True
+    True
 >>> hasattr(p, 'z')
-False
+    False
 \end{verbatim}
 %
 El primer argumento puede ser cualquier objeto; el segundo argumento es una {\em
@@ -12687,7 +12687,7 @@ y un Rectángulo y devuelva True si alguna de las esquinas del Rectángulo cae
 dentro del círculo.  O como versión más desafiante, que devuelva True si
 cualquier parte del Rectángulo cae dentro del círculo.
 
-Solución: \url{http://thinkpython2.com/code/Circle.py}.
+Solución: \url{http://thinkpython.com/code/Circle.py}.
 
 \end{exercise}
 
@@ -12701,7 +12701,7 @@ Capítulo~\ref{turtlechap} para ejemplos que utilizan objetos Turtle.
 Escribe una función llamada \verb"dibujar_circulo" que tome un Turtle y
 un Círculo y dibuje el Círculo.
 
-Solución: \url{http://thinkpython2.com/code/draw.py}.
+Solución: \url{http://thinkpython.com/code/draw.py}.
 
 \end{exercise}
 
@@ -12717,9 +12717,9 @@ presento también el ``estilo de programación funcional'' y dos nuevos
 planes de desarrollo de programas.
 
 Los ejemplos de código de este capítulo están disponibles en
-\url{http://thinkpython2.com/code/Time1.py}.
+\url{http://thinkpython.com/code/Time1.py}.
 Las soluciones a los ejercicios están en
-\url{http://thinkpython2.com/code/Time1_soln.py}.
+\url{http://thinkpython.com/code/Time1_soln.py}.
 
 
 \section{Tiempo}
@@ -12824,7 +12824,7 @@ que es una hora 35 minutos.
 
 >>> termino = sumar_tiempo(comienzo, duracion)
 >>> imprimir_tiempo(termino)
-10:80:00
+    10:80:00
 \end{verbatim}
 %
 El resultado, {\tt 10:80:00}, tal vez no sea lo que
@@ -13115,8 +13115,8 @@ una excepción si esta falla.
 \section{Ejercicios}
 
 Los ejemplos de código de este capítulo están disponibles en
-\url{http://thinkpython2.com/code/Time1.py}; las soluciones a los
-ejercicios están disponibles en \url{http://thinkpython2.com/code/Time1_soln.py}.
+\url{http://thinkpython.com/code/Time1.py}; las soluciones a los
+ejercicios están disponibles en \url{http://thinkpython.com/code/Time1_soln.py}.
 
 \begin{exercise}
 
@@ -13162,7 +13162,7 @@ documentación en \url{http://docs.python.org/3/library/datetime.html}.
 
 \end{enumerate}
 
-Solución: \url{http://thinkpython2.com/code/double.py}
+Solución: \url{http://thinkpython.com/code/double.py}
 
 \end{exercise}
 
@@ -13177,8 +13177,8 @@ en estos.  El siguiente paso es transformar esas funciones en
 métodos que hagan explícitas las relaciones.
 
 Los ejemplos de código de este capítulo están disponibles en
-\url{http://thinkpython2.com/code/Time2.py}, y las soluciones
-a los ejercicios están en \url{http://thinkpython2.com/code/Point2_soln.py}.
+\url{http://thinkpython.com/code/Time2.py}, y las soluciones
+a los ejercicios están en \url{http://thinkpython.com/code/Point2_soln.py}.
 
 
 \section{Características orientadas a objetos}
@@ -13275,7 +13275,7 @@ argumento:
 >>> comienzo.minuto = 45
 >>> comienzo.segundo = 00
 >>> imprimir_tiempo(comienzo)
-09:45:00
+    09:45:00
 \end{verbatim}
 %
 Para convertir \verb"imprimir_tiempo" a método, todo lo que tenemos que hacer es
@@ -13296,7 +13296,7 @@ Ahora hay dos maneras de llamar a \verb"imprimir_tiempo".  La primera manera
 
 \begin{verbatim}
 >>> Tiempo.imprimir_tiempo(comienzo)
-09:45:00
+    09:45:00
 \end{verbatim}
 %
 En este uso de notación de punto, {\tt Tiempo} es el nombre de la clase
@@ -13308,7 +13308,7 @@ La segunda manera (y más concisa) es utilizar la sintaxis de método:
 
 \begin{verbatim}
 >>> comienzo.imprimir_tiempo()
-09:45:00
+    09:45:00
 \end{verbatim}
 %
 En este uso de notación de punto, \verb"imprimir_tiempo" es el nombre del
@@ -13384,10 +13384,10 @@ Así es como invocarías a {\tt aumentar}:
 
 \begin{verbatim}
 >>> comienzo.imprimir_tiempo()
-09:45:00
+    09:45:00
 >>> termino = comienzo.aumentar(1337)
 >>> termino.imprimir_tiempo()
-10:07:17
+    10:07:17
 \end{verbatim}
 %
 El sujeto, {\tt comienzo}, se asigna al primer parámetro,
@@ -13402,7 +13402,7 @@ obtienes:
 
 \begin{verbatim}
 >>> termino = comienzo.aumentar(1337, 460)
-TypeError: aumentar() takes 2 positional arguments but 3 were given
+    TypeError: aumentar() takes 2 positional arguments but 3 were given
 \end{verbatim}
 %
 El mensaje de error es confuso al inicio, debido a que hay
@@ -13443,7 +13443,7 @@ el otro como argumento:
 
 \begin{verbatim}
 >>> termino.esta_despues(comienzo)
-True
+    True
 \end{verbatim}
 %
 Lo bonito de esta sintaxis es que se lee
@@ -13489,7 +13489,7 @@ argumentos, obtienes los valores por defecto.
 \begin{verbatim}
 >>> tiempo = Tiempo()
 >>> tiempo.imprimir_tiempo()
-00:00:00
+    00:00:00
 \end{verbatim}
 %
 Si entregas un argumento, anula a {\tt hora}:
@@ -13497,7 +13497,7 @@ Si entregas un argumento, anula a {\tt hora}:
 \begin{verbatim}
 >>> tiempo = Tiempo(9)
 >>> tiempo.imprimir_tiempo()
-09:00:00
+    09:00:00
 \end{verbatim}
 %
 Si entregas dos argumentos, anulan a {\tt hora} y
@@ -13506,7 +13506,7 @@ Si entregas dos argumentos, anulan a {\tt hora} y
 \begin{verbatim}
 >>> tiempo = Tiempo(9, 45)
 >>> tiempo.imprimir_tiempo()
-09:45:00
+    09:45:00
 \end{verbatim}
 %
 Y si entregas tres argumentos, anulan a los tres
@@ -13543,7 +13543,7 @@ Cuando utilizas {\tt print} en un objeto, Python invoca al método {\tt str}:
 \begin{verbatim}
 >>> tiempo = Tiempo(9, 45)
 >>> print(tiempo)
-09:45:00
+    09:45:00
 \end{verbatim}
 %
 Cuando escribo una clase nueva, casi siempre comienzo escribiendo a
@@ -13582,7 +13582,7 @@ Y así es como podrías utilizarlo:
 >>> comienzo = Tiempo(9, 45)
 >>> duracion = Tiempo(1, 35)
 >>> print(comienzo + duracion)
-11:20:00
+    11:20:00
 \end{verbatim}
 %
 Cuando aplicas el operador {\tt +} a objetos Tiempo, Python invoca a
@@ -13647,9 +13647,9 @@ diferentes:
 >>> comienzo = Tiempo(9, 45)
 >>> duracion = Tiempo(1, 35)
 >>> print(comienzo + duracion)
-11:20:00
+    11:20:00
 >>> print(comienzo + 1337)
-10:07:17
+    10:07:17
 \end{verbatim}
 %
 Desafortunadamente, esta implementación de la suma no es conmutativa.
@@ -13658,7 +13658,7 @@ Si el entero es el primer operando, obtienes
 
 \begin{verbatim}
 >>> print(1337 + comienzo)
-TypeError: unsupported operand type(s) for +: 'int' and 'instance'
+    TypeError: unsupported operand type(s) for +: 'int' and 'instance'
 \end{verbatim}
 %
 El problema es que, en lugar de pedirle al objeto Tiempo que sume un entero,
@@ -13681,7 +13681,7 @@ Y así es como se utiliza:
 
 \begin{verbatim}
 >>> print(1337 + comienzo)
-10:07:17
+    10:07:17
 \end{verbatim}
 %
 
@@ -13736,7 +13736,7 @@ como claves en {\tt d}.
 \begin{verbatim}
 >>> t = ['spam', 'egg', 'spam', 'spam', 'bacon', 'spam']
 >>> histograma(t)
-{'bacon': 1, 'egg': 1, 'spam': 4}
+    {'bacon': 1, 'egg': 1, 'spam': 4}
 \end{verbatim}
 %
 Las funciones que se pueden utilizar con varios tipos se llaman {\bf polimórficas}.
@@ -13754,7 +13754,7 @@ con {\tt sum}:
 >>> t3 = Tiempo(7, 37)
 >>> total = sum([t1, t2, t3])
 >>> print(total)
-23:01:00
+    23:01:00
 \end{verbatim}
 %
 En general, si todas las operaciones dentro de una función
@@ -13790,7 +13790,7 @@ de atributos (como cadenas) a sus valores:
 \begin{verbatim}
 >>> p = Punto(3, 4)
 >>> vars(p)
-{'y': 4, 'x': 3}
+    {'y': 4, 'x': 3}
 \end{verbatim}
 %
 Para fines de depuración, quizás encuentres útil tener esta
@@ -13902,13 +13902,13 @@ de un operando e invoca a funciones diferentes para tipos diferentes.
 \begin{exercise}
 
 Descarga el código de este capítulo en
-\url{http://thinkpython2.com/code/Time2.py}.  Cambia los atributos de
+\url{http://thinkpython.com/code/Time2.py}.  Cambia los atributos de
     {\tt Time} para que sea un único entero que represente los segundos desde
     la media noche.  Luego, modifica los métodos (y la función
     \verb"int_to_time") para que funcionen con la nueva implementación.  No
     deberías tener que modificar el código de prueba en {\tt main}.  Cuando
     termines, la salida debería ser la misma que antes.  Solución:
-    \url{http://thinkpython2.com/code/Time2_soln.py}.
+    \url{http://thinkpython.com/code/Time2_soln.py}.
 
 \end{exercise}
 
@@ -13945,12 +13945,12 @@ creando dos objetos {\tt Kangaroo}, asignándolos a variables
 con nombres {\tt kanga} y {\tt roo}, y luego añadiendo {\tt roo} al
 contenido de la bolsa de {\tt kanga}.
 
-Descarga \url{http://thinkpython2.com/code/BadKangaroo.py}.  Contiene
+Descarga \url{http://thinkpython.com/code/BadKangaroo.py}.  Contiene
 una solución al problema anterior con un gran y horrible error.
 Encuentra y corrije el error.
 
 Si te estancas, puedes descargar
-\url{http://thinkpython2.com/code/GoodKangaroo.py}, que explica el
+\url{http://thinkpython.com/code/GoodKangaroo.py}, que explica el
 problema y demuestra una solución.
 \index{alias}
 \index{objeto!incrustado}
@@ -13978,7 +13978,7 @@ te diré lo que necesitas saber para los ejercicios.
 
 Los ejemplos de código de
 este capítulo están disponibles en
-\url{http://thinkpython2.com/code/Card.py}.
+\url{http://thinkpython.com/code/Card.py}.
 
 
 \section{Objetos Carta}
@@ -14126,7 +14126,7 @@ Con los métodos que hemos visto hasta ahora, podemos crear e imprimir cartas:
 \begin{verbatim}
 >>> carta1 = Carta(2, 11)
 >>> print(carta1)
-Jota de Corazones
+    Jota de Corazones
 \end{verbatim}
 
 \begin{figure}
@@ -14278,14 +14278,14 @@ están separadas por caracteres de nueva línea.  Así es como se ve el resultad
 \begin{verbatim}
 >>> baraja = Baraja()
 >>> print(baraja)
-As de Tréboles
-2 de Tréboles
-3 de Tréboles
-...
-10 de Picas
-Jota de Picas
-Reina de Picas
-Rey de Picas
+    As de Tréboles
+    2 de Tréboles
+    3 de Tréboles
+    ...
+    10 de Picas
+    Jota de Picas
+    Reina de Picas
+    Rey de Picas
 \end{verbatim}
 %
 Si bien el resultado aparece en 52 líneas, es una única
@@ -14420,9 +14420,9 @@ de {\tt Baraja}.
 \begin{verbatim}
 >>> mano = Mano('nueva mano')
 >>> mano.cartas
-[]
+    []
 >>> mano.etiqueta
-'nueva mano'
+    'nueva mano'
 \end{verbatim}
 %
 Los otros métodos se heredan de {\tt Baraja}, así que podemos utilizar a
@@ -14433,7 +14433,7 @@ Los otros métodos se heredan de {\tt Baraja}, así que podemos utilizar a
 >>> carta = baraja.quitar_carta()
 >>> mano.agregar_carta(carta)
 >>> print(mano)
-Rey de Picas
+    Rey de Picas
 \end{verbatim}
 %
 Un siguiente paso natural es encapsular este código en un método
@@ -14585,7 +14585,7 @@ Aquí hay un ejemplo:
 \begin{verbatim}
 >>> mano = Mano()
 >>> encontrar_clase_definitoria(mano, 'barajar')
-<class '__main__.Baraja'>
+    <class '__main__.Baraja'>
 \end{verbatim}
 %
 Entonces el método {\tt barajar} para esta Mano es la que está en {\tt Baraja}.
@@ -14633,7 +14633,7 @@ interfaces de clase a través del {\bf encapsulamiento de datos}.
 \index{encapsulamiento!de datos}
 
 El análisis de Markov, de la Sección~\ref{markov}, proporciona un buen ejemplo.
-Si descargas mi código en \url{http://thinkpython2.com/code/markov.py},
+Si descargas mi código en \url{http://thinkpython.com/code/markov.py},
 verás que utiliza dos variables globales ---\verb"suffix_map" y
 \verb"prefix"--- que se leen y escriben desde varias funciones.
 
@@ -14701,10 +14701,10 @@ nueva.
 \end{enumerate}
 
 Como ejercicio, descarga mi código de Markov en
-\url{http://thinkpython2.com/code/markov.py}, y sigue los pasos
+\url{http://thinkpython.com/code/markov.py}, y sigue los pasos
 descritos anteriormente para encapsular las variables globales como atributos de una clase
 nueva llamada {\tt Markov}.  Solución:
-\url{http://thinkpython2.com/code/markov2.py}.
+\url{http://thinkpython.com/code/markov2.py}.
 
 
 \section{Glosario}
@@ -14861,7 +14861,7 @@ la probabilidad de extraer estas diferentes manos.
 
 \begin{enumerate}
 
-\item Descarga los siguientes archivos en \url{http://thinkpython2.com/code}:
+\item Descarga los siguientes archivos en \url{http://thinkpython.com/code}:
 
 \begin{description}
 
@@ -14901,7 +14901,7 @@ tus resultado con los valores en \url{http://en.wikipedia.org/wiki/Hand_rankings
 
 \end{enumerate}
 
-Solución: \url{http://thinkpython2.com/code/PokerHandSoln.py}.
+Solución: \url{http://thinkpython.com/code/PokerHandSoln.py}.
 \end{exercise}
 
 
@@ -15082,7 +15082,7 @@ con paréntesis en lugar de corchetes:
 \begin{verbatim}
 >>> g = (x**2 for x in range(5))
 >>> g
-<generator object <genexpr> at 0x7f4c45a786c0>
+    <generator object <genexpr> at 0x7f4c45a786c0>
 \end{verbatim}
 %
 El resultado es un objeto generador que sabe cómo iterar a través de
@@ -15094,9 +15094,9 @@ incorporada {\tt next} obtiene el siguiente valor del generador:
 
 \begin{verbatim}
 >>> next(g)
-0
+    0
 >>> next(g)
-1
+    1
 \end{verbatim}
 %
 Cuando llegas al final de la secuencia, {\tt next} levanta una
@@ -15108,9 +15108,9 @@ a través de los valores:
 \begin{verbatim}
 >>> for val in g:
 ...     print(val)
-4
-9
-16
+    4
+    9
+    16
 \end{verbatim}
 %
 El objeto generador hace un seguimiento de dónde está en la secuencia,
@@ -15119,7 +15119,7 @@ generador se acaba, continúa para levantar {\tt StopIteration}:
 
 \begin{verbatim}
 >>> next(g)
-StopIteration
+    StopIteration
 \end{verbatim}
 
 Las expresiones generadoras son a menudo utilizadas con funciones como {\tt sum},
@@ -15129,7 +15129,7 @@ Las expresiones generadoras son a menudo utilizadas con funciones como {\tt sum}
 
 \begin{verbatim}
 >>> sum(x**2 for x in range(5))
-30
+    30
 \end{verbatim}
 
 
@@ -15143,7 +15143,7 @@ de valores booleanos y devuelve {\tt True} si alguno de los valores es {\tt
 
 \begin{verbatim}
 >>> any([False, False, True])
-True
+    True
 \end{verbatim}
 %
 Pero se utiliza a menudo con expresiones generadoras:
@@ -15152,7 +15152,7 @@ Pero se utiliza a menudo con expresiones generadoras:
 
 \begin{verbatim}
 >>> any(letter == 't' for letter in 'monty')
-True
+    True
 \end{verbatim}
 %
 Ese ejemplo no es muy útil porque hace lo mismo que
@@ -15304,7 +15304,7 @@ lista, o cualquier otra cosa que soporte iteraciones:
 >>> from collections import Counter
 >>> contar = Counter('parrot')
 >>> contar
-Counter({'r': 2, 't': 1, 'o': 1, 'p': 1, 'a': 1})
+    Counter({'r': 2, 't': 1, 'o': 1, 'p': 1, 'a': 1})
 \end{verbatim}
 
 Los contadores se comportan como diccionarios en muchas maneras: mapean de cada
@@ -15316,7 +15316,7 @@ un elemento que no aparece.  En su lugar, devuelven 0:
 
 \begin{verbatim}
 >>> contar['d']
-0
+    0
 \end{verbatim}
 
 Podemos utilizar contadores para reescribir \verb"es_anagrama" del
@@ -15340,9 +15340,9 @@ menos común:
 >>> contar = Counter('parrot')
 >>> for valor, frecuencia in contar.most_common(3):
 ...     print(valor, frecuencia)
-r 2
-p 1
-a 1
+    r 2
+    p 1
+    a 1
 \end{verbatim}
 
 
@@ -15374,7 +15374,7 @@ no es llamada a menos que accedas a una clave que no existe.
 \begin{verbatim}
 >>> t = d['clave nueva']
 >>> t
-[]
+    []
 \end{verbatim}
 
 La lista nueva, la cual llamamos {\tt t}, también es añadida al
@@ -15383,13 +15383,13 @@ diccionario.  Por lo tanto, si modificamos {\tt t}, el cambio aparece en {\tt d}
 \begin{verbatim}
 >>> t.append('valor nuevo')
 >>> d
-defaultdict(<class 'list'>, {'clave nueva': ['valor nuevo']})
+    defaultdict(<class 'list'>, {'clave nueva': ['valor nuevo']})
 \end{verbatim}
 
 Si estás creando un diccionario de listas, a menudo puedes escribir código
 más simple utilizando {\tt defaultdict}.  En mi solución al
 Ejercicio~\ref{anagrams}, que puedes obtener en
-\url{http://thinkpython2.com/code/anagram_sets.py}, creo un
+\url{http://thinkpython.com/code/anagram_sets.py}, creo un
 diccioinario que mapea de una cadena de letras ordenada a la lista de
 palabras que se pueden escribir con esas letras.  Por ejemplo, {\tt
   'opst'} mapea a la lista {\tt ['opts', 'post', 'pots', 'spot',
@@ -15444,7 +15444,7 @@ def all_anagrams(filename):
 \end{verbatim}
 
 Mi solución al Ejercicio~\ref{poker}, que puedes descargar en
-\url{http://thinkpython2.com/code/PokerHandSoln.py},
+\url{http://thinkpython.com/code/PokerHandSoln.py},
 utiliza {\tt setdefault} en la función
 \verb"has_straightflush".  Esta solución tiene el inconveniente de
 crear un objeto {\tt Hand} en cada paso del bucle, cuando
@@ -15488,7 +15488,7 @@ en forma de cadenas.  El valor de retorno de {\tt namedtuple} es un objeto de cl
 
 \begin{verbatim}
 >>> Punto
-<class '__main__.Punto'>
+    <class '__main__.Punto'>
 \end{verbatim}
 
 {\tt Punto} automáticamente proporciona métodos como \verb"__init__" y
@@ -15501,7 +15501,7 @@ Para crear un objeto Punto, utilizas la clase Punto como una función:
 \begin{verbatim}
 >>> p = Punto(1, 2)
 >>> p
-Punto(x=1, y=2)
+    Punto(x=1, y=2)
 \end{verbatim}
 
 El método init asigna argumentos a atributos utilizando nombres
@@ -15512,18 +15512,18 @@ Puedes acceder a los elementos de la tupla con nombre, escribiendo sus nombres:
 
 \begin{verbatim}
 >>> p.x, p.y
-(1, 2)
+   (1, 2)
 \end{verbatim}
 
 Sin embargo, puedes también tratar a una tupla con nombre como una tupla:
 
 \begin{verbatim}
 >>> p[0], p[1]
-(1, 2)
+    (1, 2)
 
 >>> x, y = p
 >>> x, y
-(1, 2)
+    (1, 2)
 \end{verbatim}
 
 Las tuplas con nombre proporcionan una manera rápida de definir clases simples.
@@ -15559,7 +15559,7 @@ Puedes llamar a esta función con cualquier número de argumentos posicionales
 
 \begin{verbatim}
 >>> imprimir_todo(1, 2.0, '3')
-(1, 2.0, '3')
+    (1, 2.0, '3')
 \end{verbatim}
 %
 Sin embargo, el operador {\tt *} no reúne a los argumentos de palabra clave:
@@ -15568,7 +15568,7 @@ Sin embargo, el operador {\tt *} no reúne a los argumentos de palabra clave:
 
 \begin{verbatim}
 >>> imprimir_todo(1, 2.0, tercero='3')
-TypeError: imprimir_todo() got an unexpected keyword argument 'tercero'
+    TypeError: imprimir_todo() got an unexpected keyword argument 'tercero'
 \end{verbatim}
 %
 Para reunir argumentos de palabra clave, puedes utilizar el operador {\tt **}:
@@ -15584,7 +15584,7 @@ palabras clave a valores:
 
 \begin{verbatim}
 >>> imprimir_todo(1, 2.0, tercero='3')
-(1, 2.0) {'tercero': '3'}
+    (1, 2.0) {'tercero': '3'}
 \end{verbatim}
 %
 Si tienes un diccionario de palabras clave y valores, puedes utilizar el
@@ -15594,7 +15594,7 @@ operador de dispersión {\tt **} para llamar a una función:
 \begin{verbatim}
 >>> d = dict(x=1, y=2)
 >>> Punto(**d)
-Punto(x=1, y=2)
+    Punto(x=1, y=2)
 \end{verbatim}
 %
 Sin el operador de dispersión, la función trataría a {\tt d} como
@@ -15604,9 +15604,9 @@ un argumento posicional único, por lo cual asignaría {\tt d} a
 \begin{verbatim}
 >>> d = dict(x=1, y=2)
 >>> Punto(d)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: __new__() missing 1 required positional argument: 'y'
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: __new__() missing 1 required positional argument: 'y'
 \end{verbatim}
 %
 Cuando estás trabajando con funciones que tienen un número grande de
@@ -16985,7 +16985,7 @@ por cada {\tt add} es lineal.
 \index{cambio de tamaño geométrico}
 
 Puedes descargar mi implementación de HashMap en
-\url{http://thinkpython2.com/code/Map.py}, pero recuerda que no hay
+\url{http://thinkpython.com/code/Map.py}, pero recuerda que no hay
 razón para utilizarla: si quieres un mapa, solo utiliza un diccionario de Python.
 
 \section{Glosario}
