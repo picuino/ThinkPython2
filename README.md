@@ -6,11 +6,11 @@ Código LaTeX de la traducción al español del libro
 de Allen Downey. Traducción de Jorge Espinoza.
 
 El código de la versión original del libro y las soluciones a los
-ejercicios se pueden encontrar en su propio 
+ejercicios se pueden encontrar en el 
 [repositorio de Allen Downey](https://github.com/AllenDowney/ThinkPython2).
 
-El código de la versión traducida del libro se puede encontrar en su
-propio [repositorio de Jorge Espinoza](https://github.com/espinoza/ThinkPython2-spanish).
+El código de la versión traducida del libro se puede encontrar en el
+[repositorio de Jorge Espinoza](https://github.com/espinoza/ThinkPython2-spanish).
 
 
 Para obtener el libro, escoger una de las siguientes opciones:
