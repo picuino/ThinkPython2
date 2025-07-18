@@ -1,17 +1,15 @@
 ThinkPython2
 ============
 
-Código LaTeX de la traducción al español del libro 
-[Think Python (2nd Edition)](http://greenteapress.com/wp/think-python-2e/)
-de Allen Downey. Traducción de Jorge Espinoza.
+Libro en inglés y en español **Think Python (2nd Edition)**
+de Allen B. Downey. Traducción de Jorge Espinoza.
 
 El código de la versión original del libro y las soluciones a los
 ejercicios se pueden encontrar en el 
-[repositorio de Allen Downey](https://github.com/AllenDowney/ThinkPython2).
+[repositorio de Allen B. Downey](https://github.com/AllenDowney/ThinkPython2).
 
 El código de la versión traducida del libro se puede encontrar en el
 [repositorio de Jorge Espinoza](https://github.com/espinoza/ThinkPython2-spanish).
-
 
 Para obtener el libro, escoger una de las siguientes opciones:
 * [Descargar libro en español, en formato PDF](https://github.com/picuino/ThinkPython2/blob/master/book-es/thinkpython2-spanish.pdf).
@@ -19,7 +17,7 @@ Para obtener el libro, escoger una de las siguientes opciones:
 * [Descargar libro en inglés, en formato PDF](https://github.com/picuino/ThinkPython2/blob/master/book-en/thinkpython2.pdf).
 * [Descargar libro en inglés, en formato EPUB](https://github.com/picuino/ThinkPython2/blob/master/book-en/epub/thinkpython2.epub).
 * Compilar desde su código fuente con una distribución de LaTeX.
-  Funciona con TexLive y los siguientes paquetes instalados:
+  Funciona con Tex Live y los siguientes paquetes instalados:
   `texlive-latex-base`, `texlive-latex-extra`, 
   `texlive-fonts-recommended` y `texlive-lang-spanish`.  
   
