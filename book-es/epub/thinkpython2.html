@@ -3250,9 +3250,9 @@ Si el usuario escribe <span class="c004">listo</span>, la sentencia <span class=
 del bucle. De lo contrario, el programa repite lo que escriba el usuario
 y regresa a la parte superior del bucle. Aquí hay una ejecución de muestra:</p><pre class="verbatim">
 &gt; no listo
-no listo
+  no listo
 &gt; listo
-¡Listo!
+  ¡Listo!
 </pre><p>
 Esta forma de escribir bucles <span class="c004">while</span> es común porque puedes
 verificar la condición en cualquier lugar del bucle (no solo en la
@@ -3901,8 +3901,8 @@ donde aparece el error.</p><pre class="verbatim">
 Ahora cuando ejecuto el programa de nuevo, obtengo más información:</p><pre class="verbatim">
 &gt;&gt;&gt; es_inverso('pots', 'stop')
     0 4
-...
-IndexError: string index out of range
+    ... 
+    IndexError: string index out of range
 </pre><p>
 En el primer paso por el bucle, el valor de <span class="c004">j</span> es 4,
 lo cual está fuera de rango para la cadena <code class="verb">'pots'</code>.
