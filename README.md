@@ -29,11 +29,13 @@ Modificaciones
 La versión de este repositorio tiene las siguientes modificaciones
 respecto a la versión del libro traducido por Jorge Espinoza:
 
-* Se han cambiado todas las referencias a la página web 
-  thinkpython2.com a la web thinkpython.com para que los enlaces
-  funcionen.
+* Corregidas múltiples palabras que tenían alguna incorrección
+  ortográfica como tildes, letras faltantes o intercambiadas, etc.
 
-* Se han cambiado todas las sangrías del código ejecutado en el 
+* Cambiadas todas las referencias de la página web thinkpython2.com
+  a la web thinkpython.com para que los enlaces funcionen.
+
+* Cambiadas todas las sangrías del código ejecutado en el 
   editor IDLE de Python.
 
   Así donde antes aparecía:
@@ -47,6 +49,7 @@ respecto a la versión del libro traducido por Jorge Espinoza:
   >>> print("Hola, mundo")
       Hola, mundo
   ```
+
 
 Licencias
 ---------

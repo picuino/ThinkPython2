@@ -6,7 +6,7 @@
 %
 
 % Traducción al español por Jorge Espinoza.
-% Modificada por Carlos Pardo Martín.
+% Modificada y corregida por Carlos Félix Pardo Martín.
 
 
 %\documentclass[10pt,b5paper]{book}
@@ -191,11 +191,13 @@ de texto que es independiente del dispositivo, la cual se puede convertir a otro
 e imprimir.
 
 La fuente de \LaTeX\ para este libro está disponible en
-\url{http://www.thinkpython.com}
+\url{https://github.com/picuino/ThinkPython2}
 
 Título original: {\em Think Python: How to Think Like a Computer Scientist}
 
 Traducción de Jorge Espinoza.
+
+Corrección de Carlos Pardo.
 
 \vspace{0.2in}
 
@@ -288,7 +290,7 @@ Los estudiantes se esforzaban menos, aprendían más, trabajaban en más
 proyectos interesantes y generalmente se divertían mucho.
 \index{Olin College}
 
-Desde entonces he contiunado desarrollando el libro,
+Desde entonces he continuado desarrollando el libro,
 corrigiendo errores, mejorando algunos de los ejemplos y agregando material,
 especialmente ejercicios.
 
@@ -302,7 +304,7 @@ El resultado es este libro, ahora con el título menos grandioso
   errores de programación y advertencias sobre trampas de Python.
 
 \item Agregué más ejercicios, que van desde pruebas cortas de comprensión
-  hasta algunos proyectos sustanciales.  La mayoria de los ejercicios
+  hasta algunos proyectos sustanciales.  La mayoría de los ejercicios
   incluyen un enlace a mi solución.
 
 \item Agregué una serie de estudios de caso: ejemplos más largos con
@@ -472,9 +474,9 @@ University.  Ha aportado muchas sugerencias y correcciones valiosas.
 
 \item Ian Thomas y sus alumnos están usando el texto en un curso de
 programación.  Ellos son los primeros en probar los capítulos de la segunda mitad
-del libro, y han hecho numerosas correcciones y sugerencicas.
+del libro, y han hecho numerosas correcciones y sugerencias.
 
-\item Keith Verheyden envió una correción en el Capítulo 3.
+\item Keith Verheyden envió una corrección en el Capítulo 3.
 
 \item Peter Winstanley nos hizo saber sobre un error en
 nuestro Latin que estuvo por mucho tiempo en el Capítulo 3.
@@ -768,7 +770,7 @@ de pensar combina algunas de las mejores características de las matemáticas,
 la ingeniería y las ciencias naturales.  Al igual que los matemáticos, los
 informáticos utilizan lenguajes formales para denotar ideas (específicamente,
 computaciones). Al igual que los ingenieros, diseñan cosas, ensamblando
-componentes en sistemas y evaluando compensasiones entre alternativas.
+componentes en sistemas y evaluando comparaciones entre alternativas.
 Al igual que los científicos, observan el comportamiento de sistemas complejos,
 a partir de hipótesis, y prueban predicciones.  \index{resolución de problemas}
 
@@ -872,7 +874,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 %
 Las primeras tres líneas contienen información acerca del intérprete
 y el sistema operativo en el cual se está ejecutando, así que puede ser
-diferente para ti.  Sin emgargo, deberías verificar que el número de versión, que
+diferente para ti.  Sin embargo, deberías verificar que el número de versión, que
 en este ejemplo es {\tt 3.4.0}, comience con 3, lo cual indica que estás
 ejecutando Python 3.  Si comienza con 2, estás ejecutando
 (lo adivinaste) Python 2.
@@ -1439,10 +1441,10 @@ tanto letras como números, pero no pueden comenzar con un número.
 Es legal utilizar letras mayúsculas, pero es convencional
 utilizar solo minúsculas para los nombres de variables.
 
-El guión bajo, \verb"_", puede aparecer en un nombre.
+El guion bajo, \verb"_", puede aparecer en un nombre.
 A menudo se utiliza en nombres con varias palabras, tales como
 \verb"tu_nombre" o \verb"velocidad_de_golondrina_sin_carga".
-\index{guión bajo}
+\index{guion bajo}
 
 Si le das un nombre ilegal a una variable, obtendrás un error de sintaxis:
 
@@ -1484,7 +1486,7 @@ como nombre de variable, lo sabrás.
 \section{Expresiones y sentencias}
 
 Una {\bf expresión} es una combinación de valores, variables y operadores.
-Un valor por sí mismo es considerado una expresión, y por consigiuente lo es
+Un valor por sí mismo es considerado una expresión, y por consiguiente lo es
 una variable, así que las siguientes son todas expresiones legales:
 \index{expresión}
 
@@ -1608,7 +1610,7 @@ y {\tt (1+1)**(5-2)} es 8. También puedes utilizar paréntesis para hacer una
 expresión más fácil de leer, como en {\tt (minuto * 100) / 60}, incluso
 si no cambia el resultado.
 
-\item Los {\bf E}xponentes de potencias tienen la siguiente proridad, así que
+\item Los {\bf E}xponentes de potencias tienen la siguiente prioridad, así que
 {\tt 1 + 2**3} es 9, no 27, y {\tt 2 * 3**2} es 18, no 36.
 
 \item La {\bf M}ultiplicación y la {\bf D}ivisión tienen mayor prioridad
@@ -2034,7 +2036,7 @@ $\pi$:
 %
 La expresión {\tt math.pi} obtiene la variable {\tt pi} del módulo
 math.  Su valor es una aproximación en coma flotante
-de $\pi$, con precisión de alrededor de 15 digitos.
+de $\pi$, con precisión de alrededor de 15 dígitos.
 \index{pi}
 
 Si sabes
@@ -2108,7 +2110,7 @@ def imprimir_letra():
 {\tt def} es una palabra clave que indica que esta es una definición
 de función. El nombre de la función es \verb"imprimir_letra".  Las
 reglas para los nombres de funciones son las mismas que para los nombres de variables: las letras,
-los números y el guión bajo son legales, pero el primer carácter
+los números y el guion bajo son legales, pero el primer carácter
 no puede ser un número.  No puedes utilizar una palabra clave como nombre de una función,
 y deberías evitar tener una variable y una función con el mismo
 nombre.
@@ -2339,8 +2341,8 @@ También puedes utilizar una variable como un argumento:
 \begin{verbatim}
 >>> michael = 'Eric, the half a bee.'
 >>> impr_2veces(michael)
-Eric, the half a bee.
-Eric, the half a bee.
+    Eric, the half a bee.
+    Eric, the half a bee.
 \end{verbatim}
 %
 El nombre de la variable que pasamos como argumento ({\tt michael}) no tiene
@@ -2972,7 +2974,7 @@ Deberías ver algo como esto:
 %
 Este es el uso más simple de una sentencia {\tt for}; después veremos
 más.  Pero eso debería ser suficiente para dejarte reescribir tu
-programa que dibuja cruadrados.  No continues hasta que lo hagas.
+programa que dibuja cuadrados.  No continues hasta que lo hagas.
 
 Aquí hay una sentencia {\tt for} que dibuja un cuadrado:
 
@@ -3312,7 +3314,7 @@ Copia y pega código que funcione para evitar repetir (y volver a depurar).
 
 \item Busca oportunidades para mejorar el programa refactorizando.
 Por ejemplo, si tienes código similar en muchos lugares, considera
-factorizarlo dentro de una función general apropiada.
+refactorizarlo dentro de una función general apropiada.
 
 \end{enumerate}
 
@@ -4716,7 +4718,7 @@ leer.
 
 Como ejercicio, utiliza desarrollo incremental para escribir una función
 llamada {\tt hipotenusa} que devuelva el largo de la hipotenusa de un
-triángulo rectánculo, dadas las longitudes de los otros dos lados como argumentos.
+triángulo rectángulo, dadas las longitudes de los otros dos lados como argumentos.
 Guarda cada etapa del proceso de desarrollo a medida que avances.
 \index{hipotenusa}
 
@@ -4733,7 +4735,7 @@ el área del círculo.
 
 Supongamos que el punto central se almacena en las variables {\tt xc} e
 {\tt yc}, y el punto del perímetro está en {\tt xp} e {\tt yp}. El
-primer paso es encontrar el radio del círculo, que es la distiancia
+primer paso es encontrar el radio del círculo, que es la distancia
 entre los dos puntos.  Acabamos de escribir una función, {\tt
 distancia}, que hace eso:
 
@@ -5456,7 +5458,7 @@ donde el nuevo valor de la variable depende del antiguo.
 >>> x = x + 1
 \end{verbatim}
 %
-Esto significa ``obten el valor actual de {\tt x}, suma uno, y luego
+Esto significa ``obtén el valor actual de {\tt x}, suma uno, y luego
 actualiza a {\tt x} con el nuevo valor.''
 
 Si intentas actualizar una variable que no existe, obtienes un
@@ -7659,7 +7661,7 @@ los elementos:
 %
 Este ejemplo deja a {\tt t2} sin modificar.
 
-{\tt sort} ordena los ejementos de la lista de menor a mayor:
+{\tt sort} ordena los elementos de la lista de menor a mayor:
 \index{metodo@método!sort}
 \index{sort, método}
 
@@ -7887,7 +7889,7 @@ el método {\tt split}:
 Un argumento opcional llamado {\bf delimitador} especifica qué
 caracteres usar como separador de palabras.
 El siguiente ejemplo
-usa un guión como delimitador:
+usa un guion como delimitador:
 \index{argumento opcional}
 \index{opcional!argumento}
 \index{delimitador}
@@ -8841,7 +8843,7 @@ La salida se ve así:
     o 1
 \end{verbatim}
 %
-Nuevamente, las claves no estan en un orden particular.  Para recorrer las claves
+Nuevamente, las claves no están en un orden particular.  Para recorrer las claves
 en orden, puedes utilizar la función incorporada {\tt sorted}:
 \index{sorted, función}
 \index{función!sorted}
@@ -8937,7 +8939,7 @@ Cuando levantes una excepción, puedes proporcionar un mensaje de error detallad
 %
 Una consulta inversa es mucho más lenta que una consulta directa; si
 tienes que hacerlo a menudo, o si el diccionario se vuelve grande, el rendimiento
-de tu progama se verá afectado.
+de tu programa se verá afectado.
 
 
 \section{Diccionarios y listas}
@@ -9071,7 +9073,7 @@ n=3} y {\tt n=2}.  A su vez, {\tt fibonacci} con {\tt n=3} llama a
 \index{grafico de llamadas@gráfico de llamadas}
 
 Cuenta cuántas veces se llama a {\tt fibonacci(0)} y {\tt fibonacci(1)}.
-Esta es una solución ineficiente para el probema y se pone peor
+Esta es una solución ineficiente para el problema y se pone peor
 a medida que el argumento se hace más grande.
 
 \index{memo}
@@ -9169,7 +9171,7 @@ La {\bf sentencia global} le dice al intérprete
 algo como ``En esta función, cuando digo \verb"fue_llamada",
 me refiero a la variable global; no crees una local.''
 \index{actualizar!variable global}
-\index{variable global!actializar}
+\index{variable global!actualizar}
 
 Aquí hay un ejemplo que intenta actualizar una variable global:
 
@@ -9291,7 +9293,7 @@ corresponde a un elemento de otro conjunto.
 \index{mapeo}
 
 \item[diccionario:] Un mapeo de las claves a sus
-valores correspondienes.
+valores correspondientes.
 \index{diccionario}
 
 \item[par clave-valor:] La representación del mapeo de
@@ -10064,7 +10066,7 @@ mostrarse como en la Figura~\ref{fig.dict2}.
 \label{fig.dict2}
 \end{figure}
 
-Aquí, las tuplas se muestran utilizando la notación de la sintáxis de Python.
+Aquí, las tuplas se muestran utilizando la notación de la sintaxis de Python.
 El número de teléfono del diagrama es la línea de reclamos
 de la BBC, así que por favor no llames.
 
@@ -10542,7 +10544,7 @@ la gaussiana, exponencial, gamma y algunas más.
 
 Escribe una función con nombre \verb"escoger_de_hist" que tome
 un histograma como se definió en la Sección~\ref{histogram} y devuelva un
-valor aleatorio del histograma, esogido con probabilidad
+valor aleatorio del histograma, escogido con probabilidad
 proporcional a la frecuencia.  Por ejemplo, para este histograma:
 
 \begin{verbatim}
@@ -10766,7 +10768,7 @@ def diferencia(d1, d2):
 \end{verbatim}
 %
 Para encontrar las palabras en el libro que no están en {\tt words.txt},
-podemos utlizar \verb"procesar_archivo" para construir un histograma para
+podemos utilizar \verb"procesar_archivo" para construir un histograma para
 {\tt words.txt}, y luego obtener la diferencia:
 
 \begin{verbatim}
@@ -11004,7 +11006,7 @@ una opción es una lista, otra es un histograma (diccionario).
 \index{implementación}
 
 ¿Cómo deberías escoger?  El primer paso es pensar en
-las operaciones que necesitarás implementar para cada esturcura de datos.
+las operaciones que necesitarás implementar para cada estructura de datos.
 Para prefijos, necesitamos poder eliminar palabras del
 principio y agregar al final.  Por ejemplo, si el prefijo actual
 es ``Half a'', y la siguiente palabra es ``bee'', necesitas
@@ -11033,7 +11035,7 @@ de uno existente) y escoger un sufijo aleatorio.
 
 Agregar un nuevo sufijo es igual de fácil con lista o histograma
 en cuanto a implementación.  Escoger un elemento aleatorio de una lista
-es fácil; escoger del histograma es más díficil de hacer 
+es fácil; escoger del histograma es más difícil de hacer 
 de manera eficiente (ver Ejercicio~\ref{randhist}).
 
 Hasta ahora hemos estado hablando principalmente sobre la facilidad de la implementación,
@@ -11063,7 +11065,7 @@ programa se ejecute más rápido, y en el caso extremo, tu programa podría no e
 en absoluto si te quedas sin memoria.  Sin embargo, para muchas aplicaciones el espacio es
 una consideración secundaria después del tiempo de ejecución.
 
-Una útlima reflexión: en esta discusión, he insinuado que
+Una última reflexión: en esta discusión, he insinuado que
 deberíamos utilizar una estructura de datos tanto para el análisis como para la generación.
 Pero dado que estas son fases separadas, sería posible también utilizar una
 estructura para el análisis y luego convertirla a otra estructura para
@@ -11139,7 +11141,7 @@ programa hasta que obtengas algo que funcione y que
 entiendas.
 
 Los programadores principiantes son a menudo reacios a retroceder porque
-no pueden soportar eliminar una línea de códiigo (incluso si es incorrecta).
+no pueden soportar eliminar una línea de código (incluso si es incorrecta).
 Si te hace sentir mejor, copia tu programa en otro archivo
 antes de comenzar a recortarlo.  Luego puedes volver a copiar los
 pedazos uno a la vez.
@@ -11213,7 +11215,7 @@ una línea recta con pendiente $-s$ e intercepto log $c$.
 Escribe un programa que lea un texto de un archivo, cuente
 las frecuencias de palabras e imprima una línea
 para cada palabra, en orden de frecuencia descendiente, con
-log $f$ y log $r$.  Utiliza el progmara de gráficos de tu
+log $f$ y log $r$.  Utiliza el programa de gráficos de tu
 elección para graficar los resultados y verificar si forman
 una línea recta.  ¿Puedes estimar el valor de $s$?
 
@@ -12045,7 +12047,7 @@ Solución: \url{http://thinkpython.com/code/anagram_db.py}.
 \label{checksum}
 \index{MP3}
 
-En una gran coleccioń de archivos MP3, puede haber más de una
+En una gran colección de archivos MP3, puede haber más de una
 copia de la misma canción, almacenados en directorios diferentes o con
 nombres de archivo diferentes.  El objetivo de este ejercicio es buscar
 duplicados.
@@ -12244,7 +12246,7 @@ Puedes leer el valor de un atributo utilizando la misma sintaxis:
 \end{verbatim}
 %
 La expresión {\tt vacio.x} significa ``Ve al objeto al cual {\tt vacio}
-se refiere y obten el valor de {\tt x}.''  En este ejemplo, asignamos ese
+se refiere y obtén el valor de {\tt x}.''  En este ejemplo, asignamos ese
 valor a una variable con nombre {\tt x}.  No hay conflicto entre
 la variable {\tt x} y el atributo {\tt x}.
 
@@ -12339,7 +12341,7 @@ caja.esquina.y = 0.0
 \end{verbatim}
 %
 La expresión {\tt caja.esquina.x} significa
-``Ve al objeto al cual {\tt caja} se refiere y seleccionea el atributo con nombre
+``Ve al objeto al cual {\tt caja} se refiere y selecciona el atributo con nombre
 {\tt esquina}; luego ve a ese objeto y selecciona el atributo con nombre
 {\tt x}.''
 
@@ -12381,7 +12383,7 @@ Aquí hay un ejemplo que pasa a {\tt caja} como argumento y asigna
 el Punto resultante a {\tt centro}:
 
 \begin{verbatim}
->>> centro = entontrar_centro(caja)
+>>> centro = encontrar_centro(caja)
 >>> imprimir_punto(centro)
     (50, 100)
 \end{verbatim}
@@ -12757,7 +12759,7 @@ El diagrama de estado para el objeto {\tt Tiempo} se ve como en la Figura~\ref{f
 \index{objeto!diagrama}
 
 Como ejercicio, escribe una función llamada \verb"imprimir_tiempo" que tome un
-objeto Tiempo y lo imrpima en la forma {\tt hora:minuto:segundo}.
+objeto Tiempo y lo imprima en la forma {\tt hora:minuto:segundo}.
 Pista: la secuencia de formato \verb"'%.2d'" imprime un entero utilizando
 al menos dos dígitos, incluyendo un cero a la izquierda si es necesario.
 
@@ -13195,7 +13197,7 @@ orientada a objetos, que tiene las siguientes características que la definen:
 \item Los programas incluyen definiciones de clases y métodos.
 
 \item La mayoría de los cálculos están expresados en términos de operaciones sobre
-  obtetos.
+  objetos.
 
 \item Los objetos a menudo representan cosas
 del mundo real, y los métodos a menudo
@@ -13458,7 +13460,7 @@ casi textual: ``¿término está después de comienzo?''
 
 El método init (abreviatura de ``initialization'') es
 un método especial que se invoca cuando se instancia un objeto.
-Su nombre completo es \verb"__init__" (dos caracteres de guión bajo,
+Su nombre completo es \verb"__init__" (dos caracteres de guion bajo,
 seguido de {\tt init}, y luego dos guiones bajos más).  Un
 método init para la clase {\tt Tiempo} se vería así:
 
@@ -13949,7 +13951,7 @@ contenido de la bolsa de {\tt kanga}.
 
 Descarga \url{http://thinkpython.com/code/BadKangaroo.py}.  Contiene
 una solución al problema anterior con un gran y horrible error.
-Encuentra y corrije el error.
+Encuentra y corrige el error.
 
 Si te estancas, puedes descargar
 \url{http://thinkpython.com/code/GoodKangaroo.py}, que explica el
@@ -14564,7 +14566,7 @@ pero si alguna de las subclases anula este método,
 obtendrás esa versión en su lugar.  Este comportamiento es generalmente algo
 bueno, pero puede ser confuso.
 
-Cada vez que tengas insegurdad acerca del flujo de ejecución a través de tu
+Cada vez que tengas inseguridad acerca del flujo de ejecución a través de tu
 programa, la solución más simple es agregar sentencias print al
 principio de métodos relevantes.  Si {\tt Baraja.barajar} imprime un
 mensaje que diga algo como {\tt Ejecutando Baraja.barajar}, entonces
@@ -14661,7 +14663,7 @@ class Markov:
         self.prefix = ()
 \end{verbatim}
 
-Luego, transforamos las funciones en métodos.  Por ejemplo,
+Luego, transformamos las funciones en métodos.  Por ejemplo,
 aquí está \verb"process_word":
 
 \begin{verbatim}
@@ -15036,7 +15038,7 @@ estamos recorriendo.
 La sintaxis de una comprensión de lista es un poco incómoda porque
 la variable del bucle, {\tt s} en este ejemplo, aparece en la expresión
 antes de llegar a la definición.
-\index{varlable del bucle}
+\index{variable del bucle}
 
 Las comprensiones de lista también se pueden utilizar para filtrar.  Por ejemplo,
 esta función selecciona solo los elementos de {\tt t} que están
@@ -15278,7 +15280,7 @@ def usa_solo(palabra, disponibles):
     return set(palabra) <= set(disponibles)
 \end{verbatim}
 %
-El opereador \verb"<=" verifica si un conjunto es subconjunto de otro,
+El operador \verb"<=" verifica si un conjunto es subconjunto de otro,
 incluyendo la posibilidad de que sean iguales, lo cual es verdadero si todas
 las letras en {\tt palabra} aparecen en {\tt disponibles}.
 \index{subconjunto}
@@ -15392,7 +15394,7 @@ Si estás creando un diccionario de listas, a menudo puedes escribir código
 más simple utilizando {\tt defaultdict}.  En mi solución al
 Ejercicio~\ref{anagrams}, que puedes obtener en
 \url{http://thinkpython.com/code/anagram_sets.py}, creo un
-diccioinario que mapea de una cadena de letras ordenada a la lista de
+diccionario que mapea de una cadena de letras ordenada a la lista de
 palabras que se pueden escribir con esas letras.  Por ejemplo, {\tt
   'opst'} mapea a la lista {\tt ['opts', 'post', 'pots', 'spot',
     'stop', 'tops']}.
@@ -16329,7 +16331,7 @@ el nuevo caso de prueba que falla?
 
 Cuando encuentres el error, tómate un segundo para pensar sobre qué
 podrías haber hecho para encontrarlo de manera más rápida.  La próxima vez
-que veas algo similar, serás capaz de entontrar el error con más rapidez.
+que veas algo similar, serás capaz de encontrar el error con más rapidez.
 
 Recuerda, la meta no solo es hacer que el programa
 funcione.  La meta es aprender cómo hacer que el programa funcione.
@@ -16358,7 +16360,7 @@ Barack Obama le pidieron que realizara un análisis improvisado cuando
 visitó Google.  El director ejecutivo Eric Schmidt le preguntó en broma
 por ``la manera más eficiente para ordenar un millón de enteros de 32 bit.''
 Obama aparentemente se había dado un tropezón, porque rápidamente
-respondió: ``Pienso que el ordenamiendo de burbuja sería la manera incorrecta de proceder.''
+respondió: ``Pienso que el ordenamiento de burbuja sería la manera incorrecta de proceder.''
 Ver \url{http://www.youtube.com/watch?v=k4RRi_ntQc8}.
 \index{Obama, Barack}
 \index{Schmidt, Eric}
@@ -16416,7 +16418,7 @@ crecen a medida que el tamaño del problema aumenta.
 
 Lo bueno de este tipo de comparaciones es que asegura
 una clasificación simple de los algoritmos.  Por ejemplo,
-si sé que el tiempo de ejecución del Algorigmo A tiende a ser
+si sé que el tiempo de ejecución del Algoritmo A tiende a ser
 proporcional al tamaño de la entrada, $n$, y el algoritmo B
 tiende a ser proporcional a $n^2$, entonces
 espero que A sea más rápido que B, al menos para valores grandes de $n$.
@@ -16515,7 +16517,7 @@ $O(c^n)$           & exponencial (para cualquier $c$)    \\
 \hline
 \end{tabular}
 
-Para los términos logarítmicos, la base del logarítmo no importa:
+Para los términos logarítmicos, la base del logaritmo no importa:
 cambiar las bases es equivalente a multiplicar por una constante, la cual
 no cambia el orden de crecimiento.  De igual manera, todas las
 funciones exponenciales pertenecen al mismo orden de crecimiento, independiente de
@@ -16695,7 +16697,7 @@ las siguientes preguntas:
 \item ¿Cuál es el peor algoritmo de ordenamiento (y cuál es su nombre)?
 
 \item ¿Qué algoritmo de ordenamiento utiliza la librería de C?  ¿Qué algoritmo de ordenamiento
-  utiliza Python?  ¿Son estos algorimos estables?  Quizás tengas que
+  utiliza Python?  ¿Son estos algoritmos estables?  Quizás tengas que
   utilizar Google para encontrar estas respuestas.
 
 \item Muchos de los algoritmos de ordenamiento diferentes al de comparación son lineales, entonces ¿por qué
