@@ -29,8 +29,9 @@ Para obtener el libro, escoge una de las siguientes opciones:
 
 Modificaciones
 --------------
-La versión de este repositorio tiene las siguientes modificaciones
-respecto a la versión del libro traducido por Jorge Espinoza:
+La versión del libro de este repositorio tiene las siguientes
+modificaciones respecto a la versión del libro traducido por
+Jorge Espinoza:
 
 * Cambiadas todas las sangrías del código ejecutado en el 
   editor IDLE de Python.
@@ -53,9 +54,56 @@ respecto a la versión del libro traducido por Jorge Espinoza:
 * Modificado el enlace al repositorio del libro, cambiado por el
   [repositorio de Picuino en GitHub](https://github.com/picuino/ThinkPython2/).
 
-* Corregidas múltiples palabras que tenían alguna incorrección
+* Corregidas numerosas palabras que tenían alguna incorrección
   ortográfica o tipográfica, tales como tildes, letras faltantes
   sobrantes o intercambiadas, etc.
+  
+  * contiunado -> continuado
+  * mayoria -> mayoría
+  * sugerencicas -> sugerencias
+  * correción -> corrección
+  * compensasiones -> comparaciones
+  * emgargo -> embargo
+  * guión -> guion
+  * consigiuente -> consiguiente
+  * proridad -> prioridad
+  * digitos -> dígitos
+  * cruadrados -> cuadrados
+  * factorizarlo -> refactorizarlo
+  * rectánculo -> rectángulo
+  * distiancia -> distancia
+  * obten -> obtén
+  * ejementos -> elementos
+  * estan -> están
+  * progama -> programa
+  * probema -> problema
+  * actializar -> actualizar
+  * correspondienes -> correspondientes
+  * sintáxis -> sintaxis
+  * esogido -> escogido
+  * utlizar -> utilizar
+  * esturcura -> estructura
+  * díficil -> difícil
+  * útlima -> última
+  * códiigo -> código
+  * progmara -> programa
+  * coleccioń -> colección
+  * obten -> obtén
+  * seleccionea -> selecciona
+  * entontrar_centro -> encontrar_centro
+  * imrpima -> imprima
+  * obtetos -> objetos
+  * corrije -> corrige
+  * insegurdad -> inseguridad
+  * transforamos -> transformamos
+  * varlable -> variable
+  * opereador -> operador
+  * diccioinario -> diccionario
+  * entontrar -> encontrar
+  * ordenamiendo -> ordenamiento
+  * Algorigmo -> Algoritmo
+  * logarítmo -> logaritmo
+  * algorimos -> algoritmos
 
 * Añadida una referencia con el nombre de Jorge Espinoza a la lista de
   colaboradores del libro, como traductor.
