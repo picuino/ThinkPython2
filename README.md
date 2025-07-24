@@ -32,12 +32,6 @@ Modificaciones
 La versión de este repositorio tiene las siguientes modificaciones
 respecto a la versión del libro traducido por Jorge Espinoza:
 
-* Corregidas múltiples palabras que tenían alguna incorrección
-  ortográfica como tildes, letras faltantes o intercambiadas, etc.
-
-* Cambiadas todas las referencias de la página web thinkpython2.com
-  a la web thinkpython.com para que los enlaces funcionen.
-
 * Cambiadas todas las sangrías del código ejecutado en el 
   editor IDLE de Python.
 
@@ -53,6 +47,25 @@ respecto a la versión del libro traducido por Jorge Espinoza:
       Hola, mundo
   ```
 
+* Cambiadas todas las referencias de la página web thinkpython2.com
+  a la web thinkpython.com para que los enlaces funcionen.
+
+* Modificado el enlace al repositorio del libro, cambiado por el
+  [repositorio de Picuino en GitHub](https://github.com/picuino/ThinkPython2/).
+
+* Corregidas múltiples palabras que tenían alguna incorrección
+  ortográfica o tipográfica, tales como tildes, letras faltantes
+  sobrantes o intercambiadas, etc.
+
+* Añadida una referencia con el nombre de Jorge Espinoza a la lista de
+  colaboradores del libro, como traductor.
+
+* Añadida una referencia con mi nombre (Carlos Félix Pardo Martín) a la
+  lista de colaboradores del libro, como corrector.
+
+* Eliminadas las referencias a la editorial Green Tea Press en la fuente
+  en formato LaTeX del libro traducido.
+  
 
 Licencias
 ---------

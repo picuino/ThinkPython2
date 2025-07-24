@@ -38,8 +38,6 @@ hevea:	book.tex header.html footer.html
 	cp up.png next.png back.png html
 	mv index.html thinkpython2.css thinkpython2*.html thinkpython2*.png *motif.gif html
 
-DEST = /home/downey/public_html/greent/thinkpython2
-
 epub: 	book.tex
 	#replace the pdfs with eps
 	sed s/.pdf/.eps/g book.tex >thinkpython2.tex
@@ -52,38 +50,6 @@ epub: 	book.tex
 	imagen -png thinkpython2
 	mv thinkpython2.html thinkpython2*.png epub
 	cd epub; ebook-convert thinkpython2.html thinkpython2-spanish.epub
-
-distrib:
-	rm -rf dist
-	mkdir dist dist/tex dist/tex/figs
-	rsync -a thinkpython2.pdf html dist
-	rsync -a dist/* $(DEST)
-	chmod -R o+r $(DEST)/*
-	cd $(DEST)/..; sh back
-
-# UPDATE THE PATHS BELOW BEFORE RUNNING PLASTEX
-
-plastex:
-	# Before running plastex, we need the current directory in PYTHONPATH
-	# export PYTHONPATH=$PYTHONPATH:.
-	python Filist.py book.tex > book.plastex
-	rm -rf /home/downey/thinkpython2/trunk/book
-	plastex --renderer=DocBook --theme=book --image-resolution=300 --filename=book.xml book.plastex
-	rm -rf /home/downey/thinkpython2/trunk/book/.svn
-
-plastest:
-	# Before running plastex, we need the current directory in PYTHONPATH
-	# export PYTHONPATH=$PYTHONPATH:.
-	python Filist.py test.tex > test.plastex
-	rm -rf /home/downey/thinkpython2/trunk/test
-	plastex --renderer=DocBook --theme=test --filename=test.xml test.plastex
-	rm -rf /home/downey/thinkpython2/trunk/test/.svn
-
-xxe:
-	xmlcopyeditor ~/ThinkPython2/book/book/book.xml &
-
-lint:
-	xmllint -noout book/book.xml
 
 clean:
 	rm -f *~ *.aux *.log *.dvi *.idx *.ilg *.ind *.toc
